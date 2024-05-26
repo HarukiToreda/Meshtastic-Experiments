@@ -186,12 +186,12 @@ Just my own measurements and values
       </tr>
       <tr>
         <td>Input</td>
-        <td>User Button,Reset Button</td>
-        <td>User Button,Reset Button</td>
-        <td>User Button,Reset Button</td>
-        <td>User Button,Reset Button</td>
-        <td>User Button,Reset Button</td>
-        <td>User Button,Reset Button</td>
+        <td>User Button, Reset Button</td>
+        <td>User Button, Reset Button</td>
+        <td>User Button, Reset Button</td>
+        <td>User Button, Reset Button</td>
+        <td>User Button, Reset Button</td>
+        <td>User Button, Reset Button</td>
         <td>Touch Screen, Keyboard, trackball, Reset Button</td>
         <td>Reset Button</td>
       </tr>
