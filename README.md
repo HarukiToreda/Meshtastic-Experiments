@@ -1,7 +1,7 @@
 # Meshtastic-Experiments
 Just my own measurements and values
 
-## Devices Comparison
+## Devices Comparison (Based on information by suppliers)
 
 <div style="overflow-x: auto;">
   <table>
@@ -210,7 +210,7 @@ Just my own measurements and values
   </table>
 </div>
 
-## Measured on 2.3.10
+## Power Measured on Meshtastic Firmware 2.3.10
 
 <div style="overflow-x: auto;">
   <table>
@@ -229,7 +229,7 @@ Just my own measurements and values
     </thead>
     <tbody>
       <tr>
-        <td>Meshtastic - Transmitting</td>
+        <td>Transmitting</td>
         <td>163mA</td>
         <td>267mA</td>
         <td>263mA</td>
@@ -240,7 +240,7 @@ Just my own measurements and values
         <td>88mA</td>
       </tr>
       <tr>
-        <td>Meshtastic - Standby (Screen On)</td>
+        <td>Standby (Screen On)</td>
         <td>57mA</td>
         <td>104mA</td>
         <td>101mA</td>
@@ -251,7 +251,7 @@ Just my own measurements and values
         <td>-</td>
       </tr>
       <tr>
-        <td>Meshtastic - Standby (Screen Off)</td>
+        <td>Standby (Screen Off)</td>
         <td>54mA</td>
         <td>100mA</td>
         <td>101mA</td>
@@ -262,7 +262,7 @@ Just my own measurements and values
         <td>12mA</td>
       </tr>
       <tr>
-        <td>Meshtastic Lite Sleep (Power Save Mode)</td>
+        <td>Lite Sleep (Power Save Mode)</td>
         <td>14mA</td>
         <td>11mA</td>
         <td>12.5mA</td>
@@ -273,7 +273,7 @@ Just my own measurements and values
         <td>7mA</td>
       </tr>
       <tr>
-        <td>Meshtastic Deep Sleep (Soft Shutdown)</td>
+        <td>Deep Sleep (Soft Shutdown)</td>
         <td>2.68mA</td>
         <td>34uA</td>
         <td>18mA</td>
