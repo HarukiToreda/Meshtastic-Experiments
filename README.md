@@ -120,13 +120,13 @@ Just my own measurements and values
       </tr>
       <tr>
         <td>Wi-Fi</td>
-        <td>802.11 b/g/n, up to 150Mbps</td>
-        <td>802.11 b/g/n, up to 150Mbps</td>
-        <td>802.11 b/g/n, up to 150Mbps</td>
-        <td>802.11 b/g/n, up to 150Mbps</td>
-        <td>802.11 b/g/n, up to 150Mbps</td>
-        <td>802.11 b/g/n, up to 150Mbps</td>
-        <td>802.11 b/g/n, up to 150Mbps</td>
+        <td>802.11 b/g/n 150M bps</td>
+        <td>802.11 b/g/n 150 Mbps</td>
+        <td>802.11 b/g/n 150 Mbps</td>
+        <td>802.11 b/g/n 150 Mbps</td>
+        <td>802.11 b/g/n 150 Mbps</td>
+        <td>802.11 b/g/n 150 Mbps</td>
+        <td>802.11 b/g/n 150 Mbps</td>
         <td>N/A</td>
       </tr>
       <tr>
