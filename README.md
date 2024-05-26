@@ -43,25 +43,25 @@ Just my own measurements and values
       </tr>
       <tr>
         <td>GPS Chip</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
         <td>UC6580</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
       </tr>
       <tr>
         <td>GNSS Chip</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
         <td>L76k</td>
-        <td>-</td>
-        <td>-</td>
+        <td>N/A</td>
+        <td>N/A</td>
       </tr>
       <tr>
         <td>USB Socket</td>
@@ -82,8 +82,8 @@ Just my own measurements and values
         <td>&lt;10uA</td>
         <td>15μA</td>
         <td>25μA</td>
-        <td>-</td>
-        <td>-</td>
+        <td>N/A</td>
+        <td>2μA</td>
       </tr>
       <tr>
         <td>Frequency</td>
@@ -103,9 +103,9 @@ Just my own measurements and values
         <td>21 ± 1 dBm</td>
         <td>21 ± 1 dBm</td>
         <td>21 ± 1 dBm</td>
-        <td>21 ± 1dBm</td>
-        <td>22 ± 1dBm</td>
-        <td>-</td>
+        <td>21 ± 1 dBm</td>
+        <td>22 ± 1 dBm</td>
+        <td>22 ± 1 dBm</td>
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
@@ -115,8 +115,8 @@ Just my own measurements and values
         <td>-134 dBm</td>
         <td>-137dBm</td>
         <td>-135dBm</td>
-        <td>-</td>
-        <td>-</td>
+        <td>?</td>
+        <td>?</td>
       </tr>
       <tr>
         <td>Wi-Fi</td>
@@ -127,7 +127,7 @@ Just my own measurements and values
         <td>802.11 b/g/n, up to 150Mbps</td>
         <td>802.11 b/g/n, up to 150Mbps</td>
         <td>802.11 b/g/n, up to 150Mbps</td>
-        <td>-</td>
+        <td>N/A</td>
       </tr>
       <tr>
         <td>Bluetooth</td>
@@ -233,9 +233,9 @@ Just my own measurements and values
         <td>163mA</td>
         <td>267mA</td>
         <td>263mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>332mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>162mA</td>
         <td>88mA</td>
       </tr>
@@ -244,20 +244,20 @@ Just my own measurements and values
         <td>57mA</td>
         <td>104mA</td>
         <td>101mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>168mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>138mA</td>
-        <td>-</td>
+        <td>N/A</td>
       </tr>
       <tr>
         <td>Standby (Screen Off)</td>
         <td>54mA</td>
         <td>100mA</td>
         <td>101mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>148mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>113mA</td>
         <td>12mA</td>
       </tr>
@@ -266,9 +266,9 @@ Just my own measurements and values
         <td>14mA</td>
         <td>11mA</td>
         <td>12.5mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>55mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>29mA</td>
         <td>7mA</td>
       </tr>
@@ -277,11 +277,11 @@ Just my own measurements and values
         <td>2.68mA</td>
         <td>34uA</td>
         <td>18mA</td>
-        <td>-</td>
+        <td>?</td>
         <td>22uA</td>
-        <td>-</td>
+        <td>?</td>
         <td>Has Power Switch</td>
-        <td>-</td>
+        <td>2μA</td>
       </tr>
     </tbody>
   </table>
