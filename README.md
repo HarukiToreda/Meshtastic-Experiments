@@ -131,14 +131,14 @@ Just my own measurements and values
       </tr>
       <tr>
         <td>Bluetooth</td>
-        <td>Bluetooth 5 (LE)</td>
-        <td>Bluetooth 5 (LE)</td>
-        <td>Bluetooth 5 (LE)</td>
-        <td>Bluetooth 5, Bluetooth mesh</td>
-        <td>Bluetooth 5 (LE), Bluetooth mesh</td>
-        <td>Bluetooth 5 (LE), Bluetooth mesh</td>
-        <td>Bluetooth 5 (LE)</td>
-        <td>Bluetooth 5 (LE)</td>
+        <td>BT-5 (LE)</td>
+        <td>BT-5 (LE)</td>
+        <td>BT-5 (LE)</td>
+        <td>BT-5, BT mesh</td>
+        <td>BT-5 (LE), BT mesh</td>
+        <td>BT-5 (LE), BT mesh</td>
+        <td>BT-5 (LE)</td>
+        <td>BT-5 (LE)</td>
       </tr>
       <tr>
         <td>Display Type</td>
