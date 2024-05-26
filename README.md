@@ -153,14 +153,14 @@ Just my own measurements and values
       </tr>
       <tr>
         <td>Display Size</td>
-        <td>0.96-inch</td>
-        <td>0.96-inch</td>
+        <td>0.96 Inch</td>
+        <td>0.96 Inch</td>
         <td>2.13 Inch</td>
-        <td>-</td>
+        <td>N/A</td>
         <td>0.96-inch</td>
-        <td>-</td>
+        <td>N/A</td>
         <td>2.8 Inch</td>
-        <td>-</td>
+        <td>N/A</td>
       </tr>
       <tr>
         <td>Charging IC</td>
