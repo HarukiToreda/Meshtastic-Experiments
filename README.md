@@ -175,14 +175,14 @@ Just my own measurements and values
       </tr>
       <tr>
         <td>Diagram</td>
-        <td><a href="#">Schematics Link</a></td>
-        <td><a href="#">Schematics Link</a></td>
-        <td><a href="#">Schematics Link</a></td>
-        <td><a href="#">Diagram Link</a></td>
-        <td><a href="#">Diagram Link</a></td>
-        <td><a href="#">Diagram Link</a></td>
-        <td>-</td>
-        <td>-</td>
+        <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32/V2.1/WIFI_LoRa_32_V2.1(868-915).PDF">Schematics Link</a></td>
+        <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA(F)_V3.1_Schematic_Diagram.pdf">Schematics Link</a></td>
+        <td><a href="https://resource.heltec.cn/download/Wireless_Paper/Wireless_Paper_V0.4_Schematic_Diagram.pdf">Schematics Link</a></td>
+        <td><a href="https://resource.heltec.cn/download/Wireless_Stick_Lite_V3/HTIT-WSL_V3_Schematic_Diagram.pdf">Schematics Link</a></td>
+        <td><a href="https://resource.heltec.cn/download/Wireless_Tracker/Wireless_Tacker1.1/HTIT-Tracker_V0.5.pdf">Schematics Link</a></td>
+        <td><a href="https://resource.heltec.cn/download/Heltec%20Capsule%20Sensor%20V3/Capsule_Main_Esp32_Schematic_Diagram.pdf">Schematics Link</a></td>
+        <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Schematics Link</a></td>
+        <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Schematics Link</a></td>
       </tr>
       <tr>
         <td>Input</td>
