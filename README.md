@@ -145,11 +145,11 @@ Just my own measurements and values
         <td>OLED</td>
         <td>OLED</td>
         <td>E-ink</td>
-        <td>-</td>
+        <td>N/A</td>
         <td>TFT</td>
-        <td>-</td>
+        <td>N/A</td>
         <td>LCD</td>
-        <td>-</td>
+        <td>N/A</td>
       </tr>
       <tr>
         <td>Display Size</td>
