@@ -27,7 +27,7 @@ Just my own measurements and values
         <td>ESP32-S3</td>
         <td>ESP32-S3FN8</td>
         <td>ESP32-S3FN8</td>
-        <td>ESP32-S3FN16R8</td>
+        <td>ESP32-S3FN16</td>
         <td>RAK4631</td>
       </tr>
       <tr>
