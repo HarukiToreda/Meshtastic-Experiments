@@ -253,7 +253,7 @@ Just my own measurements and values
       <tr>
         <td>Standby (Screen Off)</td>
         <td>54mA</td>
-        <td>100mA</td>
+        <td>99mA</td>
         <td>101mA</td>
         <td>104.5mA</td>
         <td>148mA</td>
@@ -266,7 +266,7 @@ Just my own measurements and values
         <td>14mA</td>
         <td>11mA</td>
         <td>12.3mA</td>
-        <td>11.8</td>
+        <td>11.8mA</td>
         <td>55mA</td>
         <td>?</td>
         <td>29mA</td>
@@ -277,7 +277,7 @@ Just my own measurements and values
         <td>2.68mA</td>
         <td>34μA</td>
         <td>16μA</td>
-        <td>27μA</td>
+        <td>30μA</td>
         <td>22μA</td>
         <td>?</td>
         <td>Has Power Switch</td>
