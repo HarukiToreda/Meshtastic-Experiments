@@ -233,7 +233,7 @@ Just my own measurements and values
         <td>163mA</td>
         <td>267mA</td>
         <td>263mA</td>
-        <td>261</td>
+        <td>261mA</td>
         <td>332mA</td>
         <td>?</td>
         <td>162mA</td>
