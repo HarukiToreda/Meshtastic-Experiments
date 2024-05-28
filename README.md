@@ -76,10 +76,10 @@ Just my own measurements and values
       </tr>
       <tr>
         <td>Deep Sleep</td>
-        <td>800uA</td>
-        <td>&lt;10uA</td>
-        <td>20uA</td>
-        <td>&lt;10uA</td>
+        <td>800μA</td>
+        <td>&lt;10μA</td>
+        <td>20μA</td>
+        <td>&lt;10μA</td>
         <td>15μA</td>
         <td>25μA</td>
         <td>N/A</td>
@@ -275,10 +275,10 @@ Just my own measurements and values
       <tr>
         <td>Deep Sleep (Soft Shutdown)</td>
         <td>2.68mA</td>
-        <td>34uA</td>
-        <td>18mA</td>
+        <td>34μA</td>
+        <td>16μA</td>
         <td>?</td>
-        <td>22uA</td>
+        <td>22μA</td>
         <td>?</td>
         <td>Has Power Switch</td>
         <td>2μA</td>
