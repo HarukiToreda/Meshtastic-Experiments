@@ -244,7 +244,7 @@ Just my own measurements and values
         <td>57mA</td>
         <td>104mA</td>
         <td>101mA</td>
-        <td>104.5mA</td>
+        <td>N/A</td>
         <td>168mA</td>
         <td>?</td>
         <td>138mA</td>
@@ -255,7 +255,7 @@ Just my own measurements and values
         <td>54mA</td>
         <td>99mA</td>
         <td>101mA</td>
-        <td>N/A</td>
+        <td>104.5mA</td>
         <td>148mA</td>
         <td>?</td>
         <td>113mA</td>
