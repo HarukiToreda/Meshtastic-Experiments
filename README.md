@@ -233,7 +233,7 @@ Just my own measurements and values
         <td>163mA</td>
         <td>267mA</td>
         <td>263mA</td>
-        <td>?</td>
+        <td>261</td>
         <td>332mA</td>
         <td>?</td>
         <td>162mA</td>
@@ -244,7 +244,7 @@ Just my own measurements and values
         <td>57mA</td>
         <td>104mA</td>
         <td>101mA</td>
-        <td>?</td>
+        <td>104.5mA</td>
         <td>168mA</td>
         <td>?</td>
         <td>138mA</td>
@@ -255,7 +255,7 @@ Just my own measurements and values
         <td>54mA</td>
         <td>100mA</td>
         <td>101mA</td>
-        <td>?</td>
+        <td>104.5mA</td>
         <td>148mA</td>
         <td>?</td>
         <td>113mA</td>
@@ -265,8 +265,8 @@ Just my own measurements and values
         <td>Lite Sleep (Power Save Mode)</td>
         <td>14mA</td>
         <td>11mA</td>
-        <td>12.5mA</td>
-        <td>?</td>
+        <td>12.3mA</td>
+        <td>11.8</td>
         <td>55mA</td>
         <td>?</td>
         <td>29mA</td>
@@ -277,7 +277,7 @@ Just my own measurements and values
         <td>2.68mA</td>
         <td>34μA</td>
         <td>16μA</td>
-        <td>?</td>
+        <td>27μA</td>
         <td>22μA</td>
         <td>?</td>
         <td>Has Power Switch</td>
