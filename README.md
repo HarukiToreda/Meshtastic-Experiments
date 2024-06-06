@@ -1,5 +1,5 @@
 # Meshtastic-Experiments
-Just my own measurements and values
+Just my own measurements and values obtained by testing and gathered from Manufacture's Information
 
 ## Devices Comparison (Based on information by suppliers)
 
@@ -210,7 +210,7 @@ Just my own measurements and values
   </table>
 </div>
 
-## Power Measured on Meshtastic Firmware 2.3.10
+## Power Measured on Meshtastic Firmware 2.3.10 from battery
 
 <div style="overflow-x: auto;">
   <table>
