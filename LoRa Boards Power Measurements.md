@@ -38,6 +38,17 @@
         <td>138mA</td>
         <td>N/A</td>
       </tr>
+        <tr>
+        <td>Standby (Blutooth Off)</td>
+        <td>?</td>
+        <td>43mA</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+      </tr>
       <tr>
         <td>Standby (Screen Off)</td>
         <td>54mA</td>
