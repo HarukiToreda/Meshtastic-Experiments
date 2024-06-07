@@ -242,7 +242,7 @@ Just my own measurements and values obtained by testing and gathered from Manufa
       <tr>
         <td>Standby (Screen On)</td>
         <td>57mA</td>
-        <td>104mA</td>
+        <td>110mA</td>
         <td>101mA</td>
         <td>N/A</td>
         <td>168mA</td>
@@ -253,7 +253,7 @@ Just my own measurements and values obtained by testing and gathered from Manufa
       <tr>
         <td>Standby (Screen Off)</td>
         <td>54mA</td>
-        <td>99mA</td>
+        <td>103mA</td>
         <td>101mA</td>
         <td>104.5mA</td>
         <td>148mA</td>
