@@ -206,6 +206,17 @@ Just my own measurements and values
         <td>$52.66</td>
         <td>$36.97</td>
       </tr>
+      <tr>
+        <td>Memory</td>
+        <td>?</td>
+        <td>384KB ROM; 512KB SRAM; 16KB RTC SRAM; 8MB SiP Flash</td>
+        <td>?</td>
+        <td>384KB ROM; 512KB SRAM; 16KB RTC SRAM; 8MB SiP Flash</td>
+        <td>?</td>
+        <td>16MB Flash; 8MB PSRAM</td>
+        <td>?</td>
+        <td>?</td>
+      </tr>
     </tbody>
   </table>
 </div>
