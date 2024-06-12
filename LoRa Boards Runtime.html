@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Runtime Comparison Under Different Conditions</title>
+  <style>
+    .tab {
+      display: none;
+    }
+    .tab-active {
+      display: block;
+    }
+    .tabs {
+      overflow: hidden;
+      background: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .tabs button {
+      background: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    .tabs button:hover {
+      background-color: #ddd;
+    }
+    .tabs button.active {
+      background-color: #ccc;
+    }
+  </style>
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</head>
+<body>
+
+<h2>Runtime Comparison Under Different Conditions</h2>
+
+<div class="tabs">
+  <button class="tablink" onclick="openTab(event, 'Experiment1')">Experiment #1</button>
+  <button class="tablink" onclick="openTab(event, 'Experiment2')">Experiment #2</button>
+  <button class="tablink" onclick="openTab(event, 'Experiment3')">Experiment #3</button>
+</div>
+
+<div id="Experiment1" class="tab tab-active">
+  <h3>Experiment #1</h3>
+  <p>Experiment conditions:</p>
+  <ul>
+    <li>Factory Settings.</li>
+    <li>Client Mode</li>
+    <li>Frequency 906</li>
+    <li>Connected to a phone via Bluetooth.</li>
+  </ul>
+  <p>Use case: Mobile Node/ Remote Node.</p>
+  <div style="overflow-x: auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Device</th>
+          <th>Heltec ESP32 V2</th>
+          <th>Heltec ESP32 V3</th>
+          <th>Heltec Wireless Paper</th>
+          <th>Wireless Stick Lite (V3)</th>
+          <th>Heltec Wireless Tracker</th>
+          <th>Heltec Capsule Sensor V3</th>
+          <th>T-Deck</th>
+          <th>RAK nRF52840</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3000mAh Battery</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="Experiment2" class="tab">
+  <h3>Experiment #2</h3>
+  <p>Experiment conditions:</p>
+  <ul>
+    <li>Client Mode</li>
+    <li>Power Savemode Enabled. (RAK Cannot do Power Save Mode)</li>
+    <li>Screen Timeout: 60 sec</li>
+    <li>Lite Sleep Duration: 1800 sec (30min)</li>
+    <li>Frequency 906</li>
+    <li>Connected to a phone via Bluetooth.</li>
+  </ul>
+  <p>Use case: Mobile Node/ Remote Node.</p>
+  <div style="overflow-x: auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Device</th>
+          <th>Heltec ESP32 V2</th>
+          <th>Heltec ESP32 V3</th>
+          <th>Heltec Wireless Paper</th>
+          <th>Wireless Stick Lite (V3)</th>
+          <th>Heltec Wireless Tracker</th>
+          <th>Heltec Capsule Sensor V3</th>
+          <th>T-Deck</th>
+          <th>RAK nRF52840</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3000mAh Battery</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="Experiment3" class="tab">
+  <h3>Experiment #3</h3>
+  <p>Experiment conditions:</p>
+  <ul>
+    <li>Client Mode</li>
+    <li>Power Savemode Enabled. (RAK Cannot do Power Save Mode)</li>
+    <li>Screen Timeout: 60 sec</li>
+    <li>Lite Sleep Duration: 1800 sec (30min)</li>
+    <li>Frequency 906</li>
+    <li>CardKB Attached (Tdeck Comes with its own keyboard)</li>
+  </ul>
+  <p>Use case: Mobile Node/ Standalone</p>
+  <div style="overflow-x: auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Device</th>
+          <th>Heltec ESP32 V2</th>
+          <th>Heltec ESP32 V3</th>
+          <th>Heltec Wireless Tracker</th>
+          <th>T-Deck</th>
+          <th>RAK nRF52840</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1100mAh Battery</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3000mAh Battery</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4000mAh Battery</td>
+          <td></td>
+          <td>89 Hrs</td>
+          <td></td>
+          <td></td>
+          <td>312 Hrs</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  document.getElementsByClassName('tablink')[0].click();
+</script>
+
+</body>
+</html>
