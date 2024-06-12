@@ -109,12 +109,31 @@ Use case: Mobile Node/ Standalone
     </thead>
     <tbody>
       <tr>
+        <td>1100mAh Battery</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+          </thead>
+    <tbody>
+      <tr>
         <td>3000mAh Battery</td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
+      </tr>
+    <tbody>
+      <tr>
+        <td>4000mAh Battery</td>
+        <td></td>
+        <td>89 Hrs</td>
+        <td></td>
+        <td></td>
+        <td>312 Hrs</td>
       </tr>
     </tbody>
   </table>
