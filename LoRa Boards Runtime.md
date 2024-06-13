@@ -3,7 +3,7 @@
 ## Experiment #1 - Factory Settings
 
 <details>
-  <summary>Experiment conditions:</summary>
+  <summary><a href="#">Experiment conditions:</a></summary>
   <ul>
     <li>Factory Settings.</li>
     <li>Client Mode</li>
@@ -29,14 +29,14 @@
       <tbody>
         <tr>
           <td>3000mAh Battery</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
         </tr>
       </tbody>
     </table>
@@ -48,12 +48,31 @@
 ## Experiment #2 - Best Power Saving Settings for Mobile Node/ Remote Node 
 
 <details>
-  <summary>Experiment conditions:</summary>
+  <summary><a href="#">Experiment conditions:</a></summary>
   <ul>
     <li>Client Mode</li>
-    <li>Power Savemode Enabled. (RAK Cannot do Power Save Mode)</li>
     <li>Screen Timeout: 60 sec</li>
-    <li>Lite Sleep Duration: 1800 sec (30min)</li>
+    <li>Power Savemode Enabled.
+      <details>
+        <summary><a href="#">Details:</a></summary>
+        <ul>
+          <li>Note that RAK devices cannot support this mode.</li>
+          <li>Power save mode is enabled to extend battery life, it does this by enabling Lite Sleep on ESP32 devices when there's no traffic on the mesh.</li>
+          <li>The node will still retransmit any packets while on Lite Sleep and go back to sleep after.</li>
+          <li>The Node will wake from Lite Sleep when activity is detected on the mesh, when button is pressed or when sleep duration setting is reached.</li>
+          <li>During Lite sleep, the Bluetooth will go on Sleep Mode, making the node draw very low currents. But you will not be able to change settings with the app in this mode.</li>
+          <li>After the node is awake. It will automatically reconnect to the app and notify if any messages have been received. You can change settings when this happens.</li>
+        </ul>
+      </details>
+    </li>
+    <li>Lite Sleep Duration: 1800 sec (30min)
+      <details>
+        <summary><a href="#">Details:</a></summary>
+        <ul>
+          <li>This setting tells the node how long to maintain Lite Sleep for, this way you can time when you can reconnect to remote nodes with the app should you need to change settings.</li>
+        </ul>
+      </details>
+    </li>
     <li>Frequency 906</li>
     <li>Connected to a phone via Bluetooth.</li>
   </ul>
@@ -76,14 +95,14 @@
       <tbody>
         <tr>
           <td>3000mAh Battery</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
         </tr>
       </tbody>
     </table>
@@ -95,13 +114,33 @@
 ## Experiment #3 - Best Power Saving Settings for Standalone Nodes 
 
 <details>
-  <summary>Experiment conditions:</summary>
+  <summary><a href="#">Experiment conditions:</a></summary>
   <ul>
     <li>Client Mode</li>
-    <li>Power Savemode Enabled. (RAK Cannot do Power Save Mode)</li>
     <li>Screen Timeout: 60 sec</li>
-    <li>Lite Sleep Duration: 1800 sec (30min)</li>
+    <li>Power Savemode Enabled.
+      <details>
+        <summary><a href="#">Details:</a></summary>
+        <ul>
+          <li>Note that RAK devices cannot support this mode.</li>
+          <li>Power save mode is enabled to extend battery life, it does this by enabling Lite Sleep on ESP32 devices when there's no traffic on the mesh.</li>
+          <li>The node will still retransmit any packets while on Lite Sleep and go back to sleep after.</li>
+          <li>The Node will wake from Lite Sleep when activity is detected on the mesh, when button is pressed or when sleep duration setting is reached.</li>
+          <li>During Lite sleep, the Bluetooth will go on Sleep Mode, making the node draw very low currents. But you will not be able to change settings with the app in this mode.</li>
+          <li>After the node is awake. It will automatically reconnect to the app and notify if any messages have been received. You can change settings when this happens.</li>
+        </ul>
+      </details>
+    </li>
+    <li>Lite Sleep Duration: 1800 sec (30min)
+      <details>
+        <summary><a href="#">Details:</a></summary>
+        <ul>
+          <li>This setting tells the node how long to maintain Lite Sleep for, this way you can time when you can reconnect to remote nodes with the app should you need to change settings.</li>
+        </ul>
+      </details>
+    </li>
     <li>Frequency 906</li>
+    <li>Connected to a phone via Bluetooth.</li>
     <li>CardKB Attached (Tdeck Comes with its own keyboard)</li>
   </ul>
   <p>Use case: Mobile Node/ Standalone</p>
@@ -120,27 +159,27 @@
       <tbody>
         <tr>
           <td>1100mAh Battery</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
         </tr>
         <tr>
           <td>3000mAh Battery</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
         </tr>
         <tr>
           <td>4000mAh Battery</td>
-          <td></td>
-          <td>89 Hrs</td>
-          <td></td>
-          <td></td>
-          <td>312 Hrs</td>
+          <td></td><!--Heltec V2-->
+          <td>89 Hrs</td><!--Heltec V3-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--T-Deck-->
+          <td>312 Hrs</td><!--RAK-->
         </tr>
       </tbody>
     </table>
