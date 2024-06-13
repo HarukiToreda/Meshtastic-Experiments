@@ -3,7 +3,7 @@
 ## Experiment #1 - Factory Settings
 
 <details>
-  <summary><span style="text-decoration: underline; color: blue; cursor: pointer;">Experiment conditions:</span></summary>
+  <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
     <li>Factory Settings.</li>
     <li>Client Mode</li>
@@ -48,7 +48,7 @@
 ## Experiment #2 - Best Power Saving Settings for Mobile Node/ Remote Node 
 
 <details>
-  <summary><span style="color: blue; text-decoration: underline; cursor: pointer;">Experiment conditions:</span></summary>
+  <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
     <li>Client Mode</li>
     <li>Screen Timeout: 60 sec</li>
@@ -114,7 +114,7 @@
 ## Experiment #3 - Best Power Saving Settings for Standalone Nodes 
 
 <details>
-  <summary><span style="color: blue; text-decoration: underline; cursor: pointer;">Experiment conditions:</span></summary>
+  <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
     <li>Client Mode</li>
     <li>Screen Timeout: 60 sec</li>
