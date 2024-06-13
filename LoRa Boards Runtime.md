@@ -54,7 +54,7 @@
     <li>Screen Timeout: 60 sec</li>
     <li>Power Savemode Enabled.
       <details>
-        <summary><a href="#">Details:</a></summary>
+        <summary style="cursor: pointer;">Details:</a></summary>
         <ul>
           <li>Note that RAK devices cannot support this mode.</li>
           <li>Power save mode is enabled to extend battery life, it does this by enabling Lite Sleep on ESP32 devices when there's no traffic on the mesh.</li>
@@ -67,7 +67,7 @@
     </li>
     <li>Lite Sleep Duration: 1800 sec (30min)
       <details>
-        <summary><a href="#">Details:</a></summary>
+        <summary style="cursor: pointer;">Details:</a></summary>
         <ul>
           <li>This setting tells the node how long to maintain Lite Sleep for, this way you can time when you can reconnect to remote nodes with the app should you need to change settings.</li>
         </ul>
@@ -120,7 +120,7 @@
     <li>Screen Timeout: 60 sec</li>
     <li>Power Savemode Enabled.
       <details>
-        <summary><a href="#">Details:</a></summary>
+        <summary style="cursor: pointer;">Details:</a></summary>
         <ul>
           <li>Note that RAK devices cannot support this mode.</li>
           <li>Power save mode is enabled to extend battery life, it does this by enabling Lite Sleep on ESP32 devices when there's no traffic on the mesh.</li>
@@ -133,7 +133,7 @@
     </li>
     <li>Lite Sleep Duration: 1800 sec (30min)
       <details>
-        <summary><a href="#">Details:</a></summary>
+        <summary style="cursor: pointer;">Details:</a></summary>
         <ul>
           <li>This setting tells the node how long to maintain Lite Sleep for, this way you can time when you can reconnect to remote nodes with the app should you need to change settings.</li>
         </ul>
