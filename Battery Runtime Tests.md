@@ -33,7 +33,7 @@
         <tr>
           <td>3000mAh Battery</td>
           <td></td><!--Heltec V2-->
-          <td></td><!--Heltec V3-->
+          <td>Testing</td><!--Heltec V3-->
           <td>Testing</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
