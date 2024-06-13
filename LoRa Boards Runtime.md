@@ -3,7 +3,7 @@
 ## Experiment #1 - Factory Settings
 
 <details>
-  <summary><span style="color: blue; text-decoration: underline; cursor: pointer;">Experiment conditions:</span></summary>
+  <summary><span style="text-decoration: underline; color: blue; cursor: pointer;">Experiment conditions:</span></summary>
   <ul>
     <li>Factory Settings.</li>
     <li>Client Mode</li>
