@@ -1,66 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Meshtastic Experiments - LoRa Boards Runtime</title>
-  <style>
-    .tab {
-      display: none;
-    }
-    .tab-active {
-      display: block;
-    }
-    .tabs {
-      overflow: hidden;
-      background: #f1f1f1;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .tabs button {
-      background: inherit;
-      float: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-      font-size: 17px;
-    }
-    .tabs button:hover {
-      background-color: #ddd;
-    }
-    .tabs button.active {
-      background-color: #ccc;
-    }
-  </style>
-  <script>
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tab");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablink");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-  </script>
-</head>
-<body>
+# Runtime Comparison Under Different Conditions
 
-<h2>Runtime Comparison Under Different Conditions</h2>
+## Experiment #1 - Factory Settings
 
-<div class="tabs">
-  <button class="tablink" onclick="openTab(event, 'Experiment1')">Experiment #1</button>
-  <button class="tablink" onclick="openTab(event, 'Experiment2')">Experiment #2</button>
-  <button class="tablink" onclick="openTab(event, 'Experiment3')">Experiment #3</button>
-</div>
-
-<div id="Experiment1" class="tab tab-active">
-  <h3>Experiment #1</h3>
-  <p>Experiment conditions:</p>
+<details>
+  <summary>Experiment conditions:</summary>
   <ul>
     <li>Factory Settings.</li>
     <li>Client Mode</li>
@@ -98,11 +41,14 @@
       </tbody>
     </table>
   </div>
-</div>
+</details>
 
-<div id="Experiment2" class="tab">
-  <h3>Experiment #2</h3>
-  <p>Experiment conditions:</p>
+---
+
+## Experiment #2 - Best Power Saving Settings for Mobile Node/ Remote Node 
+
+<details>
+  <summary>Experiment conditions:</summary>
   <ul>
     <li>Client Mode</li>
     <li>Power Savemode Enabled. (RAK Cannot do Power Save Mode)</li>
@@ -142,11 +88,14 @@
       </tbody>
     </table>
   </div>
-</div>
+</details>
 
-<div id="Experiment3" class="tab">
-  <h3>Experiment #3</h3>
-  <p>Experiment conditions:</p>
+---
+
+## Experiment #3 - Best Power Saving Settings for Standalone Nodes 
+
+<details>
+  <summary>Experiment conditions:</summary>
   <ul>
     <li>Client Mode</li>
     <li>Power Savemode Enabled. (RAK Cannot do Power Save Mode)</li>
@@ -196,11 +145,4 @@
       </tbody>
     </table>
   </div>
-</div>
-
-<script>
-  document.getElementsByClassName('tablink')[0].click();
-</script>
-
-</body>
-</html>
+</details>
