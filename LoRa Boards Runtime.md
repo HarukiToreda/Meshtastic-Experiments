@@ -11,6 +11,9 @@
     <li>Connected to a phone via Bluetooth.</li>
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
+</details>
+<details>
+  <summary style="cursor: pointer;">Results:</summary>
   <div style="overflow-x: auto;">
     <table>
       <thead>
@@ -31,7 +34,7 @@
           <td>3000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
-          <td></td><!--Wireless Paper-->
+          <td>90 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
@@ -77,6 +80,9 @@
     <li>Connected to a phone via Bluetooth.</li>
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
+  </details>
+  <details>
+  <summary style="cursor: pointer;">Results:</summary>
   <div style="overflow-x: auto;">
     <table>
       <thead>
@@ -144,6 +150,9 @@
     <li>CardKB Attached (Tdeck Comes with its own keyboard)</li>
   </ul>
   <p>Use case: Mobile Node/ Standalone</p>
+</details>
+<details>
+  <summary style="cursor: pointer;">Results:</summary>
   <div style="overflow-x: auto;">
     <table>
       <thead>
