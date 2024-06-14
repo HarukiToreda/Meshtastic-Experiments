@@ -12,7 +12,7 @@
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
 </details>
-<details>
+<details open>
   <summary style="cursor: pointer;">Results:</summary>
   <div style="overflow-x: auto;">
     <table>
@@ -81,7 +81,7 @@
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
   </details>
-  <details>
+<details open>
   <summary style="cursor: pointer;">Results:</summary>
   <div style="overflow-x: auto;">
     <table>
@@ -151,7 +151,7 @@
   </ul>
   <p>Use case: Mobile Node/ Standalone</p>
 </details>
-<details>
+<details open>
   <summary style="cursor: pointer;">Results:</summary>
   <div style="overflow-x: auto;">
     <table>
