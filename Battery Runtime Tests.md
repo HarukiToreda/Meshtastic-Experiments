@@ -33,7 +33,7 @@
         <tr>
           <td>3000mAh Battery</td>
           <td></td><!--Heltec V2-->
-          <td>Testing</td><!--Heltec V3-->
+          <td>30 Hrs</td><!--Heltec V3-->
           <td>29 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
