@@ -210,7 +210,7 @@ Just my own measurements and values obtained by testing and gathered from Manufa
   </table>
 </div>
 
-## Power Measured on Meshtastic Firmware 2.3.10 from battery
+## Power Measured on Meshtastic Firmware 2.3.10 from 3.7V battery(Not USB)
 
 <div style="overflow-x: auto;">
   <table>
@@ -249,6 +249,17 @@ Just my own measurements and values obtained by testing and gathered from Manufa
         <td>?</td>
         <td>138mA</td>
         <td>N/A</td>
+      </tr>
+        <tr>
+        <td>Standby (Blutooth Off)</td>
+        <td>?</td>
+        <td>43mA</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
       </tr>
       <tr>
         <td>Standby (Screen Off)</td>
