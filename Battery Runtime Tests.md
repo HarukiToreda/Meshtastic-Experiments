@@ -31,6 +31,28 @@
       </thead>
       <tbody>
         <tr>
+          <td>1100mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
+        </tr>
+        <tr>
+          <td>2000mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
+        </tr>
+        <tr>
           <td>3000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td>30 Hrs</td><!--Heltec V3-->
@@ -100,6 +122,28 @@
       </thead>
       <tbody>
         <tr>
+          <td>1100mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
+        </tr>
+        <tr>
+          <td>2000mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
+        </tr>
+        <tr>
           <td>3000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td>83 Hrs</td><!--Heltec V3-->
@@ -168,6 +212,14 @@
       <tbody>
         <tr>
           <td>1100mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAK-->
+        </tr>
+        <tr>
+          <td>2000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
