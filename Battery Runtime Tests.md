@@ -10,7 +10,7 @@
     <li>Screen Timeout: 60 sec</li>
     <li>Power Savemode Dissabled.
     <li>Frequency 906</li>
-    <li>Connected to a phone via Bluetooth.</li>
+    <li>Connected to Android phone via Bluetooth.</li>
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
 </details>
@@ -102,7 +102,7 @@
       </details>
     </li>
     <li>Frequency 906</li>
-    <li>Connected to a phone via Bluetooth.</li>
+    <li>Connected to Android phone via Bluetooth.</li>
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
   </details>
@@ -194,7 +194,7 @@
       </details>
     </li>
     <li>Frequency 906</li>
-    <li>Connected to a phone via Bluetooth.</li>
+    <li>Connected to Android phone via Bluetooth.</li>
     <li>CardKB Attached (Tdeck Comes with its own keyboard)</li>
   </ul>
   <p>Use case: Mobile Node/ Standalone</p>
