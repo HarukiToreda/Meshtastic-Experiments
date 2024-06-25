@@ -28,7 +28,8 @@
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Capsule Sensor V3</th>
           <th>T-Deck</th>
-          <th>RAK nRF52840</th>
+          <th>RAK19007 (RAK4631)</th>
+          <th>RAK19003 (RAK4631)</th>          
         </tr>
       </thead>
       <tbody>
@@ -41,7 +42,8 @@
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->          
         </tr>
         <tr>
           <td>2000mAh Battery</td>
@@ -52,7 +54,8 @@
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->          
         </tr>
         <tr>
           <td>3000mAh Battery</td>
@@ -63,7 +66,8 @@
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->          
         </tr>
       </tbody>
     </table>
@@ -120,7 +124,8 @@
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Capsule Sensor V3</th>
           <th>T-Deck</th>
-          <th>RAK nRF52840</th>
+          <th>RAK19007 (RAK4631)</th>
+          <th>RAK19003 (RAK4631)</th>      
         </tr>
       </thead>
       <tbody>
@@ -133,7 +138,8 @@
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->          
         </tr>
         <tr>
           <td>2000mAh Battery</td>
@@ -144,7 +150,8 @@
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
         </tr>
         <tr>
           <td>3000mAh Battery</td>
@@ -155,7 +162,8 @@
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
         </tr>
       </tbody>
     </table>
@@ -210,7 +218,8 @@
           <th>Heltec ESP32 V3</th>
           <th>Heltec Wireless Tracker</th>
           <th>T-Deck</th>
-          <th>RAK nRF52840</th>
+          <th>RAK19007 (RAK4631)</th>
+          <th>RAK19003 (RAK4631)</th>    
         </tr>
       </thead>
       <tbody>
@@ -220,7 +229,8 @@
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
         </tr>
         <tr>
           <td>2000mAh Battery</td>
@@ -228,7 +238,8 @@
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
         </tr>
         <tr>
           <td>3000mAh Battery</td>
@@ -236,7 +247,8 @@
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
         </tr>
         <tr>
           <td>4000mAh Battery</td>
@@ -244,7 +256,8 @@
           <td>89 Hrs</td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--T-Deck-->
-          <td>312 Hrs</td><!--RAK-->
+          <td></td><!--RAKRAK19007-->
+          <td>312 Hrs</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
     </table>
