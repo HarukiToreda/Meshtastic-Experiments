@@ -5,6 +5,7 @@
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
+    <li>Firmware 2.3.12</li>    
     <li>Factory Settings.</li>
     <li>Client Mode</li>
     <li>Frequency 906</li>
@@ -75,6 +76,7 @@
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
+    <li>Firmware 2.3.12</li>       
     <li>Client Mode</li>
     <li>Screen Timeout: 60 sec</li>
     <li>Power Savemode Enabled.
@@ -166,6 +168,7 @@
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
+    <li>Firmware 2.3.12</li>       
     <li>Client Mode</li>
     <li>Screen Timeout: 60 sec</li>
     <li>Power Savemode Enabled.
