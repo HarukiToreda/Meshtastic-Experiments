@@ -6,8 +6,9 @@
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
     <li>Firmware 2.3.12</li>    
-    <li>Factory Settings.</li>
     <li>Client Mode</li>
+    <li>Screen Timeout: 60 sec</li>
+    <li>Power Savemode Dissabled.
     <li>Frequency 906</li>
     <li>Connected to a phone via Bluetooth.</li>
   </ul>
