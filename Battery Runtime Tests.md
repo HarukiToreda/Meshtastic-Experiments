@@ -1,6 +1,6 @@
 # Runtime Comparison Under Different Conditions
 
-## Experiment #1 - Factory Settings
+## Experiment #1 - Default Settings
 
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
