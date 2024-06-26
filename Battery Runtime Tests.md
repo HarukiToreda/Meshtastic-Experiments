@@ -27,7 +27,7 @@
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Capsule Sensor V3</th>
-          <th>T-Deck</th>
+          <th>TDeck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>          
         </tr>
@@ -123,7 +123,7 @@
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Capsule Sensor V3</th>
-          <th>T-Deck</th>
+          <th>TDeck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>      
         </tr>
@@ -217,7 +217,7 @@
           <th>Heltec ESP32 V2</th>
           <th>Heltec ESP32 V3</th>
           <th>Heltec Wireless Tracker</th>
-          <th>T-Deck</th>
+          <th>TDeck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>    
         </tr>
