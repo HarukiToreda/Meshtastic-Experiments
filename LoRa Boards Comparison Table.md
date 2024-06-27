@@ -273,7 +273,7 @@ Just my own measurements and values
         <td>384KB ROM</td><!--Wireless Paper-->
         <td>384KB ROM</td><!--Wireless Stick Lite-->
         <td>384KB ROM</td><!--Wireless Tracker-->
-        <td>?</td><!--Capsule Sensor V3-->
+        <td>384KB ROM</td><!--Capsule Sensor V3-->
         <td>384KB ROM</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>384KB ROM</td><!--T-Deck-->
@@ -286,7 +286,7 @@ Just my own measurements and values
         <td>512KB SRAM</td><!--Wireless Paper-->
         <td>512KB SRAM</td><!--Wireless Stick Lite-->
         <td>512KB SRAM</td><!--Wireless Tracker-->
-        <td>?</td><!--Capsule Sensor V3-->
+        <td>512KB SRAM</td><!--Capsule Sensor V3-->
         <td>512KB SRAM</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>512 KB SRAM</td><!--T-Deck-->
@@ -299,7 +299,7 @@ Just my own measurements and values
         <td>16KB RTC SRAM</td><!--Wireless Paper-->
         <td>16KB RTC SRAM</td><!--Wireless Stick Lite-->
         <td>16KB RTC SRAM</td><!--Wireless Tracker-->
-        <td>?</td><!--Capsule Sensor V3-->
+        <td>16KB RTC SRAM</td><!--Capsule Sensor V3-->
         <td>16KB RTC SRAM</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>16KB RTC SRAM</td><!--T-Deck-->
@@ -312,7 +312,7 @@ Just my own measurements and values
         <td>8MB SiP Flash</td><!--Wireless Paper-->
         <td>8MB SiP Flash</td><!--Wireless Stick Lite-->
         <td>8MB SiP Flash</td><!--Wireless Tracker-->
-        <td>?</td><!--Capsule Sensor V3-->
+        <td>8MB SiP Flash</td><!--Capsule Sensor V3-->
         <td>8MB SiP Flash</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
@@ -338,7 +338,7 @@ Just my own measurements and values
         <td>N/A</td><!--Wireless Paper-->
         <td>N/A</td><!--Wireless Stick Lite-->
         <td>N/A</td><!--Wireless Tracker-->
-        <td>?</td><!--Capsule Sensor V3-->
+        <td>N/A</td><!--Capsule Sensor V3-->
         <td>128MB Flash</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>16MB Flash</td><!--T-Deck-->
