@@ -1,5 +1,5 @@
 # Meshtastic-Experiments
-Just my own measurements and values obtained by testing and gathered from Manufacture's Information
+Just my own measurements and values
 
 ## Devices Comparison (Based on information by suppliers)
 
@@ -21,194 +21,206 @@ Just my own measurements and values obtained by testing and gathered from Manufa
     <tbody>
       <tr>
         <td>MCU Chip</td>
-        <td>ESP32-D0</td>
-        <td>ESP32-S3</td>
-        <td>ESP32-S3FN8</td>
-        <td>ESP32-S3</td>
-        <td>ESP32-S3FN8</td>
-        <td>ESP32-S3FN8</td>
-        <td>ESP32-S3</td>
-        <td>RAK4631</td>
+        <td>ESP32-D0</td><!--Heltec V2-->
+        <td>ESP32-S3</td><!--Heltec V3-->
+        <td>ESP32-S3FN8</td><!--Wireless Paper-->
+        <td>ESP32-S3</td><!--Wireless Stick Lite-->
+        <td>ESP32-S3FN8</td><!--Wireless Tracker-->
+        <td>ESP32-S3FN8</td><!--Capsule Sensor V3-->
+        <td>ESP32-S3</td><!--T-Deck-->
+        <td>RAK4631</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>LoRa Chip</td>
-        <td>SX1276</td>
-        <td>SX1262</td>
-        <td>SX1262</td>
-        <td>SX1262</td>
-        <td>SX1262</td>
-        <td>SX1262</td>
-        <td>SX1262</td>
-        <td>SX1262</td>
+        <td>SX1276</td><!--Heltec V2-->
+        <td>SX1262</td><!--Heltec V3-->
+        <td>SX1262</td><!--Wireless Paper-->
+        <td>SX1262</td><!--Wireless Stick Lite-->
+        <td>SX1262</td><!--Wireless Tracker-->
+        <td>SX1262</td><!--Capsule Sensor V3-->
+        <td>SX1262</td><!--T-Deck-->
+        <td>SX1262</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>GPS Chip</td>
-        <td>N/A</td>
-        <td>N/A</td>
-        <td>N/A</td>
-        <td>N/A</td>
-        <td>UC6580</td>
-        <td>N/A</td>
-        <td>N/A</td>
-        <td>N/A</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V3-->
+        <td>N/A</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>UC6580</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>N/A</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>GNSS Chip</td>
-        <td>N/A</td>
-        <td>N/A</td>
-        <td>N/A</td>
-        <td>N/A</td>
-        <td>N/A</td>
-        <td>L76k</td>
-        <td>N/A</td>
-        <td>N/A</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V3-->
+        <td>N/A</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>N/A</td><!--Wireless Tracker-->
+        <td>L76k</td><!--Capsule Sensor V3-->
+        <td>N/A</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>USB Socket</td>
-        <td>Micro USB</td>
-        <td>USB-C</td>
-        <td>USB-C</td>
-        <td>USB-C</td>
-        <td>USB-C</td>
-        <td>Wireless Boot</td>
-        <td>USB-C</td>
-        <td>USB-C</td>
+        <td>Micro USB</td><!--Heltec V2-->
+        <td>USB-C</td><!--Heltec V3-->
+        <td>USB-C</td><!--Wireless Paper-->
+        <td>USB-C</td><!--Wireless Stick Lite-->
+        <td>USB-C</td><!--Wireless Tracker-->
+        <td>Wireless Boot</td><!--Capsule Sensor V3-->
+        <td>USB-C</td><!--T-Deck-->
+        <td>USB-C</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Deep Sleep</td>
-        <td>800μA</td>
-        <td>&lt;10μA</td>
-        <td>20μA</td>
-        <td>&lt;10μA</td>
-        <td>15μA</td>
-        <td>25μA</td>
-        <td>N/A</td>
-        <td>2μA</td>
+        <td>800μA</td><!--Heltec V2-->
+        <td>&lt;10μA</td><!--Heltec V3-->
+        <td>20μA</td><!--Wireless Paper-->
+        <td>&lt;10μA</td><!--Wireless Stick Lite-->
+        <td>15μA</td><!--Wireless Tracker-->
+        <td>25μA</td><!--Capsule Sensor V3-->
+        <td>N/A</td><!--T-Deck-->
+        <td>2μA</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Frequency</td>
-        <td>470~510 MHz, 863~928 MHz</td>
-        <td>470~510 MHz, 863~928 MHz</td>
-        <td>470~510 MHz, 863~928 MHz</td>
-        <td>470~510 MHz, 863~928 MHz</td>
-        <td>470~510 MHz, 863~928 MHz</td>
-        <td>470~510 MHz, 863~928 MHz</td>
-        <td>470~510 MHz, 863~928 MHz</td>
-        <td>470~510 MHz, 863~928 MHz</td>
+        <td>470~510 MHz, 863~928 MHz</td><!--Heltec V2-->
+        <td>470~510 MHz, 863~928 MHz</td><!--Heltec V3-->
+        <td>470~510 MHz, 863~928 MHz</td><!--Wireless Paper-->
+        <td>470~510 MHz, 863~928 MHz</td><!--Wireless Stick Lite-->
+        <td>470~510 MHz, 863~928 MHz</td><!--Wireless Tracker-->
+        <td>470~510 MHz, 863~928 MHz</td><!--Capsule Sensor V3-->
+        <td>470~510 MHz, 863~928 MHz</td><!--T-Deck-->
+        <td>470~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Max. TX Power</td>
-        <td>19 ± 1dB</td>
-        <td>21 ± 1dBm</td>
-        <td>21 ± 1 dBm</td>
-        <td>21 ± 1 dBm</td>
-        <td>21 ± 1 dBm</td>
-        <td>21 ± 1 dBm</td>
-        <td>22 ± 1 dBm</td>
-        <td>22 ± 1 dBm</td>
+        <td>19 ± 1dB</td><!--Heltec V2-->
+        <td>21 ± 1dBm</td><!--Heltec V3-->
+        <td>21 ± 1 dBm</td><!--Wireless Paper-->
+        <td>21 ± 1 dBm</td><!--Wireless Stick Lite-->
+        <td>21 ± 1 dBm</td><!--Wireless Tracker-->
+        <td>21 ± 1 dBm</td><!--Capsule Sensor V3-->
+        <td>22 ± 1 dBm</td><!--T-Deck-->
+        <td>22 ± 1 dBm</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
-        <td>-135 dBm</td>
-        <td>-136 dBm</td>
-        <td>-134 dBm</td>
-        <td>-134 dBm</td>
-        <td>-137dBm</td>
-        <td>-135dBm</td>
-        <td>?</td>
-        <td>?</td>
+        <td>-135 dBm</td><!--Heltec V2-->
+        <td>-136 dBm</td><!--Heltec V3-->
+        <td>-134 dBm</td><!--Wireless Paper-->
+        <td>-134 dBm</td><!--Wireless Stick Lite-->
+        <td>-137dBm</td><!--Wireless Tracker-->
+        <td>-135dBm</td><!--Capsule Sensor V3-->
+        <td>?</td><!--T-Deck-->
+        <td>?</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Wi-Fi</td>
-        <td>802.11 b/g/n 150M bps</td>
-        <td>802.11 b/g/n 150 Mbps</td>
-        <td>802.11 b/g/n 150 Mbps</td>
-        <td>802.11 b/g/n 150 Mbps</td>
-        <td>802.11 b/g/n 150 Mbps</td>
-        <td>802.11 b/g/n 150 Mbps</td>
-        <td>802.11 b/g/n 150 Mbps</td>
-        <td>N/A</td>
+        <td>802.11 b/g/n 150M bps</td><!--Heltec V2-->
+        <td>802.11 b/g/n 150 Mbps</td><!--Heltec V3-->
+        <td>802.11 b/g/n 150 Mbps</td><!--Wireless Paper-->
+        <td>802.11 b/g/n 150 Mbps</td><!--Wireless Stick Lite-->
+        <td>802.11 b/g/n 150 Mbps</td><!--Wireless Tracker-->
+        <td>802.11 b/g/n 150 Mbps</td><!--Capsule Sensor V3-->
+        <td>802.11 b/g/n 150 Mbps</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Bluetooth</td>
-        <td>BT-5 (LE)</td>
-        <td>BT-5 (LE)</td>
-        <td>BT-5 (LE)</td>
-        <td>BT-5, BT mesh</td>
-        <td>BT-5 (LE), BT mesh</td>
-        <td>BT-5 (LE), BT mesh</td>
-        <td>BT-5 (LE)</td>
-        <td>BT-5 (LE)</td>
+        <td>BT-5 (LE)</td><!--Heltec V2-->
+        <td>BT-5 (LE)</td><!--Heltec V3-->
+        <td>BT-5 (LE)</td><!--Wireless Paper-->
+        <td>BT-5, BT mesh</td><!--Wireless Stick Lite-->
+        <td>BT-5 (LE), BT mesh</td><!--Wireless Tracker-->
+        <td>BT-5 (LE), BT mesh</td><!--Capsule Sensor V3-->
+        <td>BT-5 (LE)</td><!--T-Deck-->
+        <td>BT-5 (LE)</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Display Type</td>
-        <td>OLED</td>
-        <td>OLED</td>
-        <td>E-ink</td>
-        <td>N/A</td>
-        <td>TFT</td>
-        <td>N/A</td>
-        <td>LCD</td>
-        <td>N/A</td>
+        <td>OLED</td><!--Heltec V2-->
+        <td>OLED</td><!--Heltec V3-->
+        <td>E-ink</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>TFT</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>LCD</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Display Size</td>
-        <td>0.96 Inch</td>
-        <td>0.96 Inch</td>
-        <td>2.13 Inch</td>
-        <td>N/A</td>
-        <td>0.96-inch</td>
-        <td>N/A</td>
-        <td>2.8 Inch</td>
-        <td>N/A</td>
+        <td>0.96 Inch</td><!--Heltec V2-->
+        <td>0.96 Inch</td><!--Heltec V3-->
+        <td>2.13 Inch</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>0.96-inch</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>2.8 Inch</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Charging IC</td>
-        <td>TP4054</td>
-        <td>TP4054</td>
-        <td>TP4054</td>
-        <td>TP4054</td>
-        <td>TP4054</td>
-        <td>TP4054</td>
-        <td>TP4054</td>
-        <td>-</td>
+        <td>TP4054</td><!--Heltec V2-->
+        <td>TP4054</td><!--Heltec V3-->
+        <td>TP4054</td><!--Wireless Paper-->
+        <td>TP4054</td><!--Wireless Stick Lite-->
+        <td>TP4054</td><!--Wireless Tracker-->
+        <td>TP4054</td><!--Capsule Sensor V3-->
+        <td>TP4054</td><!--T-Deck-->
+        <td>-</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Diagram</td>
-        <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32/V2.1/WIFI_LoRa_32_V2.1(868-915).PDF">Diagram Link</a></td>
-        <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA(F)_V3.1_Schematic_Diagram.pdf">Diagram Link</a></td>
-        <td><a href="https://resource.heltec.cn/download/Wireless_Paper/Wireless_Paper_V0.4_Schematic_Diagram.pdf">Diagram Link</a></td>
-        <td><a href="https://resource.heltec.cn/download/Wireless_Stick_Lite_V3/HTIT-WSL_V3_Schematic_Diagram.pdf">Diagram Link</a></td>
-        <td><a href="https://resource.heltec.cn/download/Wireless_Tracker/Wireless_Tacker1.1/HTIT-Tracker_V0.5.pdf">Diagram Link</a></td>
-        <td><a href="https://resource.heltec.cn/download/Heltec%20Capsule%20Sensor%20V3/Capsule_Main_Esp32_Schematic_Diagram.pdf">Diagram Link</a></td>
-        <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Diagram Link</a></td>
-        <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td>
+        <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32/V2.1/WIFI_LoRa_32_V2.1(868-915).PDF">Diagram Link</a></td><!--Heltec V2-->
+        <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA(F)_V3.1_Schematic_Diagram.pdf">Diagram Link</a></td><!--Heltec V3-->
+        <td><a href="https://resource.heltec.cn/download/Wireless_Paper/Wireless_Paper_V0.4_Schematic_Diagram.pdf">Diagram Link</a></td><!--Wireless Paper-->
+        <td><a href="https://resource.heltec.cn/download/Wireless_Stick_Lite_V3/HTIT-WSL_V3_Schematic_Diagram.pdf">Diagram Link</a></td><!--Wireless Stick Lite-->
+        <td><a href="https://resource.heltec.cn/download/Wireless_Tracker/Wireless_Tacker1.1/HTIT-Tracker_V0.5.pdf">Diagram Link</a></td><!--Wireless Tracker-->
+        <td><a href="https://resource.heltec.cn/download/Heltec%20Capsule%20Sensor%20V3/Capsule_Main_Esp32_Schematic_Diagram.pdf">Diagram Link</a></td><!--Capsule Sensor V3-->
+        <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Diagram Link</a></td><!--T-Deck-->
+        <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Input</td>
-        <td>User Button, Reset Button</td>
-        <td>User Button, Reset Button</td>
-        <td>User Button, Reset Button</td>
-        <td>User Button, Reset Button</td>
-        <td>User Button, Reset Button</td>
-        <td>User Button, Reset Button</td>
-        <td>Touch Screen, Keyboard, trackball, Reset Button</td>
-        <td>Reset Button</td>
+        <td>User Button, Reset Button</td><!--Heltec V2-->
+        <td>User Button, Reset Button</td><!--Heltec V3-->
+        <td>User Button, Reset Button</td><!--Wireless Paper-->
+        <td>User Button, Reset Button</td><!--Wireless Stick Lite-->
+        <td>User Button, Reset Button</td><!--Wireless Tracker-->
+        <td>User Button, Reset Button</td><!--Capsule Sensor V3-->
+        <td>Touch Screen, Keyboard, trackball, Reset Button</td><!--T-Deck-->
+        <td>Reset Button</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Price Range USD</td>
-        <td>$15.47+</td>
-        <td>$17.90 - $19.90</td>
-        <td>$15.90</td>
-        <td>$14.90</td>
-        <td>$19.90</td>
-        <td>$25.99</td>
-        <td>$52.66</td>
-        <td>$36.97</td>
+        <td>$15.47+</td><!--Heltec V2-->
+        <td>$17.90 - $19.90</td><!--Heltec V3-->
+        <td>$15.90</td><!--Wireless Paper-->
+        <td>$14.90</td><!--Wireless Stick Lite-->
+        <td>$19.90</td><!--Wireless Tracker-->
+        <td>$25.99</td><!--Capsule Sensor V3-->
+        <td>$52.66</td><!--T-Deck-->
+        <td>$36.97</td><!--RAKRAK19007-->
+      </tr>
+      <tr>
+        <td>Memory</td>
+        <td>?</td><!--Heltec V2-->
+        <td>384KB ROM; 512KB SRAM; 16KB RTC SRAM; 8MB SiP Flash</td><!--Heltec V3-->
+        <td>?</td><!--Wireless Paper-->
+        <td>384KB ROM; 512KB SRAM; 16KB RTC SRAM; 8MB SiP Flash</td><!--Wireless Stick Lite-->
+        <td>?</td><!--Wireless Tracker-->
+        <td>16MB Flash; 8MB PSRAM</td><!--Capsule Sensor V3-->
+        <td>?</td><!--T-Deck-->
+        <td>?</td><!--RAKRAK19007-->
       </tr>
     </tbody>
   </table>
 </div>
+
 
 ## Power Measured on Meshtastic Firmware 2.3.10 from 3.7V battery(Not USB)
 
