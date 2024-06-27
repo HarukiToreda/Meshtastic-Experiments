@@ -14,6 +14,8 @@ Just my own measurements and values
         <th>Wireless Stick Lite (V3)</th>
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Capsule Sensor V3</th>
+        <th>Heltec Vision Master E213</th>
+        <th>Heltec Vision Master E290</th>        
         <th>T-Deck</th>
         <th>RAK nRF52840</th>
       </tr>
@@ -27,6 +29,8 @@ Just my own measurements and values
         <td>ESP32-S3</td><!--Wireless Stick Lite-->
         <td>ESP32-S3FN8</td><!--Wireless Tracker-->
         <td>ESP32-S3FN8</td><!--Capsule Sensor V3-->
+        <td>ESP32-S3R8</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290--> 
         <td>ESP32-S3</td><!--T-Deck-->
         <td>RAK4631</td><!--RAKRAK19007-->
       </tr>
@@ -38,6 +42,8 @@ Just my own measurements and values
         <td>SX1262</td><!--Wireless Stick Lite-->
         <td>SX1262</td><!--Wireless Tracker-->
         <td>SX1262</td><!--Capsule Sensor V3-->
+        <td>SX1262</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>SX1262</td><!--T-Deck-->
         <td>SX1262</td><!--RAKRAK19007-->
       </tr>
@@ -49,6 +55,8 @@ Just my own measurements and values
         <td>N/A</td><!--Wireless Stick Lite-->
         <td>UC6580</td><!--Wireless Tracker-->
         <td>N/A</td><!--Capsule Sensor V3-->
+        <td>N/A</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
       </tr>
@@ -60,17 +68,21 @@ Just my own measurements and values
         <td>N/A</td><!--Wireless Stick Lite-->
         <td>N/A</td><!--Wireless Tracker-->
         <td>L76k</td><!--Capsule Sensor V3-->
+        <td>N/A</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
       </tr>
       <tr>
-        <td>USB Socket</td>
+        <td>Charging Interface</td>
         <td>Micro USB</td><!--Heltec V2-->
         <td>USB-C</td><!--Heltec V3-->
         <td>USB-C</td><!--Wireless Paper-->
         <td>USB-C</td><!--Wireless Stick Lite-->
         <td>USB-C</td><!--Wireless Tracker-->
         <td>Wireless Boot</td><!--Capsule Sensor V3-->
+        <td>USB-C</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>USB-C</td><!--T-Deck-->
         <td>USB-C</td><!--RAKRAK19007-->
       </tr>
@@ -82,6 +94,8 @@ Just my own measurements and values
         <td>&lt;10μA</td><!--Wireless Stick Lite-->
         <td>15μA</td><!--Wireless Tracker-->
         <td>25μA</td><!--Capsule Sensor V3-->
+        <td>18μA</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>2μA</td><!--RAKRAK19007-->
       </tr>
@@ -93,6 +107,8 @@ Just my own measurements and values
         <td>470~510 MHz, 863~928 MHz</td><!--Wireless Stick Lite-->
         <td>470~510 MHz, 863~928 MHz</td><!--Wireless Tracker-->
         <td>470~510 MHz, 863~928 MHz</td><!--Capsule Sensor V3-->
+        <td>470~510 MHz, 863~928 MHz</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>470~510 MHz, 863~928 MHz</td><!--T-Deck-->
         <td>470~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->
       </tr>
@@ -100,12 +116,14 @@ Just my own measurements and values
         <td>Max. TX Power</td>
         <td>19 ± 1dB</td><!--Heltec V2-->
         <td>21 ± 1dBm</td><!--Heltec V3-->
-        <td>21 ± 1 dBm</td><!--Wireless Paper-->
-        <td>21 ± 1 dBm</td><!--Wireless Stick Lite-->
-        <td>21 ± 1 dBm</td><!--Wireless Tracker-->
-        <td>21 ± 1 dBm</td><!--Capsule Sensor V3-->
-        <td>22 ± 1 dBm</td><!--T-Deck-->
-        <td>22 ± 1 dBm</td><!--RAKRAK19007-->
+        <td>21 ± 1dBm</td><!--Wireless Paper-->
+        <td>21 ± 1dBm</td><!--Wireless Stick Lite-->
+        <td>21 ± 1dBm</td><!--Wireless Tracker-->
+        <td>21 ± 1dBm</td><!--Capsule Sensor V3-->
+        <td>21 ± 1dBm</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
+        <td>22 ± 1dBm</td><!--T-Deck-->
+        <td>22 ± 1dBm</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
@@ -113,8 +131,10 @@ Just my own measurements and values
         <td>-136 dBm</td><!--Heltec V3-->
         <td>-134 dBm</td><!--Wireless Paper-->
         <td>-134 dBm</td><!--Wireless Stick Lite-->
-        <td>-137dBm</td><!--Wireless Tracker-->
-        <td>-135dBm</td><!--Capsule Sensor V3-->
+        <td>-137 dBm</td><!--Wireless Tracker-->
+        <td>-135 dBm</td><!--Capsule Sensor V3-->
+        <td>-136 dBm</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -126,6 +146,8 @@ Just my own measurements and values
         <td>802.11 b/g/n 150 Mbps</td><!--Wireless Stick Lite-->
         <td>802.11 b/g/n 150 Mbps</td><!--Wireless Tracker-->
         <td>802.11 b/g/n 150 Mbps</td><!--Capsule Sensor V3-->
+        <td>802.11 b/g/n 150 Mbps</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>802.11 b/g/n 150 Mbps</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
       </tr>
@@ -134,9 +156,11 @@ Just my own measurements and values
         <td>BT-5 (LE)</td><!--Heltec V2-->
         <td>BT-5 (LE)</td><!--Heltec V3-->
         <td>BT-5 (LE)</td><!--Wireless Paper-->
-        <td>BT-5, BT mesh</td><!--Wireless Stick Lite-->
-        <td>BT-5 (LE), BT mesh</td><!--Wireless Tracker-->
-        <td>BT-5 (LE), BT mesh</td><!--Capsule Sensor V3-->
+        <td>BT-5 (LE)</td><!--Wireless Stick Lite-->
+        <td>BT-5 (LE)</td><!--Wireless Tracker-->
+        <td>BT-5 (LE)</td><!--Capsule Sensor V3-->
+        <td>BT-5 (LE)</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>BT-5 (LE)</td><!--T-Deck-->
         <td>BT-5 (LE)</td><!--RAKRAK19007-->
       </tr>
@@ -148,6 +172,8 @@ Just my own measurements and values
         <td>N/A</td><!--Wireless Stick Lite-->
         <td>TFT</td><!--Wireless Tracker-->
         <td>N/A</td><!--Capsule Sensor V3-->
+        <td>E-ink</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>LCD</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
       </tr>
@@ -159,6 +185,8 @@ Just my own measurements and values
         <td>N/A</td><!--Wireless Stick Lite-->
         <td>0.96-inch</td><!--Wireless Tracker-->
         <td>N/A</td><!--Capsule Sensor V3-->
+        <td>2.13 Inch</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>2.8 Inch</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
       </tr>
@@ -170,6 +198,8 @@ Just my own measurements and values
         <td>TP4054</td><!--Wireless Stick Lite-->
         <td>TP4054</td><!--Wireless Tracker-->
         <td>TP4054</td><!--Capsule Sensor V3-->
+        <td>TP4054</td><!--Vision Master E213-->
+        <td>TP4054</td><!--Vision Master E290-->         
         <td>TP4054</td><!--T-Deck-->
         <td>-</td><!--RAKRAK19007-->
       </tr>
@@ -181,6 +211,8 @@ Just my own measurements and values
         <td><a href="https://resource.heltec.cn/download/Wireless_Stick_Lite_V3/HTIT-WSL_V3_Schematic_Diagram.pdf">Diagram Link</a></td><!--Wireless Stick Lite-->
         <td><a href="https://resource.heltec.cn/download/Wireless_Tracker/Wireless_Tacker1.1/HTIT-Tracker_V0.5.pdf">Diagram Link</a></td><!--Wireless Tracker-->
         <td><a href="https://resource.heltec.cn/download/Heltec%20Capsule%20Sensor%20V3/Capsule_Main_Esp32_Schematic_Diagram.pdf">Diagram Link</a></td><!--Capsule Sensor V3-->
+        <td><a href="https://resource.heltec.cn/download/HT-VME213/HT-VME213%20Schematic%20Diagram.pdf">Diagram Link</a></td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Diagram Link</a></td><!--T-Deck-->
         <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19007-->
       </tr>
@@ -192,6 +224,8 @@ Just my own measurements and values
         <td>User Button, Reset Button</td><!--Wireless Stick Lite-->
         <td>User Button, Reset Button</td><!--Wireless Tracker-->
         <td>User Button, Reset Button</td><!--Capsule Sensor V3-->
+        <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>Touch Screen, Keyboard, trackball, Reset Button</td><!--T-Deck-->
         <td>Reset Button</td><!--RAKRAK19007-->
       </tr>
@@ -203,24 +237,116 @@ Just my own measurements and values
         <td>$14.90</td><!--Wireless Stick Lite-->
         <td>$19.90</td><!--Wireless Tracker-->
         <td>$25.99</td><!--Capsule Sensor V3-->
+        <td>$19.99</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
         <td>$52.66</td><!--T-Deck-->
         <td>$36.97</td><!--RAKRAK19007-->
-      </tr>
-      <tr>
-        <td>Memory</td>
-        <td>?</td><!--Heltec V2-->
-        <td>384KB ROM; 512KB SRAM; 16KB RTC SRAM; 8MB SiP Flash</td><!--Heltec V3-->
-        <td>?</td><!--Wireless Paper-->
-        <td>384KB ROM; 512KB SRAM; 16KB RTC SRAM; 8MB SiP Flash</td><!--Wireless Stick Lite-->
-        <td>?</td><!--Wireless Tracker-->
-        <td>16MB Flash; 8MB PSRAM</td><!--Capsule Sensor V3-->
-        <td>?</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
       </tr>
     </tbody>
   </table>
 </div>
 
+### Storage
+
+<div style="overflow-x: auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>Device</th>
+        <th>Heltec ESP32 V2</th>
+        <th>Heltec ESP32 V3</th>
+        <th>Heltec Wireless Paper</th>
+        <th>Wireless Stick Lite (V3)</th>
+        <th>Heltec Wireless Tracker</th>
+        <th>Heltec Capsule Sensor V3</th>
+        <th>Heltec Vision Master E213</th>
+        <th>Heltec Vision Master E290</th>        
+        <th>T-Deck</th>
+        <th>RAK nRF52840</th>
+      </tr>
+    </thead>
+    <tbody>      
+      <tr>
+        <td>Memory ROM</td>
+        <td>448KB ROM</td><!--Heltec V2-->
+        <td>384KB ROM</td><!--Heltec V3-->
+        <td>384KB ROM</td><!--Wireless Paper-->
+        <td>384KB ROM</td><!--Wireless Stick Lite-->
+        <td>384KB ROM</td><!--Wireless Tracker-->
+        <td>384KB ROM</td><!--Capsule Sensor V3-->
+        <td>384KB ROM</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
+        <td>384KB ROM</td><!--T-Deck-->
+        <td></td><!--RAKRAK19007-->
+      </tr>
+      <tr>
+        <td>Memory SRAM</td>
+        <td>520KB SRAM</td><!--Heltec V2-->
+        <td>512KB SRAM</td><!--Heltec V3-->
+        <td>512KB SRAM</td><!--Wireless Paper-->
+        <td>512KB SRAM</td><!--Wireless Stick Lite-->
+        <td>512KB SRAM</td><!--Wireless Tracker-->
+        <td>512KB SRAM</td><!--Capsule Sensor V3-->
+        <td>512KB SRAM</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
+        <td>512 KB SRAM</td><!--T-Deck-->
+        <td>?</td><!--RAKRAK19007-->
+      </tr>      
+      <tr>
+        <td>Memory RTC SRAM</td>
+        <td>16KB RTC SRAM</td><!--Heltec V2-->
+        <td>16KB RTC SRAM</td><!--Heltec V3-->
+        <td>16KB RTC SRAM</td><!--Wireless Paper-->
+        <td>16KB RTC SRAM</td><!--Wireless Stick Lite-->
+        <td>16KB RTC SRAM</td><!--Wireless Tracker-->
+        <td>16KB RTC SRAM</td><!--Capsule Sensor V3-->
+        <td>16KB RTC SRAM</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
+        <td>16KB RTC SRAM</td><!--T-Deck-->
+        <td>?</td><!--RAKRAK19007-->
+      </tr>      
+      <tr>
+        <td>Memory SiP Flash</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>8MB SiP Flash</td><!--Heltec V3-->
+        <td>8MB SiP Flash</td><!--Wireless Paper-->
+        <td>8MB SiP Flash</td><!--Wireless Stick Lite-->
+        <td>8MB SiP Flash</td><!--Wireless Tracker-->
+        <td>8MB SiP Flash</td><!--Capsule Sensor V3-->
+        <td>8MB SiP Flash</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
+        <td>N/A</td><!--T-Deck-->
+        <td>?</td><!--RAKRAK19007-->
+      </tr>     
+      <tr>
+        <td>Memory PSRAM</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V3-->
+        <td>N/A</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>N/A</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>8MB PSRAM</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
+        <td>8MB PSRAM</td><!--T-Deck-->
+        <td>?</td><!--RAKRAK19007-->
+      </tr>           
+      <tr>
+        <td>Memory Flash</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V3-->
+        <td>N/A</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>N/A</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>128MB Flash</td><!--Vision Master E213-->
+        <td>?</td><!--Vision Master E290-->         
+        <td>16MB Flash</td><!--T-Deck-->
+        <td>1024KB Flash</td><!--RAKRAK19007-->
+      </tr>                 
+    </tbody>
+  </table>
+</div>
 
 ## Power Measured on Meshtastic Firmware 2.3.10 from 3.7V battery(Not USB)
 
