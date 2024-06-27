@@ -268,7 +268,7 @@ Just my own measurements and values
     <tbody>      
       <tr>
         <td>Memory ROM</td>
-        <td>?</td><!--Heltec V2-->
+        <td>448KB ROM</td><!--Heltec V2-->
         <td>384KB ROM</td><!--Heltec V3-->
         <td>384KB ROM</td><!--Wireless Paper-->
         <td>384KB ROM</td><!--Wireless Stick Lite-->
@@ -281,7 +281,7 @@ Just my own measurements and values
       </tr>
       <tr>
         <td>Memory SRAM</td>
-        <td>?</td><!--Heltec V2-->
+        <td>520KB SRAM</td><!--Heltec V2-->
         <td>512KB SRAM</td><!--Heltec V3-->
         <td>512KB SRAM</td><!--Wireless Paper-->
         <td>512KB SRAM</td><!--Wireless Stick Lite-->
@@ -294,7 +294,7 @@ Just my own measurements and values
       </tr>      
       <tr>
         <td>Memory RTC SRAM</td>
-        <td>?</td><!--Heltec V2-->
+        <td>16KB RTC SRAM</td><!--Heltec V2-->
         <td>16KB RTC SRAM</td><!--Heltec V3-->
         <td>16KB RTC SRAM</td><!--Wireless Paper-->
         <td>16KB RTC SRAM</td><!--Wireless Stick Lite-->
@@ -307,7 +307,7 @@ Just my own measurements and values
       </tr>      
       <tr>
         <td>Memory SiP Flash</td>
-        <td>?</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V2-->
         <td>8MB SiP Flash</td><!--Heltec V3-->
         <td>8MB SiP Flash</td><!--Wireless Paper-->
         <td>8MB SiP Flash</td><!--Wireless Stick Lite-->
@@ -320,7 +320,7 @@ Just my own measurements and values
       </tr>     
       <tr>
         <td>Memory PSRAM</td>
-        <td>?</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V2-->
         <td>N/A</td><!--Heltec V3-->
         <td>N/A</td><!--Wireless Paper-->
         <td>N/A</td><!--Wireless Stick Lite-->
@@ -333,7 +333,7 @@ Just my own measurements and values
       </tr>           
       <tr>
         <td>Memory Flash</td>
-        <td>?</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V2-->
         <td>N/A</td><!--Heltec V3-->
         <td>N/A</td><!--Wireless Paper-->
         <td>N/A</td><!--Wireless Stick Lite-->
