@@ -94,7 +94,7 @@ Just my own measurements and values
         <td>&lt;10μA</td><!--Wireless Stick Lite-->
         <td>15μA</td><!--Wireless Tracker-->
         <td>25μA</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>18μA</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>2μA</td><!--RAKRAK19007-->
@@ -107,7 +107,7 @@ Just my own measurements and values
         <td>470~510 MHz, 863~928 MHz</td><!--Wireless Stick Lite-->
         <td>470~510 MHz, 863~928 MHz</td><!--Wireless Tracker-->
         <td>470~510 MHz, 863~928 MHz</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>470~510 MHz, 863~928 MHz</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>470~510 MHz, 863~928 MHz</td><!--T-Deck-->
         <td>470~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->
@@ -120,7 +120,7 @@ Just my own measurements and values
         <td>21 ± 1dBm</td><!--Wireless Stick Lite-->
         <td>21 ± 1dBm</td><!--Wireless Tracker-->
         <td>21 ± 1dBm</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>21 ± 1dBm</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>22 ± 1dBm</td><!--T-Deck-->
         <td>22 ± 1dBm</td><!--RAKRAK19007-->
@@ -133,7 +133,7 @@ Just my own measurements and values
         <td>-134 dBm</td><!--Wireless Stick Lite-->
         <td>-137 dBm</td><!--Wireless Tracker-->
         <td>-135 dBm</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>-136 dBm</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
@@ -156,10 +156,10 @@ Just my own measurements and values
         <td>BT-5 (LE)</td><!--Heltec V2-->
         <td>BT-5 (LE)</td><!--Heltec V3-->
         <td>BT-5 (LE)</td><!--Wireless Paper-->
-        <td>BT-5, BT mesh</td><!--Wireless Stick Lite-->
-        <td>BT-5 (LE), BT mesh</td><!--Wireless Tracker-->
-        <td>BT-5 (LE), BT mesh</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>BT-5 (LE)</td><!--Wireless Stick Lite-->
+        <td>BT-5 (LE)</td><!--Wireless Tracker-->
+        <td>BT-5 (LE)</td><!--Capsule Sensor V3-->
+        <td>BT-5 (LE)</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>BT-5 (LE)</td><!--T-Deck-->
         <td>BT-5 (LE)</td><!--RAKRAK19007-->
@@ -172,7 +172,7 @@ Just my own measurements and values
         <td>N/A</td><!--Wireless Stick Lite-->
         <td>TFT</td><!--Wireless Tracker-->
         <td>N/A</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>E-ink</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>LCD</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
@@ -185,7 +185,7 @@ Just my own measurements and values
         <td>N/A</td><!--Wireless Stick Lite-->
         <td>0.96-inch</td><!--Wireless Tracker-->
         <td>N/A</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>2.13 Inch</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>2.8 Inch</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
@@ -198,8 +198,8 @@ Just my own measurements and values
         <td>TP4054</td><!--Wireless Stick Lite-->
         <td>TP4054</td><!--Wireless Tracker-->
         <td>TP4054</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
-        <td>?</td><!--Vision Master E290-->         
+        <td>TP4054</td><!--Vision Master E213-->
+        <td>TP4054</td><!--Vision Master E290-->         
         <td>TP4054</td><!--T-Deck-->
         <td>-</td><!--RAKRAK19007-->
       </tr>
@@ -211,7 +211,7 @@ Just my own measurements and values
         <td><a href="https://resource.heltec.cn/download/Wireless_Stick_Lite_V3/HTIT-WSL_V3_Schematic_Diagram.pdf">Diagram Link</a></td><!--Wireless Stick Lite-->
         <td><a href="https://resource.heltec.cn/download/Wireless_Tracker/Wireless_Tacker1.1/HTIT-Tracker_V0.5.pdf">Diagram Link</a></td><!--Wireless Tracker-->
         <td><a href="https://resource.heltec.cn/download/Heltec%20Capsule%20Sensor%20V3/Capsule_Main_Esp32_Schematic_Diagram.pdf">Diagram Link</a></td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td><a href="https://resource.heltec.cn/download/HT-VME213/HT-VME213%20Schematic%20Diagram.pdf">Diagram Link</a></td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Diagram Link</a></td><!--T-Deck-->
         <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19007-->
@@ -224,7 +224,7 @@ Just my own measurements and values
         <td>User Button, Reset Button</td><!--Wireless Stick Lite-->
         <td>User Button, Reset Button</td><!--Wireless Tracker-->
         <td>User Button, Reset Button</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>Touch Screen, Keyboard, trackball, Reset Button</td><!--T-Deck-->
         <td>Reset Button</td><!--RAKRAK19007-->
@@ -237,7 +237,7 @@ Just my own measurements and values
         <td>$14.90</td><!--Wireless Stick Lite-->
         <td>$19.90</td><!--Wireless Tracker-->
         <td>$25.99</td><!--Capsule Sensor V3-->
-        <td>?</td><!--Vision Master E213-->
+        <td>$19.99</td><!--Vision Master E213-->
         <td>?</td><!--Vision Master E290-->         
         <td>$52.66</td><!--T-Deck-->
         <td>$36.97</td><!--RAKRAK19007-->
