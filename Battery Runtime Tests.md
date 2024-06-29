@@ -37,7 +37,7 @@
           <td>1100mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
-          <td></td><!--Wireless Paper-->
+          <td>9 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
