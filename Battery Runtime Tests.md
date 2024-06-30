@@ -35,7 +35,7 @@
       <tbody>
         <tr>
           <td>1100mAh Battery</td>
-          <td></td><!--Heltec V2-->
+          <td>10 Hrs</td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
           <td>9 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
