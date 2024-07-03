@@ -8,6 +8,8 @@
   <style>
     body {
       display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
     }
     .sidebar {
       width: 200px;
@@ -44,6 +46,16 @@
     }
     tbody tr:nth-child(odd) {
       background-color: #f9f9f9;
+    }
+    details {
+      margin-bottom: 20px;
+    }
+    details summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    details[open] summary {
+      color: #007BFF;
     }
   </style>
 </head>
