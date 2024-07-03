@@ -88,25 +88,33 @@ title: LoRa Boards Comparison Table
     var loraChip = getCheckedValues('lora');
     var table = document.getElementById('comparisonTable');
     var rows = table.getElementsByTagName('tr');
+    var columnsToShow = new Array(rows[0].cells.length).fill(false);
 
+    // Determine columns to show
     for (var i = 1; i < rows.length; i++) {
       var cells = rows[i].getElementsByTagName('td');
-      var showRow = true;
 
       for (var j = 1; j < cells.length; j++) {
         var cellMcu = cells[j].getAttribute('data-mcu');
         var cellLora = cells[j].getAttribute('data-lora');
 
-        if (mcuChip.length && !mcuChip.includes(cellMcu)) {
-          showRow = false;
+        if ((mcuChip.length && mcuChip.includes(cellMcu)) || (loraChip.length && loraChip.includes(cellLora))) {
+          columnsToShow[j] = true;
         }
-        if (loraChip.length && !loraChip.includes(cellLora)) {
-          showRow = false;
-        }
-        if (!showRow) break;
+      }
+    }
+
+    // Show or hide columns based on filter
+    for (var i = 0; i < rows.length; i++) {
+      var cells = rows[i].getElementsByTagName('th');
+      for (var j = 1; j < cells.length; j++) {
+        cells[j].style.display = columnsToShow[j] ? "" : "none";
       }
 
-      rows[i].style.display = showRow ? "" : "none";
+      cells = rows[i].getElementsByTagName('td');
+      for (var j = 1; j < cells.length; j++) {
+        cells[j].style.display = columnsToShow[j] ? "" : "none";
+      }
     }
   }
 </script>
