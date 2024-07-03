@@ -32,8 +32,10 @@ title: LoRa Boards Comparison Table
   <div style="margin-right: 20px;">
     <label>Screen:</label>
     <div>
-      <input type="checkbox" class="screenFilter" value="Yes"> Yes<br>
-      <input type="checkbox" class="screenFilter" value="No"> No<br>
+      <input type="checkbox" class="screenFilter" value="OLED"> OLED<br>
+      <input type="checkbox" class="screenFilter" value="Eink"> Eink<br>
+      <input type="checkbox" class="screenFilter" value="TFT"> TFT<br>
+      <input type="checkbox" class="screenFilter" value="None"> None<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -57,7 +59,7 @@ title: LoRa Boards Comparison Table
       <input type="checkbox" class="touchFilter" value="No"> No<br>
     </div>
   </div>
-  <div>
+  <div style="margin-right: 20px;">
     <label>Keyboard:</label>
     <div>
       <input type="checkbox" class="keyboardFilter" value="Yes"> Yes<br>
@@ -86,16 +88,16 @@ title: LoRa Boards Comparison Table
     <tbody>
       <tr>
         <td>MCU Chip</td>
-        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-D0</td><!--Heltec V2-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3</td><!--Heltec V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Wireless Paper-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="No" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3</td><!--Wireless Stick Lite-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Wireless Tracker-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="No" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E213-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E290--> 
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes">ESP32-S3</td><!--T-Deck-->
-        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="No" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">RAK4631</td><!--RAKRAK19007-->
+        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-D0</td><!--Heltec V2-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3</td><!--Heltec V3-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Wireless Paper-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3</td><!--Wireless Stick Lite-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Wireless Tracker-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E213-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E290--> 
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes">ESP32-S3</td><!--T-Deck-->
+        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">RAK4631</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>LoRa Chip</td>
@@ -335,11 +337,11 @@ function filterTable() {
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.some(filter => mcuCell.getAttribute('data-mcu').includes(filter));
     const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.textContent.includes(filter));
     const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && (gpsCell.textContent !== 'N/A' || mcuCell.getAttribute('data-gps') === 'Yes')) || (gpsFilters.includes('No') && gpsCell.textContent === 'N/A');
-    const screenMatch = screenFilters.length === 0 || (screenFilters.includes('Yes') && mcuCell.getAttribute('data-screen') === 'Yes') || (screenFilters.includes('No') && mcuCell.getAttribute('data-screen') === 'No');
-    const wifiMatch = wifiFilters.length === 0 || (wifiFilters.includes('Yes') && mcuCell.getAttribute('data-wifi') === 'Yes') || (wifiFilters.includes('No') && mcuCell.getAttribute('data-wifi') === 'No');
-    const bluetoothMatch = bluetoothFilters.length === 0 || (bluetoothFilters.includes('Yes') && mcuCell.getAttribute('data-bluetooth') === 'Yes') || (bluetoothFilters.includes('No') && mcuCell.getAttribute('data-bluetooth') === 'No');
-    const touchMatch = touchFilters.length === 0 || (touchFilters.includes('Yes') && mcuCell.getAttribute('data-touch') === 'Yes') || (touchFilters.includes('No') && mcuCell.getAttribute('data-touch') === 'No');
-    const keyboardMatch = keyboardFilters.length === 0 || (keyboardFilters.includes('Yes') && mcuCell.getAttribute('data-keyboard') === 'Yes') || (keyboardFilters.includes('No') && mcuCell.getAttribute('data-keyboard') === 'No');
+    const screenMatch = screenFilters.length === 0 || screenFilters.includes(mcuCell.getAttribute('data-screen'));
+    const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(mcuCell.getAttribute('data-wifi'));
+    const bluetoothMatch = bluetoothFilters.length === 0 || bluetoothFilters.includes(mcuCell.getAttribute('data-bluetooth'));
+    const touchMatch = touchFilters.length === 0 || touchFilters.includes(mcuCell.getAttribute('data-touch'));
+    const keyboardMatch = keyboardFilters.length === 0 || keyboardFilters.includes(mcuCell.getAttribute('data-keyboard'));
 
     return mcuMatch && loraMatch && gpsMatch && screenMatch && wifiMatch && bluetoothMatch && touchMatch && keyboardMatch;
   }
