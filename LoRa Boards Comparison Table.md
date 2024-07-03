@@ -117,17 +117,17 @@ title: LoRa Boards Comparison Table
       </tr>      
       <tr>
         <td>LoRa Chip</td>
-        <td>SX1276 SX1278</td><!--Heltec V2-->
-        <td>SX1262</td><!--Heltec V3-->
-        <td>SX1262</td><!--Wireless Paper-->
-        <td>SX1262</td><!--Wireless Stick Lite-->
-        <td>SX1262</td><!--Wireless Tracker-->
-        <td>SX1262</td><!--Capsule Sensor V3-->
-        <td>SX1262</td><!--Vision Master E213-->
-        <td>SX1262</td><!--Vision Master E290-->         
-        <td>SX1262</td><!--T-Deck-->
-        <td>SX1262</td><!--RAKRAK19007-->
-        <td>SX1262</td><!--T-Echo-->    
+        <td>"SX1276 SX1278"</td><!--Heltec V2-->
+        <td>"SX1262"</td><!--Heltec V3-->
+        <td>"SX1262"</td><!--Wireless Paper-->
+        <td>"SX1262"</td><!--Wireless Stick Lite-->
+        <td>"SX1262"</td><!--Wireless Tracker-->
+        <td>"SX1262"</td><!--Capsule Sensor V3-->
+        <td>"SX1262"</td><!--Vision Master E213-->
+        <td>"SX1262"</td><!--Vision Master E290-->         
+        <td>"SX1262"</td><!--T-Deck-->
+        <td>"SX1262"</td><!--RAKRAK19007-->
+        <td>"SX1262"</td><!--T-Echo-->    
       </tr>
       <tr>
         <td>GPS Chip</td>
