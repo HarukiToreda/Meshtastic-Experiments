@@ -29,11 +29,39 @@ title: LoRa Boards Comparison Table
       <input type="checkbox" class="gpsFilter" value="No"> No<br>
     </div>
   </div>
-  <div>
+  <div style="margin-right: 20px;">
     <label>Screen:</label>
     <div>
       <input type="checkbox" class="screenFilter" value="Yes"> Yes<br>
       <input type="checkbox" class="screenFilter" value="No"> No<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>WiFi:</label>
+    <div>
+      <input type="checkbox" class="wifiFilter" value="Yes"> Yes<br>
+      <input type="checkbox" class="wifiFilter" value="No"> No<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>Bluetooth:</label>
+    <div>
+      <input type="checkbox" class="bluetoothFilter" value="Yes"> Yes<br>
+      <input type="checkbox" class="bluetoothFilter" value="No"> No<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>Touch Screen:</label>
+    <div>
+      <input type="checkbox" class="touchFilter" value="Yes"> Yes<br>
+      <input type="checkbox" class="touchFilter" value="No"> No<br>
+    </div>
+  </div>
+  <div>
+    <label>Keyboard:</label>
+    <div>
+      <input type="checkbox" class="keyboardFilter" value="Yes"> Yes<br>
+      <input type="checkbox" class="keyboardFilter" value="No"> No<br>
     </div>
   </div>
 </div>
@@ -58,16 +86,16 @@ title: LoRa Boards Comparison Table
     <tbody>
       <tr>
         <td>MCU Chip</td>
-        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="Yes">ESP32-D0</td><!--Heltec V2-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3</td><!--Heltec V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Paper-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="No">ESP32-S3</td><!--Wireless Stick Lite-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Tracker-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E213-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E290--> 
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3</td><!--T-Deck-->
-        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="No">RAK4631</td><!--RAKRAK19007-->
+        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-D0</td><!--Heltec V2-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3</td><!--Heltec V3-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Wireless Paper-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="No" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3</td><!--Wireless Stick Lite-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Wireless Tracker-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="No" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E213-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E290--> 
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes">ESP32-S3</td><!--T-Deck-->
+        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="No" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">RAK4631</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>LoRa Chip</td>
