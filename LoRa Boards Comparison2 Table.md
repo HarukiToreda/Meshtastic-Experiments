@@ -106,27 +106,25 @@ title: LoRa Boards Comparison Table
     var screen = getCheckedValues('screen');
     var table = document.getElementById('comparisonTable');
     var rows = table.getElementsByTagName('tr');
-    var columnsToShow = new Array(rows[0].cells.length).fill(true);
+    var columnsToShow = new Array(rows[0].cells.length).fill(false);
 
     // Determine columns to show
-    for (var j = 1; j < rows[0].cells.length; j++) {
-      var showColumn = true;
-      for (var i = 1; i < rows.length; i++) {
-        var cell = rows[i].cells[j];
-        if (mcuChip.length > 0 && !mcuChip.some(value => cell.getAttribute('data-mcu').includes(value))) {
-          showColumn = false;
-        }
-        if (loraChip.length > 0 && !loraChip.some(value => cell.getAttribute('data-lora').includes(value))) {
-          showColumn = false;
-        }
-        if (gps.length > 0 && !gps.includes(cell.getAttribute('data-gps'))) {
-          showColumn = false;
-        }
-        if (screen.length > 0 && !screen.includes(cell.getAttribute('data-screen'))) {
-          showColumn = false;
+    for (var i = 1; i < rows.length; i++) {
+      var cells = rows[i].getElementsByTagName('td');
+
+      for (var j = 1; j < cells.length; j++) {
+        var cellMcu = cells[j].getAttribute('data-mcu');
+        var cellLora = cells[j].getAttribute('data-lora');
+        var cellGps = cells[j].getAttribute('data-gps');
+        var cellScreen = cells[j].getAttribute('data-screen');
+
+        if ((mcuChip.length && mcuChip.includes(cellMcu)) || 
+            (loraChip.length && loraChip.includes(cellLora)) || 
+            (gps.length && gps.includes(cellGps)) || 
+            (screen.length && screen.includes(cellScreen))) {
+          columnsToShow[j] = true;
         }
       }
-      columnsToShow[j] = showColumn;
     }
 
     // Show or hide columns based on filter
