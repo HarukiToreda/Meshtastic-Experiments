@@ -433,11 +433,11 @@ function filterTable() {
 
   function shouldDisplayColumn(columnIndex) {
     const mcuCell = rows[0].children[columnIndex];
-    const loraCell = rows[11].children[columnIndex]; // Make sure to use the correct row index for LoRa chip row
+    const loraCell = rows[1].children[columnIndex]; // Corrected row index for LoRa chip row
     const gpsCell = rows[2].children[columnIndex];
 
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.some(filter => mcuCell.getAttribute('data-mcu').includes(filter));
-    const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.getAttribute('data-lora').includes(filter)); // Use data-lora attribute
+    const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.getAttribute('data-lora').includes(filter)); // Corrected attribute check
     const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && (gpsCell.textContent !== 'N/A' || mcuCell.getAttribute('data-gps') === 'Yes')) || (gpsFilters.includes('No') && gpsCell.textContent === 'N/A');
     const screenMatch = screenFilters.length === 0 || screenFilters.includes(mcuCell.getAttribute('data-screen'));
     const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(mcuCell.getAttribute('data-wifi'));
