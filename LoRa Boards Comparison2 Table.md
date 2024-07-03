@@ -7,20 +7,20 @@ title: LoRa Boards Comparison Table
 
 ## Filter Boards
 
-<label for="mcuChip">MCU Chip:</label>
-<select id="mcuChip" onchange="filterTable()" multiple>
-  <option value="ESP32-D0">ESP32-D0</option>
-  <option value="ESP32-S3">ESP32-S3</option>
-  <option value="ESP32-S3FN8">ESP32-S3FN8</option>
-  <option value="ESP32-S3R8">ESP32-S3R8</option>
-  <option value="RAK4631">RAK4631</option>
-</select>
+<label>MCU Chip:</label>
+<div>
+  <input type="checkbox" id="mcuEsp32D0" value="ESP32-D0" onchange="filterTable()"> ESP32-D0<br>
+  <input type="checkbox" id="mcuEsp32S3" value="ESP32-S3" onchange="filterTable()"> ESP32-S3<br>
+  <input type="checkbox" id="mcuEsp32S3FN8" value="ESP32-S3FN8" onchange="filterTable()"> ESP32-S3FN8<br>
+  <input type="checkbox" id="mcuEsp32S3R8" value="ESP32-S3R8" onchange="filterTable()"> ESP32-S3R8<br>
+  <input type="checkbox" id="mcuRak4631" value="RAK4631" onchange="filterTable()"> RAK4631<br>
+</div>
 
-<label for="loraChip">LoRa Chip:</label>
-<select id="loraChip" onchange="filterTable()" multiple>
-  <option value="SX1276">SX1276</option>
-  <option value="SX1262">SX1262</option>
-</select>
+<label>LoRa Chip:</label>
+<div>
+  <input type="checkbox" id="loraSx1276" value="SX1276" onchange="filterTable()"> SX1276<br>
+  <input type="checkbox" id="loraSx1262" value="SX1262" onchange="filterTable()"> SX1262<br>
+</div>
 
 <div style="overflow-x: auto;">
   <table id="comparisonTable">
@@ -72,24 +72,20 @@ title: LoRa Boards Comparison Table
 </div>
 
 <script>
-  function getSelectedValues(selectElement) {
-    var result = [];
-    var options = selectElement && selectElement.options;
-    var opt;
-
-    for (var i = 0, iLen = options.length; i < iLen; i++) {
-      opt = options[i];
-
-      if (opt.selected) {
-        result.push(opt.value);
+  function getCheckedValues(name) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"][id^="' + name + '"]');
+    var checkedValues = [];
+    checkboxes.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        checkedValues.push(checkbox.value);
       }
-    }
-    return result;
+    });
+    return checkedValues;
   }
 
   function filterTable() {
-    var mcuChip = getSelectedValues(document.getElementById('mcuChip'));
-    var loraChip = getSelectedValues(document.getElementById('loraChip'));
+    var mcuChip = getCheckedValues('mcu');
+    var loraChip = getCheckedValues('lora');
     var table = document.getElementById('comparisonTable');
     var rows = table.getElementsByTagName('tr');
 
