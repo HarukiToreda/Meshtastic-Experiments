@@ -280,7 +280,7 @@ title: LoRa Boards Comparison Table
         <td>TP4054</td><!--Vision Master E213-->
         <td>TP4054</td><!--Vision Master E290-->         
         <td>TP4054</td><!--T-Deck-->
-        <td>-</td><!--RAKRAK19007-->
+        <td>TP4054</td><!--RAKRAK19007-->
         <td>TP4054</td><!--T-Echo-->        
       </tr>
       <tr>
