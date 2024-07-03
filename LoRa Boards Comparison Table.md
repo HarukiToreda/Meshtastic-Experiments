@@ -102,20 +102,6 @@ title: LoRa Boards Comparison Table
         <td data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--T-Echo-->        
       </tr>
       <tr>
-        <td>Price Range USD</td>
-        <td>$15.47+</td><!--Heltec V2-->
-        <td>$17.90</td><!--Heltec V3-->
-        <td>$15.90</td><!--Wireless Paper-->
-        <td>$14.90</td><!--Wireless Stick Lite-->
-        <td>$22.90</td><!--Wireless Tracker-->
-        <td>$25.99</td><!--Capsule Sensor V3-->
-        <td>$19.90</td><!--Vision Master E213-->
-        <td>$20.90</td><!--Vision Master E290-->         
-        <td>$52.66</td><!--T-Deck-->
-        <td>$36.97</td><!--RAKRAK19007-->
-        <td>$54.41</td><!--T-Echo-->              
-      </tr>      
-      <tr>
         <td>LoRa Chip</td>
         <td>SX1276 SX1278</td><!--Heltec V2-->
         <td>SX1262</td><!--Heltec V3-->
@@ -157,48 +143,6 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--RAKRAK19007-->
         <td>L76k</td><!--T-Echo-->
       </tr>
-      <tr>
-        <td>Display Type</td>
-        <td>OLED</td><!--Heltec V2-->
-        <td>OLED</td><!--Heltec V3-->
-        <td>E-ink</td><!--Wireless Paper-->
-        <td>N/A</td><!--Wireless Stick Lite-->
-        <td>TFT</td><!--Wireless Tracker-->
-        <td>N/A</td><!--Capsule Sensor V3-->
-        <td>E-ink</td><!--Vision Master E213-->
-        <td>E-ink</td><!--Vision Master E290-->         
-        <td>LCD</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
-        <td>E-ink</td><!--T-Echo-->
-      </tr>
-      <tr>
-        <td>Display Size</td>
-        <td>0.96 Inch</td><!--Heltec V2-->
-        <td>0.96 Inch</td><!--Heltec V3-->
-        <td>2.13 Inch</td><!--Wireless Paper-->
-        <td>N/A</td><!--Wireless Stick Lite-->
-        <td>0.96-inch</td><!--Wireless Tracker-->
-        <td>N/A</td><!--Capsule Sensor V3-->
-        <td>2.13 Inch</td><!--Vision Master E213-->
-        <td>2.9 Inch</td><!--Vision Master E290-->         
-        <td>2.8 Inch</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
-        <td>1.54 Inch</td><!--T-Echo-->        
-      </tr>      
-      <tr>
-        <td>Input</td>
-        <td>User Button, Reset Button</td><!--Heltec V2-->
-        <td>User Button, Reset Button</td><!--Heltec V3-->
-        <td>User Button, Reset Button</td><!--Wireless Paper-->
-        <td>User Button, Reset Button</td><!--Wireless Stick Lite-->
-        <td>User Button, Reset Button</td><!--Wireless Tracker-->
-        <td>User Button, Reset Button</td><!--Capsule Sensor V3-->
-        <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E213-->
-        <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E290-->         
-        <td>Touch Screen, Keyboard, trackball, Reset Button</td><!--T-Deck-->
-        <td>Reset Button</td><!--RAKRAK19007-->
-        <td>User Button, Reset Button, Touch Button</td><!--T-Echo-->        
-      </tr>      
       <tr>
         <td>Charging Interface</td>
         <td>Micro USB</td><!--Heltec V2-->
@@ -298,6 +242,34 @@ title: LoRa Boards Comparison Table
         <td>BT-5 (LE)</td><!--T-Echo-->             
       </tr>
       <tr>
+        <td>Display Type</td>
+        <td>OLED</td><!--Heltec V2-->
+        <td>OLED</td><!--Heltec V3-->
+        <td>E-ink</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>TFT</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>E-ink</td><!--Vision Master E213-->
+        <td>E-ink</td><!--Vision Master E290-->         
+        <td>LCD</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
+        <td>E-ink</td><!--T-Echo-->
+      </tr>
+      <tr>
+        <td>Display Size</td>
+        <td>0.96 Inch</td><!--Heltec V2-->
+        <td>0.96 Inch</td><!--Heltec V3-->
+        <td>2.13 Inch</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>0.96-inch</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>2.13 Inch</td><!--Vision Master E213-->
+        <td>2.9 Inch</td><!--Vision Master E290-->         
+        <td>2.8 Inch</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
+        <td>1.54 Inch</td><!--T-Echo-->        
+      </tr>
+      <tr>
         <td>Charging IC</td>
         <td>TP4054</td><!--Heltec V2-->
         <td>TP4054</td><!--Heltec V3-->
@@ -326,89 +298,33 @@ title: LoRa Boards Comparison Table
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/T-Echo_Schematic.pdf">Diagram Link</a></td><!--T-Echo-->        
       </tr>
       <tr>
-        <td>Memory ROM</td>
-        <td>448KB ROM</td><!--Heltec V2-->
-        <td>384KB ROM</td><!--Heltec V3-->
-        <td>384KB ROM</td><!--Wireless Paper-->
-        <td>384KB ROM</td><!--Wireless Stick Lite-->
-        <td>384KB ROM</td><!--Wireless Tracker-->
-        <td>384KB ROM</td><!--Capsule Sensor V3-->
-        <td>384KB ROM</td><!--Vision Master E213-->
-        <td>384KB ROM</td><!--Vision Master E290-->         
-        <td>384KB ROM</td><!--T-Deck-->
-        <td></td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->            
+        <td>Input</td>
+        <td>User Button, Reset Button</td><!--Heltec V2-->
+        <td>User Button, Reset Button</td><!--Heltec V3-->
+        <td>User Button, Reset Button</td><!--Wireless Paper-->
+        <td>User Button, Reset Button</td><!--Wireless Stick Lite-->
+        <td>User Button, Reset Button</td><!--Wireless Tracker-->
+        <td>User Button, Reset Button</td><!--Capsule Sensor V3-->
+        <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E213-->
+        <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E290-->         
+        <td>Touch Screen, Keyboard, trackball, Reset Button</td><!--T-Deck-->
+        <td>Reset Button</td><!--RAKRAK19007-->
+        <td>User Button, Reset Button, Touch Button</td><!--T-Echo-->        
       </tr>
       <tr>
-        <td>Memory SRAM</td>
-        <td>520KB SRAM</td><!--Heltec V2-->
-        <td>512KB SRAM</td><!--Heltec V3-->
-        <td>512KB SRAM</td><!--Wireless Paper-->
-        <td>512KB SRAM</td><!--Wireless Stick Lite-->
-        <td>512KB SRAM</td><!--Wireless Tracker-->
-        <td>512KB SRAM</td><!--Capsule Sensor V3-->
-        <td>512KB SRAM</td><!--Vision Master E213-->
-        <td>512KB SRAM</td><!--Vision Master E290-->         
-        <td>512 KB SRAM</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->                    
-      </tr>      
-      <tr>
-        <td>Memory RTC SRAM</td>
-        <td>16KB RTC SRAM</td><!--Heltec V2-->
-        <td>16KB RTC SRAM</td><!--Heltec V3-->
-        <td>16KB RTC SRAM</td><!--Wireless Paper-->
-        <td>16KB RTC SRAM</td><!--Wireless Stick Lite-->
-        <td>16KB RTC SRAM</td><!--Wireless Tracker-->
-        <td>16KB RTC SRAM</td><!--Capsule Sensor V3-->
-        <td>16KB RTC SRAM</td><!--Vision Master E213-->
-        <td>16KB RTC SRAM</td><!--Vision Master E290-->         
-        <td>16KB RTC SRAM</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->        
-      </tr>      
-      <tr>
-        <td>Memory SiP Flash</td>
-        <td>N/A</td><!--Heltec V2-->
-        <td>8MB SiP Flash</td><!--Heltec V3-->
-        <td>8MB SiP Flash</td><!--Wireless Paper-->
-        <td>8MB SiP Flash</td><!--Wireless Stick Lite-->
-        <td>8MB SiP Flash</td><!--Wireless Tracker-->
-        <td>8MB SiP Flash</td><!--Capsule Sensor V3-->
-        <td>8MB SiP Flash</td><!--Vision Master E213-->
-        <td>8MB SiP Flash</td><!--Vision Master E290-->         
-        <td>N/A</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->        
-      </tr>     
-      <tr>
-        <td>Memory PSRAM</td>
-        <td>N/A</td><!--Heltec V2-->
-        <td>N/A</td><!--Heltec V3-->
-        <td>N/A</td><!--Wireless Paper-->
-        <td>N/A</td><!--Wireless Stick Lite-->
-        <td>N/A</td><!--Wireless Tracker-->
-        <td>N/A</td><!--Capsule Sensor V3-->
-        <td>8MB PSRAM</td><!--Vision Master E213-->
-        <td>8MB PSRAM</td><!--Vision Master E290-->         
-        <td>8MB PSRAM</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->      
-      </tr>           
-      <tr>
-        <td>Memory Flash</td>
-        <td>N/A</td><!--Heltec V2-->
-        <td>N/A</td><!--Heltec V3-->
-        <td>N/A</td><!--Wireless Paper-->
-        <td>N/A</td><!--Wireless Stick Lite-->
-        <td>N/A</td><!--Wireless Tracker-->
-        <td>N/A</td><!--Capsule Sensor V3-->
-        <td>128MB Flash</td><!--Vision Master E213-->
-        <td>128MB Flash</td><!--Vision Master E290-->         
-        <td>16MB Flash</td><!--T-Deck-->
-        <td>1024KB Flash</td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->        
-      </tr>        
+        <td>Price Range USD</td>
+        <td>$15.47+</td><!--Heltec V2-->
+        <td>$17.90</td><!--Heltec V3-->
+        <td>$15.90</td><!--Wireless Paper-->
+        <td>$14.90</td><!--Wireless Stick Lite-->
+        <td>$22.90</td><!--Wireless Tracker-->
+        <td>$25.99</td><!--Capsule Sensor V3-->
+        <td>$19.90</td><!--Vision Master E213-->
+        <td>$20.90</td><!--Vision Master E290-->         
+        <td>$52.66</td><!--T-Deck-->
+        <td>$36.97</td><!--RAKRAK19007-->
+        <td>$54.41</td><!--T-Echo-->              
+      </tr>
     </tbody>
   </table>
 </div>
