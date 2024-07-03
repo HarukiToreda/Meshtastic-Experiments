@@ -4,7 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/Meshtastic-Experiments/assets/css/style.css" | relative_url }}">
+  <style>
+    body {
+      display: flex;
+    }
+    .sidebar {
+      width: 200px;
+      padding: 10px;
+      background: #f4f4f4;
+    }
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 10px 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   <div class="sidebar">
