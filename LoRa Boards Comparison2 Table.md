@@ -118,9 +118,9 @@ function filterTable() {
     const loraCell = rows[1].children[columnIndex];
     const gpsCell = rows[2].children[columnIndex];
 
-    const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcuCell.getAttribute('data-mcu'));
-    const loraMatch = loraFilters.length === 0 || loraFilters.includes(loraCell.getAttribute('data-lora'));
-    const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && gpsCell.getAttribute('data-gps') === 'Yes') || (gpsFilters.includes('No') && gpsCell.getAttribute('data-gps') === 'No');
+    const mcuMatch = mcuFilters.length === 0 || mcuFilters.some(filter => mcuCell.getAttribute('data-mcu').includes(filter));
+    const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.textContent.includes(filter));
+    const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && gpsCell.textContent !== 'N/A') || (gpsFilters.includes('No') && gpsCell.textContent === 'N/A');
     const screenMatch = screenFilters.length === 0 || (screenFilters.includes('Yes') && mcuCell.getAttribute('data-screen') === 'Yes') || (screenFilters.includes('No') && mcuCell.getAttribute('data-screen') === 'No');
 
     return mcuMatch && loraMatch && gpsMatch && screenMatch;
