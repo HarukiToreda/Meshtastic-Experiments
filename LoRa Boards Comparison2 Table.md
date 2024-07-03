@@ -201,7 +201,7 @@ title: LoRa Boards Comparison Table
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
-        <td>-135 dBm</td><!--Heltec V2-->
+        <td>-148 dBm</td><!--Heltec V2-->
         <td>-136 dBm</td><!--Heltec V3-->
         <td>-134 dBm</td><!--Wireless Paper-->
         <td>-134 dBm</td><!--Wireless Stick Lite-->
