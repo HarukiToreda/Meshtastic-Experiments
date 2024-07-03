@@ -106,24 +106,28 @@ title: LoRa Boards Comparison Table
     var screen = getCheckedValues('screen');
     var table = document.getElementById('comparisonTable');
     var rows = table.getElementsByTagName('tr');
-    var columnsToShow = new Array(rows[0].cells.length).fill(false);
+    var columnsToShow = new Array(rows[0].cells.length).fill(true);
 
     // Determine columns to show
     for (var i = 1; i < rows.length; i++) {
       var cells = rows[i].getElementsByTagName('td');
-
       for (var j = 1; j < cells.length; j++) {
-        var cellMcu = cells[j].getAttribute('data-mcu');
-        var cellLora = cells[j].getAttribute('data-lora');
-        var cellGps = cells[j].getAttribute('data-gps');
-        var cellScreen = cells[j].getAttribute('data-screen');
+        var showColumn = true;
 
-        if ((mcuChip.length && mcuChip.includes(cellMcu)) || 
-            (loraChip.length && loraChip.includes(cellLora)) || 
-            (gps.length && gps.includes(cellGps)) || 
-            (screen.length && screen.includes(cellScreen))) {
-          columnsToShow[j] = true;
+        if (mcuChip.length > 0 && !mcuChip.includes(cells[j].getAttribute('data-mcu'))) {
+          showColumn = false;
         }
+        if (loraChip.length > 0 && !loraChip.includes(cells[j].getAttribute('data-lora'))) {
+          showColumn = false;
+        }
+        if (gps.length > 0 && !gps.includes(cells[j].getAttribute('data-gps'))) {
+          showColumn = false;
+        }
+        if (screen.length > 0 && !screen.includes(cells[j].getAttribute('data-screen'))) {
+          showColumn = false;
+        }
+
+        columnsToShow[j] = columnsToShow[j] && showColumn;
       }
     }
 
