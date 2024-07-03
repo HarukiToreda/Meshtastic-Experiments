@@ -158,6 +158,34 @@ title: LoRa Boards Comparison Table
         <td>L76k</td><!--T-Echo-->
       </tr>
       <tr>
+        <td>Display Type</td>
+        <td>OLED</td><!--Heltec V2-->
+        <td>OLED</td><!--Heltec V3-->
+        <td>E-ink</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>TFT</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>E-ink</td><!--Vision Master E213-->
+        <td>E-ink</td><!--Vision Master E290-->         
+        <td>LCD</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
+        <td>E-ink</td><!--T-Echo-->
+      </tr>
+      <tr>
+        <td>Display Size</td>
+        <td>0.96 Inch</td><!--Heltec V2-->
+        <td>0.96 Inch</td><!--Heltec V3-->
+        <td>2.13 Inch</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>0.96-inch</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>2.13 Inch</td><!--Vision Master E213-->
+        <td>2.9 Inch</td><!--Vision Master E290-->         
+        <td>2.8 Inch</td><!--T-Deck-->
+        <td>N/A</td><!--RAKRAK19007-->
+        <td>1.54 Inch</td><!--T-Echo-->        
+      </tr>      
+      <tr>
         <td>Charging Interface</td>
         <td>Micro USB</td><!--Heltec V2-->
         <td>USB-C</td><!--Heltec V3-->
@@ -254,34 +282,6 @@ title: LoRa Boards Comparison Table
         <td>BT-5 (LE)</td><!--T-Deck-->
         <td>BT-5 (LE)</td><!--RAKRAK19007-->
         <td>BT-5 (LE)</td><!--T-Echo-->             
-      </tr>
-      <tr>
-        <td>Display Type</td>
-        <td>OLED</td><!--Heltec V2-->
-        <td>OLED</td><!--Heltec V3-->
-        <td>E-ink</td><!--Wireless Paper-->
-        <td>N/A</td><!--Wireless Stick Lite-->
-        <td>TFT</td><!--Wireless Tracker-->
-        <td>N/A</td><!--Capsule Sensor V3-->
-        <td>E-ink</td><!--Vision Master E213-->
-        <td>E-ink</td><!--Vision Master E290-->         
-        <td>LCD</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
-        <td>E-ink</td><!--T-Echo-->
-      </tr>
-      <tr>
-        <td>Display Size</td>
-        <td>0.96 Inch</td><!--Heltec V2-->
-        <td>0.96 Inch</td><!--Heltec V3-->
-        <td>2.13 Inch</td><!--Wireless Paper-->
-        <td>N/A</td><!--Wireless Stick Lite-->
-        <td>0.96-inch</td><!--Wireless Tracker-->
-        <td>N/A</td><!--Capsule Sensor V3-->
-        <td>2.13 Inch</td><!--Vision Master E213-->
-        <td>2.9 Inch</td><!--Vision Master E290-->         
-        <td>2.8 Inch</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
-        <td>1.54 Inch</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Charging IC</td>
