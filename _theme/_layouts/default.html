@@ -8,20 +8,27 @@
   <style>
     body {
       display: flex;
-      flex-direction: row; /* Change to row to align sidebar and content side by side */
+      flex-direction: row; /* Align sidebar and content side by side */
       font-family: Arial, sans-serif;
+      background-color: #333333; /* Charcoal background */
+      color: #ffffff; /* White text */
     }
     .sidebar {
       width: 200px;
       padding: 10px;
-      background: #f4f4f4;
-      height: 100vh; /* Make the sidebar take the full height */
-      position: fixed; /* Fix the sidebar in place */
+      background: #000000; /* Black background */
+      height: 100vh; /* Full height */
+      position: fixed; /* Fix sidebar in place */
+      color: #00FFFF; /* Electric blue text */
+    }
+    .sidebar h1, .sidebar p {
+      color: #00FFFF; /* Electric blue text */
     }
     .content {
       margin-left: 220px; /* Ensure content is not hidden behind the fixed sidebar */
       flex: 1;
       padding: 20px;
+      background-color: #1a1a1a; /* Darker charcoal background for content */
     }
     nav ul {
       list-style-type: none;
@@ -32,7 +39,10 @@
     }
     nav ul li a {
       text-decoration: none;
-      color: #333;
+      color: #00FFFF; /* Electric blue links */
+    }
+    nav ul li a:hover {
+      color: #ffffff; /* White text on hover */
     }
     table {
       width: 100%;
@@ -40,15 +50,19 @@
       margin: 20px 0;
     }
     th, td {
-      border: 1px solid black;
+      border: 1px solid #00FFFF; /* Electric blue border */
       padding: 8px;
       text-align: left;
+      color: #ffffff; /* White text */
     }
     th {
-      background-color: #f4f4f4;
+      background-color: #1a1a1a; /* Darker charcoal for table headers */
     }
     tbody tr:nth-child(odd) {
-      background-color: #f9f9f9;
+      background-color: #333333; /* Charcoal for odd rows */
+    }
+    tbody tr:nth-child(even) {
+      background-color: #1a1a1a; /* Darker charcoal for even rows */
     }
     details {
       margin-bottom: 20px;
@@ -56,9 +70,19 @@
     details summary {
       font-weight: bold;
       cursor: pointer;
+      color: #00FFFF; /* Electric blue for summary */
     }
     details[open] summary {
-      color: #007BFF;
+      color: #ffffff; /* White text when open */
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #000000; /* Black background for footer */
+      color: #00FFFF; /* Electric blue text */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
