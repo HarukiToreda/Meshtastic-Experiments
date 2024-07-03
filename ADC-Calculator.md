@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Power Configuration
+title: ADC Calculator
 sidebar_label: Power
-description: Settings for advanced users who want to adjust the power configuration on their Meshtastic device.
+description: 
 ---
 Ratio of voltage divider for battery pin e.g. 3.20 (R1=100k, R2=220k)
 
