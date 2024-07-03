@@ -295,10 +295,10 @@ title: LoRa Boards Comparison Table
       <tr>
         <td>Price Range USD</td>
         <td>$15.47+</td><!--Heltec V2-->
-        <td>$17.90 - $19.90</td><!--Heltec V3-->
+        <td>$17.90</td><!--Heltec V3-->
         <td>$15.90</td><!--Wireless Paper-->
         <td>$14.90</td><!--Wireless Stick Lite-->
-        <td>$19.90</td><!--Wireless Tracker-->
+        <td>$22.90</td><!--Wireless Tracker-->
         <td>$25.99</td><!--Capsule Sensor V3-->
         <td>$19.90</td><!--Vision Master E213-->
         <td>$20.90</td><!--Vision Master E290-->         
