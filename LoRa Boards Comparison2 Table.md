@@ -11,36 +11,36 @@ title: LoRa Boards Comparison Table
   <div style="margin-right: 20px;">
     <label>MCU Chip:</label>
     <div>
-      <input type="checkbox" id="mcuEsp32" value="ESP32"> ESP32<br>
-      <input type="checkbox" id="mcuNrf" value="nRF"> nRF<br>
+      <input type="checkbox" class="mcuFilter" value="ESP32"> ESP32<br>
+      <input type="checkbox" class="mcuFilter" value="nRF"> nRF<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
     <label>LoRa Chip:</label>
     <div>
-      <input type="checkbox" id="loraSx1276" value="SX1276"> SX1276<br>
-      <input type="checkbox" id="loraSx1262" value="SX1262"> SX1262<br>
+      <input type="checkbox" class="loraFilter" value="SX1276"> SX1276<br>
+      <input type="checkbox" class="loraFilter" value="SX1262"> SX1262<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
     <label>GPS:</label>
     <div>
-      <input type="checkbox" id="gpsPresent" value="Yes"> Present<br>
-      <input type="checkbox" id="gpsAbsent" value="No"> Absent<br>
+      <input type="checkbox" class="gpsFilter" value="Yes"> Present<br>
+      <input type="checkbox" class="gpsFilter" value="No"> Absent<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
     <label>GNSS:</label>
     <div>
-      <input type="checkbox" id="gnssPresent" value="Yes"> Present<br>
-      <input type="checkbox" id="gnssAbsent" value="No"> Absent<br>
+      <input type="checkbox" class="gnssFilter" value="Yes"> Present<br>
+      <input type="checkbox" class="gnssFilter" value="No"> Absent<br>
     </div>
   </div>
   <div>
     <label>Screen:</label>
     <div>
-      <input type="checkbox" id="screenPresent" value="Yes"> Present<br>
-      <input type="checkbox" id="screenAbsent" value="No"> Absent<br>
+      <input type="checkbox" class="screenFilter" value="Yes"> Present<br>
+      <input type="checkbox" class="screenFilter" value="No"> Absent<br>
     </div>
   </div>
 </div>
