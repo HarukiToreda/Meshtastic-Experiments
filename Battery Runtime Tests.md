@@ -169,8 +169,8 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>71 Hrs</td><!--T-Deck-->
-          <td></td><!--RAKRAK19007-->
-          <td></td><!--RAKRAK19003-->   
+          <td>In Progress</td><!--RAKRAK19007-->
+          <td>In Progress</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
     </table>
@@ -254,8 +254,8 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--T-Deck-->
-          <td></td><!--RAKRAK19007-->
-          <td></td><!--RAKRAK19003-->   
+          <td>In Progress</td><!--RAKRAK19007-->
+          <td>In Progress</td><!--RAKRAK19003-->   
         </tr>
         <tr>
           <td>4000mAh Battery</td>
