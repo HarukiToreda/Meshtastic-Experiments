@@ -1,5 +1,9 @@
-# Meshtastic-Experiments
-Just my own measurements and values
+---
+layout: default
+title: LoRa Boards Comparison Table
+---
+
+# LoRa Boards Comparison Table
 
 ## Devices Comparison (Based on information by suppliers)
 
