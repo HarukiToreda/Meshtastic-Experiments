@@ -119,8 +119,8 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
       var batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
       var currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
 
-      if (isNaN(batteryVoltage) || batteryVoltage <= 0 || isNaN(currentAdcMultiplier) || currentAdcMultiplier < 2 || currentAdcMultiplier > 6) {
-        alert("Please enter valid numbers within the specified ranges.");
+      if (isNaN(batteryVoltage) || batteryVoltage <= 0 || isNaN(currentAdcMultiplier)) {
+        alert("Please enter valid numbers.");
         return;
       }
 
@@ -131,7 +131,6 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
     }
   </script>
 </div>
-
 
 
 
