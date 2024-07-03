@@ -8,15 +8,18 @@
   <style>
     body {
       display: flex;
-      flex-direction: column;
+      flex-direction: row; /* Change to row to align sidebar and content side by side */
       font-family: Arial, sans-serif;
     }
     .sidebar {
       width: 200px;
       padding: 10px;
       background: #f4f4f4;
+      height: 100vh; /* Make the sidebar take the full height */
+      position: fixed; /* Fix the sidebar in place */
     }
     .content {
+      margin-left: 220px; /* Ensure content is not hidden behind the fixed sidebar */
       flex: 1;
       padding: 20px;
     }
