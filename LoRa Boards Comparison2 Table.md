@@ -38,8 +38,6 @@ title: LoRa Boards Comparison Table
   </div>
 </div>
 
-<button onclick="filterTable()">Search</button>
-
 <div style="overflow-x: auto;">
   <table id="comparisonTable">
     <thead>
@@ -102,23 +100,24 @@ title: LoRa Boards Comparison Table
 </div>
 
 <script>
+document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter').forEach(filter => {
+  filter.addEventListener('change', filterTable);
+});
+
 function filterTable() {
-  // Get all filter values
   const mcuFilters = Array.from(document.querySelectorAll('.mcuFilter:checked')).map(cb => cb.value);
   const loraFilters = Array.from(document.querySelectorAll('.loraFilter:checked')).map(cb => cb.value);
   const gpsFilters = Array.from(document.querySelectorAll('.gpsFilter:checked')).map(cb => cb.value);
   const screenFilters = Array.from(document.querySelectorAll('.screenFilter:checked')).map(cb => cb.value);
 
-  // Get all table columns
   const columns = document.querySelectorAll('#comparisonTable thead th');
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
 
-  // Determine if a column should be displayed
   function shouldDisplayColumn(columnIndex) {
     const mcuCell = rows[0].children[columnIndex];
     const loraCell = rows[1].children[columnIndex];
     const gpsCell = rows[2].children[columnIndex];
-    
+
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcuCell.getAttribute('data-mcu'));
     const loraMatch = loraFilters.length === 0 || loraFilters.includes(loraCell.getAttribute('data-lora'));
     const gpsMatch = gpsFilters.length === 0 || gpsFilters.includes(gpsCell.getAttribute('data-gps'));
@@ -127,9 +126,8 @@ function filterTable() {
     return mcuMatch && loraMatch && gpsMatch && screenMatch;
   }
 
-  // Loop through each column and set its display property
   columns.forEach((column, index) => {
-    if (index === 0) return; // Skip the first column (headers)
+    if (index === 0) return;
     const display = shouldDisplayColumn(index) ? '' : 'none';
     column.style.display = display;
     rows.forEach(row => {
