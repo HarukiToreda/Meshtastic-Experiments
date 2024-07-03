@@ -25,15 +25,15 @@ title: LoRa Boards Comparison Table
   <div style="margin-right: 20px;">
     <label>GPS:</label>
     <div>
-      <input type="checkbox" class="gpsFilter" value="Yes"> Present<br>
-      <input type="checkbox" class="gpsFilter" value="No"> Absent<br>
+      <input type="checkbox" class="gpsFilter" value="Yes"> Yes<br>
+      <input type="checkbox" class="gpsFilter" value="No"> No<br>
     </div>
   </div>
   <div>
     <label>Screen:</label>
     <div>
-      <input type="checkbox" class="screenFilter" value="Yes"> Present<br>
-      <input type="checkbox" class="screenFilter" value="No"> Absent<br>
+      <input type="checkbox" class="screenFilter" value="Yes"> Yes<br>
+      <input type="checkbox" class="screenFilter" value="No"> No<br>
     </div>
   </div>
 </div>
