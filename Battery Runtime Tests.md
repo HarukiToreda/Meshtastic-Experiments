@@ -42,39 +42,39 @@ Runtime Comparison Under Different Conditions
       <tbody>
         <tr>
           <td>1100mAh Battery</td>
-          <td>21 Hrs</td>
-          <td>10 Hrs</td>
-          <td>9 Hrs</td>
-          <td></td>
-          <td>9 Hrs</td>
-          <td></td>
-          <td>10 Hrs</td>
-          <td></td>
-          <td></td>          
+          <td>21 Hrs</td><!--Heltec V2-->
+          <td>10 Hrs</td><!--Heltec V3-->
+          <td>9 Hrs</td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td>9 Hrs</td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td>10 Hrs</td><!--T-Deck-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
-          <td></td>
-          <td></td>
-          <td>20 Hrs</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>          
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td>20 Hrs</td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--T-Deck-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->
         </tr>
         <tr>
           <td>3000mAh Battery</td>
-          <td></td>
-          <td>30 Hrs</td>
-          <td>30 Hrs</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>25 Hrs</td>
-          <td></td>
-          <td></td>          
+          <td></td><!--Heltec V2-->
+          <td>30 Hrs</td><!--Heltec V3-->
+          <td>30 Hrs</td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td>25 Hrs</td><!--T-Deck-->
+          <td>In Progress	</td><!--RAKRAK19007-->
+          <td>In Progress	</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
     </table>
@@ -254,8 +254,8 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--T-Deck-->
-          <td>In Progress</td><!--RAKRAK19007-->
-          <td>In Progress</td><!--RAKRAK19003-->   
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
         </tr>
         <tr>
           <td>4000mAh Battery</td>
