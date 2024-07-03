@@ -29,6 +29,13 @@ title: LoRa Boards Comparison Table
       <input type="checkbox" id="gpsAbsent" value="No" onchange="filterTable()"> Absent<br>
     </div>
   </div>
+  <div style="margin-right: 20px;">
+    <label>GNSS:</label>
+    <div>
+      <input type="checkbox" id="gnssPresent" value="Yes" onchange="filterTable()"> Present<br>
+      <input type="checkbox" id="gnssAbsent" value="No" onchange="filterTable()"> Absent<br>
+    </div>
+  </div>
   <div>
     <label>Screen:</label>
     <div>
