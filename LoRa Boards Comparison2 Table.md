@@ -95,7 +95,8 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
       </tr>
-              <td>GNSS Chip</td>
+      <tr>
+        <td>GNSS Chip</td>
         <td>N/A</td><!--Heltec V2-->
         <td>N/A</td><!--Heltec V3-->
         <td>N/A</td><!--Wireless Paper-->
