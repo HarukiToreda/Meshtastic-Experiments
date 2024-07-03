@@ -11,39 +11,41 @@ title: LoRa Boards Comparison Table
   <div style="margin-right: 20px;">
     <label>MCU Chip:</label>
     <div>
-      <input type="checkbox" id="mcuEsp32" value="ESP32" onchange="filterTable()"> ESP32<br>
-      <input type="checkbox" id="mcuNrf" value="nRF" onchange="filterTable()"> nRF<br>
+      <input type="checkbox" id="mcuEsp32" value="ESP32"> ESP32<br>
+      <input type="checkbox" id="mcuNrf" value="nRF"> nRF<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
     <label>LoRa Chip:</label>
     <div>
-      <input type="checkbox" id="loraSx1276" value="SX1276" onchange="filterTable()"> SX1276<br>
-      <input type="checkbox" id="loraSx1262" value="SX1262" onchange="filterTable()"> SX1262<br>
+      <input type="checkbox" id="loraSx1276" value="SX1276"> SX1276<br>
+      <input type="checkbox" id="loraSx1262" value="SX1262"> SX1262<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
     <label>GPS:</label>
     <div>
-      <input type="checkbox" id="gpsPresent" value="Yes" onchange="filterTable()"> Present<br>
-      <input type="checkbox" id="gpsAbsent" value="No" onchange="filterTable()"> Absent<br>
+      <input type="checkbox" id="gpsPresent" value="Yes"> Present<br>
+      <input type="checkbox" id="gpsAbsent" value="No"> Absent<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
     <label>GNSS:</label>
     <div>
-      <input type="checkbox" id="gnssPresent" value="Yes" onchange="filterTable()"> Present<br>
-      <input type="checkbox" id="gnssAbsent" value="No" onchange="filterTable()"> Absent<br>
+      <input type="checkbox" id="gnssPresent" value="Yes"> Present<br>
+      <input type="checkbox" id="gnssAbsent" value="No"> Absent<br>
     </div>
   </div>
   <div>
     <label>Screen:</label>
     <div>
-      <input type="checkbox" id="screenPresent" value="Yes" onchange="filterTable()"> Present<br>
-      <input type="checkbox" id="screenAbsent" value="No" onchange="filterTable()"> Absent<br>
+      <input type="checkbox" id="screenPresent" value="Yes"> Present<br>
+      <input type="checkbox" id="screenAbsent" value="No"> Absent<br>
     </div>
   </div>
 </div>
+
+<button onclick="filterTable()">Search</button>
 
 <div style="overflow-x: auto;">
   <table id="comparisonTable">
