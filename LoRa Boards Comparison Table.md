@@ -117,17 +117,17 @@ title: LoRa Boards Comparison Table
       </tr>      
       <tr>
         <td>LoRa Chip</td>
-        <td>"SX1276 SX1278"</td><!--Heltec V2-->
-        <td>"SX1262"</td><!--Heltec V3-->
-        <td>"SX1262"</td><!--Wireless Paper-->
-        <td>"SX1262"</td><!--Wireless Stick Lite-->
-        <td>"SX1262"</td><!--Wireless Tracker-->
-        <td>"SX1262"</td><!--Capsule Sensor V3-->
-        <td>"SX1262"</td><!--Vision Master E213-->
-        <td>"SX1262"</td><!--Vision Master E290-->         
-        <td>"SX1262"</td><!--T-Deck-->
-        <td>"SX1262"</td><!--RAKRAK19007-->
-        <td>"SX1262"</td><!--T-Echo-->    
+        <td>SX1276 SX1278</td><!--Heltec V2-->
+        <td>SX1262</td><!--Heltec V3-->
+        <td>SX1262</td><!--Wireless Paper-->
+        <td>SX1262</td><!--Wireless Stick Lite-->
+        <td>SX1262</td><!--Wireless Tracker-->
+        <td>SX1262</td><!--Capsule Sensor V3-->
+        <td>SX1262</td><!--Vision Master E213-->
+        <td>SX1262</td><!--Vision Master E290-->         
+        <td>SX1262</td><!--T-Deck-->
+        <td>SX1262</td><!--RAKRAK19007-->
+        <td>SX1262</td><!--T-Echo-->    
       </tr>
       <tr>
         <td>GPS Chip</td>
@@ -433,11 +433,11 @@ function filterTable() {
 
   function shouldDisplayColumn(columnIndex) {
     const mcuCell = rows[0].children[columnIndex];
-    const loraCell = rows[1].children[columnIndex]; // Corrected row index for LoRa chip row
+    const loraCell = rows[1].children[columnIndex];
     const gpsCell = rows[2].children[columnIndex];
 
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.some(filter => mcuCell.getAttribute('data-mcu').includes(filter));
-    const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.getAttribute('data-lora').includes(filter)); // Corrected attribute check
+    const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.getAttribute('data-lora').includes(filter));
     const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && (gpsCell.textContent !== 'N/A' || mcuCell.getAttribute('data-gps') === 'Yes')) || (gpsFilters.includes('No') && gpsCell.textContent === 'N/A');
     const screenMatch = screenFilters.length === 0 || screenFilters.includes(mcuCell.getAttribute('data-screen'));
     const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(mcuCell.getAttribute('data-wifi'));
