@@ -117,19 +117,6 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
       </tr>
-      <tr>
-        <td>Charging Interface</td>
-        <td>Micro USB</td><!--Heltec V2-->
-        <td>USB-C</td><!--Heltec V3-->
-        <td>USB-C</td><!--Wireless Paper-->
-        <td>USB-C</td><!--Wireless Stick Lite-->
-        <td>USB-C</td><!--Wireless Tracker-->
-        <td>Wireless Boot</td><!--Capsule Sensor V3-->
-        <td>USB-C</td><!--Vision Master E213-->
-        <td>USB-C</td><!--Vision Master E290-->         
-        <td>USB-C</td><!--T-Deck-->
-        <td>USB-C</td><!--RAKRAK19007-->
-      </tr>
     </tbody>
   </table>
 </div>
@@ -157,3 +144,17 @@ function filterTable() {
         (loraFilters.length > 0 && !loraFilters.includes(cell.getAttribute('data-lora'))) ||
         (gpsFilters.length > 0 && !gpsFilters.includes(cell.getAttribute('data-gps'))) ||
         (gnssFilters.length > 0 && !gnssFilters.includes(cell.getAttribute('data-gnss'))) ||
+        (screenFilters.length > 0 && !screenFilters.includes(cell.getAttribute('data-screen')))
+      ) {
+        showRow = false;
+      }
+    });
+
+    if (showRow) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+}
+</script>
