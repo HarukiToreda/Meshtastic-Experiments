@@ -7,28 +7,35 @@ title: LoRa Boards Comparison Table
 
 ## Filter Boards
 
-<label>MCU Chip:</label>
-<div>
-  <input type="checkbox" id="mcuEsp32" value="ESP32" onchange="filterTable()"> ESP32<br>
-  <input type="checkbox" id="mcuNrf" value="nRF" onchange="filterTable()"> nRF<br>
-</div>
-
-<label>LoRa Chip:</label>
-<div>
-  <input type="checkbox" id="loraSx1276" value="SX1276" onchange="filterTable()"> SX1276<br>
-  <input type="checkbox" id="loraSx1262" value="SX1262" onchange="filterTable()"> SX1262<br>
-</div>
-
-<label>GPS:</label>
-<div>
-  <input type="checkbox" id="gpsPresent" value="Yes" onchange="filterTable()"> Present<br>
-  <input type="checkbox" id="gpsAbsent" value="No" onchange="filterTable()"> Absent<br>
-</div>
-
-<label>Screen:</label>
-<div>
-  <input type="checkbox" id="screenPresent" value="Yes" onchange="filterTable()"> Present<br>
-  <input type="checkbox" id="screenAbsent" value="No" onchange="filterTable()"> Absent<br>
+<div style="display: flex; flex-wrap: wrap;">
+  <div style="margin-right: 20px;">
+    <label>MCU Chip:</label>
+    <div>
+      <input type="checkbox" id="mcuEsp32" value="ESP32" onchange="filterTable()"> ESP32<br>
+      <input type="checkbox" id="mcuNrf" value="nRF" onchange="filterTable()"> nRF<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>LoRa Chip:</label>
+    <div>
+      <input type="checkbox" id="loraSx1276" value="SX1276" onchange="filterTable()"> SX1276<br>
+      <input type="checkbox" id="loraSx1262" value="SX1262" onchange="filterTable()"> SX1262<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>GPS:</label>
+    <div>
+      <input type="checkbox" id="gpsPresent" value="Yes" onchange="filterTable()"> Present<br>
+      <input type="checkbox" id="gpsAbsent" value="No" onchange="filterTable()"> Absent<br>
+    </div>
+  </div>
+  <div>
+    <label>Screen:</label>
+    <div>
+      <input type="checkbox" id="screenPresent" value="Yes" onchange="filterTable()"> Present<br>
+      <input type="checkbox" id="screenAbsent" value="No" onchange="filterTable()"> Absent<br>
+    </div>
+  </div>
 </div>
 
 <div style="overflow-x: auto;">
