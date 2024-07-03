@@ -131,3 +131,10 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
     }
   </script>
 </div>
+
+
+
+
+
+
+.
