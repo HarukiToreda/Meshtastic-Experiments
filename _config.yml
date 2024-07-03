@@ -1,11 +1,16 @@
 title: Haruki's Meshtastic Experiments
-description: >- # this means to ignore newlines until "baseurl:"
+description: >-
   This is a simple ADC calculator.
 baseurl: "/Meshtastic-Experiments" # the subpath of your site, e.g. /blog
 url: "https://HarukiToreda.github.io" # the base hostname & protocol for your site
-theme: jekyll-theme-primer
 plugins:
   - jekyll-feed
+
+# Point to the local theme directories
+layouts_dir: _theme/_layouts
+includes_dir: _theme/_includes
+sass:
+  sass_dir: _theme/_sass
 
 # Add navigation links
 navbar:
