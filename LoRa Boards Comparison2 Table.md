@@ -169,7 +169,7 @@ title: LoRa Boards Comparison Table
         <td>20μA</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>2μA</td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->        
+        <td>0.25 mA</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Frequency</td>
@@ -197,7 +197,7 @@ title: LoRa Boards Comparison Table
         <td>21 ± 1dBm</td><!--Vision Master E290-->         
         <td>22 ± 1dBm</td><!--T-Deck-->
         <td>22 ± 1dBm</td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->        
+        <td>22 ± 1dBm</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
@@ -209,9 +209,9 @@ title: LoRa Boards Comparison Table
         <td>-135 dBm</td><!--Capsule Sensor V3-->
         <td>-136 dBm</td><!--Vision Master E213-->
         <td>-136 dBm</td><!--Vision Master E290-->         
-        <td>?</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->.
-        <td>?</td><!--T-Echo-->             
+        <td>-136 dBm</td><!--T-Deck-->
+        <td>-136 dBm</td><!--RAKRAK19007-->.
+        <td>-136 dBm</td><!--T-Echo-->             
       </tr>
       <tr>
         <td>Wi-Fi</td>
@@ -281,7 +281,7 @@ title: LoRa Boards Comparison Table
         <td>TP4054</td><!--Vision Master E290-->         
         <td>TP4054</td><!--T-Deck-->
         <td>-</td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->        
+        <td>TP4054</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Diagram</td>
@@ -295,7 +295,7 @@ title: LoRa Boards Comparison Table
         <td><a href="https://resource.heltec.cn/download/HT-VME290/HT-VME290%20Schematic_Diagram.pdf">Diagram Link</a></td><!--Vision Master E290-->         
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Diagram Link</a></td><!--T-Deck-->
         <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19007-->
-        <td>?</td><!--T-Echo-->        
+        <td><a href="https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/T-Echo_Schematic.pdf">Diagram Link</a></td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Input</td>
