@@ -8,10 +8,17 @@
   <style>
     body {
       display: flex;
-      flex-direction: row; /* Align sidebar and content side by side */
+      flex-direction: column;
       font-family: Arial, sans-serif;
       background-color: #333333; /* Charcoal background */
       color: #ffffff; /* White text */
+      min-height: 100vh;
+      margin: 0;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      width: 100%;
     }
     .sidebar {
       width: 200px;
@@ -29,7 +36,6 @@
       flex: 1;
       padding: 20px;
       background-color: #1a1a1a; /* Darker charcoal background for content */
-      padding-bottom: 60px; /* Space for the footer */
     }
     nav ul {
       list-style-type: none;
@@ -78,32 +84,32 @@
     }
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 5px 10px;
       background: #000000; /* Black background for footer */
       color: #00FFFF; /* Electric blue text */
-      position: relative; /* Change to relative */
-      bottom: 0;
       width: 100%;
-      margin-top: 20px;
+      flex-shrink: 0;
     }
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <header>
-      <h1>{{ site.title }}</h1>
-      <p>{{ site.description }}</p>
-    </header>
-    <nav>
-      <ul>
-        {% for item in site.navbar %}
-          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </div>
-  <div class="content">
-    {{ content }}
+  <div class="main-container">
+    <div class="sidebar">
+      <header>
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+      </header>
+      <nav>
+        <ul>
+          {% for item in site.navbar %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <div class="content">
+      {{ content }}
+    </div>
   </div>
   <footer>
     <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
