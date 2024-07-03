@@ -1,9 +1,10 @@
 ---
 layout: default
 title: ADC Calculator
-sidebar_label: Power
-description: 
 ---
+
+# ADC Calculator
+
 Ratio of voltage divider for battery pin e.g. 3.20 (R1=100k, R2=220k)
 
 Overrides the ADC_MULTIPLIER defined in the firmware device variant file for battery voltage calculation.
