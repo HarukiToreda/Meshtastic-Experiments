@@ -155,6 +155,7 @@ title: LoRa Boards Comparison Table
         <td>USB-C</td><!--Vision Master E290-->         
         <td>USB-C</td><!--T-Deck-->
         <td>USB-C</td><!--RAKRAK19007-->
+        <td>USB-C</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Deep Sleep</td>
