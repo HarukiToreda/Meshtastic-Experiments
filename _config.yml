@@ -21,7 +21,7 @@ navbar:
 
 title: Haruki's Meshtastic Experiments
 description: >-
-  This is a simple ADC calculator.
+  Just my personal experiments.
 baseurl: "/Meshtastic-Experiments" # the subpath of your site, e.g. /blog
 url: "https://HarukiToreda.github.io" # the base hostname & protocol for your site
 plugins:
