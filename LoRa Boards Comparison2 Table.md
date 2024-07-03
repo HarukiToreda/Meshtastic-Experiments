@@ -82,7 +82,8 @@ title: LoRa Boards Comparison Table
         <th>Heltec Vision Master E213</th>
         <th>Heltec Vision Master E290</th>        
         <th>T-Deck</th>
-        <th>RAK nRF52840</th>
+        <th>RAK RAK19007</th>
+        <th>T-Echo</th>        
       </tr>
     </thead>
     <tbody>
@@ -97,7 +98,8 @@ title: LoRa Boards Comparison Table
         <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E213-->
         <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E290--> 
         <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes">ESP32-S3</td><!--T-Deck-->
-        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">RAK4631</td><!--RAKRAK19007-->
+        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--RAKRAK19007-->
+        <td data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>LoRa Chip</td>
@@ -111,6 +113,7 @@ title: LoRa Boards Comparison Table
         <td>SX1262</td><!--Vision Master E290-->         
         <td>SX1262</td><!--T-Deck-->
         <td>SX1262</td><!--RAKRAK19007-->
+        <td>SX1262</td><!--T-Echo-->    
       </tr>
       <tr>
         <td>GPS Chip</td>
@@ -124,6 +127,7 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
+        <td>N/A</td><!--T-Echo-->
       </tr>
       <tr>
         <td>GNSS Chip</td>
@@ -137,6 +141,7 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
+        <td>L76k</td><!--T-Echo-->
       </tr>
       <tr>
         <td>Charging Interface</td>
@@ -163,6 +168,7 @@ title: LoRa Boards Comparison Table
         <td>20μA</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>2μA</td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Frequency</td>
@@ -176,6 +182,7 @@ title: LoRa Boards Comparison Table
         <td>470~510 MHz, 863~928 MHz</td><!--Vision Master E290-->         
         <td>470~510 MHz, 863~928 MHz</td><!--T-Deck-->
         <td>470~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->
+        <td>470~510 MHz, 863~928 MHz</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Max. TX Power</td>
@@ -189,6 +196,7 @@ title: LoRa Boards Comparison Table
         <td>21 ± 1dBm</td><!--Vision Master E290-->         
         <td>22 ± 1dBm</td><!--T-Deck-->
         <td>22 ± 1dBm</td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
@@ -201,7 +209,8 @@ title: LoRa Boards Comparison Table
         <td>-136 dBm</td><!--Vision Master E213-->
         <td>-136 dBm</td><!--Vision Master E290-->         
         <td>?</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
+        <td>?</td><!--RAKRAK19007-->.
+        <td>?</td><!--T-Echo-->             
       </tr>
       <tr>
         <td>Wi-Fi</td>
@@ -215,6 +224,7 @@ title: LoRa Boards Comparison Table
         <td>802.11 b/g/n 150 Mbps</td><!--Vision Master E290-->         
         <td>802.11 b/g/n 150 Mbps</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
+        <td>N/A</td><!--T-Echo-->             
       </tr>
       <tr>
         <td>Bluetooth</td>
@@ -228,6 +238,7 @@ title: LoRa Boards Comparison Table
         <td>BT-5 (LE)</td><!--Vision Master E290-->         
         <td>BT-5 (LE)</td><!--T-Deck-->
         <td>BT-5 (LE)</td><!--RAKRAK19007-->
+        <td>BT-5 (LE)</td><!--T-Echo-->             
       </tr>
       <tr>
         <td>Display Type</td>
@@ -241,6 +252,7 @@ title: LoRa Boards Comparison Table
         <td>E-ink</td><!--Vision Master E290-->         
         <td>LCD</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
+        <td>E-ink</td><!--T-Echo-->
       </tr>
       <tr>
         <td>Display Size</td>
@@ -254,6 +266,7 @@ title: LoRa Boards Comparison Table
         <td>2.9 Inch</td><!--Vision Master E290-->         
         <td>2.8 Inch</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
+        <td>1.54 Inch</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Charging IC</td>
@@ -267,6 +280,7 @@ title: LoRa Boards Comparison Table
         <td>TP4054</td><!--Vision Master E290-->         
         <td>TP4054</td><!--T-Deck-->
         <td>-</td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Diagram</td>
@@ -280,6 +294,7 @@ title: LoRa Boards Comparison Table
         <td><a href="https://resource.heltec.cn/download/HT-VME290/HT-VME290%20Schematic_Diagram.pdf">Diagram Link</a></td><!--Vision Master E290-->         
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Diagram Link</a></td><!--T-Deck-->
         <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Input</td>
@@ -293,6 +308,7 @@ title: LoRa Boards Comparison Table
         <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E290-->         
         <td>Touch Screen, Keyboard, trackball, Reset Button</td><!--T-Deck-->
         <td>Reset Button</td><!--RAKRAK19007-->
+        <td>User Button, Reset Button, Touch Button</td><!--T-Echo-->        
       </tr>
       <tr>
         <td>Price Range USD</td>
@@ -306,6 +322,7 @@ title: LoRa Boards Comparison Table
         <td>$20.90</td><!--Vision Master E290-->         
         <td>$52.66</td><!--T-Deck-->
         <td>$36.97</td><!--RAKRAK19007-->
+        <td>$54.41</td><!--T-Echo-->              
       </tr>
     </tbody>
   </table>
