@@ -103,7 +103,7 @@ title: LoRa Boards Comparison Table
       </tr>
       <tr>
         <td>LoRa Chip</td>
-        <td>SX1276</td><!--Heltec V2-->
+        <td>SX1276 SX1278</td><!--Heltec V2-->
         <td>SX1262</td><!--Heltec V3-->
         <td>SX1262</td><!--Wireless Paper-->
         <td>SX1262</td><!--Wireless Stick Lite-->
