@@ -6,3 +6,16 @@ url: "https://HarukiToreda.github.io" # the base hostname & protocol for your si
 theme: jekyll-theme-Modernist
 plugins:
   - jekyll-feed
+
+# Add navigation links
+navbar:
+  - title: Home
+    url: "/Meshtastic-Experiments/"
+  - title: Battery Runtime Tests
+    url: "/Meshtastic-Experiments/Battery Runtime Tests"
+  - title: ADC Calculator
+    url: "/Meshtastic-Experiments/ADC-Calculator"
+  - title: LoRa Boards Comparison Table
+    url: "/Meshtastic-Experiments/LoRa Boards Comparison Table"
+  - title: LoRa Boards Power Measurements
+    url: "/Meshtastic-Experiments/LoRa Boards Power Measurements"
