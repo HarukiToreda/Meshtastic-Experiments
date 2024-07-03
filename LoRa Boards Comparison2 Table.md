@@ -310,7 +310,7 @@ title: LoRa Boards Comparison Table
 </div>
 
 <script>
-document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter').forEach(filter => {
+document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter, .wifiFilter, .bluetoothFilter, .touchFilter, .keyboardFilter').forEach(filter => {
   filter.addEventListener('change', filterTable);
 });
 
@@ -319,6 +319,10 @@ function filterTable() {
   const loraFilters = Array.from(document.querySelectorAll('.loraFilter:checked')).map(cb => cb.value);
   const gpsFilters = Array.from(document.querySelectorAll('.gpsFilter:checked')).map(cb => cb.value);
   const screenFilters = Array.from(document.querySelectorAll('.screenFilter:checked')).map(cb => cb.value);
+  const wifiFilters = Array.from(document.querySelectorAll('.wifiFilter:checked')).map(cb => cb.value);
+  const bluetoothFilters = Array.from(document.querySelectorAll('.bluetoothFilter:checked')).map(cb => cb.value);
+  const touchFilters = Array.from(document.querySelectorAll('.touchFilter:checked')).map(cb => cb.value);
+  const keyboardFilters = Array.from(document.querySelectorAll('.keyboardFilter:checked')).map(cb => cb.value);
 
   const columns = document.querySelectorAll('#comparisonTable thead th');
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
@@ -332,8 +336,12 @@ function filterTable() {
     const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.textContent.includes(filter));
     const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && (gpsCell.textContent !== 'N/A' || mcuCell.getAttribute('data-gps') === 'Yes')) || (gpsFilters.includes('No') && gpsCell.textContent === 'N/A');
     const screenMatch = screenFilters.length === 0 || (screenFilters.includes('Yes') && mcuCell.getAttribute('data-screen') === 'Yes') || (screenFilters.includes('No') && mcuCell.getAttribute('data-screen') === 'No');
+    const wifiMatch = wifiFilters.length === 0 || (wifiFilters.includes('Yes') && mcuCell.getAttribute('data-wifi') === 'Yes') || (wifiFilters.includes('No') && mcuCell.getAttribute('data-wifi') === 'No');
+    const bluetoothMatch = bluetoothFilters.length === 0 || (bluetoothFilters.includes('Yes') && mcuCell.getAttribute('data-bluetooth') === 'Yes') || (bluetoothFilters.includes('No') && mcuCell.getAttribute('data-bluetooth') === 'No');
+    const touchMatch = touchFilters.length === 0 || (touchFilters.includes('Yes') && mcuCell.getAttribute('data-touch') === 'Yes') || (touchFilters.includes('No') && mcuCell.getAttribute('data-touch') === 'No');
+    const keyboardMatch = keyboardFilters.length === 0 || (keyboardFilters.includes('Yes') && mcuCell.getAttribute('data-keyboard') === 'Yes') || (keyboardFilters.includes('No') && mcuCell.getAttribute('data-keyboard') === 'No');
 
-    return mcuMatch && loraMatch && gpsMatch && screenMatch;
+    return mcuMatch && loraMatch && gpsMatch && screenMatch && wifiMatch && bluetoothMatch && touchMatch && keyboardMatch;
   }
 
   columns.forEach((column, index) => {
