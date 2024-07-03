@@ -39,7 +39,7 @@
           <td>10 Hrs</td><!--Heltec V3-->
           <td>9 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
-          <td>In Progress</td><!--Wireless Tracker-->
+          <td>9 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>10 Hrs</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
