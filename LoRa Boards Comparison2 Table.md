@@ -29,13 +29,6 @@ title: LoRa Boards Comparison Table
       <input type="checkbox" class="gpsFilter" value="No"> Absent<br>
     </div>
   </div>
-  <div style="margin-right: 20px;">
-    <label>GNSS:</label>
-    <div>
-      <input type="checkbox" class="gnssFilter" value="Yes"> Present<br>
-      <input type="checkbox" class="gnssFilter" value="No"> Absent<br>
-    </div>
-  </div>
   <div>
     <label>Screen:</label>
     <div>
@@ -67,16 +60,16 @@ title: LoRa Boards Comparison Table
     <tbody>
       <tr>
         <td>MCU Chip</td>
-        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-D0</td><!--Heltec V2-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3</td><!--Heltec V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Paper-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="No">ESP32-S3</td><!--Wireless Stick Lite-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-gnss="No" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Tracker-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="Yes" data-screen="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E213-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E290--> 
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3</td><!--T-Deck-->
-        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="No">RAK4631</td><!--RAKRAK19007-->
+        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="Yes">ESP32-D0</td><!--Heltec V2-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3</td><!--Heltec V3-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Paper-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="No">ESP32-S3</td><!--Wireless Stick Lite-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Tracker-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E213-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E290--> 
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3</td><!--T-Deck-->
+        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="No">RAK4631</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>LoRa Chip</td>
@@ -104,19 +97,6 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--T-Deck-->
         <td>N/A</td><!--RAKRAK19007-->
       </tr>
-      <tr>
-        <td>GNSS Chip</td>
-        <td>N/A</td><!--Heltec V2-->
-        <td>N/A</td><!--Heltec V3-->
-        <td>N/A</td><!--Wireless Paper-->
-        <td>N/A</td><!--Wireless Stick Lite-->
-        <td>N/A</td><!--Wireless Tracker-->
-        <td>L76k</td><!--Capsule Sensor V3-->
-        <td>N/A</td><!--Vision Master E213-->
-        <td>N/A</td><!--Vision Master E290-->         
-        <td>N/A</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
-      </tr>
     </tbody>
   </table>
 </div>
@@ -127,34 +107,34 @@ function filterTable() {
   const mcuFilters = Array.from(document.querySelectorAll('.mcuFilter:checked')).map(cb => cb.value);
   const loraFilters = Array.from(document.querySelectorAll('.loraFilter:checked')).map(cb => cb.value);
   const gpsFilters = Array.from(document.querySelectorAll('.gpsFilter:checked')).map(cb => cb.value);
-  const gnssFilters = Array.from(document.querySelectorAll('.gnssFilter:checked')).map(cb => cb.value);
   const screenFilters = Array.from(document.querySelectorAll('.screenFilter:checked')).map(cb => cb.value);
 
-  // Get all table rows
+  // Get all table columns
+  const columns = document.querySelectorAll('#comparisonTable thead th');
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
 
-  // Loop through each row and determine if it should be displayed
-  rows.forEach(row => {
-    const cells = row.querySelectorAll('td');
-    let showRow = true;
+  // Determine if a column should be displayed
+  function shouldDisplayColumn(columnIndex) {
+    const mcuCell = rows[0].children[columnIndex];
+    const loraCell = rows[1].children[columnIndex];
+    const gpsCell = rows[2].children[columnIndex];
+    
+    const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcuCell.getAttribute('data-mcu'));
+    const loraMatch = loraFilters.length === 0 || loraFilters.includes(loraCell.getAttribute('data-lora'));
+    const gpsMatch = gpsFilters.length === 0 || gpsFilters.includes(gpsCell.getAttribute('data-gps'));
+    const screenMatch = screenFilters.length === 0 || screenFilters.includes(mcuCell.getAttribute('data-screen'));
 
-    cells.forEach(cell => {
-      if (
-        (mcuFilters.length > 0 && !mcuFilters.includes(cell.getAttribute('data-mcu'))) ||
-        (loraFilters.length > 0 && !loraFilters.includes(cell.getAttribute('data-lora'))) ||
-        (gpsFilters.length > 0 && !gpsFilters.includes(cell.getAttribute('data-gps'))) ||
-        (gnssFilters.length > 0 && !gnssFilters.includes(cell.getAttribute('data-gnss'))) ||
-        (screenFilters.length > 0 && !screenFilters.includes(cell.getAttribute('data-screen')))
-      ) {
-        showRow = false;
-      }
+    return mcuMatch && loraMatch && gpsMatch && screenMatch;
+  }
+
+  // Loop through each column and set its display property
+  columns.forEach((column, index) => {
+    if (index === 0) return; // Skip the first column (headers)
+    const display = shouldDisplayColumn(index) ? '' : 'none';
+    column.style.display = display;
+    rows.forEach(row => {
+      row.children[index].style.display = display;
     });
-
-    if (showRow) {
-      row.style.display = '';
-    } else {
-      row.style.display = 'none';
-    }
   });
 }
 </script>
