@@ -438,7 +438,7 @@ function filterTable() {
 
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.some(filter => mcuCell.getAttribute('data-mcu').includes(filter));
     const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.getAttribute('data-lora').includes(filter));
-    const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && (gpsCell.textContent !== 'N/A' || mcuCell.getAttribute('data-gps') === 'Yes')) || (gpsFilters.includes('No') && gpsCell.textContent === 'N/A');
+    const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && (gpsCell.textContent !== 'N/A' || mcuCell.getAttribute('data-gps') === 'Yes')) || (gpsFilters.includes('No') && gpsCell.textContent === 'N/A'));
     const screenMatch = screenFilters.length === 0 || screenFilters.includes(mcuCell.getAttribute('data-screen'));
     const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(mcuCell.getAttribute('data-wifi'));
     const bluetoothMatch = bluetoothFilters.length === 0 || bluetoothFilters.includes(mcuCell.getAttribute('data-bluetooth'));
@@ -458,3 +458,4 @@ function filterTable() {
   });
 }
 </script>
+
