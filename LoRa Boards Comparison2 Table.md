@@ -120,8 +120,8 @@ function filterTable() {
 
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcuCell.getAttribute('data-mcu'));
     const loraMatch = loraFilters.length === 0 || loraFilters.includes(loraCell.getAttribute('data-lora'));
-    const gpsMatch = gpsFilters.length === 0 || gpsFilters.includes(gpsCell.getAttribute('data-gps'));
-    const screenMatch = screenFilters.length === 0 || screenFilters.includes(mcuCell.getAttribute('data-screen'));
+    const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && gpsCell.getAttribute('data-gps') === 'Yes') || (gpsFilters.includes('No') && gpsCell.getAttribute('data-gps') === 'No');
+    const screenMatch = screenFilters.length === 0 || (screenFilters.includes('Yes') && mcuCell.getAttribute('data-screen') === 'Yes') || (screenFilters.includes('No') && mcuCell.getAttribute('data-screen') === 'No');
 
     return mcuMatch && loraMatch && gpsMatch && screenMatch;
   }
