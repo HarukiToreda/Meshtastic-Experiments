@@ -9,7 +9,7 @@ plugins:
 # Add navigation links
 navbar:
   - title: Home
-    url: "/Meshtastic-Experiments/"
+    url: "/"
   - title: Battery Runtime Tests
     url: "/Meshtastic-Experiments/Battery-Runtime-Tests"
   - title: ADC Calculator
