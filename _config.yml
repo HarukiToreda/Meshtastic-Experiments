@@ -45,3 +45,5 @@ navbar:
     url: "/LoRa Boards Comparison Table"
   - title: LoRa Boards Power Measurements
     url: "/LoRa Boards Power Measurements"
+  - title: LoRa Boards Comparison2 Table
+    url: "/LoRa Boards Comparison2 Table"
