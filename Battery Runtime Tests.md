@@ -5,7 +5,7 @@ title: Battery Runtime Tests
 
 # Battery Runtime Tests
 
-# Runtime Comparison Under Different Conditions
+Runtime Comparison Under Different Conditions
 
 ## Experiment #1 - Default Settings
 
