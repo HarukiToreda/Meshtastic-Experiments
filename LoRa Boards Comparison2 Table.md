@@ -337,6 +337,7 @@ title: LoRa Boards Comparison Table
         <td>384KB ROM</td><!--Vision Master E290-->         
         <td>384KB ROM</td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->            
       </tr>
       <tr>
         <td>Memory SRAM</td>
@@ -350,6 +351,7 @@ title: LoRa Boards Comparison Table
         <td>512KB SRAM</td><!--Vision Master E290-->         
         <td>512 KB SRAM</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->                    
       </tr>      
       <tr>
         <td>Memory RTC SRAM</td>
@@ -363,6 +365,7 @@ title: LoRa Boards Comparison Table
         <td>16KB RTC SRAM</td><!--Vision Master E290-->         
         <td>16KB RTC SRAM</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->        
       </tr>      
       <tr>
         <td>Memory SiP Flash</td>
@@ -376,6 +379,7 @@ title: LoRa Boards Comparison Table
         <td>8MB SiP Flash</td><!--Vision Master E290-->         
         <td>N/A</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->        
       </tr>     
       <tr>
         <td>Memory PSRAM</td>
@@ -389,6 +393,7 @@ title: LoRa Boards Comparison Table
         <td>8MB PSRAM</td><!--Vision Master E290-->         
         <td>8MB PSRAM</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->      
       </tr>           
       <tr>
         <td>Memory Flash</td>
@@ -402,6 +407,7 @@ title: LoRa Boards Comparison Table
         <td>128MB Flash</td><!--Vision Master E290-->         
         <td>16MB Flash</td><!--T-Deck-->
         <td>1024KB Flash</td><!--RAKRAK19007-->
+        <td>?</td><!--T-Echo-->        
       </tr>        
     </tbody>
   </table>
