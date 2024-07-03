@@ -41,7 +41,7 @@
           <td></td><!--Wireless Stick Lite-->
           <td>In Progress</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td>In Progress</td><!--T-Deck-->
+          <td>10 Hrs</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->          
         </tr>
