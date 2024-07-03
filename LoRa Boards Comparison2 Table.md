@@ -65,16 +65,16 @@ title: LoRa Boards Comparison Table
     <tbody>
       <tr>
         <td>MCU Chip</td>
-        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="Yes">ESP32-D0</td><!--Heltec V2-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3</td><!--Heltec V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Paper-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="No">ESP32-S3</td><!--Wireless Stick Lite-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Tracker-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E213-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E290--> 
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Yes">ESP32-S3</td><!--T-Deck-->
-        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="No">RAK4631</td><!--RAKRAK19007-->
+        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-D0</td><!--Heltec V2-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3</td><!--Heltec V3-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Paper-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="No">ESP32-S3</td><!--Wireless Stick Lite-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-gnss="No" data-screen="Yes">ESP32-S3FN8</td><!--Wireless Tracker-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="Yes" data-screen="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E213-->
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3R8</td><!--Vision Master E290--> 
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="Yes">ESP32-S3</td><!--T-Deck-->
+        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-gnss="No" data-screen="No">RAK4631</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>LoRa Chip</td>
