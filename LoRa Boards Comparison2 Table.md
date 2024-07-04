@@ -379,6 +379,107 @@ title: LoRa Boards Comparison Table
         <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->            
         <td>$17.58</td><!--T3-S3-->                
       </tr>
+        <td>Memory ROM</td>
+        <td>448KB ROM</td><!--Heltec V2-->
+        <td>384KB ROM</td><!--Heltec V3-->
+        <td>384KB ROM</td><!--Wireless Paper-->
+        <td>384KB ROM</td><!--Wireless Stick Lite-->
+        <td>384KB ROM</td><!--Wireless Tracker-->
+        <td>384KB ROM</td><!--Capsule Sensor V3-->
+        <td>384KB ROM</td><!--Vision Master E213-->
+        <td>384KB ROM</td><!--Vision Master E290-->         
+        <td>?</td><!--RAKRAK19007-->
+        <td>384KB ROM</td><!--T-Deck-->      
+        <td>?</td><!--T-Echo-->
+        <td>384KB ROM</td><!--T-Beam-->        
+        <td>384KB ROM</td><!--T-Beam-Supreme-->            
+        <td>384KB ROM</td><!--T3-S3-->            
+      </tr>
+      <tr>
+        <td>Memory SRAM</td>
+        <td>520KB SRAM</td><!--Heltec V2-->
+        <td>512KB SRAM</td><!--Heltec V3-->
+        <td>512KB SRAM</td><!--Wireless Paper-->
+        <td>512KB SRAM</td><!--Wireless Stick Lite-->
+        <td>512KB SRAM</td><!--Wireless Tracker-->
+        <td>512KB SRAM</td><!--Capsule Sensor V3-->
+        <td>512KB SRAM</td><!--Vision Master E213-->
+        <td>512KB SRAM</td><!--Vision Master E290-->         
+        <td>?</td><!--RAKRAK19007-->
+        <td>512KB SRAM</td><!--T-Deck-->      
+        <td>?</td><!--T-Echo-->
+        <td>512KB SRAM</td><!--T-Beam-->        
+        <td>512KB SRAM</td><!--T-Beam-Supreme-->            
+        <td>512KB SRAM</td><!--T3-S3-->          
+      </tr>      
+      <tr>
+        <td>Memory RTC SRAM</td>
+        <td>16KB RTC SRAM</td><!--Heltec V2-->
+        <td>16KB RTC SRAM</td><!--Heltec V3-->
+        <td>16KB RTC SRAM</td><!--Wireless Paper-->
+        <td>16KB RTC SRAM</td><!--Wireless Stick Lite-->
+        <td>16KB RTC SRAM</td><!--Wireless Tracker-->
+        <td>16KB RTC SRAM</td><!--Capsule Sensor V3-->
+        <td>16KB RTC SRAM</td><!--Vision Master E213-->
+        <td>16KB RTC SRAM</td><!--Vision Master E290-->         
+        <td>?</td><!--RAKRAK19007-->
+        <td>16KB RTC SRAM</td><!--T-Deck-->
+        <td>?</td><!--T-Echo-->
+        <td>16KB RTC SRAM</td><!--T-Beam-->
+        <td>16KB RTC SRAM</td><!--T-Beam-Supreme-->
+        <td>16KB RTC SRAM</td><!--T3-S3-->
+      </tr>      
+      <tr>
+        <td>Memory SiP Flash</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>8MB SiP Flash</td><!--Heltec V3-->
+        <td>8MB SiP Flash</td><!--Wireless Paper-->
+        <td>8MB SiP Flash</td><!--Wireless Stick Lite-->
+        <td>8MB SiP Flash</td><!--Wireless Tracker-->
+        <td>8MB SiP Flash</td><!--Capsule Sensor V3-->
+        <td>8MB SiP Flash</td><!--Vision Master E213-->
+        <td>8MB SiP Flash</td><!--Vision Master E290-->         
+        <td>?</td><!--RAKRAK19007-->
+        <td>N/A</td><!--T-Deck-->      
+        <td>?</td><!--T-Echo-->
+        <td></td><!--T-Beam-->        
+        <td></td><!--T-Beam-Supreme-->            
+        <td></td><!--T3-S3-->          
+      </tr>     
+      <tr>
+        <td>Memory PSRAM</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V3-->
+        <td>N/A</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>N/A</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>8MB PSRAM</td><!--Vision Master E213-->
+        <td>8MB PSRAM</td><!--Vision Master E290-->         
+        <td>N/A</td><!--RAKRAK19007-->
+        <td>8MB PSRAM</td><!--T-Deck-->      
+        <td>N/A</td><!--T-Echo-->
+        <td></td><!--T-Beam-->        
+        <td></td><!--T-Beam-Supreme-->            
+        <td></td><!--T3-S3-->
+      </tr>           
+      <tr>
+        <td>Memory Flash</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V3-->
+        <td>N/A</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>N/A</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>16MB Flash</td><!--Vision Master E213-->
+        <td>16MB Flash</td><!--Vision Master E290-->         
+        <td>1MB Flash</td><!--RAKRAK19007-->
+        <td>16MB Flash</td><!--T-Deck-->      
+        <td>1MB Flash</td><!--T-Echo-->
+        <td></td><!--T-Beam-->        
+        <td></td><!--T-Beam-Supreme-->            
+        <td></td><!--T3-S3-->                  
+      </tr>                       
     </tbody>
   </table>
 </div>
