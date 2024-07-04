@@ -194,20 +194,20 @@ title: LoRa Boards Comparison Table
       </tr>
       <tr>
         <td>Frequency</td>
-        <td>470~510 MHz, 863~928 MHz</td><!--Heltec V2-->
-        <td>470~510 MHz, 863~928 MHz</td><!--Heltec V3-->
-        <td>470~510 MHz, 863~928 MHz</td><!--Wireless Paper-->
-        <td>470~510 MHz, 863~928 MHz</td><!--Wireless Stick Lite-->
-        <td>470~510 MHz, 863~928 MHz</td><!--Wireless Tracker-->
-        <td>470~510 MHz, 863~928 MHz</td><!--Capsule Sensor V3-->
-        <td>470~510 MHz, 863~928 MHz</td><!--Vision Master E213-->
-        <td>470~510 MHz, 863~928 MHz</td><!--Vision Master E290-->
-        <td>470~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->        
-        <td>470~510 MHz, 863~928 MHz</td><!--T-Deck-->
-        <td>470~510 MHz, 863~928 MHz</td><!--T-Echo-->
-        <td>470~510 MHz, 863~928 MHz</td><!--T-Beam-->        
-        <td>470~510 MHz, 863~928 MHz</td><!--T-Beam-Supreme-->      
-        <td>470~510 MHz, 863~928 MHz</td><!--T3-S3-->                
+        <td>433~510 MHz, 863~928 MHz</td><!--Heltec V2-->
+        <td>433~510 MHz, 863~928 MHz</td><!--Heltec V3-->
+        <td>433~510 MHz, 863~928 MHz</td><!--Wireless Paper-->
+        <td>433~510 MHz, 863~928 MHz</td><!--Wireless Stick Lite-->
+        <td>433~510 MHz, 863~928 MHz</td><!--Wireless Tracker-->
+        <td>433~510 MHz, 863~928 MHz</td><!--Capsule Sensor V3-->
+        <td>433~510 MHz, 863~928 MHz</td><!--Vision Master E213-->
+        <td>433~510 MHz, 863~928 MHz</td><!--Vision Master E290-->
+        <td>433~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->        
+        <td>433~510 MHz, 863~928 MHz</td><!--T-Deck-->
+        <td>433~510 MHz, 863~928 MHz</td><!--T-Echo-->
+        <td>433~510 MHz, 863~928 MHz</td><!--T-Beam-->        
+        <td>433~510 MHz, 863~928 MHz</td><!--T-Beam-Supreme-->      
+        <td>433~510 MHz, 863~928 MHz</td><!--T3-S3-->                
       </tr>
       <tr>
         <td>Max. TX Power</td>
