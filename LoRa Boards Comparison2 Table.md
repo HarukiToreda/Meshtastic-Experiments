@@ -161,7 +161,7 @@ title: LoRa Boards Comparison Table
         <td>USB-C</td><!--RAKRAK19007-->        
         <td>USB-C</td><!--T-Deck-->
         <td>USB-C</td><!--T-Echo-->
-        <td>USB-C</td><!--T-Beam-->
+        <td>Micro USB</td><!--T-Beam-->
       </tr>
       <tr>
         <td>Deep Sleep</td>
