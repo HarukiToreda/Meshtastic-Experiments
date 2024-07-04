@@ -102,8 +102,8 @@ title: LoRa Boards Comparison Table
         <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--RAKRAK19007-->
         <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes">ESP32-S3</td><!--T-Deck-->
         <td data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--T-Echo-->
-        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-D0WDQ6-V3</td><!--T-Beam-->        
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--T-Beam Supreme-->              
+        <td data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-D0WDQ6-V3</td><!--T-Beam-->        
+        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--T-Beam Supreme-->              
       </tr>
       <tr>
         <td>LoRa Chip</td>
