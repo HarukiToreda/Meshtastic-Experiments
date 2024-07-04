@@ -80,9 +80,9 @@ title: LoRa Boards Comparison Table
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Capsule Sensor V3</th>
         <th>Heltec Vision Master E213</th>
-        <th>Heltec Vision Master E290</th>        
+        <th>Heltec Vision Master E290</th>
+        <th>RAK RAK19007</th>        
         <th>T-Deck</th>
-        <th>RAK RAK19007</th>
         <th>T-Echo</th>        
       </tr>
     </thead>
@@ -97,8 +97,8 @@ title: LoRa Boards Comparison Table
         <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
         <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E213-->
         <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E290--> 
+        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--RAKRAK19007-->        
         <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes">ESP32-S3</td><!--T-Deck-->
-        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--RAKRAK19007-->
         <td data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--T-Echo-->        
       </tr>
       <tr>
@@ -110,9 +110,9 @@ title: LoRa Boards Comparison Table
         <td>SX1262</td><!--Wireless Tracker-->
         <td>SX1262</td><!--Capsule Sensor V3-->
         <td>SX1262</td><!--Vision Master E213-->
-        <td>SX1262</td><!--Vision Master E290-->         
+        <td>SX1262</td><!--Vision Master E290-->
+        <td>SX1262</td><!--RAKRAK19007-->        
         <td>SX1262</td><!--T-Deck-->
-        <td>SX1262</td><!--RAKRAK19007-->
         <td>SX1262</td><!--T-Echo-->    
       </tr>
       <tr>
@@ -124,9 +124,9 @@ title: LoRa Boards Comparison Table
         <td>UC6580</td><!--Wireless Tracker-->
         <td>N/A</td><!--Capsule Sensor V3-->
         <td>N/A</td><!--Vision Master E213-->
-        <td>N/A</td><!--Vision Master E290-->         
-        <td>N/A</td><!--T-Deck-->
+        <td>N/A</td><!--Vision Master E290-->
         <td>N/A</td><!--RAKRAK19007-->
+        <td>N/A</td><!--T-Deck-->
         <td>N/A</td><!--T-Echo-->
       </tr>
       <tr>
@@ -138,9 +138,9 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--Wireless Tracker-->
         <td>L76k</td><!--Capsule Sensor V3-->
         <td>N/A</td><!--Vision Master E213-->
-        <td>N/A</td><!--Vision Master E290-->         
+        <td>N/A</td><!--Vision Master E290-->
+        <td>N/A</td><!--RAKRAK19007-->        
         <td>N/A</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
         <td>L76k</td><!--T-Echo-->
       </tr>
       <tr>
@@ -152,9 +152,9 @@ title: LoRa Boards Comparison Table
         <td>USB-C</td><!--Wireless Tracker-->
         <td>Wireless Boot</td><!--Capsule Sensor V3-->
         <td>USB-C</td><!--Vision Master E213-->
-        <td>USB-C</td><!--Vision Master E290-->         
+        <td>USB-C</td><!--Vision Master E290-->
+        <td>USB-C</td><!--RAKRAK19007-->        
         <td>USB-C</td><!--T-Deck-->
-        <td>USB-C</td><!--RAKRAK19007-->
         <td>USB-C</td><!--T-Echo-->        
       </tr>
       <tr>
@@ -166,9 +166,9 @@ title: LoRa Boards Comparison Table
         <td>15μA</td><!--Wireless Tracker-->
         <td>25μA</td><!--Capsule Sensor V3-->
         <td>18μA</td><!--Vision Master E213-->
-        <td>20μA</td><!--Vision Master E290-->         
+        <td>20μA</td><!--Vision Master E290-->
+        <td>2μA</td><!--RAKRAK19007-->        
         <td>N/A</td><!--T-Deck-->
-        <td>2μA</td><!--RAKRAK19007-->
         <td>0.25 mA</td><!--T-Echo-->        
       </tr>
       <tr>
@@ -180,9 +180,9 @@ title: LoRa Boards Comparison Table
         <td>470~510 MHz, 863~928 MHz</td><!--Wireless Tracker-->
         <td>470~510 MHz, 863~928 MHz</td><!--Capsule Sensor V3-->
         <td>470~510 MHz, 863~928 MHz</td><!--Vision Master E213-->
-        <td>470~510 MHz, 863~928 MHz</td><!--Vision Master E290-->         
+        <td>470~510 MHz, 863~928 MHz</td><!--Vision Master E290-->
+        <td>470~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->        
         <td>470~510 MHz, 863~928 MHz</td><!--T-Deck-->
-        <td>470~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->
         <td>470~510 MHz, 863~928 MHz</td><!--T-Echo-->        
       </tr>
       <tr>
@@ -194,9 +194,9 @@ title: LoRa Boards Comparison Table
         <td>21 ± 1dBm</td><!--Wireless Tracker-->
         <td>21 ± 1dBm</td><!--Capsule Sensor V3-->
         <td>21 ± 1dBm</td><!--Vision Master E213-->
-        <td>21 ± 1dBm</td><!--Vision Master E290-->         
+        <td>21 ± 1dBm</td><!--Vision Master E290-->
+        <td>22 ± 1dBm</td><!--RAKRAK19007-->        
         <td>22 ± 1dBm</td><!--T-Deck-->
-        <td>22 ± 1dBm</td><!--RAKRAK19007-->
         <td>22 ± 1dBm</td><!--T-Echo-->        
       </tr>
       <tr>
@@ -208,9 +208,9 @@ title: LoRa Boards Comparison Table
         <td>-137 dBm</td><!--Wireless Tracker-->
         <td>-135 dBm</td><!--Capsule Sensor V3-->
         <td>-136 dBm</td><!--Vision Master E213-->
-        <td>-136 dBm</td><!--Vision Master E290-->         
+        <td>-136 dBm</td><!--Vision Master E290-->    
+        <td>-136 dBm</td><!--RAKRAK19007-->        
         <td>-136 dBm</td><!--T-Deck-->
-        <td>-136 dBm</td><!--RAKRAK19007-->.
         <td>-136 dBm</td><!--T-Echo-->             
       </tr>
       <tr>
@@ -222,9 +222,9 @@ title: LoRa Boards Comparison Table
         <td>802.11 b/g/n 150 Mbps</td><!--Wireless Tracker-->
         <td>802.11 b/g/n 150 Mbps</td><!--Capsule Sensor V3-->
         <td>802.11 b/g/n 150 Mbps</td><!--Vision Master E213-->
-        <td>802.11 b/g/n 150 Mbps</td><!--Vision Master E290-->         
+        <td>802.11 b/g/n 150 Mbps</td><!--Vision Master E290-->
+        <td>N/A</td><!--RAKRAK19007-->        
         <td>802.11 b/g/n 150 Mbps</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
         <td>N/A</td><!--T-Echo-->             
       </tr>
       <tr>
@@ -236,9 +236,9 @@ title: LoRa Boards Comparison Table
         <td>BT-5 (LE)</td><!--Wireless Tracker-->
         <td>BT-5 (LE)</td><!--Capsule Sensor V3-->
         <td>BT-5 (LE)</td><!--Vision Master E213-->
-        <td>BT-5 (LE)</td><!--Vision Master E290-->         
+        <td>BT-5 (LE)</td><!--Vision Master E290-->
+        <td>BT-5 (LE)</td><!--RAKRAK19007-->        
         <td>BT-5 (LE)</td><!--T-Deck-->
-        <td>BT-5 (LE)</td><!--RAKRAK19007-->
         <td>BT-5 (LE)</td><!--T-Echo-->             
       </tr>
       <tr>
@@ -250,9 +250,9 @@ title: LoRa Boards Comparison Table
         <td>TFT</td><!--Wireless Tracker-->
         <td>N/A</td><!--Capsule Sensor V3-->
         <td>E-ink</td><!--Vision Master E213-->
-        <td>E-ink</td><!--Vision Master E290-->         
+        <td>E-ink</td><!--Vision Master E290-->
+        <td>N/A</td><!--RAKRAK19007-->      
         <td>LCD</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
         <td>E-ink</td><!--T-Echo-->
       </tr>
       <tr>
@@ -264,9 +264,9 @@ title: LoRa Boards Comparison Table
         <td>0.96-inch</td><!--Wireless Tracker-->
         <td>N/A</td><!--Capsule Sensor V3-->
         <td>2.13 Inch</td><!--Vision Master E213-->
-        <td>2.9 Inch</td><!--Vision Master E290-->         
+        <td>2.9 Inch</td><!--Vision Master E290-->
+        <td>N/A</td><!--RAKRAK19007-->        
         <td>2.8 Inch</td><!--T-Deck-->
-        <td>N/A</td><!--RAKRAK19007-->
         <td>1.54 Inch</td><!--T-Echo-->        
       </tr>
       <tr>
@@ -278,9 +278,9 @@ title: LoRa Boards Comparison Table
         <td>TP4054</td><!--Wireless Tracker-->
         <td>TP4054</td><!--Capsule Sensor V3-->
         <td>TP4054</td><!--Vision Master E213-->
-        <td>TP4054</td><!--Vision Master E290-->         
+        <td>TP4054</td><!--Vision Master E290-->
+        <td>TP4054</td><!--RAKRAK19007-->        
         <td>TP4054</td><!--T-Deck-->
-        <td>TP4054</td><!--RAKRAK19007-->
         <td>TP4054</td><!--T-Echo-->        
       </tr>
       <tr>
@@ -292,9 +292,9 @@ title: LoRa Boards Comparison Table
         <td><a href="https://resource.heltec.cn/download/Wireless_Tracker/Wireless_Tacker1.1/HTIT-Tracker_V0.5.pdf">Diagram Link</a></td><!--Wireless Tracker-->
         <td><a href="https://resource.heltec.cn/download/Heltec%20Capsule%20Sensor%20V3/Capsule_Main_Esp32_Schematic_Diagram.pdf">Diagram Link</a></td><!--Capsule Sensor V3-->
         <td><a href="https://resource.heltec.cn/download/HT-VME213/HT-VME213%20Schematic%20Diagram.pdf">Diagram Link</a></td><!--Vision Master E213-->
-        <td><a href="https://resource.heltec.cn/download/HT-VME290/HT-VME290%20Schematic_Diagram.pdf">Diagram Link</a></td><!--Vision Master E290-->         
+        <td><a href="https://resource.heltec.cn/download/HT-VME290/HT-VME290%20Schematic_Diagram.pdf">Diagram Link</a></td><!--Vision Master E290-->     
+        <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19007-->        
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Diagram Link</a></td><!--T-Deck-->
-        <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19007-->
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/T-Echo_Schematic.pdf">Diagram Link</a></td><!--T-Echo-->        
       </tr>
       <tr>
@@ -306,9 +306,9 @@ title: LoRa Boards Comparison Table
         <td>User Button, Reset Button</td><!--Wireless Tracker-->
         <td>User Button, Reset Button</td><!--Capsule Sensor V3-->
         <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E213-->
-        <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E290-->         
+        <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E290-->
+        <td>Reset Button</td><!--RAKRAK19007-->        
         <td>Touch Screen, Keyboard, trackball, Reset Button</td><!--T-Deck-->
-        <td>Reset Button</td><!--RAKRAK19007-->
         <td>User Button, Reset Button, Touch Button</td><!--T-Echo-->        
       </tr>
       <tr>
@@ -320,9 +320,9 @@ title: LoRa Boards Comparison Table
         <td>$22.90</td><!--Wireless Tracker-->
         <td>$25.99</td><!--Capsule Sensor V3-->
         <td>$19.90</td><!--Vision Master E213-->
-        <td>$20.90</td><!--Vision Master E290-->         
+        <td>$20.90</td><!--Vision Master E290-->     
+        <td>$36.97</td><!--RAKRAK19007-->        
         <td>$52.66</td><!--T-Deck-->
-        <td>$36.97</td><!--RAKRAK19007-->
         <td>$54.41</td><!--T-Echo-->              
       </tr>
     </tbody>
