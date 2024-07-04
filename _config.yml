@@ -8,8 +8,6 @@ plugins:
 
 # Add navigation links
 navbar:
-  - title: Home
-    url: "/"
   - title: Battery Runtime Tests
     url: "/Meshtastic-Experiments/Battery-Runtime-Tests"
   - title: ADC Calculator
@@ -35,8 +33,6 @@ sass:
 
 # Add navigation links
 navbar:
-  - title: Home
-    url: "/Meshtastic-Experiments/"
   - title: Battery Runtime Tests
     url: "/Battery Runtime Tests"
   - title: ADC Calculator
