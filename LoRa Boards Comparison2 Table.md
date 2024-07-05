@@ -460,9 +460,9 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--RAKRAK19007-->
         <td>8MB PSRAM</td><!--T-Deck-->      
         <td>N/A</td><!--T-Echo-->
-        <td></td><!--T-Beam-->        
-        <td></td><!--T-Beam-Supreme-->            
-        <td></td><!--T3-S3-->
+        <td>8MB PSRAM</td><!--T-Beam-->        
+        <td>8MB PSRAM</td><!--T-Beam-Supreme-->            
+        <td>8MB PSRAM</td><!--T3-S3-->
       </tr>           
       <tr>
         <td>Memory Flash</td>
@@ -477,9 +477,9 @@ title: LoRa Boards Comparison Table
         <td>1MB Flash</td><!--RAKRAK19007-->
         <td>16MB Flash</td><!--T-Deck-->      
         <td>1MB Flash</td><!--T-Echo-->
-        <td></td><!--T-Beam-->        
-        <td></td><!--T-Beam-Supreme-->            
-        <td></td><!--T3-S3-->                  
+        <td>16MB Flash</td><!--T-Beam-->        
+        <td>16MB Flash</td><!--T-Beam-Supreme-->            
+        <td>16MB Flash</td><!--T3-S3-->                  
       </tr>                       
     </tbody>
   </table>
