@@ -379,7 +379,7 @@ title: LoRa Boards Comparison Table
         <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->            
         <td>$17.58</td><!--T3-S3-->            
       </tr>        
-      </tr>
+      <tr>
         <td>Memory ROM</td>
         <td>448KB ROM</td><!--Heltec V2-->
         <td>384KB ROM</td><!--Heltec V3-->
