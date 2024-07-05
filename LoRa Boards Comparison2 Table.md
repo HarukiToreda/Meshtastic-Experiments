@@ -34,8 +34,9 @@ title: LoRa Boards Comparison Table
   <div style="margin-right: 20px;">
     <label>Screen:</label>
     <div>
-      <input type="checkbox" class="screenFilter" value="OLED"> OLED<br>
       <input type="checkbox" class="screenFilter" value="Eink"> Eink<br>
+      <input type="checkbox" class="screenFilter" value="LCD"> LCD<br>      
+      <input type="checkbox" class="screenFilter" value="OLED"> OLED<br>      
       <input type="checkbox" class="screenFilter" value="TFT"> TFT<br>
       <input type="checkbox" class="screenFilter" value="None"> None<br>
     </div>
