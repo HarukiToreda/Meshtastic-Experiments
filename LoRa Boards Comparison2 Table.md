@@ -19,7 +19,9 @@ title: LoRa Boards Comparison Table
     <label>LoRa Chip:</label>
     <div>
       <input type="checkbox" class="loraFilter" value="SX1276"> SX1276<br>
+      <input type="checkbox" class="loraFilter" value="SX1276"> SX1278<br>      
       <input type="checkbox" class="loraFilter" value="SX1262"> SX1262<br>
+      <input type="checkbox" class="loraFilter" value="LR1110"> LR1110<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
