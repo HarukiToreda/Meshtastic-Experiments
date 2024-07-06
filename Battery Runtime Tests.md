@@ -150,7 +150,7 @@ Runtime Comparison Under Different Conditions
         </tr>
         <tr>
           <td>2000mAh Battery</td>
-          <td>In Progress</td><!--Heltec V2-->
+          <td>74 Hrs</td><!--Heltec V2-->
           <td>44 Hrs</td><!--Heltec V3-->
           <td>45 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
