@@ -74,6 +74,14 @@ title: Hardware Comparison Table
         <td>I2C</td>
         <td>Low power consumption, High precision temperature and humidity measurement</td>
       </tr>
+      <tr>
+        <td data-type="Current & Power">Current & Power</td>
+        <td>INA219</td>
+        <td>0-26V, 0-3.2A</td>
+        <td>±0.5%</td>
+        <td>I2C</td>
+        <td>Measures current and voltage, Can calculate power, High-side measurement, High accuracy</td>
+      </tr>
       <!-- Continue filling in the rows for the rest of the hardware -->
       <!-- Make sure each row has the appropriate data-type attribute -->
     </tbody>
@@ -95,8 +103,8 @@ function filterTable() {
     const typeCell = row.children[0];
     const type = typeCell.getAttribute('data-type');
 
-    const sensorMatch = sensorFilters.length === 0 || sensorFilters.includes(type.split(' ')[0]);
-    const otherMatch = otherFilters.length === 0 || otherFilters.includes(type);
+    const sensorMatch = sensorFilters.length === 0 || sensorFilters.some(filter => type.includes(filter));
+    const otherMatch = otherFilters.length === 0 || otherFilters.some(filter => type.includes(filter));
 
     row.style.display = sensorMatch || otherMatch ? '' : 'none';
   });
