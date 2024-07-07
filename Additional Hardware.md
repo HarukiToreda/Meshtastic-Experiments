@@ -9,7 +9,7 @@ title: Hardware Comparison Table
 
 <div style="display: flex; flex-wrap: wrap;">
   <div style="margin-right: 20px;">
-    <label>Type:</label>
+    <label>Sensors:</label>
     <div>
       <input type="checkbox" class="typeFilter" value="Temperature"> Temperature<br>
       <input type="checkbox" class="typeFilter" value="Humidity"> Humidity<br>
@@ -19,19 +19,30 @@ title: Hardware Comparison Table
       <input type="checkbox" class="typeFilter" value="Weight"> Weight<br>
       <input type="checkbox" class="typeFilter" value="Motion"> Motion<br>
       <input type="checkbox" class="typeFilter" value="Ambient Light"> Ambient Light<br>
-      <input type="checkbox" class="typeFilter" value="OLED Display"> OLED Display<br>
-      <input type="checkbox" class="typeFilter" value="LCD Display"> LCD Display<br>
-      <input type="checkbox" class="typeFilter" value="Real-Time Clock"> Real-Time Clock<br>
-      <input type="checkbox" class="typeFilter" value="Input Module"> Input Module<br>
       <input type="checkbox" class="typeFilter" value="Magnetometer"> Magnetometer<br>
       <input type="checkbox" class="typeFilter" value="Particulate Matter Sensor"> Particulate Matter Sensor<br>
       <input type="checkbox" class="typeFilter" value="Accelerometer"> Accelerometer<br>
-      <input type="checkbox" class="typeFilter" value="I/O Expander"> I/O Expander<br>
       <input type="checkbox" class="typeFilter" value="Motion Sensor"> Motion Sensor<br>
       <input type="checkbox" class="typeFilter" value="IMU"> IMU<br>
     </div>
   </div>
+  <div style="margin-right: 20px;">
+    <label>Screens:</label>
+    <div>
+      <input type="checkbox" class="typeFilter" value="OLED Display"> OLED Display<br>
+      <input type="checkbox" class="typeFilter" value="LCD Display"> LCD Display<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>Others:</label>
+    <div>
+      <input type="checkbox" class="typeFilter" value="Real-Time Clock"> Real-Time Clock<br>
+      <input type="checkbox" class="typeFilter" value="Input Module"> Input Module<br>
+      <input type="checkbox" class="typeFilter" value="I/O Expander"> I/O Expander<br>
+    </div>
+  </div>
 </div>
+
 
 <div style="overflow-x: auto;">
   <table id="comparisonTable">
