@@ -214,6 +214,135 @@ title: Hardware Comparison Table
         <td>I2C</td>
         <td>High sensitivity ambient light sensor, Wide dynamic range</td>
       </tr>
+      <tr>
+        <td data-type="OLED Display">OLED Display</td>
+        <td>SSD1306</td>
+        <td>128x64 pixels</td>
+        <td>High contrast</td>
+        <td>I2C</td>
+        <td>Low power consumption, Wide viewing angle</td>
+      </tr>
+      <tr>
+        <td data-type="OLED Display">OLED Display</td>
+        <td>SH1106</td>
+        <td>128x64 pixels</td>
+        <td>High contrast</td>
+        <td>I2C</td>
+        <td>Low power consumption, Wide viewing angle</td>
+      </tr>
+      <tr>
+        <td data-type="LCD Display">LCD Display</td>
+        <td>ST7567</td>
+        <td>128x64 pixels</td>
+        <td>High contrast</td>
+        <td>I2C</td>
+        <td>Low power consumption, High contrast</td>
+      </tr>
+      <tr>
+        <td data-type="Real-Time Clock">Real-Time Clock</td>
+        <td>RV3028</td>
+        <td>Year 2000 to 2099</td>
+        <td>±2 ppm</td>
+        <td>I2C</td>
+        <td>Battery backup, Timestamping</td>
+      </tr>
+      <tr>
+        <td data-type="Real-Time Clock">Real-Time Clock</td>
+        <td>PCF8563</td>
+        <td>Year 1900 to 2099</td>
+        <td>±5 ppm</td>
+        <td>I2C</td>
+        <td>Low power, Battery backup</td>
+      </tr>
+      <tr>
+        <td data-type="Input Module">Input Module</td>
+        <td>RAK14004</td>
+        <td>4x4 Matrix Keypad</td>
+        <td>N/A</td>
+        <td>Digital</td>
+        <td>16 buttons, Easy integration</td>
+      </tr>
+      <tr>
+        <td data-type="Magnetometer">Magnetometer</td>
+        <td>QMC6310</td>
+        <td>±8 Gauss</td>
+        <td>±1.2 µT</td>
+        <td>I2C</td>
+        <td>High sensitivity, Low power consumption</td>
+      </tr>
+      <tr>
+        <td data-type="Magnetometer">Magnetometer</td>
+        <td>QMC5883L</td>
+        <td>±8 Gauss</td>
+        <td>±1.2 µT</td>
+        <td>I2C</td>
+        <td>High sensitivity, Low power consumption</td>
+      </tr>
+      <tr>
+        <td data-type="Particulate Matter Sensor">Particulate Matter Sensor</td>
+        <td>PMSA0031</td>
+        <td>0.3 to 10 µm</td>
+        <td>±15%</td>
+        <td>UART</td>
+        <td>Measures PM1.0, PM2.5, PM10</td>
+      </tr>
+      <tr>
+        <td data-type="Accelerometer">Accelerometer</td>
+        <td>LIS3DH</td>
+        <td>±16g</td>
+        <td>±0.1g</td>
+        <td>I2C</td>
+        <td>Low power consumption, High sensitivity</td>
+      </tr>
+      <tr>
+        <td data-type="I/O Expander">I/O Expander</td>
+        <td>TCA9555</td>
+        <td>8-bit</td>
+        <td>N/A</td>
+        <td>I2C</td>
+        <td>16-channel I/O expansion</td>
+      </tr>
+      <tr>
+        <td data-type="Motion Sensor">Motion Sensor</td>
+        <td>RCWL9620</td>
+        <td>Motion Detection</td>
+        <td>N/A</td>
+        <td>Digital</td>
+        <td>High sensitivity, Low power consumption</td>
+      </tr>
+      <tr>
+        <td data-type="IMU">IMU</td>
+        <td>LSM6DS3</td>
+        <td>±16g, ±2000dps</td>
+        <td>±0.02°/s</td>
+        <td>I2C</td>
+        <td>6-axis IMU, Integrated temperature sensor</td>
+      </tr>
+      <tr>
+        <td data-type="IMU">IMU</td>
+        <td>QMI8658</td>
+        <td>±16g, ±2000dps</td>
+        <td>±0.5°C, ±0.1°/s</td>
+        <td>I2C</td>
+        <td>9-axis IMU, Low power consumption</td>
+      </tr>
+      <tr>
+        <td data-type="IMU">IMU</td>
+        <td>MPU6050</td>
+        <td>±16g, ±2000dps</td>
+        <td>±0.02°/s</td>
+        <td>I2C</td>
+        <td>6-axis IMU, Integrated temperature sensor</td>
+      </tr>
+      <tr>
+        <td data-type="IMU">IMU</td>
+        <td>BMX160</td>
+        <td>±16g, ±2000dps</td>
+        <td>±0.5°C, ±0.02°/s</td>
+        <td>I2C</td>
+        <td>9-axis IMU, Low power consumption</td>
+      </tr>
+    </tbody>      
       <!-- Add more rows as needed -->
     </tbody>
   </table>
