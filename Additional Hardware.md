@@ -23,7 +23,7 @@ title: Hardware Comparison Table
       <input type="checkbox" class="typeFilter" value="Particulate Matter Sensor"> Particulate Matter Sensor<br>
       <input type="checkbox" class="typeFilter" value="Accelerometer"> Accelerometer<br>
       <input type="checkbox" class="typeFilter" value="Motion Sensor"> Motion Sensor<br>
-      <input type="checkbox" class="typeFilter" value="IMU"> IMU<br>
+      <input type="checkbox" class="typeFilter" value="IMU"> IMU(Inertial Measurement Unit)<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
