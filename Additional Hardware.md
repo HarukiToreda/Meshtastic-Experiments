@@ -11,14 +11,12 @@ title: Hardware Comparison Table
   <div style="margin-right: 20px;">
     <label>Type:</label>
     <div>
-      <input type="checkbox" class="typeFilter" value="Temperature & Pressure"> Temperature & Pressure<br>
-      <input type="checkbox" class="typeFilter" value="Temperature & Humidity"> Temperature & Humidity<br>
-      <input type="checkbox" class="typeFilter" value="Temperature, Humidity & Pressure"> Temperature, Humidity & Pressure<br>
-      <input type="checkbox" class="typeFilter" value="Temperature, Humidity, Pressure & Gas"> Temperature, Humidity, Pressure & Gas<br>
+      <input type="checkbox" class="typeFilter" value="Temperature"> Temperature<br>
+      <input type="checkbox" class="typeFilter" value="Humidity"> Humidity<br>
+      <input type="checkbox" class="typeFilter" value="Pressure"> Pressure<br>
+      <input type="checkbox" class="typeFilter" value="Gas"> Gas<br>
       <input type="checkbox" class="typeFilter" value="Weather Station"> Weather Station<br>
       <input type="checkbox" class="typeFilter" value="Current & Power"> Current & Power<br>
-      <input type="checkbox" class="typeFilter" value="Pressure"> Pressure<br>
-      <input type="checkbox" class="typeFilter" value="Temperature"> Temperature<br>
       <input type="checkbox" class="typeFilter" value="Weight"> Weight<br>
       <input type="checkbox" class="typeFilter" value="Motion"> Motion<br>
       <input type="checkbox" class="typeFilter" value="Ambient Light"> Ambient Light<br>
@@ -73,8 +71,23 @@ title: Hardware Comparison Table
         <td>I2C</td>
         <td>Low power consumption, High precision temperature and humidity measurement</td>
       </tr>
-      <!-- Continue filling in the rows for the rest of the hardware -->
-      <!-- Make sure each row has the appropriate data-type attribute -->
+      <tr>
+        <td data-type="Temperature & Humidity">Temperature & Humidity</td>
+        <td>SHT4X</td>
+        <td>-40°C to 125°C, 0% to 100% RH</td>
+        <td>±0.2°C, ±1.8% RH</td>
+        <td>I2C</td>
+        <td>High accuracy temperature and humidity measurement, Fast response time</td>
+      </tr>
+      <tr>
+        <td data-type="Temperature & Humidity">Temperature & Humidity</td>
+        <td>SHT31</td>
+        <td>-40°C to 125°C, 0% to 100% RH</td>
+        <td>±0.3°C, ±2% RH</td>
+        <td>I2C</td>
+        <td>High accuracy temperature and humidity measurement, Fast response time</td>
+      </tr>
+      <!-- Add the rest of the sensors manually -->
     </tbody>
   </table>
 </div>
@@ -96,4 +109,3 @@ function filterTable() {
   });
 }
 </script>
-
