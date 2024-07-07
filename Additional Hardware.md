@@ -11,14 +11,12 @@ title: Hardware Comparison Table
   <div style="margin-right: 20px;">
     <label>Type:</label>
     <div>
-      <input type="checkbox" class="typeFilter" value="Temperature & Pressure"> Temperature & Pressure<br>
-      <input type="checkbox" class="typeFilter" value="Temperature & Humidity"> Temperature & Humidity<br>
-      <input type="checkbox" class="typeFilter" value="Temperature, Humidity & Pressure"> Temperature, Humidity & Pressure<br>
-      <input type="checkbox" class="typeFilter" value="Temperature, Humidity, Pressure & Gas"> Temperature, Humidity, Pressure & Gas<br>
-      <input type="checkbox" class="typeFilter" value="Weather Station"> Weather Station<br>
+      <input type="checkbox" class="typeFilter" value="Temperature"> Temperature<br>
+      <input type="checkbox" class="typeFilter" value="Humidity"> Humidity<br>
+      <input type="checkbox" class="typeFilter" value="Pressure"> Pressure<br>
+      <input type="checkbox" class="typeFilter" value="Gas"> Gas<br>
       <input type="checkbox" class="typeFilter" value="Current & Power"> Current & Power<br>
       <input type="checkbox" class="typeFilter" value="Pressure"> Pressure<br>
-      <input type="checkbox" class="typeFilter" value="Temperature"> Temperature<br>
       <input type="checkbox" class="typeFilter" value="Weight"> Weight<br>
       <input type="checkbox" class="typeFilter" value="Motion"> Motion<br>
       <input type="checkbox" class="typeFilter" value="Ambient Light"> Ambient Light<br>
@@ -50,7 +48,7 @@ title: Hardware Comparison Table
     </thead>
     <tbody>
       <tr>
-        <td data-type="Temperature & Pressure, Temperature">Temperature & Pressure, Temperature</td>
+        <td data-type="Temperature, Pressure">Temperature & Pressure</td>
         <td>BMP085</td>
         <td>-40°C to 85°C, 300hPa to 1100hPa</td>
         <td>±1 hPa</td>
@@ -58,7 +56,7 @@ title: Hardware Comparison Table
         <td>Barometric pressure and temperature sensor with low power consumption</td>
       </tr>
       <tr>
-        <td data-type="Temperature & Pressure, Temperature">Temperature & Pressure, Temperature</td>
+        <td data-type="Temperature, Pressure">Temperature & Pressure</td>
         <td>BMP280</td>
         <td>-40°C to 85°C, 300hPa to 1100hPa</td>
         <td>±1 hPa</td>
@@ -66,7 +64,7 @@ title: Hardware Comparison Table
         <td>Barometric pressure and temperature sensor with low power consumption</td>
       </tr>
       <tr>
-        <td data-type="Temperature & Humidity, Humidity">Temperature & Humidity, Humidity</td>
+        <td data-type="Temperature, Humidity">Temperature & Humidity</td>
         <td>AHT10</td>
         <td>-40°C to 85°C, 0% to 100% RH</td>
         <td>±0.3°C, ±2% RH</td>
