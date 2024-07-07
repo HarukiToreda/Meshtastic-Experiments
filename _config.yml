@@ -18,6 +18,8 @@ navbar:
     url: "/Meshtastic-Experiments/LoRa-Boards-Power-Measurements"
   - title: LoRa Boards Comparison2 Table
     url: "/Meshtastic-Experiments/LoRa-Boards-Comparison2-Table"
+  - title: Additional Hardware
+    url: "/Meshtastic-Experiments/Additional-Hardware"    
 
 title: Haruki's Meshtastic Experiments
 description: >-
@@ -45,3 +47,5 @@ navbar:
     url: "/LoRa Boards Power Measurements"
   - title: LoRa Boards Comparison2 Table
     url: "/LoRa Boards Comparison2 Table"
+  - title: Additional Hardware
+    url: "/Additional Hardware"  
