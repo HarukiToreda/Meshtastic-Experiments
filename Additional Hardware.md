@@ -179,14 +179,6 @@ title: Hardware Comparison Table
       </tr>
       <tr>
         <td data-type="Weight">Weight</td>
-        <td>Nau7802</td>
-        <td>0-80mV</td>
-        <td>±0.001%</td>
-        <td>I2C</td>
-        <td>High precision weight sensor, Low noise, High accuracy</td>
-      </tr>
-      <tr>
-        <td data-type="Weight">Weight</td>
         <td>NAU7802</td>
         <td>0-80mV</td>
         <td>±0.001%</td>
