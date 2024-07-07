@@ -279,7 +279,7 @@ title: Hardware Comparison Table
         <td>±8 Gauss</td>
         <td>±1.2 µT</td>
         <td>I2C</td>
-        <td>High sensitivity, Low power consumption</td>
+        <td>3-axis magnetic sensor. Targeted for high precision applications such as compassing, navigation</td>
       </tr>
       <tr>
         <td data-type="Magnetometer">Magnetometer</td>
@@ -287,7 +287,7 @@ title: Hardware Comparison Table
         <td>±8 Gauss</td>
         <td>±1.2 µT</td>
         <td>I2C</td>
-        <td>High sensitivity, Low power consumption</td>
+        <td>Multi-chip 3-axis magnetic sensor. Targeted for high precision applications such as compassing, navigation</td>
       </tr>
       <tr>
         <td data-type="Particulate Matter Sensor">Particulate Matter Sensor</td>
@@ -303,7 +303,7 @@ title: Hardware Comparison Table
         <td>±16g</td>
         <td>±0.1g</td>
         <td>I2C</td>
-        <td>Low power consumption, High sensitivity</td>
+        <td>Ultra-low-power high-performance three-axis linear accelerometer</td>
       </tr>
       <tr>
         <td data-type="I/O Expander">I/O Expander</td>
