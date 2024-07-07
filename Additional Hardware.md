@@ -9,27 +9,30 @@ title: Hardware Comparison Table
 
 <div style="display: flex; flex-wrap: wrap;">
   <div style="margin-right: 20px;">
-    <label>Type:</label>
+    <label>Sensors:</label>
     <div>
-      <input type="checkbox" class="typeFilter" value="Temperature"> Temperature<br>
-      <input type="checkbox" class="typeFilter" value="Humidity"> Humidity<br>
-      <input type="checkbox" class="typeFilter" value="Pressure"> Pressure<br>
-      <input type="checkbox" class="typeFilter" value="Gas"> Gas<br>
-      <input type="checkbox" class="typeFilter" value="Weather Station"> Weather Station<br>
-      <input type="checkbox" class="typeFilter" value="Current & Power"> Current & Power<br>
-      <input type="checkbox" class="typeFilter" value="Weight"> Weight<br>
-      <input type="checkbox" class="typeFilter" value="Motion"> Motion<br>
-      <input type="checkbox" class="typeFilter" value="Ambient Light"> Ambient Light<br>
-      <input type="checkbox" class="typeFilter" value="OLED Display"> OLED Display<br>
-      <input type="checkbox" class="typeFilter" value="LCD Display"> LCD Display<br>
-      <input type="checkbox" class="typeFilter" value="Real-Time Clock"> Real-Time Clock<br>
-      <input type="checkbox" class="typeFilter" value="Input Module"> Input Module<br>
-      <input type="checkbox" class="typeFilter" value="Magnetometer"> Magnetometer<br>
-      <input type="checkbox" class="typeFilter" value="Particulate Matter Sensor"> Particulate Matter Sensor<br>
-      <input type="checkbox" class="typeFilter" value="Accelerometer"> Accelerometer<br>
-      <input type="checkbox" class="typeFilter" value="I/O Expander"> I/O Expander<br>
-      <input type="checkbox" class="typeFilter" value="Motion Sensor"> Motion Sensor<br>
-      <input type="checkbox" class="typeFilter" value="IMU"> IMU<br>
+      <input type="checkbox" class="sensorFilter" value="Temperature"> Temperature<br>
+      <input type="checkbox" class="sensorFilter" value="Pressure"> Pressure<br>
+      <input type="checkbox" class="sensorFilter" value="Humidity"> Humidity<br>
+      <input type="checkbox" class="sensorFilter" value="Gas"> Gas<br>
+      <input type="checkbox" class="sensorFilter" value="Current & Power"> Current & Power<br>
+      <input type="checkbox" class="sensorFilter" value="Weight"> Weight<br>
+      <input type="checkbox" class="sensorFilter" value="Motion"> Motion<br>
+      <input type="checkbox" class="sensorFilter" value="Ambient Light"> Ambient Light<br>
+      <input type="checkbox" class="sensorFilter" value="Magnetometer"> Magnetometer<br>
+      <input type="checkbox" class="sensorFilter" value="Particulate Matter Sensor"> Particulate Matter Sensor<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>Others:</label>
+    <div>
+      <input type="checkbox" class="otherFilter" value="Weather Station"> Weather Station<br>
+      <input type="checkbox" class="otherFilter" value="OLED Display"> OLED Display<br>
+      <input type="checkbox" class="otherFilter" value="LCD Display"> LCD Display<br>
+      <input type="checkbox" class="otherFilter" value="Real-Time Clock"> Real-Time Clock<br>
+      <input type="checkbox" class="otherFilter" value="Input Module"> Input Module<br>
+      <input type="checkbox" class="otherFilter" value="I/O Expander"> I/O Expander<br>
+      <input type="checkbox" class="otherFilter" value="IMU"> IMU<br>
     </div>
   </div>
 </div>
@@ -71,41 +74,31 @@ title: Hardware Comparison Table
         <td>I2C</td>
         <td>Low power consumption, High precision temperature and humidity measurement</td>
       </tr>
-      <tr>
-        <td data-type="Temperature & Humidity">Temperature & Humidity</td>
-        <td>SHT4X</td>
-        <td>-40°C to 125°C, 0% to 100% RH</td>
-        <td>±0.2°C, ±1.8% RH</td>
-        <td>I2C</td>
-        <td>High accuracy temperature and humidity measurement, Fast response time</td>
-      </tr>
-      <tr>
-        <td data-type="Temperature & Humidity">Temperature & Humidity</td>
-        <td>SHT31</td>
-        <td>-40°C to 125°C, 0% to 100% RH</td>
-        <td>±0.3°C, ±2% RH</td>
-        <td>I2C</td>
-        <td>High accuracy temperature and humidity measurement, Fast response time</td>
-      </tr>
-      <!-- Add the rest of the sensors manually -->
+      <!-- Continue filling in the rows for the rest of the hardware -->
+      <!-- Make sure each row has the appropriate data-type attribute -->
     </tbody>
   </table>
 </div>
 
 <script>
-document.querySelectorAll('.typeFilter').forEach(filter => {
+document.querySelectorAll('.sensorFilter, .otherFilter').forEach(filter => {
   filter.addEventListener('change', filterTable);
 });
 
 function filterTable() {
-  const typeFilters = Array.from(document.querySelectorAll('.typeFilter:checked')).map(cb => cb.value);
+  const sensorFilters = Array.from(document.querySelectorAll('.sensorFilter:checked')).map(cb => cb.value);
+  const otherFilters = Array.from(document.querySelectorAll('.otherFilter:checked')).map(cb => cb.value);
 
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
 
   rows.forEach(row => {
     const typeCell = row.children[0];
-    const typeMatch = typeFilters.length === 0 || typeFilters.includes(typeCell.getAttribute('data-type'));
-    row.style.display = typeMatch ? '' : 'none';
+    const type = typeCell.getAttribute('data-type');
+
+    const sensorMatch = sensorFilters.length === 0 || sensorFilters.includes(type);
+    const otherMatch = otherFilters.length === 0 || otherFilters.includes(type);
+
+    row.style.display = sensorMatch || otherMatch ? '' : 'none';
   });
 }
 </script>
