@@ -51,7 +51,7 @@ title: Hardware Comparison Table
     </thead>
     <tbody>
       <tr>
-        <td data-type="Temperature & Pressure">Temperature & Pressure</td>
+        <td data-sensor="Temperature & Pressure">Temperature & Pressure</td>
         <td>BMP085</td>
         <td>-40°C to 85°C, 300hPa to 1100hPa</td>
         <td>±1 hPa</td>
@@ -59,7 +59,7 @@ title: Hardware Comparison Table
         <td>Barometric pressure and temperature sensor with low power consumption</td>
       </tr>
       <tr>
-        <td data-type="Temperature & Pressure">Temperature & Pressure</td>
+        <td data-sensor="Temperature & Pressure">Temperature & Pressure</td>
         <td>BMP280</td>
         <td>-40°C to 85°C, 300hPa to 1100hPa</td>
         <td>±1 hPa</td>
@@ -67,7 +67,7 @@ title: Hardware Comparison Table
         <td>Barometric pressure and temperature sensor with low power consumption</td>
       </tr>
       <tr>
-        <td data-type="Temperature & Humidity">Temperature & Humidity</td>
+        <td data-sensor="Temperature & Humidity">Temperature & Humidity</td>
         <td>AHT10</td>
         <td>-40°C to 85°C, 0% to 100% RH</td>
         <td>±0.3°C, ±2% RH</td>
@@ -75,7 +75,7 @@ title: Hardware Comparison Table
         <td>Low power consumption, High precision temperature and humidity measurement</td>
       </tr>
       <tr>
-        <td data-type="Current & Power">Current & Power</td>
+        <td data-sensor="Current & Power">Current & Power</td>
         <td>INA219</td>
         <td>0-26V, 0-3.2A</td>
         <td>±0.5%</td>
@@ -83,7 +83,7 @@ title: Hardware Comparison Table
         <td>Measures current and voltage, Can calculate power, High-side measurement, High accuracy</td>
       </tr>
       <!-- Continue filling in the rows for the rest of the hardware -->
-      <!-- Make sure each row has the appropriate data-type attribute -->
+      <!-- Make sure each row has the appropriate data-sensor attribute -->
     </tbody>
   </table>
 </div>
@@ -100,11 +100,10 @@ function filterTable() {
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
 
   rows.forEach(row => {
-    const typeCell = row.children[0];
-    const type = typeCell.getAttribute('data-type');
-
+    const type = row.children[0].getAttribute('data-sensor');
+    
     const sensorMatch = sensorFilters.length === 0 || sensorFilters.some(filter => type.includes(filter));
-    const otherMatch = otherFilters.length === 0 || otherFilters.some(filter => type.includes(filter));
+    const otherMatch = otherFilters.length === 0 || otherFilters.includes(type);
 
     row.style.display = sensorMatch || otherMatch ? '' : 'none';
   });
