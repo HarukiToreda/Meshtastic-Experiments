@@ -51,7 +51,7 @@ title: Hardware Comparison Table
     </thead>
     <tbody>
       <tr>
-        <td data-type="Temperature">Temperature & Pressure</td>
+        <td data-type="Temperature & Pressure">Temperature & Pressure</td>
         <td>BMP085</td>
         <td>-40°C to 85°C, 300hPa to 1100hPa</td>
         <td>±1 hPa</td>
@@ -59,7 +59,7 @@ title: Hardware Comparison Table
         <td>Barometric pressure and temperature sensor with low power consumption</td>
       </tr>
       <tr>
-        <td data-type="Temperature">Temperature & Pressure</td>
+        <td data-type="Temperature & Pressure">Temperature & Pressure</td>
         <td>BMP280</td>
         <td>-40°C to 85°C, 300hPa to 1100hPa</td>
         <td>±1 hPa</td>
@@ -67,7 +67,7 @@ title: Hardware Comparison Table
         <td>Barometric pressure and temperature sensor with low power consumption</td>
       </tr>
       <tr>
-        <td data-type="Temperature">Temperature & Humidity</td>
+        <td data-type="Temperature & Humidity">Temperature & Humidity</td>
         <td>AHT10</td>
         <td>-40°C to 85°C, 0% to 100% RH</td>
         <td>±0.3°C, ±2% RH</td>
@@ -93,10 +93,10 @@ function filterTable() {
 
   rows.forEach(row => {
     const typeCell = row.children[0];
-    const type = typeCell.getAttribute('data-type').split(' & ');
+    const type = typeCell.getAttribute('data-type');
 
-    const sensorMatch = sensorFilters.length === 0 || sensorFilters.some(filter => type.includes(filter));
-    const otherMatch = otherFilters.length === 0 || otherFilters.includes(typeCell.getAttribute('data-type'));
+    const sensorMatch = sensorFilters.length === 0 || sensorFilters.includes(type.split(' ')[0]);
+    const otherMatch = otherFilters.length === 0 || otherFilters.includes(type);
 
     row.style.display = sensorMatch || otherMatch ? '' : 'none';
   });
