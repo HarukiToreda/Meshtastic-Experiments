@@ -231,8 +231,8 @@ function filterTable() {
 
   rows.forEach(row => {
     const typeCell = row.children[0];
-    const types = typeCell.getAttribute('data-type').split(', ').map(type => type.trim());
-    const typeMatch = typeFilters.length === 0 || typeFilters.some(filter => types.includes(filter));
+    const types = typeCell.getAttribute('data-type').split(',').map(type => type.trim());
+    const typeMatch = typeFilters.length === 0 || typeFilters.every(filter => types.includes(filter));
     row.style.display = typeMatch ? '' : 'none';
   });
 }
