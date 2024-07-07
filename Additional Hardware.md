@@ -9,30 +9,29 @@ title: Hardware Comparison Table
 
 <div style="display: flex; flex-wrap: wrap;">
   <div style="margin-right: 20px;">
-    <label>Sensors:</label>
+    <label>Type:</label>
     <div>
-      <input type="checkbox" class="sensorFilter" value="Temperature"> Temperature<br>
-      <input type="checkbox" class="sensorFilter" value="Pressure"> Pressure<br>
-      <input type="checkbox" class="sensorFilter" value="Humidity"> Humidity<br>
-      <input type="checkbox" class="sensorFilter" value="Gas"> Gas<br>
-      <input type="checkbox" class="sensorFilter" value="Current & Power"> Current & Power<br>
-      <input type="checkbox" class="sensorFilter" value="Weight"> Weight<br>
-      <input type="checkbox" class="sensorFilter" value="Motion"> Motion<br>
-      <input type="checkbox" class="sensorFilter" value="Ambient Light"> Ambient Light<br>
-      <input type="checkbox" class="sensorFilter" value="Magnetometer"> Magnetometer<br>
-      <input type="checkbox" class="sensorFilter" value="Particulate Matter Sensor"> Particulate Matter Sensor<br>
-    </div>
-  </div>
-  <div style="margin-right: 20px;">
-    <label>Others:</label>
-    <div>
-      <input type="checkbox" class="otherFilter" value="Weather Station"> Weather Station<br>
-      <input type="checkbox" class="otherFilter" value="OLED Display"> OLED Display<br>
-      <input type="checkbox" class="otherFilter" value="LCD Display"> LCD Display<br>
-      <input type="checkbox" class="otherFilter" value="Real-Time Clock"> Real-Time Clock<br>
-      <input type="checkbox" class="otherFilter" value="Input Module"> Input Module<br>
-      <input type="checkbox" class="otherFilter" value="I/O Expander"> I/O Expander<br>
-      <input type="checkbox" class="otherFilter" value="IMU"> IMU<br>
+      <input type="checkbox" class="typeFilter" value="Temperature & Pressure"> Temperature & Pressure<br>
+      <input type="checkbox" class="typeFilter" value="Temperature & Humidity"> Temperature & Humidity<br>
+      <input type="checkbox" class="typeFilter" value="Temperature, Humidity & Pressure"> Temperature, Humidity & Pressure<br>
+      <input type="checkbox" class="typeFilter" value="Temperature, Humidity, Pressure & Gas"> Temperature, Humidity, Pressure & Gas<br>
+      <input type="checkbox" class="typeFilter" value="Weather Station"> Weather Station<br>
+      <input type="checkbox" class="typeFilter" value="Current & Power"> Current & Power<br>
+      <input type="checkbox" class="typeFilter" value="Pressure"> Pressure<br>
+      <input type="checkbox" class="typeFilter" value="Temperature"> Temperature<br>
+      <input type="checkbox" class="typeFilter" value="Weight"> Weight<br>
+      <input type="checkbox" class="typeFilter" value="Motion"> Motion<br>
+      <input type="checkbox" class="typeFilter" value="Ambient Light"> Ambient Light<br>
+      <input type="checkbox" class="typeFilter" value="OLED Display"> OLED Display<br>
+      <input type="checkbox" class="typeFilter" value="LCD Display"> LCD Display<br>
+      <input type="checkbox" class="typeFilter" value="Real-Time Clock"> Real-Time Clock<br>
+      <input type="checkbox" class="typeFilter" value="Input Module"> Input Module<br>
+      <input type="checkbox" class="typeFilter" value="Magnetometer"> Magnetometer<br>
+      <input type="checkbox" class="typeFilter" value="Particulate Matter Sensor"> Particulate Matter Sensor<br>
+      <input type="checkbox" class="typeFilter" value="Accelerometer"> Accelerometer<br>
+      <input type="checkbox" class="typeFilter" value="I/O Expander"> I/O Expander<br>
+      <input type="checkbox" class="typeFilter" value="Motion Sensor"> Motion Sensor<br>
+      <input type="checkbox" class="typeFilter" value="IMU"> IMU<br>
     </div>
   </div>
 </div>
@@ -51,7 +50,7 @@ title: Hardware Comparison Table
     </thead>
     <tbody>
       <tr>
-        <td data-sensor="Temperature & Pressure">Temperature & Pressure</td>
+        <td data-type="Temperature & Pressure">Temperature & Pressure</td>
         <td>BMP085</td>
         <td>-40°C to 85°C, 300hPa to 1100hPa</td>
         <td>±1 hPa</td>
@@ -59,7 +58,7 @@ title: Hardware Comparison Table
         <td>Barometric pressure and temperature sensor with low power consumption</td>
       </tr>
       <tr>
-        <td data-sensor="Temperature & Pressure">Temperature & Pressure</td>
+        <td data-type="Temperature & Pressure">Temperature & Pressure</td>
         <td>BMP280</td>
         <td>-40°C to 85°C, 300hPa to 1100hPa</td>
         <td>±1 hPa</td>
@@ -67,7 +66,7 @@ title: Hardware Comparison Table
         <td>Barometric pressure and temperature sensor with low power consumption</td>
       </tr>
       <tr>
-        <td data-sensor="Temperature & Humidity">Temperature & Humidity</td>
+        <td data-type="Temperature & Humidity">Temperature & Humidity</td>
         <td>AHT10</td>
         <td>-40°C to 85°C, 0% to 100% RH</td>
         <td>±0.3°C, ±2% RH</td>
@@ -75,7 +74,7 @@ title: Hardware Comparison Table
         <td>Low power consumption, High precision temperature and humidity measurement</td>
       </tr>
       <tr>
-        <td data-sensor="Current & Power">Current & Power</td>
+        <td data-type="Current & Power">Current & Power</td>
         <td>INA219</td>
         <td>0-26V, 0-3.2A</td>
         <td>±0.5%</td>
@@ -83,29 +82,25 @@ title: Hardware Comparison Table
         <td>Measures current and voltage, Can calculate power, High-side measurement, High accuracy</td>
       </tr>
       <!-- Continue filling in the rows for the rest of the hardware -->
-      <!-- Make sure each row has the appropriate data-sensor attribute -->
+      <!-- Make sure each row has the appropriate data-type attribute -->
     </tbody>
   </table>
 </div>
 
 <script>
-document.querySelectorAll('.sensorFilter, .otherFilter').forEach(filter => {
+document.querySelectorAll('.typeFilter').forEach(filter => {
   filter.addEventListener('change', filterTable);
 });
 
 function filterTable() {
-  const sensorFilters = Array.from(document.querySelectorAll('.sensorFilter:checked')).map(cb => cb.value);
-  const otherFilters = Array.from(document.querySelectorAll('.otherFilter:checked')).map(cb => cb.value);
+  const typeFilters = Array.from(document.querySelectorAll('.typeFilter:checked')).map(cb => cb.value);
 
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
 
   rows.forEach(row => {
-    const type = row.children[0].getAttribute('data-sensor');
-    
-    const sensorMatch = sensorFilters.length === 0 || sensorFilters.some(filter => type.includes(filter));
-    const otherMatch = otherFilters.length === 0 || otherFilters.includes(type);
-
-    row.style.display = sensorMatch || otherMatch ? '' : 'none';
+    const typeCell = row.children[0];
+    const typeMatch = typeFilters.length === 0 || typeFilters.includes(typeCell.getAttribute('data-type'));
+    row.style.display = typeMatch ? '' : 'none';
   });
 }
 </script>
