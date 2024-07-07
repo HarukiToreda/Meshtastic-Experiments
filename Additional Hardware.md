@@ -342,7 +342,6 @@ title: Hardware Comparison Table
         <td>I2C</td>
         <td>9-axis IMU, Low power consumption</td>
       </tr>
-    </tbody>      
       <!-- Add more rows as needed -->
     </tbody>
   </table>
