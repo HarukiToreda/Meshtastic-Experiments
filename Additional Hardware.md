@@ -16,7 +16,6 @@ title: Hardware Comparison Table
       <input type="checkbox" class="typeFilter" value="Pressure"> Pressure<br>
       <input type="checkbox" class="typeFilter" value="Gas"> Gas<br>
       <input type="checkbox" class="typeFilter" value="Current & Power"> Current & Power<br>
-      <input type="checkbox" class="typeFilter" value="Pressure"> Pressure<br>
       <input type="checkbox" class="typeFilter" value="Weight"> Weight<br>
       <input type="checkbox" class="typeFilter" value="Motion"> Motion<br>
       <input type="checkbox" class="typeFilter" value="Ambient Light"> Ambient Light<br>
@@ -72,6 +71,54 @@ title: Hardware Comparison Table
         <td>Low power consumption, High precision temperature and humidity measurement</td>
       </tr>
       <tr>
+        <td data-type="Temperature, Humidity">Temperature & Humidity</td>
+        <td>SHT4X</td>
+        <td>-40°C to 125°C, 0% to 100% RH</td>
+        <td>±0.2°C, ±1.8% RH</td>
+        <td>I2C</td>
+        <td>High accuracy temperature and humidity measurement, Fast response time</td>
+      </tr>
+      <tr>
+        <td data-type="Temperature, Humidity">Temperature & Humidity</td>
+        <td>SHT31</td>
+        <td>-40°C to 125°C, 0% to 100% RH</td>
+        <td>±0.3°C, ±2% RH</td>
+        <td>I2C</td>
+        <td>High accuracy temperature and humidity measurement, Fast response time</td>
+      </tr>
+      <tr>
+        <td data-type="Temperature, Humidity">Temperature & Humidity</td>
+        <td>SHTC3</td>
+        <td>-40°C to 85°C, 0% to 100% RH</td>
+        <td>±0.2°C, ±1.8% RH</td>
+        <td>I2C</td>
+        <td>High accuracy temperature and humidity measurement, Low power consumption</td>
+      </tr>
+      <tr>
+        <td data-type="Temperature, Humidity, Pressure">Temperature, Humidity & Pressure</td>
+        <td>BME280</td>
+        <td>-40°C to 85°C, 0% to 100% RH, 300hPa to 1100hPa</td>
+        <td>±1°C, ±3% RH, ±1 hPa</td>
+        <td>I2C, SPI</td>
+        <td>Integrated temperature, humidity, and pressure sensor with high accuracy</td>
+      </tr>
+      <tr>
+        <td data-type="Temperature, Humidity, Pressure, Gas">Temperature, Humidity, Pressure & Gas</td>
+        <td>BME680</td>
+        <td>-40°C to 85°C, 0% to 100% RH, 300hPa to 1100hPa, Gas 0-1000ppm</td>
+        <td>±1°C, ±3% RH, ±1 hPa, ±15% Gas</td>
+        <td>I2C</td>
+        <td>Integrated gas sensor with temperature, humidity, and pressure measurement, High accuracy</td>
+      </tr>
+      <tr>
+        <td data-type="Weather Station">Weather Station</td>
+        <td>DFRobotLark</td>
+        <td>1-5 VOC Index</td>
+        <td>±15%</td>
+        <td>I2C</td>
+        <td>Comprehensive weather station measuring wind speed, wind direction, temperature, humidity, and atmospheric pressure. High-quality internal sensors, precise and stable data. Data output in standard physical quantities, 16M storage space. Modular shell design allows expansion with additional sensors.</td>
+      </tr>
+      <tr>
         <td data-type="Current & Power">Current & Power</td>
         <td>INA219</td>
         <td>0-26V, 0-3.2A</td>
@@ -79,8 +126,95 @@ title: Hardware Comparison Table
         <td>I2C</td>
         <td>Measures current and voltage, Can calculate power, High-side measurement, High accuracy</td>
       </tr>
-      <!-- Continue filling in the rows for the rest of the hardware -->
-      <!-- Make sure each row has the appropriate data-type attribute -->
+      <tr>
+        <td data-type="Current & Power">Current & Power</td>
+        <td>INA260</td>
+        <td>0-36V, 0-15A</td>
+        <td>±0.02%</td>
+        <td>I2C</td>
+        <td>Measures current, power, voltage, High precision</td>
+      </tr>
+      <tr>
+        <td data-type="Current & Power">Current & Power</td>
+        <td>INA3221</td>
+        <td>0-26V, 0-3.2A</td>
+        <td>±0.5%</td>
+        <td>I2C</td>
+        <td>Measures current and voltage on three channels, Can calculate power for each channel, High accuracy</td>
+      </tr>
+      <tr>
+        <td data-type="Pressure">Pressure</td>
+        <td>LPS22</td>
+        <td>260hPa to 1260hPa</td>
+        <td>±0.1 hPa</td>
+        <td>I2C, SPI</td>
+        <td>High resolution pressure sensor, Ultra-small size, High accuracy</td>
+      </tr>
+      <tr>
+        <td data-type="Temperature">Temperature</td>
+        <td>MCP9808</td>
+        <td>-40°C to 125°C</td>
+        <td>±0.25°C</td>
+        <td>I2C</td>
+        <td>High accuracy temperature sensor with low power consumption</td>
+      </tr>
+      <tr>
+        <td data-type="Temperature">Temperature</td>
+        <td>MLX90632</td>
+        <td>-20°C to 200°C</td>
+        <td>±1°C</td>
+        <td>I2C</td>
+        <td>Infrared temperature sensor, Non-contact measurement, High accuracy</td>
+      </tr>
+      <tr>
+        <td data-type="Weight">Weight</td>
+        <td>Nau7802</td>
+        <td>0-80mV</td>
+        <td>±0.001%</td>
+        <td>I2C</td>
+        <td>High precision weight sensor, Low noise, High accuracy</td>
+      </tr>
+      <tr>
+        <td data-type="Weight">Weight</td>
+        <td>NAU7802</td>
+        <td>0-80mV</td>
+        <td>±0.001%</td>
+        <td>I2C</td>
+        <td>High precision weight sensor, Low noise, High accuracy</td>
+      </tr>
+      <tr>
+        <td data-type="Motion">Motion</td>
+        <td>RCWL9620</td>
+        <td>Motion Detection</td>
+        <td>N/A</td>
+        <td>Digital</td>
+        <td>Microwave motion sensor, High sensitivity, Long range detection</td>
+      </tr>
+      <tr>
+        <td data-type="Ambient Light">Ambient Light</td>
+        <td>OPT3001</td>
+        <td>0.01 - 83,000 lux</td>
+        <td>±0.01 lux</td>
+        <td>I2C</td>
+        <td>High sensitivity ambient light sensor, Wide dynamic range</td>
+      </tr>
+      <tr>
+        <td data-type="Ambient Light">Ambient Light</td>
+        <td>TSL2591</td>
+        <td>188uLux to 88,000 Lux</td>
+        <td>±1%</td>
+        <td>I2C</td>
+        <td>High sensitivity ambient light sensor, Wide dynamic range</td>
+      </tr>
+      <tr>
+        <td data-type="Ambient Light">Ambient Light</td>
+        <td>VEML7700</td>
+        <td>0.0036 - 220,000 lux</td>
+        <td>±0.0003 lux</td>
+        <td>I2C</td>
+        <td>High sensitivity ambient light sensor, Wide dynamic range</td>
+      </tr>
+      <!-- Add more rows as needed -->
     </tbody>
   </table>
 </div>
