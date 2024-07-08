@@ -7,16 +7,15 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-06-26T03:00:00') },//rak
-        { id: 'progress2', start: new Date('2024-06-26T03:00:00') },//rak
-        { id: 'progress3', start: new Date('2024-06-26T03:00:00') },//rak
-        { id: 'progress4', start: new Date('2024-06-26T03:00:00') },//rak
-        { id: 'progress5', start: new Date('2024-07-07T021:41:00') },//V3
-        { id: 'progress6', start: new Date('2024-07-07T021:41:00') },//TDeck
-        { id: 'progress7', start: new Date('2024-07-07T021:41:00') },//Paper
-        { id: 'progress8', start: new Date('2024-07-07T021:48:00') },//V2   
-        { id: 'progress9', start: new Date('2024-07-07T021:51:00') },//Tracker           
-        // Add more start times here
+        { id: 'progress1', start: new Date('2024-06-26T03:00:00') }, // RAK
+        { id: 'progress2', start: new Date('2024-06-26T03:00:00') }, // RAK
+        { id: 'progress3', start: new Date('2024-06-26T03:00:00') }, // RAK
+        { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
+        { id: 'progress5', start: new Date('2024-07-07T02:41:00') }, // V3
+        { id: 'progress6', start: new Date('2024-07-07T02:41:00') }, // TDeck
+        { id: 'progress7', start: new Date('2024-07-07T02:41:00') }, // Paper
+        { id: 'progress8', start: new Date('2024-07-07T02:48:00') }, // V2
+        { id: 'progress9', start: new Date('2024-07-07T02:51:00') }  // Tracker
       ];
 
       const currentDate = new Date();
