@@ -9,7 +9,12 @@ title: Battery Runtime Tests
     function updateProgress() {
       const startTimes = [
         { id: 'progress1', start: new Date('2024-06-26T03:00:00') },
-        { id: 'progress2', start: new Date('2024-07-07T021:41:00') },
+        { id: 'progress2', start: new Date('2024-06-26T03:00:00') },
+        { id: 'progress3', start: new Date('2024-06-26T03:00:00') },
+        { id: 'progress4', start: new Date('2024-06-26T03:00:00') },        
+        { id: 'progress5', start: new Date('2024-07-07T021:41:00') },
+        { id: 'progress6', start: new Date('2024-07-07T021:41:00') },
+        { id: 'progress7', start: new Date('2024-07-07T021:41:00') },        
         // Add more start times here
       ];
 
@@ -84,7 +89,7 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td></td><!--T-Deck-->
+          <td id="progress7">In Progress</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
         </tr>
@@ -98,7 +103,7 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Capsule Sensor V3-->
           <td>25 Hrs</td><!--T-Deck-->
           <td id="progress1">In Progress</td><!--RAKRAK19007-->
-          <td id="progress1">In Progress</td><!--RAKRAK19003-->   
+          <td id="progress2">In Progress</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
     </table>
@@ -163,8 +168,8 @@ Runtime Comparison Under Different Conditions
         <tr>
           <td>1100mAh Battery</td>
           <td></td><!--Heltec V2-->
-          <td id="progress2">In Progress</td><!--Heltec V3-->
-          <td id="progress2">In Progress</td><!--Wireless Paper-->
+          <td id="progress5">In Progress</td><!--Heltec V3-->
+          <td id="progress6">In Progress</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
@@ -180,7 +185,7 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td id="progress2">In Progress</td><!--T-Deck-->
+          <td id="progress6">In Progress</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
         </tr>
@@ -193,8 +198,8 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>71 Hrs</td><!--T-Deck-->
-          <td id="progress1">In Progress</td><!--RAKRAK19007-->
-          <td id="progress1">In Progress</td><!--RAKRAK19003-->   
+          <td id="progress3">In Progress</td><!--RAKRAK19007-->
+          <td id="progress4">In Progress</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
     </table>
