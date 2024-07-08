@@ -14,7 +14,7 @@ title: Battery Runtime Tests
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress5', start: new Date('2024-07-07T21:41:00') }, // V3
         { id: 'progress6', start: new Date('2024-07-07T21:41:00') }, // TDeck
-        { id: 'progress7', start: new Date('2024-07-07T21:41:00') }, // Paper
+        { id: 'progress7', start: new Date('2024-07-08T16:48:00') }, // Paper
         { id: 'progress8', start: new Date('2024-07-07T21:48:00') }, // V2
         { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // Tracker
       ];
@@ -101,7 +101,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td id="progress9">In Progress</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td>25 Hrs</td><!--T-Deck-->
+          <td id="progress7">In Progress</td><!--T-Deck-->
           <td id="progress1">In Progress</td><!--RAKRAK19007-->
           <td id="progress2">In Progress</td><!--RAKRAK19003-->   
         </tr>
