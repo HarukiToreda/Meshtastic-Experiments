@@ -12,10 +12,10 @@ title: Battery Runtime Tests
         { id: 'progress2', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress3', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
-        { id: 'progress5', start: new Date('2024-07-07T21:41:00') }, // V3
-        { id: 'progress6', start: new Date('2024-07-08T20:22:00') }, // TDeck
-        { id: 'progress7', start: new Date('2024-07-08T16:48:00') }, // Paper
-        { id: 'progress8', start: new Date('2024-07-07T21:48:00') }, // V2
+        { id: 'progress5', start: new Date('2024-07-07T21:48:00') }, // V2       
+        { id: 'progress6', start: new Date('2024-07-08T20:22:00') }, // TDeck        
+        { id: 'progress7', start: new Date('2024-07-07T21:41:00') }, // V3
+        { id: 'progress8', start: new Date('2024-07-08T16:48:00') }, // Paper
         { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // Tracker
       ];
 
@@ -191,7 +191,7 @@ title: Battery Runtime Tests
         </tr>
         <tr>
           <td>3000mAh Battery</td>
-          <td id="progress8">In Progress</td><!--Heltec V2-->
+          <td id="progress5">In Progress</td><!--Heltec V2-->
           <td>80 Hrs</td><!--Heltec V3-->
           <td>95 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
