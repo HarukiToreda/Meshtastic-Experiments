@@ -99,7 +99,7 @@ title: Battery Runtime Tests
           <td>30 Hrs</td><!--Heltec V3-->
           <td>30 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
-          <td id="progress9">In Progress</td><!--Wireless Tracker-->
+          <td>19 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td id="progress7">In Progress</td><!--T-Deck-->
           <td id="progress1">In Progress</td><!--RAKRAK19007-->
