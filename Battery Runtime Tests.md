@@ -2,7 +2,6 @@
 layout: default
 title: Battery Runtime Tests
 ---
-<!DOCTYPE html>
 <html>
 <head>
   <title>Battery Runtime Tests</title>
@@ -111,9 +110,9 @@ title: Battery Runtime Tests
   </div>
 </details>
 
----
+<hr>
 
-## Experiment #2 - Best Power Saving Settings for Mobile Node/ Remote Node
+<h2>Experiment #2 - Best Power Saving Settings for Mobile Node/ Remote Node</h2>
 
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
@@ -207,9 +206,9 @@ title: Battery Runtime Tests
   </div>
 </details>
 
----
+<hr>
 
-## Experiment #3 - Best Power Saving Settings for Standalone Nodes 
+<h2>Experiment #3 - Best Power Saving Settings for Standalone Nodes</h2>
 
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
@@ -300,3 +299,6 @@ title: Battery Runtime Tests
     </table>
   </div>
 </details>
+
+</body>
+</html>
