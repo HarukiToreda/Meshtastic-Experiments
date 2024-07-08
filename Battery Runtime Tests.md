@@ -2,6 +2,8 @@
 layout: default
 title: Battery Runtime Tests
 ---
+<!DOCTYPE html>
+<html>
 <head>
   <title>Battery Runtime Tests</title>
   <script>
@@ -11,11 +13,11 @@ title: Battery Runtime Tests
         { id: 'progress2', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress3', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
-        { id: 'progress5', start: new Date('2024-07-07T02:41:00') }, // V3
-        { id: 'progress6', start: new Date('2024-07-07T02:41:00') }, // TDeck
-        { id: 'progress7', start: new Date('2024-07-07T02:41:00') }, // Paper
-        { id: 'progress8', start: new Date('2024-07-07T02:48:00') }, // V2
-        { id: 'progress9', start: new Date('2024-07-07T02:51:00') }  // Tracker
+        { id: 'progress5', start: new Date('2024-07-07T21:41:00') }, // V3
+        { id: 'progress6', start: new Date('2024-07-07T21:41:00') }, // TDeck
+        { id: 'progress7', start: new Date('2024-07-07T21:41:00') }, // Paper
+        { id: 'progress8', start: new Date('2024-07-07T21:48:00') }, // V2
+        { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // Tracker
       ];
 
       const currentDate = new Date();
@@ -32,11 +34,10 @@ title: Battery Runtime Tests
 </head>
 <body>
 
-# Battery Runtime Tests
+<h1>Battery Runtime Tests</h1>
+<p>Runtime Comparison Under Different Conditions</p>
 
-Runtime Comparison Under Different Conditions
-
-## Experiment #1 - Default Settings
+<h2>Experiment #1 - Default Settings</h2>
 
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
