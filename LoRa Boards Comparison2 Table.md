@@ -71,8 +71,8 @@ title: LoRa Boards Comparison Table
   </div>
 </div>
 
-<div style="overflow-x: auto;">
-  <table id="comparisonTable">
+<div style="overflow-x: auto; width: 100%;">
+  <table id="comparisonTable" style="width: 1600px;"> <!-- Fixed width for table -->
     <thead>
       <tr>
         <th>Device</th>
