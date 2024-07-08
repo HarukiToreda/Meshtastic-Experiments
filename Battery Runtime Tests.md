@@ -2,7 +2,6 @@
 layout: default
 title: Battery Runtime Tests
 ---
-
 <head>
   <title>Battery Runtime Tests</title>
   <script>
@@ -187,7 +186,7 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td id="progress6">In Progress</td><!--T-Deck-->
+          <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
         </tr>
