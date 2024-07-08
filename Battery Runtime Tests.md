@@ -8,13 +8,15 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-06-26T03:00:00') },
-        { id: 'progress2', start: new Date('2024-06-26T03:00:00') },
-        { id: 'progress3', start: new Date('2024-06-26T03:00:00') },
-        { id: 'progress4', start: new Date('2024-06-26T03:00:00') },        
-        { id: 'progress5', start: new Date('2024-07-07T021:41:00') },
-        { id: 'progress6', start: new Date('2024-07-07T021:41:00') },
-        { id: 'progress7', start: new Date('2024-07-07T021:41:00') },        
+        { id: 'progress1', start: new Date('2024-06-26T03:00:00') },//rak
+        { id: 'progress2', start: new Date('2024-06-26T03:00:00') },//rak
+        { id: 'progress3', start: new Date('2024-06-26T03:00:00') },//rak
+        { id: 'progress4', start: new Date('2024-06-26T03:00:00') },//rak
+        { id: 'progress5', start: new Date('2024-07-07T021:41:00') },//V3
+        { id: 'progress6', start: new Date('2024-07-07T021:41:00') },//TDeck
+        { id: 'progress7', start: new Date('2024-07-07T021:41:00') },//Paper
+        { id: 'progress8', start: new Date('2024-07-07T021:48:00') },//V2   
+        { id: 'progress9', start: new Date('2024-07-07T021:51:00') },//Tracker           
         // Add more start times here
       ];
 
@@ -191,7 +193,7 @@ Runtime Comparison Under Different Conditions
         </tr>
         <tr>
           <td>3000mAh Battery</td>
-          <td></td><!--Heltec V2-->
+          <td id="progress8">In Progress</td><!--Heltec V2-->
           <td>80 Hrs</td><!--Heltec V3-->
           <td>95 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
