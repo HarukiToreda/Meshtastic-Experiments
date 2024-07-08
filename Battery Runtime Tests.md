@@ -101,7 +101,7 @@ Runtime Comparison Under Different Conditions
           <td>30 Hrs</td><!--Heltec V3-->
           <td>30 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
-          <td></td><!--Wireless Tracker-->
+          <td id="progress9">In Progress</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>25 Hrs</td><!--T-Deck-->
           <td id="progress1">In Progress</td><!--RAKRAK19007-->
