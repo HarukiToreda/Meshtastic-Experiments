@@ -3,6 +3,30 @@ layout: default
 title: Battery Runtime Tests
 ---
 
+<head>
+  <title>Battery Runtime Tests</title>
+  <script>
+    function updateProgress() {
+      const startTimes = [
+        { id: 'progress1', start: new Date('2024-06-26T03:00:00') },
+        { id: 'progress2', start: new Date('2024-06-27T03:00:00') },
+        // Add more start times here
+      ];
+
+      const currentDate = new Date();
+
+      startTimes.forEach(item => {
+        const diffInHours = Math.floor((currentDate - item.start) / (1000 * 60 * 60));
+        document.getElementById(item.id).innerText = `Started ${diffInHours} hrs ago`;
+      });
+    }
+
+    window.onload = updateProgress;
+    setInterval(updateProgress, 3600000); // Update every hour
+  </script>
+</head>
+<body>
+
 # Battery Runtime Tests
 
 Runtime Comparison Under Different Conditions
@@ -73,8 +97,8 @@ Runtime Comparison Under Different Conditions
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>25 Hrs</td><!--T-Deck-->
-          <td>In Progress	</td><!--RAKRAK19007-->
-          <td>In Progress	</td><!--RAKRAK19003-->   
+          <td id="progress1">In Progress</td><!--RAKRAK19007-->
+          <td id="progress2">In Progress</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
     </table>
