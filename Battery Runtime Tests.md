@@ -13,10 +13,10 @@ title: Battery Runtime Tests
         { id: 'progress3', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress5', start: new Date('2024-07-07T21:48:00') }, // V2       
-        { id: 'progress6', start: new Date('2024-07-08T18:27:00') }, // TDeck        
-        { id: 'progress7', start: new Date('2024-07-07T21:41:00') }, // V3
-        { id: 'progress8', start: new Date('2024-07-08T16:48:00') }, // Paper
-        { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // Tracker
+        { id: 'progress6', start: new Date('2024-07-09T22:25:00') }, // TDeck        
+        { id: 'progress7', start: new Date('2024-07-09T22:25:00') }, // V3
+        { id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // Tracker
+        { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // Paper
       ];
 
       const currentDate = new Date();
@@ -84,10 +84,10 @@ title: Battery Runtime Tests
         <tr>
           <td>2000mAh Battery</td>
           <td></td><!--Heltec V2-->
-          <td></td><!--Heltec V3-->
+          <td id="progress7">In Progress</td><!--Heltec V3-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
-          <td></td><!--Wireless Tracker-->
+          <td id="progress8">In Progress</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>19 Hrs</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
@@ -173,7 +173,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td></td><!--T-Deck-->
+          <td id="progress6">In Progress</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->          
         </tr>
