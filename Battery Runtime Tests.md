@@ -13,7 +13,7 @@ title: Battery Runtime Tests
         { id: 'progress3', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress5', start: new Date('2024-07-07T21:48:00') }, // V2       
-        { id: 'progress6', start: new Date('2024-07-09T22:25:00') }, // TDeck        
+        { id: 'progress6', start: new Date('2024-07-09T22:25:00') }, // V2 1100        
         { id: 'progress7', start: new Date('2024-07-09T22:25:00') }, // V3
         { id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // Tracker
         { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // Paper
@@ -167,7 +167,7 @@ title: Battery Runtime Tests
       <tbody>
         <tr>
           <td>1100mAh Battery</td>
-          <td></td><!--Heltec V2-->
+          <td id="progress6">In Progress</td><!--Heltec V2-->
           <td>19 Hrs</td><!--Heltec V3-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
