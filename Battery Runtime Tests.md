@@ -14,7 +14,7 @@ title: Battery Runtime Tests
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress5', start: new Date('2024-07-07T21:48:00') }, // V2       
         { id: 'progress6', start: new Date('2024-07-11T02:36:00') }, // V2 1100        
-        { id: 'progress7', start: new Date('2024-07-09T22:25:00') }, // V3
+        { id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // WSL V3
         { id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // Tracker
         { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // Paper
       ];
@@ -86,7 +86,7 @@ title: Battery Runtime Tests
           <td></td><!--Heltec V2-->
           <td>21 Hrs</td><!--Heltec V3-->
           <td>20 Hrs</td><!--Wireless Paper-->
-          <td></td><!--Wireless Stick Lite-->
+          <td id="progress7">In Progress</td><!--Wireless Stick Lite-->
           <td>13 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>19 Hrs</td><!--T-Deck-->
