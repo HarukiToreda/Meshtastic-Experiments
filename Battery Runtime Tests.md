@@ -167,7 +167,7 @@ title: Battery Runtime Tests
       <tbody>
         <tr>
           <td>1100mAh Battery</td>
-          <td id="progress5">In Progress</td><!--Heltec V2-->
+          <td>30 Hrs</td><!--Heltec V2-->
           <td>19 Hrs</td><!--Heltec V3-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
