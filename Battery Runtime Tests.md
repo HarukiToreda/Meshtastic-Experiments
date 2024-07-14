@@ -83,7 +83,7 @@ title: Battery Runtime Tests
         </tr>
         <tr>
           <td>2000mAh Battery</td>
-          <td id="progress5">In Progress</td><!--Heltec V2-->
+          <td>41 Hrs</td><!--Heltec V2-->
           <td>21 Hrs</td><!--Heltec V3-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td>20 Hrs</td><!--Wireless Stick Lite-->
