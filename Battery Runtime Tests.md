@@ -102,7 +102,7 @@ title: Battery Runtime Tests
           <td>19 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>26 Hrs</td><!--T-Deck-->
-          <td id="progress1">In Progress</td><!--RAKRAK19007-->
+          <td>442 Hrs</td><!--RAKRAK19007-->
           <td id="progress2">In Progress</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
@@ -198,7 +198,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>71 Hrs</td><!--T-Deck-->
-          <td id="progress3">In Progress</td><!--RAKRAK19007-->
+          <td>442 Hrs</td><!--RAKRAK19007-->
           <td id="progress4">In Progress</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
