@@ -9,7 +9,7 @@ title: Battery Runtime Tests
     function updateProgress() {
       const startTimes = [
         { id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
-        { id: 'progress2', start: new Date('2024-06-26T03:00:00') }, // RAK
+        { id: 'progress2', start: new Date('2024-07-15T12:07:00') }, // Vision Master 2000
         { id: 'progress3', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // V2       
@@ -63,6 +63,7 @@ title: Battery Runtime Tests
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Capsule Sensor V3</th>
+          <th>Heltec Vision Master E213</th>
           <th>Lilygo T-Deck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>          
@@ -77,9 +78,10 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td>9 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->                    
           <td>10 Hrs</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
-          <td></td><!--RAKRAK19003-->
+          <td id="progress1">In Progress</td><!--RAKRAK19003-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
@@ -89,6 +91,7 @@ title: Battery Runtime Tests
           <td>20 Hrs</td><!--Wireless Stick Lite-->
           <td>13 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
+          <td id="progress2">In Progress</td><!--RAKRAK19003--><!--VME213-->          
           <td>19 Hrs</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
@@ -101,6 +104,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td>19 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->            
           <td>26 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->   
@@ -159,6 +163,7 @@ title: Battery Runtime Tests
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Capsule Sensor V3</th>
+          <th>Heltec Vision Master E213</th>        
           <th>Lilygo T-Deck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>      
@@ -173,6 +178,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->            
           <td>21 Hrs</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->          
@@ -185,6 +191,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->            
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
@@ -197,6 +204,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->            
           <td>71 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->    
@@ -253,6 +261,7 @@ title: Battery Runtime Tests
           <th>Heltec ESP32 V2</th>
           <th>Heltec ESP32 V3</th>
           <th>Heltec Wireless Tracker</th>
+          <th>Heltec Vision Master E213</th>          
           <th>Lilygo T-Deck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>    
@@ -266,13 +275,14 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Tracker-->
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
-          <td id="progress1">In Progress</td><!--RAKRAK19003-->   
+          <td></td><!--RAKRAK19003-->   
         </tr>
         <tr>
           <td>2000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
+          <td></td><!--VME213-->            
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
@@ -282,6 +292,7 @@ title: Battery Runtime Tests
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
+          <td></td><!--VME213-->            
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
@@ -291,6 +302,7 @@ title: Battery Runtime Tests
           <td></td><!--Heltec V2-->
           <td>89 Hrs</td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
+          <td></td><!--VME213-->            
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td>312 Hrs</td><!--RAKRAK19003-->   
