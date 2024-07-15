@@ -18,6 +18,7 @@ title: LoRa Boards Power Measurements
         <th>Wireless Stick Lite (V3)</th>
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Capsule Sensor V3</th>
+        <th>Heltec Vision Master E213</th>
         <th>T-Deck</th>
         <th>RAK nRF52840</th>
       </tr>
@@ -31,6 +32,7 @@ title: LoRa Boards Power Measurements
         <td>261mA</td>
         <td>332mA</td>
         <td>?</td>
+        <td></td>        
         <td>162mA</td>
         <td>88mA</td>
       </tr>
@@ -42,6 +44,7 @@ title: LoRa Boards Power Measurements
         <td>N/A</td>
         <td>168mA</td>
         <td>?</td>
+        <td>110mA</td>           
         <td>138mA</td>
         <td>N/A</td>
       </tr>
@@ -52,6 +55,7 @@ title: LoRa Boards Power Measurements
         <td>?</td>
         <td>?</td>
         <td>?</td>
+        <td></td>          
         <td>?</td>
         <td>?</td>
         <td>?</td>
@@ -64,6 +68,7 @@ title: LoRa Boards Power Measurements
         <td>104.5mA</td>
         <td>148mA</td>
         <td>?</td>
+        <td></td>                
         <td>113mA</td>
         <td>12mA</td>
       </tr>
@@ -75,6 +80,7 @@ title: LoRa Boards Power Measurements
         <td>11.8mA</td>
         <td>55mA</td>
         <td>?</td>
+        <td></td>         
         <td>29mA</td>
         <td>7mA</td>
       </tr>
@@ -86,6 +92,7 @@ title: LoRa Boards Power Measurements
         <td>30μA</td>
         <td>22μA</td>
         <td>?</td>
+        <td></td>        
         <td>Has Power Switch</td>
         <td>2μA</td>
       </tr>
