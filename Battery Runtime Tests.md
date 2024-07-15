@@ -273,9 +273,10 @@ title: Battery Runtime Tests
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
           <td></td><!--Wireless Tracker-->
+          <td></td><!--VME213-->
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
-          <td></td><!--RAKRAK19003-->   
+          <td></td><!--RAKRAK19003-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
