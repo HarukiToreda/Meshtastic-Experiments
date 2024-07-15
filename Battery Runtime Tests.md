@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-06-26T03:00:00') }, // RAK
+        { id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
         { id: 'progress2', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress3', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
@@ -266,7 +266,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Tracker-->
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
-          <td></td><!--RAKRAK19003-->   
+          <td id="progress1">In Progress</td><!--RAKRAK19003-->   
         </tr>
         <tr>
           <td>2000mAh Battery</td>
