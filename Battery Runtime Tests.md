@@ -103,7 +103,7 @@ title: Battery Runtime Tests
           <td></td><!--Capsule Sensor V3-->
           <td>26 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
-          <td>446 Hrs</td><!--RAKRAK19003-->   
+          <td>453 Hrs</td><!--RAKRAK19003-->   
         </tr>
       </tbody>
     </table>
@@ -199,7 +199,7 @@ title: Battery Runtime Tests
           <td></td><!--Capsule Sensor V3-->
           <td>71 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
-          <td>446 Hrs</td><!--RAKRAK19003-->    
+          <td>453 Hrs</td><!--RAKRAK19003-->    
         </tr>
       </tbody>
     </table>
