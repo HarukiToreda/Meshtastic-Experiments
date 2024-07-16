@@ -11,7 +11,7 @@ title: Battery Runtime Tests
         { id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
         { id: 'progress2', start: new Date('2024-07-15T12:07:00') }, // Vision Master 2000
         { id: 'progress3', start: new Date('2024-07-16T02:26:00') }, // RAK Big
-        { id: 'progress4', start: new Date('2024-07-26T02:33:00') }, // V2 3000
+        { id: 'progress4', start: new Date('2024-07-16T02:33:00') }, // V2 3000
         { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // 
         { id: 'progress6', start: new Date('2024-07-11T02:36:00') }, //         
         { id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
