@@ -10,7 +10,7 @@ title: Battery Runtime Tests
       const startTimes = [
         { id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
         { id: 'progress2', start: new Date('2024-07-15T12:07:00') }, // Vision Master 2000
-        { id: 'progress3', start: new Date('2024-06-26T03:00:00') }, // RAK
+        { id: 'progress3', start: new Date('2024-07-16T02:26:00') }, // RAK Big
         { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
         { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // V2       
         { id: 'progress6', start: new Date('2024-07-11T02:36:00') }, // V2 1100        
@@ -91,9 +91,9 @@ title: Battery Runtime Tests
           <td>20 Hrs</td><!--Wireless Stick Lite-->
           <td>13 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td id="progress2">In Progress</td><!--RAKRAK19003--><!--VME213-->          
+          <td id="progress2">In Progress</td><!--VME213-->          
           <td>19 Hrs</td><!--T-Deck-->
-          <td></td><!--RAKRAK19007-->
+          <td id="progress3">In Progress</td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
         </tr>
         <tr>
