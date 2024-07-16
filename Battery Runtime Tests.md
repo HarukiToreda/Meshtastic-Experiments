@@ -11,12 +11,12 @@ title: Battery Runtime Tests
         { id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
         { id: 'progress2', start: new Date('2024-07-15T12:07:00') }, // Vision Master 2000
         { id: 'progress3', start: new Date('2024-07-16T02:26:00') }, // RAK Big
-        { id: 'progress4', start: new Date('2024-06-26T03:00:00') }, // RAK
-        { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // V2       
-        { id: 'progress6', start: new Date('2024-07-11T02:36:00') }, // V2 1100        
-        { id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // WSL V3
-        { id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // Tracker
-        { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // Paper
+        { id: 'progress4', start: new Date('2024-07-26T02:33:00') }, // V2 3000
+        { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // 
+        { id: 'progress6', start: new Date('2024-07-11T02:36:00') }, //         
+        { id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
+        { id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
+        { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // 
       ];
 
       const currentDate = new Date();
@@ -98,7 +98,7 @@ title: Battery Runtime Tests
         </tr>
         <tr>
           <td>3000mAh Battery</td>
-          <td></td><!--Heltec V2-->
+          <td id="progress4">In Progress</td><!--Heltec V2-->
           <td>30 Hrs</td><!--Heltec V3-->
           <td>30 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
