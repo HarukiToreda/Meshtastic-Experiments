@@ -9,7 +9,7 @@ title: Battery Runtime Tests
     function updateProgress() {
       const startTimes = [
         { id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
-        //{ id: 'progress2', start: new Date('2024-07-15T12:07:00') }, // Vision Master 2000
+        { id: 'progress2', start: new Date('2024-07-18T17:34:00') }, // Vision Master 2000
         { id: 'progress3', start: new Date('2024-07-16T02:26:00') }, // RAK Big
         //{ id: 'progress4', start: new Date('2024-07-16T02:33:00') }, // V2 3000
         { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // 
@@ -109,6 +109,32 @@ title: Battery Runtime Tests
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->   
         </tr>
+        <tr>
+          <td>4000mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->            
+          <td></td><!--T-Deck-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
+        </tr>        
+        <tr>
+          <td>5000mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td id="progress3">In Progress</td><!--VME213-->            
+          <td></td><!--T-Deck-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
+        </tr>               
       </tbody>
     </table>
   </div>
@@ -209,6 +235,32 @@ title: Battery Runtime Tests
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->    
         </tr>
+        <tr>
+          <td>4000mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->            
+          <td></td><!--T-Deck-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
+        </tr>        
+        <tr>
+          <td>5000mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->            
+          <td></td><!--T-Deck-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->   
+        </tr>               
       </tbody>
     </table>
   </div>
