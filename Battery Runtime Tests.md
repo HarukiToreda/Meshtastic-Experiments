@@ -130,7 +130,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td id="progress3">In Progress</td><!--VME213-->            
+          <td id="progress2">In Progress</td><!--VME213-->            
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
