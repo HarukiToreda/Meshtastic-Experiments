@@ -123,7 +123,7 @@ title: LoRa Boards Comparison Table
         <td>B&Q Consulting</td><!--Station G2-->
         <td>B&Q Consulting</td><!--Nano G2 Ultra-->
         <td>Seeed Studio</td><!--Wio Tracker 1110-->
-        <td>Heltec</td><!--Heltec V3-->        
+        <td>Indie</td><!--Heltxt-->        
       </tr>
       <tr>
         <td>Average Price USD</td>
