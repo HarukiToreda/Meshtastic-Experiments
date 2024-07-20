@@ -134,10 +134,10 @@ title: LoRa Boards Comparison Table
         <td><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?variant=43884035113158">$27.99</a></td><!--RAKRAK19007-->
         <td><a href="https://www.lilygo.cc/products/t-deck">$52.13</a></td><!--T-Deck-->
         <td><a href="https://www.lilygo.cc/products/t-echo">$54.41</a></td><!--T-Echo-->
-        <td>$32.80</td><!--T-Beam-->
-        <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->
-        <td>$17.58</td><!--T3-S3-->
-        <td>$109.00</td><!--Station G2-->
+        <td><a href="https://www.lilygo.cc/products/t-beam-v1-1-esp32-lora-module">$32.80</a></td><!--T-Beam-->
+        <td><a href="https://www.lilygo.cc/products/t-beamsupreme-m">$44.17/ $70.17</a></td><!--T-Beam-Supreme-->
+        <td><a href="https://www.lilygo.cc/products/t3s3-v1-0">$17.58</a></td><!--T3-S3-->
+        <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-station-edition/">$109.00</a></td><!--Station G2-->
       </tr>
       <tr>
         <td>MCU Chip</td>
