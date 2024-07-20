@@ -127,22 +127,22 @@ title: LoRa Boards Comparison Table
       </tr>
       <tr>
         <td>Average Price USD</td>
-        <td><a href="https://www.aliexpress.com/i/2251832758749430.html?gatewayAdapt=4itemAdapt">$15.47</a></td><!--Heltec V2-->
-        <td><a href="https://heltec.org/project/wifi-lora-32-v3/">$17.90</a></td><!--Heltec V3-->
-        <td><a href="https://heltec.org/project/wireless-paper/">$15.90</a></td><!--Wireless Paper-->
-        <td><a href="https://heltec.org/project/wireless-stick-lite-v2/">$14.90</a></td><!--Wireless Stick Lite-->
-        <td><a href="https://heltec.org/project/wireless-tracker/">$22.90</a></td><!--Wireless Tracker-->
-        <td><a href="https://heltec.org/project/heltec-capsule-sensor-v3/">$25.99</a></td><!--Capsule Sensor V3-->
-        <td><a href="https://heltec.org/project/vision-master-e213/">$19.90</a></td><!--Vision Master E213-->
-        <td><a href="https://heltec.org/project/vision-master-e290/">$20.90</a></td><!--Vision Master E290-->
-        <td><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?variant=43884035113158">$27.99</a></td><!--RAKRAK19007-->
-        <td><a href="https://www.lilygo.cc/products/t-deck">$52.13</a></td><!--T-Deck-->
-        <td><a href="https://www.lilygo.cc/products/t-echo">$54.41</a></td><!--T-Echo-->
-        <td><a href="https://www.lilygo.cc/products/t-beam-v1-1-esp32-lora-module">$32.80</a></td><!--T-Beam-->
-        <td><a href="https://www.lilygo.cc/products/t-beamsupreme-m">$44.17/ $70.17</a></td><!--T-Beam-Supreme-->
-        <td><a href="https://www.lilygo.cc/products/t3s3-v1-0">$17.58</a></td><!--T3-S3-->
-        <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-station-edition/">$109.00</a></td><!--Station G2-->
-        <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-nano-g2-ultra/">$86.00</a></td><!--Nano G2 Ultra-->        
+        <td><a href="https://www.aliexpress.com/i/2251832758749430.html?gatewayAdapt=4itemAdapt" target="_blank" rel="noopener noreferrer">$15.47</a></td><!--Heltec V2-->
+        <td><a href="https://heltec.org/project/wifi-lora-32-v3/" target="_blank" rel="noopener noreferrer">$17.90</a></td><!--Heltec V3-->
+        <td><a href="https://heltec.org/project/wireless-paper/" target="_blank" rel="noopener noreferrer">$15.90</a></td><!--Wireless Paper-->
+        <td><a href="https://heltec.org/project/wireless-stick-lite-v2/" target="_blank" rel="noopener noreferrer">$14.90</a></td><!--Wireless Stick Lite-->
+        <td><a href="https://heltec.org/project/wireless-tracker/" target="_blank" rel="noopener noreferrer">$22.90</a></td><!--Wireless Tracker-->
+        <td><a href="https://heltec.org/project/heltec-capsule-sensor-v3/" target="_blank" rel="noopener noreferrer">$25.99</a></td><!--Capsule Sensor V3-->
+        <td><a href="https://heltec.org/project/vision-master-e213/" target="_blank" rel="noopener noreferrer">$19.90</a></td><!--Vision Master E213-->
+        <td><a href="https://heltec.org/project/vision-master-e290/" target="_blank" rel="noopener noreferrer">$20.90</a></td><!--Vision Master E290-->
+        <td><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?variant=43884035113158" target="_blank" rel="noopener noreferrer">$27.99</a></td><!--RAKRAK19007-->
+        <td><a href="https://www.lilygo.cc/products/t-deck" target="_blank" rel="noopener noreferrer">$52.13</a></td><!--T-Deck-->
+        <td><a href="https://www.lilygo.cc/products/t-echo" target="_blank" rel="noopener noreferrer">$54.41</a></td><!--T-Echo-->
+        <td><a href="https://www.lilygo.cc/products/t-beam-v1-1-esp32-lora-module" target="_blank" rel="noopener noreferrer">$32.80</a></td><!--T-Beam-->
+        <td><a href="https://www.lilygo.cc/products/t-beamsupreme-m" target="_blank" rel="noopener noreferrer">$44.17/ $70.17</a></td><!--T-Beam-Supreme-->
+        <td><a href="https://www.lilygo.cc/products/t3s3-v1-0" target="_blank" rel="noopener noreferrer">$17.58</a></td><!--T3-S3-->
+        <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-station-edition/" target="_blank" rel="noopener noreferrer">$109.00</a></td><!--Station G2-->
+        <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-nano-g2-ultra/" target="_blank" rel="noopener noreferrer">$86.00</a></td><!--Nano G2 Ultra-->        
       </tr>
       <tr>
         <td>MCU Chip</td>
