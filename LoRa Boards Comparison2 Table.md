@@ -123,11 +123,11 @@ title: LoRa Boards Comparison Table
       </tr>
       <tr>
         <td>Price Range USD</td>
-        <td>$15.47+</td><!--Heltec V2-->
-        <td>$17.90</td><!--Heltec V3-->
-        <td>$15.90</td><!--Wireless Paper-->
-        <td>$14.90</td><!--Wireless Stick Lite-->
-        <td>$22.90</td><!--Wireless Tracker-->
+        <td><a href="https://www.aliexpress.com/i/2251832758749430.html?gatewayAdapt=4itemAdapt">$15.47</a></td><!--Heltec V2-->
+        <td><a href="https://heltec.org/project/wifi-lora-32-v3/">$17.90-$19.90</a></td><!--Heltec V3-->
+        <td><a href="https://heltec.org/project/wireless-paper/">$15.90</a></td><!--Wireless Paper-->
+        <td><a href="https://heltec.org/project/wireless-stick-lite-v2/">$14.90</a></td><!--Wireless Stick Lite-->
+        <td><a href="https://heltec.org/project/wireless-tracker/">$22.90</a></td><!--Wireless Tracker-->
         <td>$25.99</td><!--Capsule Sensor V3-->
         <td>$19.90</td><!--Vision Master E213-->
         <td>$20.90</td><!--Vision Master E290-->
