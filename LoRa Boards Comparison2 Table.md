@@ -102,7 +102,8 @@ title: LoRa Boards Comparison Table
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="44.17" data-brand="Lilygo">T-Beam Supreme</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="17.58" data-brand="Lilygo">T3-S3</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="109.00" data-brand="B&Q Consulting">Station G2</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-touch="No" data-keyboard="No" data-price="86.00" data-brand="B&Q Consulting">Nano G2 Ultra</th>                
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-touch="No" data-keyboard="No" data-price="86.00" data-brand="B&Q Consulting">Nano G2 Ultra</th>
+        <th data-mcu="nRF" data-lora="LR1110" data-gps="Yes" data-screen="None" data-wifi="No" data-touch="No" data-keyboard="No" data-price="35.91" data-brand="Seeed Studio">SenseCAP Card Tracker T1000-E</th>                
       </tr>
     </thead>
     <tbody>
@@ -124,6 +125,7 @@ title: LoRa Boards Comparison Table
         <td>Lilygo</td><!--T3-S3-->
         <td>B&Q Consulting</td><!--Station G2-->
         <td>B&Q Consulting</td><!--Nano G2 Ultra-->
+        <td>Seeed Studio</td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Average Price USD</td>
@@ -142,7 +144,8 @@ title: LoRa Boards Comparison Table
         <td><a href="https://www.lilygo.cc/products/t-beamsupreme-m" target="_blank" rel="noopener noreferrer">$44.17/ $70.17</a></td><!--T-Beam-Supreme-->
         <td><a href="https://www.lilygo.cc/products/t3s3-v1-0" target="_blank" rel="noopener noreferrer">$17.58</a></td><!--T3-S3-->
         <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-station-edition/" target="_blank" rel="noopener noreferrer">$109.00</a></td><!--Station G2-->
-        <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-nano-g2-ultra/" target="_blank" rel="noopener noreferrer">$86.00</a></td><!--Nano G2 Ultra-->        
+        <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-nano-g2-ultra/" target="_blank" rel="noopener noreferrer">$86.00</a></td><!--Nano G2 Ultra-->
+        <td><a href="https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html" target="_blank" rel="noopener noreferrer">$35.91</a></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>MCU Chip</td>
@@ -161,7 +164,8 @@ title: LoRa Boards Comparison Table
         <td>ESP32-S3FN8</td><!--T-Beam Supreme-->
         <td>ESP32-S3FH4R2</td><!--T3-S3-->  
         <td>ESP32-S3</td><!--Station G2-->
-        <td>NRF52840</td><!--Nano G2 Ultra-->         
+        <td>NRF52840</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>LoRa Chip</td>
@@ -180,7 +184,8 @@ title: LoRa Boards Comparison Table
         <td>SX1262</td><!--T-Beam-Supreme-->
         <td>SX1262</td><!--T3-S3-->
         <td>SX1262</td><!--Station G2-->
-        <td>SX1262</td><!--Nano G2 Ultra-->         
+        <td>SX1262</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>GPS Chip</td>
@@ -200,6 +205,7 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--T3-S3-->          
         <td>N/A</td><!--Station G2-->
         <td>ATGM336H-5N</td><!--Nano G2 Ultra--> 
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>GNSS Chip</td>
@@ -219,6 +225,7 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--T3-S3-->                
         <td>N/A</td><!--Station G2-->
         <td>N/A</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Charging Interface</td>
@@ -238,6 +245,7 @@ title: LoRa Boards Comparison Table
         <td>USB-C</td><!--T3-S3-->
         <td>USB-C</td><!--Station G2-->
         <td>USB-C</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Deep Sleep</td>
@@ -257,6 +265,7 @@ title: LoRa Boards Comparison Table
         <td>?</td><!--T3-S3-->   
         <td>?</td><!--Station G2-->
         <td>?</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Frequency</td>
@@ -276,6 +285,7 @@ title: LoRa Boards Comparison Table
         <td>433~510 MHz, 863~928 MHz</td><!--T3-S3-->    
         <td>863~928 MHz</td><!--Station G2-->
         <td>863~928 MHz</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Max. TX Power</td>
@@ -295,6 +305,7 @@ title: LoRa Boards Comparison Table
         <td>22 ± 1dBm</td><!--T3-S3-->  
         <td>35 ± 1dBm</td><!--Station G2-->
         <td>22 ± 1dBm</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
@@ -314,6 +325,7 @@ title: LoRa Boards Comparison Table
         <td>-136 dBm</td><!--T3-S3-->   
         <td>?</td><!--Station G2-->
         <td>?</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Wi-Fi</td>
@@ -333,6 +345,7 @@ title: LoRa Boards Comparison Table
         <td>YES</td><!--T3-S3-->   
         <td>YES</td><!--Station G2-->
         <td>NO</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Bluetooth</td>
@@ -352,6 +365,7 @@ title: LoRa Boards Comparison Table
         <td>BT-5 (LE)</td><!--T3-S3-->   
         <td>BT-5 (LE)</td><!--Station G2-->
         <td>BT-5.4 (LE)</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Display Type</td>
@@ -371,6 +385,7 @@ title: LoRa Boards Comparison Table
         <td>OLED</td><!--T3-S3-->       
         <td>OLED</td><!--Station G2-->
         <td>OLED</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Display Size</td>
@@ -390,6 +405,7 @@ title: LoRa Boards Comparison Table
         <td>0.96 Inch</td><!--T3-S3-->        
         <td>1.3 Inch</td><!--Station G2-->
         <td>1.3 Inch</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Charging IC</td>
@@ -409,6 +425,7 @@ title: LoRa Boards Comparison Table
         <td>TP4054</td><!--T3-S3-->
         <td></td><!--Station G2-->
         <td></td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Diagram</td>
@@ -428,6 +445,7 @@ title: LoRa Boards Comparison Table
         <td><a href="https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T3_S3_V1.2.pdf">Diagram Link</a></td><!--T3-S3-->         
         <td><a href="https://wiki.uniteng.com/en/meshtastic/station-g2">Diagram Link</a></td><!--Station G2-->
         <td><a href="https://wiki.uniteng.com/meshtastic/nano-g2-ultra">Diagram Link</a></td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Input</td>
@@ -447,7 +465,28 @@ title: LoRa Boards Comparison Table
         <td>User Button, Reset Button</td><!--T3-S3-->   
         <td>User Button, Reset Button, Boot Button</td><!--Station G2-->
         <td>4 Buttons</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>       
+      <tr>
+        <td>Sensors</td>
+        <td>N/A</td><!--Heltec V2-->
+        <td>N/A</td><!--Heltec V3-->
+        <td>N/A</td><!--Wireless Paper-->
+        <td>N/A</td><!--Wireless Stick Lite-->
+        <td>N/A</td><!--Wireless Tracker-->
+        <td>N/A</td><!--Capsule Sensor V3-->
+        <td>N/A</td><!--Vision Master E213-->
+        <td>N/A</td><!--Vision Master E290-->         
+        <td>N/A</td><!--RAKRAK19007-->
+        <td>N/A</td><!--T-Deck-->      
+        <td>N/A</td><!--T-Echo-->
+        <td>N/A</td><!--T-Beam-->        
+        <td>N/A</td><!--T-Beam-Supreme-->            
+        <td>N/A</td><!--T3-S3-->                  
+        <td>N/A</td><!--Station G2-->
+        <td>N/A</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
+      </tr>
       <tr>
         <td>Memory ROM</td>
         <td>448KB ROM</td><!--Heltec V2-->
@@ -466,6 +505,7 @@ title: LoRa Boards Comparison Table
         <td>384KB ROM</td><!--T3-S3-->            
         <td>384KB ROM</td><!--Station G2-->
         <td>?</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>
       <tr>
         <td>Memory SRAM</td>
@@ -485,6 +525,7 @@ title: LoRa Boards Comparison Table
         <td>512KB SRAM</td><!--T3-S3-->         
         <td>512KB SRAM</td><!--Station G2-->
         <td>?</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>      
       <tr>
         <td>Memory RTC SRAM</td>
@@ -504,6 +545,7 @@ title: LoRa Boards Comparison Table
         <td>16KB RTC SRAM</td><!--T3-S3-->
         <td>16KB RTC SRAM</td><!--Station G2-->
         <td>?</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>      
       <tr>
         <td>Memory SiP Flash</td>
@@ -523,6 +565,7 @@ title: LoRa Boards Comparison Table
         <td></td><!--T3-S3-->          
         <td>8MB SiP Flash</td><!--Station G2-->
         <td>16MB SiP Flash</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>     
       <tr>
         <td>Memory PSRAM</td>
@@ -542,6 +585,7 @@ title: LoRa Boards Comparison Table
         <td>8MB PSRAM</td><!--T3-S3-->
         <td>8MB PSRAM</td><!--Station G2-->
         <td>?</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>           
       <tr>
         <td>Memory Flash</td>
@@ -561,6 +605,7 @@ title: LoRa Boards Comparison Table
         <td>16MB Flash</td><!--T3-S3-->                  
         <td>16MB Flash</td><!--Station G2-->
         <td>?</td><!--Nano G2 Ultra-->
+        <td></td><!--Tracker T1000-E-->
       </tr>                       
     </tbody>
   </table>
