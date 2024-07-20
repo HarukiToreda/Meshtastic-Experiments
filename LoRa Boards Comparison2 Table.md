@@ -111,6 +111,23 @@ title: LoRa Boards Comparison Table
         <td>Lilygo</td><!--T3-S3-->
       </tr>
       <tr>
+        <td>Price Range USD</td>
+        <td>$15.47+</td><!--Heltec V2-->
+        <td>$17.90</td><!--Heltec V3-->
+        <td>$15.90</td><!--Wireless Paper-->
+        <td>$14.90</td><!--Wireless Stick Lite-->
+        <td>$22.90</td><!--Wireless Tracker-->
+        <td>$25.99</td><!--Capsule Sensor V3-->
+        <td>$19.90</td><!--Vision Master E213-->
+        <td>$20.90</td><!--Vision Master E290-->
+        <td>$36.97</td><!--RAKRAK19007-->
+        <td>$52.66</td><!--T-Deck-->
+        <td>$54.41</td><!--T-Echo-->
+        <td>$32.80</td><!--T-Beam-->        
+        <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->            
+        <td>$17.58</td><!--T3-S3-->            
+      </tr>
+      <tr>
         <td>MCU Chip</td>
         <td>ESP32-D0</td><!--Heltec V2-->
         <td>ESP32-S3</td><!--Heltec V3-->
@@ -381,24 +398,7 @@ title: LoRa Boards Comparison Table
         <td>User Button, Reset Button, Power Button</td><!--T-Beam-->        
         <td>User Button, Reset Button, Power Button</td><!--T-Beam-Supreme-->            
         <td>User Button, Reset Button</td><!--T3-S3-->                
-      </tr>
-      <tr>
-        <td>Price Range USD</td>
-        <td>$15.47+</td><!--Heltec V2-->
-        <td>$17.90</td><!--Heltec V3-->
-        <td>$15.90</td><!--Wireless Paper-->
-        <td>$14.90</td><!--Wireless Stick Lite-->
-        <td>$22.90</td><!--Wireless Tracker-->
-        <td>$25.99</td><!--Capsule Sensor V3-->
-        <td>$19.90</td><!--Vision Master E213-->
-        <td>$20.90</td><!--Vision Master E290-->
-        <td>$36.97</td><!--RAKRAK19007-->
-        <td>$52.66</td><!--T-Deck-->
-        <td>$54.41</td><!--T-Echo-->
-        <td>$32.80</td><!--T-Beam-->        
-        <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->            
-        <td>$17.58</td><!--T3-S3-->            
-      </tr>        
+      </tr>       
       <tr>
         <td>Memory ROM</td>
         <td>448KB ROM</td><!--Heltec V2-->
