@@ -75,9 +75,10 @@ title: LoRa Boards Comparison Table
     <label>Brand:</label>
     <div>
       <input type="checkbox" class="brandFilter" value="Heltec"> Heltec<br>
-      <input type="checkbox" class="brandFilter" value="Rack Wireless"> Rak Wireless<br>
+      <input type="checkbox" class="brandFilter" value="Rack"> Rak Wireless<br>
       <input type="checkbox" class="brandFilter" value="Lilygo"> Lilygo<br>
-      <input type="checkbox" class="brandFilter" value="B&Q Consulting"> B&Q Consulting<br>
+      <input type="checkbox" class="brandFilter" value="B&Q"> B&Q Consulting<br>
+      <input type="checkbox" class="brandFilter" value="Seed"> Seed Studio<br>
     </div>
   </div>
 </div>
@@ -95,15 +96,15 @@ title: LoRa Boards Comparison Table
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="25.99" data-brand="Heltec">Heltec Capsule Sensor V3</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="19.90" data-brand="Heltec">Heltec Vision Master E213</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="20.90" data-brand="Heltec">Heltec Vision Master E290</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-touch="No" data-keyboard="No" data-price="36.97" data-brand="Rack Wireless">WisBlock Start Kit RAK4631</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-touch="No" data-keyboard="No" data-price="36.97" data-brand="Rack">WisBlock Start Kit RAK4631</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-touch="Yes" data-keyboard="Yes" data-price="52.66" data-brand="Lilygo">T-Deck</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-touch="No" data-keyboard="No" data-price="54.41" data-brand="Lilygo">T-Echo</th>
         <th data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="32.80" data-brand="Lilygo">T-Beam</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="44.17" data-brand="Lilygo">T-Beam Supreme</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="17.58" data-brand="Lilygo">T3-S3</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="109.00" data-brand="B&Q Consulting">Station G2</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-touch="No" data-keyboard="No" data-price="86.00" data-brand="B&Q Consulting">Nano G2 Ultra</th>
-        <th data-mcu="nRF" data-lora="LR1110" data-gps="Yes" data-screen="None" data-wifi="No" data-touch="No" data-keyboard="No" data-price="35.91" data-brand="Seeed Studio">SenseCAP Card Tracker T1000-E</th>                
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="109.00" data-brand="B&Q">Station G2</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-touch="No" data-keyboard="No" data-price="86.00" data-brand="B&Q">Nano G2 Ultra</th>
+        <th data-mcu="nRF" data-lora="LR1110" data-gps="Yes" data-screen="None" data-wifi="No" data-touch="No" data-keyboard="No" data-price="35.91" data-brand="Seeed">SenseCAP Card Tracker T1000-E</th>                
       </tr>
     </thead>
     <tbody>
