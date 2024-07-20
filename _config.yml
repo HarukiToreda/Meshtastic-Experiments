@@ -9,17 +9,17 @@ plugins:
 # Add navigation links
 navbar:
   - title: Battery Runtime Tests
-    url: "/Battery Runtime Tests"
+    url: "/Battery-Runtime-Tests"
   - title: ADC Calculator
     url: "/ADC-Calculator"
   - title: LoRa Boards Comparison Table
-    url: "/LoRa-Boards Comparison Table"
+    url: "/LoRa-Boards-Comparison-Table"
   - title: LoRa Boards Power Measurements
-    url: "/LoRa-Boards Power Measurements"
+    url: "/LoRa-Boards-Power-Measurements"
   - title: LoRa Boards Comparison2 Table
-    url: "/LoRa-Boards Comparison2 Table"
+    url: "/LoRa-Boards-Comparison2-Table"
   - title: Additional Hardware
-    url: "/Additional Hardware"
+    url: "/Additional-Hardware"
 
 # Point to the local theme directories
 layouts_dir: _theme/_layouts
