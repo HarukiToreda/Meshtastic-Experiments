@@ -118,7 +118,7 @@
       <nav>
         <ul>
           {% for item in site.navbar %}
-            <li><a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a></li>
+            <li><a href="{{ item.url | relative_url }}" class="{% if page.url | relative_url == item.url | relative_url %}active{% endif %}">{{ item.title }}</a></li>
           {% endfor %}
         </ul>
       </nav>
