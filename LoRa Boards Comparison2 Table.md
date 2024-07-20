@@ -82,7 +82,7 @@ title: LoRa Boards Comparison Table
     <label>Brand:</label>
     <div>
       <input type="checkbox" class="brandFilter" value="Heltec"> Heltec<br>
-      <input type="checkbox" class="brandFilter" value="Rack Wireless"> Rack Wireless<br>
+      <input type="checkbox" class="brandFilter" value="Rack Wireless"> Rak Wireless<br>
       <input type="checkbox" class="brandFilter" value="Lilygo"> Lilygo<br>
       <input type="checkbox" class="brandFilter" value="B&Q Consulting"> B&Q Consulting<br>
     </div>
@@ -123,7 +123,7 @@ title: LoRa Boards Comparison Table
         <td>Heltec</td><!--Capsule Sensor V3-->
         <td>Heltec</td><!--Vision Master E213-->
         <td>Heltec</td><!--Vision Master E290-->
-        <td>Rack Wireless</td><!--RAKRAK19007-->
+        <td>Rak Wireless</td><!--RAKRAK19007-->
         <td>Lilygo</td><!--T-Deck-->
         <td>Lilygo</td><!--T-Echo-->
         <td>Lilygo</td><!--T-Beam-->
