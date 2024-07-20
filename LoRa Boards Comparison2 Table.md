@@ -93,7 +93,7 @@ title: LoRa Boards Comparison Table
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="25.99">Heltec Capsule Sensor V3</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="19.90">Heltec Vision Master E213</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="20.90">Heltec Vision Master E290</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="36.97">RAK19007 RAK4631</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="36.97">WisBlock Start Kit RAK4631</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes" data-price="52.66">T-Deck</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="54.41">T-Echo</th>
         <th data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="32.80">T-Beam</th>
@@ -122,22 +122,22 @@ title: LoRa Boards Comparison Table
         <td>B&Q Consulting</td><!--Station G2-->
       </tr>
       <tr>
-        <td>Price Range USD</td>
+        <td>Average Price USD</td>
         <td><a href="https://www.aliexpress.com/i/2251832758749430.html?gatewayAdapt=4itemAdapt">$15.47</a></td><!--Heltec V2-->
-        <td><a href="https://heltec.org/project/wifi-lora-32-v3/">$17.90-$19.90</a></td><!--Heltec V3-->
+        <td><a href="https://heltec.org/project/wifi-lora-32-v3/">$17.90</a></td><!--Heltec V3-->
         <td><a href="https://heltec.org/project/wireless-paper/">$15.90</a></td><!--Wireless Paper-->
         <td><a href="https://heltec.org/project/wireless-stick-lite-v2/">$14.90</a></td><!--Wireless Stick Lite-->
         <td><a href="https://heltec.org/project/wireless-tracker/">$22.90</a></td><!--Wireless Tracker-->
-        <td>$25.99</td><!--Capsule Sensor V3-->
-        <td>$19.90</td><!--Vision Master E213-->
-        <td>$20.90</td><!--Vision Master E290-->
-        <td>$36.97</td><!--RAKRAK19007-->
-        <td>$52.66</td><!--T-Deck-->
-        <td>$54.41</td><!--T-Echo-->
-        <td>$32.80</td><!--T-Beam-->        
-        <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->            
-        <td>$17.58</td><!--T3-S3-->    
-        <td>$109.00</td><!--Station G2-->        
+        <td><a href="https://heltec.org/project/heltec-capsule-sensor-v3/">$25.99</a></td><!--Capsule Sensor V3-->
+        <td><a href="https://heltec.org/project/vision-master-e213/">$19.90</a></td><!--Vision Master E213-->
+        <td><a href="https://heltec.org/project/vision-master-e290/">$20.90</a></td><!--Vision Master E290-->
+        <td><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?variant=43884035113158">$27.99</a></td><!--RAKRAK19007-->
+        <td><a href="https://www.lilygo.cc/products/t-deck">$52.13</a></td><!--T-Deck-->
+        <td><a href="https://www.lilygo.cc/products/t-echo">$54.41</a></td><!--T-Echo-->
+        <td>$32.80</td><!--T-Beam-->
+        <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->
+        <td>$17.58</td><!--T3-S3-->
+        <td>$109.00</td><!--Station G2-->
       </tr>
       <tr>
         <td>MCU Chip</td>
