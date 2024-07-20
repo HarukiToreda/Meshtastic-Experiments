@@ -1,3 +1,6 @@
+To add the "Buy me a coffee" button to the bottom of your sidebar, you can include the provided script within the `sidebar` div in your `_layouts/default.html` file. Here is the modified version of your HTML:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,6 +115,8 @@
           {% endfor %}
         </ul>
       </nav>
+      <!-- Buy Me a Coffee Button -->
+      <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="HarukiToreda" data-color="#707070" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </div>
     <div class="content">
       {{ content }}
@@ -122,3 +127,6 @@
   </footer>
 </body>
 </html>
+```
+
+This will ensure that the "Buy me a coffee" button appears at the bottom of the sidebar on your website.
