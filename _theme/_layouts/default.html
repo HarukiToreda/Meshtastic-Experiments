@@ -47,7 +47,7 @@
     nav ul li a {
       display: block;
       text-decoration: none;
-      color: #ffffff; /* White text */
+      color: #000000; /* Black text */
       background-color: #FFD700; /* Bright yellow background */
       padding: 10px;
       border-radius: 5px;
@@ -56,6 +56,10 @@
     nav ul li a:hover {
       background-color: #ffffff; /* White background on hover */
       color: #FFD700; /* Bright yellow text on hover */
+    }
+    nav ul li a.active {
+      background-color: #00FFFF; /* Electric blue background for active page */
+      color: #000000; /* Black text for active page */
     }
     table {
       width: 800px; /* Fixed width for tables */
@@ -114,7 +118,7 @@
       <nav>
         <ul>
           {% for item in site.navbar %}
-            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            <li><a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a></li>
           {% endfor %}
         </ul>
       </nav>
