@@ -49,17 +49,11 @@ title: LoRa Boards Comparison Table
     </div>
   </div>
   <div style="margin-right: 20px;">
-    <label>Touch Screen:</label>
+    <label>Input Interface:</label>
     <div>
-      <input type="checkbox" class="touchFilter" value="Yes"> Yes<br>
-      <input type="checkbox" class="touchFilter" value="No"> No<br>
-    </div>
-  </div>
-  <div style="margin-right: 20px;">
-    <label>Keyboard:</label>
-    <div>
-      <input type="checkbox" class="keyboardFilter" value="Yes"> Yes<br>
-      <input type="checkbox" class="keyboardFilter" value="No"> No<br>
+      <input type="checkbox" class="inputFilter" value="Touch"> Touch<br>
+      <input type="checkbox" class="inputFilter" value="Keyboard"> Keyboard<br>
+      <input type="checkbox" class="inputFilter" value="None"> None<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -88,23 +82,23 @@ title: LoRa Boards Comparison Table
     <thead>
       <tr>
         <th>Device</th>
-        <th data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="15.47" data-brand="Heltec">Heltec ESP32 V2</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="17.90" data-brand="Heltec">Heltec ESP32 V3</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="15.90" data-brand="Heltec">Heltec Wireless Paper</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="14.90" data-brand="Heltec">Wireless Stick Lite (V3)</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="22.90" data-brand="Heltec">Heltec Wireless Tracker</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="25.99" data-brand="Heltec">Heltec Capsule Sensor V3</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="19.90" data-brand="Heltec">Heltec Vision Master E213</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="20.90" data-brand="Heltec">Heltec Vision Master E290</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-touch="No" data-keyboard="No" data-price="36.97" data-brand="Rack">WisBlock Start Kit RAK4631</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-touch="Yes" data-keyboard="Yes" data-price="52.66" data-brand="Lilygo">T-Deck</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-touch="No" data-keyboard="No" data-price="54.41" data-brand="Lilygo">T-Echo</th>
-        <th data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="32.80" data-brand="Lilygo">T-Beam</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="44.17" data-brand="Lilygo">T-Beam Supreme</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="17.58" data-brand="Lilygo">T3-S3</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-touch="No" data-keyboard="No" data-price="109.00" data-brand="B&Q">Station G2</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-touch="No" data-keyboard="No" data-price="86.00" data-brand="B&Q">Nano G2 Ultra</th>
-        <th data-mcu="nRF" data-lora="LR1110" data-gps="Yes" data-screen="None" data-wifi="No" data-touch="No" data-keyboard="No" data-price="29.90" data-brand="Seeed">Wio Tracker 1110</th>                
+        <th data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="None" data-price="15.47" data-brand="Heltec">Heltec ESP32 V2</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="None" data-price="17.90" data-brand="Heltec">Heltec ESP32 V3</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="None" data-price="15.90" data-brand="Heltec">Heltec Wireless Paper</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="Yes" data-input="None" data-price="14.90" data-brand="Heltec">Wireless Stick Lite (V3)</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="Yes" data-input="None" data-price="22.90" data-brand="Heltec">Heltec Wireless Tracker</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-input="None" data-price="25.99" data-brand="Heltec">Heltec Capsule Sensor V3</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="None" data-price="19.90" data-brand="Heltec">Heltec Vision Master E213</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="None" data-price="20.90" data-brand="Heltec">Heltec Vision Master E290</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-input="None" data-price="36.97" data-brand="Rack">WisBlock Start Kit RAK4631</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-input="Touch, Keyboard" data-price="52.66" data-brand="Lilygo">T-Deck</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-input="Touch" data-price="54.41" data-brand="Lilygo">T-Echo</th>
+        <th data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-input="None" data-price="32.80" data-brand="Lilygo">T-Beam</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-input="None" data-price="44.17" data-brand="Lilygo">T-Beam Supreme</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="None" data-price="17.58" data-brand="Lilygo">T3-S3</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="None" data-price="109.00" data-brand="B&Q">Station G2</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-input="None" data-price="86.00" data-brand="B&Q">Nano G2 Ultra</th>
+        <th data-mcu="nRF" data-lora="LR1110" data-gps="Yes" data-screen="None" data-wifi="No" data-input="None" data-price="29.90" data-brand="Seeed">Wio Tracker 1110</th>                
       </tr>
     </thead>
     <tbody>
@@ -286,7 +280,7 @@ title: LoRa Boards Comparison Table
         <td>-136 dBm</td><!--T3-S3-->   
         <td>?</td><!--Station G2-->
         <td>?</td><!--Nano G2 Ultra-->
-        <td>-141 dBm</td</td><!--Wio Tracker 1110-->
+        <td>-141 dBm</td><!--Wio Tracker 1110-->
       </tr>
       <tr>
         <td>Wi-Fi</td>
@@ -613,7 +607,7 @@ title: LoRa Boards Comparison Table
 </div>
 
 <script>
-document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter, .wifiFilter, .touchFilter, .keyboardFilter, .priceFilter, .brandFilter').forEach(filter => {
+document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter, .wifiFilter, .inputFilter, .priceFilter, .brandFilter').forEach(filter => {
   filter.addEventListener('change', filterTable);
 });
 
@@ -623,8 +617,7 @@ function filterTable() {
   const gpsFilters = Array.from(document.querySelectorAll('.gpsFilter:checked')).map(cb => cb.value);
   const screenFilters = Array.from(document.querySelectorAll('.screenFilter:checked')).map(cb => cb.value);
   const wifiFilters = Array.from(document.querySelectorAll('.wifiFilter:checked')).map(cb => cb.value);
-  const touchFilters = Array.from(document.querySelectorAll('.touchFilter:checked')).map(cb => cb.value);
-  const keyboardFilters = Array.from(document.querySelectorAll('.keyboardFilter:checked')).map(cb => cb.value);
+  const inputFilters = Array.from(document.querySelectorAll('.inputFilter:checked')).map(cb => cb.value);
   const priceFilters = Array.from(document.querySelectorAll('.priceFilter:checked')).map(cb => cb.value);
   const brandFilters = Array.from(document.querySelectorAll('.brandFilter:checked')).map(cb => cb.value);
 
@@ -644,8 +637,7 @@ function filterTable() {
     const gps = column.getAttribute('data-gps');
     const screen = column.getAttribute('data-screen');
     const wifi = column.getAttribute('data-wifi');
-    const touch = column.getAttribute('data-touch');
-    const keyboard = column.getAttribute('data-keyboard');
+    const input = column.getAttribute('data-input').split(', ');
     const price = parseFloat(column.getAttribute('data-price'));
     const brand = column.getAttribute('data-brand');
 
@@ -654,12 +646,11 @@ function filterTable() {
     const gpsMatch = gpsFilters.length === 0 || gpsFilters.includes(gps);
     const screenMatch = screenFilters.length === 0 || screenFilters.includes(screen);
     const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(wifi);
-    const touchMatch = touchFilters.length === 0 || touchFilters.includes(touch);
-    const keyboardMatch = keyboardFilters.length === 0 || keyboardFilters.includes(keyboard);
+    const inputMatch = inputFilters.length === 0 || inputFilters.some(inputType => input.includes(inputType));
     const priceMatch = priceFilters.length === 0 || priceFilters.includes(getPriceRange(price));
     const brandMatch = brandFilters.length === 0 || brandFilters.includes(brand);
 
-    return mcuMatch && loraMatch && gpsMatch && screenMatch && wifiMatch && touchMatch && keyboardMatch && priceMatch && brandMatch;
+    return mcuMatch && loraMatch && gpsMatch && screenMatch && wifiMatch && inputMatch && priceMatch && brandMatch;
   }
 
   columns.forEach(column => {
