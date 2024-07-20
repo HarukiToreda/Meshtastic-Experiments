@@ -99,7 +99,8 @@ title: LoRa Boards Comparison Table
         <th data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="32.80">T-Beam</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="44.17">T-Beam Supreme</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="17.58">T3-S3</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="109.00">Station G2</th>        
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="109.00">Station G2</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="109.00">Nano G2 Ultra</th>                
       </tr>
     </thead>
     <tbody>
@@ -120,6 +121,7 @@ title: LoRa Boards Comparison Table
         <td>Lilygo</td><!--T-Beam-Supreme-->
         <td>Lilygo</td><!--T3-S3-->
         <td>B&Q Consulting</td><!--Station G2-->
+        <td>B&Q Consulting</td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Average Price USD</td>
@@ -138,6 +140,7 @@ title: LoRa Boards Comparison Table
         <td><a href="https://www.lilygo.cc/products/t-beamsupreme-m">$44.17/ $70.17</a></td><!--T-Beam-Supreme-->
         <td><a href="https://www.lilygo.cc/products/t3s3-v1-0">$17.58</a></td><!--T3-S3-->
         <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-station-edition/">$109.00</a></td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->        
       </tr>
       <tr>
         <td>MCU Chip</td>
@@ -156,6 +159,7 @@ title: LoRa Boards Comparison Table
         <td>ESP32-S3FN8</td><!--T-Beam Supreme-->
         <td>ESP32-S3FH4R2</td><!--T3-S3-->  
         <td>ESP32-S3</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->         
       </tr>
       <tr>
         <td>LoRa Chip</td>
@@ -174,6 +178,7 @@ title: LoRa Boards Comparison Table
         <td>SX1262</td><!--T-Beam-Supreme-->
         <td>SX1262</td><!--T3-S3-->
         <td>SX1262</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->         
       </tr>
       <tr>
         <td>GPS Chip</td>
@@ -192,6 +197,7 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--T-Beam-Supreme-->         
         <td>N/A</td><!--T3-S3-->          
         <td>N/A</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra--> 
       </tr>
       <tr>
         <td>GNSS Chip</td>
@@ -210,6 +216,7 @@ title: LoRa Boards Comparison Table
         <td>L76k/ MAX-M10S</td><!--T-Beam-Supreme-->            
         <td>N/A</td><!--T3-S3-->                
         <td>N/A</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Charging Interface</td>
@@ -228,6 +235,7 @@ title: LoRa Boards Comparison Table
         <td>USB-C</td><!--T-Beam-Supreme-->            
         <td>USB-C</td><!--T3-S3-->
         <td>USB-C</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Deep Sleep</td>
@@ -246,6 +254,7 @@ title: LoRa Boards Comparison Table
         <td>?</td><!--T-Beam-Supreme-->            
         <td>?</td><!--T3-S3-->   
         <td></td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Frequency</td>
@@ -264,6 +273,7 @@ title: LoRa Boards Comparison Table
         <td>433~510 MHz, 863~928 MHz</td><!--T-Beam-Supreme-->      
         <td>433~510 MHz, 863~928 MHz</td><!--T3-S3-->    
         <td>863~928 MHz</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Max. TX Power</td>
@@ -282,6 +292,7 @@ title: LoRa Boards Comparison Table
         <td>22 ± 1dBm</td><!--T-Beam-Supreme-->         
         <td>22 ± 1dBm</td><!--T3-S3-->  
         <td>35 ± 1dBm</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
@@ -300,6 +311,7 @@ title: LoRa Boards Comparison Table
         <td>-136 dBm</td><!--T-Beam-Supreme-->            
         <td>-136 dBm</td><!--T3-S3-->   
         <td>?</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Wi-Fi</td>
@@ -318,6 +330,7 @@ title: LoRa Boards Comparison Table
         <td>YES</td><!--T-Beam-Supreme-->            
         <td>YES</td><!--T3-S3-->   
         <td>YES</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Bluetooth</td>
@@ -336,6 +349,7 @@ title: LoRa Boards Comparison Table
         <td>BT-5 (LE)</td><!--T-Beam-Supreme-->            
         <td>BT-5 (LE)</td><!--T3-S3-->   
         <td>BT-5 (LE)</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Display Type</td>
@@ -354,6 +368,7 @@ title: LoRa Boards Comparison Table
         <td>OLED</td><!--T-Beam-Supreme-->            
         <td>OLED</td><!--T3-S3-->       
         <td>OLED</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Display Size</td>
@@ -372,6 +387,7 @@ title: LoRa Boards Comparison Table
         <td>1.3 Inch</td><!--T-Beam-Supreme-->            
         <td>0.96 Inch</td><!--T3-S3-->        
         <td>1.3 Inch</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Charging IC</td>
@@ -390,6 +406,7 @@ title: LoRa Boards Comparison Table
         <td>AXP2101</td><!--T-Beam-Supreme-->            
         <td>TP4054</td><!--T3-S3-->
         <td></td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Diagram</td>
@@ -408,6 +425,7 @@ title: LoRa Boards Comparison Table
         <td><a href="https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/LilyGo_T-BeamS3Supreme.pdf">Diagram Link</a></td><!--T-Beam-Supreme-->         
         <td><a href="https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T3_S3_V1.2.pdf">Diagram Link</a></td><!--T3-S3-->         
         <td><a href="https://wiki.uniteng.com/en/meshtastic/station-g2">Diagram Link</a></td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Input</td>
@@ -426,6 +444,7 @@ title: LoRa Boards Comparison Table
         <td>User Button, Reset Button, Power Button</td><!--T-Beam-Supreme-->            
         <td>User Button, Reset Button</td><!--T3-S3-->   
         <td>User Button, Reset Button, Boot Button</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>       
       <tr>
         <td>Memory ROM</td>
@@ -444,6 +463,7 @@ title: LoRa Boards Comparison Table
         <td>384KB ROM</td><!--T-Beam-Supreme-->            
         <td>384KB ROM</td><!--T3-S3-->            
         <td>384KB ROM</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>
       <tr>
         <td>Memory SRAM</td>
@@ -462,6 +482,7 @@ title: LoRa Boards Comparison Table
         <td>512KB SRAM</td><!--T-Beam-Supreme-->            
         <td>512KB SRAM</td><!--T3-S3-->         
         <td>512KB SRAM</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>      
       <tr>
         <td>Memory RTC SRAM</td>
@@ -480,6 +501,7 @@ title: LoRa Boards Comparison Table
         <td>16KB RTC SRAM</td><!--T-Beam-Supreme-->
         <td>16KB RTC SRAM</td><!--T3-S3-->
         <td>16KB RTC SRAM</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>      
       <tr>
         <td>Memory SiP Flash</td>
@@ -498,6 +520,7 @@ title: LoRa Boards Comparison Table
         <td></td><!--T-Beam-Supreme-->            
         <td></td><!--T3-S3-->          
         <td>8MB SiP Flash</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>     
       <tr>
         <td>Memory PSRAM</td>
@@ -516,6 +539,7 @@ title: LoRa Boards Comparison Table
         <td>8MB PSRAM</td><!--T-Beam-Supreme-->            
         <td>8MB PSRAM</td><!--T3-S3-->
         <td>8MB PSRAM</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>           
       <tr>
         <td>Memory Flash</td>
@@ -534,6 +558,7 @@ title: LoRa Boards Comparison Table
         <td>16MB Flash</td><!--T-Beam-Supreme-->            
         <td>16MB Flash</td><!--T3-S3-->                  
         <td>16MB Flash</td><!--Station G2-->
+        <td></td><!--Nano G2 Ultra-->
       </tr>                       
     </tbody>
   </table>
