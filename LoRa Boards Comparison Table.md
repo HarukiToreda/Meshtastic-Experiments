@@ -19,7 +19,9 @@ title: LoRa Boards Comparison Table
     <label>LoRa Chip:</label>
     <div>
       <input type="checkbox" class="loraFilter" value="SX1276"> SX1276<br>
+      <input type="checkbox" class="loraFilter" value="SX1278"> SX1278<br>      
       <input type="checkbox" class="loraFilter" value="SX1262"> SX1262<br>
+      <input type="checkbox" class="loraFilter" value="LR1110"> LR1110<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -32,8 +34,9 @@ title: LoRa Boards Comparison Table
   <div style="margin-right: 20px;">
     <label>Screen:</label>
     <div>
-      <input type="checkbox" class="screenFilter" value="OLED"> OLED<br>
       <input type="checkbox" class="screenFilter" value="Eink"> Eink<br>
+      <input type="checkbox" class="screenFilter" value="LCD"> LCD<br>      
+      <input type="checkbox" class="screenFilter" value="OLED"> OLED<br>      
       <input type="checkbox" class="screenFilter" value="TFT"> TFT<br>
       <input type="checkbox" class="screenFilter" value="None"> None<br>
     </div>
@@ -66,6 +69,15 @@ title: LoRa Boards Comparison Table
       <input type="checkbox" class="keyboardFilter" value="No"> No<br>
     </div>
   </div>
+  <div style="margin-right: 20px;">
+    <label>Price Range USD:</label>
+    <div>
+      <input type="checkbox" class="priceFilter" value="0-20"> 0-20<br>
+      <input type="checkbox" class="priceFilter" value="21-40"> 21-40<br>
+      <input type="checkbox" class="priceFilter" value="41-60"> 41-60<br>
+      <input type="checkbox" class="priceFilter" value="61+"> 61+<br>
+    </div>
+  </div>
 </div>
 
 <div style="overflow-x: auto;">
@@ -73,39 +85,77 @@ title: LoRa Boards Comparison Table
     <thead>
       <tr>
         <th>Device</th>
-        <th>Heltec ESP32 V2</th>
-        <th>Heltec ESP32 V3</th>
-        <th>Heltec Wireless Paper</th>
-        <th>Wireless Stick Lite (V3)</th>
-        <th>Heltec Wireless Tracker</th>
-        <th>Heltec Capsule Sensor V3</th>
-        <th>Heltec Vision Master E213</th>
-        <th>Heltec Vision Master E290</th>
-        <th>RAK19007 RAK4631</th>        
-        <th>T-Deck</th>
-        <th>T-Echo</th>
-        <th>T-Beam</th>
-        <th>T-Beam Supreme</th>        
-        <th>T3-S3</th>   
+        <th data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="15.47">Heltec ESP32 V2</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="17.90">Heltec ESP32 V3</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="15.90">Heltec Wireless Paper</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="14.90">Wireless Stick Lite (V3)</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="22.90">Heltec Wireless Tracker</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="25.99">Heltec Capsule Sensor V3</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="19.90">Heltec Vision Master E213</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="20.90">Heltec Vision Master E290</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="36.97">RAK19007 RAK4631</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes" data-price="52.66">T-Deck</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="54.41">T-Echo</th>
+        <th data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="32.80">T-Beam</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="44.17">T-Beam Supreme</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="17.58">T3-S3</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No" data-price="109.00">Station G2</th>        
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td>Brand</td>
+        <td>Heltec</td><!--Heltec V2-->
+        <td>Heltec</td><!--Heltec V3-->
+        <td>Heltec</td><!--Wireless Paper-->
+        <td>Heltec</td><!--Wireless Stick Lite-->
+        <td>Heltec</td><!--Wireless Tracker-->
+        <td>Heltec</td><!--Capsule Sensor V3-->
+        <td>Heltec</td><!--Vision Master E213-->
+        <td>Heltec</td><!--Vision Master E290-->
+        <td>Rack Wireless</td><!--RAKRAK19007-->
+        <td>Lilygo</td><!--T-Deck-->
+        <td>Lilygo</td><!--T-Echo-->
+        <td>Lilygo</td><!--T-Beam-->
+        <td>Lilygo</td><!--T-Beam-Supreme-->
+        <td>Lilygo</td><!--T3-S3-->
+        <td>B&Q Consulting</td><!--Station G2-->
+      </tr>
+      <tr>
+        <td>Price Range USD</td>
+        <td>$15.47+</td><!--Heltec V2-->
+        <td>$17.90</td><!--Heltec V3-->
+        <td>$15.90</td><!--Wireless Paper-->
+        <td>$14.90</td><!--Wireless Stick Lite-->
+        <td>$22.90</td><!--Wireless Tracker-->
+        <td>$25.99</td><!--Capsule Sensor V3-->
+        <td>$19.90</td><!--Vision Master E213-->
+        <td>$20.90</td><!--Vision Master E290-->
+        <td>$36.97</td><!--RAKRAK19007-->
+        <td>$52.66</td><!--T-Deck-->
+        <td>$54.41</td><!--T-Echo-->
+        <td>$32.80</td><!--T-Beam-->        
+        <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->            
+        <td>$17.58</td><!--T3-S3-->    
+        <td>$109.00</td><!--Station G2-->        
+      </tr>
+      <tr>
         <td>MCU Chip</td>
-        <td data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-D0</td><!--Heltec V2-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3</td><!--Heltec V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Wireless Paper-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3</td><!--Wireless Stick Lite-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Wireless Tracker-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--Capsule Sensor V3-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E213-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3R8</td><!--Vision Master E290-->
-        <td data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--RAKRAK19007-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-bluetooth="Yes" data-touch="Yes" data-keyboard="Yes">ESP32-S3</td><!--T-Deck-->
-        <td data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-bluetooth="Yes" data-touch="No" data-keyboard="No">NRF52840</td><!--T-Echo-->
-        <td data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-D0WDQ6-V3</td><!--T-Beam-->        
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FN8</td><!--T-Beam Supreme-->
-        <td data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-bluetooth="Yes" data-touch="No" data-keyboard="No">ESP32-S3FH4R2</td><!--T3-S3-->  
+        <td>ESP32-D0</td><!--Heltec V2-->
+        <td>ESP32-S3</td><!--Heltec V3-->
+        <td>ESP32-S3FN8</td><!--Wireless Paper-->
+        <td>ESP32-S3</td><!--Wireless Stick Lite-->
+        <td>ESP32-S3FN8</td><!--Wireless Tracker-->
+        <td>ESP32-S3FN8</td><!--Capsule Sensor V3-->
+        <td>ESP32-S3R8</td><!--Vision Master E213-->
+        <td>ESP32-S3R8</td><!--Vision Master E290-->
+        <td>NRF52840</td><!--RAKRAK19007-->
+        <td>ESP32-S3</td><!--T-Deck-->
+        <td>NRF52840</td><!--T-Echo-->
+        <td>ESP32-D0WDQ6-V3</td><!--T-Beam-->        
+        <td>ESP32-S3FN8</td><!--T-Beam Supreme-->
+        <td>ESP32-S3FH4R2</td><!--T3-S3-->  
+        <td>ESP32-S3</td><!--Station G2-->
       </tr>
       <tr>
         <td>LoRa Chip</td>
@@ -123,6 +173,7 @@ title: LoRa Boards Comparison Table
         <td>SX1276 SX1278</td><!--T-Beam-->
         <td>SX1262</td><!--T-Beam-Supreme-->
         <td>SX1262</td><!--T3-S3-->
+        <td>SX1262</td><!--Station G2-->
       </tr>
       <tr>
         <td>GPS Chip</td>
@@ -139,7 +190,8 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--T-Echo-->
         <td>NEO-6M/M8N</td><!--T-Beam-->
         <td>N/A</td><!--T-Beam-Supreme-->         
-        <td>N/A</td><!--T3-S3-->                
+        <td>N/A</td><!--T3-S3-->          
+        <td>N/A</td><!--Station G2-->
       </tr>
       <tr>
         <td>GNSS Chip</td>
@@ -157,6 +209,7 @@ title: LoRa Boards Comparison Table
         <td>N/A</td><!--T-Beam-->      
         <td>L76k/ MAX-M10S</td><!--T-Beam-Supreme-->            
         <td>N/A</td><!--T3-S3-->                
+        <td>N/A</td><!--Station G2-->
       </tr>
       <tr>
         <td>Charging Interface</td>
@@ -174,6 +227,7 @@ title: LoRa Boards Comparison Table
         <td>Micro USB</td><!--T-Beam-->
         <td>USB-C</td><!--T-Beam-Supreme-->            
         <td>USB-C</td><!--T3-S3-->
+        <td>USB-C</td><!--Station G2-->
       </tr>
       <tr>
         <td>Deep Sleep</td>
@@ -190,7 +244,8 @@ title: LoRa Boards Comparison Table
         <td>0.25 mA</td><!--T-Echo-->
         <td>?</td><!--T-Beam-->
         <td>?</td><!--T-Beam-Supreme-->            
-        <td>?</td><!--T3-S3-->                
+        <td>?</td><!--T3-S3-->   
+        <td></td><!--Station G2-->
       </tr>
       <tr>
         <td>Frequency</td>
@@ -207,7 +262,8 @@ title: LoRa Boards Comparison Table
         <td>433~510 MHz, 863~928 MHz</td><!--T-Echo-->
         <td>433~510 MHz, 863~928 MHz</td><!--T-Beam-->        
         <td>433~510 MHz, 863~928 MHz</td><!--T-Beam-Supreme-->      
-        <td>433~510 MHz, 863~928 MHz</td><!--T3-S3-->                
+        <td>433~510 MHz, 863~928 MHz</td><!--T3-S3-->    
+        <td>863~928 MHz</td><!--Station G2-->
       </tr>
       <tr>
         <td>Max. TX Power</td>
@@ -224,7 +280,8 @@ title: LoRa Boards Comparison Table
         <td>22 ± 1dBm</td><!--T-Echo-->
         <td>22 ± 1dBm</td><!--T-Beam-->        
         <td>22 ± 1dBm</td><!--T-Beam-Supreme-->         
-        <td>22 ± 1dBm</td><!--T3-S3-->                
+        <td>22 ± 1dBm</td><!--T3-S3-->  
+        <td>35 ± 1dBm</td><!--Station G2-->
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
@@ -241,24 +298,26 @@ title: LoRa Boards Comparison Table
         <td>-136 dBm</td><!--T-Echo-->     
         <td>-148 dBm</td><!--T-Beam-->
         <td>-136 dBm</td><!--T-Beam-Supreme-->            
-        <td>-136 dBm</td><!--T3-S3-->                
+        <td>-136 dBm</td><!--T3-S3-->   
+        <td>?</td><!--Station G2-->
       </tr>
       <tr>
         <td>Wi-Fi</td>
-        <td>802.11 b/g/n 150M bps</td><!--Heltec V2-->
-        <td>802.11 b/g/n 150 Mbps</td><!--Heltec V3-->
-        <td>802.11 b/g/n 150 Mbps</td><!--Wireless Paper-->
-        <td>802.11 b/g/n 150 Mbps</td><!--Wireless Stick Lite-->
-        <td>802.11 b/g/n 150 Mbps</td><!--Wireless Tracker-->
-        <td>802.11 b/g/n 150 Mbps</td><!--Capsule Sensor V3-->
-        <td>802.11 b/g/n 150 Mbps</td><!--Vision Master E213-->
-        <td>802.11 b/g/n 150 Mbps</td><!--Vision Master E290-->
+        <td>YES</td><!--Heltec V2-->
+        <td>YES</td><!--Heltec V3-->
+        <td>YES</td><!--Wireless Paper-->
+        <td>YES</td><!--Wireless Stick Lite-->
+        <td>YES</td><!--Wireless Tracker-->
+        <td>YES</td><!--Capsule Sensor V3-->
+        <td>YES</td><!--Vision Master E213-->
+        <td>YES</td><!--Vision Master E290-->
         <td>N/A</td><!--RAKRAK19007-->        
-        <td>802.11 b/g/n 150 Mbps</td><!--T-Deck-->
+        <td>YES</td><!--T-Deck-->
         <td>N/A</td><!--T-Echo-->
-        <td>802.11 b/g/n 150 Mbps</td><!--T-Beam-->   
-        <td>802.11 b/g/n 150 Mbps</td><!--T-Beam-Supreme-->            
-        <td>802.11 b/g/n 150 Mbps</td><!--T3-S3-->                
+        <td>YES</td><!--T-Beam-->   
+        <td>YES</td><!--T-Beam-Supreme-->            
+        <td>YES</td><!--T3-S3-->   
+        <td>YES</td><!--Station G2-->
       </tr>
       <tr>
         <td>Bluetooth</td>
@@ -275,7 +334,8 @@ title: LoRa Boards Comparison Table
         <td>BT-5 (LE)</td><!--T-Echo-->
         <td>BT-4.2 (LE)</td><!--T-Beam-->        
         <td>BT-5 (LE)</td><!--T-Beam-Supreme-->            
-        <td>BT-5 (LE)</td><!--T3-S3-->                
+        <td>BT-5 (LE)</td><!--T3-S3-->   
+        <td>BT-5 (LE)</td><!--Station G2-->
       </tr>
       <tr>
         <td>Display Type</td>
@@ -292,7 +352,8 @@ title: LoRa Boards Comparison Table
         <td>E-ink</td><!--T-Echo-->
         <td>OLED</td><!--T-Beam--> 
         <td>OLED</td><!--T-Beam-Supreme-->            
-        <td>OLED</td><!--T3-S3-->                
+        <td>OLED</td><!--T3-S3-->       
+        <td>OLED</td><!--Station G2-->
       </tr>
       <tr>
         <td>Display Size</td>
@@ -309,7 +370,8 @@ title: LoRa Boards Comparison Table
         <td>1.54 Inch</td><!--T-Echo-->
         <td>0.96 Inch</td><!--T-Beam-->      
         <td>1.3 Inch</td><!--T-Beam-Supreme-->            
-        <td>0.96 Inch</td><!--T3-S3-->                
+        <td>0.96 Inch</td><!--T3-S3-->        
+        <td>1.3 Inch</td><!--Station G2-->
       </tr>
       <tr>
         <td>Charging IC</td>
@@ -327,6 +389,7 @@ title: LoRa Boards Comparison Table
         <td>AXP192</td><!--T-Beam-->            
         <td>AXP2101</td><!--T-Beam-Supreme-->            
         <td>TP4054</td><!--T3-S3-->
+        <td></td><!--Station G2-->
       </tr>
       <tr>
         <td>Diagram</td>
@@ -343,7 +406,8 @@ title: LoRa Boards Comparison Table
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Echo/blob/main/T-Echo_Schematic.pdf">Diagram Link</a></td><!--T-Echo-->
         <td><a href="https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/LilyGo_TBeam_V1.2.pdf">Diagram Link</a></td><!--T-Beam-->         
         <td><a href="https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/LilyGo_T-BeamS3Supreme.pdf">Diagram Link</a></td><!--T-Beam-Supreme-->         
-        <td><a href="https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T3_S3_V1.2.pdf">Diagram Link</a></td><!--T3-S3-->                
+        <td><a href="https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/schematic/T3_S3_V1.2.pdf">Diagram Link</a></td><!--T3-S3-->         
+        <td><a href="https://wiki.uniteng.com/en/meshtastic/station-g2">Diagram Link</a></td><!--Station G2-->
       </tr>
       <tr>
         <td>Input</td>
@@ -360,25 +424,9 @@ title: LoRa Boards Comparison Table
         <td>User Button, Reset Button, Touch Button</td><!--T-Echo-->
         <td>User Button, Reset Button, Power Button</td><!--T-Beam-->        
         <td>User Button, Reset Button, Power Button</td><!--T-Beam-Supreme-->            
-        <td>User Button, Reset Button</td><!--T3-S3-->                
-      </tr>
-      <tr>
-        <td>Price Range USD</td>
-        <td>$15.47+</td><!--Heltec V2-->
-        <td>$17.90</td><!--Heltec V3-->
-        <td>$15.90</td><!--Wireless Paper-->
-        <td>$14.90</td><!--Wireless Stick Lite-->
-        <td>$22.90</td><!--Wireless Tracker-->
-        <td>$25.99</td><!--Capsule Sensor V3-->
-        <td>$19.90</td><!--Vision Master E213-->
-        <td>$20.90</td><!--Vision Master E290-->
-        <td>$36.97</td><!--RAKRAK19007-->
-        <td>$52.66</td><!--T-Deck-->
-        <td>$54.41</td><!--T-Echo-->
-        <td>$32.80</td><!--T-Beam-->        
-        <td>$44.17/ $70.17</td><!--T-Beam-Supreme-->            
-        <td>$17.58</td><!--T3-S3-->            
-      </tr>        
+        <td>User Button, Reset Button</td><!--T3-S3-->   
+        <td>User Button, Reset Button, Boot Button</td><!--Station G2-->
+      </tr>       
       <tr>
         <td>Memory ROM</td>
         <td>448KB ROM</td><!--Heltec V2-->
@@ -395,6 +443,7 @@ title: LoRa Boards Comparison Table
         <td>384KB ROM</td><!--T-Beam-->        
         <td>384KB ROM</td><!--T-Beam-Supreme-->            
         <td>384KB ROM</td><!--T3-S3-->            
+        <td>384KB ROM</td><!--Station G2-->
       </tr>
       <tr>
         <td>Memory SRAM</td>
@@ -411,7 +460,8 @@ title: LoRa Boards Comparison Table
         <td>?</td><!--T-Echo-->
         <td>512KB SRAM</td><!--T-Beam-->        
         <td>512KB SRAM</td><!--T-Beam-Supreme-->            
-        <td>512KB SRAM</td><!--T3-S3-->          
+        <td>512KB SRAM</td><!--T3-S3-->         
+        <td>512KB SRAM</td><!--Station G2-->
       </tr>      
       <tr>
         <td>Memory RTC SRAM</td>
@@ -429,6 +479,7 @@ title: LoRa Boards Comparison Table
         <td>16KB RTC SRAM</td><!--T-Beam-->
         <td>16KB RTC SRAM</td><!--T-Beam-Supreme-->
         <td>16KB RTC SRAM</td><!--T3-S3-->
+        <td>16KB RTC SRAM</td><!--Station G2-->
       </tr>      
       <tr>
         <td>Memory SiP Flash</td>
@@ -446,6 +497,7 @@ title: LoRa Boards Comparison Table
         <td></td><!--T-Beam-->        
         <td></td><!--T-Beam-Supreme-->            
         <td></td><!--T3-S3-->          
+        <td>8MB SiP Flash</td><!--Station G2-->
       </tr>     
       <tr>
         <td>Memory PSRAM</td>
@@ -463,6 +515,7 @@ title: LoRa Boards Comparison Table
         <td>8MB PSRAM</td><!--T-Beam-->        
         <td>8MB PSRAM</td><!--T-Beam-Supreme-->            
         <td>8MB PSRAM</td><!--T3-S3-->
+        <td>8MB PSRAM</td><!--Station G2-->
       </tr>           
       <tr>
         <td>Memory Flash</td>
@@ -480,13 +533,14 @@ title: LoRa Boards Comparison Table
         <td>16MB Flash</td><!--T-Beam-->        
         <td>16MB Flash</td><!--T-Beam-Supreme-->            
         <td>16MB Flash</td><!--T3-S3-->                  
+        <td>16MB Flash</td><!--Station G2-->
       </tr>                       
     </tbody>
   </table>
 </div>
 
 <script>
-document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter, .wifiFilter, .bluetoothFilter, .touchFilter, .keyboardFilter').forEach(filter => {
+document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter, .wifiFilter, .bluetoothFilter, .touchFilter, .keyboardFilter, .priceFilter').forEach(filter => {
   filter.addEventListener('change', filterTable);
 });
 
@@ -499,33 +553,48 @@ function filterTable() {
   const bluetoothFilters = Array.from(document.querySelectorAll('.bluetoothFilter:checked')).map(cb => cb.value);
   const touchFilters = Array.from(document.querySelectorAll('.touchFilter:checked')).map(cb => cb.value);
   const keyboardFilters = Array.from(document.querySelectorAll('.keyboardFilter:checked')).map(cb => cb.value);
+  const priceFilters = Array.from(document.querySelectorAll('.priceFilter:checked')).map(cb => cb.value);
 
   const columns = document.querySelectorAll('#comparisonTable thead th');
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
 
-  function shouldDisplayColumn(columnIndex) {
-    const mcuCell = rows[0].children[columnIndex];
-    const loraCell = rows[1].children[columnIndex];
-    const gpsCell = rows[2].children[columnIndex];
-
-    const mcuMatch = mcuFilters.length === 0 || mcuFilters.some(filter => mcuCell.getAttribute('data-mcu').includes(filter));
-    const loraMatch = loraFilters.length === 0 || loraFilters.some(filter => loraCell.textContent.includes(filter));
-    const gpsMatch = gpsFilters.length === 0 || (gpsFilters.includes('Yes') && (gpsCell.textContent !== 'N/A' || mcuCell.getAttribute('data-gps') === 'Yes')) || (gpsFilters.includes('No') && gpsCell.textContent === 'N/A');
-    const screenMatch = screenFilters.length === 0 || screenFilters.includes(mcuCell.getAttribute('data-screen'));
-    const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(mcuCell.getAttribute('data-wifi'));
-    const bluetoothMatch = bluetoothFilters.length === 0 || bluetoothFilters.includes(mcuCell.getAttribute('data-bluetooth'));
-    const touchMatch = touchFilters.length === 0 || touchFilters.includes(mcuCell.getAttribute('data-touch'));
-    const keyboardMatch = keyboardFilters.length === 0 || keyboardFilters.includes(mcuCell.getAttribute('data-keyboard'));
-
-    return mcuMatch && loraMatch && gpsMatch && screenMatch && wifiMatch && bluetoothMatch && touchMatch && keyboardMatch;
+  function getPriceRange(price) {
+    if (price <= 20) return '0-20';
+    if (price <= 40) return '21-40';
+    if (price <= 60) return '41-60';
+    return '61+';
   }
 
-  columns.forEach((column, index) => {
-    if (index === 0) return;
-    const display = shouldDisplayColumn(index) ? '' : 'none';
+  function shouldDisplayColumn(column) {
+    const mcu = column.getAttribute('data-mcu');
+    const lora = column.getAttribute('data-lora');
+    const gps = column.getAttribute('data-gps');
+    const screen = column.getAttribute('data-screen');
+    const wifi = column.getAttribute('data-wifi');
+    const bluetooth = column.getAttribute('data-bluetooth');
+    const touch = column.getAttribute('data-touch');
+    const keyboard = column.getAttribute('data-keyboard');
+    const price = parseFloat(column.getAttribute('data-price'));
+
+    const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcu);
+    const loraMatch = loraFilters.length === 0 || loraFilters.includes(lora);
+    const gpsMatch = gpsFilters.length === 0 || gpsFilters.includes(gps);
+    const screenMatch = screenFilters.length === 0 || screenFilters.includes(screen);
+    const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(wifi);
+    const bluetoothMatch = bluetoothFilters.length === 0 || bluetoothFilters.includes(bluetooth);
+    const touchMatch = touchFilters.length === 0 || touchFilters.includes(touch);
+    const keyboardMatch = keyboardFilters.length === 0 || keyboardFilters.includes(keyboard);
+    const priceMatch = priceFilters.length === 0 || priceFilters.includes(getPriceRange(price));
+
+    return mcuMatch && loraMatch && gpsMatch && screenMatch && wifiMatch && bluetoothMatch && touchMatch && keyboardMatch && priceMatch;
+  }
+
+  columns.forEach(column => {
+    if (column.cellIndex === 0) return;
+    const display = shouldDisplayColumn(column) ? '' : 'none';
     column.style.display = display;
     rows.forEach(row => {
-      row.children[index].style.display = display;
+      row.children[column.cellIndex].style.display = display;
     });
   });
 }
