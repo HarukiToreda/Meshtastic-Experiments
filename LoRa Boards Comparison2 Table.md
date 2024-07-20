@@ -585,8 +585,8 @@ title: LoRa Boards Comparison Table
         <td>8MB PSRAM</td><!--T-Beam-Supreme-->            
         <td>8MB PSRAM</td><!--T3-S3-->
         <td>8MB PSRAM</td><!--Station G2-->
-        <td>?</td><!--Nano G2 Ultra-->
-        <td></td><!--Wio Tracker 1110-->
+        <td>-</td><!--Nano G2 Ultra-->
+        <td>-</td><!--Wio Tracker 1110-->
       </tr>           
       <tr>
         <td>Memory Flash</td>
@@ -605,8 +605,8 @@ title: LoRa Boards Comparison Table
         <td>16MB Flash</td><!--T-Beam-Supreme-->            
         <td>16MB Flash</td><!--T3-S3-->                  
         <td>16MB Flash</td><!--Station G2-->
-        <td>?</td><!--Nano G2 Ultra-->
-        <td></td><!--Wio Tracker 1110-->
+        <td>1MB Flash	</td><!--Nano G2 Ultra-->
+        <td>1MB Flash</td><!--Wio Tracker 1110-->
       </tr>                       
     </tbody>
   </table>
