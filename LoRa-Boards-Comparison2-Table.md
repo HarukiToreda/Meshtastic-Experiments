@@ -612,6 +612,50 @@ title: LoRa Boards Comparison Table
         <td>4000mAh</td><!--Meshenger-->
       </tr>      
       <tr>
+        <td>Enclosure</td>
+        <td>-</td><!--Heltec V2-->
+        <td>ABS Case</td><!--Heltec V3-->
+        <td>-</td><!--Wireless Paper-->
+        <td>-</td><!--Wireless Stick Lite-->
+        <td>-</td><!--Wireless Tracker-->
+        <td>ABS Case</td><!--Capsule Sensor V3-->
+        <td>-</td><!--Vision Master E213-->
+        <td>-</td><!--Vision Master E290-->         
+        <td>-</td><!--RAKRAK19007-->
+        <td>-</td><!--T-Deck-->      
+        <td>ABS Case</td><!--T-Echo-->
+        <td>-</td><!--T-Beam-->        
+        <td>-</td><!--T-Beam-Supreme-->            
+        <td>-</td><!--T3-S3-->                  
+        <td>-</td><!--Station G2-->
+        <td>-</td><!--Nano G2 Ultra-->
+        <td></td><!--Wio Tracker 1110-->
+        <td>PLA Case</td><!--Heltxt-->
+        <td>ASA, PETG, TPU Case</td><!--Meshenger-->
+      </tr>
+      <tr>
+        <td>Meshtastic Preloaded</td>
+        <td>-</td><!--Heltec V2-->
+        <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Wireless Paper-->
+        <td>-</td><!--Wireless Stick Lite-->
+        <td>-</td><!--Wireless Tracker-->
+        <td>Yes</td><!--Capsule Sensor V3-->
+        <td>-</td><!--Vision Master E213-->
+        <td>-</td><!--Vision Master E290-->         
+        <td>-</td><!--RAKRAK19007-->
+        <td>-</td><!--T-Deck-->      
+        <td>Yes</td><!--T-Echo-->
+        <td>Yes</td><!--T-Beam-->        
+        <td>Yes</td><!--T-Beam-Supreme-->            
+        <td>-</td><!--T3-S3-->                  
+        <td>Yes</td><!--Station G2-->
+        <td>Yes</td><!--Nano G2 Ultra-->
+        <td></td><!--Wio Tracker 1110-->
+        <td>Yes</td><!--Heltxt-->
+        <td>Yes</td><!--Meshenger-->
+      </tr>      
+      <tr>
         <td>Memory ROM</td>
         <td>448KB ROM</td><!--Heltec V2-->
         <td>384KB ROM</td><!--Heltec V3-->
