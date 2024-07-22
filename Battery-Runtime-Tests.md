@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
+        //{ id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
         { id: 'progress2', start: new Date('2024-07-18T17:34:00') }, // Vision Master 2000
         { id: 'progress3', start: new Date('2024-07-16T02:26:00') }, // RAK Big
         //{ id: 'progress4', start: new Date('2024-07-16T02:33:00') }, // V2 3000
