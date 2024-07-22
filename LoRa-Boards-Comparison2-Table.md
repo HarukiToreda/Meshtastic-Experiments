@@ -101,6 +101,7 @@ title: LoRa Boards Comparison Table
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-input="User" data-price="86.00" data-brand="B&Q">Nano G2 Ultra</th>
         <th data-mcu="nRF" data-lora="LR1110" data-gps="Yes" data-screen="None" data-wifi="No" data-input="User" data-price="29.90" data-brand="Seeed">Wio Tracker 1110</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-input="Keyboard, User" data-price="95.00" data-brand="Indie">HelTxt</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-input="Keyboard, User" data-price="250.00" data-brand="Indie">Meshenger</th>        
       </tr>
     </thead>
     <tbody>
@@ -123,7 +124,8 @@ title: LoRa Boards Comparison Table
         <td>B&Q Consulting</td><!--Station G2-->
         <td>B&Q Consulting</td><!--Nano G2 Ultra-->
         <td>Seeed Studio</td><!--Wio Tracker 1110-->
-        <td>Indie</td><!--Heltxt-->        
+        <td>Indie</td><!--Heltxt-->
+        <td>Indie</td><!--Meshenger-->
       </tr>
       <tr>
         <td>Average Price USD</td>
@@ -144,7 +146,8 @@ title: LoRa Boards Comparison Table
         <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-station-edition/" target="_blank" rel="noopener noreferrer">$109.00</a></td><!--Station G2-->
         <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-nano-g2-ultra/" target="_blank" rel="noopener noreferrer">$86.00</a></td><!--Nano G2 Ultra-->
         <td><a href="https://www.seeedstudio.com/Wio-Tracker-1110-Dev-Board-p-5799.html" target="_blank" rel="noopener noreferrer">$39.90</a></td><!--Wio Tracker 1110-->
-        <td><a href="https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/" target="_blank" rel="noopener noreferrer">$90.00</a></td><!--Heltxt-->        
+        <td><a href="https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/" target="_blank" rel="noopener noreferrer">$90.00</a></td><!--Heltxt-->       
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>MCU Chip</td>
@@ -166,6 +169,7 @@ title: LoRa Boards Comparison Table
         <td>NRF52840</td><!--Nano G2 Ultra-->
         <td>NRF52840</td><!--Wio Tracker 1110-->
         <td>ESP32-S3</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>LoRa Chip</td>
@@ -187,6 +191,7 @@ title: LoRa Boards Comparison Table
         <td>SX1262</td><!--Nano G2 Ultra-->
         <td>LR1110</td><!--Wio Tracker 1110-->
         <td>SX1262</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>GPS/GNSS</td>
@@ -208,6 +213,7 @@ title: LoRa Boards Comparison Table
         <td>ATGM336H-5N</td><!--Nano G2 Ultra--> 
         <td>Grove Air530 GPS</td><!--Wio Tracker 1110-->
         <td>GT-U7</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Charging Interface</td>
@@ -229,6 +235,7 @@ title: LoRa Boards Comparison Table
         <td>USB-C</td><!--Nano G2 Ultra-->
         <td>USB-C</td><!--Wio Tracker 1110-->
         <td>USB-C</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Frequency</td>
@@ -250,6 +257,7 @@ title: LoRa Boards Comparison Table
         <td>863~928 MHz</td><!--Nano G2 Ultra-->
         <td>863~928 MHz</td><!--Wio Tracker 1110-->
         <td>863~928 MHz</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Max. TX Power</td>
@@ -271,6 +279,7 @@ title: LoRa Boards Comparison Table
         <td>22 ± 1dBm</td><!--Nano G2 Ultra-->
         <td>20 ± 1dBm</td><!--Wio Tracker 1110-->
         <td>21 ± 1dBm</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Max. Receiving Sensitivity</td>
@@ -292,6 +301,7 @@ title: LoRa Boards Comparison Table
         <td>?</td><!--Nano G2 Ultra-->
         <td>-141 dBm</td><!--Wio Tracker 1110-->
         <td>-136 dBm</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Wi-Fi</td>
@@ -313,6 +323,7 @@ title: LoRa Boards Comparison Table
         <td>NO</td><!--Nano G2 Ultra-->
         <td>NO</td><!--Wio Tracker 1110-->
         <td>YES</td><!--Heltec V3-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Bluetooth</td>
@@ -334,6 +345,7 @@ title: LoRa Boards Comparison Table
         <td>BT-5.4 (LE)</td><!--Nano G2 Ultra-->
         <td>BT-5.3 (LE)</td><!--Wio Tracker 1110-->
         <td>BT-5 (LE)</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Display Type</td>
@@ -355,6 +367,7 @@ title: LoRa Boards Comparison Table
         <td>OLED</td><!--Nano G2 Ultra-->
         <td>OLED</td><!--Wio Tracker 1110-->
         <td>OLED</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Display Size</td>
@@ -376,6 +389,7 @@ title: LoRa Boards Comparison Table
         <td>1.3 Inch</td><!--Nano G2 Ultra-->
         <td>0.96 Inch</td><!--Wio Tracker 1110-->
         <td>0.96 Inch</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Charging IC</td>
@@ -397,6 +411,7 @@ title: LoRa Boards Comparison Table
         <td>?</td><!--Nano G2 Ultra-->
         <td>ETA6003</td><!--Wio Tracker 1110-->
         <td>TP4054</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Diagram</td>
@@ -418,6 +433,7 @@ title: LoRa Boards Comparison Table
         <td><a href="https://wiki.uniteng.com/meshtastic/nano-g2-ultra">Diagram Link</a></td><!--Nano G2 Ultra-->
         <td><a href="https://files.seeedstudio.com/products/SenseCAP/Wio-Tracker/Wio%20Tracker%201110%20v1.0_SCH_PDF_20230822.pdf">Diagram Link</a></td><!--Wio Tracker 1110-->
         <td><a href="https://www.printables.com/model/750293-hel-txt-standalone-meshtastic-communicator-heltec">Diagram Link</a></td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Input</td>
@@ -439,6 +455,7 @@ title: LoRa Boards Comparison Table
         <td>4 Buttons</td><!--Nano G2 Ultra-->
         <td>User Button, Reset Button</td><!--Wio Tracker 1110-->
         <td>Keyboard, User Button, Reset Button</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>       
       <tr>
         <td>Temp/ Humidity Sensor</td>
@@ -460,6 +477,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Nano G2 Ultra-->
         <td>SHT41</td><!--Wio Tracker 1110-->
         <td>BME680</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Air Pressure Sensor</td>
@@ -481,6 +499,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Nano G2 Ultra-->
         <td>-</td><!--Wio Tracker 1110-->
         <td>BME680</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Air Quality Sensor</td>
@@ -502,6 +521,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Nano G2 Ultra-->
         <td>-</td><!--Wio Tracker 1110-->
         <td>BME680</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>External Notification</td>
@@ -523,6 +543,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Nano G2 Ultra-->
         <td>-</td><!--Wio Tracker 1110-->
         <td>Busser / Vibration</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>UART Port</td>
@@ -544,6 +565,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Nano G2 Ultra-->
         <td>1X Grove</td><!--Wio Tracker 1110-->
         <td>-</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>I2C Port</td>
@@ -565,7 +587,30 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Nano G2 Ultra-->
         <td>1X Grove</td><!--Wio Tracker 1110-->
         <td>-</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
+      <tr>
+        <td>Battery</td>
+        <td>-</td><!--Heltec V2-->
+        <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Wireless Paper-->
+        <td>-</td><!--Wireless Stick Lite-->
+        <td>-</td><!--Wireless Tracker-->
+        <td>-</td><!--Capsule Sensor V3-->
+        <td>-</td><!--Vision Master E213-->
+        <td>-</td><!--Vision Master E290-->         
+        <td>-</td><!--RAKRAK19007-->
+        <td>-</td><!--T-Deck-->      
+        <td>850mAh</td><!--T-Echo-->
+        <td>-</td><!--T-Beam-->        
+        <td>-</td><!--T-Beam-Supreme-->            
+        <td>-</td><!--T3-S3-->                  
+        <td>-</td><!--Station G2-->
+        <td>-</td><!--Nano G2 Ultra-->
+        <td></td><!--Wio Tracker 1110-->
+        <td>4000mAh</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
+      </tr>      
       <tr>
         <td>Memory ROM</td>
         <td>448KB ROM</td><!--Heltec V2-->
@@ -586,6 +631,7 @@ title: LoRa Boards Comparison Table
         <td>?</td><!--Nano G2 Ultra-->
         <td></td><!--Wio Tracker 1110-->
         <td>384KB ROM</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>
       <tr>
         <td>Memory SRAM</td>
@@ -607,6 +653,7 @@ title: LoRa Boards Comparison Table
         <td>?</td><!--Nano G2 Ultra-->
         <td></td><!--Wio Tracker 1110-->
         <td>512KB SRAM</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>      
       <tr>
         <td>Memory RTC SRAM</td>
@@ -628,6 +675,7 @@ title: LoRa Boards Comparison Table
         <td>?</td><!--Nano G2 Ultra-->
         <td></td><!--Wio Tracker 1110-->
         <td>16KB RTC SRAM</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>      
       <tr>
         <td>Memory SiP Flash</td>
@@ -649,6 +697,7 @@ title: LoRa Boards Comparison Table
         <td>16MB SiP Flash</td><!--Nano G2 Ultra-->
         <td></td><!--Wio Tracker 1110-->
         <td>8MB SiP Flash</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>     
       <tr>
         <td>Memory PSRAM</td>
@@ -670,6 +719,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Nano G2 Ultra-->
         <td>-</td><!--Wio Tracker 1110-->
         <td>-</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>           
       <tr>
         <td>Memory Flash</td>
@@ -691,6 +741,7 @@ title: LoRa Boards Comparison Table
         <td>1MB Flash	</td><!--Nano G2 Ultra-->
         <td>1MB Flash</td><!--Wio Tracker 1110-->
         <td>-</td><!--Heltxt-->
+        <td></td><!--Meshenger-->
       </tr>                       
     </tbody>
   </table>
