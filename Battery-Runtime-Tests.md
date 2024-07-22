@@ -81,7 +81,7 @@ title: Battery Runtime Tests
           <td></td><!--VME213-->                    
           <td>10 Hrs</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
-          <td>155 Hrs</td><!--RAKRAK19003-->
+          <td>156 Hrs</td><!--RAKRAK19003-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
