@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # Meshtastic-Experiments
 Just my own measurements and values
 
