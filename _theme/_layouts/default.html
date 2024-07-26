@@ -53,6 +53,8 @@
       border-radius: 5px;
       text-align: center;
       font-size: 14px; /* Smaller font size */
+      width: 100%; /* Ensure buttons fit within the sidebar */
+      box-sizing: border-box; /* Include padding in the element's total width and height */
     }
     nav ul li a:hover {
       background-color: #ffffff; /* White background on hover */
@@ -61,6 +63,10 @@
     nav ul li a.active {
       background-color: #ffffff; /* White background for active page */
       color: #FFD700; /* Bright yellow text for active page */
+    }
+    .bmc-button {
+      width: 100%; /* Ensure the button fits within the sidebar */
+      box-sizing: border-box; /* Include padding in the element's total width and height */
     }
     table {
       width: 800px; /* Fixed width for tables */
@@ -124,7 +130,7 @@
         </ul>
       </nav>
       <!-- Buy Me a Coffee Button -->
-      <a href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+      <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" /></a>
     </div>
     <div class="content">
       {{ content }}
