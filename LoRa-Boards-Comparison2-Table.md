@@ -821,70 +821,51 @@ title: LoRa Boards Comparison Table
 
 <script>
 document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter, .wifiFilter, .inputFilter, .priceFilter, .brandFilter, .caseFilter, .batteryFilter, .meshtasticFilter, .readyFilter').forEach(filter => {
-  filter.addEventListener('change', filterTable);
-});
-
-function filterTable() {
-  const mcuFilters = Array.from(document.querySelectorAll('.mcuFilter:checked')).map(cb => cb.value);
-  const loraFilters = Array.from(document.querySelectorAll('.loraFilter:checked')).map(cb => cb.value);
-  const gpsFilters = Array.from(document.querySelectorAll('.gpsFilter:checked')).map(cb => cb.value);
-  const screenFilters = Array.from(document.querySelectorAll('.screenFilter:checked')).map(cb => cb.value);
-  const wifiFilters = Array.from(document.querySelectorAll('.wifiFilter:checked')).map(cb => cb.value);
-  const inputFilters = Array.from(document.querySelectorAll('.inputFilter:checked')).map(cb => cb.value);
-  const priceFilters = Array.from(document.querySelectorAll('.priceFilter:checked')).map(cb => cb.value);
-  const brandFilters = Array.from(document.querySelectorAll('.brandFilter:checked')).map(cb => cb.value);
-  const caseFilters = Array.from(document.querySelectorAll('.caseFilter:checked')).map(cb => cb.value);
-  const batteryFilters = Array.from(document.querySelectorAll('.batteryFilter:checked')).map(cb => cb.value);
-  const meshtasticFilters = Array.from(document.querySelectorAll('.meshtasticFilter:checked')).map(cb => cb.value);
-  const readyFilters = Array.from(document.querySelectorAll('.readyFilter:checked')).map(cb => cb.value);
-
-  const columns = document.querySelectorAll('#comparisonTable thead th');
-  const rows = document.querySelectorAll('#comparisonTable tbody tr');
-
-  function getPriceRange(price) {
-    if (price <= 20) return '0-20';
-    if (price <= 40) return '21-40';
-    if (price <= 60) return '41-60';
-    return '61+';
-  }
-
-  function shouldDisplayColumn(column) {
-    const mcu = column.getAttribute('data-mcu');
-    const lora = column.getAttribute('data-lora');
-    const gps = column.getAttribute('data-gps');
-    const screen = column.getAttribute('data-screen');
-    const wifi = column.getAttribute('data-wifi');
-    const input = column.getAttribute('data-input').split(', ');
-    const price = parseFloat(column.getAttribute('data-price'));
-    const brand = column.getAttribute('data-brand');
-    const caseIncluded = column.getAttribute('data-case');
-    const batteryIncluded = column.getAttribute('data-battery');
-    const meshtastic = column.getAttribute('data-meshtastic');
-    const ready = column.getAttribute('data-ready');
-
-    const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcu);
-    const loraMatch = loraFilters.length === 0 || loraFilters.includes(lora);
-    const gpsMatch = gpsFilters.length === 0 || gpsFilters.includes(gps);
-    const screenMatch = screenFilters.length === 0 || screenFilters.includes(screen);
-    const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(wifi);
-    const inputMatch = inputFilters.length === 0 || inputFilters.some(inputType => input.includes(inputType));
-    const priceMatch = priceFilters.length === 0 || priceFilters.includes(getPriceRange(price));
-    const brandMatch = brandFilters.length === 0 || brandFilters.includes(brand);
-    const caseMatch = caseFilters.length === 0 || caseFilters.includes(caseIncluded);
-    const batteryMatch = batteryFilters.length === 0 || batteryFilters.includes(batteryIncluded);
-    const meshtasticMatch = meshtasticFilters.length === 0 || meshtasticFilters.includes(meshtastic);
-    const readyMatch = readyFilters.length === 0 || readyFilters.includes(ready);
-
-    return mcuMatch && loraMatch && gpsMatch && screenMatch && wifiMatch && inputMatch && priceMatch && brandMatch && caseMatch && batteryMatch && meshtasticMatch && readyMatch;
-  }
-
-  columns.forEach(column => {
-    if (column.cellIndex === 0) return;
-    const display = shouldDisplayColumn(column) ? '' : 'none';
-    column.style.display = display;
-    rows.forEach(row => {
-      row.children[column.cellIndex].style.display = display;
+  filter.addEventListener('change', () => {
+    const filters = {
+      mcu: Array.from(document.querySelectorAll('.mcuFilter:checked')).map(el => el.value),
+      lora: Array.from(document.querySelectorAll('.loraFilter:checked')).map(el => el.value),
+      gps: Array.from(document.querySelectorAll('.gpsFilter:checked')).map(el => el.value),
+      screen: Array.from(document.querySelectorAll('.screenFilter:checked')).map(el => el.value),
+      wifi: Array.from(document.querySelectorAll('.wifiFilter:checked')).map(el => el.value),
+      input: Array.from(document.querySelectorAll('.inputFilter:checked')).map(el => el.value),
+      price: Array.from(document.querySelectorAll('.priceFilter:checked')).map(el => el.value),
+      brand: Array.from(document.querySelectorAll('.brandFilter:checked')).map(el => el.value),
+      case: Array.from(document.querySelectorAll('.caseFilter:checked')).map(el => el.value),
+      battery: Array.from(document.querySelectorAll('.batteryFilter:checked')).map(el => el.value),
+      meshtastic: Array.from(document.querySelectorAll('.meshtasticFilter:checked')).map(el => el.value),
+      ready: Array.from(document.querySelectorAll('.readyFilter:checked')).map(el => el.value)
+    };
+    document.querySelectorAll('#comparisonTable th').forEach(th => {
+      const mcu = filters.mcu.length === 0 || filters.mcu.includes(th.dataset.mcu);
+      const lora = filters.lora.length === 0 || filters.lora.includes(th.dataset.lora);
+      const gps = filters.gps.length === 0 || filters.gps.includes(th.dataset.gps);
+      const screen = filters.screen.length === 0 || filters.screen.includes(th.dataset.screen);
+      const wifi = filters.wifi.length === 0 || filters.wifi.includes(th.dataset.wifi);
+      const input = filters.input.length === 0 || filters.input.some(inputValue => th.dataset.input.includes(inputValue));
+      const price = filters.price.length === 0 || filters.price.some(priceRange => {
+        const [min, max] = priceRange.split('-').map(Number);
+        const priceValue = parseFloat(th.dataset.price);
+        return !isNaN(priceValue) && (!max || (priceValue >= min && priceValue <= max));
+      });
+      const brand = filters.brand.length === 0 || filters.brand.includes(th.dataset.brand);
+      const caseIncluded = filters.case.length === 0 || filters.case.includes(th.dataset.case);
+      const battery = filters.battery.length === 0 || filters.battery.includes(th.dataset.battery);
+      const meshtastic = filters.meshtastic.length === 0 || filters.meshtastic.includes(th.dataset.meshtastic);
+      const ready = filters.ready.length === 0 || filters.ready.includes(th.dataset.ready);
+      
+      if (mcu && lora && gps && screen && wifi && input && price && brand && caseIncluded && battery && meshtastic && ready) {
+        th.style.display = '';
+        document.querySelectorAll(`#comparisonTable tbody td:nth-child(${th.cellIndex + 2})`).forEach(td => {
+          td.style.display = '';
+        });
+      } else {
+        th.style.display = 'none';
+        document.querySelectorAll(`#comparisonTable tbody td:nth-child(${th.cellIndex + 2})`).forEach(td => {
+          td.style.display = 'none';
+        });
+      }
     });
   });
-}
+});
 </script>
