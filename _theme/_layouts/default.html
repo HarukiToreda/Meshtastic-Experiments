@@ -36,6 +36,7 @@
       flex: 1;
       padding: 20px;
       background-color: #1a1a1a; /* Darker charcoal background for content */
+      overflow-x: auto;
     }
     nav ul {
       list-style-type: none;
@@ -62,10 +63,10 @@
       color: #FFD700; /* Bright yellow text for active page */
     }
     table {
-      width: 800px; /* Fixed width for tables */
+      width: 100%; /* Full width for tables */
       border-collapse: collapse;
       margin: 20px 0;
-      table-layout: fixed;
+      table-layout: auto; /* Auto layout for table */
     }
     th, td {
       border: 1px solid #00FFFF; /* Electric blue border */
@@ -75,7 +76,6 @@
     }
     th {
       background-color: #1a1a1a; /* Darker charcoal for table headers */
-      position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 1;
