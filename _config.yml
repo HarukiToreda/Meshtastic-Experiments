@@ -20,6 +20,8 @@ navbar:
 #    url: "/LoRa-Boards-Comparison2-Table"
   - title: Additional Hardware
     url: "/Additional-Hardware"
+  - title: Contact Me
+    url: "/Meshtastic-Experiments/contact"    
 
 # Point to the local theme directories
 layouts_dir: _theme/_layouts
