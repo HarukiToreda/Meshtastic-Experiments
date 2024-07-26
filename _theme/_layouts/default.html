@@ -36,9 +36,9 @@
     .toggle-button {
       position: absolute;
       top: 0;
-      left: 210px; /* 200px for sidebar width + 10px gap */
+      left: 213px; /* 200px for sidebar width + 13px gap */
       background-color: #FFD700;
-      border: none;
+      border: 2px solid #333333; /* Charcoal border */
       width: 20px;
       height: 100vh;
       cursor: pointer;
@@ -51,7 +51,7 @@
       line-height: 1;
     }
     .toggle-button.hidden {
-      left: 30px; /* 20px for button width + 10px gap */
+      left: 33px; /* 20px for button width + 13px gap */
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
@@ -63,14 +63,14 @@
       color: #00FFFF; /* Electric blue text */
     }
     .content {
-      margin-left: 230px; /* Ensure content is not hidden behind the fixed sidebar */
+      margin-left: 233px; /* Ensure content is not hidden behind the fixed sidebar */
       flex: 1;
       padding: 20px;
       background-color: #1a1a1a; /* Darker charcoal background for content */
       transition: margin-left 0.3s ease;
     }
     .content.full {
-      margin-left: 50px; /* 20px for button width + 10px gap + 20px for minimum content margin */
+      margin-left: 53px; /* 20px for button width + 13px gap + 20px for minimum content margin */
     }
     nav ul {
       list-style-type: none;
