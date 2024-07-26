@@ -48,18 +48,18 @@
       justify-content: center;
       font-size: 18px;
       line-height: 1;
-      position: fixed; /* Fix the position relative to the viewport */
-      right: 200px; /* Positioned to the right of the sidebar */
+      position: fixed;
+      left: 200px; /* Positioned at the right edge of the sidebar */
       top: 0;
-      transition: right 0.3s ease;
+      transition: left 0.3s ease;
     }
-    .sidebar.hidden .toggle-button {
-      right: 0; /* Move the button with the sidebar */
+    .sidebar.hidden ~ .toggle-button {
+      left: 0; /* Move the button to the edge of the page */
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
     }
-    .sidebar.hidden .toggle-button::after {
+    .sidebar.hidden ~ .toggle-button::after {
       content: '❯'; /* Right arrow */
     }
     .sidebar h1 {
@@ -80,7 +80,7 @@
       transition: margin-left 0.3s ease;
     }
     .sidebar.hidden ~ .content {
-      margin-left: 0; /* Adjust content margin when sidebar is hidden */
+      margin-left: 20px; /* Adjust content margin when sidebar is hidden */
     }
     nav ul {
       list-style-type: none;
@@ -193,9 +193,9 @@
       const toggleButton = document.querySelector('.toggle-button');
       sidebar.classList.toggle('hidden');
       if (sidebar.classList.contains('hidden')) {
-        toggleButton.style.right = '0'; // Move button when sidebar is hidden
+        toggleButton.style.left = '0'; // Move button to edge of the page
       } else {
-        toggleButton.style.right = '200px'; // Reset button position when sidebar is shown
+        toggleButton.style.left = '200px'; // Reset button position when sidebar is shown
       }
     }
   </script>
