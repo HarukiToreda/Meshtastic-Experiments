@@ -37,29 +37,28 @@
       transform: translateX(-100%);
     }
     .toggle-button {
-      position: absolute;
-      top: 0;
-      left: 213px; /* 200px for sidebar width + 13px gap */
       background-color: #FFD700;
       border: 2px solid #333333; /* Charcoal border */
       width: 20px;
       height: 100vh;
       cursor: pointer;
       z-index: 1000;
-      transition: left 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 18px;
       line-height: 1;
+      position: absolute;
+      right: -20px; /* Positioned to the right of the sidebar */
+      top: 0;
     }
-    .toggle-button.hidden {
-      left: 33px; /* 20px for button width + 13px gap */
+    .sidebar.hidden .toggle-button {
+      right: -220px; /* Move the button with the sidebar */
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
     }
-    .toggle-button.hidden::after {
+    .sidebar.hidden .toggle-button::after {
       content: '❯'; /* Right arrow */
     }
     .sidebar h1 {
@@ -73,14 +72,14 @@
       text-align: center;
     }
     .content {
-      margin-left: 233px; /* Ensure content is not hidden behind the fixed sidebar */
+      margin-left: 200px; /* Ensure content is not hidden behind the fixed sidebar */
       flex: 1;
       padding: 20px;
       background-color: #1a1a1a; /* Darker charcoal background for content */
       transition: margin-left 0.3s ease;
     }
-    .content.full {
-      margin-left: 53px; /* 20px for button width + 13px gap + 20px for minimum content margin */
+    .sidebar.hidden + .content {
+      margin-left: 0; /* Adjust content margin when sidebar is hidden */
     }
     nav ul {
       list-style-type: none;
@@ -177,8 +176,8 @@
       </nav>
       <!-- Buy Me a Coffee Button -->
       <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" /></a>
+      <button class="toggle-button" onclick="toggleSidebar()"></button>
     </div>
-    <button class="toggle-button" onclick="toggleSidebar()"></button>
     <div class="content">
       {{ content }}
     </div>
@@ -190,10 +189,8 @@
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
       const content = document.querySelector('.content');
-      const button = document.querySelector('.toggle-button');
       sidebar.classList.toggle('hidden');
       content.classList.toggle('full');
-      button.classList.toggle('hidden');
     }
   </script>
 </body>
