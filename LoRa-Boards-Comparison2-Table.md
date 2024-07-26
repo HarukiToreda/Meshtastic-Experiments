@@ -819,7 +819,6 @@ title: LoRa Boards Comparison Table
   </table>
 </div>
 
-
 <script>
 document.querySelectorAll('.mcuFilter, .loraFilter, .gpsFilter, .screenFilter, .wifiFilter, .inputFilter, .priceFilter, .brandFilter, .caseFilter, .batteryFilter, .meshtasticFilter, .readyFilter').forEach(filter => {
   filter.addEventListener('change', filterTable);
