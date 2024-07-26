@@ -40,7 +40,7 @@
       background-color: #FFD700;
       border: 2px solid #333333; /* Charcoal border */
       width: 20px;
-      height: 100vh;
+      height: 40px;
       cursor: pointer;
       z-index: 1000;
       display: flex;
@@ -50,11 +50,12 @@
       line-height: 1;
       position: absolute;
       right: -20px; /* Positioned to the right of the sidebar */
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
       transition: transform 0.3s ease;
     }
     .sidebar.hidden .toggle-button {
-      transform: translateX(200px);
+      transform: translate(200px, -50%);
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
