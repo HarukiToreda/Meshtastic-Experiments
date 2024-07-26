@@ -36,7 +36,6 @@
       flex: 1;
       padding: 20px;
       background-color: #1a1a1a; /* Darker charcoal background for content */
-      overflow-x: auto;
     }
     nav ul {
       list-style-type: none;
@@ -63,9 +62,10 @@
       color: #FFD700; /* Bright yellow text for active page */
     }
     table {
-      width: 100%; /* Full width for tables */
+      width: 800px; /* Fixed width for tables */
       border-collapse: collapse;
       margin: 20px 0;
+      table-layout: fixed;
     }
     th, td {
       border: 1px solid #00FFFF; /* Electric blue border */
@@ -75,9 +75,10 @@
     }
     th {
       background-color: #1a1a1a; /* Darker charcoal for table headers */
+      position: -webkit-sticky;
       position: sticky;
-      top: 0; /* Stick to the top when scrolling */
-      z-index: 1; /* Ensure it stays on top of other content */
+      top: 0;
+      z-index: 1;
     }
     tbody tr:nth-child(odd) {
       background-color: #333333; /* Charcoal for odd rows */
