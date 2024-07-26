@@ -43,9 +43,25 @@
       cursor: pointer;
       z-index: 1000;
       transition: left 0.3s ease;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
     }
     .toggle-button.hidden {
       left: 10px;
+    }
+    .sidebar.hidden + .toggle-button {
+      left: 10px;
+    }
+    .toggle-button::after {
+      content: '❮'; /* Left arrow */
+    }
+    .toggle-button.hidden::after {
+      content: '❯'; /* Right arrow */
     }
     .sidebar h1, .sidebar p {
       color: #00FFFF; /* Electric blue text */
@@ -134,44 +150,4 @@
       color: #FFD700; /* Bright yellow links */
     }
     a:hover {
-      color: #ffffff; /* White text on hover */
-    }
-  </style>
-</head>
-<body>
-  <div class="main-container">
-    <button class="toggle-button" onclick="toggleSidebar()">☰</button>
-    <div class="sidebar">
-      <header>
-        <h1><a href="{{ site.baseurl }}/" style="color: #00FFFF; text-decoration: none;">{{ site.title }}</a></h1>
-        <p>{{ site.description }}</p>
-      </header>
-      <nav>
-        <ul>
-          {% for item in site.navbar %}
-            <li><a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-      <!-- Buy Me a Coffee Button -->
-      <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" /></a>
-    </div>
-    <div class="content">
-      {{ content }}
-    </div>
-  </div>
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-  </footer>
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      const content = document.querySelector('.content');
-      const button = document.querySelector('.toggle-button');
-      sidebar.classList.toggle('hidden');
-      content.classList.toggle('full');
-      button.classList.toggle('hidden');
-    }
-  </script>
-</body>
-</html>
+      color: #ffff
