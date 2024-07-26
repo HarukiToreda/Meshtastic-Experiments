@@ -48,19 +48,19 @@
       justify-content: center;
       font-size: 18px;
       line-height: 1;
-      position: absolute;
-      right: -20px; /* Positioned to the right of the sidebar */
+      position: fixed;
+      left: 200px; /* Positioned to the right of the sidebar */
       top: 50%;
       transform: translateY(-50%);
-      transition: transform 0.3s ease;
+      transition: left 0.3s ease;
     }
-    .sidebar.hidden .toggle-button {
-      transform: translate(200px, -50%);
+    .sidebar.hidden ~ .toggle-button {
+      left: 0; /* Move the button to the edge of the screen when sidebar is hidden */
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
     }
-    .sidebar.hidden .toggle-button::after {
+    .sidebar.hidden ~ .toggle-button::after {
       content: '❯'; /* Right arrow */
     }
     .sidebar h1 {
@@ -178,8 +178,8 @@
       </nav>
       <!-- Buy Me a Coffee Button -->
       <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" /></a>
-      <button class="toggle-button" onclick="toggleSidebar()"></button>
     </div>
+    <button class="toggle-button" onclick="toggleSidebar()"></button>
     <div class="content">
       {{ content }}
     </div>
@@ -190,8 +190,10 @@
   <script>
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
+      const toggleButton = document.querySelector('.toggle-button');
       const content = document.querySelector('.content');
       sidebar.classList.toggle('hidden');
+      toggleButton.classList.toggle('hidden');
       content.classList.toggle('full');
     }
   </script>
