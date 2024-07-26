@@ -10,12 +10,6 @@ Welcome to my personal Meshtastic experiments. Here, I share my own measurements
 ## Navigation and Descriptions
 
 <table>
-  <thead>
-    <tr>
-      <th>Page</th>
-      <th>Description</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
       <td><a href="/Meshtastic-Experiments/Battery-Runtime-Tests" class="button">Battery Runtime Tests</a></td>
@@ -65,17 +59,13 @@ Welcome to my personal Meshtastic experiments. Here, I share my own measurements
     margin: 20px 0;
   }
 
-  th, td {
+  td {
     border: 1px solid #ddd;
     padding: 10px;
-  }
-
-  th {
-    background-color: #f2f2f2;
-    text-align: left;
-  }
-
-  td {
     vertical-align: top;
+  }
+
+  td:first-child {
+    width: 200px;
   }
 </style>
