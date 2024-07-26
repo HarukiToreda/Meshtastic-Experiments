@@ -34,7 +34,7 @@
       align-items: center;
     }
     .sidebar.hidden {
-      transform: translateX(-100%);
+      transform: translateX(-200px);
     }
     .toggle-button {
       background-color: #FFD700;
@@ -51,9 +51,10 @@
       position: absolute;
       right: -20px; /* Positioned to the right of the sidebar */
       top: 0;
+      transition: transform 0.3s ease;
     }
     .sidebar.hidden .toggle-button {
-      right: -220px; /* Move the button with the sidebar */
+      transform: translateX(200px);
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
