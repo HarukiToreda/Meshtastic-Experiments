@@ -19,7 +19,7 @@ title: LoRa Boards Comparison Table
     <label>LoRa Chip:</label>
     <div>
       <input type="checkbox" class="loraFilter" value="SX1276"> SX1276<br>
-      <input type="checkbox" class="loraFilter" value="SX1278"> SX1278<br>      
+      <input type="checkbox" class="loraFilter" value="SX1278"> SX1278<br>
       <input type="checkbox" class="loraFilter" value="SX1262"> SX1262<br>
       <input type="checkbox" class="loraFilter" value="LR1110"> LR1110<br>
     </div>
@@ -837,6 +837,19 @@ function filterTable() {
   const batteryFilters = Array.from(document.querySelectorAll('.batteryFilter:checked')).map(cb => cb.value);
   const meshtasticFilters = Array.from(document.querySelectorAll('.meshtasticFilter:checked')).map(cb => cb.value);
   const readyFilters = Array.from(document.querySelectorAll('.readyFilter:checked')).map(cb => cb.value);
+
+  console.log("MCU Filters:", mcuFilters);
+  console.log("LoRa Filters:", loraFilters);
+  console.log("GPS Filters:", gpsFilters);
+  console.log("Screen Filters:", screenFilters);
+  console.log("WiFi Filters:", wifiFilters);
+  console.log("Input Filters:", inputFilters);
+  console.log("Price Filters:", priceFilters);
+  console.log("Brand Filters:", brandFilters);
+  console.log("Case Filters:", caseFilters);
+  console.log("Battery Filters:", batteryFilters);
+  console.log("Meshtastic Filters:", meshtasticFilters);
+  console.log("Ready Filters:", readyFilters);
 
   const columns = document.querySelectorAll('#comparisonTable thead th');
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
