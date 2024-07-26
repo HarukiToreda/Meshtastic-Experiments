@@ -34,13 +34,13 @@
       align-items: center;
     }
     .sidebar.hidden {
-      transform: translateX(-200px);
+      transform: translateX(-220px);
     }
     .toggle-button {
       background-color: #FFD700;
       border: 2px solid #333333; /* Charcoal border */
       width: 20px;
-      height: 40px;
+      height: 100vh;
       cursor: pointer;
       z-index: 1000;
       display: flex;
@@ -48,19 +48,18 @@
       justify-content: center;
       font-size: 18px;
       line-height: 1;
-      position: fixed;
-      left: 200px; /* Positioned to the right of the sidebar */
-      top: 50%;
-      transform: translateY(-50%);
-      transition: left 0.3s ease;
+      position: absolute;
+      right: -20px; /* Positioned to the right of the sidebar */
+      top: 0;
+      transition: right 0.3s ease;
     }
-    .sidebar.hidden ~ .toggle-button {
-      left: 0; /* Move the button to the edge of the screen when sidebar is hidden */
+    .sidebar.hidden .toggle-button {
+      right: -40px; /* Move the button with the sidebar */
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
     }
-    .sidebar.hidden ~ .toggle-button::after {
+    .sidebar.hidden .toggle-button::after {
       content: '❯'; /* Right arrow */
     }
     .sidebar h1 {
@@ -74,13 +73,13 @@
       text-align: center;
     }
     .content {
-      margin-left: 200px; /* Ensure content is not hidden behind the fixed sidebar */
+      margin-left: 220px; /* Ensure content is not hidden behind the fixed sidebar and button */
       flex: 1;
       padding: 20px;
       background-color: #1a1a1a; /* Darker charcoal background for content */
       transition: margin-left 0.3s ease;
     }
-    .sidebar.hidden + .content {
+    .sidebar.hidden ~ .content {
       margin-left: 0; /* Adjust content margin when sidebar is hidden */
     }
     nav ul {
@@ -178,8 +177,8 @@
       </nav>
       <!-- Buy Me a Coffee Button -->
       <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" /></a>
+      <button class="toggle-button" onclick="toggleSidebar()"></button>
     </div>
-    <button class="toggle-button" onclick="toggleSidebar()"></button>
     <div class="content">
       {{ content }}
     </div>
@@ -190,11 +189,14 @@
   <script>
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
-      const toggleButton = document.querySelector('.toggle-button');
       const content = document.querySelector('.content');
+      const toggleButton = document.querySelector('.toggle-button');
       sidebar.classList.toggle('hidden');
-      toggleButton.classList.toggle('hidden');
-      content.classList.toggle('full');
+      if (sidebar.classList.contains('hidden')) {
+        toggleButton.style.right = '-40px'; // Move button when sidebar is hidden
+      } else {
+        toggleButton.style.right = '-20px'; // Reset button position when sidebar is shown
+      }
     }
   </script>
 </body>
