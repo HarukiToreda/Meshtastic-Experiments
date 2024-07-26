@@ -36,9 +36,9 @@ Welcome to my personal Meshtastic experiments. Here, I share my own measurements
 
 <style>
   .button {
-    display: inline-block;
+    display: block;
+    width: 100%;
     padding: 10px 20px;
-    margin: 0;
     font-size: 16px;
     font-weight: bold;
     color: white;
@@ -48,7 +48,7 @@ Welcome to my personal Meshtastic experiments. Here, I share my own measurements
     border-radius: 5px;
     transition: background-color 0.3s;
   }
-  
+
   .button:hover {
     background-color: #0056b3;
   }
