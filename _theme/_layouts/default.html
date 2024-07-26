@@ -27,6 +27,25 @@
       height: 100vh; /* Full height */
       position: fixed; /* Fix sidebar in place */
       color: #00FFFF; /* Electric blue text */
+      transition: transform 0.3s ease;
+      transform: translateX(0);
+    }
+    .sidebar.hidden {
+      transform: translateX(-100%);
+    }
+    .toggle-button {
+      position: absolute;
+      top: 10px;
+      left: 210px;
+      background-color: #FFD700;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: left 0.3s ease;
+    }
+    .toggle-button.hidden {
+      left: 10px;
     }
     .sidebar h1, .sidebar p {
       color: #00FFFF; /* Electric blue text */
@@ -36,6 +55,10 @@
       flex: 1;
       padding: 20px;
       background-color: #1a1a1a; /* Darker charcoal background for content */
+      transition: margin-left 0.3s ease;
+    }
+    .content.full {
+      margin-left: 20px;
     }
     nav ul {
       list-style-type: none;
@@ -117,6 +140,7 @@
 </head>
 <body>
   <div class="main-container">
+    <button class="toggle-button" onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
       <header>
         <h1><a href="{{ site.baseurl }}/" style="color: #00FFFF; text-decoration: none;">{{ site.title }}</a></h1>
@@ -139,5 +163,15 @@
   <footer>
     <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
   </footer>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      const content = document.querySelector('.content');
+      const button = document.querySelector('.toggle-button');
+      sidebar.classList.toggle('hidden');
+      content.classList.toggle('full');
+      button.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
