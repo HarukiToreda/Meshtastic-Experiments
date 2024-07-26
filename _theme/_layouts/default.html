@@ -36,7 +36,7 @@
     .toggle-button {
       position: absolute;
       top: 0;
-      left: 200px;
+      left: 203px; /* 200px for sidebar width + 3px gap */
       background-color: #FFD700;
       border: none;
       width: 20px;
@@ -51,7 +51,7 @@
       line-height: 1;
     }
     .toggle-button.hidden {
-      left: 0;
+      left: 23px; /* 20px for button width + 3px gap */
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
@@ -70,7 +70,7 @@
       transition: margin-left 0.3s ease;
     }
     .content.full {
-      margin-left: 20px;
+      margin-left: 43px; /* 20px for button width + 3px gap + 20px for minimum content margin */
     }
     nav ul {
       list-style-type: none;
