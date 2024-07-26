@@ -48,13 +48,13 @@
       justify-content: center;
       font-size: 18px;
       line-height: 1;
-      position: absolute;
-      right: -20px; /* Positioned to the right of the sidebar */
+      position: fixed; /* Fix the position relative to the viewport */
+      right: 200px; /* Positioned to the right of the sidebar */
       top: 0;
       transition: right 0.3s ease;
     }
     .sidebar.hidden .toggle-button {
-      right: -40px; /* Move the button with the sidebar */
+      right: 0; /* Move the button with the sidebar */
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
@@ -177,8 +177,8 @@
       </nav>
       <!-- Buy Me a Coffee Button -->
       <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" /></a>
-      <button class="toggle-button" onclick="toggleSidebar()"></button>
     </div>
+    <button class="toggle-button" onclick="toggleSidebar()"></button>
     <div class="content">
       {{ content }}
     </div>
@@ -193,9 +193,9 @@
       const toggleButton = document.querySelector('.toggle-button');
       sidebar.classList.toggle('hidden');
       if (sidebar.classList.contains('hidden')) {
-        toggleButton.style.right = '-40px'; // Move button when sidebar is hidden
+        toggleButton.style.right = '0'; // Move button when sidebar is hidden
       } else {
-        toggleButton.style.right = '-20px'; // Reset button position when sidebar is shown
+        toggleButton.style.right = '200px'; // Reset button position when sidebar is shown
       }
     }
   </script>
