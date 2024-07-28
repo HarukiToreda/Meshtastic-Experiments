@@ -681,8 +681,8 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--T-Beam-->        
         <td>-</td><!--T-Beam-Supreme-->            
         <td>-</td><!--T3-S3-->                  
-        <td>-</td><!--Station G2-->
-        <td>-</td><!--Nano G2 Ultra-->
+        <td>Resin</td><!--Station G2-->
+        <td>Resin</td><!--Nano G2 Ultra-->
         <td></td><!--Wio Tracker 1110-->
         <td>PLA Case</td><!--Heltxt-->
         <td>ASA, PETG, TPU Case</td><!--Meshenger-->
