@@ -80,7 +80,7 @@ title: Battery Runtime Tests
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--VME213-->                    
           <td>10 Hrs</td><!--T-Deck-->
-          <td id="progress3">In Progress</td><!--RAKRAK19007-->
+          <td>154 Hrs</td><!--RAKRAK19007-->
           <td>156 Hrs</td><!--RAKRAK19003-->
         </tr>
         <tr>
