@@ -31,6 +31,10 @@ Welcome to my personal Meshtastic experiments. Here, I share my own measurements
       <td><a href="/Meshtastic-Experiments/Additional-Hardware">Additional Hardware</a></td>
       <td>This is a list of all additional hardware currently supported by Meshtastic.</td>
     </tr>
+    <tr>
+      <td><a href="/Meshtastic-Experiments/Antennas-Tested">Antennas Tested</a></td>
+      <td>This is a list of all antennas tested and recommended</td>
+    </tr>    
   </tbody>
 </table>
 
