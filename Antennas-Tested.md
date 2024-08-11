@@ -4,6 +4,7 @@ title: Antennas Tested
 ---
 
 # Antennas Tested for 915Mhz
+The data on these tables is obtained from https://github.com/meshtastic/antenna-reports and rearranged to show more information
 
 <script>
 function toggleVisibility(tableId) {
