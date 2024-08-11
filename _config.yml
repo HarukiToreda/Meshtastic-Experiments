@@ -22,6 +22,8 @@ navbar:
     url: "/Additional-Hardware"
   - title: Contact Me
     url: "/contact"    
+  - title: Antennas Tested
+    url: "/Antennas-Tested"        
 
 # Point to the local theme directories
 layouts_dir: _theme/_layouts
