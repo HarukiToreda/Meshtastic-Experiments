@@ -10,14 +10,14 @@ title: Antennas Tested
   <table id="internalDeviceAntennasTable" style="table-layout: fixed; width: 100%;">
     <thead>
       <tr>
-        <th style="min-width: 100px;">Type</th> <!-- Column Header: Type -->
-        <th style="min-width: 120px;">Brand</th> <!-- Column Header: Brand -->
-        <th style="min-width: 180px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Model</th> <!-- Column Header: Model -->
-        <th style="min-width: 150px;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
-        <th style="min-width: 100px;">Price</th> <!-- Column Header: Price -->
-        <th style="min-width: 150px;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
-        <th style="min-width: 80px;">Gain</th> <!-- Column Header: Gain -->
-        <th style="min-width: 100px;">Frequency</th> <!-- Column Header: Frequency -->
+        <th style="min-width: 100px; width: 15%;">Type</th> <!-- Column Header: Type -->
+        <th style="min-width: 80px; width: 10%;">Brand</th> <!-- Column Header: Brand -->
+        <th style="min-width: 200px; width: 25%;">Model</th> <!-- Column Header: Model -->
+        <th style="min-width: 150px; width: 15%;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
+        <th style="min-width: 60px; width: 10%;">Price</th> <!-- Column Header: Price -->
+        <th style="min-width: 100px; width: 10%;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
+        <th style="min-width: 80px; width: 5%;">Gain</th> <!-- Column Header: Gain -->
+        <th style="min-width: 100px; width: 10%;">Frequency</th> <!-- Column Header: Frequency -->
         <th style="min-width: 180px;">Manufacturer Link</th> <!-- Column Header: Manufacturer Link -->
         <th style="min-width: 180px;">Store Link</th> <!-- Column Header: Store Link -->
       </tr>
@@ -25,10 +25,10 @@ title: Antennas Tested
     <tbody>
       <tr>
         <td>Flexible Internal</td> <!-- Type -->
-        <td>TE / Linx</td> <!-- Brand -->
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ANT-8/9-FPC-UFL-100</td> <!-- Model -->
+        <td style="font-size: smaller;">TE / Linx</td> <!-- Brand -->
+        <td>ANT-8/9-FPC-UFL-100</td> <!-- Model -->
         <td>39mm (L) x 15mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$4.66</td> <!-- Price -->
+        <td style="font-size: smaller;">$4.66</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
         <td>-3.2dBi, -3dBi</td> <!-- Gain -->
         <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
@@ -37,10 +37,10 @@ title: Antennas Tested
       </tr>
       <tr>
         <td>Flexible Internal</td> <!-- Type -->
-        <td>Molex</td> <!-- Brand -->
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">206764-0050</td> <!-- Model -->
+        <td style="font-size: smaller;">Molex</td> <!-- Brand -->
+        <td>206764-0050</td> <!-- Model -->
         <td>100mm (L) x 16mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$3.76</td> <!-- Price -->
+        <td style="font-size: smaller;">$3.76</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
         <td>1.3dBi</td> <!-- Gain -->
         <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
@@ -56,14 +56,14 @@ title: Antennas Tested
   <table id="portableAntennasTable" style="table-layout: fixed; width: 100%;">
     <thead>
       <tr>
-        <th style="min-width: 100px;">Type</th> <!-- Column Header: Type -->
-        <th style="min-width: 120px;">Brand</th> <!-- Column Header: Brand -->
-        <th style="min-width: 180px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Model</th> <!-- Column Header: Model -->
-        <th style="min-width: 150px;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
-        <th style="min-width: 100px;">Price</th> <!-- Column Header: Price -->
-        <th style="min-width: 150px;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
-        <th style="min-width: 80px;">Gain</th> <!-- Column Header: Gain -->
-        <th style="min-width: 100px;">Frequency</th> <!-- Column Header: Frequency -->
+        <th style="min-width: 100px; width: 15%;">Type</th> <!-- Column Header: Type -->
+        <th style="min-width: 80px; width: 10%;">Brand</th> <!-- Column Header: Brand -->
+        <th style="min-width: 200px; width: 25%;">Model</th> <!-- Column Header: Model -->
+        <th style="min-width: 150px; width: 15%;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
+        <th style="min-width: 60px; width: 10%;">Price</th> <!-- Column Header: Price -->
+        <th style="min-width: 100px; width: 10%;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
+        <th style="min-width: 80px; width: 5%;">Gain</th> <!-- Column Header: Gain -->
+        <th style="min-width: 100px; width: 10%;">Frequency</th> <!-- Column Header: Frequency -->
         <th style="min-width: 180px;">Manufacturer Link</th> <!-- Column Header: Manufacturer Link -->
         <th style="min-width: 180px;">Store Link</th> <!-- Column Header: Store Link -->
       </tr>
@@ -71,10 +71,10 @@ title: Antennas Tested
     <tbody>
       <tr>
         <td>Whip</td> <!-- Type -->
-        <td>Linx</td> <!-- Brand -->
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ANT-916-CW-HW-SMA</td> <!-- Model -->
+        <td style="font-size: smaller;">Linx</td> <!-- Brand -->
+        <td>ANT-916-CW-HW-SMA</td> <!-- Model -->
         <td>120mm (L) x 9.25mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$9.41</td> <!-- Price -->
+        <td style="font-size: smaller;">$9.41</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
         <td>1.2dBi</td> <!-- Gain -->
         <td>902-930MHz</td> <!-- Frequency -->
@@ -83,10 +83,10 @@ title: Antennas Tested
       </tr>
       <tr>
         <td>Right Angle Whip</td> <!-- Type -->
-        <td>Linx</td> <!-- Brand -->
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ANT-916-CW-RCS</td> <!-- Model -->
+        <td style="font-size: smaller;">Linx</td> <!-- Brand -->
+        <td>ANT-916-CW-RCS</td> <!-- Model -->
         <td>54mm (L) x 9.4mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$6.54</td> <!-- Price -->
+        <td style="font-size: smaller;">$6.54</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
         <td>3.3dBi</td> <!-- Gain -->
         <td>902-930MHz</td> <!-- Frequency -->
@@ -102,14 +102,14 @@ title: Antennas Tested
   <table id="fixedBaseAntennasTable" style="table-layout: fixed; width: 100%;">
     <thead>
       <tr>
-        <th style="min-width: 100px;">Type</th> <!-- Column Header: Type -->
-        <th style="min-width: 120px;">Brand</th> <!-- Column Header: Brand -->
-        <th style="min-width: 180px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Model</th> <!-- Column Header: Model -->
-        <th style="min-width: 150px;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
-        <th style="min-width: 100px;">Price</th> <!-- Column Header: Price -->
-        <th style="min-width: 150px;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
-        <th style="min-width: 80px;">Gain</th> <!-- Column Header: Gain -->
-        <th style="min-width: 100px;">Frequency</th> <!-- Column Header: Frequency -->
+        <th style="min-width: 100px; width: 15%;">Type</th> <!-- Column Header: Type -->
+        <th style="min-width: 80px; width: 10%;">Brand</th> <!-- Column Header: Brand -->
+        <th style="min-width: 200px; width: 25%;">Model</th> <!-- Column Header: Model -->
+        <th style="min-width: 150px; width: 15%;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
+        <th style="min-width: 60px; width: 10%;">Price</th> <!-- Column Header: Price -->
+        <th style="min-width: 100px; width: 10%;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
+        <th style="min-width: 80px; width: 5%;">Gain</th> <!-- Column Header: Gain -->
+        <th style="min-width: 100px; width: 10%;">Frequency</th> <!-- Column Header: Frequency -->
         <th style="min-width: 180px;">Manufacturer Link</th> <!-- Column Header: Manufacturer Link -->
         <th style="min-width: 180px;">Store Link</th> <!-- Column Header: Store Link -->
       </tr>
@@ -117,10 +117,10 @@ title: Antennas Tested
     <tbody>
       <tr>
         <td>Fiberglass Whip</td> <!-- Type -->
-        <td>Seeed</td> <!-- Brand -->
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">318020612</td> <!-- Model -->
+        <td style="font-size: smaller;">Seeed</td> <!-- Brand -->
+        <td>318020612</td> <!-- Model -->
         <td>600mm (L) x 40mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$35.00</td> <!-- Price -->
+        <td style="font-size: smaller;">$35.00</td> <!-- Price -->
         <td>❌ No!</td> <!-- Suggested For Use? -->
         <td>6.8dBi</td> <!-- Gain -->
         <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
@@ -129,10 +129,10 @@ title: Antennas Tested
       </tr>
       <tr>
         <td>Flat Panel</td> <!-- Type -->
-        <td>ARC Wireless</td> <!-- Brand -->
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ARC-PA0913C01</td> <!-- Model -->
+        <td style="font-size: smaller;">ARC Wireless</td> <!-- Brand -->
+        <td>ARC-PA0913C01</td> <!-- Model -->
         <td>389mm (L) x 389mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$42.00</td> <!-- Price -->
+        <td style="font-size: smaller;">$42.00</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
         <td>13.2dBi</td> <!-- Gain -->
         <td>902-930MHz</td> <!-- Frequency -->
@@ -148,14 +148,14 @@ title: Antennas Tested
   <table id="vehicleAntennasTable" style="table-layout: fixed; width: 100%;">
     <thead>
       <tr>
-        <th style="min-width: 100px;">Type</th> <!-- Column Header: Type -->
-        <th style="min-width: 120px;">Brand</th> <!-- Column Header: Brand -->
-        <th style="min-width: 180px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Model</th> <!-- Column Header: Model -->
-        <th style="min-width: 150px;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
-        <th style="min-width: 100px;">Price</th> <!-- Column Header: Price -->
-        <th style="min-width: 150px;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
-        <th style="min-width: 80px;">Gain</th> <!-- Column Header: Gain -->
-        <th style="min-width: 100px;">Frequency</th> <!-- Column Header: Frequency -->
+        <th style="min-width: 100px; width: 15%;">Type</th> <!-- Column Header: Type -->
+        <th style="min-width: 80px; width: 10%;">Brand</th> <!-- Column Header: Brand -->
+        <th style="min-width: 200px; width: 25%;">Model</th> <!-- Column Header: Model -->
+        <th style="min-width: 150px; width: 15%;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
+        <th style="min-width: 60px; width: 10%;">Price</th> <!-- Column Header: Price -->
+        <th style="min-width: 100px; width: 10%;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
+        <th style="min-width: 80px; width: 5%;">Gain</th> <!-- Column Header: Gain -->
+        <th style="min-width: 100px; width: 10%;">Frequency</th> <!-- Column Header: Frequency -->
         <th style="min-width: 180px;">Manufacturer Link</th> <!-- Column Header: Manufacturer Link -->
         <th style="min-width: 180px;">Store Link</th> <!-- Column Header: Store Link -->
       </tr>
@@ -163,10 +163,10 @@ title: Antennas Tested
     <tbody>
       <tr>
         <td>Bulkhead Panel Mount</td> <!-- Type -->
-        <td>Laird</td> <!-- Brand -->
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">EM-A11015-SP</td> <!-- Model -->
+        <td style="font-size: smaller;">Laird</td> <!-- Brand -->
+        <td>EM-A11015-SP</td> <!-- Model -->
         <td>76.2mm (L) x 42.4mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$36.95</td> <!-- Price -->
+        <td style="font-size: smaller;">$36.95</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
         <td>3dBi</td> <!-- Gain -->
         <td>902~928MHz</td> <!-- Frequency -->
@@ -175,10 +175,10 @@ title: Antennas Tested
       </tr>
       <tr>
         <td>Whip</td> <!-- Type -->
-        <td>Laird</td> <!-- Brand -->
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">MA9-5N</td> <!-- Model -->
+        <td style="font-size: smaller;">Laird</td> <!-- Brand -->
+        <td>MA9-5N</td> <!-- Model -->
         <td>406mm (L) x 20mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$16.97</td> <!-- Price -->
+        <td style="font-size: smaller;">$16.97</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
         <td>5.5dBi</td> <!-- Gain -->
         <td>902~928MHz</td> <!-- Frequency -->
