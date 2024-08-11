@@ -2,6 +2,7 @@
 layout: default
 title: Antennas Tested
 ---
+The data on these tables is obtained from https://github.com/meshtastic/antenna-reports and rearranged to show more information
 
 # Antennas Tested for 915Mhz
 
