@@ -12,7 +12,7 @@ title: Antennas Tested
       <tr>
         <th style="min-width: 100px;">Type</th> <!-- Column Header: Type -->
         <th style="min-width: 120px;">Brand</th> <!-- Column Header: Brand -->
-        <th style="min-width: 180px; white-space: nowrap;">Model</th> <!-- Column Header: Model -->
+        <th style="min-width: 180px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Model</th> <!-- Column Header: Model -->
         <th style="min-width: 150px;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
         <th style="min-width: 100px;">Price</th> <!-- Column Header: Price -->
         <th style="min-width: 150px;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
@@ -26,7 +26,7 @@ title: Antennas Tested
       <tr>
         <td>Flexible Internal</td> <!-- Type -->
         <td>TE / Linx</td> <!-- Brand -->
-        <td style="white-space: nowrap;">ANT-8/9-FPC-UFL-100</td> <!-- Model -->
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ANT-8/9-FPC-UFL-100</td> <!-- Model -->
         <td>39mm (L) x 15mm (W)</td> <!-- Antenna Dimensions -->
         <td>$4.66</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
@@ -38,7 +38,7 @@ title: Antennas Tested
       <tr>
         <td>Flexible Internal</td> <!-- Type -->
         <td>Molex</td> <!-- Brand -->
-        <td style="white-space: nowrap;">206764-0050</td> <!-- Model -->
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">206764-0050</td> <!-- Model -->
         <td>100mm (L) x 16mm (W)</td> <!-- Antenna Dimensions -->
         <td>$3.76</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
@@ -58,7 +58,7 @@ title: Antennas Tested
       <tr>
         <th style="min-width: 100px;">Type</th> <!-- Column Header: Type -->
         <th style="min-width: 120px;">Brand</th> <!-- Column Header: Brand -->
-        <th style="min-width: 180px; white-space: nowrap;">Model</th> <!-- Column Header: Model -->
+        <th style="min-width: 180px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Model</th> <!-- Column Header: Model -->
         <th style="min-width: 150px;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
         <th style="min-width: 100px;">Price</th> <!-- Column Header: Price -->
         <th style="min-width: 150px;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
@@ -72,7 +72,7 @@ title: Antennas Tested
       <tr>
         <td>Whip</td> <!-- Type -->
         <td>Linx</td> <!-- Brand -->
-        <td style="white-space: nowrap;">ANT-916-CW-HW-SMA</td> <!-- Model -->
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ANT-916-CW-HW-SMA</td> <!-- Model -->
         <td>120mm (L) x 9.25mm (W)</td> <!-- Antenna Dimensions -->
         <td>$9.41</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
@@ -84,7 +84,7 @@ title: Antennas Tested
       <tr>
         <td>Right Angle Whip</td> <!-- Type -->
         <td>Linx</td> <!-- Brand -->
-        <td style="white-space: nowrap;">ANT-916-CW-RCS</td> <!-- Model -->
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ANT-916-CW-RCS</td> <!-- Model -->
         <td>54mm (L) x 9.4mm (W)</td> <!-- Antenna Dimensions -->
         <td>$6.54</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
@@ -92,30 +92,6 @@ title: Antennas Tested
         <td>902-930MHz</td> <!-- Frequency -->
         <td><a href="https://www.te.com/en/product-ANT-916-CW-RCS-SMA.html">Manufacturer Link</a></td> <!-- Manufacturer Link -->
         <td><a href="https://www.digikey.com/en/products/detail/te-connectivity-linx/ANT-916-CW-RCS/340139">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Folding Whip</td> <!-- Type -->
-        <td>Taoglas</td> <!-- Brand -->
-        <td style="white-space: nowrap;">TI.92.2113</td> <!-- Model -->
-        <td>198mm (L) x 13mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$8.85</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>1.21dBi, 2.14dBi</td> <!-- Gain -->
-        <td>902-930MHz</td> <!-- Frequency -->
-        <td><a href="https://www.taoglas.com/product/ti-92-2113-915mhz-terminal-mount-hinged-dipole-antenna/">Manufacturer Link</a></td> <!-- Manufacturer Link -->
-        <td><a href="https://www.digikey.com/en/products/detail/taoglas-limited/TI-92-2113/11197416">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Folding Whip</td> <!-- Type -->
-        <td>Pulse Larsen</td> <!-- Brand -->
-        <td style="white-space: nowrap;">W1063M</td> <!-- Model -->
-        <td>195mm (L) x 13mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$7.94</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>3dBi</td> <!-- Gain -->
-        <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://www.mouser.com/ProductDetail/Pulse-Electronics/W1063M?qs=opBjA1TV90175GTfjmKkCg%3D%3D">Store Link</a></td> <!-- Store Link -->
       </tr>
     </tbody>
   </table>
@@ -128,7 +104,7 @@ title: Antennas Tested
       <tr>
         <th style="min-width: 100px;">Type</th> <!-- Column Header: Type -->
         <th style="min-width: 120px;">Brand</th> <!-- Column Header: Brand -->
-        <th style="min-width: 180px; white-space: nowrap;">Model</th> <!-- Column Header: Model -->
+        <th style="min-width: 180px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Model</th> <!-- Column Header: Model -->
         <th style="min-width: 150px;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
         <th style="min-width: 100px;">Price</th> <!-- Column Header: Price -->
         <th style="min-width: 150px;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
@@ -142,7 +118,7 @@ title: Antennas Tested
       <tr>
         <td>Fiberglass Whip</td> <!-- Type -->
         <td>Seeed</td> <!-- Brand -->
-        <td style="white-space: nowrap;">318020612</td> <!-- Model -->
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">318020612</td> <!-- Model -->
         <td>600mm (L) x 40mm (W)</td> <!-- Antenna Dimensions -->
         <td>$35.00</td> <!-- Price -->
         <td>❌ No!</td> <!-- Suggested For Use? -->
@@ -154,7 +130,7 @@ title: Antennas Tested
       <tr>
         <td>Flat Panel</td> <!-- Type -->
         <td>ARC Wireless</td> <!-- Brand -->
-        <td style="white-space: nowrap;">ARC-PA0913C01</td> <!-- Model -->
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ARC-PA0913C01</td> <!-- Model -->
         <td>389mm (L) x 389mm (W)</td> <!-- Antenna Dimensions -->
         <td>$42.00</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
@@ -174,7 +150,7 @@ title: Antennas Tested
       <tr>
         <th style="min-width: 100px;">Type</th> <!-- Column Header: Type -->
         <th style="min-width: 120px;">Brand</th> <!-- Column Header: Brand -->
-        <th style="min-width: 180px; white-space: nowrap;">Model</th> <!-- Column Header: Model -->
+        <th style="min-width: 180px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Model</th> <!-- Column Header: Model -->
         <th style="min-width: 150px;">Antenna Dimensions</th> <!-- Column Header: Antenna Dimensions -->
         <th style="min-width: 100px;">Price</th> <!-- Column Header: Price -->
         <th style="min-width: 150px;">Suggested For Use?</th> <!-- Column Header: Suggested For Use? -->
@@ -188,7 +164,7 @@ title: Antennas Tested
       <tr>
         <td>Bulkhead Panel Mount</td> <!-- Type -->
         <td>Laird</td> <!-- Brand -->
-        <td style="white-space: nowrap;">EM-A11015-SP</td> <!-- Model -->
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">EM-A11015-SP</td> <!-- Model -->
         <td>76.2mm (L) x 42.4mm (W)</td> <!-- Antenna Dimensions -->
         <td>$36.95</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
@@ -200,7 +176,7 @@ title: Antennas Tested
       <tr>
         <td>Whip</td> <!-- Type -->
         <td>Laird</td> <!-- Brand -->
-        <td style="white-space: nowrap;">MA9-5N</td> <!-- Model -->
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">MA9-5N</td> <!-- Model -->
         <td>406mm (L) x 20mm (W)</td> <!-- Antenna Dimensions -->
         <td>$16.97</td> <!-- Price -->
         <td>✔️ Yes</td> <!-- Suggested For Use? -->
