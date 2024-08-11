@@ -3,8 +3,9 @@ layout: default
 title: Antennas Tested
 ---
 
-## Internal Device Antennas
+# Antennas Tested for 915Mhz
 
+## Internal Device Antennas
 <div style="overflow-x: auto;">
   <table id="internalDeviceAntennasTable">
     <thead>
@@ -51,7 +52,6 @@ title: Antennas Tested
 </div>
 
 ## Portable Antennas
-
 <div style="overflow-x: auto;">
   <table id="portableAntennasTable">
     <thead>
@@ -230,7 +230,6 @@ title: Antennas Tested
 </div>
 
 ## Fixed (Base) Antennas
-
 <div style="overflow-x: auto;">
   <table id="fixedBaseAntennasTable">
     <thead>
@@ -337,7 +336,6 @@ title: Antennas Tested
 </div>
 
 ## Vehicle Antennas
-
 <div style="overflow-x: auto;">
   <table id="vehicleAntennasTable">
     <thead>
