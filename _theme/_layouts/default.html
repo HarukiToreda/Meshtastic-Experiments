@@ -115,18 +115,25 @@
       box-sizing: border-box; /* Include padding in the element's total width and height */
     }
     table {
-      width: 800px; /* Fixed width for tables */
+      width: 100%; /* Let the table take the full width of the container */
       border-collapse: collapse;
       margin: 20px 0;
+      table-layout: fixed; /* Fixes the layout so that columns take the available width evenly */
     }
     th, td {
       border: 1px solid #00FFFF; /* Electric blue border */
       padding: 8px;
       text-align: left;
       color: #ffffff; /* White text */
+      overflow: hidden; /* Ensures the text doesn't overflow */
+      text-overflow: ellipsis; /* Adds ellipsis if text is too long */
+      white-space: nowrap; /* Prevents text from wrapping */
     }
     th {
       background-color: #1a1a1a; /* Darker charcoal for table headers */
+    }
+    td:nth-child(3), th:nth-child(3) { 
+      min-width: 180px; /* Set minimum width for the "Model" column */
     }
     tbody tr:nth-child(odd) {
       background-color: #333333; /* Charcoal for odd rows */
@@ -194,10 +201,10 @@
       sidebar.classList.toggle('hidden');
       if (sidebar.classList.contains('hidden')) {
         toggleButton.style.left = '0'; // Move button to edge of the page
-		content.style.marginLeft = '15px';
+        content.style.marginLeft = '15px';
       } else {
         toggleButton.style.left = '220px'; // Reset button position when sidebar is shown
-		content.style.marginLeft = '240px';
+        content.style.marginLeft = '240px';
       }
     }
   </script>
