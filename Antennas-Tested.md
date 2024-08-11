@@ -5,7 +5,18 @@ title: Antennas Tested
 
 # Antennas Tested for 915Mhz
 
-## Internal Device Antennas
+<script>
+function toggleVisibility(tableId) {
+  var table = document.getElementById(tableId);
+  if (table.style.display === "none") {
+    table.style.display = "table";
+  } else {
+    table.style.display = "none";
+  }
+}
+</script>
+
+## <a href="javascript:void(0);" onclick="toggleVisibility('internalDeviceAntennasTable')">Internal Device Antennas</a>
 <div style="overflow-x: auto;">
   <table id="internalDeviceAntennasTable">
     <thead>
@@ -51,7 +62,7 @@ title: Antennas Tested
   </table>
 </div>
 
-## Portable Antennas
+## <a href="javascript:void(0);" onclick="toggleVisibility('portableAntennasTable')">Portable Antennas</a>
 <div style="overflow-x: auto;">
   <table id="portableAntennasTable">
     <thead>
@@ -129,107 +140,11 @@ title: Antennas Tested
         <td><a href="https://www.maxtena.com/Products/Antennas-Solutions/SigFox-LoRa-and-ISM-Antennas/ISM/External-ISM/MEA-915-SW-SMA">Manufacturer Link</a></td> <!-- Manufacturer Link -->
         <td><a href="https://www.mouser.com/ProductDetail/Maxtena/MEA-915-SW-SMA?qs=aP1CjGhiNiGjQNdaSEvwhg%3D%3D">Store Link</a></td> <!-- Store Link -->
       </tr>
-      <tr>
-        <td>Folding Whip</td> <!-- Type -->
-        <td>CDEBYTE</td> <!-- Brand -->
-        <td>TX915-JKD-20</td> <!-- Model -->
-        <td>200mm (L) x 12mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$7.55/5</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>3.5dBi</td> <!-- Gain -->
-        <td>900~945MHz</td> <!-- Frequency -->
-        <td><a href="https://www.cdebyte.com/products/TX915-JKD-20/1">Manufacturer Link</a></td> <!-- Manufacturer Link -->
-        <td><a href="https://www.aliexpress.us/item/3256807212711552.html">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Soft Whip</td> <!-- Type -->
-        <td>GIZONT</td> <!-- Brand -->
-        <td>Nb-iot</td> <!-- Model -->
-        <td>200mm (L) x 15mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$4.58</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>10dBi</td> <!-- Gain -->
-        <td>900~945MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://www.aliexpress.us/item/3256804397374144.html">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Whip</td> <!-- Type -->
-        <td>Heltec ESP32</td> <!-- Brand -->
-        <td>Stock</td> <!-- Model -->
-        <td>50mm (L) x 8mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$0</td> <!-- Price -->
-        <td>❌ No!</td> <!-- Suggested For Use? -->
-        <td>3dBi</td> <!-- Gain -->
-        <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
-        <td><a href="https://heltec.org/project/glue-rod-antenna-sma/">Manufacturer Link</a></td> <!-- Manufacturer Link -->
-        <td>—</td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Whip</td> <!-- Type -->
-        <td>Stock LoRa32</td> <!-- Brand -->
-        <td>Stock</td> <!-- Model -->
-        <td>50mm (L) x 8mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$0</td> <!-- Price -->
-        <td>❌ No!</td> <!-- Suggested For Use? -->
-        <td>2dBi</td> <!-- Gain -->
-        <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://www.aliexpress.us/item/2251832686203123.html">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Folding Whip</td> <!-- Type -->
-        <td>Stock T-Beam</td> <!-- Brand -->
-        <td>Stock</td> <!-- Model -->
-        <td>180mm (L) x 9.5mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$0</td> <!-- Price -->
-        <td>❌ No!</td> <!-- Suggested For Use? -->
-        <td>?</td> <!-- Gain -->
-        <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://www.aliexpress.us/item/2255800992363816.html">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Whip</td> <!-- Type -->
-        <td>Stock T-Echo</td> <!-- Brand -->
-        <td>Stock</td> <!-- Model -->
-        <td>60mm (L) x 18mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$0</td> <!-- Price -->
-        <td>❌ No!</td> <!-- Suggested For Use? -->
-        <td>?</td> <!-- Gain -->
-        <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://www.aliexpress.us/item/3256802656141638.html">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Folding Whip</td> <!-- Type -->
-        <td>Tenmory</td> <!-- Brand -->
-        <td>TB-CSA21</td> <!-- Model -->
-        <td>194mm (L) x 13 mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$4.24/2</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>5dBi</td> <!-- Gain -->
-        <td>862-876MHz, 902-930MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://www.aliexpress.com/i/2251832735149719.html">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Whip</td> <!-- Type -->
-        <td>Ziisor</td> <!-- Brand -->
-        <td>TX915-JZ-5</td> <!-- Model -->
-        <td>50mm (L) x 10mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$4.99/2</td> <!-- Price -->
-        <td>❌ No!</td> <!-- Suggested For Use? -->
-        <td>2dBi</td> <!-- Gain -->
-        <td>900~945MHz</td> <!-- Frequency -->
-        <td><a href="https://www.cdebyte.com/products/TX915-JZ-5">Manufacturer Link</a></td> <!-- Manufacturer Link -->
-        <td><a href="https://www.aliexpress.us/item/3256806762260107.html?src=google&gatewayAdapt=glo2usa">Store Link</a></td> <!-- Store Link -->
-      </tr>
     </tbody>
   </table>
 </div>
 
-## Fixed (Base) Antennas
+## <a href="javascript:void(0);" onclick="toggleVisibility('fixedBaseAntennasTable')">Fixed (Base) Antennas</a>
 <div style="overflow-x: auto;">
   <table id="fixedBaseAntennasTable">
     <thead>
@@ -283,59 +198,11 @@ title: Antennas Tested
         <td><a href="https://store.rakwireless.com/products/3dbi-fiber-glass-antenna?variant=39723306123462">Manufacturer Link</a></td> <!-- Manufacturer Link -->
         <td><a href="https://store.rakwireless.com/products/3dbi-fiber-glass-antenna?variant=39723306123462">Store Link</a></td> <!-- Store Link -->
       </tr>
-      <tr>
-        <td>Fiberglass Whip</td> <!-- Type -->
-        <td>Rokland</td> <!-- Brand -->
-        <td>5.8dBi Large Profile</td> <!-- Model -->
-        <td>800mm (L) x 25mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$36.97</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>5.8dBi</td> <!-- Gain -->
-        <td>900~930MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://store.rokland.com/products/5-8-dbi-n-male-omni-outdoor-915-mhz-antenna-large-profile-32-height-for-helium-rak-miner-2-nebra-indoor-bobcat">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Fiberglass Whip</td> <!-- Type -->
-        <td>Rokland</td> <!-- Brand -->
-        <td>6dBi Low Profile</td> <!-- Model -->
-        <td>650mm (L) x 25mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$29.97</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>6dBi</td> <!-- Gain -->
-        <td>900~930MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://store.rokland.com/products/low-profile-6-dbi-n-female-omni-outdoor-915-mhz-antenna-for-helium-rak-miner-2-nebra-indoor-syncrob-it-bobcat">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Whip</td> <!-- Type -->
-        <td>ALFA</td> <!-- Brand -->
-        <td>AOA-915-5ACM</td> <!-- Model -->
-        <td>177mm (L) x 21.5mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$16.97</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>5dBi</td> <!-- Gain -->
-        <td>902~928MHz</td> <!-- Frequency -->
-        <td><a href="https://www.alfa.com.tw/products/aoa-915-5acm?variant=36473963020360">Manufacturer Link</a></td> <!-- Manufacturer Link -->
-        <td><a href="https://store.rokland.com/products/alfa-aoa-915-5acm-5-dbi-omni-outdoor-915mhz-802-11ah-mini-antenna-for-lora-halow-application">Store Link</a></td> <!-- Store Link -->
-      </tr>
-      <tr>
-        <td>Fiberglass Whip</td> <!-- Type -->
-        <td>ZDTECH</td> <!-- Brand -->
-        <td>ZD-OA-915-7NM</td> <!-- Model -->
-        <td>360mm (L) x 23mm (W)</td> <!-- Antenna Dimensions -->
-        <td>$23.37</td> <!-- Price -->
-        <td>✔️ Yes</td> <!-- Suggested For Use? -->
-        <td>7dBi</td> <!-- Gain -->
-        <td>902~928MHz</td> <!-- Frequency -->
-        <td>—</td> <!-- Manufacturer Link -->
-        <td><a href="https://www.amazon.com/gp/product/B09WXW6TDD">Store Link</a></td> <!-- Store Link -->
-      </tr>
     </tbody>
   </table>
 </div>
 
-## Vehicle Antennas
+## <a href="javascript:void(0);" onclick="toggleVisibility('vehicleAntennasTable')">Vehicle Antennas</a>
 <div style="overflow-x: auto;">
   <table id="vehicleAntennasTable">
     <thead>
