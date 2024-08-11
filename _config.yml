@@ -20,10 +20,11 @@ navbar:
 #    url: "/LoRa-Boards-Comparison2-Table"
   - title: Additional Hardware
     url: "/Additional-Hardware"
+  - title: Antennas Tested
+    url: "/Antennas-Tested"    
   - title: Contact Me
     url: "/contact"    
-  - title: Antennas Tested
-    url: "/Antennas-Tested"        
+ 
 
 # Point to the local theme directories
 layouts_dir: _theme/_layouts
