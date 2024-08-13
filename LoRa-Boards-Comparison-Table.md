@@ -12,7 +12,7 @@ title: LoRa Boards Comparison Table
     <label>MCU Chip:</label>
     <div>
       <input type="checkbox" class="mcuFilter" value="ESP32"> ESP32<br>
-      <input type="checkbox" class="mcuFilter" value="nRF"> nRF<br>
+      <input type="checkbox" class="mcuFilter" value="nRF"> nRF52840<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
