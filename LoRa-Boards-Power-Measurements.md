@@ -49,7 +49,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
-        <td>111mA</td><!--VME290-->
+        <td>110mA</td><!--VME290-->
         <td>128mA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>7.5mA</td><!--RAKRAK19007-->
@@ -63,7 +63,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
-        <td>?</td><!--VME290-->
+        <td>62mA</td><!--VME290-->
         <td>82.4mA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
@@ -77,7 +77,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
-        <td>111mA</td><!--VME290-->
+        <td>110mA</td><!--VME290-->
         <td>114mA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
