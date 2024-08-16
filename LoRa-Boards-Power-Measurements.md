@@ -119,7 +119,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
-        <td>17μA</td><!--VME290-->
+        <td>16μA</td><!--VME290-->
         <td>163μA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
