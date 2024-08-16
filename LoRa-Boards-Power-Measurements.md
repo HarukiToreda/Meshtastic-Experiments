@@ -19,6 +19,7 @@ title: LoRa Boards Power Measurements
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Capsule Sensor V3</th>
         <th>Heltec Vision Master E213</th>
+        <th>Heltec Vision Master E290</th>
         <th>T-Deck</th>
         <th>RAK nRF52840</th>
       </tr>
@@ -33,6 +34,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
+        <td>?</td><!--VME290-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -45,6 +47,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
+        <td>?</td><!--VME290-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -57,6 +60,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
+        <td>?</td><!--VME290-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -69,6 +73,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
+        <td>?</td><!--VME290-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -81,6 +86,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
+        <td>?</td><!--VME290-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -93,6 +99,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
+        <td>?</td><!--VME290-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
