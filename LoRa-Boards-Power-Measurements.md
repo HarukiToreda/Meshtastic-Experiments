@@ -20,6 +20,7 @@ title: LoRa Boards Power Measurements
         <th>Heltec Capsule Sensor V3</th>
         <th>Heltec Vision Master E213</th>
         <th>Heltec Vision Master E290</th>
+        <th>Heltec Vision Master T190</th>
         <th>T-Deck</th>
         <th>RAK nRF52840</th>
       </tr>
@@ -35,6 +36,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>176mA</td><!--VME290-->
+        <td>?</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -48,6 +50,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>111mA</td><!--VME290-->
+        <td>128mA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>7.5mA</td><!--RAKRAK19007-->
       </tr>
@@ -61,6 +64,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>?</td><!--VME290-->
+        <td>?</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -74,6 +78,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>111mA</td><!--VME290-->
+        <td>114mA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -87,6 +92,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>11.2mA</td><!--VME290-->
+        <td>16.7mA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
@@ -100,6 +106,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>17μA</td><!--VME290-->
+        <td>163μA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
       </tr>
