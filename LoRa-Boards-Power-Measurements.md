@@ -43,7 +43,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Standby (Screen On)</td>
         <td>?</td><!--Heltec V2-->
-        <td>107.</td><!--Heltec V3-->
+        <td>110mA</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>101.5mA</td><!--Wireless Stick Lite-->
         <td>163mA</td><!--Wireless Tracker-->
@@ -71,7 +71,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Standby (Screen Off)</td>
         <td>?</td><!--Heltec V2-->
-        <td>101.6mA</td><!--Heltec V3-->
+        <td>103.6mA</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>144mA</td><!--Wireless Tracker-->
