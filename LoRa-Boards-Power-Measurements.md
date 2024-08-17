@@ -99,7 +99,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Lite Sleep (Power Save Mode)</td>
         <td>?</td><!--Heltec V2-->
-        <td>10.4mA</td><!--Heltec V3-->
+        <td>11.4mA</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>10mA</td><!--Wireless Stick Lite-->
         <td>53mA</td><!--Wireless Tracker-->
