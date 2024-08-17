@@ -52,7 +52,7 @@ title: LoRa Boards Power Measurements
         <td>110mA</td><!--VME290-->
         <td>128mA</td><!--VMET190-->
         <td>140mA</td><!--T-Deck-->
-        <td>7.5mA</td><!--RAKRAK19007-->
+        <td>7mA</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Standby (Bluetooth Off)</td>
@@ -66,7 +66,7 @@ title: LoRa Boards Power Measurements
         <td>62mA</td><!--VME290-->
         <td>82.4mA</td><!--VMET190-->
         <td>96.6mA</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
+        <td>6.9mA</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Standby (Screen Off)</td>
@@ -94,7 +94,7 @@ title: LoRa Boards Power Measurements
         <td>62mA</td><!--VME290-->
         <td>66.9mA</td><!--VMET190-->
         <td>70mA</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
+        <td>6.9mA</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Lite Sleep (Power Save Mode)</td>
@@ -108,7 +108,7 @@ title: LoRa Boards Power Measurements
         <td>11.2mA</td><!--VME290-->
         <td>16.7mA</td><!--VMET190-->
         <td>27.3mA</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
+        <td>7mA</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Deep Sleep (Soft Shutdown)</td>
@@ -122,7 +122,7 @@ title: LoRa Boards Power Measurements
         <td>16μA</td><!--VME290-->
         <td>163μA</td><!--VMET190-->
         <td>39.8mA</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
+        <td>5μA</td><!--RAKRAK19007-->
       </tr>
     </tbody>
   </table>
