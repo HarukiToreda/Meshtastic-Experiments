@@ -43,7 +43,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Standby (Screen On)</td>
         <td>?</td><!--Heltec V2-->
-        <td>?</td><!--Heltec V3-->
+        <td>107.</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>101.5mA</td><!--Wireless Stick Lite-->
         <td>163mA</td><!--Wireless Tracker-->
@@ -57,7 +57,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Standby (Bluetooth Off)</td>
         <td>?</td><!--Heltec V2-->
-        <td>?</td><!--Heltec V3-->
+        <td>61.5mA</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
         <td>115mA</td><!--Wireless Tracker-->
@@ -71,7 +71,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Standby (Screen Off)</td>
         <td>?</td><!--Heltec V2-->
-        <td>?</td><!--Heltec V3-->
+        <td>101.6mA</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>144mA</td><!--Wireless Tracker-->
@@ -85,7 +85,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Standby (Bluetooth & Screen Off)</td>
         <td>?</td><!--Heltec V2-->
-        <td>?</td><!--Heltec V3-->
+        <td>55.5mA</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
         <td>99mA</td><!--Wireless Tracker-->
@@ -99,7 +99,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Lite Sleep (Power Save Mode)</td>
         <td>?</td><!--Heltec V2-->
-        <td>?</td><!--Heltec V3-->
+        <td>10.4mA</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>10mA</td><!--Wireless Stick Lite-->
         <td>53mA</td><!--Wireless Tracker-->
@@ -113,7 +113,7 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Deep Sleep (Soft Shutdown)</td>
         <td>?</td><!--Heltec V2-->
-        <td>?</td><!--Heltec V3-->
+        <td>45μA</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>38μA</td><!--Wireless Stick Lite-->
         <td>20μA</td><!--Wireless Tracker-->
