@@ -31,7 +31,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V2-->
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
-        <td>?</td><!--Wireless Stick Lite-->
+        <td>187mA</td><!--Wireless Stick Lite-->
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
@@ -45,7 +45,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V2-->
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
-        <td>?</td><!--Wireless Stick Lite-->
+        <td>101.5mA</td><!--Wireless Stick Lite-->
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
@@ -59,7 +59,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V2-->
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
-        <td>?</td><!--Wireless Stick Lite-->
+        <td>36mA</td><!--Wireless Stick Lite-->
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
@@ -73,21 +73,21 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V2-->
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
-        <td>?</td><!--Wireless Stick Lite-->
+        <td>-</td><!--Wireless Stick Lite-->
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>110mA</td><!--VME290-->
         <td>114mA</td><!--VMET190-->
         <td>?</td><!--T-Deck-->
-        <td>?</td><!--RAKRAK19007-->
+        <td>-</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Standby (Bluetooth & Screen Off)</td>
         <td>?</td><!--Heltec V2-->
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
-        <td>?</td><!--Wireless Stick Lite-->
+        <td>36mA</td><!--Wireless Stick Lite-->
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
@@ -101,7 +101,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V2-->
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
-        <td>?</td><!--Wireless Stick Lite-->
+        <td>10mA</td><!--Wireless Stick Lite-->
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
@@ -115,7 +115,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V2-->
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
-        <td>?</td><!--Wireless Stick Lite-->
+        <td>38μA</td><!--Wireless Stick Lite-->
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
