@@ -30,7 +30,7 @@ title: LoRa Boards Power Measurements
         <td>Transmitting</td>
         <td>?</td><!--Heltec V2-->
         <td>?</td><!--Heltec V3-->
-        <td>?</td><!--Wireless Paper-->
+        <td>195mA</td><!--Wireless Paper-->
         <td>187mA</td><!--Wireless Stick Lite-->
         <td>?</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
