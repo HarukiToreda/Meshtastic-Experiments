@@ -42,7 +42,7 @@ title: LoRa Boards Power Measurements
       </tr>
       <tr>
         <td>Standby (Screen On)</td>
-        <td>?</td><!--Heltec V2-->
+        <td>55.7mA</td><!--Heltec V2-->
         <td>110mA</td><!--Heltec V3-->
         <td>105mA</td><!--Wireless Paper-->
         <td>101.5mA</td><!--Wireless Stick Lite-->
@@ -56,7 +56,7 @@ title: LoRa Boards Power Measurements
       </tr>
       <tr>
         <td>Standby (Bluetooth Off)</td>
-        <td>?</td><!--Heltec V2-->
+        <td>44.1mA</td><!--Heltec V2-->
         <td>61.5mA</td><!--Heltec V3-->
         <td>57.7mA</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
@@ -70,7 +70,7 @@ title: LoRa Boards Power Measurements
       </tr>
       <tr>
         <td>Standby (Screen Off)</td>
-        <td>?</td><!--Heltec V2-->
+        <td>53.2mA</td><!--Heltec V2-->
         <td>103.6mA</td><!--Heltec V3-->
         <td>105mA</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
@@ -84,7 +84,7 @@ title: LoRa Boards Power Measurements
       </tr>
       <tr>
         <td>Standby (Bluetooth & Screen Off)</td>
-        <td>?</td><!--Heltec V2-->
+        <td>41.5mAmA</td><!--Heltec V2-->
         <td>55.5mA</td><!--Heltec V3-->
         <td>57.7mA</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
@@ -98,7 +98,7 @@ title: LoRa Boards Power Measurements
       </tr>
       <tr>
         <td>Lite Sleep (Power Save Mode)</td>
-        <td>?</td><!--Heltec V2-->
+        <td>13.8mA</td><!--Heltec V2-->
         <td>11.4mA</td><!--Heltec V3-->
         <td>11.8</td><!--Wireless Paper-->
         <td>10mA</td><!--Wireless Stick Lite-->
@@ -112,7 +112,7 @@ title: LoRa Boards Power Measurements
       </tr>
       <tr>
         <td>Deep Sleep (Soft Shutdown)</td>
-        <td>?</td><!--Heltec V2-->
+        <td>2.77mA</td><!--Heltec V2-->
         <td>45μA</td><!--Heltec V3-->
         <td>19μA</td><!--Wireless Paper-->
         <td>38μA</td><!--Wireless Stick Lite-->
