@@ -46,7 +46,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>101.5mA</td><!--Wireless Stick Lite-->
-        <td>?</td><!--Wireless Tracker-->
+        <td>163mA</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>110mA</td><!--VME290-->
@@ -60,7 +60,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
-        <td>?</td><!--Wireless Tracker-->
+        <td>115mA</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>62mA</td><!--VME290-->
@@ -74,7 +74,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
-        <td>?</td><!--Wireless Tracker-->
+        <td>144mA</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>110mA</td><!--VME290-->
@@ -88,7 +88,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
-        <td>?</td><!--Wireless Tracker-->
+        <td>99mA</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>62mA</td><!--VME290-->
@@ -102,7 +102,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>10mA</td><!--Wireless Stick Lite-->
-        <td>?</td><!--Wireless Tracker-->
+        <td>53mA</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>11.2mA</td><!--VME290-->
@@ -116,7 +116,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--Heltec V3-->
         <td>?</td><!--Wireless Paper-->
         <td>38μA</td><!--Wireless Stick Lite-->
-        <td>?</td><!--Wireless Tracker-->
+        <td>20μA</td><!--Wireless Tracker-->
         <td>?</td><!--Capsule Sensor V3-->
         <td>?</td><!--VME213-->
         <td>16μA</td><!--VME290-->
