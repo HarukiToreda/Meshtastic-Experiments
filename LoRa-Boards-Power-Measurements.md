@@ -52,7 +52,7 @@ title: LoRa Boards Power Measurements
         <td>128mA</td><!--VMET190-->
         <td>20mA</td><!--T114-->
         <td>140mA</td><!--T-Deck-->
-        <td>7mA</td><!--RAKRAK19007-->
+        <td>-</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Standby (Bluetooth Off)</td>
@@ -80,7 +80,7 @@ title: LoRa Boards Power Measurements
         <td>114mA</td><!--VMET190-->
         <td>9mA</td><!--T114-->
         <td>113mA</td><!--T-Deck-->
-        <td>-</td><!--RAKRAK19007-->
+        <td>7mA</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Standby (Bluetooth & Screen Off)</td>
