@@ -50,7 +50,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--VME213-->
         <td>110mA</td><!--VME290-->
         <td>128mA</td><!--VMET190-->
-        <td>20mA</td><!--T114-->
+        <td>20.4mA</td><!--T114-->
         <td>140mA</td><!--T-Deck-->
         <td>-</td><!--RAKRAK19007-->
       </tr>
@@ -64,7 +64,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--VME213-->
         <td>62mA</td><!--VME290-->
         <td>82.4mA</td><!--VMET190-->
-        <td>?</td><!--T114-->
+        <td>20.1mA</td><!--T114-->
         <td>96.6mA</td><!--T-Deck-->
         <td>6.9mA</td><!--RAKRAK19007-->
       </tr>
@@ -78,7 +78,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--VME213-->
         <td>110mA</td><!--VME290-->
         <td>114mA</td><!--VMET190-->
-        <td>9mA</td><!--T114-->
+        <td>9.3mA</td><!--T114-->
         <td>113mA</td><!--T-Deck-->
         <td>7mA</td><!--RAKRAK19007-->
       </tr>
@@ -92,7 +92,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--VME213-->
         <td>62mA</td><!--VME290-->
         <td>66.9mA</td><!--VMET190-->
-        <td>?</td><!--T114-->
+        <td>9.2</td><!--T114-->
         <td>70mA</td><!--T-Deck-->
         <td>6.9mA</td><!--RAKRAK19007-->
       </tr>
@@ -120,7 +120,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--VME213-->
         <td>16μA</td><!--VME290-->
         <td>163μA</td><!--VMET190-->
-        <td>?</td><!--T114-->
+        <td>1mA</td><!--T114-->
         <td>39.8mA</td><!--T-Deck-->
         <td>5μA</td><!--RAKRAK19007-->
       </tr>
