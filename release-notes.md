@@ -6,6 +6,7 @@ title: Meshtastic Firmware Release Notes
 # Meshtastic Firmware Release Notes
 
 This is where I will be adding my own understanding on what each release note does in a simple easy way to explain it.
+
 ## Meshtastic Firmware 2.5.6.ad8747d Alpha Pre-release
 
 ### New Hardware / Module / Features
