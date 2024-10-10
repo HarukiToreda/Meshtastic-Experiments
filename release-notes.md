@@ -5,8 +5,7 @@ title: Meshtastic Firmware Release Notes
 
 # Meshtastic Firmware Release Notes
 
-Welcome to the release notes for Meshtastic Firmware. Below you'll find information about new hardware, features, enhancements, and bug fixes for each release.
-
+This is where I will be adding my own understanding on what each release note does in a simple easy way to explain it.
 ## Meshtastic Firmware 2.5.6.ad8747d Alpha Pre-release
 
 ### New Hardware / Module / Features
@@ -65,6 +64,4 @@ Welcome to the release notes for Meshtastic Firmware. Below you'll find informat
 - **Fix storage of admin key when installing default config** by [@Mictronics](https://github.com/Mictronics) in [#4995](https://github.com/meshtastic/firmware/issues/4995)  
   Fix storage of admin key after reset issue.
 
-### Future Releases
 
-Stay tuned for upcoming features and enhancements in future releases. We’ll keep this section updated as new improvements and modules are added.
