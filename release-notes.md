@@ -11,93 +11,59 @@ Welcome to the release notes for Meshtastic Firmware. Below you'll find informat
 
 ### New Hardware / Module / Features
 
-<p>
-- **RAK4631 Ethernet Gateway with working JSON output to MQTT** by {% assign username = "beegee-tokyo" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4661" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Alternate variant support for Ethernet Gateway module RAK13800 for MQTT+JSON uplink for RAK4631 (not on webflasher).
-</p>
+- **RAK4631 Ethernet Gateway with working JSON output to MQTT** by [@beegee-tokyo](https://github.com/beegee-tokyo) in [#4661](https://github.com/meshtastic/firmware/issues/4661)  
+  Alternate variant support for Ethernet Gateway module RAK13800 for MQTT+JSON uplink for RAK4631 (not on webflasher).
 
-<p>
-- **Preliminary Othernet Dreamcatcher Support** by {% assign username = "caveman99" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4933" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Support for Othernet Dreamcatcher board.
-</p>
+- **Preliminary Othernet Dreamcatcher Support** by [@caveman99](https://github.com/caveman99) in [#4933](https://github.com/meshtastic/firmware/issues/4933)  
+  Support for Othernet Dreamcatcher board.
 
-<p>
-- **Toggle Bluetooth with Fn+b shortcut** by {% assign username = "HarukiToreda" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4977" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - New key combination to toggle Bluetooth on/off on Cardkb devices.
-</p>
+- **Toggle Bluetooth with Fn+b shortcut** by [@HarukiToreda](https://github.com/HarukiToreda) in [#4977](https://github.com/meshtastic/firmware/issues/4977)  
+  New key combination to toggle Bluetooth on/off on Cardkb devices.
 
-<p>
-- **Add health telemetry module** by {% assign username1 = "fifieldt" %}[@{{ username1 }}](https://github.com/{{ username1 }}) and {% assign username2 = "thebentern" %}[@{{ username2 }}](https://github.com/{{ username2 }}) in {% assign issue = "4927" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - New Health Telemetry module using the MLX90614 IR temperature and MAX30102 temperature/oxygen saturation/heart rate sensors.
-</p>
+- **Add health telemetry module** by [@fifieldt](https://github.com/fifieldt) and [@thebentern](https://github.com/thebentern) in [#4927](https://github.com/meshtastic/firmware/issues/4927)  
+  New Health Telemetry module using the MLX90614 IR temperature and MAX30102 temperature/oxygen saturation/heart rate sensors.
 
-<p>
-- **First version of a DeepSleep state for the RP2040** by {% assign username = "TheMalkavien" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4976" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Initial support for DeepSleep for RP2040 (Raspberry Pi) boards.
-</p>
+- **First version of a DeepSleep state for the RP2040** by [@TheMalkavien](https://github.com/TheMalkavien) in [#4976](https://github.com/meshtastic/firmware/issues/4976)  
+  Initial support for DeepSleep for RP2040 (Raspberry Pi) boards.
 
-<p>
-- **Add frequencies for the Philippines** by {% assign username = "fifieldt" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4951" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-</p>
+- **Add frequencies for the Philippines** by [@fifieldt](https://github.com/fifieldt) in [#4951](https://github.com/meshtastic/firmware/issues/4951)
 
 ### Enhancements
 
-<p>
-- **Which Module wants a UI Frame?** by {% assign username = "fifieldt" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4967" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Improvement to debug reporting.
-</p>
+- **Which Module wants a UI Frame?** by [@fifieldt](https://github.com/fifieldt) in [#4967](https://github.com/meshtastic/firmware/issues/4967)  
+  Improvement to debug reporting.
 
-<p>
-- **UserPrefs - Preconfigure up to 3 channels, GPS Mode** by {% assign username = "medentem" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4930" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Improvement to firmware building.
-</p>
+- **UserPrefs - Preconfigure up to 3 channels, GPS Mode** by [@medentem](https://github.com/medentem) in [#4930](https://github.com/meshtastic/firmware/issues/4930)  
+  Improvement to firmware building.
 
-<p>
-- **Start of generating JSON manifest of macros in userPrefs.h** by {% assign username = "thebentern" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4946" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Improvement to firmware building.
-</p>
+- **Start of generating JSON manifest of macros in userPrefs.h** by [@thebentern](https://github.com/thebentern) in [#4946](https://github.com/meshtastic/firmware/issues/4946)  
+  Improvement to firmware building.
 
-<p>
-- **Coalesce duplicated method GetTimeSinceMeshPacket** by {% assign username = "fifieldt" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4968" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Cleanup for debug reporting.
-</p>
+- **Coalesce duplicated method GetTimeSinceMeshPacket** by [@fifieldt](https://github.com/fifieldt) in [#4968](https://github.com/meshtastic/firmware/issues/4968)  
+  Cleanup for debug reporting.
 
-<p>
-- **Upgrade nanopb** by {% assign username = "thebentern" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4973" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Improvement for Protobuf (Protocol Buffers, a data format used to serialize structured data).
-</p>
+- **Upgrade nanopb** by [@thebentern](https://github.com/thebentern) in [#4973](https://github.com/meshtastic/firmware/issues/4973)  
+  Improvement for Protobuf (Protocol Buffers, a data format used to serialize structured data).
 
 ### Bug Fixes and Maintenance
 
-<p>
-- **Remove unused Jlink monitoring files** by {% assign username = "fifieldt" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4953" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Maintenance.
-</p>
+- **Remove unused Jlink monitoring files** by [@fifieldt](https://github.com/fifieldt) in [#4953](https://github.com/meshtastic/firmware/issues/4953)  
+  Maintenance.
 
-<p>
-- **Retire PPR Boards** by {% assign username = "fifieldt" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4956" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - PPR and PPR1 board variants removed.
-</p>
+- **Retire PPR Boards** by [@fifieldt](https://github.com/fifieldt) in [#4956](https://github.com/meshtastic/firmware/issues/4956)  
+  PPR and PPR1 board variants removed.
 
-<p>
-- **Retire LoRa-relay boards** by {% assign username = "fifieldt" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4957" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - LoRa-relay board variants removed.
-</p>
+- **Retire LoRa-relay boards** by [@fifieldt](https://github.com/fifieldt) in [#4957](https://github.com/meshtastic/firmware/issues/4957)  
+  LoRa-relay board variants removed.
 
-<p>
-- **Remove support for pca10056-rc-clock** by {% assign username = "fifieldt" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4955" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - pca10056-rc-clock board variants removed.
-</p>
+- **Remove support for pca10056-rc-clock** by [@fifieldt](https://github.com/fifieldt) in [#4955](https://github.com/meshtastic/firmware/issues/4955)  
+  pca10056-rc-clock board variants removed.
 
-<p>
-- **Remove unused headers** by {% assign username = "fifieldt" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4954" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Cleanup.
-</p>
+- **Remove unused headers** by [@fifieldt](https://github.com/fifieldt) in [#4954](https://github.com/meshtastic/firmware/issues/4954)  
+  Cleanup.
 
-<p>
-- **Fix storage of admin key when installing default config** by {% assign username = "Mictronics" %}[@{{ username }}](https://github.com/{{ username }}) in {% assign issue = "4995" %}[#{{ issue }}](https://github.com/meshtastic/firmware/issues/{{ issue }})
-  - Fix storage of admin key after reset issue.
-</p>
+- **Fix storage of admin key when installing default config** by [@Mictronics](https://github.com/Mictronics) in [#4995](https://github.com/meshtastic/firmware/issues/4995)  
+  Fix storage of admin key after reset issue.
 
 ### Future Releases
 
