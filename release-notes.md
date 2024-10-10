@@ -9,8 +9,7 @@ Welcome to the release notes for Meshtastic Firmware. Below you'll find informat
 
 ## Meshtastic Firmware 2.5.6.ad8747d Alpha Pre-release
 
-<details>
-<summary><strong>New Hardware / Module / Features</strong></summary>
+### New Hardware / Module / Features
 
 - **RAK4631 Ethernet Gateway with working JSON output to MQTT** by @beegee-tokyo in [#4661](https://github.com/meshtastic/firmware/issues/4661)
   - Alternate variant support for Ethernet Gateway module RAK13800 for MQTT+JSON uplink for RAK4631 (not on webflasher).
@@ -30,10 +29,7 @@ Welcome to the release notes for Meshtastic Firmware. Below you'll find informat
 - **Add frequencies for the Philippines** by @fifieldt in [#4951](https://github.com/meshtastic/firmware/issues/4951)
   - New frequency option including the Philippines.
 
-</details>
-
-<details>
-<summary><strong>Enhancements</strong></summary>
+### Enhancements
 
 - **Which Module wants a UI Frame?** by @fifieldt in [#4967](https://github.com/meshtastic/firmware/issues/4967)
   - Improvement to debug reporting.
@@ -50,10 +46,7 @@ Welcome to the release notes for Meshtastic Firmware. Below you'll find informat
 - **Upgrade nanopb** by @thebentern in [#4973](https://github.com/meshtastic/firmware/issues/4973)
   - Improvement for Protobuf (Protocol Buffers, a data format used to serialize structured data).
 
-</details>
-
-<details>
-<summary><strong>Bug Fixes and Maintenance</strong></summary>
+### Bug Fixes and Maintenance
 
 - **Remove unused Jlink monitoring files** by @fifieldt in [#4953](https://github.com/meshtastic/firmware/issues/4953)
   - Maintenance.
@@ -73,11 +66,6 @@ Welcome to the release notes for Meshtastic Firmware. Below you'll find informat
 - **Fix storage of admin key when installing default config** by @Mictronics in [#4995](https://github.com/meshtastic/firmware/issues/4995)
   - Fix storage of admin key after reset issue.
 
-</details>
-
-<details>
-<summary><strong>Future Releases</strong></summary>
+### Future Releases
 
 Stay tuned for upcoming features and enhancements in future releases. We’ll keep this section updated as new improvements and modules are added.
-
-</details>
