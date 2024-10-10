@@ -10,6 +10,7 @@
       display: flex;
       flex-direction: column;
       font-family: Arial, sans-serif;
+      font-size: 14px; /* Reduced the overall font size */
       background-color: #333333; /* Charcoal background */
       color: #ffffff; /* White text */
       min-height: 100vh;
@@ -64,13 +65,14 @@
     }
     .sidebar h1 {
       color: #00FFFF; /* Electric blue text */
-      font-size: 1.5em; /* Adjust font size to fit within the sidebar */
+      font-size: 1.2em; /* Reduced font size for sidebar headings */
       margin: 0;
       text-align: center;
     }
     .sidebar p {
       color: #00FFFF; /* Electric blue text */
       text-align: center;
+      font-size: 0.9em; /* Reduced font size for sidebar paragraphs */
     }
     .content {
       margin-left: 240px; /* Ensure content is not hidden behind the fixed sidebar and button */
@@ -98,7 +100,7 @@
       padding: 5px; /* Reduced padding */
       border-radius: 5px;
       text-align: center;
-      font-size: 14px; /* Smaller font size */
+      font-size: 12px; /* Smaller font size for sidebar navigation links */
       width: 100%; /* Ensure buttons fit within the sidebar */
       box-sizing: border-box; /* Include padding in the element's total width and height */
     }
@@ -124,6 +126,7 @@
       padding: 8px;
       text-align: left;
       color: #ffffff; /* White text */
+      font-size: 12px; /* Reduced font size for table content */
     }
     th {
       background-color: #1a1a1a; /* Darker charcoal for table headers */
@@ -141,6 +144,7 @@
       font-weight: bold;
       cursor: pointer;
       color: #00FFFF; /* Electric blue for summary */
+      font-size: 14px; /* Reduced font size for summary text */
     }
     details[open] summary {
       color: #ffffff; /* White text when open */
@@ -152,6 +156,7 @@
       color: #00FFFF; /* Electric blue text */
       width: 100%;
       flex-shrink: 0;
+      font-size: 12px; /* Reduced font size for footer */
     }
     a {
       color: #FFD700; /* Bright yellow links */
@@ -194,10 +199,10 @@
       sidebar.classList.toggle('hidden');
       if (sidebar.classList.contains('hidden')) {
         toggleButton.style.left = '0'; // Move button to edge of the page
-		content.style.marginLeft = '15px';
+        content.style.marginLeft = '15px';
       } else {
         toggleButton.style.left = '220px'; // Reset button position when sidebar is shown
-		content.style.marginLeft = '240px';
+        content.style.marginLeft = '240px';
       }
     }
   </script>
