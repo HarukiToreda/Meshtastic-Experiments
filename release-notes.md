@@ -5,6 +5,8 @@ title: Meshtastic Firmware Release Notes
 
 # Meshtastic Firmware Release Notes
 
+<small>
+
 Welcome to the release notes for Meshtastic Firmware. Below you'll find information about new hardware, features, enhancements, and bug fixes for each release.
 
 ## Meshtastic Firmware 2.5.6.ad8747d Alpha Pre-release
@@ -68,3 +70,5 @@ Welcome to the release notes for Meshtastic Firmware. Below you'll find informat
 ### Future Releases
 
 Stay tuned for upcoming features and enhancements in future releases. We’ll keep this section updated as new improvements and modules are added.
+
+</small>
