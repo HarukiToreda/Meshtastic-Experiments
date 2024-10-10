@@ -1,52 +1,77 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Meshtastic Firmware Release Notes</title>
-</head>
-<body>
+---
+layout: default
+title: Meshtastic Firmware Release Notes
+---
 
-<h1>Meshtastic Firmware Release Notes</h1>
-<div id="release-notes">
-    Loading release notes...
-</div>
+# Meshtastic Firmware Release Notes
 
-<script>
-    const repoOwner = 'meshtastic';
-    const repoName = 'firmware';
-    const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/releases`;
+Welcome to the release notes for Meshtastic Firmware. Below you'll find information about new hardware, features, enhancements, and bug fixes for each release.
 
-    // Custom notes for each release
-    const releaseNotesMap = {
-        '2.5.6.ad8747d Alpha Pre-release': 'This release includes significant improvements to debug reporting and introduces new telemetry modules.',
-        '2.5.5': 'Minor bug fixes and maintenance updates, including the removal of deprecated board variants.',
-        '2.5.4': 'Improved firmware building process and added frequency options for new regions.',
-        // Add more entries here for future releases as needed
-    };
+## Meshtastic Firmware 2.5.6.ad8747d Alpha Pre-release
 
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            const releaseNotes = document.getElementById('release-notes');
-            releaseNotes.innerHTML = '';
+### Table of Contents
+- [New Hardware / Module / Features](#new-hardware--module--features)
+- [Enhancements](#enhancements)
+- [Bug Fixes and Maintenance](#bug-fixes-and-maintenance)
+- [Future Releases](#future-releases)
 
-            data.forEach(release => {
-                const customNote = releaseNotesMap[release.tag_name] || 'No additional notes for this release.';
-                const releaseDiv = document.createElement('div');
-                releaseDiv.innerHTML = `
-                    <h2>${release.name} (${release.tag_name})</h2>
-                    <p><strong>Published at:</strong> ${new Date(release.published_at).toLocaleDateString()}</p>
-                    <p>${release.body.replace(/\n/g, '<br>')}</p>
-                    <p><strong>Custom Notes:</strong> ${customNote}</p>
-                    <hr/>
-                `;
-                releaseNotes.appendChild(releaseDiv);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching release notes:', error);
-            document.getElementById('release-notes').innerHTML = 'Error loading release notes.';
-        });
-</script>
+### New Hardware / Module / Features
 
-</body>
-</html>
+- **RAK4631 Ethernet Gateway with working JSON output to MQTT** by @beegee-tokyo in #4661
+  - Alternate variant support for Ethernet Gateway module RAK13800 for MQTT+JSON uplink for RAK4631 (not on webflasher).
+  
+- **Preliminary Othernet Dreamcatcher Support** by @caveman99 in #4933
+  - Support for Othernet Dreamcatcher board.
+  
+- **Toggle Bluetooth with Fn+b shortcut** by @HarukiToreda in #4977
+  - New key combination to toggle Bluetooth on/off on Cardkb devices.
+
+- **Add health telemetry module** by @fifieldt @thebentern in #4927
+  - New Health Telemetry module using the MLX90614 IR temperature and MAX30102 temperature/oxygen saturation/heart rate sensors.
+
+- **First version of a DeepSleep state for the RP2040** by @TheMalkavien in #4976
+  - Initial support for DeepSleep for RP2040 (Raspberry Pi) boards.
+
+- **Add frequencies for the Philippines** by @fifieldt in #4951
+  - New frequency option including the Philippines.
+
+### Enhancements
+
+- **Which Module wants a UI Frame?** by @fifieldt in #4967
+  - Improvement to debug reporting.
+  
+- **UserPrefs - Preconfigure up to 3 channels, GPS Mode** by @medentem in #4930
+  - Improvement to firmware building.
+
+- **Start of generating JSON manifest of macros in userPrefs.h** by @thebentern in #4946
+  - Improvement to firmware building.
+
+- **Coalesce duplicated method GetTimeSinceMeshPacket** by @fifieldt in #4968
+  - Cleanup for debug reporting.
+
+- **Upgrade nanopb** by @thebentern in #4973
+  - Improvement for Protobuf (Protocol Buffers, a data format used to serialize structured data).
+
+### Bug Fixes and Maintenance
+
+- **Remove unused Jlink monitoring files** by @fifieldt in #4953
+  - Maintenance.
+
+- **Retire PPR Boards** by @fifieldt in #4956
+  - PPR and PPR1 board variants removed.
+
+- **Retire LoRa-relay boards** by @fifieldt in #4957
+  - LoRa-relay board variants removed.
+
+- **Remove support for pca10056-rc-clock** by @fifieldt in #4955
+  - pca10056-rc-clock board variants removed.
+
+- **Remove unused headers** by @fifieldt in #4954
+  - Cleanup.
+
+- **Fix storage of admin key when installing default config** by @Mictronics in #4995
+  - Fix storage of admin key after reset issue.
+
+### Future Releases
+
+Stay tuned for upcoming features and enhancements in future releases. We’ll keep this section updated as new improvements and modules are added.
