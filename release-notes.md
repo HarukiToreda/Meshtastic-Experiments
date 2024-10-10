@@ -9,12 +9,6 @@ Welcome to the release notes for Meshtastic Firmware. Below you'll find informat
 
 ## Meshtastic Firmware 2.5.6.ad8747d Alpha Pre-release
 
-### Table of Contents
-- [New Hardware / Module / Features](#new-hardware--module--features)
-- [Enhancements](#enhancements)
-- [Bug Fixes and Maintenance](#bug-fixes-and-maintenance)
-- [Future Releases](#future-releases)
-
 ### New Hardware / Module / Features
 
 - **RAK4631 Ethernet Gateway with working JSON output to MQTT** by @beegee-tokyo in #4661
