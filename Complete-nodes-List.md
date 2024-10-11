@@ -77,7 +77,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>nRF</td>
       <td>3200 mAh</td>
       <td style="background-color: yellow; color: black;">Stock</td>
-      <td>PLA</td>
+      <td style="background-color: yellow; color: black;">PLA</td>
       <td>Yes</td>
       <td>GPS/No switch</td>
       <td>None</td>
@@ -92,7 +92,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>ESP32</td>
       <td>3000mAh</td>
       <td>Gizont</td>
-      <td>PLA+</td>
+      <td style="background-color: yellow; color: black;">PLA+</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -107,7 +107,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>nRF</td>
       <td>1800mAh</td>
       <td style="background-color: yellow; color: black;">Stock</td>
-      <td>PLA CF</td>
+      <td style="background-color: yellow; color: black;">PLA CF</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -182,7 +182,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>ESP32</td>
       <td>3000mAh</td>
       <td style="background-color: yellow; color: black;">Stock</td>
-      <td>PLA+</td>
+      <td style="background-color: yellow; color: black;">PLA+</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -251,7 +251,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>ESP32</td>
       <td>8000mAh</td>
       <td style="background-color: yellow; color: black;">Stock</td>
-      <td>PLA</td>
+      <td style="background-color: yellow; color: black;">PLA</td>
       <td>Yes</td>
       <td>GPS/with Switch</td>
       <td>None</td>
@@ -266,7 +266,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>ESP32</td>
       <td>6000mAh</td>
       <td>3dBi</td>
-      <td>PLA+</td>
+      <td style="background-color: yellow; color: black;">PLA+</td>
       <td>Yes</td>
       <td>GPS/No switch</td>
       <td>None</td>
@@ -311,7 +311,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>ESP32</td>
       <td>4000mAh</td>
       <td style="background-color: yellow; color: black;">Stock</td>
-      <td>PLA+</td>
+      <td style="background-color: yellow; color: black;">PLA+</td>
       <td>Yes</td>
       <td>GPS/with mosfet</td>
       <td>BME680</td>
