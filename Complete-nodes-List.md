@@ -31,12 +31,12 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Yes</td>
       <td>nRF</td>
       <td style="background-color: green;">2000mAh</td>
-      <td>Gizont</td>
-      <td>Injection Mold</td>
-      <td>Yes</td>
+      <td style="background-color: green;">Gizont</td>
+      <td style="background-color: green;">Injection Mold</td>
+      <td style="background-color: green;">Yes</td>
       <td>GPS/No switch</td>
       <td>None</td>
-      <td>Yes</td>
+      <td style="background-color: green;">Yes</td>
       <td>64Hrs</td>
       <td>159.99</td>
       <td><a href="https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52">Link</a></td>
