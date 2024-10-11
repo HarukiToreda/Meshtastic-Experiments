@@ -30,7 +30,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td style="white-space: nowrap;">Meshtastic Swarm Rugged RAK NRF52 Handset</td>
       <td>Yes</td>
       <td>nRF</td>
-      <td>2000mAh</td>
+      <td style="background-color: green;">2000mAh</td>
       <td>Gizont</td>
       <td>Injection Mold</td>
       <td>Yes</td>
