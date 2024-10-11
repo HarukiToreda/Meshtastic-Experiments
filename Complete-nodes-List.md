@@ -27,6 +27,8 @@ Red = Avoid
 
 - **GPS**:	If GPS is included, it is good to see if it includes a mosfet/transistor or switch to shut off power to gps as it comsumes power and will cause the node to run out of battery faster.
 
+- **Runtime**: Runtime approximation is calculated using known Battery size, processor, addional components that impact battery consumption and publicly known settings known about the device.
+
 <table>
   <thead>
     <tr>
@@ -244,6 +246,8 @@ Red = Avoid
 - **Case Material**:	PLA is okay but warps during hot weather enviroments, getting PETG/ASA or better is adviceble													
 
 - **GPS**:	If GPS is included, it is good to see if it includes a mosfet/transistor or switch to shut off power to gps as it comsumes power and will cause the node to run out of battery faster.					
+
+- **Runtime**: Runtime approximation is calculated using known Battery size, processor, addional components that impact battery consumption and publicly known settings known about the device.
 
 <table>
   <thead>
