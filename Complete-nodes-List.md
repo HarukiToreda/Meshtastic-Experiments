@@ -64,8 +64,8 @@ Below is the comprehensive catalogue of nodes and related details.
       <td style="background-color: yellow; color: black;">Stock</td>
       <td style="background-color: green;">ABS / PA6-CF</td>
       <td>None</td>
-      <td style="background-color: green;">BME680</td>
       <td>None</td>
+      <td style="background-color: green;">BME680</td>
       <td>No</td>
       <td>307Hrs</td>
       <td>$125.00</td>
@@ -200,7 +200,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td style="background-color: green;">Injection Mold</td>
       <td>None</td>
       <td style="background-color: yellow; color: black;">GPS/No switch</td>
-      <td>None</td>
+      <td style="background-color: green;">Temperature</td>
       <td style="background-color: green;">Yes</td>
       <td>48Hrs</td>
       <td>$39.90</td>
