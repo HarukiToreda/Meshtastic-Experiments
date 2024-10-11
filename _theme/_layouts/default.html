@@ -112,6 +112,29 @@
       background-color: #ffffff; /* White background for active page */
       color: #FFD700; /* Bright yellow text for active page */
     }
+    details {
+      margin-bottom: 10px;
+    }
+    details summary {
+      cursor: pointer;
+      padding: 5px;
+      background-color: #FFD700; /* Bright yellow background */
+      border-radius: 5px;
+      color: #000000; /* Black text */
+      text-align: center;
+      font-size: 12px; /* Smaller font size for summary text */
+    }
+    details[open] summary {
+      background-color: #ffffff; /* White background when open */
+      color: #FFD700; /* Bright yellow text when open */
+    }
+    details ul {
+      padding: 0;
+      margin: 5px 0 0 10px;
+    }
+    details ul li {
+      list-style: none;
+    }
     .bmc-button {
       width: 100%; /* Ensure the button fits within the sidebar */
       box-sizing: border-box; /* Include padding in the element's total width and height */
@@ -136,18 +159,6 @@
     }
     tbody tr:nth-child(even) {
       background-color: #1a1a1a; /* Darker charcoal for even rows */
-    }
-    details {
-      margin-bottom: 20px;
-    }
-    details summary {
-      font-weight: bold;
-      cursor: pointer;
-      color: #00FFFF; /* Electric blue for summary */
-      font-size: 14px; /* Reduced font size for summary text */
-    }
-    details[open] summary {
-      color: #ffffff; /* White text when open */
     }
     footer {
       text-align: center;
@@ -176,7 +187,20 @@
       <nav>
         <ul>
           {% for item in site.navbar %}
-            <li><a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a></li>
+            <li>
+              {% if item.sublinks %}
+                <details>
+                  <summary>{{ item.title }}</summary>
+                  <ul>
+                    {% for sublink in item.sublinks %}
+                      <li><a href="{{ sublink.url | relative_url }}" class="{% if page.url == sublink.url %}active{% endif %}">{{ sublink.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </details>
+              {% else %}
+                <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
+              {% endif %}
+            </li>
           {% endfor %}
         </ul>
       </nav>
