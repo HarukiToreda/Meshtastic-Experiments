@@ -79,7 +79,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td style="background-color: yellow; color: black;">Stock</td>
       <td style="background-color: yellow; color: black;">PLA</td>
       <td>Yes</td>
-      <td>GPS/No switch</td>
+      <td style="background-color: yellow; color: black;">GPS/No switch</td>
       <td>None</td>
       <td>No</td>
       <td>96Hrs</td>
@@ -169,7 +169,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Gizont</td>
       <td>PETG</td>
       <td>None</td>
-      <td>GPS/No switch</td>
+      <td style="background-color: yellow; color: black;">GPS/No switch</td>
       <td>None</td>
       <td>No</td>
       <td>19Hrs</td>
@@ -199,7 +199,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td style="background-color: yellow; color: black;">Stock</td>
       <td>Injection Mold</td>
       <td>None</td>
-      <td>GPS/No switch</td>
+      <td style="background-color: yellow; color: black;">GPS/No switch</td>
       <td>None</td>
       <td>Yes</td>
       <td>48Hrs</td>
@@ -221,7 +221,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <th>Antenna</th>
       <th>Case Material</th>
       <th>Power Switch</th>
-      <th>GPS</th>
+      <td style="background-color: yellow; color: black;">GPS</th>
       <th>Sensor</th>
       <th>Buzzer</th>
       <th>Approximate Runtime</th>
