@@ -41,6 +41,8 @@ Red = Avoid
       <th>Power Switch</th>
       <th>GPS</th>
       <th>Sensors</th>
+      <th>Buzzer</th>
+      <th>Canned Module</th>
       <th>Weatherproof</th>
       <th>Approximate Runtime</th>
       <th>Price</th>
@@ -58,6 +60,8 @@ Red = Avoid
       <td style="background-color: green;">Yes</td><!--Power Switch-->
       <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
       <td>None</td><!--GPS-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td style="background-color: green;">Yes</td><!--Weatherproof-->
       <td>64Hrs</td><!--Approximate Runtime-->
       <td>$159.99</td><!--Price-->
@@ -73,6 +77,8 @@ Red = Avoid
       <td style="background-color: green;">Yes</td>
       <td style="background-color: green;">GPS/with Switch</td>
       <td>None</td>
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td>
       <td>154Hrs</td>
       <td>$123.20</td>
@@ -88,6 +94,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td style="background-color: green;">BME680</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>307Hrs</td><!--Price-->
       <td>$125.00</td><!--Price-->
@@ -103,6 +111,8 @@ Red = Avoid
       <td style="background-color: green;">Yes</td><!--Power Switch-->
       <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
       <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>96Hrs</td><!--Weatherproof-->
       <td>$89.97</td><!--Price-->
@@ -118,6 +128,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>30Hrs</td><!--Approximate Runtime-->
       <td>$79.99</td><!--Price-->
@@ -133,6 +145,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>300Hrs</td><!--Approximate Runtime-->
       <td>$79.00</td><!--Approximate Runtime-->
@@ -148,6 +162,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>30Hrs</td><!--Approximate Runtime-->
       <td>$72.51</td><!--Price-->
@@ -163,6 +179,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>34Hrs</td><!--Approximate Runtime-->
       <td>$70.00</td><!--Price-->
@@ -178,6 +196,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>30Hrs</td><!--Approximate Runtime-->
       <td>$67.49</td><!--Price-->
@@ -193,6 +213,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
       <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>19Hrs</td><!--Approximate Runtime-->
       <td>$60.51</td><!--Price-->
@@ -208,6 +230,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>95Hrs</td><!--Approximate Runtime-->
       <td>$55.00</td><!--Price-->
@@ -223,6 +247,8 @@ Red = Avoid
       <td>None</td><!--Power Switch-->
       <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
       <td style="background-color: green;">Temperature</td><!--Sensors-->
+      <td style="background-color: green;">Yes</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
       <td style="background-color: green;">Yes</td><!--Weatherproof-->
       <td>48Hrs</td><!--Approximate Runtime-->
       <td>$39.90</td><!--Price-->
