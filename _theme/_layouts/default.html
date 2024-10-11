@@ -112,11 +112,12 @@
       background-color: #ffffff; /* White background for active page */
       color: #FFD700; /* Bright yellow text for active page */
     }
-    details {
-      display: inline-block; /* Make the details element inline-block to limit its width */
+    /* Targeting collapse/expand elements on the main page specifically */
+    .content details {
+      display: inline-block; /* Limit the width of the details element */
       margin-bottom: 10px;
     }
-    details summary {
+    .content details summary {
       cursor: pointer;
       padding: 5px;
       background-color: #FFD700; /* Bright yellow background */
@@ -125,11 +126,11 @@
       text-align: left; /* Align text to the left */
       font-size: 12px; /* Smaller font size for summary text */
       width: auto; /* Ensure width fits content */
-      display: inline-block; /* Make the summary element inline-block to limit its width */
+      display: inline-block; /* Limit the width of the summary element */
     }
-    details[open] summary {
-      background-color: #ffffff; /* White background when open */
-      color: #000000; /* Black text when open */
+    .content details[open] summary {
+      background-color: #ffffff; /* White background when expanded */
+      color: #000000; /* Black text when expanded */
     }
     details ul {
       padding: 0;
