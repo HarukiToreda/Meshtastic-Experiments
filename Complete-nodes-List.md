@@ -18,7 +18,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <th>Case Material</th>
       <th>Power Switch</th>
       <th>GPS</th>
-      <th>Canned Interface</th>
+      <th>Sensors</th>
       <th>Weatherproof</th>
       <th>Approximate Runtime</th>
       <th>Price</th>
@@ -57,14 +57,14 @@ Below is the comprehensive catalogue of nodes and related details.
       <td><a href="https://www.etsy.com/listing/1736071130/meshcard-compact-mobile-meshtastic-node">Link</a></td>
     </tr>
     <tr>
-      <td style="white-space: nowrap;">Meshtastic RAK WisBlock</td>
+      <td style="white-space: nowrap;">Complete Meshtastic RAK WisBlock Device</td>
       <td>Yes</td>
       <td>nRF</td>
       <td style="background-color: green;">2000mAh</td>
       <td style="background-color: yellow; color: black;">Stock</td>
       <td style="background-color: green;">ABS / PA6-CF</td>
       <td>None</td>
-      <td>None</td>
+      <td style="background-color: green;">BME680</td>
       <td>None</td>
       <td>No</td>
       <td>307Hrs</td>
