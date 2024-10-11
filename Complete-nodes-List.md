@@ -7,29 +7,204 @@ title: Complete Nodes Catalogue
 
 Below is the comprehensive catalogue of nodes and related details.
 
-| Node Model | Fits in Pocket | MCU | Battery | Antenna | Case Material | Power Switch | GPS | Canned Interface | Weatherproof | Approximate Runtime | Price | Link |
-|------------|----------------|-----|---------|---------|---------------|--------------|-----|------------------|--------------|--------------------|-------|------|
-| Meshtastic Swarm Rugged RAK NRF52 Handset  | Yes | nRF | 2000mAh | Gizont | Injection Mold | Yes | GPS/No switch | None | Yes | 64Hrs | 159.99 | [Link](https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52) |
-| MeshCard - Compact Mobile Meshtastic Node. | Yes | nRF | 1100mAh | Gizont | Aluminum | Yes | GPS/with Switch | None | No | 154Hrs | 123.2 | [Link](https://www.etsy.com/listing/1736071130/meshcard-compact-mobile-meshtastic-node) |
-| Meshtastic RAK WisBlock  | Yes | nRF | 2000mAh | Stock | ABS / PA6-CF | None | None | None | No | 307Hrs | 105 | [Link](https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device) |
-| WisMesh Pocket | Yes | nRF | 3200 mAh | Stock | PLA | Yes | GPS/No switch | None | No | 96Hrs | 89.97 | [Link](https://store.rokland.com/products/wismesh-pocket) |
-| Alley Chat Heltec V3 Slim Pro 3000Ah | Yes | ESP32 | 3000mAh | Gizont | PLA+ | None | None | None | No | 30Hrs | 79.99 | [Link](https://www.etsy.com/listing/1733573998/heltec-v3-complete-running-meshtastic) |
-| R1 - Complete Meshtastic Device  | Yes | nRF | 1800mAh | Stock | PLA CF | None | None | None | No | 300Hrs | 79 | [Link](https://www.etsy.com/listing/1801743857/r1-complete-meshtastic-device-powered-by) |
-| Complete Heltec V3 Device Running Meshtastic with 18650 Battery | Yes | ESP32 | 3000mAh | Gizont | PETG | None | None | None | No | 30Hrs | 72.51 | [Link](https://www.etsy.com/listing/1726331968/complete-heltec-v3-device-running) |
-| Heltec V3 Device | 18650 Battery | Yes | ESP32 | 3350mAh | Stock | ABS / PA6-CF | None | None | None | No | 34Hrs | 70 | [Link](https://www.etsy.com/listing/1726354799/complete-meshtastic-heltec-v3-device) |
-| MeshTalk Heltec V3 Complete  | Yes | ESP32 | 3000mAh | 5dBi  | PETG | None | None | None | No | 30Hrs | 67.49 | [Link](https://www.etsy.com/listing/1756582234/meshtalk-heltec-v3-complete-device) |
-| Heltec Wireless Tracker with 18650 Battery | Yes | ESP32 | 3000mAh | Gizont | PETG | None | GPS/No switch | None | No | 19Hrs | 60.51 | [Link](https://www.etsy.com/listing/1757243131/complete-heltec-wireless-tracker-with) |
-| E-Ink Display Node 3000mAh | Yes | ESP32 | 3000mAh | Stock | PLA+ | None | None | None | No | 95Hrs | 55 | [Link](https://www.tindie.com/products/harukitoreda/e-ink-display-meshtastic-node-3000mah-complete/) |
-| SenseCAP Card Tracker T1000-E | Yes | nRF | 700mAh | Stock | Injection Mold | None | GPS/No switch | None | Yes | 48Hrs | 39.9 | [Link](https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html) |
-
-### Standalone Nodes
-
-| Standalone Node | Keyboard Handheld | MCU | Battery | Antenna | Case Material | Power Switch | GPS | Sensor | Buzzer | Approximate Runtime | Price | Link |
-|-----------------|-------------------|-----|---------|---------|---------------|--------------|-----|--------|--------|--------------------|-------|------|
-| Meshenger Standalone Device for Meshtastic | Cardkb | nRF | 4000mAh | Gizont | ASA | Yes | GPS/No switch | None | Yes | 312 Hrs | 250 | [Link](https://www.etsy.com/listing/1390142667/meshenger-standalone-device-for) |
-| T-Deck Complete with 8000 mAh Battery and GPS Installed for Meshtastic | Blackberry | ESP32 | 8000mAh | Stock | PLA | Yes | GPS/with Switch | None | Yes | 76Hrs | 205 | [Link](https://www.etsy.com/listing/1740148840/t-deck-complete-with-8000-mah-battery) |
-| Meshtastic - Lilygo T-Deck 433MHz with GPS Case Battery | Blackberry | ESP32 | 6000mAh | 3dBi  | PLA+ | Yes | GPS/No switch | None | Yes | 14Hrs | 216.82 | [Link](https://www.etsy.com/listing/1768715019/meshtastic-lilygo-t-deck-with-gps-case) |
-| Limited Run Carbon Fiber Reinforced Lilygo T Deck Complete W/GPS, Speaker and 8,000mah Battery | Blackberry | ESP32 | 8000mAh | 3dBi  | PETG | Yes | GPS/No switch | None | Yes | 19Hrs | 185.4 | [Link](https://www.etsy.com/listing/1801509135/limited-run-carbon-fiber-rienforced) |
-| Spec5 Ranger from Spec5 Meshtastic LoRa Radio Keyboard and Touch-Screen Inputs with a Notification Ringer | Blackberry | ESP32 | 3300mah | ? | PETG | Yes | GPS/No switch | None | Yes | 8Hrs | 179.99 | [Link](https://www.etsy.com/listing/1727452694/spec5-ranger-from-spec5-meshtastic-lora) |
-| HelTXT - Standalone Meshtastic Communicator | Cardkb | ESP32 | 4000mAh | Stock | PLA+ | Yes | GPS/with mosfet | BME680 | Yes | 168Hrs | 115 | [Link](https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/) |
-
+<table>
+  <thead>
+    <tr>
+      <th style="white-space: nowrap;">Node Model</th>
+      <th>Fits in Pocket</th>
+      <th>MCU</th>
+      <th>Battery</th>
+      <th>Antenna</th>
+      <th>Case Material</th>
+      <th>Power Switch</th>
+      <th>GPS</th>
+      <th>Canned Interface</th>
+      <th>Weatherproof</th>
+      <th>Approximate Runtime</th>
+      <th>Price</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="white-space: nowrap;">Meshtastic Swarm Rugged RAK NRF52 Handset</td>
+      <td>Yes</td>
+      <td>nRF</td>
+      <td>2000mAh</td>
+      <td>Gizont</td>
+      <td>Injection Mold</td>
+      <td>Yes</td>
+      <td>GPS/No switch</td>
+      <td>None</td>
+      <td>Yes</td>
+      <td>64Hrs</td>
+      <td>159.99</td>
+      <td><a href="https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">MeshCard - Compact Mobile Meshtastic Node</td>
+      <td>Yes</td>
+      <td>nRF</td>
+      <td>1100mAh</td>
+      <td>Gizont</td>
+      <td>Aluminum</td>
+      <td>Yes</td>
+      <td>GPS/with Switch</td>
+      <td>None</td>
+      <td>No</td>
+      <td>154Hrs</td>
+      <td>123.2</td>
+      <td><a href="https://www.etsy.com/listing/1736071130/meshcard-compact-mobile-meshtastic-node">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Meshtastic RAK WisBlock</td>
+      <td>Yes</td>
+      <td>nRF</td>
+      <td>2000mAh</td>
+      <td>Stock</td>
+      <td>ABS / PA6-CF</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>No</td>
+      <td>307Hrs</td>
+      <td>105</td>
+      <td><a href="https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">WisMesh Pocket</td>
+      <td>Yes</td>
+      <td>nRF</td>
+      <td>3200 mAh</td>
+      <td>Stock</td>
+      <td>PLA</td>
+      <td>Yes</td>
+      <td>GPS/No switch</td>
+      <td>None</td>
+      <td>No</td>
+      <td>96Hrs</td>
+      <td>89.97</td>
+      <td><a href="https://store.rokland.com/products/wismesh-pocket">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Alley Chat Heltec V3 Slim Pro 3000Ah</td>
+      <td>Yes</td>
+      <td>ESP32</td>
+      <td>3000mAh</td>
+      <td>Gizont</td>
+      <td>PLA+</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>No</td>
+      <td>30Hrs</td>
+      <td>79.99</td>
+      <td><a href="https://www.etsy.com/listing/1733573998/heltec-v3-complete-running-meshtastic">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">R1 - Complete Meshtastic Device</td>
+      <td>Yes</td>
+      <td>nRF</td>
+      <td>1800mAh</td>
+      <td>Stock</td>
+      <td>PLA CF</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>No</td>
+      <td>300Hrs</td>
+      <td>79</td>
+      <td><a href="https://www.etsy.com/listing/1801743857/r1-complete-meshtastic-device-powered-by">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Complete Heltec V3 Device Running Meshtastic with 18650 Battery</td>
+      <td>Yes</td>
+      <td>ESP32</td>
+      <td>3000mAh</td>
+      <td>Gizont</td>
+      <td>PETG</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>No</td>
+      <td>30Hrs</td>
+      <td>72.51</td>
+      <td><a href="https://www.etsy.com/listing/1726331968/complete-heltec-v3-device-running">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Heltec V3 Device | 18650 Battery</td>
+      <td>Yes</td>
+      <td>ESP32</td>
+      <td>3350mAh</td>
+      <td>Stock</td>
+      <td>ABS / PA6-CF</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>No</td>
+      <td>34Hrs</td>
+      <td>70</td>
+      <td><a href="https://www.etsy.com/listing/1726354799/complete-meshtastic-heltec-v3-device">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">MeshTalk Heltec V3 Complete</td>
+      <td>Yes</td>
+      <td>ESP32</td>
+      <td>3000mAh</td>
+      <td>5dBi</td>
+      <td>PETG</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>No</td>
+      <td>30Hrs</td>
+      <td>67.49</td>
+      <td><a href="https://www.etsy.com/listing/1756582234/meshtalk-heltec-v3-complete-device">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Heltec Wireless Tracker with 18650 Battery</td>
+      <td>Yes</td>
+      <td>ESP32</td>
+      <td>3000mAh</td>
+      <td>Gizont</td>
+      <td>PETG</td>
+      <td>None</td>
+      <td>GPS/No switch</td>
+      <td>None</td>
+      <td>No</td>
+      <td>19Hrs</td>
+      <td>60.51</td>
+      <td><a href="https://www.etsy.com/listing/1757243131/complete-heltec-wireless-tracker-with">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">E-Ink Display Node 3000mAh</td>
+      <td>Yes</td>
+      <td>ESP32</td>
+      <td>3000mAh</td>
+      <td>Stock</td>
+      <td>PLA+</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>No</td>
+      <td>95Hrs</td>
+      <td>55</td>
+      <td><a href="https://www.tindie.com/products/harukitoreda/e-ink-display-meshtastic-node-3000mah-complete/">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">SenseCAP Card Tracker T1000-E</td>
+      <td>Yes</td>
+      <td>nRF</td>
+      <td>700mAh</td>
+      <td>Stock</td>
+      <td>Injection Mold</td>
+      <td>None</td>
+      <td>GPS/No switch</td>
+      <td>None</td>
+      <td>Yes</td>
+      <td>48Hrs</td>
+      <td>39.9</td>
+      <td><a href="https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html">Link</a></td>
+    </tr>
+  </tbody>
+</table>
