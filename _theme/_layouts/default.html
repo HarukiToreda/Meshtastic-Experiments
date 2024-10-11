@@ -112,25 +112,22 @@
       background-color: #ffffff; /* White background for active page */
       color: #FFD700; /* Bright yellow text for active page */
     }
-    /* Targeting collapse/expand elements on the main page specifically */
-    .content details {
-      display: inline-block; /* Limit the width of the details element */
+    details {
       margin-bottom: 10px;
     }
-    .content details summary {
+    details summary {
       cursor: pointer;
       padding: 5px;
       background-color: #FFD700; /* Bright yellow background */
       border-radius: 5px;
-      color: #000000; /* Black text when collapsed */
+      color: #000000; /* Black text */
       text-align: left; /* Align text to the left */
       font-size: 12px; /* Smaller font size for summary text */
       width: auto; /* Ensure width fits content */
-      display: inline-block; /* Limit the width of the summary element */
     }
-    .content details[open] summary {
-      background-color: #ffffff; /* White background when expanded */
-      color: #000000; /* Black text when expanded */
+    details[open] summary {
+      background-color: #ffffff; /* White background when open */
+      color: #000000; /* Bright yellow text when open */
     }
     details ul {
       padding: 0;
