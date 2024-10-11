@@ -6,7 +6,7 @@ url: "https://HarukiToreda.github.io" # the base hostname & protocol for your si
 plugins:
   - jekyll-feed
 
-# Add navigation links
+# Add navigation links with a dropdown for Release Notes
 navbar:
   - title: Battery Runtime Tests
     url: "/Battery-Runtime-Tests"
@@ -17,9 +17,11 @@ navbar:
   - title: LoRa Boards Power Measurements
     url: "/LoRa-Boards-Power-Measurements"
   - title: Release Notes
-    url: "/release-notes"
-#  - title: LoRa Boards Comparison2 Table
-#    url: "/LoRa-Boards-Comparison2-Table"
+    sublinks:
+      - title: 2.5.6.d55c08d Alpha
+        url: "/release-notes/firmware-2-5-6"
+      - title: 2.5.5.e182ae7 Beta
+        url: "/release-notes/firmware-2-5-5"
   - title: Additional Hardware
     url: "/Additional-Hardware"
   - title: Antennas Tested
