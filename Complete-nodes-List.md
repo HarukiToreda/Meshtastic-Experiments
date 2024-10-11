@@ -5,11 +5,15 @@ title: Complete Nodes List
 
 # Complete Nodes List
 
-Below is the comprehensive catalogue of nodes, highlighted in green means great, yellow may be something to consider and not recommended.
+Below is the comprehensive catalogue of Ready to go nodes sold accross multiple marketplaces that provide a decent user experience, which includes runtime on battery, material durability, signal quality and price.
+
+Green = Recommended
+Yellow = Not so great
+Red = Avoid
 
 ### Mobile Pocket Node
 
-- **ESP32 - Battery 2500mAh+**:	Esp32 require at least 2500mAh of battery to last more than 24hrs which is great to keep connected to phone(Can be extended if set to powersave mode)
+- **ESP32 - Battery 2500mAh+**:	Esp32 require at least 2500mAh of battery to last more than 24hrs which is great to keep connected to phone that usually lasts around the same( Runtime can be extended if set to powersave mode)
 
 - **nRF - Battery 1100mAh+**:	nRF nodes will run for a week on a 1100mAh so anything higher will be a plus
 
