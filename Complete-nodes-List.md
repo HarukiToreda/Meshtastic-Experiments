@@ -276,7 +276,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td><a href="https://www.etsy.com/listing/1768715019/meshtastic-lilygo-t-deck-with-gps-case">Link</a></td>
     </tr>
     <tr>
-      <td style="white-space: nowrap;">Limited Run Carbon Fiber Reinforced Lilygo T Deck Complete W/GPS, Speaker and 8,000mAh Battery</td>
+      <td style="white-space: nowrap;">Limited Run Carbon Fiber Reinforced Lilygo T Deck Complete W/GPS</td>
       <td style="background-color: yellow; color: black;">Blackberry</td>
       <td>ESP32</td>
       <td style="background-color: green;">8000mAh</td>
