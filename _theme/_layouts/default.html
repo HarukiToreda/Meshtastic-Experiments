@@ -113,6 +113,7 @@
       color: #FFD700; /* Bright yellow text for active page */
     }
     details {
+      display: inline-block; /* Make the details element inline-block to limit its width */
       margin-bottom: 10px;
     }
     details summary {
@@ -120,14 +121,15 @@
       padding: 5px;
       background-color: #FFD700; /* Bright yellow background */
       border-radius: 5px;
-      color: #000000; /* Black text */
+      color: #000000; /* Black text when collapsed */
       text-align: left; /* Align text to the left */
       font-size: 12px; /* Smaller font size for summary text */
       width: auto; /* Ensure width fits content */
+      display: inline-block; /* Make the summary element inline-block to limit its width */
     }
     details[open] summary {
       background-color: #ffffff; /* White background when open */
-      color: #000000; /* Bright yellow text when open */
+      color: #000000; /* Black text when open */
     }
     details ul {
       padding: 0;
