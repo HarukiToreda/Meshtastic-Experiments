@@ -34,7 +34,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td style="background-color: green;">Gizont</td>
       <td style="background-color: green;">Injection Mold</td>
       <td style="background-color: green;">Yes</td>
-      <td style="background-color: yellow;">GPS/No switch</td>
+      <td style="background-color: yellow; color: black;">GPS/No switch</td>
       <td>None</td>
       <td style="background-color: green;">Yes</td>
       <td>64Hrs</td>
@@ -61,7 +61,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Yes</td>
       <td>nRF</td>
       <td style="background-color: green;">2000mAh</td>
-      <td style="background-color: yellow;">Stock</td>
+      <td style="background-color: yellow; color: black;">Stock</td>
       <td style="background-color: green;">ABS / PA6-CF</td>
       <td>None</td>
       <td>None</td>
@@ -76,7 +76,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Yes</td>
       <td>nRF</td>
       <td>3200 mAh</td>
-      <td style="background-color: yellow;">Stock</td>
+      <td style="background-color: yellow; color: black;">Stock</td>
       <td>PLA</td>
       <td>Yes</td>
       <td>GPS/No switch</td>
@@ -106,7 +106,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Yes</td>
       <td>nRF</td>
       <td>1800mAh</td>
-      <td style="background-color: yellow;">Stock</td>
+      <td style="background-color: yellow; color: black;">Stock</td>
       <td>PLA CF</td>
       <td>None</td>
       <td>None</td>
@@ -136,7 +136,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Yes</td>
       <td>ESP32</td>
       <td>3350mAh</td>
-      <td style="background-color: yellow;">Stock</td>
+      <td style="background-color: yellow; color: black;">Stock</td>
       <td>ABS / PA6-CF</td>
       <td>None</td>
       <td>None</td>
@@ -181,7 +181,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Yes</td>
       <td>ESP32</td>
       <td>3000mAh</td>
-      <td style="background-color: yellow;">Stock</td>
+      <td style="background-color: yellow; color: black;">Stock</td>
       <td>PLA+</td>
       <td>None</td>
       <td>None</td>
@@ -196,7 +196,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Yes</td>
       <td>nRF</td>
       <td>700mAh</td>
-      <td style="background-color: yellow;">Stock</td>
+      <td style="background-color: yellow; color: black;">Stock</td>
       <td>Injection Mold</td>
       <td>None</td>
       <td>GPS/No switch</td>
@@ -250,7 +250,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Blackberry</td>
       <td>ESP32</td>
       <td>8000mAh</td>
-      <td style="background-color: yellow;">Stock</td>
+      <td style="background-color: yellow; color: black;">Stock</td>
       <td>PLA</td>
       <td>Yes</td>
       <td>GPS/with Switch</td>
@@ -310,7 +310,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>Cardkb</td>
       <td>ESP32</td>
       <td>4000mAh</td>
-      <td style="background-color: yellow;">Stock</td>
+      <td style="background-color: yellow; color: black;">Stock</td>
       <td>PLA+</td>
       <td>Yes</td>
       <td>GPS/with mosfet</td>
