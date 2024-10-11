@@ -5,7 +5,21 @@ title: Complete Nodes Catalogue
 
 # Complete Nodes Catalogue
 
-Below is the comprehensive catalogue of nodes and related details.
+Below is the comprehensive catalogue of nodes, highlighted in green means great, yellow may be something to consider and not recommended.
+
+### Mobile Pocket Node
+
+- **ESP32 - Battery 2500mAh+**:	Esp32 require at least 2500mAh of battery to last more than 24hrs which is great to keep connected to phone(Can be extended if set to powersave mode)
+
+- **nRF - Battery 1100mAh+**:	nRF nodes will run for a week on a 1100mAh so anything higher will be a plus
+
+- **Antenna**:	Stock Antenna that comes with node are not always tuned properly, better to use a better antenna if possible.
+
+- **Power Switch**:	Esp32 nodes can go to deepsleep but they still draw power while in this. Adding a switch to cut the battery will ensure the battery is ready for emergencies and safe to store.
+
+- **Case Material**: PLA is okay but warps during hot weather enviroments, getting PETG/ASA or better is adviceble
+
+- **GPS**:	If GPS is included, it is good to see if it includes a mosfet/transistor or switch to shut off power to gps as it comsumes power and will cause the node to run out of battery faster.
 
 <table>
   <thead>
@@ -212,11 +226,17 @@ Below is the comprehensive catalogue of nodes and related details.
 ### Standalone Nodes
 
 - **Keyboard Type**:	Cardkb keyboards are easier use due to the many keyboard combos													
+
 - **ESP32 - Battery 2500mAh+**:	Esp32 require at least 2500mAh of battery to last more than 24hrs which is great to keep connected to phone(Can be extended if set to powersave mode)													
+
 - **nRF - Battery 1100mAh+**:	nRF nodes will run for a week on a 1100mAh so anything higher will be a plus													
+
 - **Antenna**:	Stock Antenna that comes with node are not always tuned properly, better to use a better antenna if possible.													
+
 - **Power Switch**: Esp32 nodes can go to deepsleep but they still draw power while in this. Adding a switch to cut the battery will ensure the battery is ready for emergencies and safe to store.													
+
 - **Case Material**:	PLA is okay but warps during hot weather enviroments, getting PETG/ASA or better is adviceble													
+
 - **GPS**:	If GPS is included, it is good to see if it includes a mosfet/transistor or switch to shut off power to gps as it comsumes power and will cause the node to run out of battery faster.					
 
 <table>
