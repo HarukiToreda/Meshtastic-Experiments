@@ -68,7 +68,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>307Hrs</td>
-      <td>$105.00</td>
+      <td>$125.00</td>
       <td><a href="https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device">Link</a></td>
     </tr>
     <tr>
