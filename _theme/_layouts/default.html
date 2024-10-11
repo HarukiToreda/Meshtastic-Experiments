@@ -40,8 +40,8 @@
     .toggle-button {
       background-color: #FFD700;
       border: 2px solid #333333; /* Charcoal border */
-      width: 200px; /* Set the width to match the sidebar */
-      height: 20px; /* Adjust height to be smaller */
+      width: 20px;
+      height: 100vh;
       cursor: pointer;
       z-index: 1000;
       display: flex;
@@ -50,8 +50,8 @@
       font-size: 18px;
       line-height: 1;
       position: fixed;
-      left: 0; /* Align the button */
-      top: 0; /* Align it as you want*/
+      left: 220px; /* Positioned at the right edge of the sidebar */
+      top: 0;
       transition: left 0.3s ease;
     }
     .sidebar.hidden ~ .toggle-button {
@@ -123,7 +123,8 @@
       color: #000000; /* Black text */
       text-align: left; /* Align text to the left */
       font-size: 12px; /* Smaller font size for summary text */
-      width: auto; /* Ensure width fits content */
+      width: 200px; /* Set the width to match the sidebar */
+      box-sizing: border-box; /* Ensure padding is included in the width */
     }
     details[open] summary {
       background-color: #ffffff; /* White background when open */
