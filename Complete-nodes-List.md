@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Complete Nodes Catalogue
+title: Complete Nodes List
 ---
 
-# Complete Nodes Catalogue
+# Complete Nodes List
 
 Below is the comprehensive catalogue of nodes, highlighted in green means great, yellow may be something to consider and not recommended.
 
