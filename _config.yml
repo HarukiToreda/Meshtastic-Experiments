@@ -14,6 +14,8 @@ navbar:
     url: "/ADC-Calculator"
   - title: LoRa Boards Comparison Table
     url: "/LoRa-Boards-Comparison-Table"
+  - title: Complete Nodes List
+    url: "/Complete-nodes-List"
   - title: LoRa Boards Power Measurements
     url: "/LoRa-Boards-Power-Measurements"
   - title: Release Notes
