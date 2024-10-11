@@ -68,23 +68,6 @@ Red = Avoid
       <td><a href="https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52">Link</a></td><!--Link-->
     </tr>
     <tr>
-      <td style="white-space: nowrap;">MeshCard - Compact Mobile Meshtastic Node</td>
-      <td>Yes</td>
-      <td>nRF</td>
-      <td style="background-color: green;">1100mAh</td>
-      <td style="background-color: green;">Gizont</td>
-      <td style="background-color: green;">Aluminum</td>
-      <td style="background-color: green;">Yes</td>
-      <td style="background-color: green;">GPS/with Switch</td>
-      <td>None</td>
-      <td>None</td><!--Buzzer-->
-      <td>None</td><!--Canned Module-->
-      <td>No</td>
-      <td>154Hrs</td>
-      <td>$123.20</td>
-      <td><a href="https://www.etsy.com/listing/1736071130/meshcard-compact-mobile-meshtastic-node">Link</a></td>
-    </tr>
-    <tr>
       <td style="white-space: nowrap;">Complete Meshtastic RAK WisBlock Device</td>
       <td>Yes</td><!--Fits in Pocket-->
       <td>nRF</td><!--MCU-->
@@ -100,6 +83,23 @@ Red = Avoid
       <td>307Hrs</td><!--Price-->
       <td>$125.00</td><!--Price-->
       <td><a href="https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device">Link</a></td><!--Link-->
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">MeshCard - Compact Mobile Meshtastic Node</td>
+      <td>Yes</td>
+      <td>nRF</td>
+      <td style="background-color: green;">1100mAh</td>
+      <td style="background-color: green;">Gizont</td>
+      <td style="background-color: green;">Aluminum</td>
+      <td style="background-color: green;">Yes</td>
+      <td style="background-color: green;">GPS/with Switch</td>
+      <td>None</td>
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
+      <td>No</td>
+      <td>154Hrs</td>
+      <td>$114.40</td>
+      <td><a href="https://www.etsy.com/listing/1736071130/meshcard-compact-mobile-meshtastic-node">Link</a></td>
     </tr>
     <tr>
       <td style="white-space: nowrap;">WisMesh Pocket</td>
