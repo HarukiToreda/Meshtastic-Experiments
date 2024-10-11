@@ -50,18 +50,18 @@ Red = Avoid
   <tbody>
     <tr>
       <td style="white-space: nowrap;">Meshtastic Swarm Rugged RAK NRF52 Handset</td>
-      <td>Yes</td>
-      <td>nRF</td>
-      <td style="background-color: green;">2000mAh</td>
-      <td style="background-color: green;">Gizont</td>
-      <td style="background-color: green;">Injection Mold</td>
-      <td style="background-color: green;">Yes</td>
-      <td style="background-color: yellow; color: black;">GPS/No switch</td>
-      <td>None</td>
-      <td style="background-color: green;">Yes</td>
-      <td>64Hrs</td>
-      <td>$159.99</td>
-      <td><a href="https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>nRF</td><!--MCU--> 
+      <td style="background-color: green;">2000mAh</td><!--Battery-->
+      <td style="background-color: green;">Gizont</td><!--Antenna-->
+      <td style="background-color: green;">Injection Mold</td><!--Case Material-->
+      <td style="background-color: green;">Yes</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
+      <td>None</td><!--GPS-->
+      <td style="background-color: green;">Yes</td><!--Weatherproof-->
+      <td>64Hrs</td><!--Approximate Runtime-->
+      <td>$159.99</td><!--Price-->
+      <td><a href="https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">MeshCard - Compact Mobile Meshtastic Node</td>
@@ -80,153 +80,153 @@ Red = Avoid
     </tr>
     <tr>
       <td style="white-space: nowrap;">Complete Meshtastic RAK WisBlock Device</td>
-      <td>Yes</td>
-      <td>nRF</td>
-      <td style="background-color: green;">2000mAh</td>
-      <td style="background-color: yellow; color: black;">Stock</td>
-      <td style="background-color: green;">ABS / PA6-CF</td>
-      <td>None</td>
-      <td>None</td>
-      <td style="background-color: green;">BME680</td>
-      <td>No</td>
-      <td>307Hrs</td>
-      <td>$125.00</td>
-      <td><a href="https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>nRF</td><!--MCU-->
+      <td style="background-color: green;">2000mAh</td><!--Battery-->
+      <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
+      <td style="background-color: green;">ABS / PA6-CF</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td style="background-color: green;">BME680</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>307Hrs</td><!--Price-->
+      <td>$125.00</td><!--Price-->
+      <td><a href="https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">WisMesh Pocket</td>
-      <td>Yes</td>
-      <td>nRF</td>
-      <td style="background-color: green;">3200 mAh</td>
-      <td style="background-color: yellow; color: black;">Stock</td>
-      <td style="background-color: yellow; color: black;">PLA</td>
-      <td style="background-color: green;">Yes</td>
-      <td style="background-color: yellow; color: black;">GPS/No switch</td>
-      <td>None</td>
-      <td>No</td>
-      <td>96Hrs</td>
-      <td>$89.97</td>
-      <td><a href="https://store.rokland.com/products/wismesh-pocket">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>nRF</td><!--MCU-->
+      <td style="background-color: green;">3200 mAh</td><!--Battery-->
+      <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
+      <td style="background-color: yellow; color: black;">PLA</td><!--Case Material-->
+      <td style="background-color: green;">Yes</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>96Hrs</td><!--Weatherproof-->
+      <td>$89.97</td><!--Price-->
+      <td><a href="https://store.rokland.com/products/wismesh-pocket">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">Alley Chat Heltec V3 Slim Pro 3000Ah</td>
-      <td>Yes</td>
-      <td>ESP32</td>
-      <td style="background-color: green;">3000mAh</td>
-      <td style="background-color: green;">Gizont</td>
-      <td style="background-color: yellow; color: black;">PLA+</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>No</td>
-      <td>30Hrs</td>
-      <td>$79.99</td>
-      <td><a href="https://www.etsy.com/listing/1733573998/heltec-v3-complete-running-meshtastic">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>ESP32</td><!--MCU-->
+      <td style="background-color: green;">3000mAh</td><!--Case Material-->
+      <td style="background-color: green;">Gizont</td><!--Case Material-->
+      <td style="background-color: yellow; color: black;">PLA+</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>30Hrs</td><!--Approximate Runtime-->
+      <td>$79.99</td><!--Price-->
+      <td><a href="https://www.etsy.com/listing/1733573998/heltec-v3-complete-running-meshtastic">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">R1 - Complete Meshtastic Device</td>
-      <td>Yes</td>
-      <td>nRF</td>
-      <td style="background-color: green;">1800mAh</td>
-      <td style="background-color: yellow; color: black;">Stock</td>
-      <td style="background-color: yellow; color: black;">PLA CF</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>No</td>
-      <td>300Hrs</td>
-      <td>$79.00</td>
-      <td><a href="https://www.etsy.com/listing/1801743857/r1-complete-meshtastic-device-powered-by">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>nRF</td><!--MCU-->
+      <td style="background-color: green;">1800mAh</td><!--Battery-->
+      <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
+      <td style="background-color: yellow; color: black;">PLA CF</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>300Hrs</td><!--Approximate Runtime-->
+      <td>$79.00</td><!--Approximate Runtime-->
+      <td><a href="https://www.etsy.com/listing/1801743857/r1-complete-meshtastic-device-powered-by">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">Complete Heltec V3 Device Running Meshtastic with 18650 Battery</td>
-      <td>Yes</td>
-      <td>ESP32</td>
-      <td style="background-color: green;">3000mAh</td>
-      <td style="background-color: green;">Gizont</td>
-      <td style="background-color: green;">PETG</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>No</td>
-      <td>30Hrs</td>
-      <td>$72.51</td>
-      <td><a href="https://www.etsy.com/listing/1726331968/complete-heltec-v3-device-running">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>ESP32</td><!--MCU-->
+      <td style="background-color: green;">3000mAh</td><!--Battery-->
+      <td style="background-color: green;">Gizont</td><!--Antenna-->
+      <td style="background-color: green;">PETG</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>30Hrs</td><!--Approximate Runtime-->
+      <td>$72.51</td><!--Price-->
+      <td><a href="https://www.etsy.com/listing/1726331968/complete-heltec-v3-device-running">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">Heltec V3 Device | 18650 Battery</td>
-      <td>Yes</td>
-      <td>ESP32</td>
-      <td style="background-color: green;">3350mAh</td>
-      <td style="background-color: yellow; color: black;">Stock</td>
-      <td style="background-color: green;">ABS / PA6-CF</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>No</td>
-      <td>34Hrs</td>
-      <td>$70.00</td>
-      <td><a href="https://www.etsy.com/listing/1726354799/complete-meshtastic-heltec-v3-device">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>ESP32</td><!--MCU-->
+      <td style="background-color: green;">3350mAh</td><!--Battery-->
+      <td style="background-color: yellow; color: black;">Stock</td><!--Battery-->
+      <td style="background-color: green;">ABS / PA6-CF</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>34Hrs</td><!--Approximate Runtime-->
+      <td>$70.00</td><!--Price-->
+      <td><a href="https://www.etsy.com/listing/1726354799/complete-meshtastic-heltec-v3-device">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">MeshTalk Heltec V3 Complete</td>
-      <td>Yes</td>
-      <td>ESP32</td>
-      <td style="background-color: green;">3000mAh</td>
-      <td style="background-color: green;">5dBi</td>
-      <td style="background-color: green;">PETG</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>No</td>
-      <td>30Hrs</td>
-      <td>$67.49</td>
-      <td><a href="https://www.etsy.com/listing/1756582234/meshtalk-heltec-v3-complete-device">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>ESP32</td><!--MCU-->
+      <td style="background-color: green;">3000mAh</td><!--Battery-->
+      <td style="background-color: green;">5dBi</td><!--Antenna-->
+      <td style="background-color: green;">PETG</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>30Hrs</td><!--Approximate Runtime-->
+      <td>$67.49</td><!--Price-->
+      <td><a href="https://www.etsy.com/listing/1756582234/meshtalk-heltec-v3-complete-device">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">Heltec Wireless Tracker with 18650 Battery</td>
-      <td>Yes</td>
-      <td>ESP32</td>
-      <td style="background-color: green;">3000mAh</td>
-      <td style="background-color: green;">Gizont</td>
-      <td style="background-color: green;">PETG</td>
-      <td>None</td>
-      <td style="background-color: yellow; color: black;">GPS/No switch</td>
-      <td>None</td>
-      <td>No</td>
-      <td>19Hrs</td>
-      <td>$60.51</td>
-      <td><a href="https://www.etsy.com/listing/1757243131/complete-heltec-wireless-tracker-with">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>ESP32</td><!--MCU-->
+      <td style="background-color: green;">3000mAh</td><!--Battery-->
+      <td style="background-color: green;">Gizont</td><!--Antenna-->
+      <td style="background-color: green;">PETG</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>19Hrs</td><!--Approximate Runtime-->
+      <td>$60.51</td><!--Price-->
+      <td><a href="https://www.etsy.com/listing/1757243131/complete-heltec-wireless-tracker-with">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">E-Ink Display Node 3000mAh</td>
-      <td>Yes</td>
-      <td>ESP32</td>
-      <td style="background-color: green;">3000mAh</td>
-      <td style="background-color: yellow; color: black;">Stock</td>
-      <td style="background-color: yellow; color: black;">PLA+</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>No</td>
-      <td>95Hrs</td>
-      <td>$55.00</td>
-      <td><a href="https://www.tindie.com/products/harukitoreda/e-ink-display-meshtastic-node-3000mah-complete/">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>ESP32</td><!--MCU-->
+      <td style="background-color: green;">3000mAh</td><!--Battery-->
+      <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
+      <td style="background-color: yellow; color: black;">PLA+</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>No</td><!--Weatherproof-->
+      <td>95Hrs</td><!--Approximate Runtime-->
+      <td>$55.00</td><!--Price-->
+      <td><a href="https://www.tindie.com/products/harukitoreda/e-ink-display-meshtastic-node-3000mah-complete/">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">SenseCAP Card Tracker T1000-E</td>
-      <td>Yes</td>
-      <td>nRF</td>
-      <td style="background-color: yellow; color: black;">700mAh</td>
-      <td style="background-color: yellow; color: black;">Stock</td>
-      <td style="background-color: green;">Injection Mold</td>
-      <td>None</td>
-      <td style="background-color: yellow; color: black;">GPS/No switch</td>
-      <td style="background-color: green;">Temperature</td>
-      <td style="background-color: green;">Yes</td>
-      <td>48Hrs</td>
-      <td>$39.90</td>
-      <td><a href="https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html">Link</a></td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>nRF</td><!--MCU-->
+      <td style="background-color: yellow; color: black;">700mAh</td><!--Battery-->
+      <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
+      <td style="background-color: green;">Injection Mold</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
+      <td style="background-color: green;">Temperature</td><!--Sensors-->
+      <td style="background-color: green;">Yes</td><!--Weatherproof-->
+      <td>48Hrs</td><!--Approximate Runtime-->
+      <td>$39.90</td><!--Price-->
+      <td><a href="https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html">Link</a></td><!--Link-->
     </tr>
   </tbody>
 </table>
