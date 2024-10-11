@@ -20,8 +20,6 @@ navbar:
     sublinks:
       - title: 2.5.6.d55c08d Alpha
         url: "/release-notes/firmware-2-5-6"
-      - title: 2.5.5.e182ae7 Beta
-        url: "/release-notes/firmware-2-5-5"
   - title: Additional Hardware
     url: "/Additional-Hardware"
   - title: Antennas Tested
