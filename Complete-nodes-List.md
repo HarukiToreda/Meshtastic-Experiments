@@ -291,7 +291,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td><a href="https://www.etsy.com/listing/1801509135/limited-run-carbon-fiber-rienforced">Link</a></td>
     </tr>
     <tr>
-      <td style="white-space: nowrap;">Spec5 Ranger from Spec5 Meshtastic LoRa Radio Keyboard and Touch-Screen Inputs with a Notification Ringer</td>
+      <td style="white-space: nowrap;">Spec5 Ranger from Spec5 Meshtastic LoRa Radio Keyboard</td>
       <td style="background-color: yellow; color: black;">Blackberry</td>
       <td>ESP32</td>
       <td style="background-color: green;">3300mAh</td>
