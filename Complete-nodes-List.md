@@ -68,7 +68,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>307Hrs</td>
-      <td>105</td>
+      <td>$105.00</td>
       <td><a href="https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device">Link</a></td>
     </tr>
     <tr>
@@ -83,7 +83,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>96Hrs</td>
-      <td>89.97</td>
+      <td>$89.97</td>
       <td><a href="https://store.rokland.com/products/wismesh-pocket">Link</a></td>
     </tr>
     <tr>
@@ -98,7 +98,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>30Hrs</td>
-      <td>79.99</td>
+      <td>$79.99</td>
       <td><a href="https://www.etsy.com/listing/1733573998/heltec-v3-complete-running-meshtastic">Link</a></td>
     </tr>
     <tr>
@@ -113,7 +113,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>300Hrs</td>
-      <td>79</td>
+      <td>$79.00</td>
       <td><a href="https://www.etsy.com/listing/1801743857/r1-complete-meshtastic-device-powered-by">Link</a></td>
     </tr>
     <tr>
@@ -128,7 +128,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>30Hrs</td>
-      <td>72.51</td>
+      <td>$72.51</td>
       <td><a href="https://www.etsy.com/listing/1726331968/complete-heltec-v3-device-running">Link</a></td>
     </tr>
     <tr>
@@ -143,7 +143,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>34Hrs</td>
-      <td>70</td>
+      <td>$70.00</td>
       <td><a href="https://www.etsy.com/listing/1726354799/complete-meshtastic-heltec-v3-device">Link</a></td>
     </tr>
     <tr>
@@ -158,7 +158,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>30Hrs</td>
-      <td>67.49</td>
+      <td>$67.49</td>
       <td><a href="https://www.etsy.com/listing/1756582234/meshtalk-heltec-v3-complete-device">Link</a></td>
     </tr>
     <tr>
@@ -173,7 +173,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>19Hrs</td>
-      <td>60.51</td>
+      <td>$60.51</td>
       <td><a href="https://www.etsy.com/listing/1757243131/complete-heltec-wireless-tracker-with">Link</a></td>
     </tr>
     <tr>
@@ -188,7 +188,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>No</td>
       <td>95Hrs</td>
-      <td>55</td>
+      <td>$55.00</td>
       <td><a href="https://www.tindie.com/products/harukitoreda/e-ink-display-meshtastic-node-3000mah-complete/">Link</a></td>
     </tr>
     <tr>
@@ -203,7 +203,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>Yes</td>
       <td>48Hrs</td>
-      <td>39.9</td>
+      <td>$39.90</td>
       <td><a href="https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html">Link</a></td>
     </tr>
   </tbody>
@@ -242,7 +242,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>Yes</td>
       <td>312 Hrs</td>
-      <td>250</td>
+      <td>$250.00</td>
       <td><a href="https://www.etsy.com/listing/1390142667/meshenger-standalone-device-for">Link</a></td>
     </tr>
     <tr>
@@ -257,7 +257,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>Yes</td>
       <td>76Hrs</td>
-      <td>205</td>
+      <td>$205.00</td>
       <td><a href="https://www.etsy.com/listing/1740148840/t-deck-complete-with-8000-mah-battery">Link</a></td>
     </tr>
     <tr>
@@ -272,7 +272,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>Yes</td>
       <td>14Hrs</td>
-      <td>216.82</td>
+      <td>$216.82</td>
       <td><a href="https://www.etsy.com/listing/1768715019/meshtastic-lilygo-t-deck-with-gps-case">Link</a></td>
     </tr>
     <tr>
@@ -287,7 +287,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>Yes</td>
       <td>19Hrs</td>
-      <td>185.4</td>
+      <td>$185.40</td>
       <td><a href="https://www.etsy.com/listing/1801509135/limited-run-carbon-fiber-rienforced">Link</a></td>
     </tr>
     <tr>
@@ -302,7 +302,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>None</td>
       <td>Yes</td>
       <td>8Hrs</td>
-      <td>179.99</td>
+      <td>$179.99</td>
       <td><a href="https://www.etsy.com/listing/1727452694/spec5-ranger-from-spec5-meshtastic-lora">Link</a></td>
     </tr>
     <tr>
@@ -317,7 +317,7 @@ Below is the comprehensive catalogue of nodes and related details.
       <td>BME680</td>
       <td>Yes</td>
       <td>168Hrs</td>
-      <td>115</td>
+      <td>$115.00</td>
       <td><a href="https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/">Link</a></td>
     </tr>
   </tbody>
