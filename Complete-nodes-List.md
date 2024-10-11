@@ -8,7 +8,9 @@ title: Complete Nodes List
 Below is the comprehensive catalogue of Ready to go nodes sold accross multiple marketplaces that provide a decent user experience, which includes runtime on battery, material durability, signal quality and price.
 
 Green = Recommended
+
 Yellow = Not so great
+
 Red = Avoid
 
 ### Mobile Pocket Node
