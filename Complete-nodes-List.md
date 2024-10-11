@@ -208,3 +208,117 @@ Below is the comprehensive catalogue of nodes and related details.
     </tr>
   </tbody>
 </table>
+
+### Standalone Nodes
+
+<table>
+  <thead>
+    <tr>
+      <th style="white-space: nowrap;">Standalone Node</th>
+      <th>Keyboard Handheld</th>
+      <th>MCU</th>
+      <th>Battery</th>
+      <th>Antenna</th>
+      <th>Case Material</th>
+      <th>Power Switch</th>
+      <th>GPS</th>
+      <th>Sensor</th>
+      <th>Buzzer</th>
+      <th>Approximate Runtime</th>
+      <th>Price</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="white-space: nowrap;">Meshenger Standalone Device for Meshtastic</td>
+      <td>Cardkb</td>
+      <td>nRF</td>
+      <td>4000mAh</td>
+      <td>Gizont</td>
+      <td>ASA</td>
+      <td>Yes</td>
+      <td>GPS/No switch</td>
+      <td>None</td>
+      <td>Yes</td>
+      <td>312 Hrs</td>
+      <td>250</td>
+      <td><a href="https://www.etsy.com/listing/1390142667/meshenger-standalone-device-for">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">T-Deck Complete with 8000 mAh Battery and GPS Installed for Meshtastic</td>
+      <td>Blackberry</td>
+      <td>ESP32</td>
+      <td>8000mAh</td>
+      <td>Stock</td>
+      <td>PLA</td>
+      <td>Yes</td>
+      <td>GPS/with Switch</td>
+      <td>None</td>
+      <td>Yes</td>
+      <td>76Hrs</td>
+      <td>205</td>
+      <td><a href="https://www.etsy.com/listing/1740148840/t-deck-complete-with-8000-mah-battery">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Meshtastic - Lilygo T-Deck 433MHz with GPS Case Battery</td>
+      <td>Blackberry</td>
+      <td>ESP32</td>
+      <td>6000mAh</td>
+      <td>3dBi</td>
+      <td>PLA+</td>
+      <td>Yes</td>
+      <td>GPS/No switch</td>
+      <td>None</td>
+      <td>Yes</td>
+      <td>14Hrs</td>
+      <td>216.82</td>
+      <td><a href="https://www.etsy.com/listing/1768715019/meshtastic-lilygo-t-deck-with-gps-case">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Limited Run Carbon Fiber Reinforced Lilygo T Deck Complete W/GPS, Speaker and 8,000mAh Battery</td>
+      <td>Blackberry</td>
+      <td>ESP32</td>
+      <td>8000mAh</td>
+      <td>3dBi</td>
+      <td>PETG</td>
+      <td>Yes</td>
+      <td>GPS/No switch</td>
+      <td>None</td>
+      <td>Yes</td>
+      <td>19Hrs</td>
+      <td>185.4</td>
+      <td><a href="https://www.etsy.com/listing/1801509135/limited-run-carbon-fiber-rienforced">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Spec5 Ranger from Spec5 Meshtastic LoRa Radio Keyboard and Touch-Screen Inputs with a Notification Ringer</td>
+      <td>Blackberry</td>
+      <td>ESP32</td>
+      <td>3300mAh</td>
+      <td>Unknown</td>
+      <td>PETG</td>
+      <td>Yes</td>
+      <td>GPS/No switch</td>
+      <td>None</td>
+      <td>Yes</td>
+      <td>8Hrs</td>
+      <td>179.99</td>
+      <td><a href="https://www.etsy.com/listing/1727452694/spec5-ranger-from-spec5-meshtastic-lora">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">HelTXT - Standalone Meshtastic Communicator</td>
+      <td>Cardkb</td>
+      <td>ESP32</td>
+      <td>4000mAh</td>
+      <td>Stock</td>
+      <td>PLA+</td>
+      <td>Yes</td>
+      <td>GPS/with mosfet</td>
+      <td>BME680</td>
+      <td>Yes</td>
+      <td>168Hrs</td>
+      <td>115</td>
+      <td><a href="https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/">Link</a></td>
+    </tr>
+  </tbody>
+</table>
