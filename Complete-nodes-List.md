@@ -264,7 +264,7 @@ Red = Avoid
       <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
       <td style="background-color: green;">Injection Mold</td><!--Case Material-->
       <td>None</td><!--Power Switch-->
-      <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
+      <td style="background-color: yellow; color: black;">GPS/Low Power</td><!--GPS-->
       <td style="background-color: green;">Temperature</td><!--Sensors-->
       <td style="background-color: green;">Yes</td><!--Buzzer-->
       <td>None</td><!--Canned Module-->
@@ -322,7 +322,7 @@ Red = Avoid
       <td style="background-color: green;">Gizont</td>
       <td style="background-color: green;">ASA</td>
       <td style="background-color: green;">Yes</td>
-      <td style="background-color: yellow; color: black;">GPS/No switch</td>
+      <td style="background-color: yellow; color: black;">GPS/Low Power</td><!--GPS-->
       <td>None</td>
       <td style="background-color: green;">Yes</td>
       <td>312 Hrs</td>
@@ -367,7 +367,7 @@ Red = Avoid
       <td style="background-color: green;">3dBi</td>
       <td style="background-color: green;">PETG</td>
       <td style="background-color: green;">Yes</td>
-      <td style="background-color: yellow; color: black;">GPS/No switch</td>
+      <td style="background-color: red; color: white;">GPS/No switch</td><!--GPS-->
       <td>None</td>
       <td style="background-color: green;">Yes</td>
       <td>19Hrs</td>
@@ -382,7 +382,7 @@ Red = Avoid
       <td>Unknown</td>
       <td style="background-color: green;">PETG</td>
       <td style="background-color: green;">Yes</td>
-      <td style="background-color: yellow; color: black;">GPS/No switch</td>
+      <td style="background-color: red; color: white;">GPS/No switch</td><!--GPS-->
       <td>None</td>
       <td style="background-color: green;">Yes</td>
       <td>8Hrs</td>
@@ -400,7 +400,7 @@ Red = Avoid
       <td style="background-color: green;">GPS/with mosfet</td>
       <td style="background-color: green;">BME680</td>
       <td style="background-color: green;">Yes</td>
-      <td>168Hrs</td>
+      <td>146Hrs</td>
       <td>$125.00</td>
       <td><a href="https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/">Link</a></td>
     </tr>
