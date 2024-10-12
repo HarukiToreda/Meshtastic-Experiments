@@ -13,7 +13,7 @@ Yellow = Not so great
 
 Red = Avoid
 
-### Mobile Pocket Node
+### Mobile Pocket Node (Nodes that are portable and linked to a phone via Bluetooth)
 
 - **ESP32 - Battery 2500mAh+**:	Esp32 require at least 2500mAh of battery to last more than 24hrs which is great to keep connected to phone that usually lasts around the same( Runtime can be extended if set to powersave mode)
 
@@ -66,6 +66,25 @@ Red = Avoid
       <td>64Hrs</td><!--Approximate Runtime-->
       <td>$159.99</td><!--Price-->
       <td><a href="https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52">Link</a></td><!--Link-->
+    </tr>
+      </thead>
+  <tbody>
+    <tr>
+      <td style="white-space: nowrap;">Roamer - Meshtastic Wireless LoRa Mesh Comms</td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>nRF</td><!--MCU--> 
+      <td style="background-color: green;">2000mAh</td><!--Battery-->
+      <td style="background-color: green;">2.5 dBi</td><!--Antenna-->
+      <td style="background-color: green;">Nylon (3201PA-F)</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">GPS Ultra-Low Power</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td style="background-color: green;">Yes</td><!--Buzzer-->
+      <td style="background-color: green;">Rotary Encoder</td><!--Canned Module-->
+      <td style="background-color: green;">Yes</td><!--Weatherproof-->
+      <td>170Hrs</td><!--Approximate Runtime-->
+      <td>$129.00</td><!--Price-->
+      <td><a href="https://www.tindie.com/products/embeddedarts/roamer-meshtastic-wireless-lora-mesh-comms/">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">Complete Meshtastic RAK WisBlock Device</td>
@@ -257,7 +276,7 @@ Red = Avoid
   </tbody>
 </table>
 
-### Standalone Nodes
+### Standalone Nodes (Nodes that do not need a phone to be linked to send messages or use key functions)
 
 - **Keyboard Type**:	Cardkb keyboards are easier use due to the many keyboard combos													
 
