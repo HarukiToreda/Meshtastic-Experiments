@@ -13,6 +13,8 @@ Yellow = Not so great
 
 Red = Avoid
 
+<hr>
+
 ### Mobile Pocket Node (Nodes that are portable and linked to a phone via Bluetooth)
 
 - **ESP32 - Battery 2500mAh+**:	Esp32 require at least 2500mAh of battery to last more than 24hrs which is great to keep connected to phone that usually lasts around the same( Runtime can be extended if set to powersave mode)
