@@ -274,12 +274,13 @@ Red = Avoid
   </tbody>
 </table>
 
+<hr>
+
 ### Standalone Nodes (Nodes that do not need a phone to be linked to send messages or use key functions)
 
 - **Keyboard Type**:	Cardkb keyboards are easier use due to the many keyboard combos													
 
-- **ESP32 - Battery 2500mAh+**:	Esp32 require at least 2500mAh of battery to last more than 24hrs which is great to keep connected to phone(Can be extended if set to powersave mode)													
-
+- **ESP32 - Battery 2500mAh+**:	Esp32 require at least 2500mAh of battery to last more than 24hrs which is great to keep connected to phone(Can be extended if set to powersave mode)											
 - **nRF - Battery 1100mAh+**:	nRF nodes will run for a week on a 1100mAh so anything higher will be a plus													
 
 - **Antenna**:	Stock Antenna that comes with node are not always tuned properly, better to use a better antenna if possible.													
