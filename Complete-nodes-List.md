@@ -170,7 +170,7 @@ Red = Avoid
       <td><a href="https://www.etsy.com/listing/1801743857/r1-complete-meshtastic-device-powered-by">Link</a></td><!--Link-->
     </tr>
     <tr>
-      <td style="white-space: nowrap;">Complete Heltec V3 Device Running Meshtastic with 18650 Battery</td>
+      <td style="white-space: nowrap;">Complete Heltec V3 with 18650 Battery</td>
       <td>Yes</td><!--Fits in Pocket-->
       <td>ESP32</td><!--MCU-->
       <td style="background-color: green;">3000mAh</td><!--Battery-->
