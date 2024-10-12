@@ -66,7 +66,6 @@ Red = Avoid
       <td>$159.99</td><!--Price-->
       <td><a href="https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52">Link</a></td><!--Link-->
     </tr>
-  <tbody>
     <tr>
       <td style="white-space: nowrap;">Roamer - Meshtastic Wireless LoRa Mesh Comms</td>
       <td>Yes</td><!--Fits in Pocket-->
