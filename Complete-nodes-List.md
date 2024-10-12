@@ -60,7 +60,7 @@ Red = Avoid
       <td style="background-color: green;">Gizont</td><!--Antenna-->
       <td style="background-color: green;">Injection Mold</td><!--Case Material-->
       <td style="background-color: green;">Yes</td><!--Power Switch-->
-      <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
+      <td style="background-color: yellow; color: black;">GPS/Low Power</td><!--GPS-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Buzzer-->
       <td>None</td><!--Canned Module-->
@@ -77,7 +77,7 @@ Red = Avoid
       <td style="background-color: green;">2.5 dBi</td><!--Antenna-->
       <td style="background-color: green;">Nylon (3201PA-F)</td><!--Case Material-->
       <td>None</td><!--Power Switch-->
-      <td style="background-color: yellow; color: black;">GPS Ultra-Low Power</td><!--GPS-->
+      <td style="background-color: yellow; color: black;">GPS/Low Power</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td style="background-color: green;">Yes</td><!--Buzzer-->
       <td style="background-color: green;">Rotary Encoder</td><!--Canned Module-->
@@ -128,7 +128,7 @@ Red = Avoid
       <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
       <td style="background-color: yellow; color: black;">PLA</td><!--Case Material-->
       <td style="background-color: green;">Yes</td><!--Power Switch-->
-      <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
+      <td style="background-color: yellow; color: black;">GPS/Low Power</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
       <td>None</td><!--Canned Module-->
@@ -230,7 +230,7 @@ Red = Avoid
       <td style="background-color: green;">Gizont</td><!--Antenna-->
       <td style="background-color: green;">PETG</td><!--Case Material-->
       <td>None</td><!--Power Switch-->
-      <td style="background-color: yellow; color: black;">GPS/No switch</td><!--GPS-->
+      <td style="background-color: red; color: white;">GPS/No switch</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
       <td>None</td><!--Canned Module-->
