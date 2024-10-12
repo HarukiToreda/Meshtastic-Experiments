@@ -48,7 +48,6 @@ Red = Avoid
       <th>Price</th>
       <th>Link</th>
     </tr>
-  </thead>
   <tbody>
     <tr>
       <td style="white-space: nowrap;">Meshtastic Swarm Rugged RAK NRF52 Handset</td>
@@ -67,7 +66,6 @@ Red = Avoid
       <td>$159.99</td><!--Price-->
       <td><a href="https://www.etsy.com/listing/1599932153/meshtastic-swarm-rugged-rak-nrf52">Link</a></td><!--Link-->
     </tr>
-      </thead>
   <tbody>
     <tr>
       <td style="white-space: nowrap;">Roamer - Meshtastic Wireless LoRa Mesh Comms</td>
