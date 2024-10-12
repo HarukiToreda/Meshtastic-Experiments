@@ -48,6 +48,7 @@ Red = Avoid
       <th>Price</th>
       <th>Link</th>
     </tr>
+  </thead>
   <tbody>
     <tr>
       <td style="white-space: nowrap;">Meshtastic Swarm Rugged RAK NRF52 Handset</td>
