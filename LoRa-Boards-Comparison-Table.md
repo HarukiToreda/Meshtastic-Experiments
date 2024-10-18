@@ -21,6 +21,7 @@ title: LoRa Boards Comparison Table
       <input type="checkbox" class="loraFilter" value="SX1276"> SX1276<br>
       <input type="checkbox" class="loraFilter" value="SX1278"> SX1278<br>      
       <input type="checkbox" class="loraFilter" value="SX1262"> SX1262<br>
+      <input type="checkbox" class="loraFilter" value="SX1280"> SX1280<br>
       <input type="checkbox" class="loraFilter" value="LR1110"> LR1110<br>
     </div>
   </div>
@@ -127,7 +128,7 @@ title: LoRa Boards Comparison Table
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-input="Touch, User" data-price="54.41" data-brand="Lilygo" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">T-Echo</th>
         <th data-mcu="ESP32" data-lora="SX1276" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="32.80" data-brand="Lilygo" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">T-Beam</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="44.17" data-brand="Lilygo" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">T-Beam Supreme</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="17.58" data-brand="Lilygo" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">T3-S3</th>
+        <th data-mcu="ESP32" data-lora="SX1262 SX1276 SX1278 SX1280" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="17.58" data-brand="Lilygo" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">T3-S3</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="109.00" data-brand="B&Q" data-case="Yes" data-battery="No" data-meshtastic="Yes" data-ready="No">Station G2</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-input="User" data-price="86.00" data-brand="B&Q" data-case="Yes" data-battery="No" data-meshtastic="Yes" data-ready="No">Nano G2 Ultra</th>
         <th data-mcu="nRF" data-lora="LR1110" data-gps="Yes" data-screen="None" data-wifi="No" data-input="User" data-price="29.90" data-brand="Seeed" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Wio Tracker 1110</th>
@@ -225,7 +226,7 @@ title: LoRa Boards Comparison Table
         <td>SX1262</td><!--T-Echo-->
         <td>SX1276 SX1278</td><!--T-Beam-->
         <td>SX1262</td><!--T-Beam-Supreme-->
-        <td>SX1262</td><!--T3-S3-->
+        <td>SX1262 SX1276 SX1280</td><!--T3-S3-->
         <td>SX1262</td><!--Station G2-->
         <td>SX1262</td><!--Nano G2 Ultra-->
         <td>LR1110</td><!--Wio Tracker 1110-->
