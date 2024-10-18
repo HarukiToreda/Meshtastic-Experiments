@@ -916,7 +916,7 @@ function filterTable() {
 
   function shouldDisplayColumn(column) {
     const mcu = column.getAttribute('data-mcu');
-    const lora = column.getAttribute('data-lora');
+    const lora = column.getAttribute('data-lora').split(' '); // Split LoRa chips into an array
     const gps = column.getAttribute('data-gps');
     const screen = column.getAttribute('data-screen');
     const wifi = column.getAttribute('data-wifi');
@@ -929,7 +929,7 @@ function filterTable() {
     const ready = column.getAttribute('data-ready');
 
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcu);
-    const loraMatch = loraFilters.length === 0 || loraFilters.includes(lora);
+    const loraMatch = loraFilters.length === 0 || loraFilters.some(loraType => lora.includes(loraType)); // Updated to handle multiple LoRa chips
     const gpsMatch = gpsFilters.length === 0 || gpsFilters.includes(gps);
     const screenMatch = screenFilters.length === 0 || screenFilters.includes(screen);
     const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(wifi);
