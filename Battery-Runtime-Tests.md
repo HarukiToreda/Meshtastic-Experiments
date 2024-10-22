@@ -310,55 +310,17 @@ title: Battery Runtime Tests
       <thead>
         <tr>
           <th>Device</th>
-          <th>Heltec ESP32 V2</th>
-          <th>Heltec ESP32 V3</th>
-          <th>Heltec Wireless Tracker</th>
-          <th>Heltec Vision Master E213</th>          
-          <th>Lilygo T-Deck</th>
-          <th>RAK19007 (RAK4631)</th>
-          <th>RAK19003 (RAK4631)</th>    
+          <th>Hel-txt </th>
+          <th>Nrf-txt </th>
+          <th>Meshenger</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1100mAh Battery</td>
-          <td></td><!--Heltec V2-->
-          <td></td><!--Heltec V3-->
-          <td></td><!--Wireless Tracker-->
-          <td></td><!--VME213-->
-          <td></td><!--T-Deck-->
-          <td></td><!--RAKRAK19007-->
-          <td></td><!--RAKRAK19003-->
-        </tr>
-        <tr>
-          <td>2000mAh Battery</td>
-          <td></td><!--Heltec V2-->
-          <td></td><!--Heltec V3-->
-          <td></td><!--Wireless Tracker-->
-          <td></td><!--VME213-->            
-          <td></td><!--T-Deck-->
-          <td></td><!--RAKRAK19007-->
-          <td></td><!--RAKRAK19003-->   
-        </tr>
-        <tr>
-          <td>3000mAh Battery</td>
-          <td></td><!--Heltec V2-->
-          <td></td><!--Heltec V3-->
-          <td></td><!--Wireless Tracker-->
-          <td></td><!--VME213-->            
-          <td></td><!--T-Deck-->
-          <td></td><!--RAKRAK19007-->
-          <td></td><!--RAKRAK19003-->   
-        </tr>
-        <tr>
           <td>4000mAh Battery</td>
-          <td></td><!--Heltec V2-->
-          <td>89 Hrs</td><!--Heltec V3-->
-          <td></td><!--Wireless Tracker-->
-          <td></td><!--VME213-->            
-          <td></td><!--T-Deck-->
-          <td></td><!--RAKRAK19007-->
-          <td>312 Hrs</td><!--RAKRAK19003-->   
+          <td>89 Hrs</td><!--HelTXT-->
+          <td>270 Hrs</td><!--NRFTXT-->
+          <td>312 Hrs</td><!--Meshenger-->   
         </tr>
       </tbody>
     </table>
