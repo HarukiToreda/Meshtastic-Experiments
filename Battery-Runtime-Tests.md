@@ -319,7 +319,7 @@ title: Battery Runtime Tests
         <tr>
           <td>4000mAh Battery</td>
           <td>146 Hrs</td><!--HelTXT-->
-          <td>270 Hrs</td><!--NRFTXT-->
+          <td>275 Hrs</td><!--NRFTXT-->
           <td>312 Hrs</td><!--Meshenger-->   
         </tr>
       </tbody>
