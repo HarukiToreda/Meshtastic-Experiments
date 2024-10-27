@@ -41,7 +41,7 @@ title: Battery Runtime Tests
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
-    <li>Firmware 2.3.12</li>    
+    <li>Firmware 2.5.7</li>    
     <li>Client Mode</li>
     <li>Screen Timeout: 60 sec</li>
     <li>Power Savemode Disabled.</li>
