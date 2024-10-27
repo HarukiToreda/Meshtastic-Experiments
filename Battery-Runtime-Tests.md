@@ -66,10 +66,25 @@ title: Battery Runtime Tests
           <th>Heltec Vision Master E213</th>
           <th>Lilygo T-Deck</th>
           <th>RAK19007 (RAK4631)</th>
-          <th>RAK19003 (RAK4631)</th>          
+          <th>RAK19003 (RAK4631)</th>
+          <th>T1000-E</th>
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>700mAh Battery</td>
+          <td></td><!--Heltec V2-->
+          <td></td><!--Heltec V3-->
+          <td></td><!--Wireless Paper-->
+          <td></td><!--Wireless Stick Lite-->
+          <td></td><!--Wireless Tracker-->
+          <td></td><!--Capsule Sensor V3-->
+          <td></td><!--VME213-->                    
+          <td></td><!--T-Deck-->
+          <td></td><!--RAKRAK19007-->
+          <td></td><!--RAKRAK19003-->
+          <td>61 Hrs</td><!--T1000-E-->
+        </tr>
         <tr>
           <td>1100mAh Battery</td>
           <td>21 Hrs</td><!--Heltec V2-->
@@ -95,6 +110,7 @@ title: Battery Runtime Tests
           <td>19 Hrs</td><!--T-Deck-->
           <td>307 Hrs</td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
+          <td></td><!--T1000-E-->
         </tr>
         <tr>
           <td>3000mAh Battery</td>
@@ -121,6 +137,7 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
+          <td></td><!--T1000-E-->
         </tr>        
         <tr>
           <td>5000mAh Battery</td>
@@ -134,6 +151,7 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
+          <td></td><!--T1000-E-->
         </tr>               
       </tbody>
     </table>
