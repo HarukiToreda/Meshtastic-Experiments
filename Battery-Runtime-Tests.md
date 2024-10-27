@@ -9,7 +9,7 @@ title: Battery Runtime Tests
     function updateProgress() {
       const startTimes = [
         //{ id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
-        { id: 'progress2', start: new Date('2024-07-18T17:34:00') }, // Vision Master 2000
+        { id: 'progress2', start: new Date('2024-10-27T13:00:00') }, // T1000-E (GPS Off)
         { id: 'progress3', start: new Date('2024-07-29T02:00:00') }, // RAK Big
         //{ id: 'progress4', start: new Date('2024-07-16T02:33:00') }, // V2 3000
         { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // 
@@ -67,7 +67,8 @@ title: Battery Runtime Tests
           <th>Lilygo T-Deck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>
-          <th>T1000-E</th>
+          <th>T1000-E (GPS On)</th>
+          <th>T1000-E (GPS Off)</th>
         </tr>
       </thead>
       <tbody>
@@ -83,7 +84,8 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
-          <td>T1000-E<br><span>61 Hrs (GPS On)</span><br><span>75 Hrs (GPS Off)</span></td>
+          <td>61 Hrs</td><!--T1000-E GPS On-->
+          <td id="progress2">In Progress</td><!--T1000-E GPS Off-->
         </tr>
         <tr>
           <td>1100mAh Battery</td>
@@ -97,7 +99,8 @@ title: Battery Runtime Tests
           <td>10 Hrs</td><!--T-Deck-->
           <td>154 Hrs</td><!--RAKRAK19007-->
           <td>156 Hrs</td><!--RAKRAK19003-->
-          <td>-</td><!--T1000-E-->
+          <td>-</td><!--T1000-E GPS On-->
+          <td>-</td><!--T1000-E GPS Off-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
@@ -111,7 +114,8 @@ title: Battery Runtime Tests
           <td>19 Hrs</td><!--T-Deck-->
           <td>307 Hrs</td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
-          <td>-</td><!--T1000-E-->
+          <td>-</td><!--T1000-E GPS On-->
+          <td>-</td><!--T1000-E GPS Off-->
         </tr>
         <tr>
           <td>3000mAh Battery</td>
@@ -125,7 +129,8 @@ title: Battery Runtime Tests
           <td>26 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->   
-          <td>-</td><!--T1000-E-->
+          <td>-</td><!--T1000-E GPS On-->
+          <td>-</td><!--T1000-E GPS Off-->
         </tr>
         <tr>
           <td>4000mAh Battery</td>
@@ -139,7 +144,8 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
-          <td>-</td><!--T1000-E-->
+          <td>-</td><!--T1000-E GPS On-->
+          <td>-</td><!--T1000-E GPS Off-->
         </tr>        
         <tr>
           <td>5000mAh Battery</td>
@@ -153,7 +159,8 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
-          <td>-</td><!--T1000-E-->
+          <td>-</td><!--T1000-E GPS On-->
+          <td>-</td><!--T1000-E GPS Off-->
         </tr>               
       </tbody>
     </table>
