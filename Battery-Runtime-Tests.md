@@ -83,7 +83,7 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
-          <td>61 Hrs</td><!--T1000-E-->
+          <td>T1000-E<br><span>61 Hrs (GPS On)</span><br><span>75 Hrs (GPS Off)</span></td>
         </tr>
         <tr>
           <td>1100mAh Battery</td>
