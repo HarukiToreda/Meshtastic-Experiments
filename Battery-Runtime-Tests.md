@@ -67,8 +67,8 @@ title: Battery Runtime Tests
           <th>Lilygo T-Deck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>
-          <th>T1000-E (GPS On)</th>
-          <th>T1000-E (GPS Off)</th>
+          <th>T1000E (GPS On)</th>
+          <th>T1000E (GPS Off)</th>
         </tr>
       </thead>
       <tbody>
@@ -220,8 +220,8 @@ title: Battery Runtime Tests
           <th>Lilygo T-Deck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>      
-          <th>T1000-E (GPS On)</th>
-          <th>T1000-E (GPS Off)</th>
+          <th>T1000E (GPS On)</th>
+          <th>T1000E (GPS Off)</th>
         </tr>
       </thead>
       <tbody>
