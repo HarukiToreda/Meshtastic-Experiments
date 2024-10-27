@@ -97,6 +97,7 @@ title: Battery Runtime Tests
           <td>10 Hrs</td><!--T-Deck-->
           <td>154 Hrs</td><!--RAKRAK19007-->
           <td>156 Hrs</td><!--RAKRAK19003-->
+          <td>-</td><!--T1000-E-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
@@ -110,7 +111,7 @@ title: Battery Runtime Tests
           <td>19 Hrs</td><!--T-Deck-->
           <td>307 Hrs</td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
-          <td></td><!--T1000-E-->
+          <td>-</td><!--T1000-E-->
         </tr>
         <tr>
           <td>3000mAh Battery</td>
@@ -124,6 +125,7 @@ title: Battery Runtime Tests
           <td>26 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->   
+          <td>-</td><!--T1000-E-->
         </tr>
         <tr>
           <td>4000mAh Battery</td>
@@ -137,7 +139,7 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
-          <td></td><!--T1000-E-->
+          <td>-</td><!--T1000-E-->
         </tr>        
         <tr>
           <td>5000mAh Battery</td>
@@ -151,7 +153,7 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
-          <td></td><!--T1000-E-->
+          <td>-</td><!--T1000-E-->
         </tr>               
       </tbody>
     </table>
