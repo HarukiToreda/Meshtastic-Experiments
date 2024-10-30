@@ -237,7 +237,8 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
-          <td id="progress2">In Progress</td><!--T1000-E GPS On-->
+          <td>53 Hr</td><!--T1000-E GPS On-->
+          <!--<td id="progress2">In Progress</td><!--T1000-E GPS On-->
           <td></td><!--T1000-E GPS Off-->
         </tr>
         <tr>
