@@ -130,7 +130,7 @@ title: LoRa Boards Power Measurements
         <td></td><!--Heltec V3-->
         <td></td><!--Wireless Paper-->
         <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
+        <td>2.8V</td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
         <td></td><!--VMET190-->
