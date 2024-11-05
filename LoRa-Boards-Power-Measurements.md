@@ -127,10 +127,10 @@ title: LoRa Boards Power Measurements
       <tr>
         <td>Brownout Voltage</td>
         <td></td><!--Heltec V2-->
-        <td></td><!--Heltec V3-->
+        <td>2.85V</td><!--Heltec V3-->
         <td></td><!--Wireless Paper-->
         <td></td><!--Wireless Stick Lite-->
-        <td>2.8V</td><!--Wireless Tracker-->
+        <td>2.83V</td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
         <td></td><!--VMET190-->
