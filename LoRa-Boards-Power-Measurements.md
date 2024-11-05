@@ -124,6 +124,20 @@ title: LoRa Boards Power Measurements
         <td>39.8mA</td><!--T-Deck-->
         <td>5μA</td><!--RAKRAK19007-->
       </tr>
+      <tr>
+        <td>Brownout Voltage</td>
+        <td></td><!--Heltec V2-->
+        <td></td><!--Heltec V3-->
+        <td></td><!--Wireless Paper-->
+        <td></td><!--Wireless Stick Lite-->
+        <td></td><!--Wireless Tracker-->
+        <td></td><!--VME213-->
+        <td></td><!--VME290-->
+        <td></td><!--VMET190-->
+        <td></td><!--T114-->
+        <td></td><!--T-Deck-->
+        <td></td><!--RAKRAK19007-->
+      </tr>
     </tbody>
   </table>
 </div>
