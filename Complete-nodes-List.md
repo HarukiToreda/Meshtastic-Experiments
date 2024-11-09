@@ -402,7 +402,7 @@ Red = Avoid
       <td style="background-color: green;">Yes</td>
       <td>146Hrs</td>
       <td>$85.00</td>
-      <td><a href="https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/">Link</a></td>
+      <td><a href="https://harukitoreda.etsy.com/listing/1729282449/heltxt-standalone-running-meshtastic">Link</a></td>
     </tr>
   </tbody>
 </table>
