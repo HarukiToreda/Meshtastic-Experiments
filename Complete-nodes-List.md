@@ -401,7 +401,7 @@ Red = Avoid
       <td style="background-color: green;">BME680</td>
       <td style="background-color: green;">Yes</td>
       <td>146Hrs</td>
-      <td>$125.00</td>
+      <td>$85.00</td>
       <td><a href="https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/">Link</a></td>
     </tr>
   </tbody>
