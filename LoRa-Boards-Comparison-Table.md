@@ -634,7 +634,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--T3-S3-->                  
         <td>-</td><!--Station G2-->
         <td>-</td><!--Nano G2 Ultra-->
-        <td>-</td><!--Wio Tracker 1110-->
+        <td>Buzzer</td><!--Wio Tracker 1110-->
         <td>Buzzer / Vibration</td><!--Heltxt-->
         <td>Buzzer / Vibration / LED</td><!--Meshenger-->
       </tr>
