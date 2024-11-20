@@ -172,6 +172,23 @@ Red = Avoid
       <td><a href="https://www.etsy.com/listing/1801743857/r1-complete-meshtastic-device-powered-by">Link</a></td><!--Link-->
     </tr>
     <tr>
+      <td style="white-space: nowrap;">MeshTalk Heltec V3 Complete</td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>ESP32</td><!--MCU-->
+      <td style="background-color: green;">3000mAh</td><!--Battery-->
+      <td style="background-color: green;">5dBi</td><!--Antenna-->
+      <td style="background-color: green;">PETG</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
+      <td>No</td><!--Weatherproof-->
+      <td>30Hrs</td><!--Approximate Runtime-->
+      <td>$77.39</td><!--Approximate Runtime-->
+      <td><a href="https://www.etsy.com/listing/1756582234/meshtalk-heltec-v3-complete-device">Link</a></td><!--Link-->
+    </tr>    
+    <tr>
       <td style="white-space: nowrap;">Complete Heltec V3 with 18650 Battery</td>
       <td>Yes</td><!--Fits in Pocket-->
       <td>ESP32</td><!--MCU-->
