@@ -92,7 +92,7 @@ title: Battery Runtime Tests
           <td>21 Hrs</td><!--Heltec V2-->
           <td>10 Hrs</td><!--Heltec V3-->
           <td>9 Hrs</td><!--Wireless Paper-->
-          <td></td><!--Wireless Stick Lite-->
+          <td>10 Hrs</td><!--Wireless Stick Lite-->
           <td>9 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--VME213-->                    
