@@ -87,23 +87,6 @@ Red = Avoid
       <td><a href="https://www.tindie.com/products/embeddedarts/roamer-meshtastic-wireless-lora-mesh-comms/">Link</a></td><!--Link-->
     </tr>
     <tr>
-      <td style="white-space: nowrap;">Complete Meshtastic RAK WisBlock Device</td>
-      <td>Yes</td><!--Fits in Pocket-->
-      <td>nRF</td><!--MCU-->
-      <td style="background-color: green;">2000mAh</td><!--Battery-->
-      <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
-      <td style="background-color: green;">ABS / PA6-CF</td><!--Case Material-->
-      <td>None</td><!--Power Switch-->
-      <td>None</td><!--GPS-->
-      <td style="background-color: green;">BME680</td><!--Sensors-->
-      <td>None</td><!--Buzzer-->
-      <td>None</td><!--Canned Module-->
-      <td>No</td><!--Weatherproof-->
-      <td>307Hrs</td><!--Price-->
-      <td>$125.00</td><!--Price-->
-      <td><a href="https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device">Link</a></td><!--Link-->
-    </tr>
-    <tr>
       <td style="white-space: nowrap;">MeshCard - Compact Mobile Meshtastic Node</td>
       <td>Yes</td>
       <td>nRF</td>
@@ -117,8 +100,25 @@ Red = Avoid
       <td>None</td><!--Canned Module-->
       <td>No</td>
       <td>154Hrs</td>
-      <td>$114.40</td>
+      <td>$140.00</td>
       <td><a href="https://www.etsy.com/listing/1736071130/meshcard-compact-mobile-meshtastic-node">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">Complete Meshtastic RAK WisBlock Device</td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>nRF</td><!--MCU-->
+      <td style="background-color: green;">2000mAh</td><!--Battery-->
+      <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
+      <td style="background-color: green;">ABS / PA6-CF</td><!--Case Material-->
+      <td>None</td><!--Power Switch-->
+      <td>None</td><!--GPS-->
+      <td style="background-color: green;">BME680</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
+      <td>No</td><!--Weatherproof-->
+      <td>307Hrs</td><!--Price-->
+      <td>$105.00</td><!--Price-->
+      <td><a href="https://www.etsy.com/listing/1725982705/complete-meshtastic-rak-wisblock-device">Link</a></td><!--Link-->
     </tr>
     <tr>
       <td style="white-space: nowrap;">WisMesh Pocket</td>
