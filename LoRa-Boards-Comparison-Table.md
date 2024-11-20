@@ -184,7 +184,7 @@ title: LoRa Boards Comparison Table
         <td><a href="https://www.lilygo.cc/products/t3s3-v1-0" target="_blank" rel="noopener noreferrer">$17.58</a></td><!--T3-S3-->
         <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-station-edition/" target="_blank" rel="noopener noreferrer">$109.00</a></td><!--Station G2-->
         <td><a href="https://shop.uniteng.com/product/meshtastic-mesh-device-nano-g2-ultra/" target="_blank" rel="noopener noreferrer">$86.00</a></td><!--Nano G2 Ultra-->
-        <td><a href="https://www.seeedstudio.com/Wio-Tracker-1110-Dev-Board-p-5799.html" target="_blank" rel="noopener noreferrer">$39.90</a></td><!--Wio Tracker 1110-->
+        <td><a href="https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html" target="_blank" rel="noopener noreferrer">$39.90</a></td><!--Wio Tracker 1110-->
         <td><a href="https://www.tindie.com/products/harukitoreda/heltxt-standalone-meshtastic-communicator/" target="_blank" rel="noopener noreferrer">$90.00</a></td><!--Heltxt-->       
         <td><a href="https://www.etsy.com/listing/1390142667/meshenger-standalone-device-for" target="_blank" rel="noopener noreferrer">$250.00</a></td><!--Meshenger-->
       </tr>
