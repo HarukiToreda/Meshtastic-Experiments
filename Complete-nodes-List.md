@@ -144,7 +144,7 @@ Red = Avoid
       <td style="background-color: green;">3000mAh</td><!--Case Material-->
       <td style="background-color: green;">Gizont</td><!--Case Material-->
       <td style="background-color: yellow; color: black;">PLA+</td><!--Case Material-->
-      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
@@ -178,7 +178,7 @@ Red = Avoid
       <td style="background-color: green;">3000mAh</td><!--Battery-->
       <td style="background-color: green;">5dBi</td><!--Antenna-->
       <td style="background-color: green;">PETG</td><!--Case Material-->
-      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
@@ -195,7 +195,7 @@ Red = Avoid
       <td style="background-color: green;">3000mAh</td><!--Battery-->
       <td style="background-color: green;">Gizont</td><!--Antenna-->
       <td style="background-color: green;">PETG</td><!--Case Material-->
-      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
@@ -212,7 +212,7 @@ Red = Avoid
       <td style="background-color: green;">3350mAh</td><!--Battery-->
       <td style="background-color: yellow; color: black;">Stock</td><!--Battery-->
       <td style="background-color: green;">ABS / PA6-CF</td><!--Case Material-->
-      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
@@ -229,7 +229,7 @@ Red = Avoid
       <td style="background-color: green;">3000mAh</td><!--Battery-->
       <td style="background-color: green;">5dBi</td><!--Antenna-->
       <td style="background-color: green;">PETG</td><!--Case Material-->
-      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
@@ -246,7 +246,7 @@ Red = Avoid
       <td style="background-color: green;">3000mAh</td><!--Battery-->
       <td style="background-color: green;">Gizont</td><!--Antenna-->
       <td style="background-color: green;">PETG</td><!--Case Material-->
-      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">None</td><!--Power Switch-->
       <td style="background-color: red; color: white;">GPS/No switch</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
@@ -263,7 +263,7 @@ Red = Avoid
       <td style="background-color: green;">3000mAh</td><!--Battery-->
       <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
       <td style="background-color: yellow; color: black;">PLA+</td><!--Case Material-->
-      <td>None</td><!--Power Switch-->
+      <td style="background-color: yellow; color: black;">None</td><!--Power Switch-->
       <td>None</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
