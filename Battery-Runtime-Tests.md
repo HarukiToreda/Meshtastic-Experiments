@@ -64,6 +64,8 @@ title: Battery Runtime Tests
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Capsule Sensor V3</th>
           <th>Heltec Vision Master E213</th>
+          <th>Heltec T114</th>(GPS On)
+          <th>Heltec T114</th>(GPS Off)
           <th>Lilygo T-Deck</th>
           <th>RAK19007 (RAK4631)</th>
           <th>RAK19003 (RAK4631)</th>
@@ -80,7 +82,9 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td></td><!--VME213-->                    
+          <td></td><!--VME213-->
+          <td></td><!--Heltec T114 GPS ON-->
+          <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
@@ -95,7 +99,9 @@ title: Battery Runtime Tests
           <td>10 Hrs</td><!--Wireless Stick Lite-->
           <td>9 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td></td><!--VME213-->                    
+          <td></td><!--VME213-->
+          <td></td><!--Heltec T114 GPS ON-->
+          <td></td><!--Heltec T114 GPS OFF-->
           <td>10 Hrs</td><!--T-Deck-->
           <td>154 Hrs</td><!--RAKRAK19007-->
           <td>156 Hrs</td><!--RAKRAK19003-->
@@ -110,7 +116,9 @@ title: Battery Runtime Tests
           <td>20 Hrs</td><!--Wireless Stick Lite-->
           <td>13 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td>19 Hrs</td><!--VME213-->          
+          <td>19 Hrs</td><!--VME213-->
+          <td></td><!--Heltec T114 GPS ON-->
+          <td></td><!--Heltec T114 GPS OFF-->
           <td>19 Hrs</td><!--T-Deck-->
           <td>307 Hrs</td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
@@ -125,7 +133,9 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td>19 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td></td><!--VME213-->            
+          <td></td><!--VME213-->
+          <td></td><!--Heltec T114 GPS ON-->
+          <td></td><!--Heltec T114 GPS OFF-->
           <td>26 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->   
@@ -140,7 +150,9 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td></td><!--VME213-->            
+          <td></td><!--VME213-->
+          <td></td><!--Heltec T114 GPS ON-->
+          <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
@@ -155,7 +167,9 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
-          <td></td><!--VME213-->            
+          <td></td><!--VME213-->
+          <td></td><!--Heltec T114 GPS ON-->
+          <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
