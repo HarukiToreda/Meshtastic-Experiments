@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        //{ id: 'progress1', start: new Date('2024-07-15T11:42:00') }, // RAK Mini
+        { id: 'progress1', start: new Date('2024-11-21T22:50:00') }, // Tdeck
         { id: 'progress2', start: new Date('2024-10-27T13:00:00') }, // T1000-E (GPS Off)
         { id: 'progress3', start: new Date('2024-07-29T02:00:00') }, // RAK Big
         //{ id: 'progress4', start: new Date('2024-07-16T02:33:00') }, // V2 3000
@@ -287,7 +287,7 @@ title: Battery Runtime Tests
           <td></td><!--VME213-->
           <td></td><!--Heltec T114 GPS ON-->
           <td></td><!--Heltec T114 GPS OFF-->
-          <td></td><!--T-Deck-->
+          <td id="progress1">In Progress</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->   
           <td>-</td><!--T1000-E GPS On-->
