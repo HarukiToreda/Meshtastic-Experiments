@@ -10,7 +10,7 @@ title: Battery Runtime Tests
       const startTimes = [
         { id: 'progress1', start: new Date('2024-11-23T22:04:00') }, // 2000mAh T114
         { id: 'progress2', start: new Date('2024-11-24T00:09:00') }, // Tdeck
-        { id: 'progress3', start: new Date('2024-07-29T02:00:00') }, // 
+        { id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
         { id: 'progress4', start: new Date('2024-07-16T02:33:00') }, // 
         { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // 
         { id: 'progress6', start: new Date('2024-07-11T02:36:00') }, //         
@@ -392,17 +392,23 @@ title: Battery Runtime Tests
       <thead>
         <tr>
           <th>Device</th>
-          <th>Hel-txt </th>
-          <th>Nrf-txt </th>
-          <th>Meshenger</th>
+          <th>Hel-txt (GPS Off)</th>
+          <th>Hel-txt (GPS On)</th>
+          <th>Nrf-txt (GPS Off) </th>
+          <th>Nrf-txt (GPS On) </th>
+          <th>Meshenger (GPS Off)</th>
+          <th>Meshenger (GPS On)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>4000mAh Battery</td>
-          <td>146 Hrs</td><!--HelTXT-->
-          <td>276 Hrs</td><!--NRFTXT-->
-          <td>312 Hrs</td><!--Meshenger-->   
+          <td>146 Hrs</td><!--HelTXT GPS off-->
+          <td></td><!--HelTXT GPS on-->
+          <td>276 Hrs</td><!--NRFTXT Gps Off-->
+          <td id="progress1"></td><!--NRFTXT Gps on-->
+          <td>312 Hrs</td><!--Meshenger GPS off-->
+          <td></td><!--Meshenger GPS On-->
         </tr>
       </tbody>
     </table>
