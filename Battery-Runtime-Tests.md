@@ -117,7 +117,7 @@ title: Battery Runtime Tests
           <td>13 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td>19 Hrs</td><!--VME213-->
-          <td id="progress1">In Progress</td></td><!--Heltec T114 GPS ON-->
+          <td id="progress1"></td><!--Heltec T114 GPS ON-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td>19 Hrs</td><!--T-Deck-->
           <td>307 Hrs</td><!--RAKRAK19007-->
