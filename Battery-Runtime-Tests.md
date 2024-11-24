@@ -406,7 +406,7 @@ title: Battery Runtime Tests
           <td>146 Hrs</td><!--HelTXT GPS off-->
           <td></td><!--HelTXT GPS on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
-          <td id="progress1"></td><!--NRFTXT Gps on-->
+          <td id="progress3"></td><!--NRFTXT Gps on-->
           <td>312 Hrs</td><!--Meshenger GPS off-->
           <td></td><!--Meshenger GPS On-->
         </tr>
