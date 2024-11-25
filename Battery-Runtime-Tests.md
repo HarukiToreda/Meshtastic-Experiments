@@ -11,7 +11,7 @@ title: Battery Runtime Tests
         { id: 'progress1', start: new Date('2024-11-23T22:04:00') }, // 2000mAh T114
         { id: 'progress2', start: new Date('2024-11-24T00:09:00') }, // Tdeck
         { id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
-        { id: 'progress4', start: new Date('2024-07-16T02:33:00') }, // 
+        { id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
         { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // 
         { id: 'progress6', start: new Date('2024-07-11T02:36:00') }, //         
         { id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
@@ -256,7 +256,7 @@ title: Battery Runtime Tests
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
           <td>53 Hr</td><!--T1000-E GPS On-->
-          <td id="progress3"></td><!--T1000-E GPS Off-->
+          <td id="progress4"></td><!--T1000-E GPS Off-->
         </tr>
         <tr>
           <td>1100mAh Battery</td>
