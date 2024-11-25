@@ -12,7 +12,7 @@ title: Battery Runtime Tests
         //{ id: 'progress2', start: new Date('2024-11-24T00:09:00') }, // Tdeck
         { id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
         { id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
-        { id: 'progress5', start: new Date('2024-07-12T14:55:00') }, // 
+        { id: 'progress5', start: new Date('2024-11-25T10:54:00') }, // Heltxt
         { id: 'progress6', start: new Date('2024-07-11T02:36:00') }, //         
         { id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
         { id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
@@ -405,9 +405,9 @@ title: Battery Runtime Tests
         <tr>
           <td>4000mAh Battery</td>
           <td>146 Hrs</td><!--HelTXT GPS off-->
-          <td></td><!--HelTXT GPS on-->
+          <td id="progress5"></td><!--HelTXT GPS on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
-          <td id="progress3">></td><!--NRFTXT Gps on-->
+          <td id="progress3"></td><!--NRFTXT Gps on-->
           <td>312 Hrs</td><!--Meshenger GPS off-->
           <td></td><!--Meshenger GPS On-->
           <td>84 Hrs</td><!--Tdeck-->
