@@ -256,7 +256,7 @@ title: Battery Runtime Tests
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
           <td>53 Hr</td><!--T1000-E GPS On-->
-          <td></td><!--T1000-E GPS Off-->
+          <td id="progress3"></td><!--T1000-E GPS Off-->
         </tr>
         <tr>
           <td>1100mAh Battery</td>
