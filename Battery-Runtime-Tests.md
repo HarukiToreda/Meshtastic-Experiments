@@ -398,6 +398,7 @@ title: Battery Runtime Tests
           <th>Nrf-txt (GPS On) </th>
           <th>Meshenger (GPS Off)</th>
           <th>Meshenger (GPS On)</th>
+          <th>Lilygo T-Deck</th>
         </tr>
       </thead>
       <tbody>
@@ -409,6 +410,7 @@ title: Battery Runtime Tests
           <td id="progress3"></td><!--NRFTXT Gps on-->
           <td>312 Hrs</td><!--Meshenger GPS off-->
           <td></td><!--Meshenger GPS On-->
+          <td>84 Hrs</td><!--Tdeck-->
         </tr>
       </tbody>
     </table>
