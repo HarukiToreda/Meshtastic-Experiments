@@ -405,7 +405,7 @@ title: Battery Runtime Tests
         <tr>
           <td>4000mAh Battery</td>
           <td>146 Hrs</td><!--HelTXT GPS off-->
-          <td>48 hrs</td><!--HelTXT GPS on-->
+          <td>49 hrs</td><!--HelTXT GPS on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
           <td id="progress3"></td><!--NRFTXT Gps on-->
           <td>312 Hrs</td><!--Meshenger GPS off-->
