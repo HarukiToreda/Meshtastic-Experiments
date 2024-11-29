@@ -68,24 +68,7 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
           <option value="heltec_v1" data-multiplier="3.2">heltec_v1</option>
           <option value="heltec_v2" data-multiplier="3.2">heltec_v2</option>
           <option value="heltec_v3" data-multiplier="5.1205">heltec_v3</option>
-          <option value="heltec_wsl_v3" data-multiplier="5.1205">heltec_wsl_v3</option>
-          <option value="heltec_wireless_paper" data-multiplier="2.0">heltec_wireless_paper</option>
-          <option value="heltec_wireless_tracker" data-multiplier="5.1205">heltec_wireless_tracker</option>
-          <option value="lora_isp4520" data-multiplier="1.436">lora_isp4520</option>
-          <option value="m5stack_coreink" data-multiplier="5.0">m5stack_coreink</option>
-          <option value="nano-g1-explorer" data-multiplier="2.0">nano-g1-explorer</option>
-          <option value="nano-g2-ultra" data-multiplier="2.0">nano-g2-ultra</option>
-          <option value="picomputer-s3" data-multiplier="3.1">picomputer-s3</option>
           <option value="rak4631" data-multiplier="1.73">rak4631</option>
-          <option value="rpipico" data-multiplier="3.1">rpipico</option>
-          <option value="rpipicow" data-multiplier="3.1">rpipicow</option>
-          <option value="station-g1" data-multiplier="6.45">station-g1</option>
-          <option value="station-g2" data-multiplier="4.0">station-g2</option>
-          <option value="tlora_v2_1_16" data-multiplier="2.0">tlora_v2_1_16</option>
-          <option value="tlora_v2_1_18" data-multiplier="2.11">tlora_v2_1_18</option>
-          <option value="tlora_t3s3_v1" data-multiplier="2.11">tlora_t3s3_v1</option>
-          <option value="t-deck" data-multiplier="2.11">t-deck</option>
-          <option value="t-echo" data-multiplier="2.0">t-echo</option>
         </select>
       </td>
     </tr>
@@ -94,11 +77,11 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
       <td><input type="text" id="batteryVoltage" value="" /></td>
     </tr>
     <tr>
-      <td>Current Adc Multiplier:</td>
+      <td>Current ADC Multiplier:</td>
       <td><input type="text" id="operativeAdcMultiplier" value="" /></td>
     </tr>
     <tr>
-      <td>Calculated New Operative Adc Multiplier:</td>
+      <td>Calculated New Operative ADC Multiplier:</td>
       <td><input type="text" id="newOperativeAdcMultiplier" value="" disabled="disabled" /></td>
     </tr>
     <tr>
@@ -112,7 +95,18 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
 
 ---
 
-### Voltage Measurement Table
+## Voltage Measurement Table
+
+### Instructions:
+1. Click **"Add Measurement"** to create a new row in the table.
+2. In each row:
+   - Enter the **Measured Voltage (Multimeter)**: Input the actual voltage from your multimeter.
+   - Enter the **Displayed Voltage (Screen)**: Input the voltage displayed by the device.
+   - Enter the **Manual ADC Multiplier**: Input the ADC multiplier being used.
+   - The **Adjusted ADC Multiplier** will be calculated automatically.
+3. Use the adjusted multiplier to refine your device's configuration.
+
+---
 
 <table>
   <thead>
@@ -130,12 +124,14 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
 <button onclick="addNewMeasurement()">Add Measurement</button>
 
 <script>
+  // Updates the ADC Multiplier based on the selected device
   function updateAdcMultiplier() {
     var select = document.getElementById('deviceSelect');
     var multiplier = select.options[select.selectedIndex].getAttribute('data-multiplier');
     document.getElementById('operativeAdcMultiplier').value = multiplier;
   }
 
+  // Calculates the new ADC Multiplier for the ADC Calculator
   function calculateNewMultiplier() {
     var batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
     var currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
@@ -151,6 +147,7 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
     document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
   }
 
+  // Adds a new row to the Voltage Measurement Table
   function addNewMeasurement() {
     var table = document.getElementById('voltageTable');
     var row = table.insertRow();
@@ -170,6 +167,7 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
     manualMultiplierCell.querySelector('input').addEventListener('input', calculateRowMultiplier);
   }
 
+  // Calculates the Adjusted ADC Multiplier for a specific row
   function calculateRowMultiplier(event) {
     var row = event.target.closest('tr');
     var measuredVoltage = parseFloat(row.querySelector('.measuredVoltage').value);
