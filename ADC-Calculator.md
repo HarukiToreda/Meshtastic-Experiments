@@ -1,100 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ADC Calculator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-    th, td {
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f4f4f4;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 6px;
-      box-sizing: border-box;
-    }
-    button {
-      padding: 8px 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
+---
+layout: default
+title: ADC Calculator
+---
 
-<h1>ADC Calculator</h1>
+# ADC Calculator
 
-<p>Ratio of voltage divider for battery pin e.g. 3.20 (R1=100k, R2=220k)</p>
+Ratio of voltage divider for battery pin e.g. 3.20 (R1=100k, R2=220k)
 
-<p>
-  Overrides the ADC_MULTIPLIER defined in the firmware device variant file for battery voltage calculation.
-  Should be set to a floating point value between 2 and 6.
-</p>
+Overrides the ADC_MULTIPLIER defined in the firmware device variant file for battery voltage calculation.
 
-<h2>Calibration Process</h2>
-<ol>
-  <li>Input the measured voltage using a multimeter and the displayed voltage from the screen.</li>
-  <li>The system will calculate the new ADC multiplier automatically.</li>
-  <li>Adjust the ADC multiplier in your device configuration to ensure accurate readings.</li>
-</ol>
+Should be set to a floating point value between 2 and 6
 
-<h3>ADC Calculator</h3>
-<div>
+#### Calibration Process
+
+The calibration process uses a simple formula to adjust the ADC multiplier based on the battery voltage. Here’s a detailed breakdown of how the calculation is done:
+
+1. **Determine the target ADC value**: The target ADC value for a full battery (100% charge) is known, which is 4.19V.
+2. **Adjust the ADC Multiplier**: The formula adjusts the current ADC multiplier to make sure that the device reads 100% charge when the battery voltage is 4.19V.
+3. **Calculate the new ADC Multiplier**: The new ADC multiplier is calculated by the following formula:
+
+New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Current Multiplier)
+
+
+<details>
+  <summary><strong>Example Calculation:</strong></summary>
+
   <table>
-    <thead>
-      <tr>
-        <th>Device</th>
-        <th>Battery Voltage (V)</th>
-        <th>Current ADC Multiplier</th>
-        <th>Calculated New ADC Multiplier</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <select id="deviceSelect" onchange="updateAdcMultiplier()">
-            <option value="" data-multiplier="">Choose</option>          
-            <option value="chatter2" data-multiplier="5.0">chatter2</option>
-            <option value="diy" data-multiplier="1.85">diy</option>
-            <option value="esp32-s3-pico" data-multiplier="3.1">esp32-s3-pico</option>
-            <option value="heltec_v1" data-multiplier="3.2">heltec_v1</option>
-            <option value="heltec_v2" data-multiplier="3.2">heltec_v2</option>
-            <option value="heltec_v3" data-multiplier="5.1205">heltec_v3</option>
-            <option value="rak4631" data-multiplier="1.73">rak4631</option>
-          </select>
-        </td>
-        <td><input type="text" id="batteryVoltage" placeholder="Enter battery voltage"></td>
-        <td><input type="text" id="operativeAdcMultiplier" placeholder="Enter or auto-fill multiplier"></td>
-        <td><input type="text" id="newOperativeAdcMultiplier" disabled></td>
-      </tr>
-    </tbody>
+    <tr>
+      <td>Initial Condition:</td>
+      <td>Your device shows a battery voltage of 3.82V using a current ADC multiplier of 2.</td>
+    </tr>
+    <tr>
+      <td>Formula:</td>
+      <td>New ADC Multiplier = 2 × (4.19 / 3.82)</td>
+    </tr>
+    <tr>
+      <td>Calculate the Ratio:</td>
+      <td>4.19 / 3.82 ≈ 1.097</td>
+    </tr>
+    <tr>
+      <td>Multiply the Current ADC Multiplier by the Ratio:</td>
+      <td>New ADC Multiplier = 2 × 1.097 = 2.194</td>
+    </tr>
+    <tr>
+      <td>Update the Device:</td>
+      <td>You then set the new ADC multiplier (2.194 in this case) in your device's configuration. This calculation adjusts the multiplier so that the battery charge readings are accurate, mapping 4.19V to 100% battery charge.</td>
+    </tr>
   </table>
-  <button onclick="calculateNewMultiplier()">Calculate</button>
+</details>
+
+
+#### ADC Calculator
+
+<div>
+  <Admonition type="info">
+    <p>This calibration method only maps 4.19V to Battery Charge Percent 100%, and does not address the potential non-linearities of the ADC.</p>
+  </Admonition>
+  <table>
+    <tr>
+      <td>Device:</td>
+      <td>
+        <select id="deviceSelect" onchange="updateAdcMultiplier()">
+          <option value="" data-multiplier="Choose"></option>          
+          <option value="chatter2" data-multiplier="5.0">chatter2</option>
+          <option value="diy" data-multiplier="1.85">diy</option>
+          <option value="esp32-s3-pico" data-multiplier="3.1">esp32-s3-pico</option>
+          <option value="heltec_v1" data-multiplier="3.2">heltec_v1</option>
+          <option value="heltec_v2" data-multiplier="3.2">heltec_v2</option>
+          <option value="heltec_v3" data-multiplier="5.1205">heltec_v3</option>
+          <option value="heltec_wsl_v3" data-multiplier="5.1205">heltec_wsl_v3</option>
+          <option value="heltec_wireless_paper" data-multiplier="2.0">heltec_wireless_paper</option>
+          <option value="heltec_wireless_tracker" data-multiplier="5.1205">heltec_wireless_tracker</option>
+          <option value="lora_isp4520" data-multiplier="1.436">lora_isp4520</option>
+          <option value="m5stack_coreink" data-multiplier="5.0">m5stack_coreink</option>
+          <option value="nano-g1-explorer" data-multiplier="2.0">nano-g1-explorer</option>
+          <option value="nano-g2-ultra" data-multiplier="2.0">nano-g2-ultra</option>
+          <option value="picomputer-s3" data-multiplier="3.1">picomputer-s3</option>
+          <option value="rak4631" data-multiplier="1.73">rak4631</option>
+          <option value="rpipico" data-multiplier="3.1">rpipico</option>
+          <option value="rpipicow" data-multiplier="3.1">rpipicow</option>
+          <option value="station-g1" data-multiplier="6.45">station-g1</option>
+          <option value="station-g2" data-multiplier="4.0">station-g2</option>
+          <option value="tlora_v2_1_16" data-multiplier="2.0">tlora_v2_1_16</option>
+          <option value="tlora_v2_1_18" data-multiplier="2.11">tlora_v2_1_18</option>
+          <option value="tlora_t3s3_v1" data-multiplier="2.11">tlora_t3s3_v1</option>
+          <option value="t-deck" data-multiplier="2.11">t-deck</option>
+          <option value="t-echo" data-multiplier="2.0">t-echo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Battery Voltage (V):</td>
+      <td><input type="text" id="batteryVoltage" value="" /></td>
+    </tr>
+    <tr>
+      <td>Current Adc Multiplier:</td>
+      <td><input type="text" id="operativeAdcMultiplier" value="" /></td>
+    </tr>
+    <tr>
+      <td>Calculated New Operative Adc Multiplier:</td>
+      <td><input type="text" id="newOperativeAdcMultiplier" value="" disabled="disabled" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button class="button button--outline button--lg cta--button" onclick="calculateNewMultiplier()">Calculate</button>
+      </td>
+    </tr>
+  </table>
 </div>
 
-<h3>Voltage Measurement Table</h3>
+---
+
+### Voltage Measurement Table
+
 <table>
   <thead>
     <tr>
@@ -111,16 +130,12 @@
 <button onclick="addNewMeasurement()">Add Measurement</button>
 
 <script>
-  // Updates the ADC Multiplier when a device is selected
   function updateAdcMultiplier() {
     var select = document.getElementById('deviceSelect');
     var multiplier = select.options[select.selectedIndex].getAttribute('data-multiplier');
-    if (multiplier) {
-      document.getElementById('operativeAdcMultiplier').value = multiplier;
-    }
+    document.getElementById('operativeAdcMultiplier').value = multiplier;
   }
 
-  // Calculates the new ADC Multiplier for the main calculator
   function calculateNewMultiplier() {
     var batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
     var currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
@@ -136,7 +151,6 @@
     document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
   }
 
-  // Adds a new row to the Voltage Measurement Table
   function addNewMeasurement() {
     var table = document.getElementById('voltageTable');
     var row = table.insertRow();
@@ -151,30 +165,23 @@
     manualMultiplierCell.innerHTML = '<input type="text" class="manualMultiplier" placeholder="Enter manual multiplier">';
     adjustedCell.innerHTML = '<input type="text" class="adjustedMultiplier" placeholder="Calculated multiplier" disabled>';
 
-    // Add event listeners to dynamically calculate the adjusted multiplier
     measuredCell.querySelector('input').addEventListener('input', calculateRowMultiplier);
     displayedCell.querySelector('input').addEventListener('input', calculateRowMultiplier);
     manualMultiplierCell.querySelector('input').addEventListener('input', calculateRowMultiplier);
   }
 
-  // Dynamically calculates the adjusted ADC Multiplier for a specific row
   function calculateRowMultiplier(event) {
     var row = event.target.closest('tr');
     var measuredVoltage = parseFloat(row.querySelector('.measuredVoltage').value);
     var displayedVoltage = parseFloat(row.querySelector('.displayedVoltage').value);
     var manualMultiplier = parseFloat(row.querySelector('.manualMultiplier').value);
 
-    // Ensure valid inputs for calculation
     if (isNaN(measuredVoltage) || measuredVoltage <= 0 || isNaN(displayedVoltage) || displayedVoltage <= 0 || isNaN(manualMultiplier) || manualMultiplier <= 0) {
       row.querySelector('.adjustedMultiplier').value = '';
       return;
     }
 
-    // Adjusted multiplier calculation
     var adjustedMultiplier = manualMultiplier * (measuredVoltage / displayedVoltage);
     row.querySelector('.adjustedMultiplier').value = adjustedMultiplier.toFixed(3);
   }
 </script>
-
-</body>
-</html>
