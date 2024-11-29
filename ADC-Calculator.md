@@ -75,7 +75,7 @@
       <tr>
         <td>
           <select id="deviceSelect" onchange="updateAdcMultiplier()">
-            <option value="" data-multiplier="Choose"></option>          
+            <option value="" data-multiplier="">Choose</option>          
             <option value="chatter2" data-multiplier="5.0">chatter2</option>
             <option value="diy" data-multiplier="1.85">diy</option>
             <option value="esp32-s3-pico" data-multiplier="3.1">esp32-s3-pico</option>
@@ -86,7 +86,7 @@
           </select>
         </td>
         <td><input type="text" id="batteryVoltage" placeholder="Enter battery voltage"></td>
-        <td><input type="text" id="operativeAdcMultiplier" disabled></td>
+        <td><input type="text" id="operativeAdcMultiplier" placeholder="Enter or auto-fill multiplier"></td>
         <td><input type="text" id="newOperativeAdcMultiplier" disabled></td>
       </tr>
     </tbody>
@@ -113,7 +113,9 @@
   function updateAdcMultiplier() {
     var select = document.getElementById('deviceSelect');
     var multiplier = select.options[select.selectedIndex].getAttribute('data-multiplier');
-    document.getElementById('operativeAdcMultiplier').value = multiplier;
+    if (multiplier) {
+      document.getElementById('operativeAdcMultiplier').value = multiplier;
+    }
   }
 
   function calculateNewMultiplier() {
