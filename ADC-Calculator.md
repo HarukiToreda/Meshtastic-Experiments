@@ -15,9 +15,7 @@ Should be set to a floating point value between 2 and 6.
 
 ---
 
-### ADC Calculator Form
-
-#### Calibration Process
+### Calibration Process
 
 The calibration process uses a simple formula to adjust the ADC multiplier based on the battery voltage. Here’s a detailed breakdown of how the calculation is done:
 
@@ -55,6 +53,10 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
     </tr>
   </table>
 </details>
+
+---
+
+### ADC Calculator Form
 
 <div>
   <table>
@@ -109,6 +111,31 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
     </tr>
   </table>
 </div>
+
+<script>
+  function updateAdcMultiplier() {
+    const select = document.getElementById('deviceSelect');
+    const multiplier = select.options[select.selectedIndex].getAttribute('data-multiplier');
+    if (multiplier) {
+      document.getElementById('operativeAdcMultiplier').value = multiplier;
+    }
+  }
+
+  function calculateNewMultiplier() {
+    const batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
+    const currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
+
+    if (isNaN(batteryVoltage) || batteryVoltage <= 0 || isNaN(currentAdcMultiplier)) {
+      alert("Please enter valid numbers.");
+      return;
+    }
+
+    const targetVoltage = 4.19;
+    const newAdcMultiplier = currentAdcMultiplier * (targetVoltage / batteryVoltage);
+
+    document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
+  }
+</script>
 
 ---
 
@@ -167,35 +194,7 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
   <button class="button button--outline button--lg cta--button" onclick="calculateTableMultipliers()">Calculate</button>
 </div>
 
----
-
-### JavaScript
-
-```html
 <script>
-  function updateAdcMultiplier() {
-    const select = document.getElementById('deviceSelect');
-    const multiplier = select.options[select.selectedIndex].getAttribute('data-multiplier');
-    if (multiplier) {
-      document.getElementById('operativeAdcMultiplier').value = multiplier;
-    }
-  }
-
-  function calculateNewMultiplier() {
-    const batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
-    const currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
-
-    if (isNaN(batteryVoltage) || batteryVoltage <= 0 || isNaN(currentAdcMultiplier)) {
-      alert("Please enter valid numbers.");
-      return;
-    }
-
-    const targetVoltage = 4.19;
-    const newAdcMultiplier = currentAdcMultiplier * (targetVoltage / batteryVoltage);
-
-    document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
-  }
-
   function updateManualMultiplier(dropdown) {
     const multiplier = dropdown.options[dropdown.selectedIndex].getAttribute('data-multiplier');
     const manualMultiplierField = dropdown.closest('tr').querySelector('.manualMultiplier');
