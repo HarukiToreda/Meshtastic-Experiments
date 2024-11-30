@@ -25,6 +25,37 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
 2. **Adjust the ADC Multiplier**: The formula adjusts the current ADC multiplier to make sure that the device reads 100% charge when the battery voltage is 4.19V.
 3. **Calculate the new ADC Multiplier**: The new ADC multiplier is calculated by the following formula:
 
+   \[
+   \text{New ADC Multiplier} = \text{Current ADC Multiplier} \times \left( \frac{4.19}{\text{Battery Voltage at Current Multiplier}} \right)
+   \]
+
+<details>
+  <summary><strong>Example Calculation:</strong></summary>
+
+  <table>
+    <tr>
+      <td>Initial Condition:</td>
+      <td>Your device shows a battery voltage of 3.82V using a current ADC multiplier of 2.</td>
+    </tr>
+    <tr>
+      <td>Formula:</td>
+      <td>New ADC Multiplier = 2 × (4.19 / 3.82)</td>
+    </tr>
+    <tr>
+      <td>Calculate the Ratio:</td>
+      <td>4.19 / 3.82 ≈ 1.097</td>
+    </tr>
+    <tr>
+      <td>Multiply the Current ADC Multiplier by the Ratio:</td>
+      <td>New ADC Multiplier = 2 × 1.097 = 2.194</td>
+    </tr>
+    <tr>
+      <td>Update the Device:</td>
+      <td>You then set the new ADC multiplier (2.194 in this case) in your device's configuration. This calculation adjusts the multiplier so that the battery charge readings are accurate, mapping 4.19V to 100% battery charge.</td>
+    </tr>
+  </table>
+</details>
+
 ---
 
 ### ADC Calculator Form
@@ -141,21 +172,18 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
 </div>
 
 <script>
-  // Updates Manual ADC Multiplier when a device is selected
   function updateManualMultiplier(dropdown) {
     var multiplier = dropdown.options[dropdown.selectedIndex].getAttribute('data-multiplier');
     var manualMultiplierField = dropdown.closest('tr').querySelector('.manualMultiplier');
     manualMultiplierField.value = multiplier;
   }
 
-  // Updates Current ADC Multiplier when a device is selected in the first calculator
   function updateAdcMultiplier() {
     var select = document.getElementById('deviceSelect');
     var multiplier = select.options[select.selectedIndex].getAttribute('data-multiplier');
     document.getElementById('operativeAdcMultiplier').value = multiplier;
   }
 
-  // Calculates the new ADC Multiplier for the ADC Calculator
   function calculateNewMultiplier() {
     var batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
     var currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
@@ -171,7 +199,6 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
     document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
   }
 
-  // Calculates Adjusted ADC Multipliers for the Voltage Measurement Table
   function calculateTableMultipliers() {
     var rows = document.querySelectorAll('#measurementTable tbody tr');
 
