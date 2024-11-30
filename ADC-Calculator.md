@@ -23,34 +23,42 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
 
 New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Current Multiplier)
 
-<details>
-  <summary><strong>Example Calculation:</strong></summary>
+---
 
-  <table>
-    <tr>
-      <td>Initial Condition:</td>
-      <td>Your device shows a battery voltage of 3.82V using a current ADC multiplier of 2.</td>
-    </tr>
-    <tr>
-      <td>Formula:</td>
-      <td>New ADC Multiplier = 2 × (4.19 / 3.82)</td>
-    </tr>
-    <tr>
-      <td>Calculate the Ratio:</td>
-      <td>4.19 / 3.82 ≈ 1.097</td>
-    </tr>
-    <tr>
-      <td>Multiply the Current ADC Multiplier by the Ratio:</td>
-      <td>New ADC Multiplier = 2 × 1.097 = 2.194</td>
-    </tr>
-    <tr>
-      <td>Update the Device:</td>
-      <td>You then set the new ADC multiplier (2.194 in this case) in your device's configuration. This calculation adjusts the multiplier so that the battery charge readings are accurate, mapping 4.19V to 100% battery charge.</td>
-    </tr>
-  </table>
-</details>
+### Shared ADC Device Dropdown Template
 
-#### ADC Calculator
+<template id="adcDeviceDropdown">
+  <select class="adcDeviceSelect" onchange="updateAdcMultiplier(this)">
+    <option value="" data-multiplier="Choose"></option>          
+    <option value="chatter2" data-multiplier="5.0">chatter2</option>
+    <option value="diy" data-multiplier="1.85">diy</option>
+    <option value="esp32-s3-pico" data-multiplier="3.1">esp32-s3-pico</option>
+    <option value="heltec_v1/v2" data-multiplier="3.2">heltec_v1/v2</option>
+    <option value="heltec_v3" data-multiplier="5.1205">heltec_v3</option>
+    <option value="heltec_wsl_v3" data-multiplier="5.1205">heltec_wsl_v3</option>
+    <option value="heltec_wireless_paper" data-multiplier="2.0">heltec_wireless_paper</option>
+    <option value="heltec_wireless_tracker" data-multiplier="4.9">heltec_wireless_tracker</option>
+    <option value="lora_isp4520" data-multiplier="1.436">lora_isp4520</option>
+    <option value="m5stack_coreink" data-multiplier="5.0">m5stack_coreink</option>
+    <option value="nano-g1-explorer" data-multiplier="2.0">nano-g1-explorer</option>
+    <option value="nano-g2-ultra" data-multiplier="2.0">nano-g2-ultra</option>
+    <option value="picomputer-s3" data-multiplier="3.1">picomputer-s3</option>
+    <option value="rak4631" data-multiplier="1.73">rak4631</option>
+    <option value="rpipico" data-multiplier="3.1">rpipico</option>
+    <option value="rpipicow" data-multiplier="3.1">rpipicow</option>
+    <option value="station-g1" data-multiplier="6.45">station-g1</option>
+    <option value="station-g2" data-multiplier="4.0">station-g1</option>
+    <option value="tlora_v2_1_16" data-multiplier="2.0">tlora_v2_1_16</option>
+    <option value="tlora_v2_1_18" data-multiplier="2.11">tlora_v2_1_18</option>
+    <option value="tlora_t3s3_v1" data-multiplier="2.11">tlora_t3s3_v1</option>
+    <option value="t-deck" data-multiplier="2.11">t-deck</option>
+    <option value="t-echo" data-multiplier="2">t-echo</option>
+  </select>
+</template>
+
+---
+
+### ADC Calculator
 
 <div>
   <Admonition type="info">
@@ -60,32 +68,8 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
     <tr>
       <td>Device:</td>
       <td>
-        <select id="deviceSelect" onchange="updateAdcMultiplier()">
-          <option value="" data-multiplier="Choose"></option>          
-          <option value="chatter2" data-multiplier="5.0">chatter2</option>
-          <option value="diy" data-multiplier="1.85">diy</option>
-          <option value="esp32-s3-pico" data-multiplier="3.1">esp32-s3-pico</option>
-          <option value="heltec_v1/v2" data-multiplier="3.2">heltec_v1/v2</option>
-          <option value="heltec_v3" data-multiplier="5.1205">heltec_v3</option>
-          <option value="heltec_wsl_v3" data-multiplier="5.1205">heltec_wsl_v3</option>
-          <option value="heltec_wireless_paper" data-multiplier="2.0">heltec_wireless_paper</option>
-          <option value="heltec_wireless_tracker" data-multiplier="4.9">heltec_wireless_tracker</option>
-          <option value="lora_isp4520" data-multiplier="1.436">lora_isp4520</option>
-          <option value="m5stack_coreink" data-multiplier="5.0">m5stack_coreink</option>
-          <option value="nano-g1-explorer" data-multiplier="2.0">nano-g1-explorer</option>
-          <option value="nano-g2-ultra" data-multiplier="2.0">nano-g2-ultra</option>
-          <option value="picomputer-s3" data-multiplier="3.1">picomputer-s3</option>
-          <option value="rak4631" data-multiplier="1.73">rak4631</option>
-          <option value="rpipico" data-multiplier="3.1">rpipico</option>
-          <option value="rpipicow" data-multiplier="3.1">rpipicow</option>
-          <option value="station-g1" data-multiplier="6.45">station-g1</option>
-          <option value="station-g2" data-multiplier="4.0">station-g1</option>
-          <option value="tlora_v2_1_16" data-multiplier="2.0">tlora_v2_1_16</option>
-          <option value="tlora_v2_1_18" data-multiplier="2.11">tlora_v2_1_18</option>
-          <option value="tlora_t3s3_v1" data-multiplier="2.11">tlora_t3s3_v1</option>
-          <option value="t-deck" data-multiplier="2.11">t-deck</option>
-          <option value="t-echo" data-multiplier="2">t-echo</option>
-        </select>
+        <!-- Reuse the shared dropdown -->
+        <div id="adcDeviceDropdownContainer1"></div>
       </td>
     </tr>
     <tr>
@@ -113,8 +97,6 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
 
 ### Voltage Measurement Table
 
-## If you want to display the real value of a battery on the screen and Mesh, use this calculator, you will need a multimeter to carculate everything. 
-
 <div>
   <table id="measurementTable">
     <thead>
@@ -129,7 +111,10 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
       <tr>
         <td><input type="text" class="measuredVoltage" placeholder="Measured Voltage"></td>
         <td><input type="text" class="displayedVoltage" placeholder="Displayed Voltage"></td>
-        <td><input type="text" class="manualMultiplier" placeholder="Manual Multiplier"></td>
+        <td>
+          <!-- Reuse the shared dropdown -->
+          <div id="adcDeviceDropdownContainer2"></div>
+        </td>
         <td><input type="text" class="adjustedMultiplier" placeholder="Adjusted Multiplier" disabled></td>
       </tr>
     </tbody>
@@ -137,45 +122,57 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
   <button class="button button--outline button--lg cta--button" onclick="calculateTableMultipliers()">Calculate</button>
 </div>
 
+---
+
+### JavaScript Logic
+
 <script>
-  // Updates the ADC Multiplier based on the selected device
-  function updateAdcMultiplier() {
-    var select = document.getElementById('deviceSelect');
-    var multiplier = select.options[select.selectedIndex].getAttribute('data-multiplier');
-    document.getElementById('operativeAdcMultiplier').value = multiplier;
+  // Inject the shared ADC Device Dropdown in multiple places
+  function injectDeviceDropdowns() {
+    const dropdownTemplate = document.getElementById('adcDeviceDropdown').content;
+    document.getElementById('adcDeviceDropdownContainer1').appendChild(dropdownTemplate.cloneNode(true));
+    document.getElementById('adcDeviceDropdownContainer2').appendChild(dropdownTemplate.cloneNode(true));
   }
 
-  // Calculates the new ADC Multiplier for the ADC Calculator
+  // Updates the ADC Multiplier when the dropdown changes
+  function updateAdcMultiplier(selectElement) {
+    const multiplier = selectElement.options[selectElement.selectedIndex].getAttribute('data-multiplier');
+    const inputField = selectElement.closest('tr').querySelector('.manualMultiplier') || document.getElementById('operativeAdcMultiplier');
+    if (inputField) inputField.value = multiplier;
+  }
+
+  // Call the function to inject dropdowns when the page loads
+  document.addEventListener('DOMContentLoaded', injectDeviceDropdowns);
+
+  // Calculate for the ADC Calculator
   function calculateNewMultiplier() {
-    var batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
-    var currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
+    const batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
+    const currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
 
     if (isNaN(batteryVoltage) || batteryVoltage <= 0 || isNaN(currentAdcMultiplier)) {
       alert("Please enter valid numbers.");
       return;
     }
 
-    var targetVoltage = 4.19;
-    var newAdcMultiplier = currentAdcMultiplier * (targetVoltage / batteryVoltage);
-
+    const targetVoltage = 4.19;
+    const newAdcMultiplier = currentAdcMultiplier * (targetVoltage / batteryVoltage);
     document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
   }
 
-  // Calculates Adjusted ADC Multipliers for the Voltage Measurement Table
+  // Calculate for the Voltage Measurement Table
   function calculateTableMultipliers() {
-    var rows = document.querySelectorAll('#measurementTable tbody tr');
-
+    const rows = document.querySelectorAll('#measurementTable tbody tr');
     rows.forEach(row => {
-      var measuredVoltage = parseFloat(row.querySelector('.measuredVoltage').value);
-      var displayedVoltage = parseFloat(row.querySelector('.displayedVoltage').value);
-      var manualMultiplier = parseFloat(row.querySelector('.manualMultiplier').value);
+      const measuredVoltage = parseFloat(row.querySelector('.measuredVoltage').value);
+      const displayedVoltage = parseFloat(row.querySelector('.displayedVoltage').value);
+      const manualMultiplier = parseFloat(row.querySelector('.manualMultiplier').value);
 
       if (isNaN(measuredVoltage) || measuredVoltage <= 0 || isNaN(displayedVoltage) || displayedVoltage <= 0 || isNaN(manualMultiplier) || manualMultiplier <= 0) {
         row.querySelector('.adjustedMultiplier').value = '';
         return;
       }
 
-      var adjustedMultiplier = manualMultiplier * (measuredVoltage / displayedVoltage);
+      const adjustedMultiplier = manualMultiplier * (measuredVoltage / displayedVoltage);
       row.querySelector('.adjustedMultiplier').value = adjustedMultiplier.toFixed(3);
     });
   }
