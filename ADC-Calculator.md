@@ -121,7 +121,7 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
 ## If you want to display the real value of a battery on the screen and Mesh, use this calculator. You will need a multimeter to calculate everything.
 
 <div>
-  <table>
+  <table id="measurementTable">
     <tr>
       <td>Device:</td>
       <td>
@@ -177,3 +177,52 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
     </tr>
   </table>
 </div>
+
+<script>
+  function updateManualMultiplier(dropdown) {
+    var multiplier = dropdown.options[dropdown.selectedIndex].getAttribute('data-multiplier');
+    var manualMultiplierField = dropdown.closest('tr').querySelector('.manualMultiplier');
+    manualMultiplierField.value = multiplier;
+  }
+
+  function updateAdcMultiplier() {
+    var select = document.getElementById('deviceSelect');
+    var multiplier = select.options[select.selectedIndex].getAttribute('data-multiplier');
+    document.getElementById('operativeAdcMultiplier').value = multiplier;
+  }
+
+  function calculateNewMultiplier() {
+    var batteryVoltage = parseFloat(document.getElementById('batteryVoltage').value);
+    var currentAdcMultiplier = parseFloat(document.getElementById('operativeAdcMultiplier').value);
+
+    if (isNaN(batteryVoltage) || batteryVoltage <= 0 || isNaN(currentAdcMultiplier)) {
+      alert("Please enter valid numbers.");
+      return;
+    }
+
+    var targetVoltage = 4.19;
+    var newAdcMultiplier = currentAdcMultiplier * (targetVoltage / batteryVoltage);
+
+    document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
+  }
+
+  function calculateTableMultipliers() {
+    var rows = document.querySelectorAll('#measurementTable tbody tr');
+
+    rows.forEach(row => {
+      var measuredVoltage = parseFloat(row.querySelector('.measuredVoltage').value);
+      var displayedVoltage = parseFloat(row.querySelector('.displayedVoltage').value);
+      var manualMultiplier = parseFloat(row.querySelector('.manualMultiplier').value);
+
+      if (isNaN(measuredVoltage) || measuredVoltage <= 0 || 
+          isNaN(displayedVoltage) || displayedVoltage <= 0 || 
+          isNaN(manualMultiplier) || manualMultiplier <= 0) {
+        row.querySelector('.adjustedMultiplier').value = 'Invalid Input';
+        return;
+      }
+
+      var adjustedMultiplier = manualMultiplier * (measuredVoltage / displayedVoltage);
+      row.querySelector('.adjustedMultiplier').value = adjustedMultiplier.toFixed(3);
+    });
+  }
+</script>
