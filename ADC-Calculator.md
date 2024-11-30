@@ -21,34 +21,7 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
 
 New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Current Multiplier)
 
-
-<details>
-  <summary><strong>Example Calculation:</strong></summary>
-
-  <table>
-    <tr>
-      <td>Initial Condition:</td>
-      <td>Your device shows a battery voltage of 3.82V using a current ADC multiplier of 2.</td>
-    </tr>
-    <tr>
-      <td>Formula:</td>
-      <td>New ADC Multiplier = 2 × (4.19 / 3.82)</td>
-    </tr>
-    <tr>
-      <td>Calculate the Ratio:</td>
-      <td>4.19 / 3.82 ≈ 1.097</td>
-    </tr>
-    <tr>
-      <td>Multiply the Current ADC Multiplier by the Ratio:</td>
-      <td>New ADC Multiplier = 2 × 1.097 = 2.194</td>
-    </tr>
-    <tr>
-      <td>Update the Device:</td>
-      <td>You then set the new ADC multiplier (2.194 in this case) in your device's configuration. This calculation adjusts the multiplier so that the battery charge readings are accurate, mapping 4.19V to 100% battery charge.</td>
-    </tr>
-  </table>
-</details>
-
+---
 
 #### ADC Calculator
 
@@ -95,33 +68,42 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
 
 ---
 
-## Voltage Measurement Table
+### Voltage Measurement Table
 
-### Instructions:
-1. Click **"Add Measurement"** to create a new row in the table.
-2. In each row:
-   - Enter the **Measured Voltage (Multimeter)**: Input the actual voltage from your multimeter.
-   - Enter the **Displayed Voltage (Screen)**: Input the voltage displayed by the device.
-   - Enter the **Manual ADC Multiplier**: Input the ADC multiplier being used.
-   - The **Adjusted ADC Multiplier** will be calculated automatically.
-3. Use the adjusted multiplier to refine your device's configuration.
-
----
-
-<table>
-  <thead>
-    <tr>
-      <th>Measured Voltage (Multimeter) [V]</th>
-      <th>Displayed Voltage (Screen) [V]</th>
-      <th>Manual ADC Multiplier</th>
-      <th>Adjusted ADC Multiplier</th>
-    </tr>
-  </thead>
-  <tbody id="voltageTable">
-    <!-- Rows will be dynamically added here -->
-  </tbody>
-</table>
-<button onclick="addNewMeasurement()">Add Measurement</button>
+<div>
+  <table id="measurementTable">
+    <thead>
+      <tr>
+        <th>Measured Voltage (Multimeter) [V]</th>
+        <th>Displayed Voltage (Screen) [V]</th>
+        <th>Manual ADC Multiplier</th>
+        <th>Adjusted ADC Multiplier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Example rows -->
+      <tr>
+        <td><input type="text" class="measuredVoltage" placeholder="Measured Voltage"></td>
+        <td><input type="text" class="displayedVoltage" placeholder="Displayed Voltage"></td>
+        <td><input type="text" class="manualMultiplier" placeholder="Manual Multiplier"></td>
+        <td><input type="text" class="adjustedMultiplier" placeholder="Adjusted Multiplier" disabled></td>
+      </tr>
+      <tr>
+        <td><input type="text" class="measuredVoltage" placeholder="Measured Voltage"></td>
+        <td><input type="text" class="displayedVoltage" placeholder="Displayed Voltage"></td>
+        <td><input type="text" class="manualMultiplier" placeholder="Manual Multiplier"></td>
+        <td><input type="text" class="adjustedMultiplier" placeholder="Adjusted Multiplier" disabled></td>
+      </tr>
+      <tr>
+        <td><input type="text" class="measuredVoltage" placeholder="Measured Voltage"></td>
+        <td><input type="text" class="displayedVoltage" placeholder="Displayed Voltage"></td>
+        <td><input type="text" class="manualMultiplier" placeholder="Manual Multiplier"></td>
+        <td><input type="text" class="adjustedMultiplier" placeholder="Adjusted Multiplier" disabled></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="button button--outline button--lg cta--button" onclick="calculateTableMultipliers()">Calculate</button>
+</div>
 
 <script>
   // Updates the ADC Multiplier based on the selected device
@@ -147,39 +129,22 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
     document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
   }
 
-  // Adds a new row to the Voltage Measurement Table
-  function addNewMeasurement() {
-    var table = document.getElementById('voltageTable');
-    var row = table.insertRow();
+  // Calculates Adjusted ADC Multipliers for the Voltage Measurement Table
+  function calculateTableMultipliers() {
+    var rows = document.querySelectorAll('#measurementTable tbody tr');
 
-    var measuredCell = row.insertCell(0);
-    var displayedCell = row.insertCell(1);
-    var manualMultiplierCell = row.insertCell(2);
-    var adjustedCell = row.insertCell(3);
+    rows.forEach(row => {
+      var measuredVoltage = parseFloat(row.querySelector('.measuredVoltage').value);
+      var displayedVoltage = parseFloat(row.querySelector('.displayedVoltage').value);
+      var manualMultiplier = parseFloat(row.querySelector('.manualMultiplier').value);
 
-    measuredCell.innerHTML = '<input type="text" class="measuredVoltage" placeholder="Enter measured voltage">';
-    displayedCell.innerHTML = '<input type="text" class="displayedVoltage" placeholder="Enter displayed voltage">';
-    manualMultiplierCell.innerHTML = '<input type="text" class="manualMultiplier" placeholder="Enter manual multiplier">';
-    adjustedCell.innerHTML = '<input type="text" class="adjustedMultiplier" placeholder="Calculated multiplier" disabled>';
+      if (isNaN(measuredVoltage) || measuredVoltage <= 0 || isNaN(displayedVoltage) || displayedVoltage <= 0 || isNaN(manualMultiplier) || manualMultiplier <= 0) {
+        row.querySelector('.adjustedMultiplier').value = '';
+        return;
+      }
 
-    measuredCell.querySelector('input').addEventListener('input', calculateRowMultiplier);
-    displayedCell.querySelector('input').addEventListener('input', calculateRowMultiplier);
-    manualMultiplierCell.querySelector('input').addEventListener('input', calculateRowMultiplier);
-  }
-
-  // Calculates the Adjusted ADC Multiplier for a specific row
-  function calculateRowMultiplier(event) {
-    var row = event.target.closest('tr');
-    var measuredVoltage = parseFloat(row.querySelector('.measuredVoltage').value);
-    var displayedVoltage = parseFloat(row.querySelector('.displayedVoltage').value);
-    var manualMultiplier = parseFloat(row.querySelector('.manualMultiplier').value);
-
-    if (isNaN(measuredVoltage) || measuredVoltage <= 0 || isNaN(displayedVoltage) || displayedVoltage <= 0 || isNaN(manualMultiplier) || manualMultiplier <= 0) {
-      row.querySelector('.adjustedMultiplier').value = '';
-      return;
-    }
-
-    var adjustedMultiplier = manualMultiplier * (measuredVoltage / displayedVoltage);
-    row.querySelector('.adjustedMultiplier').value = adjustedMultiplier.toFixed(3);
+      var adjustedMultiplier = manualMultiplier * (measuredVoltage / displayedVoltage);
+      row.querySelector('.adjustedMultiplier').value = adjustedMultiplier.toFixed(3);
+    });
   }
 </script>
