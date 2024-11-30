@@ -5,6 +5,8 @@ title: ADC Calculator
 
 # ADC Calculator
 
+## If you want to charge your battery to full and wish for the battery to display as 100% on the screen, then you can use this calculator. Just be aware that not all boards charge a battery to 4.2V so this calculator will not give you the true level that the battery is charged. 
+
 Ratio of voltage divider for battery pin e.g. 3.20 (R1=100k, R2=220k)
 
 Overrides the ADC_MULTIPLIER defined in the firmware device variant file for battery voltage calculation.
@@ -85,6 +87,8 @@ New ADC Multiplier = Current ADC Multiplier × (4.19V / Battery Voltage at Curre
 ---
 
 ### Voltage Measurement Table
+
+## If you want to display the real value of a battery on the screen and Mesh, use this calculator, you will need a multimeter to carculate everything. 
 
 <div>
   <table id="measurementTable">
