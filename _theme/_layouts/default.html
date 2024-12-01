@@ -10,9 +10,9 @@
       display: flex;
       flex-direction: column;
       font-family: Arial, sans-serif;
-      font-size: 14px;
-      background-color: #333333;
-      color: #ffffff;
+      font-size: 14px; /* Reduced the overall font size */
+      background-color: #333333; /* Charcoal background */
+      color: #ffffff; /* White text */
       min-height: 100vh;
       margin: 0;
     }
@@ -24,10 +24,10 @@
     .sidebar {
       width: 200px;
       padding: 10px;
-      background: #000000;
-      height: 100vh;
-      position: fixed;
-      color: #00FFFF;
+      background: #000000; /* Black background */
+      height: 100vh; /* Full height */
+      position: fixed; /* Fix sidebar in place */
+      color: #00FFFF; /* Electric blue text */
       transition: transform 0.3s ease;
       transform: translateX(0);
       display: flex;
@@ -39,7 +39,7 @@
     }
     .toggle-button {
       background-color: #FFD700;
-      border: 2px solid #333333;
+      border: 2px solid #333333; /* Charcoal border */
       width: 20px;
       height: 100vh;
       cursor: pointer;
@@ -50,62 +50,132 @@
       font-size: 18px;
       line-height: 1;
       position: fixed;
-      left: 220px;
+      left: 220px; /* Positioned at the right edge of the sidebar */
       top: 0;
       transition: left 0.3s ease;
     }
     .sidebar.hidden ~ .toggle-button {
-      left: 0;
+      left: 0; /* Move the button to the edge of the page */
     }
     .toggle-button::after {
-      content: '❮';
+      content: '❮'; /* Left arrow */
     }
     .sidebar.hidden ~ .toggle-button::after {
-      content: '❯';
+      content: '❯'; /* Right arrow */
+    }
+    .sidebar h1 {
+      color: #00FFFF; /* Electric blue text */
+      font-size: 1.2em; /* Reduced font size for sidebar headings */
+      margin: 0;
+      text-align: center;
+    }
+    .sidebar p {
+      color: #00FFFF; /* Electric blue text */
+      text-align: center;
+      font-size: 0.9em; /* Reduced font size for sidebar paragraphs */
     }
     .content {
-      margin-left: 240px;
+      margin-left: 240px; /* Ensure content is not hidden behind the fixed sidebar and button */
       flex: 1;
       padding: 20px;
-      background-color: #1a1a1a;
+      background-color: #1a1a1a; /* Darker charcoal background for content */
       transition: margin-left 0.3s ease;
     }
     .sidebar.hidden ~ .content {
-      margin-left: 20px;
+      margin-left: 20px; /* Adjust content margin when sidebar is hidden */
     }
-    .edit-button {
-      text-align: right;
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      width: 100%;
+    }
+    nav ul li {
+      margin: 5px 0; /* Reduced margin */
+    }
+    nav ul li a {
+      display: block;
+      text-decoration: none;
+      color: #000000; /* Black text */
+      background-color: #FFD700; /* Bright yellow background */
+      padding: 5px; /* Reduced padding */
+      border-radius: 5px;
+      text-align: center;
+      font-size: 12px; /* Smaller font size for sidebar navigation links */
+      width: 100%; /* Ensure buttons fit within the sidebar */
+      box-sizing: border-box; /* Include padding in the element's total width and height */
+    }
+    nav ul li a:hover {
+      background-color: #ffffff; /* White background on hover */
+      color: #FFD700; /* Bright yellow text on hover */
+    }
+    nav ul li a.active {
+      background-color: #ffffff; /* White background for active page */
+      color: #FFD700; /* Bright yellow text for active page */
+    }
+    details {
       margin-bottom: 10px;
     }
-    .edit-button a {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      background-color: #FFD700;
-      color: #000;
-      padding: 5px 10px;
+    details summary {
+      cursor: pointer;
+      padding: 5px;
+      background-color: #FFD700; /* Bright yellow background */
       border-radius: 5px;
-      font-size: 12px;
+      color: #000000; /* Black text */
+      text-align: left; /* Align text to the left */
+      font-size: 12px; /* Smaller font size for summary text */
+      width: 200px; /* Set the width to match the sidebar */
+      box-sizing: border-box; /* Ensure padding is included in the width */
     }
-    .edit-button img {
-      width: 20px;
-      height: 20px;
-      margin-right: 5px;
+    details[open] summary {
+      background-color: #ffffff; /* White background when open */
+      color: #000000; /* Bright yellow text when open */
+    }
+    details ul {
+      padding: 0;
+      margin: 5px 0 0 10px;
+    }
+    details ul li {
+      list-style: none;
+    }
+    .bmc-button {
+      width: 100%; /* Ensure the button fits within the sidebar */
+      box-sizing: border-box; /* Include padding in the element's total width and height */
+    }
+    table {
+      width: 800px; /* Fixed width for tables */
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #00FFFF; /* Electric blue border */
+      padding: 8px;
+      text-align: left;
+      color: #ffffff; /* White text */
+      font-size: 12px; /* Reduced font size for table content */
+    }
+    th {
+      background-color: #1a1a1a; /* Darker charcoal for table headers */
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #333333; /* Charcoal for odd rows */
+    }
+    tbody tr:nth-child(even) {
+      background-color: #1a1a1a; /* Darker charcoal for even rows */
     }
     footer {
       text-align: center;
       padding: 5px 10px;
-      background: #000000;
-      color: #00FFFF;
+      background: #000000; /* Black background for footer */
+      color: #00FFFF; /* Electric blue text */
       width: 100%;
       flex-shrink: 0;
-      font-size: 12px;
+      font-size: 12px; /* Reduced font size for footer */
     }
     a {
-      color: #FFD700;
+      color: #FFD700; /* Bright yellow links */
     }
     a:hover {
-      color: #ffffff;
+      color: #ffffff; /* White text on hover */
     }
   </style>
 </head>
@@ -136,17 +206,11 @@
           {% endfor %}
         </ul>
       </nav>
+      <!-- Buy Me a Coffee Button -->
       <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" /></a>
     </div>
     <button class="toggle-button" onclick="toggleSidebar()"></button>
     <div class="content">
-      <!-- Edit Button -->
-      <div class="edit-button">
-        <a href="https://github.com/HarukiToreda/Meshtastic-Experiments/edit/main/{{ page.path }}">
-          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
-          Edit this Page
-        </a>
-      </div>
       {{ content }}
     </div>
   </div>
@@ -160,10 +224,10 @@
       const toggleButton = document.querySelector('.toggle-button');
       sidebar.classList.toggle('hidden');
       if (sidebar.classList.contains('hidden')) {
-        toggleButton.style.left = '0';
+        toggleButton.style.left = '0'; // Move button to edge of the page
         content.style.marginLeft = '15px';
       } else {
-        toggleButton.style.left = '220px';
+        toggleButton.style.left = '220px'; // Reset button position when sidebar is shown
         content.style.marginLeft = '240px';
       }
     }
