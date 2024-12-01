@@ -18,14 +18,14 @@ navbar:
     url: "/ADC-Calculator"
   - title: LoRa Boards Comparison Table
     url: "/LoRa-Boards-Comparison-Table"
-  - title: Complete Nodes List
+  - title: Recomended Etsy/Tindie Nodes
     url: "/Complete-nodes-List"
   #- title: Release Notes
   #  sublinks:
   #    - title: 2.5.6.d55c08d Alpha
   #      url: "/release-notes/firmware-2-5-6"
-  - title: Compatible Hardware
-    url: "/Additional-Hardware"
+  - title: Compatible Peripherals
+    url: "/Compatible-Peripherals"
   - title: Contact Me
     url: "/contact"    
  
