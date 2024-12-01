@@ -16,10 +16,12 @@ navbar:
     url: "/Antennas-Tested"
   - title: ADC Calculator
     url: "/ADC-Calculator"
-  - title: LoRa Boards Comparison Table
-    url: "/LoRa-Boards-Comparison-Table"
-  - title: Recomended Etsy/Tindie Nodes
-    url: "/Complete-nodes-List"
+  - title: Shopping Guides
+    sublinks:
+    - title: LoRa Boards Comparison Table
+      url: "/LoRa-Boards-Comparison-Table"
+    - title: Recomended Etsy/Tindie Nodes
+      url: "/Complete-nodes-List"
   #- title: Release Notes
   #  sublinks:
   #    - title: 2.5.6.d55c08d Alpha
