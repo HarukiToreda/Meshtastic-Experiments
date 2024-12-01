@@ -84,6 +84,25 @@
     .sidebar.hidden ~ .content {
       margin-left: 20px; /* Adjust content margin when sidebar is hidden */
     }
+    .edit-button {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .edit-button a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      background-color: #FFD700;
+      color: #000;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+    .edit-button img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
     nav ul {
       list-style-type: none;
       padding: 0;
@@ -211,6 +230,13 @@
     </div>
     <button class="toggle-button" onclick="toggleSidebar()"></button>
     <div class="content">
+      <!-- Edit Button -->
+      <div class="edit-button">
+        <a href="https://github.com/HarukiToreda/Meshtastic-Experiments/edit/main/{{ page.path }}">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+          Edit this Page
+        </a>
+      </div>
       {{ content }}
     </div>
   </div>
