@@ -196,6 +196,41 @@
     a:hover {
       color: #ffffff; /* White text on hover */
     }
+
+    /* Tabs Styling */
+    .tab-container {
+      margin: 20px 0;
+    }
+    .tab-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      border-bottom: 2px solid #FFD700;
+    }
+    .tab {
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-right: 5px;
+      background: #333333;
+      color: #FFD700;
+      border: 1px solid #FFD700;
+      border-bottom: none;
+    }
+    .tab.active {
+      background: #FFD700;
+      color: #333333;
+    }
+    .tab-content {
+      background: #1a1a1a;
+      padding: 20px;
+      border: 1px solid #FFD700;
+    }
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -237,7 +272,12 @@
           Edit this Page
         </a>
       </div>
-      {{ content }}
+      <!-- Tabs Integration -->
+      {% if page.tabs %}
+        {% include tabs.html tabs=page.tabs %}
+      {% else %}
+        {{ content }}
+      {% endif %}
     </div>
   </div>
   <footer>
@@ -257,6 +297,23 @@
         content.style.marginLeft = '240px';
       }
     }
+
+    // Tab Interaction Logic
+    document.addEventListener("DOMContentLoaded", function () {
+      const tabs = document.querySelectorAll(".tab");
+      const panes = document.querySelectorAll(".tab-pane");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          panes.forEach((pane) => pane.classList.remove("active"));
+
+          tab.classList.add("active");
+          const target = document.querySelector(`#${tab.dataset.tab}`);
+          target.classList.add("active");
+        });
+      });
+    });
   </script>
 </body>
 </html>
