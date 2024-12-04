@@ -245,7 +245,7 @@
           {% for item in site.navbar %}
             <li>
               {% if item.sublinks %}
-                <details>
+                <details {% if item.sublinks contains page.url %}open{% endif %}>
                   <summary>{{ item.title }}</summary>
                   <ul>
                     {% for sublink in item.sublinks %}
@@ -297,6 +297,17 @@
         content.style.marginLeft = '240px';
       }
     }
+
+    // Ensure sublinks remain expanded
+    document.addEventListener("DOMContentLoaded", function () {
+      const details = document.querySelectorAll("details");
+      details.forEach((detail) => {
+        const activeLink = detail.querySelector("a.active");
+        if (activeLink) {
+          detail.setAttribute("open", "open");
+        }
+      });
+    });
 
     // Tab Interaction Logic
     document.addEventListener("DOMContentLoaded", function () {
