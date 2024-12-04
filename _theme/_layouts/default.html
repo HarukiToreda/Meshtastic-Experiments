@@ -240,23 +240,22 @@
         <h1><a href="{{ site.baseurl }}/" style="color: #00FFFF; text-decoration: none;">{{ site.title }}</a></h1>
         <p>{{ site.description }}</p>
       </header>
+      <!-- Navigation Links -->
       <nav>
         <ul>
           {% for item in site.navbar %}
             <li>
               {% if item.sublinks %}
-                <details {% if item.sublinks | where: "url", page.url | size > 0 %} open {% endif %}>
+                <details {% if item.sublinks | where: "url", page.url | size > 0 %}open{% endif %}>
                   <summary>{{ item.title }}</summary>
                   <ul>
                     {% for sublink in item.sublinks %}
-                      <li>
-                        <a href="{{ sublink.url | relative_url }}" class="{% if sublink.url | relative_url == page.url %}active{% endif %}">{{ sublink.title }}</a>
-                      </li>
+                      <li><a href="{{ sublink.url | relative_url }}" class="{% if page.url == sublink.url %}active{% endif %}">{{ sublink.title }}</a></li>
                     {% endfor %}
                   </ul>
                 </details>
               {% else %}
-                <a href="{{ item.url | relative_url }}" class="{% if item.url | relative_url == page.url %}active{% endif %}">{{ item.title }}</a>
+                <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
               {% endif %}
             </li>
           {% endfor %}
@@ -294,14 +293,13 @@
       const toggleButton = document.querySelector('.toggle-button');
       sidebar.classList.toggle('hidden');
       if (sidebar.classList.contains('hidden')) {
-        toggleButton.style.left = '0'; // Move button to edge of the page
+        toggleButton.style.left = '0';
         content.style.marginLeft = '15px';
       } else {
-        toggleButton.style.left = '220px'; // Reset button position when sidebar is shown
+        toggleButton.style.left = '220px';
         content.style.marginLeft = '240px';
       }
     }
-
     document.addEventListener("DOMContentLoaded", function () {
       const details = document.querySelectorAll("details");
       details.forEach((detail) => {
