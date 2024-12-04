@@ -245,23 +245,27 @@
           {% for item in site.navbar %}
             <li>
               {% if item.sublinks %}
-                <details {% if item.sublinks contains page.url %}open{% endif %}>
+                <details {% if item.sublinks | where: "url", page.url | size > 0 %} open {% endif %}>
                   <summary>{{ item.title }}</summary>
                   <ul>
                     {% for sublink in item.sublinks %}
-                      <li><a href="{{ sublink.url | relative_url }}" class="{% if page.url == sublink.url %}active{% endif %}">{{ sublink.title }}</a></li>
+                      <li>
+                        <a href="{{ sublink.url | relative_url }}" class="{% if sublink.url | relative_url == page.url %}active{% endif %}">{{ sublink.title }}</a>
+                      </li>
                     {% endfor %}
                   </ul>
                 </details>
               {% else %}
-                <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
+                <a href="{{ item.url | relative_url }}" class="{% if item.url | relative_url == page.url %}active{% endif %}">{{ item.title }}</a>
               {% endif %}
             </li>
           {% endfor %}
         </ul>
       </nav>
       <!-- Buy Me a Coffee Button -->
-      <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" /></a>
+      <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda">
+        <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" />
+      </a>
     </div>
     <button class="toggle-button" onclick="toggleSidebar()"></button>
     <div class="content">
@@ -298,7 +302,6 @@
       }
     }
 
-    // Ensure sublinks remain expanded
     document.addEventListener("DOMContentLoaded", function () {
       const details = document.querySelectorAll("details");
       details.forEach((detail) => {
@@ -306,23 +309,6 @@
         if (activeLink) {
           detail.setAttribute("open", "open");
         }
-      });
-    });
-
-    // Tab Interaction Logic
-    document.addEventListener("DOMContentLoaded", function () {
-      const tabs = document.querySelectorAll(".tab");
-      const panes = document.querySelectorAll(".tab-pane");
-
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          tabs.forEach((t) => t.classList.remove("active"));
-          panes.forEach((pane) => pane.classList.remove("active"));
-
-          tab.classList.add("active");
-          const target = document.querySelector(`#${tab.dataset.tab}`);
-          target.classList.add("active");
-        });
       });
     });
   </script>
