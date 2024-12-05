@@ -136,7 +136,7 @@ title: Battery Runtime Tests
           <td></td><!--VME213-->
           <td id="progress1"></td><!--Heltec T114 GPS ON-->
           <td></td><!--Heltec T114 GPS OFF-->
-          <td id="progress2">26 Hrs</td><!--T-Deck-->
+          <td>18 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->   
           <td>-</td><!--T1000-E GPS On-->
