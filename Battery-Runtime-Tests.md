@@ -9,7 +9,7 @@ title: Battery Runtime Tests
     function updateProgress() {
       const startTimes = [
         { id: 'progress1', start: new Date('2024-11-30T03:43:00') }, // 3000mAh T114
-        //{ id: 'progress2', start: new Date('2024-12-04T16:17:00') }, // Tdeck
+        { id: 'progress2', start: new Date('2024-12-05T22:00:00') }, // Tdeck
         //{ id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
         //{ id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
         //{ id: 'progress5', start: new Date('2024-11-25T10:54:00') }, // Heltxt
@@ -136,7 +136,7 @@ title: Battery Runtime Tests
           <td></td><!--VME213-->
           <td id="progress1"></td><!--Heltec T114 GPS ON-->
           <td></td><!--Heltec T114 GPS OFF-->
-          <td></td><!--T-Deck-->
+          <td id="progress2"></td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
           <td>453 Hrs</td><!--RAKRAK19003-->   
           <td>-</td><!--T1000-E GPS On-->
