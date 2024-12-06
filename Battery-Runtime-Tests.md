@@ -13,7 +13,7 @@ title: Battery Runtime Tests
         //{ id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
         //{ id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
         //{ id: 'progress5', start: new Date('2024-11-25T10:54:00') }, // Heltxt
-        //{ id: 'progress6', start: new Date('2024-12-02T23:47:00') }, // Meshenger
+        { id: 'progress6', start: new Date('2024-12-02T23:47:00') }, // Meshenger
         { id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
         { id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
         { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // 
