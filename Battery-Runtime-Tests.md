@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-11-30T03:43:00') }, // 3000mAh T114
+        //{ id: 'progress1', start: new Date('2024-11-30T03:43:00') }, // 3000mAh T114
         //{ id: 'progress2', start: new Date('2024-12-05T22:00:00') }, // Tdeck
         //{ id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
         //{ id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
@@ -134,7 +134,7 @@ title: Battery Runtime Tests
           <td>19 Hrs</td><!--Wireless Tracker-->
           <td></td><!--Capsule Sensor V3-->
           <td></td><!--VME213-->
-          <td id="progress1"></td><!--Heltec T114 GPS ON-->
+          <td>215 Hrs</td><!--Heltec T114 GPS ON-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td>26 Hrs</td><!--T-Deck-->
           <td>442 Hrs</td><!--RAKRAK19007-->
