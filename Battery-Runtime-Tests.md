@@ -278,7 +278,6 @@ title: Battery Runtime Tests
           <td>45 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
-          <td></td><!--Capsule Sensor V3-->
           <td></td><!--VME213-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
