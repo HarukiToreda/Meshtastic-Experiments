@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        //{ id: 'progress1', start: new Date('2024-11-30T03:43:00') }, // 3000mAh T114
+        { id: 'progress1', start: new Date('2024-12-10T22:53:00') }, // 2000mAh T114
         //{ id: 'progress2', start: new Date('2024-12-05T22:00:00') }, // Tdeck
         //{ id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
         //{ id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
