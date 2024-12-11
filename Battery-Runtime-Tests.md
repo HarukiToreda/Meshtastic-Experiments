@@ -9,14 +9,20 @@ title: Battery Runtime Tests
     function updateProgress() {
       const startTimes = [
         { id: 'progress1', start: new Date('2024-12-10T22:53:00') }, // 2000mAh T114
+        //<td id="progress1">
         //{ id: 'progress2', start: new Date('2024-12-05T22:00:00') }, // Tdeck
+        //<td id="progress2">
         //{ id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
+        //<td id="progress3">
         //{ id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
+        //<td id="progress4">
         //{ id: 'progress5', start: new Date('2024-11-25T10:54:00') }, // Heltxt
-        //{ id: 'progress6', start: new Date('2024-12-02T23:47:00') }, // Meshenger
-        { id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
-        { id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
-        { id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // 
+        //<td id="progress5">
+        { id: 'progress6', start: new Date('2024-12-02T23:47:00') }, // Meshenger
+        //<td id="progress6">
+        //{ id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
+        //{ id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
+        //{ id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // 
       ];
 
       const currentDate = new Date();
@@ -395,7 +401,7 @@ title: Battery Runtime Tests
           <td>49 hrs</td><!--HelTXT GPS on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
           <td>198 Hrs</td><!--NRFTXT Gps on-->
-          <td>166 Hrs</td><!--Meshenger GPS off-->
+          <td id="progress6">166 Hrs</td><!--Meshenger GPS off-->
           <td>175 hrs</td><!--Meshenger GPS On-->
           <td>71 Hrs</td><!--Tdeck-->
         </tr>
