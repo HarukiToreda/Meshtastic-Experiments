@@ -18,7 +18,7 @@ title: Battery Runtime Tests
         //<td id="progress4">
         //{ id: 'progress5', start: new Date('2024-11-25T10:54:00') }, // Heltxt
         //<td id="progress5">
-        { id: 'progress6', start: new Date('2024-12-02T23:47:00') }, // Meshenger
+        { id: 'progress6', start: new Date('2024-12-11T02:37:00') }, // Meshenger
         //<td id="progress6">
         //{ id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
         //{ id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
