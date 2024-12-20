@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-12-10T22:53:00') }, // 2000mAh T114
+        { id: 'progress1', start: new Date('2024-12-20T02:57:00') }, // 2000mAh T114
         //<td id="progress1">
         //{ id: 'progress2', start: new Date('2024-12-05T22:00:00') }, // Tdeck
         //<td id="progress2">
@@ -103,7 +103,7 @@ title: Battery Runtime Tests
           <td>10 Hrs</td><!--Wireless Stick Lite-->
           <td>9 Hrs</td><!--Wireless Tracker-->
           <td></td><!--VME213-->
-          <td></td><!--Heltec T114 GPS OFF-->
+          <td id="progress1"></td><!--Heltec T114 GPS OFF-->
           <td>62 Hrs</td><!--Heltec T114 GPS ON-->
           <td>10 Hrs</td><!--T-Deck-->
           <td>154 Hrs</td><!--RAKRAK19007-->
