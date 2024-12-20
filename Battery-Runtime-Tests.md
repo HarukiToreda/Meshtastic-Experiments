@@ -119,7 +119,7 @@ title: Battery Runtime Tests
           <td>20 Hrs</td><!--Wireless Stick Lite-->
           <td>13 Hrs</td><!--Wireless Tracker-->
           <td>19 Hrs</td><!--VME213-->
-          <td id="progress1"></td><!--Heltec T114 GPS OFF-->
+          <td>220 Hrs</td><!--Heltec T114 GPS OFF-->
           <td>119 Hrs</td><!--Heltec T114 GPS ON-->
           <td>18 Hrs</td><!--T-Deck-->
           <td>307 Hrs</td><!--RAKRAK19007-->
