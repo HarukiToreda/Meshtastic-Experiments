@@ -461,7 +461,7 @@ title: LoRa Boards Comparison Table
         <td>TP4054</td><!--Vision Master E213-->
         <td>TP4054</td><!--Vision Master E290-->
         <td>TP4054</td><!--Vision Master T190-->
-        <td>TP4056</td><!--T114-->
+        <td>LP4056H</td><!--T114-->
         <td>TP4054</td><!--RAKRAK19007-->  
         <td>TP4054</td><!--WisMesh-->
         <td>TP4054</td><!--T-Deck-->
