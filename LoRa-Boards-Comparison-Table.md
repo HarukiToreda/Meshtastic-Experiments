@@ -114,7 +114,8 @@ title: LoRa Boards Comparison Table
       <tr>
         <th>Device</th>
         <th data-mcu="ESP32" data-lora="SX1276" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="15.47" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec ESP32 V2</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="17.90" data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="No" data-ready="No">Heltec ESP32 V3</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="17.90" data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="No" data-ready="No">Heltec ESP32 V3.1</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="17.90" data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="No" data-ready="No">Heltec ESP32 V3.2</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="User" data-price="15.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Wireless Paper</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="Yes" data-input="User" data-price="14.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Wireless Stick Lite (V3)</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="Yes" data-input="User" data-price="22.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Wireless Tracker</th>
@@ -144,6 +145,7 @@ title: LoRa Boards Comparison Table
         <td>Heltec</td><!--Wireless Stick Lite-->
         <td>Heltec</td><!--Wireless Tracker-->
         <td>Heltec</td><!--Capsule Sensor V3-->
+        <td>Heltec</td><!--Capsule Sensor V3.2-->
         <td>Heltec</td><!--Vision Master E213-->
         <td>Heltec</td><!--Vision Master E290-->
         <td>Heltec</td><!--Vision Master T190-->
@@ -163,6 +165,7 @@ title: LoRa Boards Comparison Table
         <td>Average Price USD</td>
         <td><a href="https://www.aliexpress.com/i/2251832758749430.html?gatewayAdapt=4itemAdapt" target="_blank" rel="noopener noreferrer">$15.47</a></td><!--Heltec V2-->
         <td><a href="https://heltec.org/project/wifi-lora-32-v3/" target="_blank" rel="noopener noreferrer">$17.90</a></td><!--Heltec V3-->
+        <td><a href="https://heltec.org/project/wifi-lora-32-v3/" target="_blank" rel="noopener noreferrer">$17.90</a></td><!--Heltec V3.2-->
         <td><a href="https://heltec.org/project/wireless-paper/" target="_blank" rel="noopener noreferrer">$15.90</a></td><!--Wireless Paper-->
         <td><a href="https://heltec.org/project/wireless-stick-lite-v2/" target="_blank" rel="noopener noreferrer">$14.90</a></td><!--Wireless Stick Lite-->
         <td><a href="https://heltec.org/project/wireless-tracker/" target="_blank" rel="noopener noreferrer">$22.90</a></td><!--Wireless Tracker-->
@@ -186,6 +189,7 @@ title: LoRa Boards Comparison Table
         <td>MCU Chip</td>
         <td>ESP32-D0</td><!--Heltec V2-->
         <td>ESP32-S3</td><!--Heltec V3-->
+        <td>ESP32-S3</td><!--Heltec V3.2-->
         <td>ESP32-S3FN8</td><!--Wireless Paper-->
         <td>ESP32-S3</td><!--Wireless Stick Lite-->
         <td>ESP32-S3FN8</td><!--Wireless Tracker-->
@@ -209,6 +213,7 @@ title: LoRa Boards Comparison Table
         <td>LoRa Chip</td>
         <td>SX1276 SX1278</td><!--Heltec V2-->
         <td>SX1262</td><!--Heltec V3-->
+        <td>SX1262</td><!--Heltec V3.2-->
         <td>SX1262</td><!--Wireless Paper-->
         <td>SX1262</td><!--Wireless Stick Lite-->
         <td>SX1262</td><!--Wireless Tracker-->
@@ -232,6 +237,7 @@ title: LoRa Boards Comparison Table
         <td>GPS/GNSS</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>UC6580</td><!--Wireless Tracker-->
@@ -255,6 +261,7 @@ title: LoRa Boards Comparison Table
         <td>Charging Interface</td>
         <td>Micro USB</td><!--Heltec V2-->
         <td>USB-C</td><!--Heltec V3-->
+        <td>USB-C</td><!--Heltec V3.2-->
         <td>USB-C</td><!--Wireless Paper-->
         <td>USB-C</td><!--Wireless Stick Lite-->
         <td>USB-C</td><!--Wireless Tracker-->
@@ -278,6 +285,7 @@ title: LoRa Boards Comparison Table
         <td>Frequency</td>
         <td>433~510 MHz, 863~928 MHz</td><!--Heltec V2-->
         <td>433~510 MHz, 863~928 MHz</td><!--Heltec V3-->
+        <td>433~510 MHz, 863~928 MHz</td><!--Heltec V3.2-->
         <td>433~510 MHz, 863~928 MHz</td><!--Wireless Paper-->
         <td>433~510 MHz, 863~928 MHz</td><!--Wireless Stick Lite-->
         <td>433~510 MHz, 863~928 MHz</td><!--Wireless Tracker-->
@@ -301,6 +309,7 @@ title: LoRa Boards Comparison Table
         <td>Max. TX Power</td>
         <td>19 ± 1dB</td><!--Heltec V2-->
         <td>21 ± 1dBm</td><!--Heltec V3-->
+        <td>21 ± 1dBm</td><!--Heltec V3.2-->
         <td>21 ± 1dBm</td><!--Wireless Paper-->
         <td>21 ± 1dBm</td><!--Wireless Stick Lite-->
         <td>21 ± 1dBm</td><!--Wireless Tracker-->
@@ -324,6 +333,7 @@ title: LoRa Boards Comparison Table
         <td>Max. Receiving Sensitivity</td>
         <td>-148 dBm</td><!--Heltec V2-->
         <td>-136 dBm</td><!--Heltec V3-->
+        <td>-136 dBm</td><!--Heltec V3.2-->
         <td>-134 dBm</td><!--Wireless Paper-->
         <td>-134 dBm</td><!--Wireless Stick Lite-->
         <td>-137 dBm</td><!--Wireless Tracker-->
@@ -347,6 +357,7 @@ title: LoRa Boards Comparison Table
         <td>Wi-Fi</td>
         <td>YES</td><!--Heltec V2-->
         <td>YES</td><!--Heltec V3-->
+        <td>YES</td><!--Heltec V3.2-->
         <td>YES</td><!--Wireless Paper-->
         <td>YES</td><!--Wireless Stick Lite-->
         <td>YES</td><!--Wireless Tracker-->
@@ -370,6 +381,7 @@ title: LoRa Boards Comparison Table
         <td>Bluetooth</td>
         <td>BT-5 (LE)</td><!--Heltec V2-->
         <td>BT-5 (LE)</td><!--Heltec V3-->
+        <td>BT-5 (LE)</td><!--Heltec V3.2-->
         <td>BT-5 (LE)</td><!--Wireless Paper-->
         <td>BT-5 (LE)</td><!--Wireless Stick Lite-->
         <td>BT-5 (LE)</td><!--Wireless Tracker-->
@@ -393,6 +405,7 @@ title: LoRa Boards Comparison Table
         <td>Display Type</td>
         <td>OLED</td><!--Heltec V2-->
         <td>OLED</td><!--Heltec V3-->
+        <td>OLED</td><!--Heltec V3.2-->
         <td>E-ink</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>TFT</td><!--Wireless Tracker-->
@@ -416,6 +429,7 @@ title: LoRa Boards Comparison Table
         <td>Display Size</td>
         <td>0.96 Inch</td><!--Heltec V2-->
         <td>0.96 Inch</td><!--Heltec V3-->
+        <td>0.96 Inch</td><!--Heltec V3.2-->
         <td>2.13 Inch</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>0.96-inch</td><!--Wireless Tracker-->
@@ -439,6 +453,7 @@ title: LoRa Boards Comparison Table
         <td>Charging IC</td>
         <td>TP4054</td><!--Heltec V2-->
         <td>TP4054</td><!--Heltec V3-->
+        <td>TP4054</td><!--Heltec V3.2-->
         <td>TP4054</td><!--Wireless Paper-->
         <td>TP4054</td><!--Wireless Stick Lite-->
         <td>TP4054</td><!--Wireless Tracker-->
@@ -462,6 +477,7 @@ title: LoRa Boards Comparison Table
         <td>Diagram</td>
         <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32/V2.1/WIFI_LoRa_32_V2.1(868-915).PDF">Diagram Link</a></td><!--Heltec V2-->
         <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA(F)_V3.1_Schematic_Diagram.pdf">Diagram Link</a></td><!--Heltec V3-->
+        <td><a href="https://resource.heltec.cn/download/WiFi_LoRa_32_V3/WiFi_LoRa_32_V3.2_Schematic_Diagram.pdf">Diagram Link</a></td><!--Heltec V3.2-->
         <td><a href="https://resource.heltec.cn/download/Wireless_Paper/Wireless_Paper_V0.4_Schematic_Diagram.pdf">Diagram Link</a></td><!--Wireless Paper-->
         <td><a href="https://resource.heltec.cn/download/Wireless_Stick_Lite_V3/HTIT-WSL_V3_Schematic_Diagram.pdf">Diagram Link</a></td><!--Wireless Stick Lite-->
         <td><a href="https://resource.heltec.cn/download/Wireless_Tracker/Wireless_Tacker1.1/HTIT-Tracker_V0.5.pdf">Diagram Link</a></td><!--Wireless Tracker-->
@@ -485,6 +501,7 @@ title: LoRa Boards Comparison Table
         <td>Input</td>
         <td>User Button, Reset Button</td><!--Heltec V2-->
         <td>User Button, Reset Button</td><!--Heltec V3-->
+        <td>User Button, Reset Button</td><!--Heltec V3.2-->
         <td>User Button, Reset Button</td><!--Wireless Paper-->
         <td>User Button, Reset Button</td><!--Wireless Stick Lite-->
         <td>User Button, Reset Button</td><!--Wireless Tracker-->
@@ -508,6 +525,7 @@ title: LoRa Boards Comparison Table
         <td>Temp/ Humidity Sensor</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -531,6 +549,7 @@ title: LoRa Boards Comparison Table
         <td>Air Pressure Sensor</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -554,6 +573,7 @@ title: LoRa Boards Comparison Table
         <td>Air Quality Sensor</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -577,6 +597,7 @@ title: LoRa Boards Comparison Table
         <td>External Notification</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -600,6 +621,7 @@ title: LoRa Boards Comparison Table
         <td>UART Port</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -623,6 +645,7 @@ title: LoRa Boards Comparison Table
         <td>I2C Port</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -646,6 +669,7 @@ title: LoRa Boards Comparison Table
         <td>Battery</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -669,6 +693,7 @@ title: LoRa Boards Comparison Table
         <td>Enclosure</td>
         <td>-</td><!--Heltec V2-->
         <td>ABS Case</td><!--Heltec V3-->
+        <td>ABS Case</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -692,6 +717,7 @@ title: LoRa Boards Comparison Table
         <td>Meshtastic Preloaded</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -715,6 +741,7 @@ title: LoRa Boards Comparison Table
         <td>Memory ROM</td>
         <td>448KB ROM</td><!--Heltec V2-->
         <td>384KB ROM</td><!--Heltec V3-->
+        <td>384KB ROM</td><!--Heltec V3.2-->
         <td>384KB ROM</td><!--Wireless Paper-->
         <td>384KB ROM</td><!--Wireless Stick Lite-->
         <td>384KB ROM</td><!--Wireless Tracker-->
@@ -738,6 +765,7 @@ title: LoRa Boards Comparison Table
         <td>Memory SRAM</td>
         <td>520KB SRAM</td><!--Heltec V2-->
         <td>512KB SRAM</td><!--Heltec V3-->
+        <td>512KB SRAM</td><!--Heltec V3.2-->
         <td>512KB SRAM</td><!--Wireless Paper-->
         <td>512KB SRAM</td><!--Wireless Stick Lite-->
         <td>512KB SRAM</td><!--Wireless Tracker-->
@@ -761,6 +789,7 @@ title: LoRa Boards Comparison Table
         <td>Memory RTC SRAM</td>
         <td>16KB RTC SRAM</td><!--Heltec V2-->
         <td>16KB RTC SRAM</td><!--Heltec V3-->
+        <td>16KB RTC SRAM</td><!--Heltec V3.2-->
         <td>16KB RTC SRAM</td><!--Wireless Paper-->
         <td>16KB RTC SRAM</td><!--Wireless Stick Lite-->
         <td>16KB RTC SRAM</td><!--Wireless Tracker-->
@@ -784,6 +813,7 @@ title: LoRa Boards Comparison Table
         <td>Memory SiP Flash</td>
         <td>-</td><!--Heltec V2-->
         <td>8MB SiP Flash</td><!--Heltec V3-->
+        <td>8MB SiP Flash</td><!--Heltec V3.2-->
         <td>8MB SiP Flash</td><!--Wireless Paper-->
         <td>8MB SiP Flash</td><!--Wireless Stick Lite-->
         <td>8MB SiP Flash</td><!--Wireless Tracker-->
@@ -807,6 +837,7 @@ title: LoRa Boards Comparison Table
         <td>Memory PSRAM</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
@@ -830,6 +861,7 @@ title: LoRa Boards Comparison Table
         <td>Memory Flash</td>
         <td>-</td><!--Heltec V2-->
         <td>-</td><!--Heltec V3-->
+        <td>-</td><!--Heltec V3.2-->
         <td>-</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
         <td>-</td><!--Wireless Tracker-->
