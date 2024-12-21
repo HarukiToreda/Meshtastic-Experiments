@@ -453,7 +453,7 @@ title: LoRa Boards Comparison Table
         <td>Charging IC</td>
         <td>TP4054</td><!--Heltec V2-->
         <td>TP4054</td><!--Heltec V3-->
-        <td>TP4054</td><!--Heltec V3.2-->
+        <td>LP4056H</td><!--Heltec V3.2-->
         <td>TP4054</td><!--Wireless Paper-->
         <td>TP4054</td><!--Wireless Stick Lite-->
         <td>TP4054</td><!--Wireless Tracker-->
