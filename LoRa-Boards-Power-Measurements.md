@@ -5,7 +5,7 @@ title: LoRa Boards Power Measurements
 
 # LoRa Boards Power Measurements
 
-## Power Measured on Meshtastic Firmware 2.4.3 from 3.7V battery (Not USB)
+## Power Measured on Meshtastic Firmware 2.5.15 from 3.7V battery (Not USB)
 
 <div style="overflow-x: auto;">
   <table>
