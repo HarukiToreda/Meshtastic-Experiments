@@ -62,7 +62,6 @@ title: LoRa Boards Power Measurements
         <td>44.1mA</td><!--Heltec V2-->
         <td>61.5mA</td><!--Heltec V3-->
         <td>40mA</td><!--Heltec V3.2-->
-        <td></td><!--Heltec V3.2-->
         <td>57.7mA</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
         <td>115mA</td><!--Wireless Tracker-->
