@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-12-20T02:57:00') }, // 2000mAh T114
+        { id: 'progress1', start: new Date('2024-12-24T12:12:00') }, // V3.2
         //<td id="progress1">
         //{ id: 'progress2', start: new Date('2024-12-05T22:00:00') }, // Tdeck
         //<td id="progress2">
@@ -64,7 +64,8 @@ title: Battery Runtime Tests
         <tr>
           <th>Device</th>
           <th>Heltec ESP32 V2</th>
-          <th>Heltec ESP32 V3</th>
+          <th>Heltec ESP32 V3.1</th>
+          <th>Heltec ESP32 V3.2</th>
           <th>Heltec Wireless Paper</th>
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
@@ -83,6 +84,7 @@ title: Battery Runtime Tests
           <td>700mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td></td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -99,11 +101,12 @@ title: Battery Runtime Tests
           <td>1100mAh Battery</td>
           <td>21 Hrs</td><!--Heltec V2-->
           <td>10 Hrs</td><!--Heltec V3-->
+          <td id:"progress1"></td><!--Heltec V3.2-->
           <td>9 Hrs</td><!--Wireless Paper-->
           <td>10 Hrs</td><!--Wireless Stick Lite-->
           <td>9 Hrs</td><!--Wireless Tracker-->
           <td></td><!--VME213-->
-          <td id="progress1"></td><!--Heltec T114 GPS OFF-->
+          <td>104 Hrs</td><!--Heltec T114 GPS OFF-->
           <td>62 Hrs</td><!--Heltec T114 GPS ON-->
           <td>10 Hrs</td><!--T-Deck-->
           <td>154 Hrs</td><!--RAKRAK19007-->
@@ -115,6 +118,7 @@ title: Battery Runtime Tests
           <td>2000mAh Battery</td>
           <td>41 Hrs</td><!--Heltec V2-->
           <td>21 Hrs</td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td>20 Hrs</td><!--Wireless Stick Lite-->
           <td>13 Hrs</td><!--Wireless Tracker-->
@@ -131,6 +135,7 @@ title: Battery Runtime Tests
           <td>3000mAh Battery</td>
           <td>60 Hrs</td><!--Heltec V2-->
           <td>30 Hrs</td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td>30 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td>19 Hrs</td><!--Wireless Tracker-->
@@ -147,6 +152,7 @@ title: Battery Runtime Tests
           <td>4000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td></td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -163,6 +169,7 @@ title: Battery Runtime Tests
           <td>5000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td></td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -224,7 +231,8 @@ title: Battery Runtime Tests
         <tr>
           <th>Device</th>
           <th>Heltec ESP32 V2</th>
-          <th>Heltec ESP32 V3</th>
+          <th>Heltec ESP32 V3.1</th>
+          <th>Heltec ESP32 V3.2</th>
           <th>Heltec Wireless Paper</th>
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
@@ -243,6 +251,7 @@ title: Battery Runtime Tests
           <td>700mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td></td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -259,6 +268,7 @@ title: Battery Runtime Tests
           <td>1100mAh Battery</td>
           <td>30 Hrs</td><!--Heltec V2-->
           <td>19 Hrs</td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -275,6 +285,7 @@ title: Battery Runtime Tests
           <td>2000mAh Battery</td>
           <td>74 Hrs</td><!--Heltec V2-->
           <td>44 Hrs</td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td>45 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -291,6 +302,7 @@ title: Battery Runtime Tests
           <td>3000mAh Battery</td>
           <td>119 Hrs</td><!--Heltec V2-->
           <td>80 Hrs</td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td>95 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -307,6 +319,7 @@ title: Battery Runtime Tests
           <td>4000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td></td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -323,6 +336,7 @@ title: Battery Runtime Tests
           <td>5000mAh Battery</td>
           <td></td><!--Heltec V2-->
           <td></td><!--Heltec V3-->
+          <td></td><!--Heltec V3.2-->
           <td></td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
