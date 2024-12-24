@@ -101,7 +101,7 @@ title: Battery Runtime Tests
           <td>1100mAh Battery</td>
           <td>21 Hrs</td><!--Heltec V2-->
           <td>10 Hrs</td><!--Heltec V3-->
-          <td id:"progress1"></td><!--Heltec V3.2-->
+          <td id="progress1"></td><!--Heltec V3.2-->
           <td>9 Hrs</td><!--Wireless Paper-->
           <td>10 Hrs</td><!--Wireless Stick Lite-->
           <td>9 Hrs</td><!--Wireless Tracker-->
