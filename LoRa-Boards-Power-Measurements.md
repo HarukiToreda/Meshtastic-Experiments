@@ -136,7 +136,7 @@ title: LoRa Boards Power Measurements
         <td>16μA</td><!--VME290-->
         <td>163μA</td><!--VMET190-->
         <td>1mA</td><!--T114-->
-        <td>?</td><!--Faketec-->
+        <td>0.3μA</td><!--Faketec-->
         <td>39.8mA</td><!--T-Deck-->
         <td>5μA</td><!--RAKRAK19007-->
       </tr>
@@ -152,7 +152,7 @@ title: LoRa Boards Power Measurements
         <td>2.63V</td><!--VME290-->
         <td></td><!--VMET190-->
         <td></td><!--T114-->
-        <td>0.3μA</td><!--Faketec-->
+        <td></td><!--Faketec-->
         <td>2.71V</td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
       </tr>
