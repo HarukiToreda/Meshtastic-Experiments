@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-12-24T12:12:00') }, // V3.2
+        { id: 'progress1', start: new Date('2024-12-25T12:12:00') }, // V3.2
         //<td id="progress1">
         //{ id: 'progress2', start: new Date('2024-12-05T22:00:00') }, // Tdeck
         //<td id="progress2">
@@ -101,7 +101,7 @@ title: Battery Runtime Tests
           <td>1100mAh Battery</td>
           <td>21 Hrs</td><!--Heltec V2-->
           <td>10 Hrs</td><!--Heltec V3-->
-          <td id="progress1"></td><!--Heltec V3.2-->
+          <td>10 Hrs</td><!--Heltec V3.2-->
           <td>9 Hrs</td><!--Wireless Paper-->
           <td>10 Hrs</td><!--Wireless Stick Lite-->
           <td>9 Hrs</td><!--Wireless Tracker-->
@@ -268,7 +268,7 @@ title: Battery Runtime Tests
           <td>1100mAh Battery</td>
           <td>30 Hrs</td><!--Heltec V2-->
           <td>19 Hrs</td><!--Heltec V3-->
-          <td></td><!--Heltec V3.2-->
+          <td id="progress1"></td><!--Heltec V3.2-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
