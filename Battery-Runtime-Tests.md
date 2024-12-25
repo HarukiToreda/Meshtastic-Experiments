@@ -8,17 +8,17 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-12-25T12:12:00') }, // V3.2
+        { id: 'progress1', start: new Date('2024-12-25T17:00:00') }, // V3.2 1100mAh
         //<td id="progress1">
-        //{ id: 'progress2', start: new Date('2024-12-05T22:00:00') }, // Tdeck
+        { id: 'progress2', start: new Date('2024-12-25T17:00:00') }, // V3.2 2000mAh
         //<td id="progress2">
-        //{ id: 'progress3', start: new Date('2024-11-24T13:31:00') }, // NRFTXT
+        { id: 'progress3', start: new Date('2024-11-25T17:00:00') }, // V3.2 3000mAh
         //<td id="progress3">
         //{ id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
         //<td id="progress4">
         //{ id: 'progress5', start: new Date('2024-11-25T10:54:00') }, // Heltxt
         //<td id="progress5">
-        { id: 'progress6', start: new Date('2024-12-18T01:48:00') }, // Meshenger
+        //{ id: 'progress6', start: new Date('2024-12-18T01:48:00') }, // Meshenger
         //<td id="progress6">
         //{ id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
         //{ id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
@@ -285,7 +285,7 @@ title: Battery Runtime Tests
           <td>2000mAh Battery</td>
           <td>74 Hrs</td><!--Heltec V2-->
           <td>44 Hrs</td><!--Heltec V3-->
-          <td></td><!--Heltec V3.2-->
+          <td id="progress2"></td><!--Heltec V3.2-->
           <td>45 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -302,7 +302,7 @@ title: Battery Runtime Tests
           <td>3000mAh Battery</td>
           <td>119 Hrs</td><!--Heltec V2-->
           <td>80 Hrs</td><!--Heltec V3-->
-          <td></td><!--Heltec V3.2-->
+          <td id="progress3"></td><!--Heltec V3.2-->
           <td>95 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
