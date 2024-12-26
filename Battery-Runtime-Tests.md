@@ -8,11 +8,11 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2024-12-25T17:00:00') }, // V3.2 1100mAh
+        { id: 'progress1', start: new Date('2024-12-25T20:00:00') }, // V3.2 1100mAh
         //<td id="progress1">
-        { id: 'progress2', start: new Date('2024-12-25T17:00:00') }, // V3.2 2000mAh
+        { id: 'progress2', start: new Date('2024-12-25T20:00:00') }, // V3.2 2000mAh
         //<td id="progress2">
-        { id: 'progress3', start: new Date('2024-12-25T17:00:00') }, // V3.2 3000mAh
+        { id: 'progress3', start: new Date('2024-12-25T20:00:00') }, // V3.2 3000mAh
         //<td id="progress3">
         //{ id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
         //<td id="progress4">
