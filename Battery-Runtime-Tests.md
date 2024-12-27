@@ -14,7 +14,7 @@ title: Battery Runtime Tests
         //<td id="progress2">
         { id: 'progress3', start: new Date('2024-12-25T20:00:00') }, // V3.2 3000mAh
         //<td id="progress3">
-        //{ id: 'progress4', start: new Date('2024-11-24T14:46:00') }, // Cardtracker
+        { id: 'progress4', start: new Date('2024-12-27T12:51:00') }, // Eink HUD
         //<td id="progress4">
         //{ id: 'progress5', start: new Date('2024-11-25T10:54:00') }, // Heltxt
         //<td id="progress5">
@@ -70,6 +70,7 @@ title: Battery Runtime Tests
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Vision Master E213</th>
+          <th>Heltec Vision Master E290</th>
           <th>Heltec T114 (GPS Off)</th>
           <th>Heltec T114 (GPS On)</th>
           <th>Lilygo T-Deck</th>
@@ -89,6 +90,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td></td><!--T-Deck-->
@@ -106,6 +108,7 @@ title: Battery Runtime Tests
           <td>10 Hrs</td><!--Wireless Stick Lite-->
           <td>9 Hrs</td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td>104 Hrs</td><!--Heltec T114 GPS OFF-->
           <td>62 Hrs</td><!--Heltec T114 GPS ON-->
           <td>10 Hrs</td><!--T-Deck-->
@@ -123,6 +126,7 @@ title: Battery Runtime Tests
           <td>20 Hrs</td><!--Wireless Stick Lite-->
           <td>13 Hrs</td><!--Wireless Tracker-->
           <td>19 Hrs</td><!--VME213-->
+          <td></td><!--VME290-->
           <td>220 Hrs</td><!--Heltec T114 GPS OFF-->
           <td>119 Hrs</td><!--Heltec T114 GPS ON-->
           <td>18 Hrs</td><!--T-Deck-->
@@ -140,6 +144,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td>19 Hrs</td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td>215 Hrs</td><!--Heltec T114 GPS ON-->
           <td>26 Hrs</td><!--T-Deck-->
@@ -157,6 +162,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td></td><!--T-Deck-->
@@ -174,6 +180,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td></td><!--T-Deck-->
@@ -237,6 +244,7 @@ title: Battery Runtime Tests
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
           <th>Heltec Vision Master E213</th>
+          <th>Heltec Vision Master E290</th>
           <th>Heltec T114 (GPS Off)</th>
           <th>Heltec T114 (GPS On)</th>
           <th>Lilygo T-Deck</th>
@@ -256,6 +264,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td></td><!--T-Deck-->
@@ -273,6 +282,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td>21 Hrs</td><!--T-Deck-->
@@ -290,6 +300,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td>35 Hrs</td><!--T-Deck-->
@@ -307,6 +318,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td id="progress4"></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td>54 Hrs</td><!--T-Deck-->
@@ -324,6 +336,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td>71 Hrs</td><!--T-Deck-->
@@ -341,6 +354,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
+          <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td></td><!--T-Deck-->
