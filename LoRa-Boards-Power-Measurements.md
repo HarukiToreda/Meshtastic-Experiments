@@ -84,7 +84,7 @@ title: LoRa Boards Power Measurements
         <td>105mA</td><!--Wireless Paper-->
         <td>106mA</td><!--Wireless Stick Lite-->
         <td>144mA</td><!--Wireless Tracker-->
-        <td>?</td><!--VME213-->
+        <td>106mA</td><!--VME213-->
         <td>110mA</td><!--VME290-->
         <td>114mA</td><!--VMET190-->
         <td>9.3mA</td><!--T114-->
