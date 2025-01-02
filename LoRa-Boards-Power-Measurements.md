@@ -52,7 +52,7 @@ title: LoRa Boards Power Measurements
         <td>105mA</td><!--Wireless Paper-->
         <td>101.5mA</td><!--Wireless Stick Lite-->
         <td>163mA</td><!--Wireless Tracker-->
-        <td>?</td><!--VME213-->
+        <td>106mA</td><!--VME213-->
         <td>110mA</td><!--VME290-->
         <td>128mA</td><!--VMET190-->
         <td>20.4mA</td><!--T114-->
@@ -68,7 +68,7 @@ title: LoRa Boards Power Measurements
         <td>57.7mA</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
         <td>115mA</td><!--Wireless Tracker-->
-        <td>?</td><!--VME213-->
+        <td>39mA</td><!--VME213-->
         <td>62mA</td><!--VME290-->
         <td>82.4mA</td><!--VMET190-->
         <td>20.1mA</td><!--T114-->
@@ -82,7 +82,7 @@ title: LoRa Boards Power Measurements
         <td>103.6mA</td><!--Heltec V3-->
         <td>101mA</td><!--Heltec V3.2-->
         <td>105mA</td><!--Wireless Paper-->
-        <td>-</td><!--Wireless Stick Lite-->
+        <td>106mA</td><!--Wireless Stick Lite-->
         <td>144mA</td><!--Wireless Tracker-->
         <td>?</td><!--VME213-->
         <td>110mA</td><!--VME290-->
@@ -100,7 +100,7 @@ title: LoRa Boards Power Measurements
         <td>57.7mA</td><!--Wireless Paper-->
         <td>36mA</td><!--Wireless Stick Lite-->
         <td>99mA</td><!--Wireless Tracker-->
-        <td>?</td><!--VME213-->
+        <td>39mA</td><!--VME213-->
         <td>62mA</td><!--VME290-->
         <td>66.9mA</td><!--VMET190-->
         <td>9.2</td><!--T114-->
@@ -116,7 +116,7 @@ title: LoRa Boards Power Measurements
         <td>11.8</td><!--Wireless Paper-->
         <td>10mA</td><!--Wireless Stick Lite-->
         <td>53mA</td><!--Wireless Tracker-->
-        <td>?</td><!--VME213-->
+        <td>9mA</td><!--VME213-->
         <td>11.2mA</td><!--VME290-->
         <td>16.7mA</td><!--VMET190-->
         <td>?</td><!--T114-->
