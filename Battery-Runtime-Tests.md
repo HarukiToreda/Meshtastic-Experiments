@@ -14,7 +14,7 @@ title: Battery Runtime Tests
         //<td id="progress2">
         { id: 'progress3', start: new Date('2025-01-02T15:09:00') }, // V3.2 3000mAh
         //<td id="progress3">
-        { id: 'progress4', start: new Date('2025-01-04T12:56:00') }, // Eink HUD
+        { id: 'progress4', start: new Date('2025-01-04T00:56:00') }, // Eink HUD
         //<td id="progress4">
         //{ id: 'progress5', start: new Date('2024-11-25T10:54:00') }, // Heltxt
         //<td id="progress5">
