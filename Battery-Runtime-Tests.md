@@ -201,9 +201,17 @@ title: Battery Runtime Tests
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
-    <li>Firmware 2.3.12</li>       
+    <li>Firmware 2.3.17</li>       
     <li>Client Mode</li>
     <li>Screen Timeout: 60 sec</li>
+    <li>Wait for Blutooth: 10 Sec
+      <details>
+        <summary style="cursor: pointer;">Details:</summary>
+        <ul>
+          <li>The node will stay awake for this period of time if any packages are receiced to give the node time for the phone to reconnect.</li>
+        </ul>
+      </details>
+    </li>
     <li>Power Savemode Enabled.
       <details>
         <summary style="cursor: pointer;">Details:</summary>
