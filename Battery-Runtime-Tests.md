@@ -10,7 +10,7 @@ title: Battery Runtime Tests
       const startTimes = [
         //{ id: 'progress1', start: new Date('2024-12-25T20:00:00') }, // V3.2 1100mAh
         //<td id="progress1">
-        //{ id: 'progress2', start: new Date('2024-12-25T20:00:00') }, // V3.2 2000mAh
+        { id: 'progress2', start: new Date('2025-01-05T03:56:00') }, // V3.2 2000mAh
         //<td id="progress2">
         //{ id: 'progress3', start: new Date('2025-01-02T15:09:00') }, // V3.2 3000mAh
         //<td id="progress3">
@@ -303,7 +303,7 @@ title: Battery Runtime Tests
           <td>2000mAh Battery</td>
           <td>74 Hrs</td><!--Heltec V2-->
           <td>44 Hrs</td><!--Heltec V3-->
-          <td>36 Hrs</td><!--Heltec V3.2-->
+          <td id="progress2">36 Hrs</td><!--Heltec V3.2-->
           <td>45 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
