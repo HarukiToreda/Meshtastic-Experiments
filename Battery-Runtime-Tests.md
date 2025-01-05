@@ -204,14 +204,6 @@ title: Battery Runtime Tests
     <li>Firmware 2.3.17</li>       
     <li>Client Mode</li>
     <li>Screen Timeout: 60 sec</li>
-    <li>Wait for Blutooth: 10 Sec
-      <details>
-        <summary style="cursor: pointer;">Details:</summary>
-        <ul>
-          <li>The node will stay awake for this period of time if any packages are receiced to give the node time for the phone to reconnect.</li>
-        </ul>
-      </details>
-    </li>
     <li>Power Savemode Enabled.
       <details>
         <summary style="cursor: pointer;">Details:</summary>
@@ -222,6 +214,14 @@ title: Battery Runtime Tests
           <li>The Node will wake from Lite Sleep when activity is detected on the mesh, when button is pressed or when sleep duration setting is reached.</li>
           <li>During Lite sleep, the Bluetooth will go on Sleep Mode, making the node draw very low currents. But you will not be able to change settings with the app in this mode.</li>
           <li>After the node is awake. It will automatically reconnect to the app and notify if any messages have been received. You can change settings when this happens.</li>
+        </ul>
+      </details>
+    </li>
+    <li>Wait for Blutooth: 10 Sec
+      <details>
+        <summary style="cursor: pointer;">Details:</summary>
+        <ul>
+          <li>The node will stay awake for this period of time if any packages are receiced to give the node time for the phone to reconnect.</li>
         </ul>
       </details>
     </li>
