@@ -8,7 +8,7 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
-        { id: 'progress1', start: new Date('2025-01-07T02:19:00') }, // V3.2 1100mAh
+        { id: 'progress1', start: new Date('2025-01-07T22:57:00') }, // V3.2 1100mAh
         //<td id="progress1">
         { id: 'progress2', start: new Date('2025-01-07T02:14:00') }, // V3.2 2000mAh
         //<td id="progress2">
