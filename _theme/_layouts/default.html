@@ -244,16 +244,16 @@
     }
 
     .image-hover img {
-      position: absolute;
-      top: -150%; /* Move the image upwards */
-      left: 100%; /* Position it to the right of the hover text */
-      transform: translate(0, -50%); /* Fine-tune positioning */
-      width: 600px; /* Twice the size of the previous 150px */
-      height: auto; /* Maintain the aspect ratio */
+      position: fixed; /* Position relative to the viewport */
+      top: 20px; /* Adjust vertical position */
+      right: 20px; /* Align to the right of the screen */
+      width: 300px; /* Adjust size */
+      height: auto; /* Maintain aspect ratio */
       border: 2px solid #FFD700;
       border-radius: 5px;
+      background-color: #000;
       display: none; /* Hidden by default */
-      z-index: 10;
+      z-index: 1000; /* Ensure it appears above other elements */
     }
 
     .image-hover:hover img {
