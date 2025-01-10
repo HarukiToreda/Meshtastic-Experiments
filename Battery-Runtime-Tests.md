@@ -14,7 +14,7 @@ title: Battery Runtime Tests
         //<td id="progress2">
         //{ id: 'progress3', start: new Date('2025-01-05T04:03:00') }, // V3.2 3000mAh
         //<td id="progress3">
-        { id: 'progress4', start: new Date('2025-01-04T00:56:00') }, // Eink HUD
+        //{ id: 'progress4', start: new Date('2025-01-04T00:56:00') }, // Eink HUD
         //<td id="progress4">
         { id: 'progress5', start: new Date('2025-01-08T02:08:00') }, // Heltxt
         //<td id="progress5">
@@ -326,7 +326,7 @@ title: Battery Runtime Tests
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
-          <td id="progress4"></td><!--VME290-->
+          <td>156 Hrs</td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
           <td>54 Hrs</td><!--T-Deck-->
