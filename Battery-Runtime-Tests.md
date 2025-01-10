@@ -65,12 +65,12 @@ title: Battery Runtime Tests
           <th>Device</th>
           <th>Heltec ESP32 V2</th>
           <th>Heltec ESP32 V3.1</th>
-          <th>
+          <td>
             <div class="image-hover">
               Heltec ESP32 V3.2
-              <img src="{{ 'https://github.com/HarukiToreda/Meshtastic-Experiments/tree/main/assets/images/V3_2_1100PS.PNG' | relative_url }}" alt="Heltec ESP32 V3.2 Image">
+              <img src="{{ "/Meshtastic-Experiments/assets/images/V3_2_1100PS.PNG" | relative_url }}" alt="Heltec ESP32 V3.2 Image">
             </div>
-          </th>
+          </td>
           <th>Heltec Wireless Paper</th>
           <th>Wireless Stick Lite (V3)</th>
           <th>Heltec Wireless Tracker</th>
