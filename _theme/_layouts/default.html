@@ -241,18 +241,18 @@
     }
 
     .image-hover img {
-      position: fixed; /* Position relative to the viewport */
-      top: 20px; /* Adjust as needed */
-      left: 20px; /* Adjust as needed */
-      width: 600px; /* Set desired size */
-      height: auto;
+      position: absolute; /* Position relative to the .image-hover element */
+      top: 0; /* Align with the top of the text */
+      left: 100%; /* Place it to the right of the hover text */
+      margin-left: 10px; /* Add some spacing between the text and image */
+      width: 600px; /* Adjust size */
+      height: auto; /* Maintain aspect ratio */
       border: 2px solid #FFD700;
       border-radius: 5px;
-      background-color: #000;
+      background-color: #000; /* Optional: background for better visibility */
       display: none; /* Hidden by default */
       z-index: 1000; /* Ensure it appears above other elements */
     }
-
     .image-hover:hover img {
       display: block; /* Show the image on hover */
     }
