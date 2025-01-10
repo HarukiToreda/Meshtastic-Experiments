@@ -132,6 +132,8 @@
       color: #FFD700; /* Bright yellow text for active page */
     }
     details {
+      position: relative;
+      overflow: visible; /* Ensure child elements can overflow */
       margin-bottom: 10px;
     }
     details summary {
@@ -230,11 +232,6 @@
     }
     .tab-pane.active {
       display: block;
-    }
-
-    details {
-      position: relative; /* Ensure positioning works for child elements */
-      overflow: visible; /* Allow content to overflow outside the container */
     }
     
     /* Hover Effect Styling */
