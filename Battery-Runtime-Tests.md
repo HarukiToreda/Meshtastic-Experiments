@@ -290,7 +290,8 @@ title: Battery Runtime Tests
           <td>1100mAh Battery</td>
           <td>30 Hrs</td><!--Heltec V2-->
           <td>19 Hrs</td><!--Heltec V3-->
-          <td id="progress1">19 Hrs</td><!--Heltec V3.2-->
+          <td id="progress1">
+          <div class="image-hover">19 Hrs<img src="{{ "/assets/images/V3_2_1100PS.PNG" | relative_url }}" alt="Heltec ESP32 V3.2 Image"></td><!--Heltec V3.2-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
