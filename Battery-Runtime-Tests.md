@@ -12,7 +12,7 @@ title: Battery Runtime Tests
         //<td id="progress1">
         { id: 'progress2', start: new Date('2025-01-07T23:25:00') }, // V3.2 2000mAh
         //<td id="progress2">
-        { id: 'progress3', start: new Date('2025-01-05T04:03:00') }, // V3.2 3000mAh
+        //{ id: 'progress3', start: new Date('2025-01-05T04:03:00') }, // V3.2 3000mAh
         //<td id="progress3">
         { id: 'progress4', start: new Date('2025-01-04T00:56:00') }, // Eink HUD
         //<td id="progress4">
@@ -321,7 +321,7 @@ title: Battery Runtime Tests
           <td>3000mAh Battery</td>
           <td>119 Hrs</td><!--Heltec V2-->
           <td>80 Hrs</td><!--Heltec V3-->
-          <td id="progress3">48Hrs</td><!--Heltec V3.2-->
+          <td>48Hrs</td><!--Heltec V3.2-->
           <td id="progress6">95 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
