@@ -245,7 +245,6 @@
       top: 0; /* Align with the top of the text */
       left: 100%; /* Place it to the right of the hover text */
       margin-left: 10px; /* Add some spacing between the text and image */
-      margin-top: 20px; /* Add spacing above the image to show alt text */
       width: 600px; /* Adjust size */
       height: auto; /* Maintain aspect ratio */
       border: 2px solid #FFD700;
@@ -257,6 +256,24 @@
     .image-hover:hover img {
       display: block; /* Show the image on hover */
     }
+    .tooltip-text {
+      position: absolute;
+      top: -20px; /* Position the tooltip above the hover text */
+      left: 100%;
+      margin-left: 10px;
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      white-space: nowrap;
+      z-index: 1001; /* Ensure tooltip appears above other elements */
+      display: none; /* Hidden by default */
+    }
+    
+    .image-hover:hover .tooltip-text {
+      display: block; /* Show the tooltip on hover */
+    }    
   </style>
 </head>
 <body>
