@@ -132,8 +132,8 @@
       color: #FFD700; /* Bright yellow text for active page */
     }
     details {
-      position: relative;
-      overflow: visible; /* Ensure child elements can overflow */
+      position: static; /* Prevent positioning from clipping child elements */
+      overflow: visible; /* Allow overflow */
       margin-bottom: 10px;
     }
     details summary {
@@ -241,15 +241,14 @@
     }
 
     .image-hover img {
-      position: absolute; /* Position relative to the hover text */
-      top: -150%; /* Move the image above the hover text */
-      left: 100%; /* Align the image to the right of the hover text */
-      transform: translate(0, -10%); /* Fine-tune the vertical alignment */
-      width: 600px; /* Adjust size as needed */
-      height: auto; /* Maintain aspect ratio */
+      position: fixed; /* Position relative to the viewport */
+      top: 20px; /* Adjust as needed */
+      left: 20px; /* Adjust as needed */
+      width: 600px; /* Set desired size */
+      height: auto;
       border: 2px solid #FFD700;
       border-radius: 5px;
-      background-color: #000; /* Optional: background to improve visibility */
+      background-color: #000;
       display: none; /* Hidden by default */
       z-index: 1000; /* Ensure it appears above other elements */
     }
