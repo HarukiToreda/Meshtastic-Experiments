@@ -68,7 +68,7 @@ title: Battery Runtime Tests
           <td>
             <div class="image-hover">
               Heltec ESP32 V3.2
-              <img src="{{ "/Meshtastic-Experiments/assets/images/V3_2_1100PS.PNG" | relative_url }}" alt="Heltec ESP32 V3.2 Image">
+              <img src="{{ "/assets/images/V3_2_1100PS.PNG" | relative_url }}" alt="Heltec ESP32 V3.2 Image">
             </div>
           </td>
           <th>Heltec Wireless Paper</th>
