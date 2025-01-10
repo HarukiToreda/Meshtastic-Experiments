@@ -240,17 +240,19 @@
 
     .image-hover img {
       position: absolute;
-      top: -10px;
-      left: 100%;
-      width: 150px;
+      top: 30px; /* Adjust the vertical position */
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: none; /* Ensure the image is not constrained */
+      height: auto; /* Maintain the original aspect ratio */
       border: 2px solid #FFD700;
       border-radius: 5px;
-      display: none;
+      display: none; /* Hidden by default */
       z-index: 10;
     }
 
     .image-hover:hover img {
-      display: block;
+      display: block; /* Show the image on hover */
     }
   </style>
 </head>
