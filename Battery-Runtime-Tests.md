@@ -321,7 +321,7 @@ title: Battery Runtime Tests
           <td>3000mAh Battery</td>
           <td>119 Hrs</td><!--Heltec V2-->
           <td>80 Hrs</td><!--Heltec V3-->
-          <td>48Hrs</td><!--Heltec V3.2-->
+          <td></td><!--Heltec V3.2-->
           <td id="progress6">95 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
