@@ -231,6 +231,27 @@
     .tab-pane.active {
       display: block;
     }
+    
+    /* Hover Effect Styling */
+    .node-hover {
+      position: relative;
+      display: inline-block;
+    }
+
+    .node-hover img {
+      position: absolute;
+      top: -10px;
+      left: 100%;
+      width: 150px;
+      border: 2px solid #FFD700;
+      border-radius: 5px;
+      display: none;
+      z-index: 10;
+    }
+
+    .node-hover:hover img {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -281,6 +302,13 @@
       {% else %}
         {{ content }}
       {% endif %}
+      <h2>Node List</h2>
+      <p class="node-hover">Node 1
+        <img src="{{ "/assets/images/node1.png" | relative_url }}" alt="Node 1 Image">
+      </p>
+      <p class="node-hover">Node 2
+        <img src="{{ "/assets/images/node2.png" | relative_url }}" alt="Node 2 Image">
+      </p>
     </div>
   </div>
   <footer>
