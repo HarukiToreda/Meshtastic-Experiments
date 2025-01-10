@@ -290,8 +290,7 @@ title: Battery Runtime Tests
           <td>1100mAh Battery</td>
           <td>30 Hrs</td><!--Heltec V2-->
           <td>19 Hrs</td><!--Heltec V3-->
-          <td id="progress1">
-          <div class="image-hover">19 Hrs<img src="{{ "/assets/images/V3_2_1100PS.PNG" | relative_url }}" alt="Heltec ESP32 V3.2 1100mAh PS"></div></td><!--Heltec V3.2-->
+          <td id="progress1"><div class="image-hover">19 Hrs<img src="{{ "/assets/images/V3_2_1100PS.PNG" | relative_url }}" alt="Heltec ESP32 V3.2 1100mAh PS"></div></td><!--Heltec V3.2-->
           <td>20 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
@@ -299,7 +298,7 @@ title: Battery Runtime Tests
           <td></td><!--VME290-->
           <td></td><!--Heltec T114 GPS OFF-->
           <td></td><!--Heltec T114 GPS ON-->
-          <td><div class="image-hover">21 Hrs<img src="{{ "/assets/images/V3_2_1100PS.PNG" | relative_url }}" alt="Heltec ESP32 V3.2 1100mAh PS"></div></td><!--T-Deck-->
+          <td>21 Hrs</td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->          
           <td>-</td><!--T1000-E GPS Off-->
