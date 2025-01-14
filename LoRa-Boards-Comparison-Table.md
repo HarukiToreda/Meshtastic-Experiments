@@ -852,7 +852,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--T-Echo-->
         <td>8MB PSRAM</td><!--T-Beam-->        
         <td>8MB PSRAM</td><!--T-Beam-Supreme-->            
-        <td>1MB PSRAM</td><!--T3-S3-->
+        <td>2MB PSRAM</td><!--T3-S3-->
         <td>8MB PSRAM</td><!--Station G2-->
         <td>-</td><!--Nano G2 Ultra-->
         <td>-</td><!--Wio Tracker 1110-->
