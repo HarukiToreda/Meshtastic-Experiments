@@ -874,8 +874,8 @@ title: LoRa Boards Comparison Table
         <td>1MB Flash</td><!--WisMesh-->
         <td>16MB Flash</td><!--T-Deck-->      
         <td>1MB Flash</td><!--T-Echo-->
-        <td>16MB Flash</td><!--T-Beam-->        
-        <td>16MB Flash</td><!--T-Beam-Supreme-->            
+        <td>4MB Flash</td><!--T-Beam-->        
+        <td>8MB Flash</td><!--T-Beam-Supreme-->            
         <td>16MB Flash</td><!--T3-S3-->                  
         <td>16MB Flash</td><!--Station G2-->
         <td>1MB Flash	</td><!--Nano G2 Ultra-->
