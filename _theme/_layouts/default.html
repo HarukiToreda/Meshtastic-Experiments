@@ -163,13 +163,10 @@
       box-sizing: border-box; /* Include padding in the element's total width and height */
     }
     table {
-      width: 100%; /* Ensure table takes the full width of its container */
-      max-width: 100%; /* Prevent it from overflowing horizontally */
+      width: 800px; /* Fixed width for tables */
       border-collapse: collapse;
       margin: 20px 0;
-      overflow: visible; /* Prevent clipping issues */
     }
-    
     th, td {
       border: 1px solid #00FFFF; /* Electric blue border */
       padding: 8px;
@@ -177,18 +174,12 @@
       color: #ffffff; /* White text */
       font-size: 12px; /* Reduced font size for table content */
     }
-    
     th {
       background-color: #1a1a1a; /* Darker charcoal for table headers */
-      position: sticky; /* Keep the headers visible when scrolling */
-      top: 0;
-      z-index: 2;
     }
-    
     tbody tr:nth-child(odd) {
       background-color: #333333; /* Charcoal for odd rows */
     }
-    
     tbody tr:nth-child(even) {
       background-color: #1a1a1a; /* Darker charcoal for even rows */
     }
@@ -242,48 +233,34 @@
     .tab-pane.active {
       display: block;
     }
-    hr {
-      all: unset; /* Remove all default styles */
-      border-top: 1px solid #FFD700; /* Add the visible yellow line */
-      margin: 0; /* Remove any spacing */
-      padding: 0; /* Remove padding */
-      height: 0; /* Ensure no height */
-      overflow: hidden; /* Prevent overflow issues */
-      display: block; /* Ensure it behaves as a block-level element */
-    }
+    
     /* Hover Effect Styling */
     .image-hover {
-      position: relative; /* Keeps the image positioned relative to the hovered text */
+      position: relative;
       display: inline-block;
     }
-        /* Ensure table container doesn't clip the hover image */
-    div.content {
-      position: relative;
-      overflow: visible; /* Ensure hover elements are not clipped */
-    }
+
     .image-hover img {
       position: absolute; /* Position relative to the .image-hover element */
-      top: 0px; /* Slightly above the hovered text */
-      left: 110%; /* Place it to the right of the hover text */
-      margin-left: 10px; /* Add spacing between text and image */
-      width: 600px; /* Restore to full size */
+      top: 0; /* Align with the top of the text */
+      left: 100%; /* Place it to the right of the hover text */
+      margin-left: 10px; /* Add some spacing between the text and image */
+      width: 600px; /* Adjust size */
       height: auto; /* Maintain aspect ratio */
       border: 2px solid #FFD700;
       border-radius: 5px;
-      background-color: #000; /* Optional for better visibility */
+      background-color: #000; /* Optional: background for better visibility */
       display: none; /* Hidden by default */
       z-index: 1000; /* Ensure it appears above other elements */
     }
-    
     .image-hover:hover img {
       display: block; /* Show the image on hover */
     }
-    
     .tooltip-text {
       position: absolute;
-      top: -35px; /* Position the tooltip slightly above the image */
-      left: 110%; /* Align with the image */
-      margin-left: 10px; /* Add spacing between tooltip and hover text */
+      top: -20px; /* Position the tooltip above the hover text */
+      left: 100%;
+      margin-left: 10px;
       background-color: #333;
       color: #fff;
       padding: 5px 10px;
@@ -296,7 +273,7 @@
     
     .image-hover:hover .tooltip-text {
       display: block; /* Show the tooltip on hover */
-    }
+    }    
   </style>
 </head>
 <body>
