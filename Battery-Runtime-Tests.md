@@ -192,6 +192,11 @@ title: Battery Runtime Tests
       </tbody>
     </table>
   </div>
+
+
+
+
+  
 </details>
 
 <hr>
@@ -374,6 +379,10 @@ title: Battery Runtime Tests
       </tbody>
     </table>
   </div>
+
+
+
+  
 </details>
 
 <hr>
