@@ -233,8 +233,6 @@ title: Battery Runtime Tests
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
   </details>
-<details open>
-  <summary style="cursor: pointer;">Results:</summary>
   <div style="overflow-x: auto;">
     <table>
       <thead>
@@ -369,11 +367,6 @@ title: Battery Runtime Tests
       </tbody>
     </table>
   </div>
-
-
-
-  
-</details>
 
 <hr>
 
