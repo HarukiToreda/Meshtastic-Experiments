@@ -236,10 +236,11 @@
     hr {
       border: none;
       border-top: 1px solid #FFD700; /* Keep the yellow border */
-      margin: 20px 0; /* Add vertical spacing */
-      overflow: visible; /* Ensure it doesn't clip child elements */
-      position: relative; /* Ensure it doesn't create a new stacking context */
-      z-index: 0; /* Keep it below other elements */
+      margin: 0; /* Remove unnecessary vertical margins */
+      height: 0; /* Ensure no additional height is added */
+      overflow: hidden; /* Prevent overflow issues */
+      position: relative; /* Ensure it doesn’t create stacking issues */
+      z-index: -1; /* Keep it below other elements */
     }
     /* Hover Effect Styling */
     .image-hover {
