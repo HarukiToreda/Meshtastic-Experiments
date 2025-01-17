@@ -169,6 +169,7 @@
       width: 800px; /* Fixed width for tables */
       border-collapse: collapse;
       margin: 20px 0;
+      overflow: visible; /* Prevents clipping of elements inside the table */
     }
     th, td {
       border: 1px solid #00FFFF; /* Electric blue border */
@@ -176,9 +177,14 @@
       text-align: left;
       color: #ffffff; /* White text */
       font-size: 12px; /* Reduced font size for table content */
+      position: relative; /* Ensures that hover images can be positioned relative to their cell */
+      overflow: visible; /* Prevents clipping inside the table cell */
     }
     th {
       background-color: #1a1a1a; /* Darker charcoal for table headers */
+    }
+    tbody {
+      overflow: visible; /* Ensure the body of the table does not clip */
     }
     tbody tr:nth-child(odd) {
       background-color: #333333; /* Charcoal for odd rows */
