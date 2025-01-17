@@ -234,13 +234,13 @@
       display: block;
     }
     hr {
-      border: none;
-      border-top: 1px solid #FFD700; /* Keep the yellow border */
-      margin: 0; /* Remove unnecessary vertical margins */
-      height: 0; /* Ensure no additional height is added */
+      all: unset; /* Remove all default styles */
+      border-top: 1px solid #FFD700; /* Add the visible yellow line */
+      margin: 0; /* Remove any spacing */
+      padding: 0; /* Remove padding */
+      height: 0; /* Ensure no height */
       overflow: hidden; /* Prevent overflow issues */
-      position: relative; /* Ensure it doesn’t create stacking issues */
-      z-index: -1; /* Keep it below other elements */
+      display: block; /* Ensure it behaves as a block-level element */
     }
     /* Hover Effect Styling */
     .image-hover {
