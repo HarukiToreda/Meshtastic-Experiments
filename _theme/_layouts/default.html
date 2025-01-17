@@ -243,31 +243,33 @@
     }
     /* Hover Effect Styling */
     .image-hover {
-      position: relative;
+      position: relative; /* Position relative to the hoverable element */
       display: inline-block;
     }
-
+    
     .image-hover img {
-      position: fixed; /* Position relative to the .image-hover element */
-      top: 10%; /* Align with the top of the text */
-      left: 60%; /* Place it to the right of the hover text */
-      transform: translate(-50%, 0); /* Center alignment adjustment if needed */
-      width: 600px; /* Adjust size */
+      position: absolute; /* Position relative to the .image-hover element */
+      top: -10px; /* Slightly above the hovered text */
+      left: 110%; /* Place it to the right of the hover text */
+      margin-left: 10px; /* Add spacing between text and image */
+      width: 300px; /* Adjust size */
       height: auto; /* Maintain aspect ratio */
       border: 2px solid #FFD700;
       border-radius: 5px;
-      background-color: #000; /* Optional: background for better visibility */
+      background-color: #000;
       display: none; /* Hidden by default */
       z-index: 1000; /* Ensure it appears above other elements */
     }
+    
     .image-hover:hover img {
       display: block; /* Show the image on hover */
     }
+    
     .tooltip-text {
       position: absolute;
-      top: -20px; /* Position the tooltip above the hover text */
-      left: 100%;
-      margin-left: 10px;
+      top: -25px; /* Position the tooltip above the hover text */
+      left: 110%; /* Align with the image */
+      margin-left: 10px; /* Spacing from the text */
       background-color: #333;
       color: #fff;
       padding: 5px 10px;
@@ -280,7 +282,7 @@
     
     .image-hover:hover .tooltip-text {
       display: block; /* Show the tooltip on hover */
-    }    
+    }  
   </style>
 </head>
 <body>
