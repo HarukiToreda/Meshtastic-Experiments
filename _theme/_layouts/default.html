@@ -163,10 +163,13 @@
       box-sizing: border-box; /* Include padding in the element's total width and height */
     }
     table {
-      width: 800px; /* Fixed width for tables */
+      width: 100%; /* Ensure table takes the full width of its container */
+      max-width: 100%; /* Prevent it from overflowing horizontally */
       border-collapse: collapse;
       margin: 20px 0;
+      overflow: visible; /* Prevent clipping issues */
     }
+    
     th, td {
       border: 1px solid #00FFFF; /* Electric blue border */
       padding: 8px;
@@ -174,12 +177,18 @@
       color: #ffffff; /* White text */
       font-size: 12px; /* Reduced font size for table content */
     }
+    
     th {
       background-color: #1a1a1a; /* Darker charcoal for table headers */
+      position: sticky; /* Keep the headers visible when scrolling */
+      top: 0;
+      z-index: 2;
     }
+    
     tbody tr:nth-child(odd) {
       background-color: #333333; /* Charcoal for odd rows */
     }
+    
     tbody tr:nth-child(even) {
       background-color: #1a1a1a; /* Darker charcoal for even rows */
     }
@@ -247,7 +256,11 @@
       position: relative; /* Keeps the image positioned relative to the hovered text */
       display: inline-block;
     }
-    
+        /* Ensure table container doesn't clip the hover image */
+    div.content {
+      position: relative;
+      overflow: visible; /* Ensure hover elements are not clipped */
+    }
     .image-hover img {
       position: absolute; /* Position relative to the .image-hover element */
       top: 0px; /* Slightly above the hovered text */
