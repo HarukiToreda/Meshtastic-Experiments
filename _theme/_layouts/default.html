@@ -235,10 +235,11 @@
     }
     hr {
       border: none;
-      border-top: 1px solid #FFD700;
-      margin: 20px 0;
-      overflow: visible;
-      z-index: 0;
+      border-top: 1px solid #FFD700; /* Keep the yellow border */
+      margin: 20px 0; /* Add vertical spacing */
+      overflow: visible; /* Ensure it doesn't clip child elements */
+      position: relative; /* Ensure it doesn't create a new stacking context */
+      z-index: 0; /* Keep it below other elements */
     }
     /* Hover Effect Styling */
     .image-hover {
@@ -248,7 +249,7 @@
 
     .image-hover img {
       position: absolute; /* Position relative to the .image-hover element */
-      top: 0; /* Align with the top of the text */
+      top: 5px; /* Align with the top of the text */
       left: 100%; /* Place it to the right of the hover text */
       margin-left: 10px; /* Add some spacing between the text and image */
       width: 600px; /* Adjust size */
