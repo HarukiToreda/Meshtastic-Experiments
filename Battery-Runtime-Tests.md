@@ -56,8 +56,6 @@ title: Battery Runtime Tests
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
 </details>
-<details open>
-  <summary style="cursor: pointer;">Results:</summary>
   <div style="overflow-x: auto;">
     <table>
       <thead>
@@ -191,14 +189,6 @@ title: Battery Runtime Tests
         </tr>               
       </tbody>
     </table>
-  </div>
-
-
-
-
-  
-</details>
-
 <hr>
 
 <h2>Experiment #2 - Best Power Saving Settings for Mobile Node/ Remote Node</h2>
@@ -326,7 +316,7 @@ title: Battery Runtime Tests
           <td>3000mAh Battery</td>
           <td>119 Hrs</td><!--Heltec V2-->
           <td>80 Hrs</td><!--Heltec V3-->
-          <td><div class="image-hover">156 Hrs</td><img src="{{ "/assets/images/runtimes/V3_2_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></td><!--Heltec V3.2-->
+          <td><div class="image-hover">156 Hrs<img src="{{ "/assets/images/runtimes/V3_2_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></td><!--Heltec V3.2-->
           <td id="progress6">95 Hrs</td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
