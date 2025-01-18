@@ -435,5 +435,3 @@ title: Battery Runtime Tests
     </table>
   </div>
 </details>
-
-</body>
