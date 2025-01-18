@@ -2,7 +2,6 @@
 layout: default
 title: Battery Runtime Tests
 ---
-<html>
 <head>
   <title>Battery Runtime Tests</title>
   <script>
@@ -429,7 +428,6 @@ title: Battery Runtime Tests
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
           <td>198 Hrs</td><!--NRFTXT Gps on-->
           <td>166 Hrs</td><!--Meshenger GPS off-->
-          <!--<td id="progress6"></td><!--Meshenger GPS On-->
           <td>175 hrs</td><!--Meshenger GPS On-->
           <td>71 Hrs</td><!--Tdeck-->
         </tr>
@@ -439,4 +437,3 @@ title: Battery Runtime Tests
 </details>
 
 </body>
-</html>
