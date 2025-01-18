@@ -254,22 +254,23 @@
       position: relative;
       display: inline-block;
     }
-
+    
     .image-hover img {
-      position: absolute; /* Position relative to the .image-hover element */
-      top: -10px; /* Align with the top of the text */
-      left: 100%; /* Place it to the right of the hover text */
-      margin-left: 10px; /* Add some spacing between the text and image */
-      width: 600px; /* Adjust size */
-      height: auto; /* Maintain aspect ratio */
+      position: absolute;
+      top: 0;
+      left: 100%; /* Default: position to the right of the text */
+      margin-left: 10px;
+      width: 600px;
+      height: auto;
       border: 2px solid #FFD700;
       border-radius: 5px;
-      background-color: #000; /* Optional: background for better visibility */
-      display: none; /* Hidden by default */
-      z-index: 1000; /* Ensure it appears above other elements */
+      background-color: #000;
+      display: none;
+      z-index: 1000;
     }
-    .image-hover:hover img {
-      display: block; /* Show the image on hover */
+    
+    .image-hover img.visible {
+      display: block;
     }
     .tooltip-text {
       position: absolute;
@@ -364,6 +365,7 @@
         content.style.marginLeft = '240px';
       }
     }
+  
     document.addEventListener("DOMContentLoaded", function () {
       const details = document.querySelectorAll("details");
       details.forEach((detail) => {
@@ -371,6 +373,30 @@
         if (activeLink) {
           detail.setAttribute("open", "open");
         }
+      });
+  
+      // Hover image repositioning script
+      document.querySelectorAll('.image-hover').forEach(hoverElement => {
+        hoverElement.addEventListener('mouseenter', function () {
+          const img = this.querySelector('img');
+          img.classList.add('visible');
+  
+          const rect = img.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+  
+          // If the image overflows the bottom of the viewport, reposition it
+          if (rect.bottom > viewportHeight) {
+            img.style.top = `${viewportHeight - rect.height - 10}px`; // Add margin adjustment
+          } else {
+            img.style.top = '0'; // Reset to default
+          }
+        });
+  
+        hoverElement.addEventListener('mouseleave', function () {
+          const img = this.querySelector('img');
+          img.classList.remove('visible');
+          img.style.top = '0'; // Reset to default
+        });
       });
     });
   </script>
