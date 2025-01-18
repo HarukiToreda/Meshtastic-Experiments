@@ -333,9 +333,24 @@
           Edit this Page
         </a>
       </div>
-    <footer>
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-    </footer>
+      <!-- Tabs Integration -->
+      {% if page.tabs %}
+        {% include tabs.html tabs=page.tabs %}
+      {% else %}
+        {{ content }}
+      {% endif %}
+      <h2>Node List</h2>
+      <p class="image-hover">Node 1
+        <img src="{{ "/assets/images/node1.png" | relative_url }}" alt="Node 1 Image">
+      </p>
+      <p class="image-hover">Node 2
+        <img src="{{ "/assets/images/node2.png" | relative_url }}" alt="Node 2 Image">
+      </p>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+  </footer>
   <script>
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
