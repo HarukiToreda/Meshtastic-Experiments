@@ -314,7 +314,7 @@ title: Battery Runtime Tests
           <td>119 Hrs</td><!--Heltec V2-->
           <td>80 Hrs</td><!--Heltec V3-->
           <td><div class="image-hover">156 Hrs<img src="{{ "/assets/images/runtimes/V3_2_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></td><!--Heltec V3.2-->
-          <td id="progress6">95 Hrs</td><!--Wireless Paper-->
+          <td><div class="image-hover">73 Hrs<img src="{{ "/assets/images/runtimes/PAPER_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
