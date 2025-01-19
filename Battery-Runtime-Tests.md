@@ -15,9 +15,9 @@ title: Battery Runtime Tests
         //<td id="progress3">
         //{ id: 'progress4', start: new Date('2025-01-04T00:56:00') }, // Eink HUD
         //<td id="progress4">
-        { id: 'progress5', start: new Date('2025-01-08T02:08:00') }, // Heltxt
+        //{ id: 'progress5', start: new Date('2025-01-08T02:08:00') }, // Heltxt
         //<td id="progress5">
-        { id: 'progress6', start: new Date('2025-01-10T13:40:00') }, // Wireless Paper
+        //{ id: 'progress6', start: new Date('2025-01-10T13:40:00') }, // Wireless Paper
         //<td id="progress6">
         //{ id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
         //{ id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
@@ -423,7 +423,7 @@ title: Battery Runtime Tests
       <tbody>
         <tr>
           <td>4000mAh Battery</td>
-          <td id="progress5">146 Hrs</td><!--HelTXT GPS off-->
+          <td>264 Hrs</td><!--HelTXT GPS off-->
           <td>49 hrs</td><!--HelTXT GPS on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
           <td>198 Hrs</td><!--NRFTXT Gps on-->
