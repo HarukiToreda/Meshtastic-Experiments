@@ -188,7 +188,7 @@ title: Battery Runtime Tests
         </tr>               
       </tbody>
     </table>
-<hr>
+<!--<hr>-->
 
 <h2>Experiment #2 - Best Power Saving Settings for Mobile Node/ Remote Node</h2>
 
@@ -367,7 +367,7 @@ title: Battery Runtime Tests
     </table>
   </div>
 
-<hr>
+<!--<hr>-->
 
 <h2>Experiment #3 - Best Power Saving Settings for Standalone Nodes</h2>
 
