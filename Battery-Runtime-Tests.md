@@ -423,7 +423,7 @@ title: Battery Runtime Tests
       <tbody>
         <tr>
           <td>4000mAh Battery</td>
-          <td>264 Hrs</td><!--HelTXT GPS off-->
+          <td><div class="image-hover">264 Hrs<img src="{{ "/assets/images/runtimes/HELTXT_4000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/19/25</span></div></td><!--HelTXT GPS off-->
           <td>Currently testing</td><!--HelTXT GPS on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
           <td>198 Hrs</td><!--NRFTXT Gps on-->
