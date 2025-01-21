@@ -13,7 +13,7 @@ title: Battery Runtime Tests
         //<td id="progress2">
         //{ id: 'progress3', start: new Date('2025-01-10T15:54:00') }, // V3.2 3000mAh
         //<td id="progress3">
-        //{ id: 'progress4', start: new Date('2025-01-04T00:56:00') }, // Eink HUD
+        { id: 'progress4', start: new Date('2025-01-21T11:32:00') }, // Eink 1100mAh
         //<td id="progress4">
         { id: 'progress5', start: new Date('2025-01-21T11:11:00') }, // Heltxt
         //<td id="progress5">
@@ -278,7 +278,7 @@ title: Battery Runtime Tests
           <td>30 Hrs</td><!--Heltec V2-->
           <td>19 Hrs</td><!--Heltec V3-->
           <td><div class="image-hover">61 Hrs<img src="{{ "/assets/images/runtimes/V3_2_1100PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">5 Nodes on Mesh - Firmware 2.5.17 - 1/10/25</span></div></td><!--Heltec V3.2-->
-          <td></td><!--Wireless Paper-->
+          <td id="progress4"></td><!--Wireless Paper-->
           <td></td><!--Wireless Stick Lite-->
           <td></td><!--Wireless Tracker-->
           <td></td><!--VME213-->
