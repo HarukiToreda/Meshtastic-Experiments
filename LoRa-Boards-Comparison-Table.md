@@ -26,7 +26,7 @@ title: LoRa Boards Comparison Table
     </div>
   </div>
   <div style="margin-right: 20px;">
-    <label>GPS:</label>
+    <label>GPS Built-In:</label>
     <div>
       <input type="checkbox" class="gpsFilter" value="Yes"> Yes<br>
       <input type="checkbox" class="gpsFilter" value="No"> No<br>
