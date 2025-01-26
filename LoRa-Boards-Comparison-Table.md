@@ -122,8 +122,8 @@ title: LoRa Boards Comparison Table
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="None" data-wifi="Yes" data-input="User" data-price="25.99" data-brand="Heltec" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">Heltec Capsule Sensor V3</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="User" data-price="19.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master E213</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="User" data-price="20.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master E290</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="TFT" data-wifi="Yes" data-input="User" data-price="20.00" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master T190</th> 
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="No" data-input="User" data-price="41.70" data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="Yes" data-ready="No">Heltec Mesh Node T114</th>         
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="TFT" data-wifi="Yes" data-input="User" data-price="19.00" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master T190</th> 
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="No" data-input="User" data-price="27.90 29.90 38.80 " data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="Yes" data-ready="No">Heltec Mesh Node T114</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-input="None" data-price="36.97" data-brand="Rack" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">WisBlock Start Kit RAK4631</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-input="None" data-price="99.00" data-brand="Rack" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">WisMesh Pocket</th>        
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-input="Touch, Keyboard, User" data-price="52.66" data-brand="Lilygo" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">T-Deck</th>
@@ -174,8 +174,8 @@ title: LoRa Boards Comparison Table
         <td><a href="https://heltec.org/project/heltec-capsule-sensor-v3/" target="_blank" rel="noopener noreferrer">$25.99</a></td><!--Capsule Sensor V3-->
         <td><a href="https://heltec.org/project/vision-master-e213/" target="_blank" rel="noopener noreferrer">$19.90</a></td><!--Vision Master E213-->
         <td><a href="https://heltec.org/project/vision-master-e290/" target="_blank" rel="noopener noreferrer">$20.90</a></td><!--Vision Master E290-->
-        <td><a href="https://heltec.org/project/vision-master-t190/" target="_blank" rel="noopener noreferrer">$20.00</a></td><!--Vision Master T190-->       
-        <td><a href="https://heltec.org/project/mesh-node-t114/" target="_blank" rel="noopener noreferrer">$41.70</a></td><!--T114-->
+        <td><a href="https://heltec.org/project/vision-master-t190/" target="_blank" rel="noopener noreferrer">$19.00</a></td><!--Vision Master T190-->       
+        <td><a href="https://heltec.org/project/mesh-node-t114/" target="_blank" rel="noopener noreferrer">$27.90/ $38.80</a></td><!--T114-->
         <td><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?variant=43884035113158" target="_blank" rel="noopener noreferrer">$27.99</a></td><!--RAKRAK19007-->
         <td><a href="https://store.rakwireless.com/products/wismesh-pocket?variant=43640511365318" target="_blank" rel="noopener noreferrer">$99.00</a></td><!--WisMesh-->
         <td><a href="https://www.lilygo.cc/products/t-deck" target="_blank" rel="noopener noreferrer">$52.13</a></td><!--T-Deck-->
