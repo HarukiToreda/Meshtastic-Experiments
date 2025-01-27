@@ -319,15 +319,9 @@
                 </details>
               {% else %}
                   <a href="{{ item.url | relative_url }}" 
-                     class="{% if page.url == item.url | prepend: site.baseurl or page.url == item.url | prepend: site.baseurl | append: '/' %}active{% else %}debug{% endif %}">
+                     class="{% if page.url == site.baseurl | append: '/' | append: item.url or page.url == site.baseurl | append: '/' | append: item.url | append: '/' %}active{% endif %}">
                      {{ item.title }}
                   </a>
-                  <p>Debug Info:</p>
-                  <ul>
-                    <li>Current Page URL: {{ page.url }}</li>
-                    <li>Nav Item URL (with baseurl): {{ item.url | prepend: site.baseurl }}</li>
-                    <li>Nav Item URL (with baseurl and slash): {{ item.url | prepend: site.baseurl | append: '/' }}</li>
-                  </ul>
               {% endif %}
             </li>
           {% endfor %}
