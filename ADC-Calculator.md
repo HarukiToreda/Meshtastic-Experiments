@@ -1,6 +1,7 @@
 ---
 layout: default
 title: ADC Calculator
+permalink: /Meshtastic-Experiments/ADC-Calculator/
 ---
 
 # ADC Calculator
