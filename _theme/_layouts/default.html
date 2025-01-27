@@ -318,15 +318,10 @@
                   </ul>
                 </details>
               {% else %}
-                  <a href="{{ item.url | relative_url }}" 
-                     class="{% if page.url | split: '.html' | first | prepend: site.baseurl == item.url | relative_url %}active{% else %}""{% endif %}">
-                     {{ item.title }}
-                  </a>
-                  <p>Debug Info:</p>
-                  <ul>
-                    <li>Normalized Page URL (with baseurl): {{ page.url | split: '.html' | first | prepend: site.baseurl }}</li>
-                    <li>Nav Item URL: {{ item.url | relative_url }}</li>
-                  </ul>
+                <a href="{{ item.url | relative_url }}" 
+                   class="{% if page.url == item.url | prepend: site.baseurl or page.url == item.url | prepend: site.baseurl | append: '/' %}active{% endif %}">
+                   {{ item.title }}
+                </a>
               {% endif %}
             </li>
           {% endfor %}
