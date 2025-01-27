@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Battery Runtime Tests
+permalink: /Meshtastic-Experiments/Battery-Runtime-Tests
 ---
 <head>
   <title>Battery Runtime Tests</title>
