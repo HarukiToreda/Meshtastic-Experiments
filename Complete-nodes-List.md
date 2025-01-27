@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Complete Nodes List
-permalink: /Meshtastic-Experiments/Complete-nodes-List
 ---
 
 # Complete Nodes List
