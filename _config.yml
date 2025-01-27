@@ -17,7 +17,7 @@ navbar:
   - title: Antennas Tested
     url: "/Antennas-Tested"
   - title: ADC Calculator
-    url: "/ADC-Calculator/"
+    url: "/Meshtastic-Experiments/ADC-Calculator/"
   - title: Shopping Guides
     sublinks:
     - title: LoRa Boards Comparison Table
