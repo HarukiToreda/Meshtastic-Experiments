@@ -319,7 +319,7 @@
                 </details>
               {% else %}
                 <a href="{{ item.url | relative_url }}" 
-                   class="{% if page.url | split: '.html' | first == item.url | relative_url %}active{% endif %}">
+                   class="{% if page.url == item.url | prepend: site.baseurl | append: '.html' %}active{% endif %}">
                    {{ item.title }}
                 </a>
               {% endif %}
