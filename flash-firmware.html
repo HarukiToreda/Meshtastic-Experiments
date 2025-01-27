@@ -1,15 +1,3 @@
----
-layout: default
-title: Flash ESP32 Firmware
----
-
-<div class="content">
-  <h1>ESP32 Web Flasher</h1>
-  <p>Click the button below to flash your ESP32 firmware.</p>
-  <button id="connect">Connect to ESP32</button>
-  <p id="status"></p>
-</div>
-
 <script type="module">
   import { ESPLoader } from 'https://cdn.jsdelivr.net/gh/espressif/esptool-js@latest/dist/web/esploader.js';
 
@@ -17,6 +5,10 @@ title: Flash ESP32 Firmware
     const status = document.getElementById('status');
     try {
       status.textContent = 'Requesting port...';
+      if (!('serial' in navigator)) {
+        throw new Error('Web Serial API not supported in this browser.');
+      }
+
       const port = await navigator.serial.requestPort();
       status.textContent = 'Initializing ESP32 connection...';
       const loader = new ESPLoader(port);
@@ -27,6 +19,9 @@ title: Flash ESP32 Firmware
       const firmwareUrl = '/Meshtastic-Experiments/firmwares/E290_firmware_01-13-25.bin';
       status.textContent = `Downloading firmware from ${firmwareUrl}...`;
       const response = await fetch(firmwareUrl);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch firmware: ${response.statusText}`);
+      }
       const firmware = new Uint8Array(await response.arrayBuffer());
 
       status.textContent = 'Flashing firmware...';
