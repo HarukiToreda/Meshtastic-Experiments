@@ -11,7 +11,7 @@ permalinks:
 # Add navigation links with a dropdown for Release Notes
 navbar:
   - title: Battery Runtime Tests
-    url: "/Battery-Runtime-Tests"
+    url: "/Meshtastic-Experiments/Battery-Runtime-Tests"
   - title: LoRa Boards Power Measurements
     url: "/LoRa-Boards-Power-Measurements"
   - title: Antennas Tested
