@@ -1,6 +1,7 @@
 ---
 layout: default
 title: LoRa Boards Power Measurements
+permalink: /Meshtastic-Experiments/LoRa-Boards-Power-Measurements
 ---
 
 # LoRa Boards Power Measurements
