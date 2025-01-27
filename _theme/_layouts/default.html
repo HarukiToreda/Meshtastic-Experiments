@@ -318,16 +318,15 @@
                   </ul>
                 </details>
               {% else %}
-                  <a href="{{ item.url | relative_url }}" 
-                     class="{% if page.url | split: '.html' | first | prepend: site.baseurl == site.baseurl | append: '/' | append: item.url or page.url | split: '.html' | first | prepend: site.baseurl == site.baseurl | append: '/' | append: item.url | append: '/' %}active{% else %}debug{% endif %}">
-                     {{ item.title }}
-                  </a>
-                  <p>Debug Info:</p>
-                  <ul>
-                    <li>Normalized Page URL (with baseurl): {{ page.url | split: '.html' | first | prepend: site.baseurl }}</li>
-                    <li>Expected Nav Item URL: {{ site.baseurl | append: '/' | append: item.url }}</li>
-                    <li>Expected Nav Item URL (with slash): {{ site.baseurl | append: '/' | append: item.url | append: '/' }}</li>
-                  </ul>
+                <a href="{{ item.url | relative_url }}" 
+                   class="{% if page.url | split: '.html' | first | prepend: site.baseurl == item.url | relative_url %}active{% else %}debug{% endif %}">
+                   {{ item.title }}
+                </a>
+                <p>Debug Info:</p>
+                <ul>
+                  <li>Normalized Page URL (with baseurl): {{ page.url | split: '.html' | first | prepend: site.baseurl }}</li>
+                  <li>Nav Item URL (relative): {{ item.url | relative_url }}</li>
+                </ul>
               {% endif %}
             </li>
           {% endfor %}
