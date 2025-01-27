@@ -29,7 +29,7 @@ navbar:
   - title: Compatible Peripherals
     url: "/Compatible-Peripherals"
   - title: Flash ESP32 Firmware
-    url: "/index.html"
+    url: "/esp32-flasher.html"
   #- title: Heltec V3
   #  url: "/heltec-v3"    
   - title: Contact Me
