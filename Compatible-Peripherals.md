@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Hardware Comparison Table
-permalink: /Meshtastic-Experiments/Compatible-Peripherals
 ---
 
 # Hardware Comparison Table
