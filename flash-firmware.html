@@ -28,21 +28,19 @@ title: ESP32 Web Flasher
   };
 
   document.getElementById('select-port').addEventListener('click', async () => {
+    console.log('Select Port button clicked');
+    const statusElement = document.getElementById('status');
+    statusElement.textContent = 'Select Port button clicked...'; // Debug status update
     try {
-      statusElement.textContent = 'Requesting port...';
-      port = await navigator.serial.requestPort();
-      statusElement.textContent = 'Port selected. Initializing ESP32 connection...';
-      await port.open({ baudRate: 115200 });
-      loader = new ESPLoader(port);
-      await loader.initialize();
-      statusElement.textContent = `Connected to ESP32: ${loader.chipName}`;
-      logMessage(`Connected to ESP32: ${loader.chipName}`);
-      document.getElementById('flash-firmware').disabled = false;
+      const port = await navigator.serial.requestPort();
+      console.log('Port selected:', port);
+      statusElement.textContent = 'Port successfully selected!';
     } catch (error) {
-      statusElement.textContent = `Error: ${error.message}`;
-      logMessage(`Error: ${error.message}`);
+      console.error('Error selecting port:', error);
+      statusElement.textContent = `Error selecting port: ${error.message}`;
     }
   });
+
 
   document.getElementById('flash-firmware').addEventListener('click', async () => {
     try {
