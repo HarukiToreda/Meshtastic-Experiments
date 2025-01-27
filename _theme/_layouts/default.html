@@ -312,21 +312,9 @@
                       {% assign normalized_nav_item_url = sublink.url | relative_url %}
                       <li>
                         <a href="{{ normalized_nav_item_url }}" 
-                           class="{% if normalized_page_url == normalized_nav_item_url %}active{% else %}debug{% endif %}">
+                           class="{% if normalized_page_url == normalized_nav_item_url %}active{% endif %}">
                            {{ sublink.title }}
                         </a>
-                        <p>Debug Info:</p>
-                        <ul>
-                          <li>Normalized Page URL (with baseurl): {{ normalized_page_url }}</li>
-                          <li>Nav Item URL (relative): {{ normalized_nav_item_url }}</li>
-                          <li>Condition Match: 
-                            {% if normalized_page_url == normalized_nav_item_url %}
-                              True (Highlighted)
-                            {% else %}
-                              False (Not Highlighted)
-                            {% endif %}
-                          </li>
-                        </ul>
                       </li>
                     {% endfor %}
                   </ul>
@@ -335,21 +323,9 @@
                 {% assign normalized_page_url = page.url | split: '.html' | first | prepend: site.baseurl %}
                 {% assign normalized_nav_item_url = item.url | relative_url %}
                 <a href="{{ normalized_nav_item_url }}" 
-                   class="{% if normalized_page_url == normalized_nav_item_url %}active{% else %}debug{% endif %}">
+                   class="{% if normalized_page_url == normalized_nav_item_url %}active{% endif %}">
                    {{ item.title }}
                 </a>
-                <p>Debug Info:</p>
-                <ul>
-                  <li>Normalized Page URL (with baseurl): {{ normalized_page_url }}</li>
-                  <li>Nav Item URL (relative): {{ normalized_nav_item_url }}</li>
-                  <li>Condition Match: 
-                    {% if normalized_page_url == normalized_nav_item_url %}
-                      True (Highlighted)
-                    {% else %}
-                      False (Not Highlighted)
-                    {% endif %}
-                  </li>
-                </ul>
               {% endif %}
             </li>
           {% endfor %}
