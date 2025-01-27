@@ -1,7 +1,6 @@
 ---
 layout: default
 title: LoRa Boards Comparison Table
-permalink: /Meshtastic-Experiments/LoRa-Boards-Comparison-Table
 ---
 
 # LoRa Boards Comparison Table
