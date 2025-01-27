@@ -313,7 +313,9 @@
                   </ul>
                 </details>
               {% else %}
-                <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url | relative_url %}active{% endif %}">{{ item.title }}</a>
+                <a href="{{ item.url | relative_url }}" 
+                   class="{% if page.url == item.url | prepend: site.baseurl %}active{% endif %}">
+                   {{ item.title }}
                 </a>
               {% endif %}
             </li>
