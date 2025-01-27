@@ -319,14 +319,9 @@
                 </details>
               {% else %}
                 <a href="{{ item.url | relative_url }}" 
-                   class="{% if page.url == item.url | relative_url %}active{% else %}debug{% endif %}">
+                   class="{% if page.url | split: '.html' | first == item.url | relative_url %}active{% endif %}">
                    {{ item.title }}
                 </a>
-                <p>Debug Info:</p>
-                <ul>
-                  <li>Current Page URL: {{ page.url }}</li>
-                  <li>Nav Item URL: {{ item.url | relative_url }}</li>
-                </ul>
               {% endif %}
             </li>
           {% endfor %}
