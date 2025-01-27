@@ -308,7 +308,12 @@
                   <summary>{{ item.title }}</summary>
                   <ul>
                     {% for sublink in item.sublinks %}
-                      <li><a href="{{ sublink.url | relative_url }}" class="{% if page.url == sublink.url %}active{% endif %}">{{ sublink.title }}</a></li>
+                      <li>
+                        <a href="{{ sublink.url | relative_url }}" 
+                           class="{% if page.url == sublink.url | prepend: site.baseurl %}active{% endif %}">
+                           {{ sublink.title }}
+                        </a>
+                      </li>
                     {% endfor %}
                   </ul>
                 </details>
