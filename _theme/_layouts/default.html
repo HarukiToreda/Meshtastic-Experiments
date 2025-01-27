@@ -76,13 +76,15 @@
       font-size: 0.9em; /* Reduced font size for sidebar paragraphs */
     }
     .content {
-      margin-left: 240px; /* Ensure content is not hidden behind the fixed sidebar and button */
-      flex: 1;
-      padding: 20px;
-      background-color: #1a1a1a; /* Darker charcoal background for content */
-      transition: margin-left 0.3s ease;
-      position: relative; /* Ensures child elements can use absolute positioning */
-      overflow: visible; /* Prevents clipping of hover elements */
+        margin-left: 240px; /* Ensure content is not hidden behind the fixed sidebar and button */
+        flex: 1;
+        padding: 20px;
+        background-color: #1a1a1a; /* Darker charcoal background for content */
+        transition: margin-left 0.3s ease;
+        position: relative; /* Ensures child elements can use absolute positioning */
+        overflow-x: auto; /* Enables horizontal scrolling */
+        overflow-y: auto; /* Enables vertical scrolling */
+        height: 100vh; /* Ensures the content area spans the full viewport height */
     }
     .sidebar.hidden ~ .content {
       margin-left: 20px; /* Adjust content margin when sidebar is hidden */
