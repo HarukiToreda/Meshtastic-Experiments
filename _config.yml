@@ -28,8 +28,10 @@ navbar:
   #      url: "/release-notes/firmware-2-5-6"
   - title: Compatible Peripherals
     url: "/Compatible-Peripherals"
-  - title: Heltec V3
-    url: "/heltec-v3"    
+  - title: Flash ESP32 Firmware
+    url: "/flash-firmware"
+  #- title: Heltec V3
+  #  url: "/heltec-v3"    
   - title: Contact Me
     url: "/contact"    
  
