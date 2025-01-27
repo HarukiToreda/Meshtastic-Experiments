@@ -194,15 +194,6 @@
     tbody tr:nth-child(even) {
       background-color: #1a1a1a; /* Darker charcoal for even rows */
     }
-    footer {
-      text-align: center;
-      padding: 5px 10px;
-      background: #000000; /* Black background for footer */
-      color: #00FFFF; /* Electric blue text */
-      width: 100%;
-      flex-shrink: 0;
-      font-size: 12px; /* Reduced font size for footer */
-    }
     a {
       color: #FFD700; /* Bright yellow links */
     }
@@ -355,9 +346,6 @@
       {% endif %}
     </div>
   </div>
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-  </footer>
   <script>
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
