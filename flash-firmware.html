@@ -7,40 +7,65 @@ title: Flash ESP32 Firmware
   <h1>ESP32 Web Flasher</h1>
   <p>Click the button below to flash your ESP32 firmware.</p>
   <button id="connect">Connect to ESP32</button>
-  <p id="status"></p>
+  <div id="debug">
+    <p id="status">Status: Waiting for user interaction...</p>
+    <ul id="log"></ul>
+  </div>
 </div>
 
 <script type="module">
   import { ESPLoader } from 'https://cdn.jsdelivr.net/gh/espressif/esptool-js@latest/dist/web/esploader.js';
 
+  const statusElement = document.getElementById('status');
+  const logElement = document.getElementById('log');
+
+  // Helper function to log messages
+  const logMessage = (message) => {
+    const li = document.createElement('li');
+    li.textContent = message;
+    logElement.appendChild(li);
+  };
+
   document.getElementById('connect').addEventListener('click', async () => {
-    const status = document.getElementById('status');
     try {
-      status.textContent = 'Requesting port...';
+      logMessage('Requesting port...');
+      statusElement.textContent = 'Status: Requesting port...';
+
+      // Check Web Serial API support
       if (!('serial' in navigator)) {
-        throw new Error('Web Serial API not supported in this browser.');
+        throw new Error('Web Serial API is not supported in this browser.');
       }
 
       const port = await navigator.serial.requestPort();
-      status.textContent = 'Initializing ESP32 connection...';
+      logMessage('Port selected.');
+      statusElement.textContent = 'Status: Initializing ESP32 connection...';
+
       const loader = new ESPLoader(port);
       await loader.initialize();
-      status.textContent = `Connected to ESP32: ${loader.chipName}`;
+      logMessage(`Connected to ESP32: ${loader.chipName}`);
+      statusElement.textContent = `Status: Connected to ESP32: ${loader.chipName}`;
 
       // Specify your firmware URL
       const firmwareUrl = '/Meshtastic-Experiments/firmwares/E290_firmware_01-13-25.bin';
-      status.textContent = `Downloading firmware from ${firmwareUrl}...`;
+      logMessage(`Fetching firmware from ${firmwareUrl}...`);
+      statusElement.textContent = `Status: Downloading firmware...`;
+
       const response = await fetch(firmwareUrl);
       if (!response.ok) {
         throw new Error(`Failed to fetch firmware: ${response.statusText}`);
       }
       const firmware = new Uint8Array(await response.arrayBuffer());
 
-      status.textContent = 'Flashing firmware...';
+      logMessage('Flashing firmware...');
+      statusElement.textContent = 'Status: Flashing firmware...';
+
       await loader.flashData(firmware, 0x1000);
-      status.textContent = 'Firmware successfully flashed!';
+
+      logMessage('Firmware successfully flashed!');
+      statusElement.textContent = 'Status: Firmware successfully flashed!';
     } catch (error) {
-      status.textContent = `Error: ${error.message}`;
+      logMessage(`Error: ${error.message}`);
+      statusElement.textContent = `Status: Error: ${error.message}`;
       console.error(error);
     }
   });
