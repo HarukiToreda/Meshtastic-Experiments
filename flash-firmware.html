@@ -4,8 +4,37 @@ title: Flash ESP32 Firmware
 ---
 
 <div class="content">
-  <h1>Flash ESP32 Firmware</h1>
-  <p>Click the button below to flash the firmware to your ESP32 device:</p>
-  <esp-web-install-button manifest="/Meshtastic-Experiments/firmwares/manifest.json"></esp-web-install-button>
+  <h1>ESP32 Web Flasher</h1>
+  <p>Click the button below to flash your ESP32 firmware.</p>
+  <button id="connect">Connect to ESP32</button>
+  <p id="status"></p>
 </div>
-<script type="module" src="https://esphome.github.io/web-tools/main.js"></script>
+
+<script type="module">
+  import { ESPLoader } from 'https://cdn.jsdelivr.net/gh/espressif/esptool-js@latest/dist/web/esploader.js';
+
+  document.getElementById('connect').addEventListener('click', async () => {
+    const status = document.getElementById('status');
+    try {
+      status.textContent = 'Requesting port...';
+      const port = await navigator.serial.requestPort();
+      status.textContent = 'Initializing ESP32 connection...';
+      const loader = new ESPLoader(port);
+      await loader.initialize();
+      status.textContent = `Connected to ESP32: ${loader.chipName}`;
+
+      // Specify your firmware URL
+      const firmwareUrl = '/Meshtastic-Experiments/firmwares/E290_firmware_01-13-25.bin';
+      status.textContent = `Downloading firmware from ${firmwareUrl}...`;
+      const response = await fetch(firmwareUrl);
+      const firmware = new Uint8Array(await response.arrayBuffer());
+
+      status.textContent = 'Flashing firmware...';
+      await loader.flashData(firmware, 0x1000);
+      status.textContent = 'Firmware successfully flashed!';
+    } catch (error) {
+      status.textContent = `Error: ${error.message}`;
+      console.error(error);
+    }
+  });
+</script>
