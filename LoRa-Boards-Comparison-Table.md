@@ -123,8 +123,9 @@ title: LoRa Boards Comparison Table
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="User" data-price="19.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master E213</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="User" data-price="20.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master E290</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="TFT" data-wifi="Yes" data-input="User" data-price="19.00" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master T190</th> 
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="No" data-input="User" data-price="27.90 29.90 38.80 " data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="Yes" data-ready="No">Heltec Mesh Node T114</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-input="None" data-price="36.97" data-brand="Rack" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">WisBlock Start Kit RAK4631</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="No" data-input="User" data-price="27.90 29.90 38.80" data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="Yes" data-ready="No">Heltec Mesh Node T114</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-input="None" data-price="27.99" data-brand="Rack" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">WisBlock Start Kit RAK4631 (19003)</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-input="None" data-price="29.99" data-brand="Rack" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">WisBlock Start Kit RAK4631 (19007)</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-input="None" data-price="99.00" data-brand="Rack" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">WisMesh Pocket</th>        
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="LCD" data-wifi="Yes" data-input="Touch, Keyboard, User" data-price="52.66" data-brand="Lilygo" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">T-Deck</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-input="Touch, User" data-price="54.41" data-brand="Lilygo" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">T-Echo</th>
@@ -151,6 +152,7 @@ title: LoRa Boards Comparison Table
         <td>Heltec</td><!--Vision Master E290-->
         <td>Heltec</td><!--Vision Master T190-->
         <td>Heltec</td><!--T114-->
+        <td>Rak Wireless</td><!--RAKRAK19003-->
         <td>Rak Wireless</td><!--RAKRAK19007-->
         <td>Rak Wireless</td><!--WisMesh-->
         <td>Lilygo</td><!--T-Deck-->
@@ -176,7 +178,8 @@ title: LoRa Boards Comparison Table
         <td><a href="https://heltec.org/project/vision-master-e290/" target="_blank" rel="noopener noreferrer">$20.90</a></td><!--Vision Master E290-->
         <td><a href="https://heltec.org/project/vision-master-t190/" target="_blank" rel="noopener noreferrer">$19.00</a></td><!--Vision Master T190-->       
         <td><a href="https://heltec.org/project/mesh-node-t114/" target="_blank" rel="noopener noreferrer">$27.90/ $38.80</a></td><!--T114-->
-        <td><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?variant=43884035113158" target="_blank" rel="noopener noreferrer">$27.99</a></td><!--RAKRAK19007-->
+        <td><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?variant=43884035113158" target="_blank" rel="noopener noreferrer">$27.99</a></td><!--RAKRAK19003-->
+        <td><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?variant=43884034654406" target="_blank" rel="noopener noreferrer">$29.99</a></td><!--RAKRAK19007-->
         <td><a href="https://store.rakwireless.com/products/wismesh-pocket?variant=43640511365318" target="_blank" rel="noopener noreferrer">$99.00</a></td><!--WisMesh-->
         <td><a href="https://www.lilygo.cc/products/t-deck" target="_blank" rel="noopener noreferrer">$52.13</a></td><!--T-Deck-->
         <td><a href="https://www.lilygo.cc/products/t-echo" target="_blank" rel="noopener noreferrer">$54.41</a></td><!--T-Echo-->
@@ -201,6 +204,7 @@ title: LoRa Boards Comparison Table
         <td>ESP32-S3R8</td><!--Vision Master E290-->
         <td>ESP32-S3R8</td><!--Vision Master T190-->        
         <td>NRF52840</td><!--T114-->
+        <td>NRF52840</td><!--RAKRAK19003-->
         <td>NRF52840</td><!--RAKRAK19007-->
         <td>NRF52840</td><!--WisMesh-->
         <td>ESP32-S3</td><!--T-Deck-->
@@ -226,6 +230,7 @@ title: LoRa Boards Comparison Table
         <td>SX1262</td><!--Vision Master E290-->
         <td>SX1262</td><!--Vision Master T190-->
         <td>SX1262</td><!--T114-->
+        <td>SX1262</td><!--RAKRAK19003-->
         <td>SX1262</td><!--RAKRAK19007-->
         <td>SX1262</td><!--WisMesh-->
         <td>SX1262</td><!--T-Deck-->
@@ -251,6 +256,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--Vision Master T190-->
         <td>L76k</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->
@@ -276,7 +282,8 @@ title: LoRa Boards Comparison Table
         <td>USB-C</td><!--Vision Master E290-->
         <td>USB-C</td><!--Vision Master T190-->
         <td>USB-C</td><!--T114-->
-        <td>USB-C</td><!--RAKRAK19007-->   
+        <td>USB-C</td><!--RAKRAK19003-->
+        <td>USB-C</td><!--RAKRAK19007-->
         <td>USB-C</td><!--WisMesh-->
         <td>USB-C</td><!--T-Deck-->
         <td>USB-C</td><!--T-Echo-->
@@ -301,7 +308,8 @@ title: LoRa Boards Comparison Table
         <td>433~510 MHz, 863~928 MHz</td><!--Vision Master E290-->
         <td>433~510 MHz, 863~928 MHz</td><!--Vision Master T190-->
         <td>433~510 MHz, 863~928 MHz</td><!--T114-->
-        <td>433~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->     
+        <td>433~510 MHz, 863~928 MHz</td><!--RAKRAK19003-->
+        <td>433~510 MHz, 863~928 MHz</td><!--RAKRAK19007-->
         <td>433~510 MHz, 863~928 MHz</td><!--WisMesh-->
         <td>433~510 MHz, 863~928 MHz</td><!--T-Deck-->
         <td>433~510 MHz, 863~928 MHz</td><!--T-Echo-->
@@ -326,6 +334,7 @@ title: LoRa Boards Comparison Table
         <td>21 ± 1dBm</td><!--Vision Master E290-->
         <td>21 ± 1dBm</td><!--Vision Master T190-->
         <td>21 ± 1dBm</td><!--T114-->
+        <td>22 ± 1dBm</td><!--RAKRAK19003-->
         <td>22 ± 1dBm</td><!--RAKRAK19007-->
         <td>22 ± 1dBm</td><!--WisMesh-->
         <td>22 ± 1dBm</td><!--T-Deck-->
@@ -351,7 +360,8 @@ title: LoRa Boards Comparison Table
         <td>-136 dBm</td><!--Vision Master E290-->    
         <td>-136 dBm</td><!--Vision Master T190-->
         <td>-136 dBm</td><!--T114-->
-        <td>-136 dBm</td><!--RAKRAK19007-->     
+        <td>-136 dBm</td><!--RAKRAK19003-->
+        <td>-136 dBm</td><!--RAKRAK19007-->
         <td>-136 dBm</td><!--WisMesh-->
         <td>-136 dBm</td><!--T-Deck-->
         <td>-136 dBm</td><!--T-Echo-->     
@@ -376,7 +386,8 @@ title: LoRa Boards Comparison Table
         <td>YES</td><!--Vision Master E290-->
         <td>YES</td><!--Vision Master T190-->
         <td>NO</td><!--T114-->
-        <td>NO</td><!--RAKRAK19007-->       
+        <td>NO</td><!--RAKRAK19003-->
+        <td>NO</td><!--RAKRAK19007-->
         <td>NO</td><!--WisMesh-->
         <td>YES</td><!--T-Deck-->
         <td>NO</td><!--T-Echo-->
@@ -401,7 +412,8 @@ title: LoRa Boards Comparison Table
         <td>BT-5 (LE)</td><!--Vision Master E290-->
         <td>BT-5 (LE)</td><!--Vision Master T190-->
         <td>BT-5 (LE)</td><!--T114-->
-        <td>BT-5 (LE)</td><!--RAKRAK19007-->   
+        <td>BT-5 (LE)</td><!--RAKRAK19003-->
+        <td>BT-5 (LE)</td><!--RAKRAK19007-->
         <td>BT-5 (LE)</td><!--WisMesh-->
         <td>BT-5 (LE)</td><!--T-Deck-->
         <td>BT-5 (LE)</td><!--T-Echo-->
@@ -426,7 +438,8 @@ title: LoRa Boards Comparison Table
         <td>E-ink</td><!--Vision Master E290-->
         <td>TFT</td><!--Vision Master T190-->
         <td>TFT</td><!--T114-->
-        <td>-</td><!--RAKRAK19007-->   
+        <td>-</td><!--RAKRAK19003-->
+        <td>-</td><!--RAKRAK19007-->
         <td>OLED</td><!--WisMesh-->
         <td>LCD</td><!--T-Deck-->
         <td>E-ink</td><!--T-Echo-->
@@ -451,7 +464,8 @@ title: LoRa Boards Comparison Table
         <td>2.9 Inch</td><!--Vision Master E290-->
         <td>1.9 Inch</td><!--Vision Master T190-->
         <td>1.14 Inch</td><!--T114-->
-        <td>-</td><!--RAKRAK19007--> 
+        <td>-</td><!--RAKRAK19003-->
+        <td>-</td><!--RAKRAK19007-->
         <td>1.3 Inch</td><!--WisMesh-->
         <td>2.8 Inch</td><!--T-Deck-->
         <td>1.54 Inch</td><!--T-Echo-->
@@ -476,7 +490,8 @@ title: LoRa Boards Comparison Table
         <td>TP4054</td><!--Vision Master E290-->
         <td>TP4054</td><!--Vision Master T190-->
         <td>LP4056H</td><!--T114-->
-        <td>TP4054</td><!--RAKRAK19007-->  
+        <td>TP4054</td><!--RAKRAK19003-->
+        <td>TP4054</td><!--RAKRAK19007-->
         <td>TP4054</td><!--WisMesh-->
         <td>TP4054</td><!--T-Deck-->
         <td>TP4054</td><!--T-Echo-->
@@ -501,6 +516,7 @@ title: LoRa Boards Comparison Table
         <td><a href="https://resource.heltec.cn/download/HT-VME290/HT-VME290%20Schematic_Diagram.pdf">Diagram Link</a></td><!--Vision Master E290-->
         <td><a href="https://resource.heltec.cn/download/HT-VMT190/HT-VMT90%20Schematic%20Diagram.pdf">Diagram Link</a></td><!--Vision Master T190-->     
         <td><a href="https://resource.heltec.cn/download/Mesh_Node_T114/MeshNode-T114_V2.0_SCH(2).pdf">Diagram Link</a></td><!--T114-->
+        <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19003-->        
         <td><a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Datasheet/#hardware">Diagram Link</a></td><!--RAKRAK19007-->        
         <td><a href="">-</a></td><!--WisMesh-->
         <td><a href="https://github.com/Xinyuan-LilyGO/T-Deck/blob/master/schematic/schematic.pdf">Diagram Link</a></td><!--T-Deck-->
@@ -526,7 +542,8 @@ title: LoRa Boards Comparison Table
         <td>User Button, Reset Button, 3rd Button</td><!--Vision Master E290-->
         <td>User Button, Reset Button</td><!--Vision Master T190-->
         <td>User Button, Reset Button</td><!--T114-->
-        <td>Reset Button</td><!--RAKRAK19007-->        
+        <td>Reset Button</td><!--RAKRAK19003-->
+        <td>Reset Button</td><!--RAKRAK19007-->
         <td>User Button, Reset Button</td><!--WisMesh-->
         <td>Touch Screen, Keyboard, trackball, Reset Button</td><!--T-Deck-->
         <td>User Button, Reset Button, Touch Button</td><!--T-Echo-->
@@ -551,6 +568,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--Vision Master T190-->
         <td>-</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -576,6 +594,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--Vision Master T190-->
         <td>-</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -601,6 +620,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--Vision Master T190-->
         <td>-</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -626,6 +646,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--Vision Master T190-->
         <td>-</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--WisMesh-->
         <td>Buzzer</td><!--T-Deck-->      
@@ -651,6 +672,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--Vision Master T190-->
         <td>-</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -676,6 +698,7 @@ title: LoRa Boards Comparison Table
         <td>1X Quiic</td><!--Vision Master E290-->
         <td>1X Quiic</td><!--Vision Master T190-->
         <td>-</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -700,7 +723,8 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E213-->
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--T114-->
-        <td>-</td><!--Vision Master T190-->         
+        <td>-</td><!--Vision Master T190-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>3200mAh</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -726,6 +750,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--Vision Master T190-->
         <td>Resin</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>?</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -751,6 +776,7 @@ title: LoRa Boards Comparison Table
         <td>-</td><!--Vision Master E290-->
         <td>-</td><!--Vision Master T190-->
         <td>Yes</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>Yes</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -776,6 +802,7 @@ title: LoRa Boards Comparison Table
         <td>384KB ROM</td><!--Vision Master E290-->
         <td>384KB ROM</td><!--Vision Master T190-->
         <td>1M ROM</td><!--T114-->
+        <td>?</td><!--RAKRAK19003-->
         <td>?</td><!--RAKRAK19007-->
         <td>?</td><!--WisMesh-->
         <td>384KB ROM</td><!--T-Deck-->      
@@ -801,6 +828,7 @@ title: LoRa Boards Comparison Table
         <td>512KB SRAM</td><!--Vision Master E290-->
         <td>512KB SRAM</td><!--Vision Master T190-->
         <td>256KB SRAM</td><!--T114-->
+        <td>?</td><!--RAKRAK19003-->
         <td>?</td><!--RAKRAK19007-->
         <td>?</td><!--WisMesh-->
         <td>512KB SRAM</td><!--T-Deck-->      
@@ -826,6 +854,7 @@ title: LoRa Boards Comparison Table
         <td>16KB RTC SRAM</td><!--Vision Master E290-->
         <td>16KB RTC SRAM</td><!--Vision Master T190-->
         <td>?</td><!--T114-->
+        <td>?</td><!--RAKRAK19003-->
         <td>?</td><!--RAKRAK19007-->
         <td>?</td><!--WisMesh-->
         <td>16KB RTC SRAM</td><!--T-Deck-->
@@ -851,6 +880,7 @@ title: LoRa Boards Comparison Table
         <td>8MB SiP Flash</td><!--Vision Master E290-->
         <td>8MB SiP Flash</td><!--Vision Master T190-->
         <td>?</td><!--T114-->
+        <td>?</td><!--RAKRAK19003-->
         <td>?</td><!--RAKRAK19007-->
         <td>?</td><!--WisMesh-->
         <td>-</td><!--T-Deck-->      
@@ -876,6 +906,7 @@ title: LoRa Boards Comparison Table
         <td>8MB PSRAM</td><!--Vision Master E290-->
         <td>8MB PSRAM</td><!--Vision Master T190-->
         <td>-</td><!--T114-->
+        <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--WisMesh-->
         <td>8MB PSRAM</td><!--T-Deck-->      
@@ -901,6 +932,7 @@ title: LoRa Boards Comparison Table
         <td>16MB Flash</td><!--Vision Master E290-->
         <td>16MB Flash</td><!--Vision Master T190-->
         <td>-</td><!--T114-->
+        <td>1MB Flash</td><!--RAKRAK19003-->
         <td>1MB Flash</td><!--RAKRAK19007-->
         <td>1MB Flash</td><!--WisMesh-->
         <td>16MB Flash</td><!--T-Deck-->      
