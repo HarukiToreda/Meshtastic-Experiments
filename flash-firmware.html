@@ -3,108 +3,77 @@ layout: default
 title: Flash ESP32 Firmware
 ---
 
-<div class="content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 Web Flasher</title>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/espressif/esptool-js@latest/dist/web/esploader.js"></script>
+</head>
+<body>
   <h1>ESP32 Web Flasher</h1>
-  <p>Select a port and click the button below to flash your ESP32 firmware:</p>
-  <select id="port-selector">
-    <option value="" disabled selected>Select a port...</option>
-  </select>
-  <button id="connect">Connect to ESP32</button>
-  <div id="debug">
-    <p id="status">Status: Waiting for user interaction...</p>
-    <ul id="log"></ul>
-  </div>
-</div>
+  <p>Click the button below to flash your ESP32 device.</p>
+  <button id="select-port">Select Port</button>
+  <button id="flash-firmware" disabled>Flash Firmware</button>
+  <p id="status">Status: Waiting for user interaction...</p>
+  <div id="log"></div>
 
-<script type="module">
-  import { ESPLoader } from 'https://cdn.jsdelivr.net/gh/espressif/esptool-js@latest/dist/web/esploader.js';
+  <script type="module">
+    import { ESPLoader } from 'https://cdn.jsdelivr.net/gh/espressif/esptool-js@latest/dist/web/esploader.js';
 
-  const statusElement = document.getElementById('status');
-  const logElement = document.getElementById('log');
-  const portSelector = document.getElementById('port-selector');
+    let port;
+    let loader;
 
-  const logMessage = (message) => {
-    const li = document.createElement('li');
-    li.textContent = message;
-    logElement.appendChild(li);
-  };
+    const statusElement = document.getElementById('status');
+    const logElement = document.getElementById('log');
 
-  const listSerialPorts = async () => {
-    if (!('serial' in navigator)) {
-      logMessage('Web Serial API is not supported in this browser.');
-      statusElement.textContent = 'Status: Web Serial API is not supported in this browser.';
-      return;
-    }
+    const logMessage = (message) => {
+      const p = document.createElement('p');
+      p.textContent = message;
+      logElement.appendChild(p);
+    };
 
-    try {
-      const ports = await navigator.serial.getPorts();
-      portSelector.innerHTML = '<option value="" disabled selected>Select a port...</option>'; // Reset dropdown
-
-      ports.forEach((port, index) => {
-        const option = document.createElement('option');
-        option.value = index; // Use the index as a reference
-        option.textContent = `Port ${index + 1}`;
-        portSelector.appendChild(option);
-      });
-
-      if (ports.length === 0) {
-        logMessage('No ports available. Please connect a device and try again.');
-        statusElement.textContent = 'Status: No ports available.';
-      } else {
-        logMessage(`${ports.length} port(s) detected. Select one.`);
-        statusElement.textContent = 'Status: Port(s) detected. Select a port.';
+    document.getElementById('select-port').addEventListener('click', async () => {
+      try {
+        statusElement.textContent = 'Requesting port...';
+        port = await navigator.serial.requestPort();
+        statusElement.textContent = 'Port selected. Initializing ESP32 connection...';
+        await port.open({ baudRate: 115200 });
+        loader = new ESPLoader(port);
+        await loader.initialize();
+        statusElement.textContent = `Connected to ESP32: ${loader.chipName}`;
+        logMessage(`Connected to ESP32: ${loader.chipName}`);
+        document.getElementById('flash-firmware').disabled = false;
+      } catch (error) {
+        statusElement.textContent = `Error: ${error.message}`;
+        logMessage(`Error: ${error.message}`);
       }
-    } catch (error) {
-      logMessage(`Error listing ports: ${error.message}`);
-      statusElement.textContent = `Status: Error listing ports: ${error.message}`;
-    }
-  };
+    });
 
-  // Populate port list on page load
-  document.addEventListener('DOMContentLoaded', listSerialPorts);
+    document.getElementById('flash-firmware').addEventListener('click', async () => {
+      try {
+        if (!loader) {
+          throw new Error('ESP32 not initialized.');
+        }
 
-  document.getElementById('connect').addEventListener('click', async () => {
-    const selectedPortIndex = portSelector.value;
-    if (!selectedPortIndex) {
-      logMessage('Please select a port before connecting.');
-      statusElement.textContent = 'Status: Please select a port.';
-      return;
-    }
+        statusElement.textContent = 'Downloading firmware...';
+        const firmwareUrl = '/Meshtastic-Experiments/firmwares/E290_firmware_01-13-25.bin';
+        const response = await fetch(firmwareUrl);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch firmware: ${response.statusText}`);
+        }
+        const firmware = new Uint8Array(await response.arrayBuffer());
 
-    try {
-      const ports = await navigator.serial.getPorts();
-      const port = ports[selectedPortIndex];
-
-      logMessage('Port selected. Initializing connection...');
-      statusElement.textContent = 'Status: Initializing ESP32 connection...';
-
-      const loader = new ESPLoader(port);
-      await loader.initialize();
-      logMessage(`Connected to ESP32: ${loader.chipName}`);
-      statusElement.textContent = `Status: Connected to ESP32: ${loader.chipName}`;
-
-      // Specify your firmware URL
-      const firmwareUrl = '/Meshtastic-Experiments/firmwares/E290_firmware_01-13-25.bin';
-      logMessage(`Fetching firmware from ${firmwareUrl}...`);
-      statusElement.textContent = `Status: Downloading firmware...`;
-
-      const response = await fetch(firmwareUrl);
-      if (!response.ok) {
-        throw new Error(`Failed to fetch firmware: ${response.statusText}`);
+        statusElement.textContent = 'Flashing firmware...';
+        await loader.flashData(firmware, 0x1000);
+        statusElement.textContent = 'Firmware successfully flashed!';
+        logMessage('Firmware successfully flashed!');
+      } catch (error) {
+        statusElement.textContent = `Error: ${error.message}`;
+        logMessage(`Error: ${error.message}`);
       }
-      const firmware = new Uint8Array(await response.arrayBuffer());
-
-      logMessage('Flashing firmware...');
-      statusElement.textContent = 'Status: Flashing firmware...';
-
-      await loader.flashData(firmware, 0x1000);
-
-      logMessage('Firmware successfully flashed!');
-      statusElement.textContent = 'Status: Firmware successfully flashed!';
-    } catch (error) {
-      logMessage(`Error: ${error.message}`);
-      statusElement.textContent = `Status: Error: ${error.message}`;
-      console.error(error);
-    }
-  });
-</script>
+    });
+  </script>
+</body>
+</html>
