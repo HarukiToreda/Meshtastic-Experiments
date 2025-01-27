@@ -15,7 +15,7 @@
       color: #ffffff; /* White text */
       min-height: 100vh;
       margin: 0;
-      overflow-x: hidden; /* Prevent horizontal scrolling caused by overflow */
+      overflow-x: auto; /* Prevent horizontal scrolling caused by overflow */
     }
     .main-container {
       display: flex;
@@ -76,15 +76,13 @@
       font-size: 0.9em; /* Reduced font size for sidebar paragraphs */
     }
     .content {
-        margin-left: 240px; /* Ensure content is not hidden behind the fixed sidebar and button */
-        flex: 1;
-        padding: 20px;
-        background-color: #1a1a1a; /* Darker charcoal background for content */
-        transition: margin-left 0.3s ease;
-        position: relative; /* Ensures child elements can use absolute positioning */
-        overflow-x: auto; /* Enables horizontal scrolling */
-        overflow-y: auto; /* Enables vertical scrolling */
-        height: 100vh; /* Ensures the content area spans the full viewport height */
+      margin-left: 240px; /* Ensure content is not hidden behind the fixed sidebar and button */
+      flex: 1;
+      padding: 20px;
+      background-color: #1a1a1a; /* Darker charcoal background for content */
+      transition: margin-left 0.3s ease;
+      position: relative; /* Ensures child elements can use absolute positioning */
+      overflow: visible; /* Prevents clipping of hover elements */
     }
     .sidebar.hidden ~ .content {
       margin-left: 20px; /* Adjust content margin when sidebar is hidden */
@@ -195,6 +193,15 @@
     }
     tbody tr:nth-child(even) {
       background-color: #1a1a1a; /* Darker charcoal for even rows */
+    }
+    footer {
+      text-align: center;
+      padding: 5px 10px;
+      background: #000000; /* Black background for footer */
+      color: #00FFFF; /* Electric blue text */
+      width: 100%;
+      flex-shrink: 0;
+      font-size: 12px; /* Reduced font size for footer */
     }
     a {
       color: #FFD700; /* Bright yellow links */
@@ -348,6 +355,9 @@
       {% endif %}
     </div>
   </div>
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+  </footer>
   <script>
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
