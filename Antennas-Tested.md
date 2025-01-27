@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Antennas Tested
-permalink: /Meshtastic-Experiments/Antennas-Tested
 ---
 
 # Antennas Tested for 915Mhz
