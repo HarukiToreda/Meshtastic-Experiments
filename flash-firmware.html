@@ -5,7 +5,10 @@ title: Flash ESP32 Firmware
 
 <div class="content">
   <h1>ESP32 Web Flasher</h1>
-  <p>Click the button below to flash your ESP32 firmware.</p>
+  <p>Select a port and click the button below to flash your ESP32 firmware:</p>
+  <select id="port-selector">
+    <option value="" disabled selected>Select a port...</option>
+  </select>
   <button id="connect">Connect to ESP32</button>
   <div id="debug">
     <p id="status">Status: Waiting for user interaction...</p>
@@ -18,26 +21,61 @@ title: Flash ESP32 Firmware
 
   const statusElement = document.getElementById('status');
   const logElement = document.getElementById('log');
+  const portSelector = document.getElementById('port-selector');
 
-  // Helper function to log messages
   const logMessage = (message) => {
     const li = document.createElement('li');
     li.textContent = message;
     logElement.appendChild(li);
   };
 
-  document.getElementById('connect').addEventListener('click', async () => {
+  const listSerialPorts = async () => {
+    if (!('serial' in navigator)) {
+      logMessage('Web Serial API is not supported in this browser.');
+      statusElement.textContent = 'Status: Web Serial API is not supported in this browser.';
+      return;
+    }
+
     try {
-      logMessage('Requesting port...');
-      statusElement.textContent = 'Status: Requesting port...';
+      const ports = await navigator.serial.getPorts();
+      portSelector.innerHTML = '<option value="" disabled selected>Select a port...</option>'; // Reset dropdown
 
-      // Check Web Serial API support
-      if (!('serial' in navigator)) {
-        throw new Error('Web Serial API is not supported in this browser.');
+      ports.forEach((port, index) => {
+        const option = document.createElement('option');
+        option.value = index; // Use the index as a reference
+        option.textContent = `Port ${index + 1}`;
+        portSelector.appendChild(option);
+      });
+
+      if (ports.length === 0) {
+        logMessage('No ports available. Please connect a device and try again.');
+        statusElement.textContent = 'Status: No ports available.';
+      } else {
+        logMessage(`${ports.length} port(s) detected. Select one.`);
+        statusElement.textContent = 'Status: Port(s) detected. Select a port.';
       }
+    } catch (error) {
+      logMessage(`Error listing ports: ${error.message}`);
+      statusElement.textContent = `Status: Error listing ports: ${error.message}`;
+    }
+  };
 
-      const port = await navigator.serial.requestPort();
-      logMessage('Port selected.');
+  // Populate port list on page load
+  document.addEventListener('DOMContentLoaded', listSerialPorts);
+
+  document.getElementById('connect').addEventListener('click', async () => {
+    const selectedPortIndex = portSelector.value;
+    if (!selectedPortIndex) {
+      logMessage('Please select a port before connecting.');
+      statusElement.textContent = 'Status: Please select a port.';
+      return;
+    }
+
+    try {
+      const ports = await navigator.serial.getPorts();
+      const port = ports[selectedPortIndex];
+
+      logMessage('Port selected. Initializing connection...');
       statusElement.textContent = 'Status: Initializing ESP32 connection...';
 
       const loader = new ESPLoader(port);
