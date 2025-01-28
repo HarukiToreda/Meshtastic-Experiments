@@ -1,0 +1,51 @@
+---
+layout: default
+title: Gerber PCB Files
+---
+
+# Gerber PCB Files
+
+Below is a gallery of PCB designs. Click on any image to view and download the Gerber files from GitHub.
+
+## Gallery
+
+<div class="gallery">
+  {% for pcb in site.data.gerber_pcbs %}
+    <div class="gallery-item">
+      <a href="{{ pcb.github_url }}" target="_blank">
+        <img src="{{ pcb.image_url }}" alt="{{ pcb.name }}">
+      </a>
+      <p>{{ pcb.name }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+## How It Works
+
+1. **Click on a PCB Image**: This will take you to the GitHub page where the Gerber files are stored.
+2. **Download the Files**: On GitHub, you can download the Gerber files directly.
+3. **Manufacturing**: Send the Gerber files to a PCB manufacturer to get your boards made.
+
+<style>
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .gallery-item {
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+  }
+  .gallery-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #FFD700;
+  }
+</style>
