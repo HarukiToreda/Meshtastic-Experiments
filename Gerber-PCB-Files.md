@@ -2,8 +2,8 @@
 layout: default
 title: Gerber PCB Files
 pcbs:
-  - name: "PCB Design 1"
-    image_url: "/assets/images/pcb1.jpg"
+  - name: "E290 Shield"
+    image_url: "/assets/images/E290 Shield.png"
     github_url: "https://github.com/your-username/your-repo/blob/main/path/to/pcb1/files"
 
   - name: "PCB Design 2"
