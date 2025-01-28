@@ -1,41 +1,41 @@
 # E290 Shield
-A useful addon shield designed for the Heltec Vision Master E290, this shield allows the easy way to add a removable shield that can have a firmware controleed switching for GPS, Buzzer and Vibration motor as well as exposes the pins to allow easy solderdering of any addionalt components. 
 
-# Pictures
-<details><summary>Click to open</summary>
+The E290 Shield is an add-on board designed for the Heltec Vision Master E290. This shield provides a convenient and modular solution for integrating additional functionalities such as GPS, a buzzer, and a vibration motor. It also exposes pins for easy soldering of additional components, making it highly versatile for various projects.
+
+## Key Features
+
+- **GPS Control**: The GPS module is controlled via a MOSFET, allowing for power-saving and easy toggling through firmware.
+- **Buzzer Control**: A transistor protects the board's GPIO pins while ensuring the buzzer operates at a high volume.
+- **Vibration Motor Control**: Similar to the buzzer, the vibration motor is controlled by a transistor, safeguarding the GPIO pins and providing strong feedback.
+- **Battery Compatibility**: The shield is designed to accommodate a 3000mAh battery, which can be sandwiched between the shield and the main board.
+- **Expandability**: Exposed pins allow for the addition of custom components, enhancing the shield's functionality.
+
+## Bill of Materials
+
+For a detailed list of components required to assemble the E290 Shield, please refer to the [Bill of Materials](#bill-of-materials) section below.
+
+## Pictures
+
+<details><summary>Click to view images</summary>
 
 </details>
 
-## Features
-- GPS is controlled by a Mosfet via the firmware to allow power saving and easy power toggle
-- Buzzer is controlled by a Transistor to protect the board's gpio pins and makes it very loud
-- Vibration Motor is controlled by a Transistor to protect the board's gpio pins and makes it very loud
-- The shield allows a 3000mAh battery to fit sandwhiched between the two boards.
-- Exposed pins added to allow additional components.
+## Bill of Materials
 
-# Bill of materials
+| Part | Designator | Footprint | Quantity | Manufacturer Part | Manufacturer | Supplier | Supplier Part | Price (€) | Note |
+| :------------ | :------------ | :---------------------------- | :-----------------| :-----------------| :-----------------| :-----------------| :-----------------| :-----------------| :-----------------|
+| AO3400A | Q4 | SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR | 1 | AO3400A | AOS | LCSC | C20917 | 0.09 | MOSFET for GPS control |
+| MMBT2222A-1P | Q5, Q6 | SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR | 2 | MMBT2222A-1P | MDD(辰达半导体) | LCSC | C364315 | 0.015 | Transistor for Buzzer and Vibration Motor control |
+| MTL9032 | U1 | BUZ-SMD_MLT-9032 | 1 | MTL9032 | null | LCSC | C9900004422 | - | Buzzer |
+| LCM0827A3038F | U3 | VIBRATIONMOTOR-TH_LCM0827A3038F | 1 | LCM0827A3038F | LEADER(立得) | LCSC | C2759981 | - | Vibration Motor |
+| Header-Male-2.54_2x20 | H1 | HDR-TH_40P-P2.54-V-M-R2-C20-S2.54 | 1 | 2.54mm 2*20P直排针 | BOOMELE(博穆精密) | LCSC | C50980 | 0.15 | Header for board connection |
 
-| Part | Source | Cost&nbsp;(€) | Note |
-| :------------ | :---------------------------- | :-----------------| :-----------------|
-| ProMicro (aka NiceNano) | <a href="https://www.aliexpress.com/item/1005006446457448.html" target="_blank">AliExpress</a><br /> <a href="https://www.aliexpress.com/item/1005007738886550.html" target="_blank">AliExpress</a> | 5€ <br /> 2x for 5€ | |
-| HT-RA62 | <a href="https://www.aliexpress.com/item/1005005543917617.html" target="_blank">AliExpress</a> | 5€ | You can also use <a href="https://www.aliexpress.com/item/1005002561194884.html">RA-01SH</a> |
-| 2x Through Hole Resistors // SMD resistor | <a href="https://www.aliexpress.com/item/1005006044241818.html" target="_blank">AliExpress</a> | 3€ pack<br /> 0.1€/resistor | You can buy a package of multiple values for a few €.<br /> Choose depending on material you already have &/or soldering skills. I'm using 2x 1M ohms |
-| OLED SSD1306 i2c (optional) | <a href="https://www.aliexpress.com/item/1005005970901119.html" target="_blank">AliExpress</a> | 1.5€ | No need to solder, just be careful and add some tape in between the boards to avoid a short. |
-| Battery connection (optional) | <a href="https://www.aliexpress.com/item/1005002564191148.html" target="_blank">AliExpress</a> | 2€ pack<br /> 0.4€/unit | This is an example. |
-| Antenna pigtail (recommended) | <a href="https://www.aliexpress.com/item/4001287491018.html" target="_blank">AliExpress</a> | 2€ | I saw that it underperformed with a cheap black pigtail, after using one of these, it worked fine. |
-| PCB |  | 2€ pack of 5<br /> 0.4€/unit | Use your favourite company to get the PCB. |
-| 2x Buttons | <a href="https://www.aliexpress.com/item/4001125532910.html" target="_blank">AliExpress</a> | 1.8€ pack<br /> 0.1€/button | You can buy a package of 100 for a few €.<br /> I couldn't find a part code, search for "3*4*2.0 2 Pin Button" |
-| [#16](https://github.com/gargomoma/fakeTec_pcb/issues/16) lupusworax's v4<br /> Mosfets SI2312 | <a href="https://www.aliexpress.com/item/1005004676217612.html" target="_blank">AliExpress</a> | 9€ pack of 200<br /> | --- |
-| [#16](https://github.com/gargomoma/fakeTec_pcb/issues/16) lupusworax's v4<br /> Resistors | <a href="https://www.aliexpress.com/item/1005002991902748.html" target="_blank">AliExpress</a> | 2.4€ pack of 100<br /> | --- |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||||
-| <strong>Total</strong> || 10€ | |
+**Total Cost**: ~0.255€ (excluding buzzer and vibration motor costs)
 
-# Notes
+## About Meshtastic
 
+[Meshtastic](https://meshtastic.org/)® is a registered trademark of Meshtastic LLC. Meshtastic software components are released under various licenses. For more details, please refer to the official GitHub repository.
 
-# About Meshtastic
-[Meshtastic](https://meshtastic.org/)® is a registered trademark of Meshtastic LLC. Meshtastic software components are released under various licenses, see github for details.
+## Disclaimer
 
-# Disclaimer
-No warranty is provided.
-You use it at your own risk and take the responsibility upon yourself.
+This product is provided without any warranty. Use it at your own risk. The responsibility for any issues or damages lies solely with the user.
