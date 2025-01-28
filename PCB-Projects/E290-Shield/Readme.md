@@ -18,6 +18,8 @@ For a detailed list of components required to assemble the E290 Shield, please r
 
 <details><summary>Click to view images</summary>
 
+![E290 Shield](Meshtastic-Experiments/assets/images/PCB/E290_Shield2.jpg)
+
 </details>
 
 ## Bill of Materials
