@@ -22,6 +22,17 @@ For a detailed list of components required to assemble the E290 Shield, please r
 
 </details>
 
+## Order PCB or Fully Assembled Board
+
+You can order the PCB or the fully assembled board directly from **PCBWay** by visiting the following link:
+
+👉 **[Order E290 Shield on PCBWay](https://www.pcbway.com/project/shareproject/Heltec_Vision_Master_E290_Shield_for_Meshtastic_89cca901.html)**
+
+This link will take you to the project page on PCBWay, where you can choose to order just the PCB or the fully assembled board.
+
+If you prefer JLCPCB or other services you can download the gerber files inside Files
+
+
 ## Bill of Materials
 
 For a detailed list of components required to assemble the E290 Shield, please refer to the table below.
