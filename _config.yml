@@ -26,6 +26,8 @@ navbar:
   #  sublinks:
   #    - title: 2.5.6.d55c08d Alpha
   #      url: "/release-notes/firmware-2-5-6"
+  - title: Gerber PCB Files
+    url: "Gerber-PCB-Files"
   - title: Compatible Peripherals
     url: "Compatible-Peripherals"
   #- title: Heltec V3
