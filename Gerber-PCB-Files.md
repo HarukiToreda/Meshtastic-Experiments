@@ -3,7 +3,7 @@ layout: default
 title: Gerber PCB Files
 pcbs:
   - name: "E290 Shield"
-    image_url: "/assets/images/E290_Shield.png"
+    image_url: "Meshtastic-Experiments/assets/images/E290_Shield.png"
     github_url: "https://github.com/your-username/your-repo/blob/main/path/to/pcb1/files"
 
   - name: "PCB Design 2"
