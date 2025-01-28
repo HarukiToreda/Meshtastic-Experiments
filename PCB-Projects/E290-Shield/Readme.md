@@ -22,15 +22,94 @@ For a detailed list of components required to assemble the E290 Shield, please r
 
 ## Bill of Materials
 
-| Part | Designator | Footprint | Quantity | Manufacturer Part | Manufacturer | Supplier | Supplier Part | Price (€) | Note |
-| :------------ | :------------ | :---------------------------- | :-----------------| :-----------------| :-----------------| :-----------------| :-----------------| :-----------------| :-----------------|
-| AO3400A | Q4 | SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR | 1 | AO3400A | AOS | LCSC | C20917 | 0.09 | MOSFET for GPS control |
-| MMBT2222A-1P | Q5, Q6 | SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR | 2 | MMBT2222A-1P | MDD(辰达半导体) | LCSC | C364315 | 0.015 | Transistor for Buzzer and Vibration Motor control |
-| MTL9032 | U1 | BUZ-SMD_MLT-9032 | 1 | MTL9032 | null | LCSC | C9900004422 | - | Buzzer |
-| LCM0827A3038F | U3 | VIBRATIONMOTOR-TH_LCM0827A3038F | 1 | LCM0827A3038F | LEADER(立得) | LCSC | C2759981 | - | Vibration Motor |
-| Header-Male-2.54_2x20 | H1 | HDR-TH_40P-P2.54-V-M-R2-C20-S2.54 | 1 | 2.54mm 2*20P直排针 | BOOMELE(博穆精密) | LCSC | C50980 | 0.15 | Header for board connection |
+For a detailed list of components required to assemble the E290 Shield, please refer to the table below.
 
-**Total Cost**: ~0.255€ (excluding buzzer and vibration motor costs)
+---
+
+## Bill of Materials
+
+<div style="overflow-x: auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Type</th>
+        <th>Designator</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>MOSFET</td>
+        <td>AO3400A</td>
+        <td>1</td>
+        <td>SMD</td>
+        <td>Q4</td>
+        <td>This will be in the BOM if you want to order assembled</td>
+      </tr>
+      <tr>
+        <td>NPN Transistor</td>
+        <td>MMBT2222A-1P</td>
+        <td>2</td>
+        <td>SMD</td>
+        <td>Q5, Q6</td>
+        <td>This will be in the BOM if you want to order assembled</td>
+      </tr>
+      <tr>
+        <td>MOSFET</td>
+        <td>2N7000</td>
+        <td>1</td>
+        <td>Through Hole</td>
+        <td>Q1</td>
+        <td>Not in BOM in case you want to solder by hand</td>
+      </tr>
+      <tr>
+        <td>NPN Transistor</td>
+        <td>2N2222A</td>
+        <td>2</td>
+        <td>Through Hole</td>
+        <td>Q2, Q3</td>
+        <td>Not in BOM in case you want to solder by hand</td>
+      </tr>
+      <tr>
+        <td>Passive Buzzer</td>
+        <td>MTL9032</td>
+        <td>1</td>
+        <td>SMD</td>
+        <td>U1</td>
+        <td>This will be in the BOM if you want to order assembled</td>
+      </tr>
+      <tr>
+        <td>Vibra Motor</td>
+        <td>LCM0827A3038F</td>
+        <td>1</td>
+        <td>Through Hole</td>
+        <td>U3</td>
+        <td>This will be in the BOM if you want to order assembled</td>
+      </tr>
+      <tr>
+        <td>Header</td>
+        <td>Header-Male-2.54_2x20</td>
+        <td>1</td>
+        <td>Through Hole</td>
+        <td>H1</td>
+        <td>This will be in the BOM if you want to order assembled</td>
+      </tr>
+      <tr>
+        <td>GPS</td>
+        <td>GT-U7</td>
+        <td>1</td>
+        <td>SMD</td>
+        <td>GPS</td>
+        <td>Not in BOM in case you want to solder by hand</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
 
 ## About Meshtastic
 
