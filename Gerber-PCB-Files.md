@@ -1,6 +1,18 @@
 ---
 layout: default
 title: Gerber PCB Files
+pcbs:
+  - name: "PCB Design 1"
+    image_url: "/assets/images/pcb1.jpg"
+    github_url: "https://github.com/your-username/your-repo/blob/main/path/to/pcb1/files"
+
+  - name: "PCB Design 2"
+    image_url: "/assets/images/pcb2.jpg"
+    github_url: "https://github.com/your-username/your-repo/blob/main/path/to/pcb2/files"
+
+  - name: "PCB Design 3"
+    image_url: "/assets/images/pcb3.jpg"
+    github_url: "https://github.com/your-username/your-repo/blob/main/path/to/pcb3/files"
 ---
 
 # Gerber PCB Files
@@ -10,7 +22,7 @@ Below is a gallery of PCB designs. Click on any image to view and download the G
 ## Gallery
 
 <div class="gallery">
-  {% for pcb in site.data.gerber_pcbs %}
+  {% for pcb in page.pcbs %}
     <div class="gallery-item">
       <a href="{{ pcb.github_url }}" target="_blank">
         <img src="{{ pcb.image_url }}" alt="{{ pcb.name }}">
