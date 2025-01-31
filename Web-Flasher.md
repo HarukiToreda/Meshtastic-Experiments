@@ -3,7 +3,7 @@ layout: default
 title: Web Flasher
 ---
 
-# Meshtastic Web Flasher
+# InkHUD Web Flasher
 
 <div id="flasher-container">
   <div class="flash-controls">
