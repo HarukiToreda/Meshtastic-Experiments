@@ -39,17 +39,18 @@ title: Web Flasher
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
+<script src="https://unpkg.com/@espruino-tools/esptool@0.0.9/dist/esptool.min.js"></script>
 <script>
-const ESPTool = window.ESPTool;
+// Fix ESPTool initialization
+const ESPTool = window.EspruinoTools.ESPTool;
+
+// Keep your original configuration
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
 const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
-let port = null;
-let selectedFirmware = null;
-
+// Modify loadDevices and loadFirmwares functions
 async function loadDevices() {
   try {
     const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
@@ -58,12 +59,9 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    const contents = data.contents ? JSON.parse(data.contents) : data;
+    // Handle AllOrigins proxy format
+    const contents = JSON.parse(data.contents); 
     
-    if (!Array.isArray(contents)) {
-      throw new Error('GitHub returned unexpected directory structure');
-    }
-
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
@@ -80,7 +78,6 @@ async function loadDevices() {
     log(`Loaded ${contents.length} devices`);
   } catch (error) {
     log(`Device loading failed: ${error.message}`);
-    console.error('GitHub API Response:', error);
   }
 }
 
@@ -89,10 +86,8 @@ async function loadFirmwares(device) {
     const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
     const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
     
-    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-    
     const data = await response.json();
-    const contents = data.contents ? JSON.parse(data.contents) : data;
+    const contents = JSON.parse(data.contents);
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
@@ -112,71 +107,8 @@ async function loadFirmwares(device) {
     log(`Firmware loading failed: ${error.message}`);
   }
 }
-document.getElementById('connect-btn').addEventListener('click', async () => {
-  try {
-    port = await navigator.serial.requestPort();
-    document.getElementById('connect-btn').disabled = true;
-    document.getElementById('connection-status').textContent = '✅ Connected';
-    document.getElementById('flash-btn').disabled = false;
-    log('Connected to device');
-    await loadDevices();
-  } catch (error) {
-    log(`Connection error: ${error.message}`);
-  }
-});
 
-document.getElementById('device-select').addEventListener('change', (e) => {
-  const device = e.target.value;
-  if (device) {
-    loadFirmwares(device);
-  }
-});
-
-document.getElementById('firmware-select').addEventListener('change', (e) => {
-  selectedFirmware = e.target.value;
-});
-
-document.getElementById('flash-btn').addEventListener('click', async () => {
-  if (!selectedFirmware) {
-    log('Please select a firmware first');
-    return;
-  }
-
-  try {
-    document.getElementById('progress-container').style.display = 'block';
-    const options = { baudRate: 115200 };
-    
-    log(`Downloading firmware: ${selectedFirmware}`);
-    const response = await fetch(selectedFirmware);
-    const firmwareBuffer = await response.arrayBuffer();
-    
-    await port.open(options);
-    const esptool = new ESPTool(port);
-    
-    await esptool.connect();
-    log('Starting flash process...');
-    
-    await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
-      const percent = Math.round(progress * 100);
-      document.getElementById('progress-bar').value = percent;
-      document.getElementById('progress-text').textContent = `${percent}%`;
-    });
-
-    await esptool.hard_reset();
-    log('Flash completed successfully!');
-  } catch (error) {
-    log(`Flash failed: ${error.message}`);
-  } finally {
-    document.getElementById('progress-container').style.display = 'none';
-    if (port) await port.close();
-  }
-});
-
-function log(message) {
-  const logElement = document.getElementById('log');
-  logElement.textContent += `${new Date().toLocaleTimeString()}: ${message}\n`;
-  logElement.scrollTop = logElement.scrollHeight;
-}
+// Keep the rest of your original code unchanged
 </script>
 
 <style>
