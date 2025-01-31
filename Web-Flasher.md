@@ -8,7 +8,7 @@ title: Web Flasher
 <div id="flasher-container">
   <div class="flash-controls">
     <div class="connect-box">
-      <button id="connect-btn" onclick="connect()">Connect Device</button>
+      <button id="connect-btn">Connect Device</button>
       <span id="connection-status">⛔ Not Connected</span>
     </div>
     
@@ -26,7 +26,7 @@ title: Web Flasher
       </select>
     </div>
 
-    <button id="flash-btn" onclick="beginFlash()" disabled>Flash Firmware</button>
+    <button id="flash-btn" disabled>Flash Firmware</button>
   </div>
 
   <div id="progress-container" style="display: none;">
@@ -40,13 +40,12 @@ title: Web Flasher
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
-
 <script>
 const ESPTool = window.EspTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
-const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares'; // Corrected path
-const CORS_PROXY = 'https://api.allorigins.win/raw?url='; // Changed proxy
+const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
+const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
 let port = null;
 let selectedFirmware = null;
@@ -58,25 +57,35 @@ async function loadDevices() {
     
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
-    const devices = await response.json();
+    const data = await response.json();
+    // Handle proxy-wrapped response
+    const rawData = data.contents ? JSON.parse(data.contents) : data;
     
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
-    devices.forEach(item => {
-      if (item.type === 'dir') {
-        const option = document.createElement('option');
-        option.value = item.name;
-        option.textContent = item.name.replace(/_/g, ' ');
-        deviceSelect.appendChild(option);
+    if (Array.isArray(rawData)) {
+      rawData.forEach(item => {
+        if (item.type === 'dir') {
+          const option = document.createElement('option');
+          option.value = item.name;
+          option.textContent = item.name.replace(/_/g, ' ');
+          deviceSelect.appendChild(option);
+        }
+      });
+      
+      if (rawData.length > 0) {
+        deviceSelect.disabled = false;
+        log('Loaded available devices');
+      } else {
+        log('No devices found in firmware directory');
       }
-    });
-    
-    deviceSelect.disabled = false;
-    log('Loaded available devices');
+    } else {
+      throw new Error('Unexpected response format from GitHub');
+    }
   } catch (error) {
     log(`Device loading failed: ${error.message}`);
-    console.error('API Response:', error);
+    console.error('Error details:', error);
   }
 }
 
@@ -87,28 +96,31 @@ async function loadFirmwares(device) {
     
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
-    const files = await response.json();
+    const data = await response.json();
+    const rawData = data.contents ? JSON.parse(data.contents) : data;
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
     
-    files.forEach(file => {
-      if (file.name.endsWith('.bin')) {
-        const option = document.createElement('option');
-        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
-        option.textContent = file.name.replace(/_/g, ' ');
-        firmwareSelect.appendChild(option);
-      }
-    });
+    if (Array.isArray(rawData)) {
+      rawData.forEach(file => {
+        if (file.name.endsWith('.bin')) {
+          const option = document.createElement('option');
+          option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
+          option.textContent = file.name.replace(/_/g, ' ');
+          firmwareSelect.appendChild(option);
+        }
+      });
       
-    firmwareSelect.disabled = false;
-    log(`Loaded firmwares for ${device}`);
+      firmwareSelect.disabled = false;
+      log(`Loaded ${rawData.length} firmwares for ${device}`);
+    }
   } catch (error) {
     log(`Firmware loading failed: ${error.message}`);
   }
 }
 
-async function connect() {
+document.getElementById('connect-btn').addEventListener('click', async () => {
   try {
     port = await navigator.serial.requestPort();
     document.getElementById('connect-btn').disabled = true;
@@ -119,20 +131,20 @@ async function connect() {
   } catch (error) {
     log(`Connection error: ${error.message}`);
   }
-}
+});
 
-document.getElementById('device-select').addEventListener('change', function(e) {
+document.getElementById('device-select').addEventListener('change', (e) => {
   const device = e.target.value;
   if (device) {
     loadFirmwares(device);
   }
 });
 
-document.getElementById('firmware-select').addEventListener('change', function(e) {
+document.getElementById('firmware-select').addEventListener('change', (e) => {
   selectedFirmware = e.target.value;
 });
 
-async function beginFlash() {
+document.getElementById('flash-btn').addEventListener('click', async () => {
   if (!selectedFirmware) {
     log('Please select a firmware first');
     return;
@@ -157,17 +169,16 @@ async function beginFlash() {
       document.getElementById('progress-bar').value = percent;
       document.getElementById('progress-text').textContent = `${percent}%`;
     });
-    
-    log('Flash complete! Resetting device...');
+
     await esptool.hard_reset();
-    log('Device ready to use');
+    log('Flash completed successfully!');
   } catch (error) {
     log(`Flash failed: ${error.message}`);
   } finally {
     document.getElementById('progress-container').style.display = 'none';
     if (port) await port.close();
   }
-}
+});
 
 function log(message) {
   const logElement = document.getElementById('log');
@@ -178,90 +189,83 @@ function log(message) {
 
 <style>
 .flash-controls {
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
   max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
 }
 
 .connect-box {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-#connect-btn {
-  padding: 10px 20px;
+button {
   background: #FFD700;
   color: #000;
   border: none;
+  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  width: 200px;
+  transition: opacity 0.2s;
 }
 
-#connection-status {
-  color: #00FFFF;
-  font-size: 0.9em;
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .selection-box {
-  background: #1a1a1a;
+  margin: 15px 0;
+  background: #333;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 select {
   width: 100%;
   padding: 8px;
-  background: #333;
+  margin-top: 8px;
+  background: #444;
   color: #fff;
-  border: 1px solid #FFD700;
+  border: 1px solid #00FFFF;
   border-radius: 4px;
-  margin-top: 5px;
 }
 
-label {
-  color: #00FFFF;
-  font-size: 0.9em;
-}
-
-#flash-btn {
-  padding: 12px 24px;
-  background: #00FF00;
-  color: #000;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 200px;
-}
-
-#log-container {
-  background: #1a1a1a;
+#progress-container {
+  background: #333;
   padding: 15px;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-#log {
-  color: #00FF00;
-  height: 200px;
-  overflow-y: auto;
-  margin: 0;
-  font-family: monospace;
+  border-radius: 6px;
+  margin: 20px 0;
 }
 
 progress {
   width: 100%;
   height: 20px;
-  margin-top: 10px;
   accent-color: #FFD700;
 }
 
 #progress-text {
   color: #00FFFF;
   margin-left: 10px;
+  font-weight: bold;
+}
+
+#log-container {
+  background: #000;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+#log {
+  color: #00FF00;
+  height: 200px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap;
 }
 </style>
