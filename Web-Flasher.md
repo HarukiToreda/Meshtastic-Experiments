@@ -14,14 +14,14 @@ title: Web Flasher
     
     <div class="selection-box">
       <label>Select Device:</label>
-      <select id="device-select">
+      <select id="device-select" disabled>
         <option value="">Loading devices...</option>
       </select>
     </div>
 
     <div class="selection-box">
       <label>Select Firmware:</label>
-      <select id="firmware-select">
+      <select id="firmware-select" disabled>
         <option value="">Select device first</option>
       </select>
     </div>
@@ -52,7 +52,7 @@ let port = null;
 let selectedFirmware = null;
 let esptoolInstance = null;
 
-// Load devices on page load
+// Load devices when page loads
 document.addEventListener('DOMContentLoaded', async () => {
   await loadDevices();
 });
@@ -65,7 +65,7 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    const contents = data.contents ? JSON.parse(data.contents) : data;
+    const contents = JSON.parse(data.contents);  // Fixed proxy response parsing
     
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
@@ -79,6 +79,7 @@ async function loadDevices() {
       }
     });
     
+    deviceSelect.disabled = false;
     log('Devices loaded successfully');
   } catch (error) {
     log(`Device loading failed: ${error.message}`);
@@ -93,7 +94,7 @@ async function loadFirmwares(device) {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    const contents = data.contents ? JSON.parse(data.contents) : data;
+    const contents = JSON.parse(data.contents);  // Fixed proxy response parsing
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
@@ -107,6 +108,7 @@ async function loadFirmwares(device) {
       }
     });
     
+    firmwareSelect.disabled = false;
     log(`Firmwares loaded for ${device}`);
   } catch (error) {
     log(`Firmware loading failed: ${error.message}`);
@@ -115,36 +117,25 @@ async function loadFirmwares(device) {
 
 document.getElementById('connect-btn').addEventListener('click', async () => {
   try {
-    log('Requesting serial port...');
     port = await navigator.serial.requestPort();
-    
-    log('Opening port...');
     await port.open({ baudRate: 115200 });
     
-    log('Initializing ESPTool...');
     esptoolInstance = new ESPTool(port);
     await esptoolInstance.connect();
     
-    const chipInfo = await esptoolInstance.get_chip_description();
     document.getElementById('connect-btn').disabled = true;
-    document.getElementById('connection-status').textContent = `✅ Connected (${chipInfo})`;
+    document.getElementById('connection-status').textContent = '✅ Connected';
     document.getElementById('flash-btn').disabled = false;
-    
-    log(`Connected to ${chipInfo}`);
+    log('Connected to device');
   } catch (error) {
     log(`Connection error: ${error.message}`);
     if (port) await port.close();
-    port = null;
   }
 });
 
 document.getElementById('device-select').addEventListener('change', (e) => {
   const device = e.target.value;
-  if (device) {
-    loadFirmwares(device);
-  } else {
-    document.getElementById('firmware-select').innerHTML = '<option value="">Select device first</option>';
-  }
+  if (device) loadFirmwares(device);
 });
 
 document.getElementById('firmware-select').addEventListener('change', (e) => {
@@ -157,18 +148,12 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     return;
   }
 
-  if (!esptoolInstance) {
-    log('No device connected');
-    return;
-  }
-
   try {
     document.getElementById('progress-container').style.display = 'block';
     document.getElementById('flash-btn').disabled = true;
     
     log(`Downloading firmware: ${selectedFirmware}`);
     const response = await fetch(selectedFirmware);
-    if (!response.ok) throw new Error(`Failed to download firmware (${response.status})`);
     const firmwareBuffer = await response.arrayBuffer();
     
     log('Starting flash process...');
@@ -176,7 +161,6 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
       const percent = Math.round(progress * 100);
       document.getElementById('progress-bar').value = percent;
       document.getElementById('progress-text').textContent = `${percent}%`;
-      log(`Flashing progress: ${percent}%`);
     });
 
     await esptoolInstance.hard_reset();
@@ -202,16 +186,84 @@ function log(message) {
 </script>
 
 <style>
-/* Keep the same CSS styles as previous version */
-.flash-controls { max-width: 600px; margin: 20px auto; padding: 20px; background: #1a1a1a; border-radius: 8px; }
-.connect-box { display: flex; gap: 15px; align-items: center; margin-bottom: 20px; }
-button { background: #FFD700; color: #000; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; transition: opacity 0.2s; }
-button:disabled { opacity: 0.6; cursor: not-allowed; }
-.selection-box { margin: 15px 0; background: #333; padding: 15px; border-radius: 6px; }
-select { width: 100%; padding: 8px; margin-top: 8px; background: #444; color: #fff; border: 1px solid #00FFFF; border-radius: 4px; }
-#progress-container { background: #333; padding: 15px; border-radius: 6px; margin: 20px 0; }
-progress { width: 100%; height: 20px; accent-color: #FFD700; }
-#progress-text { color: #00FFFF; margin-left: 10px; font-weight: bold; }
-#log-container { background: #000; padding: 15px; border-radius: 6px; }
-#log { color: #00FF00; height: 200px; overflow-y: auto; font-family: monospace; font-size: 0.9em; white-space: pre-wrap; }
+.flash-controls {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
+}
+
+.connect-box {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #FFD700;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.selection-box {
+  margin: 15px 0;
+  background: #333;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  background: #444;
+  color: #fff;
+  border: 1px solid #00FFFF;
+  border-radius: 4px;
+}
+
+#progress-container {
+  background: #333;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  accent-color: #FFD700;
+}
+
+#progress-text {
+  color: #00FFFF;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+#log-container {
+  background: #000;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+#log {
+  color: #00FF00;
+  height: 200px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
 </style>
