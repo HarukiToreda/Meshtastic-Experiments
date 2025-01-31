@@ -41,10 +41,10 @@ title: Web Flasher
 
 <script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 <script>
-const ESPTool = window.EspTool;
+const ESPTool = window.ESPTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
-const FIRMWARES_PATH = 'firmwares'; // CORRECTED PATH
+const FIRMWARES_PATH = 'firmwares';
 const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
 let port = null;
