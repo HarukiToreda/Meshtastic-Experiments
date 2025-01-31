@@ -9,24 +9,17 @@ title: Web Flasher
   <div class="device-selection">
     <div class="connect-box">
       <button id="connect-btn" class="btn-primary">Connect Device</button>
-      <span id="connection-status">⛚ Not Connected</span>
+      <span id="connection-status">⛔ Not Connected</span>
     </div>
 
     <div class="device-list">
       <label>Select Device Type:</label>
       <select id="device-type">
         <option value="">Choose a device</option>
-        <option value="i2s">I2S</option>
+        <option value="squeezeamp">SqueezeAmp</option>
         <option value="muse">Muse</option>
         <option value="muse_proto">Muse Proto</option>
-        <option value="squeezeamp">SqueezeAmp</option>
-      </select>
-    </div>
-
-    <div class="firmware-list">
-      <label>Available Firmware Versions:</label>
-      <select id="firmware-version" disabled>
-        <option value="">Select device first</option>
+        <option value="i2s">I2S</option>
       </select>
     </div>
   </div>
@@ -51,9 +44,14 @@ title: Web Flasher
 const ESPTool = window.ESPTool;
 const MANIFEST_BASE = 'https://raw.githubusercontent.com/HarukiToreda/Meshtastic-Experiments/main/';
 const CORS_PROXY = 'https://api.allorigins.win/get?url=';
+const DEVICE_MANIFESTS = {
+  squeezeamp: 'manifest_squeezeamp.json',
+  muse: 'manifest_muse.json',
+  muse_proto: 'manifest_muse_proto.json',
+  i2s: 'manifest_i2s.json'
+};
 
 let port = null;
-let selectedManifest = null;
 let firmwareParts = [];
 
 document.getElementById('connect-btn').addEventListener('click', connectDevice);
@@ -63,7 +61,7 @@ document.getElementById('flash-btn').addEventListener('click', beginFlash);
 async function connectDevice() {
   try {
     port = await navigator.serial.requestPort();
-    document.getElementById('connection-status').textContent = '✓ Connected';
+    document.getElementById('connection-status').textContent = '✅ Connected';
     document.getElementById('device-type').disabled = false;
     logMessage('Device connected successfully');
   } catch (error) {
@@ -76,27 +74,19 @@ async function loadManifest() {
   if (!deviceType) return;
 
   try {
-    const manifestUrl = `${MANIFEST_BASE}manifest_${deviceType}.json`;
+    const manifestPath = DEVICE_MANIFESTS[deviceType];
+    const manifestUrl = `${MANIFEST_BASE}${manifestPath}`;
     const response = await fetch(`${CORS_PROXY}${encodeURIComponent(manifestUrl)}`);
-    const manifest = await response.json();
+    const data = await response.json();
     
-    firmwareParts = manifest.builds[0].parts;
-    populateFirmwareVersions(manifest.version);
+    firmwareParts = data.builds[0].parts;
     document.getElementById('flash-btn').disabled = false;
     
-    logMessage(`Loaded manifest for ${manifest.name}`);
+    logMessage(`Loaded manifest for: ${data.name}`);
+    logMessage(`Firmware version: ${data.version}`);
   } catch (error) {
     logMessage(`Manifest load failed: ${error.message}`);
   }
-}
-
-function populateFirmwareVersions(version) {
-  const firmwareSelect = document.getElementById('firmware-version');
-  firmwareSelect.innerHTML = `
-    <option value="v${version}">Version ${version}</option>
-    <!-- Add more versions if available -->
-  `;
-  firmwareSelect.disabled = false;
 }
 
 async function beginFlash() {
@@ -148,6 +138,7 @@ function logMessage(message) {
 </script>
 
 <style>
+/* Maintain the previous styling */
 .flash-interface {
   max-width: 800px;
   margin: 0 auto;
@@ -177,15 +168,9 @@ function logMessage(message) {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: opacity 0.3s;
 }
 
-.btn-primary:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.device-list, .firmware-list {
+.device-list {
   background: #333;
   padding: 15px;
   border-radius: 6px;
