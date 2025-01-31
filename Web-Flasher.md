@@ -6,7 +6,6 @@ title: Web Flasher
 # Meshtastic Web Flasher
 
 <div id="flasher-container">
-  <!-- Keep the same HTML structure as before -->
   <div class="flash-controls">
     <div class="connect-box">
       <button id="connect-btn">Connect Device</button>
@@ -209,7 +208,6 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
   }
 });
 
-// Keep the same log function and CSS styles
 function log(message) {
   const logElement = document.getElementById('log');
   logElement.textContent += `${new Date().toLocaleTimeString()}: ${message}\n`;
@@ -218,15 +216,84 @@ function log(message) {
 </script>
 
 <style>
-/* Keep the same CSS styles as before */
-.flash-controls { /* ... */ }
-.connect-box { /* ... */ }
-button { /* ... */ }
-.selection-box { /* ... */ }
-select { /* ... */ }
-#progress-container { /* ... */ }
-progress { /* ... */ }
-#progress-text { /* ... */ }
-#log-container { /* ... */ }
-#log { /* ... */ }
+.flash-controls {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
+}
+
+.connect-box {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #FFD700;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.selection-box {
+  margin: 15px 0;
+  background: #333;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  background: #444;
+  color: #fff;
+  border: 1px solid #00FFFF;
+  border-radius: 4px;
+}
+
+#progress-container {
+  background: #333;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  accent-color: #FFD700;
+}
+
+#progress-text {
+  color: #00FFFF;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+#log-container {
+  background: #000;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+#log {
+  color: #00FF00;
+  height: 200px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
 </style>
