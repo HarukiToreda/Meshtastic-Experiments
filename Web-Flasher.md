@@ -3,35 +3,33 @@ layout: default
 title: Web Flasher
 ---
 
-# Squeezelite-ESP32 Web Flasher
+# Meshtastic Web Flasher
 
-<div class="flash-interface">
-  <div class="device-selection">
-    <div class="connect-box">
-      <button id="connect-btn" class="btn-primary">Connect Device</button>
-      <span id="connection-status">⛔ Not Connected</span>
-    </div>
-
-    <div class="device-list">
-      <label>Select Device Type:</label>
-      <select id="device-type">
-        <option value="">Choose a device</option>
-        <option value="squeezeamp">SqueezeAmp</option>
-        <option value="muse">Muse</option>
-        <option value="muse_proto">Muse Proto</option>
-        <option value="i2s">I2S</option>
-      </select>
-    </div>
+<div class="flash-container">
+  <div class="connection-box">
+    <button id="connect-btn">Connect Device</button>
+    <span id="connection-status">⛔ Not Connected</span>
   </div>
 
-  <div class="flash-controls">
-    <button id="flash-btn" class="btn-flash" disabled>
-      <span class="flash-icon">⚡</span> Flash Firmware
-    </button>
-    <div class="progress-container">
-      <progress id="progress-bar" value="0" max="100"></progress>
-      <span id="progress-text">0%</span>
-    </div>
+  <div class="selection-box">
+    <label>Device Model:</label>
+    <select id="device-select" disabled>
+      <option value="">First connect device</option>
+    </select>
+  </div>
+
+  <div class="selection-box">
+    <label>Firmware Version:</label>
+    <select id="firmware-select" disabled>
+      <option value="">Select device first</option>
+    </select>
+  </div>
+
+  <button id="flash-btn" disabled>Flash Selected Firmware</button>
+
+  <div class="progress-container">
+    <progress id="progress-bar" value="0" max="100"></progress>
+    <span id="progress-text">0%</span>
   </div>
 
   <div class="log-container">
@@ -42,55 +40,92 @@ title: Web Flasher
 <script src="https://unpkg.com/esptool-js@1.3.0/dist/web/esptool.js"></script>
 <script>
 const ESPTool = window.ESPTool;
-const MANIFEST_BASE = 'https://raw.githubusercontent.com/HarukiToreda/Meshtastic-Experiments/main/';
+const REPO = 'HarukiToreda/Meshtastic-Experiments';
+const BRANCH = 'main';
+const FIRMWARE_BASE = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/Meshtastic-Experiments/firmwares/`;
 const CORS_PROXY = 'https://api.allorigins.win/get?url=';
-const DEVICE_MANIFESTS = {
-  squeezeamp: 'manifest_squeezeamp.json',
-  muse: 'manifest_muse.json',
-  muse_proto: 'manifest_muse_proto.json',
-  i2s: 'manifest_i2s.json'
-};
 
 let port = null;
-let firmwareParts = [];
+let selectedFirmware = null;
 
-document.getElementById('connect-btn').addEventListener('click', connectDevice);
-document.getElementById('device-type').addEventListener('change', loadManifest);
-document.getElementById('flash-btn').addEventListener('click', beginFlash);
+async function loadDevices() {
+  try {
+    const apiUrl = `https://api.github.com/repos/${REPO}/contents/Meshtastic-Experiments/firmwares?ref=${BRANCH}`;
+    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
+    const data = await response.json();
+    const devices = JSON.parse(data.contents);
 
-async function connectDevice() {
+    const deviceSelect = document.getElementById('device-select');
+    deviceSelect.innerHTML = '<option value="">Select device</option>';
+    
+    devices.forEach(item => {
+      if (item.type === 'dir') {
+        const option = document.createElement('option');
+        option.value = item.name;
+        option.textContent = item.name.replace(/_/g, ' ');
+        deviceSelect.appendChild(option);
+      }
+    });
+    
+    deviceSelect.disabled = false;
+    log('Loaded available devices');
+  } catch (error) {
+    log(`Error loading devices: ${error.message}`);
+  }
+}
+
+async function loadFirmwares(device) {
+  try {
+    const apiUrl = `https://api.github.com/repos/${REPO}/contents/Meshtastic-Experiments/firmwares/${device}?ref=${BRANCH}`;
+    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
+    const data = await response.json();
+    const files = JSON.parse(data.contents);
+
+    const firmwareSelect = document.getElementById('firmware-select');
+    firmwareSelect.innerHTML = '<option value="">Select firmware</option>';
+    
+    files.forEach(file => {
+      if (file.name.endsWith('.bin')) {
+        const option = document.createElement('option');
+        option.value = `${FIRMWARE_BASE}${device}/${file.name}`;
+        option.textContent = file.name
+          .replace(/_/g, ' ')
+          .replace('.bin', '');
+        firmwareSelect.appendChild(option);
+      }
+    });
+    
+    firmwareSelect.disabled = false;
+    log(`Loaded firmwares for ${device}`);
+  } catch (error) {
+    log(`Error loading firmwares: ${error.message}`);
+  }
+}
+
+document.getElementById('connect-btn').addEventListener('click', async () => {
   try {
     port = await navigator.serial.requestPort();
+    document.getElementById('connect-btn').disabled = true;
     document.getElementById('connection-status').textContent = '✅ Connected';
-    document.getElementById('device-type').disabled = false;
-    logMessage('Device connected successfully');
+    await loadDevices();
   } catch (error) {
-    logMessage(`Connection error: ${error.message}`);
+    log(`Connection error: ${error.message}`);
   }
-}
+});
 
-async function loadManifest() {
-  const deviceType = document.getElementById('device-type').value;
-  if (!deviceType) return;
-
-  try {
-    const manifestPath = DEVICE_MANIFESTS[deviceType];
-    const manifestUrl = `${MANIFEST_BASE}${manifestPath}`;
-    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(manifestUrl)}`);
-    const data = await response.json();
-    
-    firmwareParts = data.builds[0].parts;
+document.getElementById('device-select').addEventListener('change', (e) => {
+  if (e.target.value) {
+    loadFirmwares(e.target.value);
     document.getElementById('flash-btn').disabled = false;
-    
-    logMessage(`Loaded manifest for: ${data.name}`);
-    logMessage(`Firmware version: ${data.version}`);
-  } catch (error) {
-    logMessage(`Manifest load failed: ${error.message}`);
   }
-}
+});
 
-async function beginFlash() {
-  if (!firmwareParts.length) return;
+document.getElementById('firmware-select').addEventListener('change', (e) => {
+  selectedFirmware = e.target.value;
+});
+
+document.getElementById('flash-btn').addEventListener('click', async () => {
+  if (!selectedFirmware) return;
 
   try {
     document.getElementById('progress-container').style.display = 'block';
@@ -98,39 +133,28 @@ async function beginFlash() {
     const esptool = new ESPTool(port);
     
     await esptool.connect();
-    logMessage('Starting flash process...');
-
-    for (const [index, part] of firmwareParts.entries()) {
-      const firmwareUrl = `${MANIFEST_BASE}${part.path}`;
-      const response = await fetch(firmwareUrl);
-      const buffer = await response.arrayBuffer();
-      
-      await esptool.write_flash(
-        part.offset,
-        new Uint8Array(buffer),
-        progress => updateProgress(progress, index + 1, firmwareParts.length)
-      );
-    }
+    log('Starting flash process...');
+    
+    const response = await fetch(selectedFirmware);
+    const firmwareBuffer = await response.arrayBuffer();
+    
+    await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
+      const percent = Math.round(progress * 100);
+      document.getElementById('progress-bar').value = percent;
+      document.getElementById('progress-text').textContent = `${percent}%`;
+    });
 
     await esptool.hard_reset();
-    logMessage('Flash completed successfully!');
+    log('Flash completed successfully!');
   } catch (error) {
-    logMessage(`Flash failed: ${error.message}`);
+    log(`Flash failed: ${error.message}`);
   } finally {
     if (port) await port.close();
     document.getElementById('progress-container').style.display = 'none';
   }
-}
+});
 
-function updateProgress(progress, currentPart, totalParts) {
-  const partProgress = Math.round(progress * 100);
-  const overallProgress = Math.round(((currentPart - 1) + progress) / totalParts * 100);
-  document.getElementById('progress-bar').value = overallProgress;
-  document.getElementById('progress-text').textContent = `${overallProgress}%`;
-  logMessage(`Flashing part ${currentPart}/${totalParts}: ${partProgress}%`);
-}
-
-function logMessage(message) {
+function log(message) {
   const logElement = document.getElementById('flash-log');
   logElement.textContent += `${new Date().toLocaleTimeString()}: ${message}\n`;
   logElement.scrollTop = logElement.scrollHeight;
@@ -138,39 +162,38 @@ function logMessage(message) {
 </script>
 
 <style>
-/* Maintain the previous styling */
-.flash-interface {
-  max-width: 800px;
-  margin: 0 auto;
+.flash-container {
+  max-width: 600px;
+  margin: 20px auto;
   padding: 20px;
   background: #1a1a1a;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-.device-selection {
-  display: grid;
-  gap: 15px;
-  margin-bottom: 25px;
-}
-
-.connect-box {
+.connection-box {
   display: flex;
-  align-items: center;
   gap: 15px;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.btn-primary {
+button {
   background: #FFD700;
   color: #000;
-  padding: 10px 25px;
   border: none;
+  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.device-list {
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.selection-box {
+  margin: 15px 0;
   background: #333;
   padding: 15px;
   border-radius: 6px;
@@ -179,31 +202,18 @@ function logMessage(message) {
 select {
   width: 100%;
   padding: 8px;
+  margin-top: 8px;
   background: #444;
   color: #fff;
   border: 1px solid #00FFFF;
   border-radius: 4px;
-  margin-top: 8px;
-}
-
-.btn-flash {
-  background: #00FF00;
-  color: #000;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 20px 0;
 }
 
 .progress-container {
+  margin: 20px 0;
   background: #333;
   padding: 15px;
   border-radius: 6px;
-  margin-top: 15px;
 }
 
 progress {
@@ -231,5 +241,6 @@ progress {
   overflow-y: auto;
   font-family: monospace;
   font-size: 0.9em;
+  white-space: pre-wrap;
 }
 </style>
