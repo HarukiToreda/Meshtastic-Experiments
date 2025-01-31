@@ -29,4 +29,67 @@
         <div class="container" id="main">
             <hr/>
             <div id="program">
-                <h3> Program
+                <h3> Program </h3>
+                <label for="baudrates" id="lblBaudrate">Baudrate:</label>
+                <label style="display:none" id="lblConnTo">Connected to device: </label>
+                <select name="baudrates" id="baudrates">
+                    <option value="921600">921600</option>
+                    <option value="460800">460800</option>
+                    <option value="230400">230400</option>
+                    <option value="115200">115200</option>
+                </select>
+                <br><br>
+                <input class="btn btn-info btn-sm" type="button" id="connectButton" value="Connect" />
+                <input class="btn btn-info btn-sm" type="button" id="copyTraceButton" value="Copy Trace" />
+                <input class="btn btn-warning btn-sm" type="button" id="disconnectButton" value="Disconnect" />
+                <input class="btn btn-danger btn-sm" type="button" id="eraseButton" value="Erase Flash" />
+                <br>
+                <div class="alert alert-danger alert-dismissible" id="alertDiv" style="display:none; margin-top:10px">
+                    <a href="#" class="close" aria-label="close" onclick="$('.alert').hide()">&times;</a>
+                    <span id="alertmsg"></span>
+                </div>
+                <div id="files">
+                    <table class="table table-striped" id="fileTable">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Flash Address</th>
+                                <th>File</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                    <input class="btn btn-info btn-sm" type="button" id="addFile" value="Add File" />
+                    <input class="btn btn-info btn-sm" type="button" id="programButton" value="Program" />
+                </div>
+                <output id="list"></output>
+                <hr/>
+            </div>
+            <div id="console">
+                <h3>Console </h3>
+                <label style="display:none" id="lblConsoleFor">Connected to device: </label>
+                <label for="consoleBaudrates" id="lblConsoleBaudrate">Baudrate:</label>
+                <select name="consoleBaudrates" id="consoleBaudrates">
+                    <option value="115200">115200</option>
+                    <option value="74880">74880</option>
+                </select>
+                <br><br>
+                <input class="btn btn-info" type="button" id="consoleStartButton" value="Start" />
+                <input class="btn btn-info" type="button" id="consoleStopButton" value="Stop" />
+                <input class="btn btn-info" type="button" id="resetButton" value="Reset" />
+                <hr/>
+            </div>
+            <div id="terminal"></div>
+        </div>
+        <script src="index.ts" type="module"></script>
+        <script>
+            // Safari 3.0+ "[object HTMLElementConstructor]"
+            var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
+
+            if(isSafari) {
+               document.getElementById("safariErr").style.display = "inline";
+               document.getElementById("main").style.display = "none";
+            }
+        </script>
+    </body>
+</html>
