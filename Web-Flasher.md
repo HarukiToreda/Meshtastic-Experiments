@@ -6,7 +6,37 @@ title: Web Flasher
 # Meshtastic Web Flasher
 
 <div id="flasher-container">
-  <!-- Keep the same HTML structure -->
+  <div class="flash-controls">
+    <div class="connect-box">
+      <button id="connect-btn" onclick="connect()">Connect Device</button>
+      <span id="connection-status">⛔ Not Connected</span>
+    </div>
+    
+    <div class="selection-box">
+      <label>Select Device:</label>
+      <select id="device-select" disabled>
+        <option value="">First connect device</option>
+      </select>
+    </div>
+
+    <div class="selection-box">
+      <label>Select Firmware:</label>
+      <select id="firmware-select" disabled>
+        <option value="">Select device first</option>
+      </select>
+    </div>
+
+    <button id="flash-btn" onclick="beginFlash()" disabled>Flash Firmware</button>
+  </div>
+
+  <div id="progress-container" style="display: none;">
+    <progress id="progress-bar" value="0" max="100"></progress>
+    <span id="progress-text">0%</span>
+  </div>
+
+  <div id="log-container">
+    <pre id="log"></pre>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
