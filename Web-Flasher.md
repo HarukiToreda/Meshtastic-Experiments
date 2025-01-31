@@ -44,35 +44,30 @@ title: Web Flasher
 <script>
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
-const FIRMWARES_PATH = 'firmwares';
-const CORS_PROXY = 'https://corsproxy.io/?';
+const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
+const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 
 let port = null;
 let selectedFirmware = null;
 
 async function loadDevices() {
   try {
-    const url = `${CORS_PROXY}${encodeURIComponent(`https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`)}`;
-    const response = await fetch(url);
+    const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
+    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
     
-    if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
-    const devices = await response.json();
+    const data = await response.json();
+    const devices = Array.isArray(data) ? data : data.items;
     
-    if (!Array.isArray(devices)) {
-      throw new Error('Unexpected response format from GitHub API');
-    }
-
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
-    devices.forEach(device => {
-      if (device.type === 'dir') {
+    devices.forEach(item => {
+      if (item.type === 'dir') {
         const option = document.createElement('option');
-        option.value = device.name;
-        option.textContent = device.name.replace(/_/g, ' ');
+        option.value = item.name;
+        option.textContent = item.name.replace(/_/g, ' ');
         deviceSelect.appendChild(option);
       }
     });
@@ -80,20 +75,19 @@ async function loadDevices() {
     deviceSelect.disabled = false;
     log('Loaded available devices');
   } catch (error) {
-    log(`Error loading devices: ${error.message}`);
+    log(`Device loading failed: ${error.message}`);
   }
 }
 
 async function loadFirmwares(device) {
   try {
-    const url = `${CORS_PROXY}${encodeURIComponent(`https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`)}`;
-    const response = await fetch(url);
+    const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
+    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
     
-    if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
-    const files = await response.json();
+    const data = await response.json();
+    const files = Array.isArray(data) ? data : data.items;
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
@@ -101,7 +95,7 @@ async function loadFirmwares(device) {
     files.forEach(file => {
       if (file.name.endsWith('.bin')) {
         const option = document.createElement('option');
-        option.value = file.download_url;
+        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
         option.textContent = file.name.replace(/_/g, ' ');
         firmwareSelect.appendChild(option);
       }
@@ -110,7 +104,7 @@ async function loadFirmwares(device) {
     firmwareSelect.disabled = false;
     log(`Loaded firmwares for ${device}`);
   } catch (error) {
-    log(`Error loading firmwares: ${error.message}`);
+    log(`Firmware loading failed: ${error.message}`);
   }
 }
 
@@ -149,7 +143,7 @@ async function beginFlash() {
     const options = { baudRate: 115200, autoDtrReset: false };
     
     log(`Downloading firmware: ${selectedFirmware}`);
-    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(selectedFirmware)}`);
+    const response = await fetch(selectedFirmware);
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
@@ -245,5 +239,30 @@ label {
   align-self: flex-start;
 }
 
-/* Keep previous styles for log and progress */
+#log-container {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#log {
+  color: #00FF00;
+  height: 200px;
+  overflow-y: auto;
+  margin: 0;
+  font-family: monospace;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  margin-top: 10px;
+  accent-color: #FFD700;
+}
+
+#progress-text {
+  color: #00FFFF;
+  margin-left: 10px;
+}
 </style>
