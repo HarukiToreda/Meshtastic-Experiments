@@ -3,268 +3,248 @@ layout: default
 title: Web Flasher
 ---
 
-# Meshtastic Web Flasher
+# Squeezelite-ESP32 Web Flasher
 
-<div id="flasher-container">
-  <div class="flash-controls">
+<div class="flash-interface">
+  <div class="device-selection">
     <div class="connect-box">
-      <button id="connect-btn" onclick="connect()">Connect Device</button>
-      <span id="connection-status">⛔ Not Connected</span>
+      <button id="connect-btn" class="btn-primary">Connect Device</button>
+      <span id="connection-status">⛚ Not Connected</span>
     </div>
-    
-    <div class="selection-box">
-      <label>Select Device:</label>
-      <select id="device-select" disabled>
-        <option value="">First connect device</option>
+
+    <div class="device-list">
+      <label>Select Device Type:</label>
+      <select id="device-type">
+        <option value="">Choose a device</option>
+        <option value="i2s">I2S</option>
+        <option value="muse">Muse</option>
+        <option value="muse_proto">Muse Proto</option>
+        <option value="squeezeamp">SqueezeAmp</option>
       </select>
     </div>
 
-    <div class="selection-box">
-      <label>Select Firmware:</label>
-      <select id="firmware-select" disabled>
+    <div class="firmware-list">
+      <label>Available Firmware Versions:</label>
+      <select id="firmware-version" disabled>
         <option value="">Select device first</option>
       </select>
     </div>
-
-    <button id="flash-btn" onclick="beginFlash()" disabled>Flash Firmware</button>
   </div>
 
-  <div id="progress-container" style="display: none;">
-    <progress id="progress-bar" value="0" max="100"></progress>
-    <span id="progress-text">0%</span>
+  <div class="flash-controls">
+    <button id="flash-btn" class="btn-flash" disabled>
+      <span class="flash-icon">⚡</span> Flash Firmware
+    </button>
+    <div class="progress-container">
+      <progress id="progress-bar" value="0" max="100"></progress>
+      <span id="progress-text">0%</span>
+    </div>
   </div>
 
-  <div id="log-container">
-    <pre id="log"></pre>
+  <div class="log-container">
+    <pre id="flash-log"></pre>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
-
+<script src="https://unpkg.com/esptool-js@1.3.0/dist/web/esptool.js"></script>
 <script>
-const ESPTool = window.EspTool;
-const REPO = 'HarukiToreda/Meshtastic-Experiments';
-const BRANCH = 'main';
-const FIRMWARES_PATH = 'firmwares';
+const ESPTool = window.ESPTool;
+const MANIFEST_BASE = 'https://raw.githubusercontent.com/HarukiToreda/Meshtastic-Experiments/main/';
 const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
 let port = null;
-let selectedFirmware = null;
+let selectedManifest = null;
+let firmwareParts = [];
 
-async function loadDevices() {
-  try {
-    const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
-    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
-    
-    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-    
-    const data = await response.json();
-    const contents = JSON.parse(data.contents);
-    const devices = Array.isArray(contents) ? contents : [];
-    
-    const deviceSelect = document.getElementById('device-select');
-    deviceSelect.innerHTML = '<option value="">Select a device</option>';
-    
-    devices.forEach(item => {
-      if (item.type === 'dir') {
-        const option = document.createElement('option');
-        option.value = item.name;
-        option.textContent = item.name.replace(/_/g, ' ');
-        deviceSelect.appendChild(option);
-      }
-    });
-    
-    deviceSelect.disabled = false;
-    log('Loaded available devices');
-  } catch (error) {
-    log(`Device loading failed: ${error.message}`);
-  }
-}
+document.getElementById('connect-btn').addEventListener('click', connectDevice);
+document.getElementById('device-type').addEventListener('change', loadManifest);
+document.getElementById('flash-btn').addEventListener('click', beginFlash);
 
-async function loadFirmwares(device) {
-  try {
-    const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
-    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
-    
-    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-    
-    const data = await response.json();
-    const contents = JSON.parse(data.contents);
-    const files = Array.isArray(contents) ? contents : [];
-    
-    const firmwareSelect = document.getElementById('firmware-select');
-    firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
-    
-    files.forEach(file => {
-      if (file.name.endsWith('.bin')) {
-        const option = document.createElement('option');
-        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
-        option.textContent = file.name.replace(/_/g, ' ');
-        firmwareSelect.appendChild(option);
-      }
-    });
-    
-    firmwareSelect.disabled = false;
-    log(`Loaded firmwares for ${device}`);
-  } catch (error) {
-    log(`Firmware loading failed: ${error.message}`);
-  }
-}
-
-async function connect() {
+async function connectDevice() {
   try {
     port = await navigator.serial.requestPort();
-    document.getElementById('connect-btn').disabled = true;
-    document.getElementById('connection-status').textContent = '✅ Connected';
-    document.getElementById('flash-btn').disabled = false;
-    log('Connected to device');
-    await loadDevices();
+    document.getElementById('connection-status').textContent = '✓ Connected';
+    document.getElementById('device-type').disabled = false;
+    logMessage('Device connected successfully');
   } catch (error) {
-    log(`Connection error: ${error.message}`);
+    logMessage(`Connection error: ${error.message}`);
   }
 }
 
-document.getElementById('device-select').addEventListener('change', function(e) {
-  const device = e.target.value;
-  if (device) {
-    loadFirmwares(device);
-  }
-});
+async function loadManifest() {
+  const deviceType = document.getElementById('device-type').value;
+  if (!deviceType) return;
 
-document.getElementById('firmware-select').addEventListener('change', function(e) {
-  selectedFirmware = e.target.value;
-});
+  try {
+    const manifestUrl = `${MANIFEST_BASE}manifest_${deviceType}.json`;
+    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(manifestUrl)}`);
+    const manifest = await response.json();
+    
+    firmwareParts = manifest.builds[0].parts;
+    populateFirmwareVersions(manifest.version);
+    document.getElementById('flash-btn').disabled = false;
+    
+    logMessage(`Loaded manifest for ${manifest.name}`);
+  } catch (error) {
+    logMessage(`Manifest load failed: ${error.message}`);
+  }
+}
+
+function populateFirmwareVersions(version) {
+  const firmwareSelect = document.getElementById('firmware-version');
+  firmwareSelect.innerHTML = `
+    <option value="v${version}">Version ${version}</option>
+    <!-- Add more versions if available -->
+  `;
+  firmwareSelect.disabled = false;
+}
 
 async function beginFlash() {
-  if (!selectedFirmware) {
-    log('Please select a firmware first');
-    return;
-  }
+  if (!firmwareParts.length) return;
 
   try {
     document.getElementById('progress-container').style.display = 'block';
-    const options = { baudRate: 115200 };
-    
-    log(`Downloading firmware: ${selectedFirmware}`);
-    const response = await fetch(selectedFirmware);
-    const firmwareBuffer = await response.arrayBuffer();
-    
-    await port.open(options);
+    await port.open({ baudRate: 115200 });
     const esptool = new ESPTool(port);
     
     await esptool.connect();
-    log('Starting flash process...');
-    
-    await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
-      const percent = Math.round(progress * 100);
-      document.getElementById('progress-bar').value = percent;
-      document.getElementById('progress-text').textContent = `${percent}%`;
-    });
-    
-    log('Flash complete! Resetting device...');
+    logMessage('Starting flash process...');
+
+    for (const [index, part] of firmwareParts.entries()) {
+      const firmwareUrl = `${MANIFEST_BASE}${part.path}`;
+      const response = await fetch(firmwareUrl);
+      const buffer = await response.arrayBuffer();
+      
+      await esptool.write_flash(
+        part.offset,
+        new Uint8Array(buffer),
+        progress => updateProgress(progress, index + 1, firmwareParts.length)
+      );
+    }
+
     await esptool.hard_reset();
-    log('Device ready to use');
+    logMessage('Flash completed successfully!');
   } catch (error) {
-    log(`Flash failed: ${error.message}`);
+    logMessage(`Flash failed: ${error.message}`);
   } finally {
-    document.getElementById('progress-container').style.display = 'none';
     if (port) await port.close();
+    document.getElementById('progress-container').style.display = 'none';
   }
 }
 
-function log(message) {
-  const logElement = document.getElementById('log');
+function updateProgress(progress, currentPart, totalParts) {
+  const partProgress = Math.round(progress * 100);
+  const overallProgress = Math.round(((currentPart - 1) + progress) / totalParts * 100);
+  document.getElementById('progress-bar').value = overallProgress;
+  document.getElementById('progress-text').textContent = `${overallProgress}%`;
+  logMessage(`Flashing part ${currentPart}/${totalParts}: ${partProgress}%`);
+}
+
+function logMessage(message) {
+  const logElement = document.getElementById('flash-log');
   logElement.textContent += `${new Date().toLocaleTimeString()}: ${message}\n`;
   logElement.scrollTop = logElement.scrollHeight;
 }
 </script>
 
 <style>
-.flash-controls {
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
+.flash-interface {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.device-selection {
+  display: grid;
   gap: 15px;
-  max-width: 600px;
+  margin-bottom: 25px;
 }
 
 .connect-box {
   display: flex;
-  gap: 10px;
   align-items: center;
-  margin-bottom: 15px;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-#connect-btn {
-  padding: 10px 20px;
+.btn-primary {
   background: #FFD700;
   color: #000;
+  padding: 10px 25px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 200px;
+  transition: opacity 0.3s;
 }
 
-#connection-status {
-  color: #00FFFF;
-  font-size: 0.9em;
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.selection-box {
-  background: #1a1a1a;
+.device-list, .firmware-list {
+  background: #333;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 select {
   width: 100%;
   padding: 8px;
-  background: #333;
+  background: #444;
   color: #fff;
-  border: 1px solid #FFD700;
+  border: 1px solid #00FFFF;
   border-radius: 4px;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
-label {
-  color: #00FFFF;
-  font-size: 0.9em;
-}
-
-#flash-btn {
-  padding: 12px 24px;
+.btn-flash {
   background: #00FF00;
   color: #000;
+  padding: 12px 30px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
 }
 
-#log-container {
-  background: #1a1a1a;
+.progress-container {
+  background: #333;
   padding: 15px;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-#log {
-  color: #00FF00;
-  height: 200px;
-  overflow-y: auto;
-  margin: 0;
-  font-family: monospace;
+  border-radius: 6px;
+  margin-top: 15px;
 }
 
 progress {
   width: 100%;
   height: 20px;
-  margin-top: 10px;
   accent-color: #FFD700;
 }
 
 #progress-text {
   color: #00FFFF;
   margin-left: 10px;
+  font-weight: bold;
+}
+
+.log-container {
+  background: #000;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+#flash-log {
+  color: #00FF00;
+  height: 200px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 0.9em;
 }
 </style>
