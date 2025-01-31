@@ -61,30 +61,30 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    
-    // Handle both direct and proxied responses
-    const devices = Array.isArray(data) ? data : (data.contents ? JSON.parse(data.contents) : []);
+    const contents = JSON.parse(data.contents);
     
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
+    // Filter and sort directories
+    const devices = contents
+      .filter(item => item.type === 'dir')
+      .sort((a, b) => a.name.localeCompare(b.name));
+    
     devices.forEach(item => {
-      if (item.type === 'dir') {
-        const option = document.createElement('option');
-        option.value = item.name;
-        option.textContent = item.name.replace(/_/g, ' ');
-        deviceSelect.appendChild(option);
-      }
+      const option = document.createElement('option');
+      option.value = item.name;
+      option.textContent = item.name;
+      deviceSelect.appendChild(option);
     });
     
     if (devices.length === 0) {
       log('No devices found in firmware directory');
+    } else {
+      log(`Loaded ${devices.length} devices`);
     }
-    
-    log('Loaded available devices');
   } catch (error) {
     log(`Device loading failed: ${error.message}`);
-    console.error('API Response:', await response.json());
   }
 }
 
@@ -96,22 +96,25 @@ async function loadFirmwares(device) {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    const files = Array.isArray(data) ? data : (data.contents ? JSON.parse(data.contents) : []);
+    const contents = JSON.parse(data.contents);
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
     
-    files.forEach(file => {
-      if (file.name.endsWith('.bin')) {
-        const option = document.createElement('option');
-        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
-        option.textContent = file.name.replace(/_/g, ' ');
-        firmwareSelect.appendChild(option);
-      }
+    // Filter and sort .bin files
+    const firmwares = contents
+      .filter(file => file.name.endsWith('.bin'))
+      .sort((a, b) => b.name.localeCompare(a.name)); // Newest first
+    
+    firmwares.forEach(file => {
+      const option = document.createElement('option');
+      option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
+      option.textContent = file.name;
+      firmwareSelect.appendChild(option);
     });
     
     firmwareSelect.disabled = false;
-    log(`Loaded firmwares for ${device}`);
+    log(`Loaded ${firmwares.length} firmwares for ${device}`);
   } catch (error) {
     log(`Firmware loading failed: ${error.message}`);
   }
