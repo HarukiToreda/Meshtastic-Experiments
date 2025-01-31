@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@types/w3c-web-serial": "^1.0.7",
+    "typescript": "^5.7.3",
+    "web-serial-polyfill": "^1.0.15"
+  }
+}
