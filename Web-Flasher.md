@@ -6,11 +6,23 @@ title: Web Flasher
 # Meshtastic Web Flasher
 
 <div id="flasher-container">
-  <div id="status"></div>
-  
   <div class="flash-controls">
     <button id="connect-btn" onclick="connect()">Connect Device</button>
-    <input type="file" id="firmware-file" accept=".bin" disabled>
+    
+    <div class="selection-box">
+      <label>Select Device:</label>
+      <select id="device-select" disabled>
+        <option value="">Loading devices...</option>
+      </select>
+    </div>
+
+    <div class="selection-box">
+      <label>Select Firmware:</label>
+      <select id="firmware-select" disabled>
+        <option value="">Select device first</option>
+      </select>
+    </div>
+
     <button id="flash-btn" onclick="beginFlash()" disabled>Flash Firmware</button>
   </div>
 
@@ -27,44 +39,106 @@ title: Web Flasher
 <script src="https://unpkg.com/esptool-js@1.3.0/dist/web/esptool.js"></script>
 
 <script>
+const REPO = 'HarukiToreda/Meshtastic-Experiments';
+const BRANCH = 'main';
+const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
+
 let port = null;
-let selectedFile = null;
+let selectedFirmware = null;
+
+async function loadDevices() {
+  try {
+    const response = await fetch(`https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`);
+    const devices = await response.json();
+    
+    const deviceSelect = document.getElementById('device-select');
+    deviceSelect.innerHTML = '<option value="">Select a device</option>';
+    
+    devices.forEach(device => {
+      if (device.type === 'dir') {
+        const option = document.createElement('option');
+        option.value = device.name;
+        option.textContent = device.name.replace(/_/g, ' ');
+        deviceSelect.appendChild(option);
+      }
+    });
+    
+    deviceSelect.disabled = false;
+    log('Loaded available devices');
+  } catch (error) {
+    log(`Error loading devices: ${error}`);
+  }
+}
+
+async function loadFirmwares(device) {
+  try {
+    const response = await fetch(`https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`);
+    const files = await response.json();
+    
+    const firmwareSelect = document.getElementById('firmware-select');
+    firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
+    
+    files.forEach(file => {
+      if (file.name.endsWith('.bin')) {
+        const option = document.createElement('option');
+        option.value = file.download_url;
+        option.textContent = file.name;
+        firmwareSelect.appendChild(option);
+      }
+    });
+    
+    firmwareSelect.disabled = false;
+    log(`Loaded firmwares for ${device}`);
+  } catch (error) {
+    log(`Error loading firmwares: ${error}`);
+  }
+}
 
 async function connect() {
   try {
     port = await navigator.serial.requestPort();
     document.getElementById('connect-btn').disabled = true;
-    document.getElementById('firmware-file').disabled = false;
     document.getElementById('flash-btn').disabled = false;
     log('Connected to device');
+    loadDevices();
   } catch (error) {
     log(`Connection error: ${error}`);
   }
 }
 
-document.getElementById('firmware-file').addEventListener('change', function(e) {
-  selectedFile = e.target.files[0];
-  log(`Selected firmware: ${selectedFile.name}`);
+document.getElementById('device-select').addEventListener('change', function(e) {
+  const device = e.target.value;
+  if (device) {
+    loadFirmwares(device);
+  }
+});
+
+document.getElementById('firmware-select').addEventListener('change', function(e) {
+  selectedFirmware = e.target.value;
 });
 
 async function beginFlash() {
-  if (!selectedFile) {
-    log('Please select a firmware file first');
+  if (!selectedFirmware) {
+    log('Please select a firmware first');
     return;
   }
 
   try {
     document.getElementById('progress-container').style.display = 'block';
-    const options = {
-      baudRate: 115200,
-      autoDtrReset: false
-    };
+    const options = { baudRate: 115200, autoDtrReset: false };
+    
+    // Fetch firmware from GitHub
+    log(`Downloading firmware: ${selectedFirmware}`);
+    const response = await fetch(selectedFirmware);
+    const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
     const esptool = new ESPTool(port);
     
     await esptool.connect();
-    await esptool.flash_file(selectedFile, (progress) => {
+    log('Starting flash process...');
+    
+    await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
       const percent = Math.round(progress * 100);
       document.getElementById('progress-bar').value = percent;
       document.getElementById('progress-text').textContent = `${percent}%`;
@@ -89,5 +163,33 @@ function log(message) {
 </script>
 
 <style>
-/* Keep your existing CSS styles */
+.flash-controls {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.selection-box {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  background: #333;
+  color: #fff;
+  border: 1px solid #FFD700;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+label {
+  color: #00FFFF;
+  font-size: 0.9em;
+}
+
+/* Keep previous styles for log and progress */
 </style>
