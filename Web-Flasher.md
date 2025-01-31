@@ -58,33 +58,19 @@ async function loadDevices() {
     
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
-    const data = await response.json();
-    
-    // Handle proxy-wrapped response
-    const devices = data.contents ? JSON.parse(data.contents) : data;
+    const devices = await response.json();
     
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
-    if (Array.isArray(devices)) {
-      devices.forEach(item => {
-        if (item.type === 'dir') {
-          const option = document.createElement('option');
-          option.value = item.name;
-          option.textContent = item.name.replace(/_/g, ' ');
-          deviceSelect.appendChild(option);
-        }
-      });
-      deviceSelect.disabled = false;
-      log('Loaded available devices');
-    } else {
-      throw new Error('Unexpected response format from GitHub');
-    }
-  } catch (error) {
-    log(`Device loading failed: ${error.message}`);
-    console.error('API Response:', data);
-  }
-}
+    devices.forEach(item => {
+      if (item.type === 'dir') {
+        const option = document.createElement('option');
+        option.value = item.name;
+        option.textContent = item.name.replace(/_/g, ' ');
+        deviceSelect.appendChild(option);
+      }
+    });
     
     deviceSelect.disabled = false;
     log('Loaded available devices');
