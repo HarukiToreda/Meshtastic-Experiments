@@ -39,9 +39,10 @@ title: Web Flasher
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/core@0.0.9/dist/core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool@0.0.9/dist/esptool.min.js"></script>
 <script>
-const ESPTool = window.ESPTool;
+const { ESPTool } = window.EspruinoTools;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -150,7 +151,7 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     const response = await fetch(selectedFirmware);
     const firmwareBuffer = await response.arrayBuffer();
     
-    await port.open(options);
+    // Remove the port.open() call since we already have the port
     const esptool = new ESPTool(port);
     
     await esptool.connect();
@@ -171,12 +172,6 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     if (port) await port.close();
   }
 });
-
-function log(message) {
-  const logElement = document.getElementById('log');
-  logElement.textContent += `${new Date().toLocaleTimeString()}: ${message}\n`;
-  logElement.scrollTop = logElement.scrollHeight;
-}
 </script>
 
 <style>
