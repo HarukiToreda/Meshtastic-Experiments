@@ -39,15 +39,10 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Fixed ESPTool library imports -->
-<script src="https://unpkg.com/@espruino-tools/core@0.0.9/dist/core.min.js"></script>
-<script src="https://unpkg.com/@espruino-tools/esptool@0.0.9/dist/esptool.min.js"></script>
-
+<!-- Use the correct ESPTool library -->
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 <script>
-// Correct ESPTool initialization
-const { ESPTool } = window.EspruinoTools;
-
-// Configuration
+const ESPTool = window.ESPTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -55,7 +50,6 @@ const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
 let port = null;
 let selectedFirmware = null;
-let esptoolInstance = null;
 
 // Load devices from GitHub
 async function loadDevices() {
@@ -66,8 +60,12 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    const contents = JSON.parse(data.contents); // Handle proxy response
+    const contents = data.contents ? JSON.parse(data.contents) : data;
     
+    if (!Array.isArray(contents)) {
+      throw new Error('GitHub returned unexpected directory structure');
+    }
+
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
@@ -93,8 +91,10 @@ async function loadFirmwares(device) {
     const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
     const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
     
+    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
+    
     const data = await response.json();
-    const contents = JSON.parse(data.contents);
+    const contents = data.contents ? JSON.parse(data.contents) : data;
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
@@ -118,17 +118,29 @@ async function loadFirmwares(device) {
 // Connect button handler
 document.getElementById('connect-btn').addEventListener('click', async () => {
   try {
+    // Check if Web Serial API is supported
+    if (!('serial' in navigator)) {
+      throw new Error('Web Serial API not supported. Use Chrome/Edge 89+.');
+    }
+
+    // Request serial port access
     port = await navigator.serial.requestPort();
-    await port.open({ baudRate: 115200 });
     
+    // Open the port with default settings
+    await port.open({ baudRate: 115200 });
+
+    // Update UI
     document.getElementById('connect-btn').disabled = true;
     document.getElementById('connection-status').textContent = '✅ Connected';
     document.getElementById('flash-btn').disabled = false;
     log('Connected to device');
+
+    // Load devices after connection
     await loadDevices();
   } catch (error) {
     log(`Connection error: ${error.message}`);
     if (port) await port.close();
+    port = null;
   }
 });
 
@@ -161,17 +173,17 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     const firmwareBuffer = await response.arrayBuffer();
     
     // Initialize ESPTool
-    esptoolInstance = new ESPTool(port);
-    await esptoolInstance.connect();
+    const esptool = new ESPTool(port);
+    await esptool.connect();
     
     log('Starting flash process...');
-    await esptoolInstance.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
+    await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
       const percent = Math.round(progress * 100);
       document.getElementById('progress-bar').value = percent;
       document.getElementById('progress-text').textContent = `${percent}%`;
     });
 
-    await esptoolInstance.hard_reset();
+    await esptool.hard_reset();
     log('Flash completed successfully!');
   } catch (error) {
     log(`Flash failed: ${error.message}`);
@@ -180,7 +192,6 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     document.getElementById('flash-btn').disabled = false;
     if (port) await port.close();
     port = null;
-    esptoolInstance = null;
   }
 });
 
@@ -193,6 +204,7 @@ function log(message) {
 </script>
 
 <style>
+/* Keep your original CSS styles */
 .flash-controls {
   max-width: 600px;
   margin: 20px auto;
