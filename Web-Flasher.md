@@ -7,12 +7,15 @@ title: Web Flasher
 
 <div id="flasher-container">
   <div class="flash-controls">
-    <button id="connect-btn" onclick="connect()">Connect Device</button>
+    <div class="connect-box">
+      <button id="connect-btn" onclick="connect()">Connect Device</button>
+      <span id="connection-status">⛔ Not Connected</span>
+    </div>
     
     <div class="selection-box">
       <label>Select Device:</label>
       <select id="device-select" disabled>
-        <option value="">Loading devices...</option>
+        <option value="">First connect device</option>
       </select>
     </div>
 
@@ -41,16 +44,27 @@ title: Web Flasher
 <script>
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
-const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
+const FIRMWARES_PATH = 'firmwares';
+const CORS_PROXY = 'https://corsproxy.io/?';
 
 let port = null;
 let selectedFirmware = null;
 
 async function loadDevices() {
   try {
-    const response = await fetch(`https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`);
+    const url = `${CORS_PROXY}${encodeURIComponent(`https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`)}`;
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status}`);
+    }
+    
     const devices = await response.json();
     
+    if (!Array.isArray(devices)) {
+      throw new Error('Unexpected response format from GitHub API');
+    }
+
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
@@ -66,13 +80,19 @@ async function loadDevices() {
     deviceSelect.disabled = false;
     log('Loaded available devices');
   } catch (error) {
-    log(`Error loading devices: ${error}`);
+    log(`Error loading devices: ${error.message}`);
   }
 }
 
 async function loadFirmwares(device) {
   try {
-    const response = await fetch(`https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`);
+    const url = `${CORS_PROXY}${encodeURIComponent(`https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`)}`;
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status}`);
+    }
+    
     const files = await response.json();
     
     const firmwareSelect = document.getElementById('firmware-select');
@@ -82,7 +102,7 @@ async function loadFirmwares(device) {
       if (file.name.endsWith('.bin')) {
         const option = document.createElement('option');
         option.value = file.download_url;
-        option.textContent = file.name;
+        option.textContent = file.name.replace(/_/g, ' ');
         firmwareSelect.appendChild(option);
       }
     });
@@ -90,7 +110,7 @@ async function loadFirmwares(device) {
     firmwareSelect.disabled = false;
     log(`Loaded firmwares for ${device}`);
   } catch (error) {
-    log(`Error loading firmwares: ${error}`);
+    log(`Error loading firmwares: ${error.message}`);
   }
 }
 
@@ -98,11 +118,12 @@ async function connect() {
   try {
     port = await navigator.serial.requestPort();
     document.getElementById('connect-btn').disabled = true;
+    document.getElementById('connection-status').textContent = '✅ Connected';
     document.getElementById('flash-btn').disabled = false;
     log('Connected to device');
-    loadDevices();
+    await loadDevices();
   } catch (error) {
-    log(`Connection error: ${error}`);
+    log(`Connection error: ${error.message}`);
   }
 }
 
@@ -127,9 +148,8 @@ async function beginFlash() {
     document.getElementById('progress-container').style.display = 'block';
     const options = { baudRate: 115200, autoDtrReset: false };
     
-    // Fetch firmware from GitHub
     log(`Downloading firmware: ${selectedFirmware}`);
-    const response = await fetch(selectedFirmware);
+    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(selectedFirmware)}`);
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
@@ -148,7 +168,7 @@ async function beginFlash() {
     await esptool.hard_reset();
     log('Device ready to use');
   } catch (error) {
-    log(`Flash failed: ${error}`);
+    log(`Flash failed: ${error.message}`);
   } finally {
     document.getElementById('progress-container').style.display = 'none';
     if (port) await port.close();
@@ -168,6 +188,29 @@ function log(message) {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-width: 600px;
+}
+
+.connect-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#connect-btn {
+  padding: 10px 20px;
+  background: #FFD700;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+}
+
+#connection-status {
+  color: #00FFFF;
+  font-size: 0.9em;
 }
 
 .selection-box {
@@ -189,6 +232,17 @@ select {
 label {
   color: #00FFFF;
   font-size: 0.9em;
+}
+
+#flash-btn {
+  padding: 12px 24px;
+  background: #00FF00;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+  align-self: flex-start;
 }
 
 /* Keep previous styles for log and progress */
