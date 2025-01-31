@@ -44,7 +44,7 @@ title: Web Flasher
 const ESPTool = window.EspTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
-const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
+const FIRMWARES_PATH = 'firmwares'; // CORRECTED PATH
 const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
 let port = null;
