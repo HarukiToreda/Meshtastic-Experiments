@@ -39,9 +39,10 @@ title: Web Flasher
   </div>
 </div>
 
-<script src="https://unpkg.com/esptool-js@1.3.0/dist/web/esptool.js"></script>
-
 <script>
+// Initialize ESPTool globally
+let ESPTool = window.ESPTool;
+
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -149,6 +150,8 @@ async function beginFlash() {
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
+    
+    // Initialize ESPTool with the port
     const esptool = new ESPTool(port);
     
     await esptool.connect();
