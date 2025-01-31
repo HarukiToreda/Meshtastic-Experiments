@@ -5,44 +5,46 @@ title: Web Flasher
 
 # Meshtastic Web Flasher
 
-<div class="flash-container">
-  <div class="connection-box">
-    <button id="connect-btn">Connect Device</button>
-    <span id="connection-status">⛔ Not Connected</span>
+<div id="flasher-container">
+  <div class="flash-controls">
+    <div class="connect-box">
+      <button id="connect-btn">Connect Device</button>
+      <span id="connection-status">⛔ Not Connected</span>
+    </div>
+    
+    <div class="selection-box">
+      <label>Select Device:</label>
+      <select id="device-select" disabled>
+        <option value="">First connect device</option>
+      </select>
+    </div>
+
+    <div class="selection-box">
+      <label>Select Firmware:</label>
+      <select id="firmware-select" disabled>
+        <option value="">Select device first</option>
+      </select>
+    </div>
+
+    <button id="flash-btn" disabled>Flash Firmware</button>
   </div>
 
-  <div class="selection-box">
-    <label>Device Model:</label>
-    <select id="device-select" disabled>
-      <option value="">First connect device</option>
-    </select>
-  </div>
-
-  <div class="selection-box">
-    <label>Firmware Version:</label>
-    <select id="firmware-select" disabled>
-      <option value="">Select device first</option>
-    </select>
-  </div>
-
-  <button id="flash-btn" disabled>Flash Selected Firmware</button>
-
-  <div class="progress-container">
+  <div id="progress-container" style="display: none;">
     <progress id="progress-bar" value="0" max="100"></progress>
     <span id="progress-text">0%</span>
   </div>
 
-  <div class="log-container">
-    <pre id="flash-log"></pre>
+  <div id="log-container">
+    <pre id="log"></pre>
   </div>
 </div>
 
-<script src="https://unpkg.com/esptool-js@1.3.0/dist/web/esptool.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 <script>
-const ESPTool = window.ESPTool;
+const ESPTool = window.EspTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
-const FIRMWARE_BASE = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/Meshtastic-Experiments/firmwares/`;
+const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
 const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
 let port = null;
@@ -50,55 +52,74 @@ let selectedFirmware = null;
 
 async function loadDevices() {
   try {
-    const apiUrl = `https://api.github.com/repos/${REPO}/contents/Meshtastic-Experiments/firmwares?ref=${BRANCH}`;
+    const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
     const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
+    
+    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
+    
     const data = await response.json();
-    const devices = JSON.parse(data.contents);
+    const contents = JSON.parse(data.contents);
+    
+    // Ensure we have an array of directory items
+    const devices = Array.isArray(contents) 
+      ? contents.filter(item => item.type === 'dir')
+      : [];
 
     const deviceSelect = document.getElementById('device-select');
-    deviceSelect.innerHTML = '<option value="">Select device</option>';
-    
+    deviceSelect.innerHTML = devices.length 
+      ? '<option value="">Select a device</option>'
+      : '<option value="">No devices found</option>';
+
     devices.forEach(item => {
-      if (item.type === 'dir') {
-        const option = document.createElement('option');
-        option.value = item.name;
-        option.textContent = item.name.replace(/_/g, ' ');
-        deviceSelect.appendChild(option);
-      }
+      const option = document.createElement('option');
+      option.value = item.name;
+      option.textContent = item.name
+        .replace('Vision_Master_', '')
+        .replace(/_/g, ' ');
+      deviceSelect.appendChild(option);
     });
     
     deviceSelect.disabled = false;
     log('Loaded available devices');
   } catch (error) {
-    log(`Error loading devices: ${error.message}`);
+    log(`Device loading failed: ${error.message}`);
+    console.error('Error details:', error);
   }
 }
 
 async function loadFirmwares(device) {
   try {
-    const apiUrl = `https://api.github.com/repos/${REPO}/contents/Meshtastic-Experiments/firmwares/${device}?ref=${BRANCH}`;
+    const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
     const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
+    
+    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
+    
     const data = await response.json();
-    const files = JSON.parse(data.contents);
+    const contents = JSON.parse(data.contents);
+    
+    const files = Array.isArray(contents)
+      ? contents.filter(file => file.name.endsWith('.bin'))
+      : [];
 
     const firmwareSelect = document.getElementById('firmware-select');
-    firmwareSelect.innerHTML = '<option value="">Select firmware</option>';
-    
+    firmwareSelect.innerHTML = files.length 
+      ? '<option value="">Select a firmware</option>'
+      : '<option value="">No firmwares found</option>';
+
     files.forEach(file => {
-      if (file.name.endsWith('.bin')) {
-        const option = document.createElement('option');
-        option.value = `${FIRMWARE_BASE}${device}/${file.name}`;
-        option.textContent = file.name
-          .replace(/_/g, ' ')
-          .replace('.bin', '');
-        firmwareSelect.appendChild(option);
-      }
+      const option = document.createElement('option');
+      option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
+      option.textContent = file.name
+        .replace(/_/g, ' ')
+        .replace('.bin', '')
+        .replace('firmware', 'Version ');
+      firmwareSelect.appendChild(option);
     });
     
     firmwareSelect.disabled = false;
-    log(`Loaded firmwares for ${device}`);
+    log(`Loaded ${files.length} firmwares for ${device}`);
   } catch (error) {
-    log(`Error loading firmwares: ${error.message}`);
+    log(`Firmware loading failed: ${error.message}`);
   }
 }
 
@@ -107,6 +128,8 @@ document.getElementById('connect-btn').addEventListener('click', async () => {
     port = await navigator.serial.requestPort();
     document.getElementById('connect-btn').disabled = true;
     document.getElementById('connection-status').textContent = '✅ Connected';
+    document.getElementById('flash-btn').disabled = false;
+    log('Connected to device');
     await loadDevices();
   } catch (error) {
     log(`Connection error: ${error.message}`);
@@ -114,9 +137,10 @@ document.getElementById('connect-btn').addEventListener('click', async () => {
 });
 
 document.getElementById('device-select').addEventListener('change', (e) => {
-  if (e.target.value) {
-    loadFirmwares(e.target.value);
-    document.getElementById('flash-btn').disabled = false;
+  const device = e.target.value;
+  if (device) {
+    document.getElementById('firmware-select').disabled = true;
+    loadFirmwares(device);
   }
 });
 
@@ -125,18 +149,24 @@ document.getElementById('firmware-select').addEventListener('change', (e) => {
 });
 
 document.getElementById('flash-btn').addEventListener('click', async () => {
-  if (!selectedFirmware) return;
+  if (!selectedFirmware) {
+    log('Please select a firmware first');
+    return;
+  }
 
   try {
     document.getElementById('progress-container').style.display = 'block';
-    await port.open({ baudRate: 115200 });
+    const options = { baudRate: 115200 };
+    
+    log(`Downloading firmware: ${selectedFirmware}`);
+    const response = await fetch(selectedFirmware);
+    const firmwareBuffer = await response.arrayBuffer();
+    
+    await port.open(options);
     const esptool = new ESPTool(port);
     
     await esptool.connect();
     log('Starting flash process...');
-    
-    const response = await fetch(selectedFirmware);
-    const firmwareBuffer = await response.arrayBuffer();
     
     await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
       const percent = Math.round(progress * 100);
@@ -149,20 +179,20 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
   } catch (error) {
     log(`Flash failed: ${error.message}`);
   } finally {
-    if (port) await port.close();
     document.getElementById('progress-container').style.display = 'none';
+    if (port) await port.close();
   }
 });
 
 function log(message) {
-  const logElement = document.getElementById('flash-log');
+  const logElement = document.getElementById('log');
   logElement.textContent += `${new Date().toLocaleTimeString()}: ${message}\n`;
   logElement.scrollTop = logElement.scrollHeight;
 }
 </script>
 
 <style>
-.flash-container {
+.flash-controls {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
@@ -170,7 +200,7 @@ function log(message) {
   border-radius: 8px;
 }
 
-.connection-box {
+.connect-box {
   display: flex;
   gap: 15px;
   align-items: center;
@@ -209,11 +239,11 @@ select {
   border-radius: 4px;
 }
 
-.progress-container {
-  margin: 20px 0;
+#progress-container {
   background: #333;
   padding: 15px;
   border-radius: 6px;
+  margin: 20px 0;
 }
 
 progress {
@@ -228,14 +258,13 @@ progress {
   font-weight: bold;
 }
 
-.log-container {
+#log-container {
   background: #000;
   padding: 15px;
   border-radius: 6px;
-  margin-top: 20px;
 }
 
-#flash-log {
+#log {
   color: #00FF00;
   height: 200px;
   overflow-y: auto;
