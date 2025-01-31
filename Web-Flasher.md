@@ -39,12 +39,13 @@ title: Web Flasher
   </div>
 </div>
 
-<script src="https://unpkg.com/esptool-js@1.3.0/dist/web/esptool.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 
 <script>
+const ESPTool = window.EspTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
-const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
+const FIRMWARES_PATH = 'firmwares';
 const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
 let port = null;
@@ -55,38 +56,28 @@ async function loadDevices() {
     const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
     const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
     
-    if (!response.ok) {
-      throw new Error(`GitHub error: ${response.status} ${response.statusText}`);
-    }
+    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
     const contents = JSON.parse(data.contents);
+    const devices = Array.isArray(contents) ? contents : [];
     
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
-    if (Array.isArray(contents)) {
-      contents.forEach(item => {
-        if (item.type === 'dir') {
-          const option = document.createElement('option');
-          option.value = item.name;
-          option.textContent = item.name;
-          deviceSelect.appendChild(option);
-        }
-      });
-      
-      if (deviceSelect.options.length > 1) {
-        deviceSelect.disabled = false;
-        log('Devices loaded successfully');
-      } else {
-        log('No devices found in firmware directory');
+    devices.forEach(item => {
+      if (item.type === 'dir') {
+        const option = document.createElement('option');
+        option.value = item.name;
+        option.textContent = item.name.replace(/_/g, ' ');
+        deviceSelect.appendChild(option);
       }
-    } else {
-      throw new Error('Unexpected response format from GitHub');
-    }
+    });
+    
+    deviceSelect.disabled = false;
+    log('Loaded available devices');
   } catch (error) {
     log(`Device loading failed: ${error.message}`);
-    console.error('Error details:', error);
   }
 }
 
@@ -99,23 +90,22 @@ async function loadFirmwares(device) {
     
     const data = await response.json();
     const contents = JSON.parse(data.contents);
+    const files = Array.isArray(contents) ? contents : [];
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
     
-    if (Array.isArray(contents)) {
-      contents.forEach(file => {
-        if (file.name.endsWith('.bin')) {
-          const option = document.createElement('option');
-          option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
-          option.textContent = file.name;
-          firmwareSelect.appendChild(option);
-        }
-      });
-      
-      firmwareSelect.disabled = false;
-      log(`Loaded ${contents.length} firmwares for ${device}`);
-    }
+    files.forEach(file => {
+      if (file.name.endsWith('.bin')) {
+        const option = document.createElement('option');
+        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
+        option.textContent = file.name.replace(/_/g, ' ');
+        firmwareSelect.appendChild(option);
+      }
+    });
+    
+    firmwareSelect.disabled = false;
+    log(`Loaded firmwares for ${device}`);
   } catch (error) {
     log(`Firmware loading failed: ${error.message}`);
   }
