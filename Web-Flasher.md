@@ -44,8 +44,8 @@ title: Web Flasher
 <script>
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
-const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
-const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+const FIRMWARES_PATH = 'firmwares';
+const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
 let port = null;
 let selectedFirmware = null;
@@ -58,7 +58,8 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    const devices = Array.isArray(data) ? data : data.items;
+    const contents = JSON.parse(data.contents);
+    const devices = Array.isArray(contents) ? contents : [];
     
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
@@ -87,7 +88,8 @@ async function loadFirmwares(device) {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    const files = Array.isArray(data) ? data : data.items;
+    const contents = JSON.parse(data.contents);
+    const files = Array.isArray(contents) ? contents : [];
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
@@ -199,7 +201,7 @@ function log(message) {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: auto;
+  width: 200px;
 }
 
 #connection-status {
@@ -235,8 +237,7 @@ label {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: auto;
-  align-self: flex-start;
+  width: 200px;
 }
 
 #log-container {
