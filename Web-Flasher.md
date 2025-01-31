@@ -58,34 +58,29 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    // Handle proxy-wrapped response
-    const rawData = data.contents ? JSON.parse(data.contents) : data;
+    const contents = data.contents ? JSON.parse(data.contents) : data;
     
+    if (!Array.isArray(contents)) {
+      throw new Error('GitHub returned unexpected directory structure');
+    }
+
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
-    if (Array.isArray(rawData)) {
-      rawData.forEach(item => {
-        if (item.type === 'dir') {
-          const option = document.createElement('option');
-          option.value = item.name;
-          option.textContent = item.name.replace(/_/g, ' ');
-          deviceSelect.appendChild(option);
-        }
-      });
-      
-      if (rawData.length > 0) {
-        deviceSelect.disabled = false;
-        log('Loaded available devices');
-      } else {
-        log('No devices found in firmware directory');
+    contents.forEach(item => {
+      if (item.type === 'dir') {
+        const option = document.createElement('option');
+        option.value = item.name;
+        option.textContent = item.name;
+        deviceSelect.appendChild(option);
       }
-    } else {
-      throw new Error('Unexpected response format from GitHub');
-    }
+    });
+    
+    deviceSelect.disabled = false;
+    log(`Loaded ${contents.length} devices`);
   } catch (error) {
     log(`Device loading failed: ${error.message}`);
-    console.error('Error details:', error);
+    console.error('GitHub API Response:', error);
   }
 }
 
@@ -97,29 +92,26 @@ async function loadFirmwares(device) {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    const rawData = data.contents ? JSON.parse(data.contents) : data;
+    const contents = data.contents ? JSON.parse(data.contents) : data;
     
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
     
-    if (Array.isArray(rawData)) {
-      rawData.forEach(file => {
-        if (file.name.endsWith('.bin')) {
-          const option = document.createElement('option');
-          option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
-          option.textContent = file.name.replace(/_/g, ' ');
-          firmwareSelect.appendChild(option);
-        }
-      });
-      
-      firmwareSelect.disabled = false;
-      log(`Loaded ${rawData.length} firmwares for ${device}`);
-    }
+    contents.forEach(file => {
+      if (file.name.endsWith('.bin')) {
+        const option = document.createElement('option');
+        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
+        option.textContent = file.name;
+        firmwareSelect.appendChild(option);
+      }
+    });
+    
+    firmwareSelect.disabled = false;
+    log(`Loaded ${contents.length} firmwares for ${device}`);
   } catch (error) {
     log(`Firmware loading failed: ${error.message}`);
   }
 }
-
 document.getElementById('connect-btn').addEventListener('click', async () => {
   try {
     port = await navigator.serial.requestPort();
