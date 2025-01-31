@@ -12,7 +12,7 @@ title: Web Flasher
 <script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 
 <script>
-const ESPTool = window.EsptoolJS;
+const ESPTool = window.EspTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares'; // Corrected path
