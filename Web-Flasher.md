@@ -45,7 +45,7 @@ const ESPTool = window.EspTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'Meshtastic-Experiments/firmwares';
-const CORS_PROXY = 'https://api.allorigins.win/get?url=';
+const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 
 let port = null;
 let selectedFirmware = null;
@@ -57,33 +57,24 @@ async function loadDevices() {
     
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
-    const data = await response.json();
-    const contents = JSON.parse(data.contents);
+    const devices = await response.json();
     
-    // Ensure we have an array of directory items
-    const devices = Array.isArray(contents) 
-      ? contents.filter(item => item.type === 'dir')
-      : [];
-
     const deviceSelect = document.getElementById('device-select');
-    deviceSelect.innerHTML = devices.length 
-      ? '<option value="">Select a device</option>'
-      : '<option value="">No devices found</option>';
-
+    deviceSelect.innerHTML = '<option value="">Select a device</option>';
+    
     devices.forEach(item => {
-      const option = document.createElement('option');
-      option.value = item.name;
-      option.textContent = item.name
-        .replace('Vision_Master_', '')
-        .replace(/_/g, ' ');
-      deviceSelect.appendChild(option);
+      if (item.type === 'dir') {
+        const option = document.createElement('option');
+        option.value = item.name;
+        option.textContent = item.name.replace(/_/g, ' ');
+        deviceSelect.appendChild(option);
+      }
     });
     
     deviceSelect.disabled = false;
     log('Loaded available devices');
   } catch (error) {
     log(`Device loading failed: ${error.message}`);
-    console.error('Error details:', error);
   }
 }
 
@@ -94,30 +85,22 @@ async function loadFirmwares(device) {
     
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
-    const data = await response.json();
-    const contents = JSON.parse(data.contents);
+    const files = await response.json();
     
-    const files = Array.isArray(contents)
-      ? contents.filter(file => file.name.endsWith('.bin'))
-      : [];
-
     const firmwareSelect = document.getElementById('firmware-select');
-    firmwareSelect.innerHTML = files.length 
-      ? '<option value="">Select a firmware</option>'
-      : '<option value="">No firmwares found</option>';
-
+    firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
+    
     files.forEach(file => {
-      const option = document.createElement('option');
-      option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
-      option.textContent = file.name
-        .replace(/_/g, ' ')
-        .replace('.bin', '')
-        .replace('firmware', 'Version ');
-      firmwareSelect.appendChild(option);
+      if (file.name.endsWith('.bin')) {
+        const option = document.createElement('option');
+        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
+        option.textContent = file.name.replace(/_/g, ' ');
+        firmwareSelect.appendChild(option);
+      }
     });
     
     firmwareSelect.disabled = false;
-    log(`Loaded ${files.length} firmwares for ${device}`);
+    log(`Loaded firmwares for ${device}`);
   } catch (error) {
     log(`Firmware loading failed: ${error.message}`);
   }
@@ -139,7 +122,6 @@ document.getElementById('connect-btn').addEventListener('click', async () => {
 document.getElementById('device-select').addEventListener('change', (e) => {
   const device = e.target.value;
   if (device) {
-    document.getElementById('firmware-select').disabled = true;
     loadFirmwares(device);
   }
 });
