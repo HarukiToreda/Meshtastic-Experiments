@@ -123,9 +123,11 @@ document.getElementById('connect-btn').addEventListener('click', async () => {
     }
 
     // Request serial port access
+    log('Requesting serial port...');
     port = await navigator.serial.requestPort();
     
     // Open the port with default settings
+    log('Opening serial port...');
     await port.open({ baudRate: 115200 });
 
     // Update UI
