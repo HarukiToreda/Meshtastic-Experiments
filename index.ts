@@ -86,36 +86,59 @@ const espLoaderTerminal = {
 
 connectButton.onclick = async () => {
   try {
-    if (device === null) {
-      device = await serialLib.requestPort({});
-      transport = new Transport(device, true);
+    // Check if Web Serial API is supported
+    if (!('serial' in navigator)) {
+      throw new Error('Web Serial API not supported. Use Chrome/Edge 89+.');
     }
+
+    // Log: Requesting serial port
+    console.log('Requesting serial port...');
+    term.writeln('Requesting serial port...');
+
+    // Request serial port access
+    device = await navigator.serial.requestPort({});
+    console.log('Serial port selected:', device);
+    term.writeln('Serial port selected.');
+
+    // Log: Opening serial port
+    console.log('Opening serial port...');
+    term.writeln('Opening serial port...');
+
+    // Open the port with default settings
+    await device.open({ baudRate: 115200 });
+    console.log('Serial port opened.');
+    term.writeln('Serial port opened.');
+
+    // Initialize ESPTool
     const flashOptions = {
-      transport,
+      transport: new Transport(device, true),
       baudrate: parseInt(baudrates.value),
       terminal: espLoaderTerminal,
       debugLogging: debugLogging.checked,
     } as LoaderOptions;
     esploader = new ESPLoader(flashOptions);
 
-    chip = await esploader.main();
+    // Log: Connecting to device
+    console.log('Connecting to device...');
+    term.writeln('Connecting to device...');
 
-    // Temporarily broken
-    // await esploader.flashId();
-    console.log("Settings done for :" + chip);
-    lblBaudrate.style.display = "none";
-    lblConnTo.innerHTML = "Connected to device: " + chip;
-    lblConnTo.style.display = "block";
-    baudrates.style.display = "none";
-    connectButton.style.display = "none";
-    disconnectButton.style.display = "initial";
-    traceButton.style.display = "initial";
-    eraseButton.style.display = "initial";
-    filesDiv.style.display = "initial";
-    consoleDiv.style.display = "none";
-  } catch (e) {
-    console.error(e);
-    term.writeln(`Error: ${e.message}`);
+    chip = await esploader.main();
+    console.log('Connected to device:', chip);
+    term.writeln(`Connected to device: ${chip}`);
+
+    // Update UI
+    document.getElementById('connect-btn').disabled = true;
+    document.getElementById('connection-status').textContent = '✅ Connected';
+    document.getElementById('flash-btn').disabled = false;
+    log('Connected to device');
+
+    // Load devices after connection
+    await loadDevices();
+  } catch (error) {
+    console.error('Connection error:', error);
+    term.writeln(`Connection error: ${error.message}`);
+    if (device) await device.close();
+    device = null;
   }
 };
 
