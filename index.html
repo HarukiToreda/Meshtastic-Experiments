@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Meshtastic Web Flasher</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.19.0/css/xterm.css">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
+        <link rel="icon" href="../assets/favicon.ico" />
+        <script src="https://cdn.jsdelivr.net/npm/xterm@4.19.0/lib/xterm.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- Add ESPTool library -->
+        <script src="https://unpkg.com/@espruino-tools/core@0.0.9/dist/core.min.js"></script>
+        <script src="https://unpkg.com/@espruino-tools/esptool@0.0.9/dist/esptool.min.js"></script>
+    </head>
+    <body>
+        <h1 align="center"><p><img src="../assets/esp-logo.png" width="42" height="42" style="vertical-align:middle" crossorigin></img> Meshtastic Web Flasher</p></h1>
+        <h4 align="center">A Serial Flasher utility for Espressif chips</h4>
+        <div id="safariErr" style="display:none"><p align="center" style="color:red">This tool is not supported on Safari browser!</p></div>
+        <div align="center">
+            <a class="btn btn-info" href="./docs/index.html">View the API Documentation</a>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="debugLogging" value="">
+                <label class="form-check-label" for="debugLogging">Show Debug log</label>
+            </div>
+        </div>
+        <div class="container" id="main">
+            <hr/>
+            <div id="program">
+                <h3> Program
