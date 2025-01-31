@@ -39,9 +39,8 @@ title: Web Flasher
   </div>
 </div>
 
-<script>
-// Initialize ESPTool globally
-let ESPTool = window.ESPTool;
+<script type="module">
+import ESPTool from 'https://unpkg.com/esptool-js@1.3.0/dist/web/esptool.js';
 
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
@@ -157,14 +156,14 @@ async function beginFlash() {
     await esptool.connect();
     log('Starting flash process...');
     
-    await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
+    await esptool.flash(new Uint8Array(firmwareBuffer), 0x1000, (progress) => {
       const percent = Math.round(progress * 100);
       document.getElementById('progress-bar').value = percent;
       document.getElementById('progress-text').textContent = `${percent}%`;
     });
     
     log('Flash complete! Resetting device...');
-    await esptool.hard_reset();
+    await esptool.hardReset();
     log('Device ready to use');
   } catch (error) {
     log(`Flash failed: ${error.message}`);
