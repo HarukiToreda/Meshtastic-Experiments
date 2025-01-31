@@ -3,7 +3,7 @@ layout: default
 title: Web Flasher
 ---
 
-# InkHUD Web Flasher
+# Meshtastic Web Flasher
 
 <div id="flasher-container">
   <div class="flash-controls">
@@ -39,9 +39,10 @@ title: Web Flasher
   </div>
 </div>
 
-<script type="module">
-import ESPTool from 'https://unpkg.com/esptool-js@1.3.0/dist/web/esptool.js';
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 
+<script>
+const ESPTool = window.EspTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -142,28 +143,26 @@ async function beginFlash() {
 
   try {
     document.getElementById('progress-container').style.display = 'block';
-    const options = { baudRate: 115200, autoDtrReset: false };
+    const options = { baudRate: 115200 };
     
     log(`Downloading firmware: ${selectedFirmware}`);
     const response = await fetch(selectedFirmware);
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
-    
-    // Initialize ESPTool with the port
     const esptool = new ESPTool(port);
     
     await esptool.connect();
     log('Starting flash process...');
     
-    await esptool.flash(new Uint8Array(firmwareBuffer), 0x1000, (progress) => {
+    await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
       const percent = Math.round(progress * 100);
       document.getElementById('progress-bar').value = percent;
       document.getElementById('progress-text').textContent = `${percent}%`;
     });
     
     log('Flash complete! Resetting device...');
-    await esptool.hardReset();
+    await esptool.hard_reset();
     log('Device ready to use');
   } catch (error) {
     log(`Flash failed: ${error.message}`);
