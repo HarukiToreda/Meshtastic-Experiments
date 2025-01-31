@@ -14,8 +14,8 @@ title: Web Flasher
     
     <div class="selection-box">
       <label>Select Device:</label>
-      <select id="device-select" disabled>
-        <option value="">First connect device</option>
+      <select id="device-select">
+        <option value="">Loading devices...</option>
       </select>
     </div>
 
@@ -50,6 +50,9 @@ const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 let port = null;
 let selectedFirmware = null;
 
+// Load devices immediately
+loadDevices();
+
 async function loadDevices() {
   try {
     const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
@@ -62,16 +65,20 @@ async function loadDevices() {
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
-    devices.forEach(item => {
-      if (item.type === 'dir') {
-        const option = document.createElement('option');
-        option.value = item.name;
-        option.textContent = item.name.replace(/_/g, ' ');
-        deviceSelect.appendChild(option);
-      }
-    });
+    // Ensure devices is an array before using forEach
+    if (Array.isArray(devices)) {
+      devices.forEach(item => {
+        if (item.type === 'dir') {
+          const option = document.createElement('option');
+          option.value = item.name;
+          option.textContent = item.name.replace(/_/g, ' ');
+          deviceSelect.appendChild(option);
+        }
+      });
+    } else {
+      throw new Error('Invalid devices data format');
+    }
     
-    deviceSelect.disabled = false;
     log('Loaded available devices');
   } catch (error) {
     log(`Device loading failed: ${error.message}`);
@@ -90,14 +97,16 @@ async function loadFirmwares(device) {
     const firmwareSelect = document.getElementById('firmware-select');
     firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
     
-    files.forEach(file => {
-      if (file.name.endsWith('.bin')) {
-        const option = document.createElement('option');
-        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
-        option.textContent = file.name.replace(/_/g, ' ');
-        firmwareSelect.appendChild(option);
-      }
-    });
+    if (Array.isArray(files)) {
+      files.forEach(file => {
+        if (file.name.endsWith('.bin')) {
+          const option = document.createElement('option');
+          option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
+          option.textContent = file.name.replace(/_/g, ' ');
+          firmwareSelect.appendChild(option);
+        }
+      });
+    }
     
     firmwareSelect.disabled = false;
     log(`Loaded firmwares for ${device}`);
@@ -113,7 +122,6 @@ document.getElementById('connect-btn').addEventListener('click', async () => {
     document.getElementById('connection-status').textContent = '✅ Connected';
     document.getElementById('flash-btn').disabled = false;
     log('Connected to device');
-    await loadDevices();
   } catch (error) {
     log(`Connection error: ${error.message}`);
   }
