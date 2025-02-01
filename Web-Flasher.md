@@ -3,6 +3,9 @@ layout: default
 title: Web Flasher
 ---
 
+<!-- If you have a CSS file, ensure the path is correct. Remove or fix this link if needed. -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
 # Meshtastic Web Flasher
 
 <div id="flasher-container">
@@ -39,10 +42,9 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Include the core esptool-js file -->
-<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
-<!-- Include the companion file for ESP32 support -->
-<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esp32.min.js"></script>
+<!-- Use version 0.0.8 instead of 0.0.9 -->
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.8/dist/esptool-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.8/dist/esp32.min.js"></script>
 
 <script>
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
@@ -57,7 +59,6 @@ async function loadDevices() {
   try {
     const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
     const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
-    
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
@@ -66,7 +67,7 @@ async function loadDevices() {
     if (!Array.isArray(contents)) {
       throw new Error('GitHub returned unexpected directory structure');
     }
-
+    
     const deviceSelect = document.getElementById('device-select');
     deviceSelect.innerHTML = '<option value="">Select a device</option>';
     
@@ -91,7 +92,6 @@ async function loadFirmwares(device) {
   try {
     const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
     const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
-    
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
@@ -155,7 +155,7 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
-    // Now that the companion file is loaded, ESPTool should be a constructor.
+    // In version 0.0.8, window.ESPTool is the constructor.
     const esptool = new window.ESPTool(port);
     
     await esptool.connect();
@@ -166,7 +166,7 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
       document.getElementById('progress-bar').value = percent;
       document.getElementById('progress-text').textContent = `${percent}%`;
     });
-
+    
     await esptool.hardReset();
     log('Flash completed successfully!');
   } catch (error) {
