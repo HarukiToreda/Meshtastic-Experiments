@@ -15,13 +15,14 @@
 
 /* Hardware selection dropdown menu */
 select {
-  width: 250px; /* Set a fixed width */
+  width: 250px !important; /* Force the width */
+  max-width: 250px; /* Prevent it from stretching */
   padding: 8px;
-  margin-top: 8px;
   background: #444;
   color: #fff;
   border: 1px solid #00FFFF;
   border-radius: 4px;
+  display: block; /* Ensures it doesn't behave oddly */
 }
 
 /* Full erase checkbox */
