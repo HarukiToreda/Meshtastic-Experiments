@@ -2,19 +2,19 @@
 .flasher-container {
   width: 320px;
   padding: 20px;
-  background: #e0e0e0; /* Light gray for a modern look */
-  border-radius: 12px; /* Rounded corners */
+  background: #2A2A2A; /* Dark charcoal background */
+  border-radius: 12px; /* Smooth rounded corners */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Deeper shadow for a subtle 3D effect */
 }
 
 /* Title Styling */
 .flasher-title {
   font-size: 20px;
-  color: #333;
+  color: #FFFFFF; /* White text for contrast */
   font-weight: bold;
   margin-bottom: 15px;
   text-align: center;
@@ -24,15 +24,15 @@
 .dropdown-container {
   width: 100%;
   padding: 8px;
-  background: #f5f5f5; /* Slightly darker gray inside */
+  background: #3A3A3A; /* Slightly lighter gray for contrast */
   border-radius: 8px;
 }
 
 .dropdown-container select {
   width: 100%;
-  background: #f5f5f5; /* Matches the container */
+  background: #3A3A3A; /* Match container */
   border: none;
-  color: #333;
+  color: #FFFFFF; /* White text */
   padding: 8px;
   border-radius: 6px;
   outline: none;
@@ -42,7 +42,7 @@
 /* Label Styling */
 .flasher-label {
   font-size: 14px;
-  color: #555;
+  color: #CCCCCC; /* Light gray text for readability */
   margin-bottom: 5px;
   text-align: left;
   width: 100%;
@@ -58,10 +58,14 @@
   margin: 10px 0;
 }
 
+.checkbox-container input {
+  accent-color: #00FFFF; /* Electric blue for checkbox */
+}
+
 /* Button Styling */
 #installButton {
   background: #444;
-  color: #fff;
+  color: #FFF;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
@@ -71,5 +75,5 @@
 }
 
 #installButton:hover {
-  background: #222;
+  background: #222; /* Slightly darker hover effect */
 }
