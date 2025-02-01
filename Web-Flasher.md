@@ -154,7 +154,7 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     
     await port.open(options);
     // Instantiate using the correct constructor reference.
-    const esptool = new ESPTool.ESPTool(port);
+    const esptool = new ESPTool(port);
     
     await esptool.connect();
     log('Starting flash process...');
