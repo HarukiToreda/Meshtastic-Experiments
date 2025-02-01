@@ -27,37 +27,42 @@ function updateFlasherConfig() {
 }
 
 function showDownloadPopup() {
-    // Create a new install dialog element
+    // Create the pop-up container
     const downloadDialog = document.createElement("ewt-install-dialog");
+    downloadDialog.setAttribute("open", "");
 
-    // Set the pop-up title
-    downloadDialog.heading = "Download Firmware Instructions";
+    // Create a list to match the existing Flasher pop-up structure
+    const list = document.createElement("ew-list");
 
-    // Create a container for the message
-    const messageContainer = document.createElement("div");
-    messageContainer.className = "message";
-    messageContainer.innerHTML = `
-        Ensure device DFU mode drive is mounted.<br>
-        Download and copy UF2 file to DFU drive.
+    // Create the message content inside an ew-list-item
+    const messageItem = document.createElement("ew-list-item");
+    messageItem.innerHTML = `
+        <div slot="headline">Ensure device DFU mode drive is mounted</div>
+        <div slot="supporting-text">
+            Download and copy UF2 file to DFU drive.
+        </div>
     `;
-
-    // Automatically trigger the download
-    setTimeout(() => {
-        window.location.href = document.getElementById("downloadFirmware").href;
-    }, 500); // Small delay to show the message before downloading
+    list.appendChild(messageItem);
 
     // Add a close button
-    const closeButton = document.createElement("button");
-    closeButton.innerText = "Close";
-    closeButton.className = "popup-button";
-    closeButton.onclick = function () {
+    const closeButton = document.createElement("ew-list-item");
+    closeButton.setAttribute("type", "button");
+    closeButton.setAttribute("class", "danger");
+    closeButton.innerHTML = `
+        <div slot="headline">Close</div>
+    `;
+    closeButton.addEventListener("click", () => {
         document.body.removeChild(downloadDialog);
-    };
+    });
 
-    // Append message and button to the pop-up
-    downloadDialog.appendChild(messageContainer);
-    downloadDialog.appendChild(closeButton);
+    list.appendChild(closeButton);
+    downloadDialog.appendChild(list);
 
-    // Add the dialog to the body
+    // Append the dialog to the body
     document.body.appendChild(downloadDialog);
+
+    // Automatically trigger the file download
+    setTimeout(() => {
+        window.location.href = document.getElementById("downloadFirmware").href;
+    }, 500); // Short delay to show the pop-up before the download starts
 }
