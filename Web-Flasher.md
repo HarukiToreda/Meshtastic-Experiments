@@ -3,7 +3,7 @@ layout: default
 title: Web Flasher
 ---
 
-<!-- Fix your CSS link if needed; remove or update if not applicable -->
+<!-- (Update or remove this CSS link as needed) -->
 <link rel="stylesheet" href="/assets/css/style.css">
 
 # Meshtastic Web Flasher
@@ -42,155 +42,149 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Include esptool-js from the Espressif GitHub repo via jsDelivr.
-     (Check the repo’s README for the correct file name and URL.)
-     For example, if the built file is located at dist/esptool.min.js: -->
-<script src="https://cdn.jsdelivr.net/gh/espressif/esptool-js/dist/esptool.min.js"></script>
+<!-- Use a module import to load ESPTool from the Espressif esptool-js build -->
+<script type="module">
+  // Import the ESPTool class from the repository's built file.
+  // (Check the Espressif esptool-js README for the current recommended URL.)
+  import { ESPTool } from "https://cdn.jsdelivr.net/gh/espressif/esptool-js/dist/esptool.min.js";
 
-<script>
-/*  
-  This code assumes that the esptool-js file from Espressif
-  exposes a global constructor called ESPTool.
-  
-  (If the export name is different, adjust accordingly.)
-*/
-const REPO = 'HarukiToreda/Meshtastic-Experiments';
-const BRANCH = 'main';
-const FIRMWARES_PATH = 'firmwares';
-const CORS_PROXY = 'https://api.allorigins.win/get?url=';
+  const REPO = 'HarukiToreda/Meshtastic-Experiments';
+  const BRANCH = 'main';
+  const FIRMWARES_PATH = 'firmwares';
+  const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
-let port = null;
-let selectedFirmware = null;
+  let port = null;
+  let selectedFirmware = null;
 
-async function loadDevices() {
-  try {
-    const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
-    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
-    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-    
-    const data = await response.json();
-    // data.contents may be a JSON string or an object.
-    const contents = data.contents ? JSON.parse(data.contents) : data;
-    
-    if (!Array.isArray(contents)) {
-      throw new Error('GitHub returned unexpected directory structure');
+  async function loadDevices() {
+    try {
+      const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
+      const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
+      if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
+      
+      const data = await response.json();
+      // data.contents may come as a JSON string in some cases:
+      const contents = data.contents ? JSON.parse(data.contents) : data;
+      
+      if (!Array.isArray(contents)) {
+        throw new Error('GitHub returned unexpected directory structure');
+      }
+      
+      const deviceSelect = document.getElementById('device-select');
+      deviceSelect.innerHTML = '<option value="">Select a device</option>';
+      
+      contents.forEach(item => {
+        if (item.type === 'dir') {
+          const option = document.createElement('option');
+          option.value = item.name;
+          option.textContent = item.name;
+          deviceSelect.appendChild(option);
+        }
+      });
+      
+      deviceSelect.disabled = false;
+      log(`Loaded ${contents.length} devices`);
+    } catch (error) {
+      log(`Device loading failed: ${error.message}`);
+      console.error('GitHub API Response:', error);
     }
-    
-    const deviceSelect = document.getElementById('device-select');
-    deviceSelect.innerHTML = '<option value="">Select a device</option>';
-    
-    contents.forEach(item => {
-      if (item.type === 'dir') {
-        const option = document.createElement('option');
-        option.value = item.name;
-        option.textContent = item.name;
-        deviceSelect.appendChild(option);
-      }
-    });
-    
-    deviceSelect.disabled = false;
-    log(`Loaded ${contents.length} devices`);
-  } catch (error) {
-    log(`Device loading failed: ${error.message}`);
-    console.error('GitHub API Response:', error);
-  }
-}
-
-async function loadFirmwares(device) {
-  try {
-    const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
-    const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
-    if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-    
-    const data = await response.json();
-    const contents = data.contents ? JSON.parse(data.contents) : data;
-    
-    const firmwareSelect = document.getElementById('firmware-select');
-    firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
-    
-    contents.forEach(file => {
-      if (file.name.endsWith('.bin')) {
-        const option = document.createElement('option');
-        option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
-        option.textContent = file.name;
-        firmwareSelect.appendChild(option);
-      }
-    });
-    
-    firmwareSelect.disabled = false;
-    log(`Loaded ${contents.length} firmwares for ${device}`);
-  } catch (error) {
-    log(`Firmware loading failed: ${error.message}`);
-  }
-}
-
-document.getElementById('connect-btn').addEventListener('click', async () => {
-  try {
-    port = await navigator.serial.requestPort();
-    document.getElementById('connect-btn').disabled = true;
-    document.getElementById('connection-status').textContent = '✅ Connected';
-    document.getElementById('flash-btn').disabled = false;
-    log('Connected to device');
-    await loadDevices();
-  } catch (error) {
-    log(`Connection error: ${error.message}`);
-  }
-});
-
-document.getElementById('device-select').addEventListener('change', (e) => {
-  const device = e.target.value;
-  if (device) {
-    loadFirmwares(device);
-  }
-});
-
-document.getElementById('firmware-select').addEventListener('change', (e) => {
-  selectedFirmware = e.target.value;
-});
-
-document.getElementById('flash-btn').addEventListener('click', async () => {
-  if (!selectedFirmware) {
-    log('Please select a firmware first');
-    return;
   }
 
-  try {
-    document.getElementById('progress-container').style.display = 'block';
-    const options = { baudRate: 115200 };
-    
-    log(`Downloading firmware: ${selectedFirmware}`);
-    const response = await fetch(selectedFirmware);
-    const firmwareBuffer = await response.arrayBuffer();
-    
-    await port.open(options);
-    
-    // Instantiate the ESPTool from the Espressif esptool-js
-    const esptool = new window.ESPTool(port);
-    
-    await esptool.connect();
-    log('Starting flash process...');
-    
-    await esptool.flashFile(new Uint8Array(firmwareBuffer), (progress) => {
-      const percent = Math.round(progress * 100);
-      document.getElementById('progress-bar').value = percent;
-      document.getElementById('progress-text').textContent = `${percent}%`;
-    });
-    
-    await esptool.hardReset();
-    log('Flash completed successfully!');
-  } catch (error) {
-    log(`Flash failed: ${error.message}`);
-  } finally {
-    document.getElementById('progress-container').style.display = 'none';
-    if (port) await port.close();
+  async function loadFirmwares(device) {
+    try {
+      const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
+      const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
+      if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
+      
+      const data = await response.json();
+      const contents = data.contents ? JSON.parse(data.contents) : data;
+      
+      const firmwareSelect = document.getElementById('firmware-select');
+      firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
+      
+      contents.forEach(file => {
+        if (file.name.endsWith('.bin')) {
+          const option = document.createElement('option');
+          option.value = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${FIRMWARES_PATH}/${device}/${file.name}`;
+          option.textContent = file.name;
+          firmwareSelect.appendChild(option);
+        }
+      });
+      
+      firmwareSelect.disabled = false;
+      log(`Loaded ${contents.length} firmwares for ${device}`);
+    } catch (error) {
+      log(`Firmware loading failed: ${error.message}`);
+    }
   }
-});
 
-function log(message) {
-  const logElement = document.getElementById('log');
-  logElement.textContent += `${new Date().toLocaleTimeString()}: ${message}\n`;
-  logElement.scrollTop = logElement.scrollHeight;
-}
+  document.getElementById('connect-btn').addEventListener('click', async () => {
+    try {
+      port = await navigator.serial.requestPort();
+      document.getElementById('connect-btn').disabled = true;
+      document.getElementById('connection-status').textContent = '✅ Connected';
+      document.getElementById('flash-btn').disabled = false;
+      log('Connected to device');
+      await loadDevices();
+    } catch (error) {
+      log(`Connection error: ${error.message}`);
+    }
+  });
+
+  document.getElementById('device-select').addEventListener('change', (e) => {
+    const device = e.target.value;
+    if (device) {
+      loadFirmwares(device);
+    }
+  });
+
+  document.getElementById('firmware-select').addEventListener('change', (e) => {
+    selectedFirmware = e.target.value;
+  });
+
+  document.getElementById('flash-btn').addEventListener('click', async () => {
+    if (!selectedFirmware) {
+      log('Please select a firmware first');
+      return;
+    }
+
+    try {
+      document.getElementById('progress-container').style.display = 'block';
+      const options = { baudRate: 115200 };
+      
+      log(`Downloading firmware: ${selectedFirmware}`);
+      const response = await fetch(selectedFirmware);
+      const firmwareBuffer = await response.arrayBuffer();
+      
+      await port.open(options);
+      
+      // Instantiate the ESPTool class using the imported module.
+      const esptool = new ESPTool(port);
+      
+      await esptool.connect();
+      log('Starting flash process...');
+      
+      await esptool.flashFile(new Uint8Array(firmwareBuffer), (progress) => {
+        const percent = Math.round(progress * 100);
+        document.getElementById('progress-bar').value = percent;
+        document.getElementById('progress-text').textContent = `${percent}%`;
+      });
+      
+      await esptool.hardReset();
+      log('Flash completed successfully!');
+    } catch (error) {
+      log(`Flash failed: ${error.message}`);
+    } finally {
+      document.getElementById('progress-container').style.display = 'none';
+      if (port) await port.close();
+    }
+  });
+
+  function log(message) {
+    const logElement = document.getElementById('log');
+    logElement.textContent += `${new Date().toLocaleTimeString()}: ${message}\n`;
+    logElement.scrollTop = logElement.scrollHeight;
+  }
 </script>
 
 <style>
