@@ -30,9 +30,16 @@ function showDownloadPopup() {
     // Create a new install dialog element
     const downloadDialog = document.createElement("ewt-install-dialog");
 
-    // Set the pop-up title and message
+    // Set the pop-up title
     downloadDialog.heading = "Download Firmware Instructions";
-    downloadDialog.message = "Ensure device DFU mode drive is mounted.<br>Download and copy UF2 file to DFU drive.";
+
+    // Create a container for the message
+    const messageContainer = document.createElement("div");
+    messageContainer.className = "message";
+    messageContainer.innerHTML = `
+        Ensure device DFU mode drive is mounted.<br>
+        Download and copy UF2 file to DFU drive.
+    `;
 
     // Automatically trigger the download
     setTimeout(() => {
@@ -47,7 +54,10 @@ function showDownloadPopup() {
         document.body.removeChild(downloadDialog);
     };
 
-    // Append message and button
+    // Append message and button to the pop-up
+    downloadDialog.appendChild(messageContainer);
     downloadDialog.appendChild(closeButton);
+
+    // Add the dialog to the body
     document.body.appendChild(downloadDialog);
 }
