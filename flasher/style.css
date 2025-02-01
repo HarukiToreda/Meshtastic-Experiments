@@ -124,6 +124,8 @@ ewt-install-dialog .message {
   color: #333;
   margin-bottom: 15px;
   font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
 }
 
 /* Pop-up Close Button */
