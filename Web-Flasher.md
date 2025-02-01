@@ -156,7 +156,7 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     await esptool.connect();
     log('Starting flash process...');
     
-    await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
+    await esptool.flashFile(new Uint8Array(firmwareBuffer), (progress) => {
       const percent = Math.round(progress * 100);
       document.getElementById('progress-bar').value = percent;
       document.getElementById('progress-text').textContent = `${percent}%`;
