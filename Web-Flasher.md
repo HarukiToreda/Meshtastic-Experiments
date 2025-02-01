@@ -3,7 +3,7 @@ layout: default
 title: Web Flasher
 ---
 
-<!-- If you have a CSS file, ensure the path is correct. Remove or fix this link if needed. -->
+<!-- Fix your CSS link if needed; remove or update if not applicable -->
 <link rel="stylesheet" href="/assets/css/style.css">
 
 # Meshtastic Web Flasher
@@ -42,11 +42,18 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Use version 0.0.8 instead of 0.0.9 -->
-<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.8/dist/esptool-js.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.8/dist/esp32.min.js"></script>
+<!-- Include esptool-js from the Espressif GitHub repo via jsDelivr.
+     (Check the repo’s README for the correct file name and URL.)
+     For example, if the built file is located at dist/esptool.min.js: -->
+<script src="https://cdn.jsdelivr.net/gh/espressif/esptool-js/dist/esptool.min.js"></script>
 
 <script>
+/*  
+  This code assumes that the esptool-js file from Espressif
+  exposes a global constructor called ESPTool.
+  
+  (If the export name is different, adjust accordingly.)
+*/
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -62,6 +69,7 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
+    // data.contents may be a JSON string or an object.
     const contents = data.contents ? JSON.parse(data.contents) : data;
     
     if (!Array.isArray(contents)) {
@@ -155,7 +163,8 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
-    // In version 0.0.8, window.ESPTool is the constructor.
+    
+    // Instantiate the ESPTool from the Espressif esptool-js
     const esptool = new window.ESPTool(port);
     
     await esptool.connect();
