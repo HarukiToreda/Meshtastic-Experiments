@@ -42,7 +42,8 @@ title: Web Flasher
 <!-- Include esptool-js -->
 <script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 <script>
-const ESPTool = window.ESPTool;  // The library exports the constructor directly
+// If the library was bundled with a default export, use it.
+const ESPToolConstructor = (window.ESPTool && window.ESPTool.default) || window.ESPTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -59,6 +60,7 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
+    // data.contents might be a JSON string or an object
     const contents = data.contents ? JSON.parse(data.contents) : data;
     
     if (!Array.isArray(contents)) {
@@ -153,8 +155,8 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
-    // Instantiate the ESPTool using the constructor directly
-    const esptool = new ESPTool(port);
+    // Use the determined constructor
+    const esptool = new ESPToolConstructor(port);
     
     await esptool.connect();
     log('Starting flash process...');
