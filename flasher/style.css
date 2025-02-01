@@ -75,5 +75,5 @@
 }
 
 #installButton:hover {
-  background: #222; /* Slightly darker hover effect */
+  opacity: 0.8; /* Slight transparency effect on hover */
 }
