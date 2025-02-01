@@ -39,11 +39,12 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Include esptool-js -->
+<!-- Include the core esptool-js file -->
 <script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
+<!-- Include the companion file for ESP32 support -->
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esp32.min.js"></script>
+
 <script>
-// If the library was bundled with a default export, use it.
-const ESPToolConstructor = (window.ESPTool && window.ESPTool.default) || window.ESPTool;
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -60,7 +61,6 @@ async function loadDevices() {
     if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
     
     const data = await response.json();
-    // data.contents might be a JSON string or an object
     const contents = data.contents ? JSON.parse(data.contents) : data;
     
     if (!Array.isArray(contents)) {
@@ -155,8 +155,8 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
-    // Use the determined constructor
-    const esptool = new ESPToolConstructor(port);
+    // Now that the companion file is loaded, ESPTool should be a constructor.
+    const esptool = new window.ESPTool(port);
     
     await esptool.connect();
     log('Starting flash process...');
