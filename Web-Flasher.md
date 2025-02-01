@@ -39,11 +39,13 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Import the esptool-js library from jsDelivr -->
+<!-- Import your locally built bundle -->
 <script src="/assets/js/esptool.bundle.js"></script>
 <script>
-  // Get the ESPTool constructor from the loaded library.
+  // Use the global variable provided by your bundle.
+  // (Our Rollup config exposed it as ESPToolBundle.)
   const ESPTool = ESPToolBundle;
+
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
   const BRANCH = 'main';
   const FIRMWARES_PATH = 'firmwares';
@@ -59,13 +61,13 @@ title: Web Flasher
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
       
       const data = await response.json();
-      // data.contents may be a JSON string—parse if necessary.
+      // data.contents may be a JSON string—parse it if needed.
       const contents = data.contents ? JSON.parse(data.contents) : data;
       
       if (!Array.isArray(contents)) {
         throw new Error('GitHub returned unexpected directory structure');
       }
-
+      
       const deviceSelect = document.getElementById('device-select');
       deviceSelect.innerHTML = '<option value="">Select a device</option>';
       
@@ -158,13 +160,13 @@ title: Web Flasher
       await esptool.connect();
       log('Starting flash process...');
       
-      // Note: If the esptool-js version expects camelCase methods, change these as needed.
+      // Use the appropriate method names (adjust if your bundle uses camelCase).
       await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
         const percent = Math.round(progress * 100);
         document.getElementById('progress-bar').value = percent;
         document.getElementById('progress-text').textContent = `${percent}%`;
       });
-
+      
       await esptool.hard_reset();
       log('Flash completed successfully!');
     } catch (error) {
