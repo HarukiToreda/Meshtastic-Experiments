@@ -21,14 +21,14 @@ title: Web-Flasher
       <option value="Vision_Master_E290">Heltec Vision Master E290</option>
       <option value="Wireless_Paper_V1_1">Heltec Wireless Paper V1.1</option>
     </select>
-</div>
+  </div>
 
-<div class="checkbox-container">
-   <input id="eraseCheckbox" type="checkbox" checked="true" />
-   <label for="eraseCheckbox" class="flasher-label">Full Erase</label>
-</div>
+  <div class="checkbox-container">
+    <input id="eraseCheckbox" type="checkbox" checked="true" />
+    <label for="eraseCheckbox" class="flasher-label">Full Erase</label>
+  </div>
 
-<esp-web-install-button id="espWebTools" showLog="true">
+  <esp-web-install-button id="espWebTools" showLog="true">
     <button slot="activate" id="installButton" onclick="updateFlasherConfig()">Install Button Text</button>
     <span slot="unsupported" id="unsupportedText">Unsupported browser message goes here</span>
   </esp-web-install-button>
