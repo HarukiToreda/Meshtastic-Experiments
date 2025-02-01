@@ -109,13 +109,47 @@ ewt-install-dialog {
   left: 50%;
   transform: translate(-50%, -50%);
   background: #ffffff; /* White background to match flasher pop-up */
-  padding: 20px;
+  padding: 0;
   border-radius: 12px;
   color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1000;
   width: 350px;
+  overflow: hidden;
+}
+
+/* Pop-up Header */
+.popup-header {
+  background: #6200ea; /* Meshtastic InkHUD Purple */
+  color: white;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header Title */
+.popup-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Close Button */
+.popup-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+}
+
+.popup-close:hover {
+  opacity: 0.8;
 }
 
 /* Pop-up List (Matches Flasher Pop-up List) */
@@ -123,6 +157,7 @@ ewt-install-dialog ew-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 20px;
 }
 
 /* Pop-up Message Text */
@@ -132,18 +167,4 @@ ewt-install-dialog ew-list-item {
   padding: 10px;
   font-weight: bold;
   border-bottom: 1px solid #ddd;
-}
-
-/* Close Button */
-ewt-install-dialog ew-list-item.danger {
-  background: #ff4d4d;
-  color: white;
-  text-align: center;
-  border-radius: 6px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-ewt-install-dialog ew-list-item.danger:hover {
-  background: #cc0000;
 }
