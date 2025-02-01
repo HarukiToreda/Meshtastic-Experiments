@@ -1,60 +1,9 @@
-#installButton {
-  background: #FFD700;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-/* Formatting for text shown if browser unsupported */
-#unsupportedText {
-
-}
-
-/* Hardware selection dropdown menu */
-select {
-  width: 250px !important; /* Force the width */
-  max-width: 250px; /* Prevent it from stretching */
-  padding: 8px;
-  background: #444;
-  color: #fff;
-  border: 1px solid #00FFFF;
-  border-radius: 4px;
-  display: block; /* Ensures it doesn't behave oddly */
-}
-
-/* Full erase checkbox */
-input {
-  accent-color: #00FFFF;
-}
-
-/* Dropdown Styling */
-.dropdown-container {
-  width: 100%;
-  padding: 8px;
-  background: #f2f2f2; /* Slightly darker inside */
-  border-radius: 8px;
-}
-
-/* Make sure the select element fits inside nicely */
-.dropdown-container select {
-  width: 100%;
-  background: #f2f2f2; /* Consistent with the container */
-  border: none;
-  color: #333;
-  padding: 8px;
-  border-radius: 6px;
-  outline: none;
-}
-
-/* Flasher Main Container */
+/* Main Flasher Container */
 .flasher-container {
-  width: 300px;
+  width: 320px;
   padding: 20px;
-  background: #ddd; /* Light gray for a modern look */
-  border-radius: 12px; /* Smooth rounded edges */
+  background: #e0e0e0; /* Light gray for a modern look */
+  border-radius: 12px; /* Rounded corners */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,6 +17,26 @@ input {
   color: #333;
   font-weight: bold;
   margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Dropdown Styling */
+.dropdown-container {
+  width: 100%;
+  padding: 8px;
+  background: #f5f5f5; /* Slightly darker gray inside */
+  border-radius: 8px;
+}
+
+.dropdown-container select {
+  width: 100%;
+  background: #f5f5f5; /* Matches the container */
+  border: none;
+  color: #333;
+  padding: 8px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
 }
 
 /* Label Styling */
@@ -78,6 +47,7 @@ input {
   text-align: left;
   width: 100%;
   display: block;
+  font-weight: bold;
 }
 
 /* Checkbox Styling */
@@ -97,6 +67,7 @@ input {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s;
+  font-size: 14px;
 }
 
 #installButton:hover {
