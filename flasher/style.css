@@ -108,48 +108,32 @@ ewt-install-dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff; /* White background to match flasher pop-up */
-  padding: 0;
+  background: #ffffff; /* White background like Flasher pop-up */
   border-radius: 12px;
   color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1000;
   width: 350px;
-  overflow: hidden;
 }
 
-/* Pop-up Header */
-ewt-install-dialog .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Pop-up Header (Handled by `ewt-install-dialog`, ensuring visibility) */
+ewt-install-dialog::part(title) {
   font-size: 18px;
   font-weight: bold;
-  padding: 12px 16px;
-  background: #ffffff; /* White header to match the flasher pop-up */
-  border-bottom: 1px solid #ddd;
-}
-
-/* Pop-up Title */
-ewt-install-dialog .header .title {
-  flex-grow: 1;
   text-align: center;
-  font-weight: bold;
+  color: black;
 }
 
 /* Pop-up Close Button */
-ewt-install-dialog .header .close-button {
-  background: none;
-  border: none;
-  color: #333;
+ewt-install-dialog::part(close-button) {
   font-size: 20px;
+  color: black;
   cursor: pointer;
-  font-weight: bold;
-  padding: 0 10px;
+  padding: 5px;
 }
 
-ewt-install-dialog .header .close-button:hover {
+ewt-install-dialog::part(close-button):hover {
   opacity: 0.6;
 }
 
