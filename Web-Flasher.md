@@ -11,7 +11,7 @@ title: Web Flasher
       <button id="connect-btn">Connect Device</button>
       <span id="connection-status">⛔ Not Connected</span>
     </div>
-    
+
     <div class="selection-box">
       <label>Select Device:</label>
       <select id="device-select" disabled>
@@ -42,9 +42,16 @@ title: Web Flasher
 <!-- Import your locally built bundle -->
 <script src="/assets/js/esptool.bundle.js"></script>
 <script>
-  // Use the global variable provided by your bundle.
-  // (Our Rollup config exposed it as ESPToolBundle.)
-  const ESPTool = ESPToolBundle;
+  // Debug: Log the global objects to see what your bundle exposes.
+  console.log("window.ESPTool:", window.ESPTool);
+  console.log("window.ESPToolBundle:", window.ESPToolBundle);
+  
+  // Use the global variable exposed by your bundle.
+  // Try first window.ESPTool; if that is undefined, use ESPToolBundle.
+  const ESPTool = window.ESPTool || window.ESPToolBundle;
+  if (typeof ESPTool !== "function") {
+    console.error("ESPTool is not a constructor. Check your bundle output!");
+  }
 
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
   const BRANCH = 'main';
@@ -61,7 +68,6 @@ title: Web Flasher
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
       
       const data = await response.json();
-      // data.contents may be a JSON string—parse it if needed.
       const contents = data.contents ? JSON.parse(data.contents) : data;
       
       if (!Array.isArray(contents)) {
@@ -155,19 +161,19 @@ title: Web Flasher
       const firmwareBuffer = await response.arrayBuffer();
       
       await port.open(options);
-      const esptool = new ESPTool(port);
+      const esptoolInstance = new ESPTool(port);
       
-      await esptool.connect();
+      await esptoolInstance.connect();
       log('Starting flash process...');
       
-      // Use the appropriate method names (adjust if your bundle uses camelCase).
-      await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
+      // Adjust method names if necessary (e.g. flash_file vs. flashFile)
+      await esptoolInstance.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
         const percent = Math.round(progress * 100);
         document.getElementById('progress-bar').value = percent;
         document.getElementById('progress-text').textContent = `${percent}%`;
       });
       
-      await esptool.hard_reset();
+      await esptoolInstance.hard_reset();
       log('Flash completed successfully!');
     } catch (error) {
       log(`Flash failed: ${error.message}`);
