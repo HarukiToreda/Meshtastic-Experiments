@@ -30,9 +30,9 @@ function showDownloadPopup() {
     // Create the install dialog element
     const downloadDialog = document.createElement("ewt-install-dialog");
 
-    // Enable the close button
+    // Enable the close button and set the title
+    downloadDialog.heading = "Meshtastic InkHUD";
     downloadDialog.setAttribute("closable", "true");
-    downloadDialog.heading = "Meshtastic InkHUD"; // Set the title to match the Flasher popup
 
     // Create a list for the message
     const list = document.createElement("ew-list");
@@ -40,6 +40,7 @@ function showDownloadPopup() {
     // Message Content
     const messageItem = document.createElement("ew-list-item");
     messageItem.innerHTML = `
+        <div slot="headline">Ensure device DFU mode drive is mounted</div>
         <div slot="supporting-text">
             Download and copy UF2 file to DFU drive.
         </div>
