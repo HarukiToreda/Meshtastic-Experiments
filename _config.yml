@@ -31,7 +31,7 @@ navbar:
   - title: Compatible Peripherals
     url: "Compatible-Peripherals"
   - title: Web Flasher
-    url: "Web-Flasher"
+    url: "Flasher"
   #- title: Heltec V3
   #  url: "/heltec-v3"    
   - title: Contact Me
