@@ -58,4 +58,3 @@ function showDownloadPopup() {
         window.location.href = document.getElementById("downloadFirmware").href;
     }, 500); // Short delay to ensure the pop-up is seen
 }
-
