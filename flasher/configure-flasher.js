@@ -30,14 +30,14 @@ function showDownloadPopup() {
     // Create the install dialog element
     const downloadDialog = document.createElement("ewt-install-dialog");
 
-    // Set the dialog attributes to match the existing pop-up style
-    downloadDialog.heading = "Meshtastic InkHUD";
-    downloadDialog.closable = true; // Enables the 'X' button for closing
+    // Enable the close button
+    downloadDialog.setAttribute("closable", "true");
+    downloadDialog.heading = "Meshtastic InkHUD"; // Set the title to match the Flasher popup
 
-    // Create a list to match the existing Flasher pop-up structure
+    // Create a list for the message
     const list = document.createElement("ew-list");
 
-    // Create the message item for instructions
+    // Message Content
     const messageItem = document.createElement("ew-list-item");
     messageItem.innerHTML = `
         <div slot="headline">Ensure device DFU mode drive is mounted</div>
@@ -56,5 +56,6 @@ function showDownloadPopup() {
     // Automatically trigger the file download after a slight delay
     setTimeout(() => {
         window.location.href = document.getElementById("downloadFirmware").href;
-    }, 500); // Delay to ensure the user sees the pop-up before the download starts
+    }, 500); // Short delay to ensure the pop-up is seen
 }
+
