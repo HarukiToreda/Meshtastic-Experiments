@@ -102,44 +102,48 @@
   text-align: center;
 }
 
-/* Pop-up Dialog (Now Matches Flasher Pop-up) */
+/* Pop-up Dialog (Matches Flasher Pop-up) */
 ewt-install-dialog {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #FFFFFF; /* White background to match flasher pop-up */
+  background: #ffffff; /* White background to match flasher pop-up */
   padding: 20px;
   border-radius: 12px;
   color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1000;
-  width: 320px;
+  width: 350px;
+}
+
+/* Pop-up List (Matches Flasher Pop-up List) */
+ewt-install-dialog ew-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* Pop-up Message Text */
-ewt-install-dialog .message {
+ewt-install-dialog ew-list-item {
   font-size: 16px;
   color: #333;
-  margin-bottom: 15px;
+  padding: 10px;
   font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Close Button */
+ewt-install-dialog ew-list-item.danger {
+  background: #ff4d4d;
+  color: white;
   text-align: center;
-  line-height: 1.5;
-}
-
-/* Pop-up Close Button */
-.popup-button {
-  background: #444;
-  color: #FFF;
-  border: none;
-  padding: 10px 15px;
   border-radius: 6px;
+  padding: 10px;
   cursor: pointer;
-  font-size: 14px;
-  margin-top: 10px;
 }
 
-.popup-button:hover {
-  background: #222;
+ewt-install-dialog ew-list-item.danger:hover {
+  background: #cc0000;
 }
