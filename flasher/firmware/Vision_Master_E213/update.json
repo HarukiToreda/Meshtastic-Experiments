@@ -1,0 +1,13 @@
+{
+  "name": "Meshtastic InkHUD",
+  "version": "Bleeding Edge 2025-2-1",
+  "new_install_skip_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": 
+      [{ "path": "./InkHUD_2.5.20_firmware.bin", "offset": 65536 }]
+    }
+  ]
+}
+  

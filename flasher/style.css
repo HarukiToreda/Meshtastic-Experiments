@@ -1,0 +1,30 @@
+#installButton {
+  background: #FFD700;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+/* Formatting for text shown if browser unsupported */
+#unsupportedText {
+
+}
+
+/* Hardware selection dropdown menu */
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  background: #444;
+  color: #fff;
+  border: 1px solid #00FFFF;
+  border-radius: 4px;
+}
+
+/* Full erase checkbox */
+input {
+  accent-color: #00FFFF;
+}
