@@ -3,9 +3,6 @@ layout: default
 title: Web Flasher
 ---
 
-<!-- (Update or remove this CSS link as needed) -->
-<link rel="stylesheet" href="/assets/css/style.css">
-
 # Meshtastic Web Flasher
 
 <div id="flasher-container">
@@ -42,17 +39,14 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Use a module import to load ESPTool from your locally hosted build -->
-<script type="module">
-  // Import the ESPTool class from your local file.
-  import { ESPTool } from "/assets/js/esptool.min.js";
-  // If your build also provides ESP32-specific functionality, import it:
-  import "/assets/js/esp32.min.js";
-
+<!-- Import the esptool-js library from jsDelivr -->
+<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
+<script>
+  // Get the ESPTool constructor from the loaded library.
+  const ESPTool = window.ESPTool;
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
   const BRANCH = 'main';
   const FIRMWARES_PATH = 'firmwares';
-  // Using AllOrigins proxy to avoid CORS issues with GitHub API calls.
   const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
   let port = null;
@@ -65,13 +59,13 @@ title: Web Flasher
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
       
       const data = await response.json();
-      // data.contents may come as a JSON string; parse if necessary.
+      // data.contents may be a JSON string—parse if necessary.
       const contents = data.contents ? JSON.parse(data.contents) : data;
       
       if (!Array.isArray(contents)) {
         throw new Error('GitHub returned unexpected directory structure');
       }
-      
+
       const deviceSelect = document.getElementById('device-select');
       deviceSelect.innerHTML = '<option value="">Select a device</option>';
       
@@ -159,20 +153,19 @@ title: Web Flasher
       const firmwareBuffer = await response.arrayBuffer();
       
       await port.open(options);
-      
-      // Instantiate the ESPTool class using the imported module.
       const esptool = new ESPTool(port);
       
       await esptool.connect();
       log('Starting flash process...');
       
-      await esptool.flashFile(new Uint8Array(firmwareBuffer), (progress) => {
+      // Note: If the esptool-js version expects camelCase methods, change these as needed.
+      await esptool.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
         const percent = Math.round(progress * 100);
         document.getElementById('progress-bar').value = percent;
         document.getElementById('progress-text').textContent = `${percent}%`;
       });
-      
-      await esptool.hardReset();
+
+      await esptool.hard_reset();
       log('Flash completed successfully!');
     } catch (error) {
       log(`Flash failed: ${error.message}`);
