@@ -40,10 +40,10 @@ title: Web Flasher
 </div>
 
 <!-- Import the esptool-js library from jsDelivr -->
-<script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
+<script src="/assets/js/esptool.bundle.js"></script>
 <script>
   // Get the ESPTool constructor from the loaded library.
-  const ESPTool = window.ESPTool;
+  const ESPTool = ESPToolBundle;
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
   const BRANCH = 'main';
   const FIRMWARES_PATH = 'firmwares';
