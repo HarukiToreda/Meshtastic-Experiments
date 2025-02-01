@@ -21,6 +21,7 @@ title: Web-Flasher
       <option value="Vision_Master_E213">Heltec Vision Master E213</option>
       <option value="Vision_Master_E290">Heltec Vision Master E290</option>
       <option value="Wireless_Paper_V1_1">Heltec Wireless Paper V1.1</option>
+      <option value="T-Echo">T-Echo</option> <!-- New option -->
     </select>
   </div>
 
@@ -28,6 +29,12 @@ title: Web-Flasher
     <input id="eraseCheckbox" type="checkbox" checked="true" />
     <label for="eraseCheckbox" class="flasher-label">Full Erase</label>
   </div>
+
+  <!-- Flash Button (Hidden when T-Echo is selected) -->
+  <esp-web-install-button id="espWebTools" showLog="true">
+    <button slot="activate" id="installButton" onclick="updateFlasherConfig()">Connect and Flash</button>
+    <span slot="unsupported" id="unsupportedText">Unsupported browser message goes here</span>
+  </esp-web-install-button>
 
   <esp-web-install-button id="espWebTools" showLog="true">
     <button slot="activate" id="installButton" onclick="updateFlasherConfig()">Connect and Flash</button>
