@@ -30,24 +30,75 @@ input {
   accent-color: #00FFFF;
 }
 
-/* Dropdown Container */
+/* Dropdown Styling */
 .dropdown-container {
-  width: 270px; /* Slightly larger than the select for padding */
-  padding: 10px;
-  background: #333; /* Dark background */
-  border-radius: 10px; /* Rounded corners */
-  border: 2px solid #00FFFF; /* Electric blue border */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  padding: 8px;
+  background: #f2f2f2; /* Slightly darker inside */
+  border-radius: 8px;
 }
 
 /* Make sure the select element fits inside nicely */
 .dropdown-container select {
   width: 100%;
-  background: #444;
+  background: #f2f2f2; /* Consistent with the container */
   border: none;
-  color: #fff;
+  color: #333;
   padding: 8px;
   border-radius: 6px;
+  outline: none;
+}
+
+/* Flasher Main Container */
+.flasher-container {
+  width: 300px;
+  padding: 20px;
+  background: #ddd; /* Light gray for a modern look */
+  border-radius: 12px; /* Smooth rounded edges */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Title Styling */
+.flasher-title {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Label Styling */
+.flasher-label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+/* Checkbox Styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+/* Button Styling */
+#installButton {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#installButton:hover {
+  background: #222;
 }
