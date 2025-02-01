@@ -3,8 +3,9 @@ layout: default
 title: Web Flasher
 ---
 
-<!-- Make sure that style.css exists at this location, or update/remove this link -->
-<link rel="stylesheet" href="/assets/css/style.css">
+<!-- If you're using Jekyll and your _config.yml has a baseurl defined,
+     use the following tags. Otherwise, update these paths to match your repo structure. -->
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
 # Meshtastic Web Flasher
 
@@ -42,14 +43,17 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Load your locally built bundle; ensure this file exists at /assets/js/esptool.bundle.js -->
-<script src="/assets/js/esptool.bundle.js"></script>
+<!-- Import your local bundle.
+     If not using Jekyll templating, use an absolute path based on your repository.
+     For example, if your repository is hosted at https://harukitoreda.github.io/Meshtastic-Experiments,
+     then the file should be available at /assets/js/esptool.bundle.js -->
+<script src="{{ site.baseurl }}/assets/js/esptool.bundle.js"></script>
 <script>
-  // Log the global variables for debugging.
+  // Debug output: check which global variable your bundle exposes.
   console.log("window.ESPTool:", window.ESPTool);
   console.log("window.ESPToolBundle:", window.ESPToolBundle);
-
-  // Use the global variable exported by your bundle.
+  
+  // Use the global variable exposed by your bundle.
   const ESPTool = window.ESPTool || window.ESPToolBundle;
   if (typeof ESPTool !== "function") {
     console.error("ESPTool is not a constructor. Check that your bundle is correctly built and the file path is correct!");
@@ -168,7 +172,7 @@ title: Web Flasher
       await esptoolInstance.connect();
       log('Starting flash process...');
       
-      // Adjust these method names if needed.
+      // Adjust method names if your bundle uses camelCase (flash_file vs. flashFile, hard_reset vs. hardReset)
       await esptoolInstance.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
         const percent = Math.round(progress * 100);
         document.getElementById('progress-bar').value = percent;
