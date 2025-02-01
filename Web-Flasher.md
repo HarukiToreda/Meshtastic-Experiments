@@ -3,8 +3,7 @@ layout: default
 title: Web Flasher
 ---
 
-<!-- If you have a custom style, ensure this file exists; otherwise, remove this line -->
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+<link rel="stylesheet" href="/Meshtastic-Experiments/assets/css/style.css">
 
 # Meshtastic Web Flasher
 
@@ -14,7 +13,7 @@ title: Web Flasher
       <button id="connect-btn">Connect Device</button>
       <span id="connection-status">⛔ Not Connected</span>
     </div>
-
+    
     <div class="selection-box">
       <label>Select Device:</label>
       <select id="device-select" disabled>
@@ -42,19 +41,26 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Load the local bundle (make sure the file exists at this path) -->
-<script src="{{ site.baseurl }}/assets/js/esptool.bundle.js"></script>
+<!-- Load your locally built bundle.
+     Ensure that the file esptool.bundle.js is committed to:
+     Meshtastic-Experiments/assets/js/esptool.bundle.js -->
+<script src="/Meshtastic-Experiments/assets/js/esptool.bundle.js"></script>
 <script>
-  // Use the global variable from your bundle.
-  // Our Rollup config defined the global name as ESPToolBundle.
-  const ESPTool = ESPToolBundle;
+  // For debugging, log what global variables your bundle exposes.
+  console.log("window.ESPTool:", window.ESPTool);
+  console.log("window.ESPToolBundle:", window.ESPToolBundle);
+  
+  // Use the global variable that your bundle provides.
+  // (In our Rollup config we used: name: "ESPToolBundle")
+  const ESPTool = window.ESPTool || window.ESPToolBundle;
   if (typeof ESPTool !== "function") {
-    console.error("ESPTool is not a constructor. Check your bundle output and file path!");
+    console.error("ESPTool is not a constructor. Check that your bundle is correctly built and that the file path is correct!");
   }
 
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
   const BRANCH = 'main';
   const FIRMWARES_PATH = 'firmwares';
+  // Use AllOrigins proxy to bypass GitHub API CORS restrictions.
   const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
   let port = null;
@@ -65,11 +71,14 @@ title: Web Flasher
       const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
       const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
+
       const data = await response.json();
+      // GitHub may return data.contents as a JSON string.
       const contents = data.contents ? JSON.parse(data.contents) : data;
       if (!Array.isArray(contents)) {
         throw new Error('GitHub returned unexpected directory structure');
       }
+      
       const deviceSelect = document.getElementById('device-select');
       deviceSelect.innerHTML = '<option value="">Select a device</option>';
       contents.forEach(item => {
@@ -93,8 +102,10 @@ title: Web Flasher
       const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
       const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
+
       const data = await response.json();
       const contents = data.contents ? JSON.parse(data.contents) : data;
+      
       const firmwareSelect = document.getElementById('firmware-select');
       firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
       contents.forEach(file => {
@@ -144,19 +155,24 @@ title: Web Flasher
     try {
       document.getElementById('progress-container').style.display = 'block';
       const options = { baudRate: 115200 };
+      
       log(`Downloading firmware: ${selectedFirmware}`);
       const response = await fetch(selectedFirmware);
       const firmwareBuffer = await response.arrayBuffer();
+      
       await port.open(options);
       const esptoolInstance = new ESPTool(port);
+      
       await esptoolInstance.connect();
       log('Starting flash process...');
-      // If your bundle uses methods like flash_file and hard_reset, use them; otherwise adjust to flashFile/hardReset.
+      
+      // Adjust these method names if your bundle uses camelCase
       await esptoolInstance.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
         const percent = Math.round(progress * 100);
         document.getElementById('progress-bar').value = percent;
         document.getElementById('progress-text').textContent = `${percent}%`;
       });
+      
       await esptoolInstance.hard_reset();
       log('Flash completed successfully!');
     } catch (error) {
