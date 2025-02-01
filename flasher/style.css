@@ -100,3 +100,18 @@
   width: 100%;
   text-align: center;
 }
+
+.popup-button {
+  background: #444;
+  color: #FFF;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 5px;
+}
+
+.popup-button:hover {
+  background: #222;
+}
