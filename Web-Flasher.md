@@ -42,15 +42,17 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Use a module import to load ESPTool from the Espressif esptool-js build -->
+<!-- Use a module import to load ESPTool from your locally hosted build -->
 <script type="module">
-  // Import the ESPTool class from the repository's built file.
-  // (Check the Espressif esptool-js README for the current recommended URL.)
-  import { ESPTool } from "https://cdn.jsdelivr.net/gh/espressif/esptool-js/dist/esptool.min.js";
+  // Import the ESPTool class from your local file.
+  import { ESPTool } from "/assets/js/esptool.min.js";
+  // If your build also provides ESP32-specific functionality, import it:
+  import "/assets/js/esp32.min.js";
 
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
   const BRANCH = 'main';
   const FIRMWARES_PATH = 'firmwares';
+  // Using AllOrigins proxy to avoid CORS issues with GitHub API calls.
   const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
   let port = null;
@@ -63,7 +65,7 @@ title: Web Flasher
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
       
       const data = await response.json();
-      // data.contents may come as a JSON string in some cases:
+      // data.contents may come as a JSON string; parse if necessary.
       const contents = data.contents ? JSON.parse(data.contents) : data;
       
       if (!Array.isArray(contents)) {
