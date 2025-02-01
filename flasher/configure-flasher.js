@@ -1,22 +1,23 @@
 // Run this any time 
 function updateFlasherConfig() {
     var hardwareMenu = document.getElementById("hardwareMenu");
+    var eraseContainer = document.getElementById("eraseContainer");
     var eraseCheckbox = document.getElementById("eraseCheckbox");
     var espWebTools = document.getElementById("espWebTools");
     var downloadLink = document.getElementById("downloadFirmware");
-    var installButton = document.getElementById("installButton");
   
     // Get the selection from the hardware menu
     var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
-  
-    // Decide whether to full-erase, or just update
+
     if (nodeHW === "T-Echo") {
-        // Hide flashing button and show download link
+        // Hide flashing button and erase option, show download button
         espWebTools.style.display = "none";
+        eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
     } else {
-        // Show flashing button and hide download link
+        // Show flashing button and erase option, hide download button
         espWebTools.style.display = "block";
+        eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
 
         if (eraseCheckbox.checked) {
