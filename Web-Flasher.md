@@ -42,7 +42,7 @@ title: Web Flasher
 <!-- Include esptool-js -->
 <script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 <script>
-const ESPTool = window.ESPTool;  // The library exports an object with the ESPTool constructor as a property.
+const ESPTool = window.ESPTool;  // The library exports the constructor directly
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -153,7 +153,7 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
-    // Instantiate using the correct constructor reference.
+    // Instantiate the ESPTool using the constructor directly
     const esptool = new ESPTool(port);
     
     await esptool.connect();
