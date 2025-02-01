@@ -34,16 +34,12 @@ function showDownloadPopup() {
     downloadDialog.heading = "Download Firmware Instructions";
     downloadDialog.message = "Ensure device DFU mode drive is mounted.<br>Download and copy UF2 file to DFU drive.";
 
-    // Add the button to continue with the download
-    const continueButton = document.createElement("button");
-    continueButton.innerText = "Continue";
-    continueButton.className = "popup-button";
-    continueButton.onclick = function () {
+    // Automatically trigger the download
+    setTimeout(() => {
         window.location.href = document.getElementById("downloadFirmware").href;
-        document.body.removeChild(downloadDialog);
-    };
+    }, 500); // Small delay to show the message before downloading
 
-    // Add close button
+    // Add a close button
     const closeButton = document.createElement("button");
     closeButton.innerText = "Close";
     closeButton.className = "popup-button";
@@ -51,8 +47,7 @@ function showDownloadPopup() {
         document.body.removeChild(downloadDialog);
     };
 
-    // Append buttons to the dialog
-    downloadDialog.appendChild(continueButton);
+    // Append message and button
     downloadDialog.appendChild(closeButton);
     document.body.appendChild(downloadDialog);
 }
