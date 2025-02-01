@@ -88,8 +88,15 @@
   font-size: 14px;
   display: block;
   text-align: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
 #downloadButton:hover {
   opacity: 0.8;
+}
+
+#downloadFirmware {
+  width: 100%;
+  text-align: center;
 }
