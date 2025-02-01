@@ -31,10 +31,17 @@ function showDownloadPopup() {
     const downloadDialog = document.createElement("ewt-install-dialog");
     downloadDialog.setAttribute("open", "");
 
-    // Create a list to match the existing Flasher pop-up structure
-    const list = document.createElement("ew-list");
+    // Create the header
+    const header = document.createElement("div");
+    header.className = "popup-header";
+    header.innerHTML = `
+        <span class="popup-title">Meshtastic InkHUD</span>
+        <button class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</button>
+    `;
 
     // Create the message content inside an ew-list-item
+    const list = document.createElement("ew-list");
+
     const messageItem = document.createElement("ew-list-item");
     messageItem.innerHTML = `
         <div slot="headline">Ensure device DFU mode drive is mounted</div>
@@ -44,18 +51,8 @@ function showDownloadPopup() {
     `;
     list.appendChild(messageItem);
 
-    // Add a close button
-    const closeButton = document.createElement("ew-list-item");
-    closeButton.setAttribute("type", "button");
-    closeButton.setAttribute("class", "danger");
-    closeButton.innerHTML = `
-        <div slot="headline">Close</div>
-    `;
-    closeButton.addEventListener("click", () => {
-        document.body.removeChild(downloadDialog);
-    });
-
-    list.appendChild(closeButton);
+    // Append elements to the dialog
+    downloadDialog.appendChild(header);
     downloadDialog.appendChild(list);
 
     // Append the dialog to the body
