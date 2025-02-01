@@ -16,12 +16,13 @@ title: Web-Flasher
 
 ### Hardware
 
-<select id="hardwareMenu">
-  <!-- "value" should match the directory name in ./firmware -->
-  <option value="Vision_Master_E213">Heltec Vision Master E213</option>
-  <option value="Vision_Master_E290">Heltec Vision Master E290</option>
-  <option value="Wireless_Paper_V1_1">Heltec Wireless Paper V1.1</option>
-</select>
+<div class="dropdown-container">
+  <select id="hardwareMenu">
+    <option value="Vision_Master_E213">Heltec Vision Master E213</option>
+    <option value="Vision_Master_E290">Heltec Vision Master E290</option>
+    <option value="Wireless_Paper_V1_1">Heltec Wireless Paper V1.1</option>
+  </select>
+</div>
 
 ### Full Erase
   
