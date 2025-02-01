@@ -12,7 +12,7 @@ title: Web-Flasher
 <!-- Custom styling for this page -->
 <link rel="stylesheet" href="./style.css">
 
-# Web Flasher
+# InkHUD Flasher
 
 ### Hardware
 
