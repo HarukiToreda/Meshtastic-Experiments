@@ -64,13 +64,13 @@
 
 /* Button Styling */
 #installButton {
-  background: #444;
-  color: #FFF;
+  background: #FFD700; /* Original bright yellow */
+  color: #000;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: opacity 0.2s;
   font-size: 14px;
 }
 
