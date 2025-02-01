@@ -77,3 +77,19 @@
 #installButton:hover {
   opacity: 0.8; /* Slight transparency effect on hover */
 }
+
+#downloadButton {
+  background: #FFD700; /* Same as install button */
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+}
+
+#downloadButton:hover {
+  opacity: 0.8;
+}
