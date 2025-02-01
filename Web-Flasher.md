@@ -3,8 +3,7 @@ layout: default
 title: Web Flasher
 ---
 
-<!-- If you're using Jekyll and your _config.yml has a baseurl defined,
-     use the following tags. Otherwise, update these paths to match your repo structure. -->
+<!-- If you have a custom style, ensure this file exists; otherwise, remove this line -->
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
 # Meshtastic Web Flasher
@@ -15,7 +14,7 @@ title: Web Flasher
       <button id="connect-btn">Connect Device</button>
       <span id="connection-status">⛔ Not Connected</span>
     </div>
-    
+
     <div class="selection-box">
       <label>Select Device:</label>
       <select id="device-select" disabled>
@@ -43,20 +42,14 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Import your local bundle.
-     If not using Jekyll templating, use an absolute path based on your repository.
-     For example, if your repository is hosted at https://harukitoreda.github.io/Meshtastic-Experiments,
-     then the file should be available at /assets/js/esptool.bundle.js -->
+<!-- Load the local bundle (make sure the file exists at this path) -->
 <script src="{{ site.baseurl }}/assets/js/esptool.bundle.js"></script>
 <script>
-  // Debug output: check which global variable your bundle exposes.
-  console.log("window.ESPTool:", window.ESPTool);
-  console.log("window.ESPToolBundle:", window.ESPToolBundle);
-  
-  // Use the global variable exposed by your bundle.
-  const ESPTool = window.ESPTool || window.ESPToolBundle;
+  // Use the global variable from your bundle.
+  // Our Rollup config defined the global name as ESPToolBundle.
+  const ESPTool = ESPToolBundle;
   if (typeof ESPTool !== "function") {
-    console.error("ESPTool is not a constructor. Check that your bundle is correctly built and the file path is correct!");
+    console.error("ESPTool is not a constructor. Check your bundle output and file path!");
   }
 
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
@@ -72,17 +65,13 @@ title: Web Flasher
       const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
       const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-      
       const data = await response.json();
       const contents = data.contents ? JSON.parse(data.contents) : data;
-      
       if (!Array.isArray(contents)) {
         throw new Error('GitHub returned unexpected directory structure');
       }
-      
       const deviceSelect = document.getElementById('device-select');
       deviceSelect.innerHTML = '<option value="">Select a device</option>';
-      
       contents.forEach(item => {
         if (item.type === 'dir') {
           const option = document.createElement('option');
@@ -91,7 +80,6 @@ title: Web Flasher
           deviceSelect.appendChild(option);
         }
       });
-      
       deviceSelect.disabled = false;
       log(`Loaded ${contents.length} devices`);
     } catch (error) {
@@ -105,13 +93,10 @@ title: Web Flasher
       const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
       const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-      
       const data = await response.json();
       const contents = data.contents ? JSON.parse(data.contents) : data;
-      
       const firmwareSelect = document.getElementById('firmware-select');
       firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
-      
       contents.forEach(file => {
         if (file.name.endsWith('.bin')) {
           const option = document.createElement('option');
@@ -120,7 +105,6 @@ title: Web Flasher
           firmwareSelect.appendChild(option);
         }
       });
-      
       firmwareSelect.disabled = false;
       log(`Loaded ${contents.length} firmwares for ${device}`);
     } catch (error) {
@@ -157,28 +141,22 @@ title: Web Flasher
       log('Please select a firmware first');
       return;
     }
-
     try {
       document.getElementById('progress-container').style.display = 'block';
       const options = { baudRate: 115200 };
-      
       log(`Downloading firmware: ${selectedFirmware}`);
       const response = await fetch(selectedFirmware);
       const firmwareBuffer = await response.arrayBuffer();
-      
       await port.open(options);
       const esptoolInstance = new ESPTool(port);
-      
       await esptoolInstance.connect();
       log('Starting flash process...');
-      
-      // Adjust method names if your bundle uses camelCase (flash_file vs. flashFile, hard_reset vs. hardReset)
+      // If your bundle uses methods like flash_file and hard_reset, use them; otherwise adjust to flashFile/hardReset.
       await esptoolInstance.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
         const percent = Math.round(progress * 100);
         document.getElementById('progress-bar').value = percent;
         document.getElementById('progress-text').textContent = `${percent}%`;
       });
-      
       await esptoolInstance.hard_reset();
       log('Flash completed successfully!');
     } catch (error) {
