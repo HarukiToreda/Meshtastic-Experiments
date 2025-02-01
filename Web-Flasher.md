@@ -3,6 +3,9 @@ layout: default
 title: Web Flasher
 ---
 
+<!-- Make sure that style.css exists at this location, or update/remove this link -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
 # Meshtastic Web Flasher
 
 <div id="flasher-container">
@@ -11,7 +14,7 @@ title: Web Flasher
       <button id="connect-btn">Connect Device</button>
       <span id="connection-status">⛔ Not Connected</span>
     </div>
-
+    
     <div class="selection-box">
       <label>Select Device:</label>
       <select id="device-select" disabled>
@@ -39,18 +42,17 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Import your locally built bundle -->
+<!-- Load your locally built bundle; ensure this file exists at /assets/js/esptool.bundle.js -->
 <script src="/assets/js/esptool.bundle.js"></script>
 <script>
-  // Debug: Log the global objects to see what your bundle exposes.
+  // Log the global variables for debugging.
   console.log("window.ESPTool:", window.ESPTool);
   console.log("window.ESPToolBundle:", window.ESPToolBundle);
-  
-  // Use the global variable exposed by your bundle.
-  // Try first window.ESPTool; if that is undefined, use ESPToolBundle.
+
+  // Use the global variable exported by your bundle.
   const ESPTool = window.ESPTool || window.ESPToolBundle;
   if (typeof ESPTool !== "function") {
-    console.error("ESPTool is not a constructor. Check your bundle output!");
+    console.error("ESPTool is not a constructor. Check that your bundle is correctly built and the file path is correct!");
   }
 
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
@@ -166,7 +168,7 @@ title: Web Flasher
       await esptoolInstance.connect();
       log('Starting flash process...');
       
-      // Adjust method names if necessary (e.g. flash_file vs. flashFile)
+      // Adjust these method names if needed.
       await esptoolInstance.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
         const percent = Math.round(progress * 100);
         document.getElementById('progress-bar').value = percent;
