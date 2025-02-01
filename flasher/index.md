@@ -38,9 +38,9 @@ title: Web-Flasher
   </esp-web-install-button>
 
   <!-- Download Button (Shown when T-Echo is selected) -->
-<a id="downloadFirmware" 
-   href="https://harukitoreda.github.io/Meshtastic-Experiments/flasher/firmware/T-Echo/InkHUD_2.5.20_firmware.uf2" 
-   download 
+<a id="downloadFirmware"
+   href="https://harukitoreda.github.io/Meshtastic-Experiments/flasher/firmware/T-Echo/InkHUD_2.5.20_firmware.uf2"
+   onclick="showDownloadPopup(); return false;"
    style="display: none;">
   <button id="downloadButton">Download Firmware</button>
 </a>
