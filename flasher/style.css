@@ -29,3 +29,25 @@ select {
 input {
   accent-color: #00FFFF;
 }
+
+/* Dropdown Container */
+.dropdown-container {
+  width: 270px; /* Slightly larger than the select for padding */
+  padding: 10px;
+  background: #333; /* Dark background */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #00FFFF; /* Electric blue border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make sure the select element fits inside nicely */
+.dropdown-container select {
+  width: 100%;
+  background: #444;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+}
