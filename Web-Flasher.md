@@ -39,9 +39,10 @@ title: Web Flasher
   </div>
 </div>
 
+<!-- Include esptool-js -->
 <script src="https://cdn.jsdelivr.net/npm/@espruino-tools/esptool-js@0.0.9/dist/esptool-js.min.js"></script>
 <script>
-const ESPTool = window.ESPTool;
+const ESPTool = window.ESPTool;  // The library exports an object with the ESPTool constructor as a property.
 const REPO = 'HarukiToreda/Meshtastic-Experiments';
 const BRANCH = 'main';
 const FIRMWARES_PATH = 'firmwares';
@@ -112,6 +113,7 @@ async function loadFirmwares(device) {
     log(`Firmware loading failed: ${error.message}`);
   }
 }
+
 document.getElementById('connect-btn').addEventListener('click', async () => {
   try {
     port = await navigator.serial.requestPort();
@@ -151,7 +153,8 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
     const firmwareBuffer = await response.arrayBuffer();
     
     await port.open(options);
-    const esptool = new ESPTool(port);
+    // Instantiate using the correct constructor reference.
+    const esptool = new ESPTool.ESPTool(port);
     
     await esptool.connect();
     log('Starting flash process...');
@@ -162,7 +165,7 @@ document.getElementById('flash-btn').addEventListener('click', async () => {
       document.getElementById('progress-text').textContent = `${percent}%`;
     });
 
-    await esptool.hard_reset();
+    await esptool.hardReset();
     log('Flash completed successfully!');
   } catch (error) {
     log(`Flash failed: ${error.message}`);
