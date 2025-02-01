@@ -3,7 +3,8 @@ layout: default
 title: Web Flasher
 ---
 
-<link rel="stylesheet" href="/Meshtastic-Experiments/assets/css/style.css">
+<!-- Make sure that style.css exists at this location, or update/remove this link -->
+<link rel="stylesheet" href="/assets/css/style.css">
 
 # Meshtastic Web Flasher
 
@@ -41,26 +42,22 @@ title: Web Flasher
   </div>
 </div>
 
-<!-- Load your locally built bundle.
-     Ensure that the file esptool.bundle.js is committed to:
-     Meshtastic-Experiments/assets/js/esptool.bundle.js -->
-<script src="/Meshtastic-Experiments/assets/js/esptool.bundle.js"></script>
+<!-- Load your locally built bundle; ensure this file exists at /assets/js/esptool.bundle.js -->
+<script src="/assets/js/esptool.bundle.js"></script>
 <script>
-  // For debugging, log what global variables your bundle exposes.
+  // Log the global variables for debugging.
   console.log("window.ESPTool:", window.ESPTool);
   console.log("window.ESPToolBundle:", window.ESPToolBundle);
-  
-  // Use the global variable that your bundle provides.
-  // (In our Rollup config we used: name: "ESPToolBundle")
+
+  // Use the global variable exported by your bundle.
   const ESPTool = window.ESPTool || window.ESPToolBundle;
   if (typeof ESPTool !== "function") {
-    console.error("ESPTool is not a constructor. Check that your bundle is correctly built and that the file path is correct!");
+    console.error("ESPTool is not a constructor. Check that your bundle is correctly built and the file path is correct!");
   }
 
   const REPO = 'HarukiToreda/Meshtastic-Experiments';
   const BRANCH = 'main';
   const FIRMWARES_PATH = 'firmwares';
-  // Use AllOrigins proxy to bypass GitHub API CORS restrictions.
   const CORS_PROXY = 'https://api.allorigins.win/get?url=';
 
   let port = null;
@@ -71,16 +68,17 @@ title: Web Flasher
       const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}?ref=${BRANCH}`;
       const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-
+      
       const data = await response.json();
-      // GitHub may return data.contents as a JSON string.
       const contents = data.contents ? JSON.parse(data.contents) : data;
+      
       if (!Array.isArray(contents)) {
         throw new Error('GitHub returned unexpected directory structure');
       }
       
       const deviceSelect = document.getElementById('device-select');
       deviceSelect.innerHTML = '<option value="">Select a device</option>';
+      
       contents.forEach(item => {
         if (item.type === 'dir') {
           const option = document.createElement('option');
@@ -89,6 +87,7 @@ title: Web Flasher
           deviceSelect.appendChild(option);
         }
       });
+      
       deviceSelect.disabled = false;
       log(`Loaded ${contents.length} devices`);
     } catch (error) {
@@ -102,12 +101,13 @@ title: Web Flasher
       const apiUrl = `https://api.github.com/repos/${REPO}/contents/${FIRMWARES_PATH}/${device}?ref=${BRANCH}`;
       const response = await fetch(`${CORS_PROXY}${encodeURIComponent(apiUrl)}`);
       if (!response.ok) throw new Error(`GitHub error: ${response.status}`);
-
+      
       const data = await response.json();
       const contents = data.contents ? JSON.parse(data.contents) : data;
       
       const firmwareSelect = document.getElementById('firmware-select');
       firmwareSelect.innerHTML = '<option value="">Select a firmware</option>';
+      
       contents.forEach(file => {
         if (file.name.endsWith('.bin')) {
           const option = document.createElement('option');
@@ -116,6 +116,7 @@ title: Web Flasher
           firmwareSelect.appendChild(option);
         }
       });
+      
       firmwareSelect.disabled = false;
       log(`Loaded ${contents.length} firmwares for ${device}`);
     } catch (error) {
@@ -152,6 +153,7 @@ title: Web Flasher
       log('Please select a firmware first');
       return;
     }
+
     try {
       document.getElementById('progress-container').style.display = 'block';
       const options = { baudRate: 115200 };
@@ -166,7 +168,7 @@ title: Web Flasher
       await esptoolInstance.connect();
       log('Starting flash process...');
       
-      // Adjust these method names if your bundle uses camelCase
+      // Adjust these method names if needed.
       await esptoolInstance.flash_file(new Uint8Array(firmwareBuffer), (progress) => {
         const percent = Math.round(progress * 100);
         document.getElementById('progress-bar').value = percent;
