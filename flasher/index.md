@@ -29,7 +29,7 @@ title: Web-Flasher
   </div>
 
   <esp-web-install-button id="espWebTools" showLog="true">
-    <button slot="activate" id="installButton" onclick="updateFlasherConfig()">Install Button Text</button>
+    <button slot="activate" id="installButton" onclick="updateFlasherConfig()">Connect and Flash</button>
     <span slot="unsupported" id="unsupportedText">Unsupported browser message goes here</span>
   </esp-web-install-button>
 </div>
