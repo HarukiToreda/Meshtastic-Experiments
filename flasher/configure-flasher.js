@@ -15,7 +15,7 @@ function updateFlasherConfig() {
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
-        installButton.disabled = true; // Ensure the install button is disabled
+        installButton.disabled = true; // Disable Connect and Flash button
     } else if (nodeHW === "Select Device") {
         // Disable Connect and Flash button when no device is selected
         installButton.disabled = true;
@@ -27,7 +27,7 @@ function updateFlasherConfig() {
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
-        installButton.disabled = false; // Enable the install button for valid devices
+        installButton.disabled = false; // Enable the Connect and Flash button
 
         // Set the appropriate manifest for flashing
         if (eraseCheckbox.checked) {
@@ -69,3 +69,14 @@ function showDownloadPopup() {
         }
     }, 500); // Short delay ensures the popup is visible
 }
+
+// Ensure the button is disabled on page load
+window.onload = function() {
+    var installButton = document.getElementById("installButton");
+    var hardwareMenu = document.getElementById("hardwareMenu");
+
+    // Set default state: disable the button if "Select Device" is selected
+    if (hardwareMenu.options[hardwareMenu.selectedIndex].value === "Select Device") {
+        installButton.disabled = true;
+    }
+};
