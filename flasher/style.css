@@ -1,71 +1,20 @@
-/* General Flasher Container */
+/* General Styling for the Flasher Container */
 .flasher-container {
   width: 320px;
   padding: 20px;
-  background: #2A2A2A; /* Dark gray background */
-  border-radius: 12px; /* Smooth rounded corners */
+  background: #2A2A2A;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Title Styling */
-.flasher-title {
-  font-size: 20px;
-  color: #FFFFFF; /* White text for contrast */
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-/* Dropdown Styling */
-.dropdown-container {
-  width: 100%;
-  padding: 8px;
-  background: #3A3A3A; /* Slightly lighter gray */
-  border-radius: 8px;
-}
-
-.dropdown-container select {
-  width: 100%;
-  background: #3A3A3A; /* Match container */
-  border: none;
-  color: #FFFFFF; /* White text */
-  padding: 8px;
-  border-radius: 6px;
-  outline: none;
-  font-size: 14px;
-}
-
-/* Label Styling */
-.flasher-label {
-  font-size: 14px;
-  color: #CCCCCC; /* Light gray text */
-  margin-bottom: 5px;
-  text-align: left;
-  width: 100%;
-  display: block;
-  font-weight: bold;
-}
-
-/* Checkbox Styling */
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 10px 0;
-}
-
-.checkbox-container input {
-  accent-color: #00FFFF; /* Electric blue for checkbox */
-}
-
-/* Flash and Download Buttons */
+/* Button Styling */
 #installButton, #downloadButton {
-  background: #FFD700; /* Bright yellow */
-  color: #000; /* Black text */
+  background: #FFD700;
+  color: #000;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
@@ -75,37 +24,18 @@
 }
 
 #installButton:hover, #downloadButton:hover {
-  opacity: 0.8; /* Slight dim effect on hover */
+  opacity: 0.8;
 }
 
-/* esp-web-tools Dialog Styling */
-ewt-install-dialog {
+/* Popup for Download Firmware */
+#downloadFirmwareDialog {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #ffffff;
   border-radius: 12px;
-  color: black;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
-  z-index: 1000;
-  padding: 20px;
-  width: 400px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Download Firmware Popup */
-#downloadFirmwareDialog {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff; /* White background */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
   z-index: 1100; /* Ensure it stacks above other dialogs */
   width: 400px;
@@ -122,21 +52,20 @@ ewt-install-dialog {
   width: 100%;
   font-size: 18px;
   font-weight: bold;
-  border-bottom: 1px solid #ddd; /* Divider line */
+  border-bottom: 1px solid #ddd;
   padding: 0 0 10px;
 }
 
 .popup-title {
   text-align: center;
   flex-grow: 1;
-  font-size: 20px; /* Slightly larger font for the title */
+  font-size: 20px;
 }
 
 .popup-close {
   cursor: pointer;
   font-size: 20px;
   color: #333;
-  font-weight: normal;
 }
 
 .popup-close:hover {
@@ -144,47 +73,29 @@ ewt-install-dialog {
   opacity: 0.7;
 }
 
-/* Popup Message Content */
+/* Popup Message */
 .popup-message {
   font-size: 16px;
   color: #333;
   padding-top: 10px;
-  line-height: 1.5; /* Improve readability */
+  line-height: 1.5;
 }
 
-/* Unsupported Browser Message */
-#unsupportedText {
-  font-size: 14px;
-  color: red;
+/* esp-web-tools Dialog */
+ewt-install-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 12px;
+  color: black;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  padding: 20px;
+  width: 400px;
   text-align: center;
-  margin-top: 10px;
-}
-
-/* Styling for esp-web-tools */
-esp-web-install-button {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px 0;
-}
-
-esp-web-install-button button {
-  background: #FFD700;
-  color: #000;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-esp-web-install-button button:hover {
-  opacity: 0.8; /* Dim effect */
-}
-
-esp-web-install-button span {
-  font-size: 12px;
-  color: #777;
+  gap: 15px;
 }
