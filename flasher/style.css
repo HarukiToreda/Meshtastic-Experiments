@@ -115,6 +115,7 @@ ewt-install-dialog {
   text-align: center;
   z-index: 1000;
   width: 350px;
+  overflow: hidden;
 }
 
 /* Pop-up Header */
@@ -124,9 +125,10 @@ ewt-install-dialog {
   align-items: center;
   background: #ffffff;
   padding: 12px 16px;
-  border-bottom: 1px solid #ddd;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+  color: black;
+  border-bottom: 1px solid #ddd;
 }
 
 /* Pop-up Title */
@@ -134,22 +136,21 @@ ewt-install-dialog {
   flex-grow: 1;
   text-align: center;
   font-weight: bold;
-  color: black;
+  font-size: 20px;
 }
 
 /* Close Button */
 .popup-close {
-  background: none;
-  border: none;
-  color: black;
-  font-size: 20px;
+  font-size: 22px;
+  color: #333;
   cursor: pointer;
-  font-weight: bold;
-  padding: 0 10px;
+  font-weight: normal;
+  padding: 0;
 }
 
 .popup-close:hover {
-  opacity: 0.6;
+  color: black;
+  opacity: 0.7;
 }
 
 /* Pop-up List */
@@ -165,6 +166,5 @@ ewt-install-dialog ew-list-item {
   font-size: 16px;
   color: #333;
   padding: 10px;
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
+  font-weight: normal;
 }
