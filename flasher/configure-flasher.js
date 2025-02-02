@@ -2,10 +2,8 @@
 function updateFlasherConfig() {
     var hardwareMenu = document.getElementById("hardwareMenu");
     var eraseContainer = document.getElementById("eraseContainer");
-    var eraseCheckbox = document.getElementById("eraseCheckbox");
     var espWebTools = document.getElementById("espWebTools");
     var downloadLink = document.getElementById("downloadFirmware");
-    var installButton = document.getElementById("installButton");
 
     // Get the selection from the hardware menu
     var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
@@ -15,10 +13,8 @@ function updateFlasherConfig() {
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
-        installButton.disabled = true; // Disable Connect and Flash button
     } else if (nodeHW === "Select Device") {
-        // Disable Connect and Flash button when no device is selected
-        installButton.disabled = true;
+        // Keep Connect and Flash button visible, but validation required
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
@@ -27,56 +23,39 @@ function updateFlasherConfig() {
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
-        installButton.disabled = false; // Enable the Connect and Flash button
 
         // Set the appropriate manifest for flashing
-        if (eraseCheckbox.checked) {
-            espWebTools.manifest = `./firmware/${nodeHW}/install.json`;
-        } else {
-            espWebTools.manifest = `./firmware/${nodeHW}/update.json`;
-        }
+        espWebTools.manifest = `./firmware/${nodeHW}/install.json`;
     }
 }
 
-// Function to display the Download Firmware popup
-function showDownloadPopup() {
+// Function to show a popup message
+function showValidationPopup(message) {
     // Prevent creating duplicate popups
-    if (document.getElementById("downloadFirmwareDialog")) return;
+    if (document.getElementById("validationPopup")) return;
 
-    // Create a unique popup for Download Firmware
-    const downloadDialog = document.createElement("div");
-    downloadDialog.id = "downloadFirmwareDialog";
+    // Create the popup element
+    const validationPopup = document.createElement("div");
+    validationPopup.id = "validationPopup";
 
-    // Add the content to the popup
-    downloadDialog.innerHTML = `
-        <div class="popup-header">
-            <span class="popup-title">Meshtastic InkHUD</span>
-            <span class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</span>
-        </div>
-        <div class="popup-message">
-            Download and copy the UF2 file to the DFU drive.
-        </div>
+    // Add message content
+    validationPopup.innerHTML = `
+        <p>${message}</p>
+        <button onclick="document.body.removeChild(this.parentElement)">Close</button>
     `;
 
-    // Append the popup to the body
-    document.body.appendChild(downloadDialog);
-
-    // Trigger the file download after a short delay
-    setTimeout(() => {
-        const downloadLink = document.getElementById("downloadFirmware");
-        if (downloadLink) {
-            window.location.href = downloadLink.href;
-        }
-    }, 500); // Short delay ensures the popup is visible
+    // Append popup to the body
+    document.body.appendChild(validationPopup);
 }
 
-// Ensure the button is disabled on page load
-window.onload = function() {
-    var installButton = document.getElementById("installButton");
+// Add event listener for the Connect and Flash button
+document.getElementById("installButton").addEventListener("click", function (event) {
     var hardwareMenu = document.getElementById("hardwareMenu");
+    var selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
-    // Set default state: disable the button if "Select Device" is selected
-    if (hardwareMenu.options[hardwareMenu.selectedIndex].value === "Select Device") {
-        installButton.disabled = true;
+    if (selectedHardware === "Select Device") {
+        // Prevent the default flashing behavior and show a popup
+        event.preventDefault();
+        showValidationPopup("You must select the Hardware");
     }
-};
+});
