@@ -1,4 +1,4 @@
-// Function to update flasher configuration
+// Run this any time the hardware selection or the checkbox changes
 function updateFlasherConfig() {
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
@@ -21,9 +21,11 @@ function updateFlasherConfig() {
         downloadLink.style.display = "none";
 
         // Update the manifest dynamically based on the checkbox state
-        espWebTools.manifest = eraseCheckbox.checked
-            ? `./firmware/${selectedHardware}/install.json`
-            : `./firmware/${selectedHardware}/update.json`;
+        if (eraseCheckbox.checked) {
+            espWebTools.manifest = `./firmware/${selectedHardware}/install.json`;
+        } else {
+            espWebTools.manifest = `./firmware/${selectedHardware}/update.json`;
+        }
     }
 }
 
@@ -54,7 +56,7 @@ function showDownloadPopup() {
         if (downloadLink) {
             window.location.href = downloadLink.href;
         }
-    }, 500);
+    }, 500); // Short delay ensures the popup is visible
 }
 
 // Add onchange event listeners for both dropdown and checkbox
