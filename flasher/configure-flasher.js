@@ -5,6 +5,7 @@ function updateFlasherConfig() {
     var eraseCheckbox = document.getElementById("eraseCheckbox");
     var espWebTools = document.getElementById("espWebTools");
     var downloadLink = document.getElementById("downloadFirmware");
+    var installButton = document.getElementById("installButton");
 
     // Get the selection from the hardware menu
     var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
@@ -14,11 +15,19 @@ function updateFlasherConfig() {
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
+        installButton.disabled = true; // Ensure the install button is disabled
+    } else if (nodeHW === "Select Device") {
+        // Disable Connect and Flash button when no device is selected
+        installButton.disabled = true;
+        espWebTools.style.display = "block";
+        eraseContainer.style.display = "flex";
+        downloadLink.style.display = "none";
     } else {
         // Show flashing button and erase option, hide download button
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
+        installButton.disabled = false; // Enable the install button for valid devices
 
         // Set the appropriate manifest for flashing
         if (eraseCheckbox.checked) {
