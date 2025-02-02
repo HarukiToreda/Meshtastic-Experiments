@@ -94,6 +94,9 @@ function handleEraseCheckboxChange() {
         Selected Hardware: ${selectedHardware}
         Erase Checkbox Checked: ${eraseCheckbox.checked}
         Manifest: ${manifest}`);
+
+    // Re-trigger the full configuration update to ensure all elements are in sync
+    updateFlasherConfig();
 }
 
 // Function to show the download popup
@@ -126,9 +129,22 @@ function showDownloadPopup() {
     }, 500); // Short delay ensures the popup is visible
 }
 
-// Add onchange event listeners for both dropdown and checkbox
-document.getElementById("hardwareMenu").addEventListener("change", updateFlasherConfig);
-document.getElementById("eraseCheckbox").addEventListener("change", handleEraseCheckboxChange);
+// Ensure both the checkbox and hardware menu always trigger manifest updates
+function setupListeners() {
+    const hardwareMenu = document.getElementById("hardwareMenu");
+    const eraseCheckbox = document.getElementById("eraseCheckbox");
 
-// Run updateFlasherConfig on initial load to set default states
+    // Event listener for hardware dropdown
+    hardwareMenu.addEventListener("change", () => {
+        updateFlasherConfig();
+    });
+
+    // Event listener for checkbox
+    eraseCheckbox.addEventListener("change", () => {
+        handleEraseCheckboxChange();
+    });
+}
+
+// Initial setup
+setupListeners();
 updateFlasherConfig();
