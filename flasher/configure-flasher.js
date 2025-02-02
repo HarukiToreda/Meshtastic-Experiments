@@ -1,4 +1,4 @@
-// Run this any time the hardware selection changes
+// Function to update the UI based on selected hardware
 function updateFlasherConfig() {
     var hardwareMenu = document.getElementById("hardwareMenu");
     var eraseContainer = document.getElementById("eraseContainer");
@@ -6,21 +6,20 @@ function updateFlasherConfig() {
     var espWebTools = document.getElementById("espWebTools");
     var downloadLink = document.getElementById("downloadFirmware");
 
-    // Get the selection from the hardware menu
     var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
     if (nodeHW === "T-Echo") {
-        // Hide flashing button and erase option, show download button
+        // Show Download button and hide flashing UI
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
     } else {
-        // Show flashing button and erase option, hide download button
+        // Show flashing UI and hide Download button
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
 
-        // Set the correct manifest for flashing
+        // Configure esp-web-tools based on selected hardware
         if (eraseCheckbox.checked) {
             espWebTools.manifest = "./firmware/" + nodeHW + "/install.json";
         } else {
@@ -29,6 +28,7 @@ function updateFlasherConfig() {
     }
 }
 
+// Function to display the Download Firmware pop-up
 function showDownloadPopup() {
     // Create a unique dialog for Download Firmware
     const downloadDialog = document.createElement("div");
@@ -49,7 +49,7 @@ function showDownloadPopup() {
     downloadDialog.style.display = "flex";
     document.body.appendChild(downloadDialog);
 
-    // Trigger the file download
+    // Trigger the file download after a short delay
     setTimeout(() => {
         const downloadLink = document.getElementById("downloadFirmware");
         if (downloadLink) {
