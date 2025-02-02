@@ -18,7 +18,7 @@ title: Web-Flasher
   <label for="hardwareMenu" class="flasher-label">Hardware</label>
   <div class="dropdown-container">
     <select id="hardwareMenu" onchange="updateFlasherConfig()">
-      <option>Select Device</option>
+      <option value="Select Device">Select Device</option>
       <option value="Vision_Master_E213">Heltec Vision Master E213</option>
       <option value="Vision_Master_E290">Heltec Vision Master E290</option>
       <option value="Wireless_Paper_V1_1">Heltec Wireless Paper V1.1</option>
@@ -41,8 +41,7 @@ title: Web-Flasher
   <a id="downloadFirmware" 
      href="https://harukitoreda.github.io/Meshtastic-Experiments/flasher/firmware/T-Echo/InkHUD_2.5.20_firmware.uf2" 
      download 
-     style="display: none;"
-     onclick="showDownloadPopup(); return false;">
+     style="display: none;">
     <button id="downloadButton">Download Firmware</button>
   </a>
 </div>
