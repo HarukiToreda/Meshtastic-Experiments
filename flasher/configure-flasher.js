@@ -8,16 +8,17 @@ function updateFlasherConfig() {
     var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
     if (nodeHW === "T-Echo") {
-        // Hide flashing button and erase option, show download button
+        // Hide Connect and Flash, show Download button
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
     } else {
-        // Show flashing button and erase option, hide download button
+        // Show Connect and Flash, hide Download button
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
 
+        // Maintain existing functionality for Connect and Flash
         if (eraseCheckbox.checked) {
             espWebTools.manifest = "./firmware/" + nodeHW + "/install.json";
         } else {
@@ -27,10 +28,10 @@ function updateFlasherConfig() {
 }
 
 function showDownloadPopup() {
-    // Create the install dialog element
+    // Create the custom download pop-up
     const downloadDialog = document.createElement("ewt-install-dialog");
 
-    // Manually construct the header
+    // Add a header
     const header = document.createElement("div");
     header.className = "popup-header";
     header.innerHTML = `
@@ -38,27 +39,25 @@ function showDownloadPopup() {
         <span class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</span>
     `;
 
-    // Create a list for the message
+    // Add the message
     const list = document.createElement("ew-list");
-
-    // Message Content
     const messageItem = document.createElement("ew-list-item");
     messageItem.innerHTML = `
         <div slot="supporting-text">
-            Download and copy UF2 file to DFU drive.
+            Download and copy the UF2 file to the DFU drive.
         </div>
     `;
     list.appendChild(messageItem);
 
-    // Append the header and list to the dialog
+    // Build the dialog
     downloadDialog.appendChild(header);
     downloadDialog.appendChild(list);
 
-    // Append the dialog to the body
+    // Add dialog to the DOM
     document.body.appendChild(downloadDialog);
 
-    // Automatically trigger the file download after a slight delay
+    // Automatically trigger the file download after showing the dialog
     setTimeout(() => {
         window.location.href = document.getElementById("downloadFirmware").href;
-    }, 500); // Short delay to ensure the pop-up is seen
+    }, 500); // Short delay to ensure the pop-up is visible
 }
