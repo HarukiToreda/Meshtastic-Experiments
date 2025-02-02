@@ -2,70 +2,28 @@
 .flasher-container {
   width: 320px;
   padding: 20px;
-  background: #2A2A2A; /* Dark charcoal background */
-  border-radius: 12px; /* Smooth rounded corners */
+  background: #2A2A2A;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Title Styling */
 .flasher-title {
   font-size: 20px;
-  color: #FFFFFF; /* White text for contrast */
+  color: #FFFFFF;
   font-weight: bold;
   margin-bottom: 15px;
   text-align: center;
 }
 
-/* Dropdown Styling */
-.dropdown-container {
-  width: 100%;
-  padding: 8px;
-  background: #3A3A3A; /* Slightly lighter gray inside */
-  border-radius: 8px;
-}
-
-.dropdown-container select {
-  width: 100%;
-  background: #3A3A3A; /* Match container */
-  border: none;
-  color: #FFFFFF; /* White text */
-  padding: 8px;
-  border-radius: 6px;
-  outline: none;
-  font-size: 14px;
-}
-
-/* Label Styling */
-.flasher-label {
-  font-size: 14px;
-  color: #CCCCCC; /* Light gray text for readability */
-  margin-bottom: 5px;
-  text-align: left;
-  width: 100%;
-  display: block;
-  font-weight: bold;
-}
-
-/* Checkbox Styling */
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 10px 0;
-}
-
-.checkbox-container input {
-  accent-color: #00FFFF; /* Electric blue for checkbox */
-}
-
-/* Flash and Download Buttons */
+/* Button Styling */
 #installButton, #downloadButton {
-  background: #FFD700; /* Bright yellow */
-  color: #000; /* Black text */
+  background: #FFD700;
+  color: #000;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
@@ -75,103 +33,52 @@
 }
 
 #installButton:hover, #downloadButton:hover {
-  opacity: 0.8; /* Slightly dim on hover */
+  opacity: 0.8;
 }
 
-#downloadFirmware {
-  width: 100%;
-  text-align: center;
-}
-
-/* General Pop-up Dialog */
-ewt-install-dialog {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff; /* White background */
-  border-radius: 12px; /* Smooth rounded corners */
-  color: black;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
-  text-align: center;
-  z-index: 1000;
-  padding: 20px;
-  min-width: 350px; /* Minimum width for the dialog */
-  max-width: 600px; /* Prevent the dialog from growing too wide */
-  width: auto; /* Dynamically adjusts width based on content */
-  word-wrap: break-word; /* Ensures long text wraps */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centers content vertically */
-  align-items: center; /* Centers content horizontally */
-  gap: 15px; /* Adds spacing between elements */
-}
-
-/* Scoped Styles for Download Firmware Pop-Up */
+/* Pop-up for Download Firmware */
 #downloadFirmwareDialog {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff; /* White background */
-  border-radius: 12px; /* Smooth rounded corners */
-  color: black;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
   text-align: center;
   z-index: 1000;
-  padding: 20px;
-  min-width: 350px; /* Minimum width for the dialog */
-  max-width: 600px; /* Prevent the dialog from growing too wide */
-  width: auto; /* Dynamically adjusts width based on content */
-  word-wrap: break-word; /* Ensures long text wraps */
+  width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers content vertically */
-  align-items: center; /* Centers content horizontally */
-  gap: 15px; /* Adds spacing between elements */
+  gap: 15px;
 }
 
-/* Header for Download Firmware Pop-Up */
-#downloadFirmwareDialog .popup-header {
+.popup-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-  border-bottom: 1px solid #ddd;
   width: 100%;
-  box-sizing: border-box;
-}
-
-/* Title for Download Firmware Pop-Up */
-#downloadFirmwareDialog .popup-title {
-  flex-grow: 1;
-  text-align: center;
+  font-size: 18px;
   font-weight: bold;
-  font-size: 20px;
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 10px;
 }
 
-/* Close Button for Download Firmware Pop-Up */
-#downloadFirmwareDialog .popup-close {
-  font-size: 22px;
-  color: #333;
+.popup-title {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.popup-close {
   cursor: pointer;
-  font-weight: normal;
-  padding: 0;
+  font-size: 20px;
+  color: #333;
 }
 
-#downloadFirmwareDialog .popup-close:hover {
-  color: black;
-  opacity: 0.7;
-}
-
-/* Message in Download Firmware Pop-Up */
-#downloadFirmwareDialog .popup-message {
+.popup-message {
   font-size: 16px;
   color: #333;
-  padding: 10px;
-  text-align: center;
+  padding-top: 10px;
   line-height: 1.5;
 }
