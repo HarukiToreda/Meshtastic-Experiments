@@ -152,9 +152,11 @@
 }
 
 #installButton:disabled {
-  background: #AAAAAA; /* Gray background for disabled state */
-  cursor: not-allowed; /* Show not-allowed cursor */
-  opacity: 0.6; /* Reduce opacity for a disabled look */
+  background: #555555; /* Darker gray background for disabled state */
+  color: #AAAAAA; /* Light gray text to indicate it's inactive */
+  cursor: not-allowed; /* Show a "not allowed" cursor on hover */
+  opacity: 0.6; /* Slightly transparent for visual emphasis */
+  box-shadow: none; /* Remove button shadow for a flat appearance */
 }
 
 /* Browser Support Message */
