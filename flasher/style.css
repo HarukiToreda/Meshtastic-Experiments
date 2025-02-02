@@ -24,7 +24,7 @@
 .dropdown-container {
   width: 100%;
   padding: 8px;
-  background: #3A3A3A; /* Slightly lighter gray inside */
+  background: #3A3A3A; /* Slightly lighter gray */
   border-radius: 8px;
 }
 
@@ -42,7 +42,7 @@
 /* Label Styling */
 .flasher-label {
   font-size: 14px;
-  color: #CCCCCC; /* Light gray text for readability */
+  color: #CCCCCC; /* Light gray text */
   margin-bottom: 5px;
   text-align: left;
   width: 100%;
@@ -78,36 +78,44 @@
   opacity: 0.8; /* Slightly dim on hover */
 }
 
-#downloadFirmware {
-  width: 100%;
-  text-align: center;
-}
-
-/* General Pop-up Dialog */
-ewt-install-dialog, #downloadFirmwareDialog {
+/* General Pop-up Styling */
+ewt-install-dialog {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff; /* White background */
-  border-radius: 12px; /* Smooth rounded corners */
+  background: #ffffff;
+  border-radius: 12px;
   color: black;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
-  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   padding: 20px;
-  min-width: 350px; /* Minimum width for the dialog */
-  max-width: 600px; /* Prevent the dialog from growing too wide */
-  width: auto; /* Dynamically adjusts width based on content */
-  word-wrap: break-word; /* Ensures long text wraps */
+  width: 400px;
+  text-align: center;
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: flex-start; /* Align content to start at the top */
-  align-items: center; /* Center align content horizontally */
-  gap: 15px; /* Adds spacing between elements */
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* Header for the Pop-up */
+/* Pop-up for Download Firmware */
+#downloadFirmwareDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  z-index: 1100; /* Ensure it stacks above other dialogs */
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Header for Pop-ups */
 .popup-header {
   display: flex;
   justify-content: space-between;
@@ -122,14 +130,22 @@ ewt-install-dialog, #downloadFirmwareDialog {
 .popup-title {
   text-align: center;
   flex-grow: 1;
+  font-size: 20px; /* Slightly larger title */
 }
 
 .popup-close {
   cursor: pointer;
   font-size: 20px;
   color: #333;
+  font-weight: normal;
 }
 
+.popup-close:hover {
+  color: #000;
+  opacity: 0.7;
+}
+
+/* Pop-up Message Content */
 .popup-message {
   font-size: 16px;
   color: #333;
@@ -137,7 +153,15 @@ ewt-install-dialog, #downloadFirmwareDialog {
   line-height: 1.5;
 }
 
-/* esp-web-tools Default Styling */
+/* Unsupported Browser Message */
+#unsupportedText {
+  font-size: 14px;
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* esp-web-tools Styling */
 esp-web-install-button {
   display: flex;
   justify-content: center;
@@ -164,12 +188,4 @@ esp-web-install-button button:hover {
 esp-web-install-button span {
   font-size: 12px;
   color: #777;
-}
-
-/* Unsupported Browser Styling */
-#unsupportedText {
-  font-size: 14px;
-  color: red;
-  text-align: center;
-  margin-top: 10px;
 }
