@@ -1,13 +1,13 @@
 // Run this any time the hardware selection changes
 function updateFlasherConfig() {
-    var hardwareMenu = document.getElementById("hardwareMenu");
-    var eraseContainer = document.getElementById("eraseContainer");
-    var eraseCheckbox = document.getElementById("eraseCheckbox");
-    var espWebTools = document.getElementById("espWebTools");
-    var downloadLink = document.getElementById("downloadFirmware");
+    const hardwareMenu = document.getElementById("hardwareMenu");
+    const eraseContainer = document.getElementById("eraseContainer");
+    const eraseCheckbox = document.getElementById("eraseCheckbox");
+    const espWebTools = document.getElementById("espWebTools");
+    const downloadLink = document.getElementById("downloadFirmware");
 
     // Get the selection from the hardware menu
-    var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
+    const nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
     if (nodeHW === "T-Echo") {
         // Hide flashing button and erase option, show download button
@@ -22,22 +22,21 @@ function updateFlasherConfig() {
 
         // Set the appropriate manifest for flashing
         if (eraseCheckbox.checked) {
-            espWebTools.manifest = "./firmware/" + nodeHW + "/install.json";
+            espWebTools.manifest = `./firmware/${nodeHW}/install.json`;
         } else {
-            espWebTools.manifest = "./firmware/" + nodeHW + "/update.json";
+            espWebTools.manifest = `./firmware/${nodeHW}/update.json`;
         }
     }
 }
 
 // Function to display the Download Firmware popup
 function showDownloadPopup() {
-    // Check if the popup already exists
-    let existingDialog = document.getElementById("downloadFirmwareDialog");
-    if (existingDialog) {
-        document.body.removeChild(existingDialog);
+    // Prevent interference with `ewt-install-dialog`
+    if (document.getElementById("downloadFirmwareDialog")) {
+        return; // If the popup already exists, do nothing
     }
 
-    // Create the popup
+    // Create a unique popup for Download Firmware
     const downloadDialog = document.createElement("div");
     downloadDialog.id = "downloadFirmwareDialog";
 
@@ -61,5 +60,5 @@ function showDownloadPopup() {
         if (downloadLink) {
             window.location.href = downloadLink.href;
         }
-    }, 500); // Short delay ensures popup is visible
+    }, 500); // Short delay ensures the popup is visible
 }
