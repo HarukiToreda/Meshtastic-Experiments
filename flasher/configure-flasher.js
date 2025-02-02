@@ -30,12 +30,12 @@ function showDownloadPopup() {
     // Create the install dialog element
     const downloadDialog = document.createElement("ewt-install-dialog");
 
-    // Create the header manually
+    // Manually construct the header
     const header = document.createElement("div");
     header.className = "popup-header";
     header.innerHTML = `
         <span class="popup-title">Meshtastic InkHUD</span>
-        <button class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</button>
+        <span class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</span>
     `;
 
     // Create a list for the message
@@ -51,8 +51,8 @@ function showDownloadPopup() {
     `;
     list.appendChild(messageItem);
 
-    // Append elements to the dialog
-    downloadDialog.appendChild(header); // Now the header is added
+    // Append the header and list to the dialog
+    downloadDialog.appendChild(header);
     downloadDialog.appendChild(list);
 
     // Append the dialog to the body
