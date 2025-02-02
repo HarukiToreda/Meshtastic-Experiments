@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Deeper shadow for a subtle 3D effect */
 }
 
 /* Title Styling */
@@ -24,7 +24,7 @@
 .dropdown-container {
   width: 100%;
   padding: 8px;
-  background: #3A3A3A; /* Slightly lighter gray */
+  background: #3A3A3A; /* Slightly lighter gray for contrast */
   border-radius: 8px;
 }
 
@@ -42,7 +42,7 @@
 /* Label Styling */
 .flasher-label {
   font-size: 14px;
-  color: #CCCCCC; /* Light gray text */
+  color: #CCCCCC; /* Light gray text for readability */
   margin-bottom: 5px;
   text-align: left;
   width: 100%;
@@ -62,130 +62,41 @@
   accent-color: #00FFFF; /* Electric blue for checkbox */
 }
 
-/* Flash and Download Buttons */
-#installButton, #downloadButton {
-  background: #FFD700; /* Bright yellow */
-  color: #000; /* Black text */
+/* Button Styling */
+#installButton {
+  background: #FFD700; /* Original bright yellow */
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-size: 14px;
+}
+
+#installButton:hover {
+  opacity: 0.8; /* Slight transparency effect on hover */
+}
+
+#downloadButton {
+  background: #FFD700; /* Same as install button */
+  color: #000;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
+  display: block;
+  text-align: center;
   width: 100%;
-}
-
-#installButton:hover, #downloadButton:hover {
-  opacity: 0.8; /* Slightly dim on hover */
-}
-
-/* General Pop-up Styling */
-ewt-install-dialog {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  border-radius: 12px;
-  color: black;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  padding: 20px;
-  width: 400px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Pop-up for Download Firmware */
-#downloadFirmwareDialog {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  text-align: center;
-  z-index: 1100; /* Ensure it stacks above other dialogs */
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Header for Pop-ups */
-.popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  font-size: 18px;
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-  padding: 0 0 10px;
-}
-
-.popup-title {
-  text-align: center;
-  flex-grow: 1;
-  font-size: 20px; /* Slightly larger title */
-}
-
-.popup-close {
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-  font-weight: normal;
-}
-
-.popup-close:hover {
-  color: #000;
-  opacity: 0.7;
-}
-
-/* Pop-up Message Content */
-.popup-message {
-  font-size: 16px;
-  color: #333;
-  padding-top: 10px;
-  line-height: 1.5;
-}
-
-/* Unsupported Browser Message */
-#unsupportedText {
-  font-size: 14px;
-  color: red;
-  text-align: center;
   margin-top: 10px;
 }
 
-/* esp-web-tools Styling */
-esp-web-install-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 0;
-}
-
-esp-web-install-button button {
-  background: #FFD700;
-  color: #000;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-esp-web-install-button button:hover {
+#downloadButton:hover {
   opacity: 0.8;
 }
 
-esp-web-install-button span {
-  font-size: 12px;
-  color: #777;
+#downloadFirmware {
+  width: 100%;
+  text-align: center;
 }
