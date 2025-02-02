@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow for more depth */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow for depth */
   border: 1px solid #444; /* Subtle border for structure */
 }
 
@@ -96,8 +96,8 @@
   text-align: center;
 }
 
-/* Download Firmware Popup */
-#downloadFirmwareDialog {
+/* Validation Popup */
+#validationPopup {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -105,64 +105,28 @@
   background: #ffffff;
   border-radius: 12px; /* Smooth rounded corners */
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
-  padding: 25px;
+  padding: 20px;
   z-index: 1100; /* Ensure it stacks above all other elements */
-  width: 420px; /* Slightly wider for better readability */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  border: 1px solid #ddd; /* Subtle border for structure */
-}
-
-/* Popup Header */
-.popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  font-size: 18px;
-  font-weight: bold;
-  color: #444; /* Dark gray text */
-  border-bottom: 1px solid #eee; /* Light border for separation */
-  padding-bottom: 10px;
-}
-
-.popup-title {
   text-align: center;
-  flex-grow: 1;
+  width: 300px; /* Fixed width for popup */
 }
 
-.popup-close {
-  cursor: pointer;
-  font-size: 20px;
-  color: #888; /* Neutral color for the close button */
-  transition: color 0.2s ease; /* Smooth color change */
-}
-
-.popup-close:hover {
-  color: #444; /* Darker on hover */
-}
-
-/* Popup Message */
-.popup-message {
+#validationPopup p {
   font-size: 16px;
   color: #333; /* Neutral text color */
-  line-height: 1.6;
-  text-align: center;
+  margin-bottom: 15px;
 }
 
-#installButton:disabled {
-  background: #555555; /* Darker gray background for disabled state */
-  color: #AAAAAA; /* Light gray text to indicate it's inactive */
-  cursor: not-allowed; /* Show a "not allowed" cursor on hover */
-  opacity: 0.6; /* Slightly transparent for visual emphasis */
-  box-shadow: none; /* Remove button shadow for a flat appearance */
-}
-
-/* Browser Support Message */
-#unsupportedText {
+#validationPopup button {
+  background: #FFD700;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
   font-size: 14px;
-  color: red;
-  text-align: center;
-  margin-top: 10px;
+}
+
+#validationPopup button:hover {
+  opacity: 0.9;
 }
