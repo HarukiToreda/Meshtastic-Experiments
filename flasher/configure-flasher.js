@@ -2,6 +2,7 @@
 function updateFlasherConfig() {
     var hardwareMenu = document.getElementById("hardwareMenu");
     var eraseContainer = document.getElementById("eraseContainer");
+    var eraseCheckbox = document.getElementById("eraseCheckbox");
     var espWebTools = document.getElementById("espWebTools");
     var downloadLink = document.getElementById("downloadFirmware");
 
@@ -13,11 +14,6 @@ function updateFlasherConfig() {
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
-    } else if (nodeHW === "Select Device") {
-        // Keep Connect and Flash button visible, but validation required
-        espWebTools.style.display = "block";
-        eraseContainer.style.display = "flex";
-        downloadLink.style.display = "none";
     } else {
         // Show flashing button and erase option, hide download button
         espWebTools.style.display = "block";
@@ -25,37 +21,42 @@ function updateFlasherConfig() {
         downloadLink.style.display = "none";
 
         // Set the appropriate manifest for flashing
-        espWebTools.manifest = `./firmware/${nodeHW}/install.json`;
+        if (eraseCheckbox.checked) {
+            espWebTools.manifest = `./firmware/${nodeHW}/install.json`;
+        } else {
+            espWebTools.manifest = `./firmware/${nodeHW}/update.json`;
+        }
     }
 }
 
-// Function to show a popup message
-function showValidationPopup(message) {
+// Function to display the Download Firmware popup
+function showDownloadPopup() {
     // Prevent creating duplicate popups
-    if (document.getElementById("validationPopup")) return;
+    if (document.getElementById("downloadFirmwareDialog")) return;
 
-    // Create the popup element
-    const validationPopup = document.createElement("div");
-    validationPopup.id = "validationPopup";
+    // Create a unique popup for Download Firmware
+    const downloadDialog = document.createElement("div");
+    downloadDialog.id = "downloadFirmwareDialog";
 
-    // Add message content
-    validationPopup.innerHTML = `
-        <p>${message}</p>
-        <button onclick="document.body.removeChild(this.parentElement)">Close</button>
+    // Add the content to the popup
+    downloadDialog.innerHTML = `
+        <div class="popup-header">
+            <span class="popup-title">Meshtastic InkHUD</span>
+            <span class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</span>
+        </div>
+        <div class="popup-message">
+            Download and copy the UF2 file to the DFU drive.
+        </div>
     `;
 
-    // Append popup to the body
-    document.body.appendChild(validationPopup);
+    // Append the popup to the body
+    document.body.appendChild(downloadDialog);
+
+    // Trigger the file download after a short delay
+    setTimeout(() => {
+        const downloadLink = document.getElementById("downloadFirmware");
+        if (downloadLink) {
+            window.location.href = downloadLink.href;
+        }
+    }, 500); // Short delay ensures the popup is visible
 }
-
-// Add event listener for the Connect and Flash button
-document.getElementById("installButton").addEventListener("click", function (event) {
-    var hardwareMenu = document.getElementById("hardwareMenu");
-    var selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex].value;
-
-    if (selectedHardware === "Select Device") {
-        // Prevent the default flashing behavior and show a popup
-        event.preventDefault();
-        showValidationPopup("You must select the Hardware");
-    }
-});
