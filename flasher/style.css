@@ -151,6 +151,12 @@
   text-align: center;
 }
 
+#installButton:disabled {
+  background: #AAAAAA; /* Gray background for disabled state */
+  cursor: not-allowed; /* Show not-allowed cursor */
+  opacity: 0.6; /* Reduce opacity for a disabled look */
+}
+
 /* Browser Support Message */
 #unsupportedText {
   font-size: 14px;
