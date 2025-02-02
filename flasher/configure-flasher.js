@@ -1,13 +1,13 @@
 // Run this any time the hardware selection changes
 function updateFlasherConfig() {
-    const hardwareMenu = document.getElementById("hardwareMenu");
-    const eraseContainer = document.getElementById("eraseContainer");
-    const eraseCheckbox = document.getElementById("eraseCheckbox");
-    const espWebTools = document.getElementById("espWebTools");
-    const downloadLink = document.getElementById("downloadFirmware");
+    var hardwareMenu = document.getElementById("hardwareMenu");
+    var eraseContainer = document.getElementById("eraseContainer");
+    var eraseCheckbox = document.getElementById("eraseCheckbox");
+    var espWebTools = document.getElementById("espWebTools");
+    var downloadLink = document.getElementById("downloadFirmware");
 
     // Get the selection from the hardware menu
-    const nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
+    var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
     if (nodeHW === "T-Echo") {
         // Hide flashing button and erase option, show download button
@@ -31,10 +31,8 @@ function updateFlasherConfig() {
 
 // Function to display the Download Firmware popup
 function showDownloadPopup() {
-    // Prevent interference with `ewt-install-dialog`
-    if (document.getElementById("downloadFirmwareDialog")) {
-        return; // If the popup already exists, do nothing
-    }
+    // Prevent creating duplicate popups
+    if (document.getElementById("downloadFirmwareDialog")) return;
 
     // Create a unique popup for Download Firmware
     const downloadDialog = document.createElement("div");
