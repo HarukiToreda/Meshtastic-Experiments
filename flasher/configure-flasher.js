@@ -30,9 +30,13 @@ function showDownloadPopup() {
     // Create the install dialog element
     const downloadDialog = document.createElement("ewt-install-dialog");
 
-    // Enable the close button and set the title
-    downloadDialog.heading = "Meshtastic InkHUD";
-    downloadDialog.setAttribute("closable", "true");
+    // Create the header manually
+    const header = document.createElement("div");
+    header.className = "popup-header";
+    header.innerHTML = `
+        <span class="popup-title">Meshtastic InkHUD</span>
+        <button class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</button>
+    `;
 
     // Create a list for the message
     const list = document.createElement("ew-list");
@@ -47,7 +51,8 @@ function showDownloadPopup() {
     `;
     list.appendChild(messageItem);
 
-    // Append the list to the dialog
+    // Append elements to the dialog
+    downloadDialog.appendChild(header); // Now the header is added
     downloadDialog.appendChild(list);
 
     // Append the dialog to the body
