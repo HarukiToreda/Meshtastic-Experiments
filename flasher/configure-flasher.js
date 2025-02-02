@@ -44,7 +44,6 @@ function showDownloadPopup() {
     // Message Content
     const messageItem = document.createElement("ew-list-item");
     messageItem.innerHTML = `
-        <div slot="headline">Ensure device DFU mode drive is mounted</div>
         <div slot="supporting-text">
             Download and copy UF2 file to DFU drive.
         </div>
