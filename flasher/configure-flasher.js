@@ -1,5 +1,5 @@
-// Function to update the debug window with the current configuration
-function updateDebugWindow(selectedHardware, isEraseChecked, manifest) {
+// Function to update the debug window with detailed logs
+function updateDebugWindow(logMessage) {
     let debugWindow = document.getElementById("debugWindow");
 
     // If the debug window doesn't exist, create it
@@ -18,21 +18,18 @@ function updateDebugWindow(selectedHardware, isEraseChecked, manifest) {
         debugWindow.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
         debugWindow.style.zIndex = "1000";
         debugWindow.style.fontSize = "14px";
-        debugWindow.style.width = "300px";
-        debugWindow.style.wordWrap = "break-word";
+        debugWindow.style.width = "350px";
+        debugWindow.style.maxHeight = "300px";
+        debugWindow.style.overflowY = "auto"; // Scrollable if logs overflow
         document.body.appendChild(debugWindow);
     }
 
-    // Update the debug window content
-    debugWindow.innerHTML = `
-        <strong>Debug Window</strong>
-        <div>Selected Hardware: <code>${selectedHardware}</code></div>
-        <div>Erase Checkbox Checked: <code>${isEraseChecked}</code></div>
-        <div>Manifest: <code>${manifest}</code></div>
-    `;
+    // Append the new log message
+    const timestamp = new Date().toLocaleTimeString();
+    debugWindow.innerHTML += `<div>[${timestamp}] ${logMessage}</div>`;
 }
 
-// Function to update the flasher configuration
+// Function to update flasher configuration
 function updateFlasherConfig() {
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
@@ -64,8 +61,11 @@ function updateFlasherConfig() {
         espWebTools.manifest = manifest;
     }
 
-    // Update the debug window
-    updateDebugWindow(selectedHardware, eraseCheckbox.checked, manifest);
+    // Log the current state to the debug window
+    updateDebugWindow(`updateFlasherConfig called:
+        Selected Hardware: ${selectedHardware}
+        Erase Checkbox Checked: ${eraseCheckbox.checked}
+        Manifest: ${manifest}`);
 }
 
 // Function to handle checkbox changes directly
@@ -83,8 +83,14 @@ function handleEraseCheckboxChange() {
         : `./firmware/${selectedHardware}/update.json`;
     espWebTools.manifest = manifest;
 
-    // Update the debug window
-    updateDebugWindow(selectedHardware, eraseCheckbox.checked, manifest);
+    // Log the checkbox change to the debug window
+    updateDebugWindow(`handleEraseCheckboxChange called:
+        Selected Hardware: ${selectedHardware}
+        Erase Checkbox Checked: ${eraseCheckbox.checked}
+        Manifest: ${manifest}`);
+
+    // Re-trigger the full configuration update to ensure all elements are in sync
+    updateFlasherConfig();
 }
 
 // Function to show the download popup
