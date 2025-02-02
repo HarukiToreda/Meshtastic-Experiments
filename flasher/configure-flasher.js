@@ -27,9 +27,10 @@ function updateDebugWindow(logMessage) {
     // Append the new log message
     const timestamp = new Date().toLocaleTimeString();
     debugWindow.innerHTML += `<div>[${timestamp}] ${logMessage}</div>`;
+    console.log(`[Debug] ${logMessage}`); // Fallback for browser console
 }
 
-// Function to update flasher configuration
+// Function to update the flasher configuration
 function updateFlasherConfig() {
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
@@ -70,6 +71,7 @@ function updateFlasherConfig() {
 
 // Function to handle checkbox changes directly
 function handleEraseCheckboxChange() {
+    console.log("Checkbox change detected!"); // Verify event triggering
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
     const espWebTools = document.getElementById("espWebTools");
