@@ -2,19 +2,19 @@
 .flasher-container {
   width: 320px;
   padding: 20px;
-  background: #2A2A2A; /* Dark charcoal background */
-  border-radius: 12px; /* Smooth rounded corners */
+  background: #2A2A2A;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Title Styling */
 .flasher-title {
   font-size: 20px;
-  color: #FFFFFF; /* White text for contrast */
+  color: #FFFFFF;
   font-weight: bold;
   margin-bottom: 15px;
   text-align: center;
@@ -24,15 +24,15 @@
 .dropdown-container {
   width: 100%;
   padding: 8px;
-  background: #3A3A3A; /* Slightly lighter gray inside */
+  background: #3A3A3A;
   border-radius: 8px;
 }
 
 .dropdown-container select {
   width: 100%;
-  background: #3A3A3A; /* Match container */
+  background: #3A3A3A;
   border: none;
-  color: #FFFFFF; /* White text */
+  color: #FFFFFF;
   padding: 8px;
   border-radius: 6px;
   outline: none;
@@ -42,7 +42,7 @@
 /* Label Styling */
 .flasher-label {
   font-size: 14px;
-  color: #CCCCCC; /* Light gray text for readability */
+  color: #CCCCCC;
   margin-bottom: 5px;
   text-align: left;
   width: 100%;
@@ -59,12 +59,12 @@
 }
 
 .checkbox-container input {
-  accent-color: #00FFFF; /* Electric blue for checkbox */
+  accent-color: #00FFFF;
 }
 
 /* Flash Button */
 #installButton {
-  background: #FFD700; /* Bright yellow */
+  background: #FFD700;
   color: #000;
   border: none;
   padding: 10px 15px;
@@ -80,7 +80,7 @@
 
 /* Download Button */
 #downloadButton {
-  background: #FFD700; /* Same as install button */
+  background: #FFD700;
   color: #000;
   border: none;
   padding: 10px 15px;
@@ -102,13 +102,13 @@
   text-align: center;
 }
 
-/* Pop-up Dialog (Matches Flasher Pop-up) */
+/* Pop-up Dialog */
 ewt-install-dialog {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff; /* White background like Flasher pop-up */
+  background: #ffffff;
   border-radius: 12px;
   color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -117,23 +117,38 @@ ewt-install-dialog {
   width: 350px;
 }
 
-/* Pop-up Header (Handled by `ewt-install-dialog`, ensuring visibility) */
-ewt-install-dialog::part(title) {
+/* Pop-up Header */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
   font-size: 18px;
   font-weight: bold;
+}
+
+/* Pop-up Title */
+.popup-title {
+  flex-grow: 1;
   text-align: center;
+  font-weight: bold;
   color: black;
 }
 
-/* Pop-up Close Button */
-ewt-install-dialog::part(close-button) {
+/* Close Button */
+.popup-close {
+  background: none;
+  border: none;
+  color: black;
   font-size: 20px;
-  color: black;
   cursor: pointer;
-  padding: 5px;
+  font-weight: bold;
+  padding: 0 10px;
 }
 
-ewt-install-dialog::part(close-button):hover {
+.popup-close:hover {
   opacity: 0.6;
 }
 
@@ -145,7 +160,7 @@ ewt-install-dialog ew-list {
   padding: 20px;
 }
 
-/* Pop-up Message Text */
+/* Pop-up Message */
 ewt-install-dialog ew-list-item {
   font-size: 16px;
   color: #333;
