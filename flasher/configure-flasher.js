@@ -1,4 +1,4 @@
-// Run this any time the hardware selection changes
+// Run this any time the hardware selection or the checkbox changes
 function updateFlasherConfig() {
     var hardwareMenu = document.getElementById("hardwareMenu");
     var eraseContainer = document.getElementById("eraseContainer");
@@ -20,7 +20,7 @@ function updateFlasherConfig() {
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
 
-        // Set the appropriate manifest for flashing
+        // Set the appropriate manifest for flashing based on the checkbox
         if (eraseCheckbox.checked) {
             espWebTools.manifest = `./firmware/${nodeHW}/install.json`;
         } else {
@@ -60,3 +60,7 @@ function showDownloadPopup() {
         }
     }, 500); // Short delay ensures the popup is visible
 }
+
+// Add onchange event listeners for hardware menu and checkbox
+document.getElementById("hardwareMenu").addEventListener("change", updateFlasherConfig);
+document.getElementById("eraseCheckbox").addEventListener("change", updateFlasherConfig);
