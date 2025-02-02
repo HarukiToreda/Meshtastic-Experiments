@@ -2,125 +2,57 @@
 .flasher-container {
   width: 320px;
   padding: 20px;
-  background: linear-gradient(135deg, #2A2A2A, #1E1E1E); /* Subtle gradient background */
-  border-radius: 12px;
+  background: #2A2A2A; /* Dark charcoal background */
+  border-radius: 12px; /* Smooth rounded corners */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-  border: 1px solid #444; /* Slight border for structure */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow for more depth */
+  border: 1px solid #444; /* Subtle border for structure */
 }
 
-/* Button Styling */
-#installButton, #downloadButton {
-  background: linear-gradient(90deg, #FFD700, #FFC000); /* Shiny gradient */
-  color: #000;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  width: 100%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Add shadow for buttons */
-  transition: transform 0.2s ease, opacity 0.2s ease; /* Smooth hover effect */
-}
-
-#installButton:hover, #downloadButton:hover {
-  transform: translateY(-2px); /* Lift effect */
-  opacity: 0.9;
-}
-
-/* Download Firmware Popup */
-#downloadFirmwareDialog {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
-  padding: 25px;
-  z-index: 1100;
-  width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  border: 1px solid #ddd; /* Subtle border */
-}
-
-/* Popup Header */
-.popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+/* Title Styling */
+.flasher-title {
   font-size: 20px;
+  color: #FFFFFF; /* White text for contrast */
   font-weight: bold;
-  color: #222; /* Slightly darker text */
-  border-bottom: 2px solid #eee; /* Bolder divider */
-  padding-bottom: 12px;
-}
-
-.popup-title {
-  text-align: center;
-  flex-grow: 1;
-  font-size: 22px; /* Larger title font */
-  color: #444; /* Dark gray title */
-}
-
-.popup-close {
-  cursor: pointer;
-  font-size: 22px;
-  color: #888; /* Neutral color */
-  transition: color 0.2s ease; /* Smooth color change */
-}
-
-.popup-close:hover {
-  color: #444; /* Darker on hover */
-}
-
-/* Popup Message */
-.popup-message {
-  font-size: 18px;
-  color: #555; /* Softer text color */
-  line-height: 1.7;
+  margin-bottom: 15px;
   text-align: center;
 }
 
 /* Dropdown Styling */
 .dropdown-container {
   width: 100%;
-  padding: 10px;
-  background: linear-gradient(135deg, #3A3A3A, #2E2E2E); /* Gradient dropdown background */
-  border-radius: 10px;
-  margin-bottom: 15px;
+  padding: 8px;
+  background: #3A3A3A; /* Slightly lighter gray for contrast */
+  border-radius: 8px;
+  margin-bottom: 15px; /* Space below dropdown */
 }
 
 .dropdown-container select {
   width: 100%;
-  background: transparent; /* Transparent background for gradient effect */
+  background: #3A3A3A; /* Match container */
   border: none;
   color: #FFFFFF; /* White text */
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 8px;
+  border-radius: 6px;
   outline: none;
+  font-size: 14px;
   font-weight: bold;
+  cursor: pointer;
   appearance: none; /* Remove native dropdown arrow */
 }
 
 .dropdown-container select:hover {
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+  background: #444; /* Slightly darker background on hover */
 }
 
 /* Label Styling */
 .flasher-label {
-  font-size: 16px;
+  font-size: 14px;
   color: #CCCCCC; /* Light gray text */
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   text-align: left;
   width: 100%;
   display: block;
@@ -131,7 +63,7 @@
 .checkbox-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin: 10px 0;
 }
 
@@ -139,30 +71,90 @@
   accent-color: #00FFFF; /* Electric blue for checkbox */
 }
 
-/* Additional Styling for Unsupported Browser */
-#unsupportedText {
-  font-size: 14px;
-  color: red;
-  text-align: center;
-  margin-top: 15px;
+/* Install and Download Button Styling */
+#installButton, #downloadButton {
+  background: #FFD700; /* Bright yellow for emphasis */
+  color: #000; /* Black text for contrast */
+  border: none;
+  padding: 12px 16px; /* Larger padding for a more prominent button */
+  border-radius: 8px; /* Slightly more rounded corners */
+  font-size: 16px; /* Larger font size for readability */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle button shadow */
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
 }
 
-/* esp-web-tools Dialog */
-ewt-install-dialog {
+#installButton:hover, #downloadButton:hover {
+  opacity: 0.9; /* Slight transparency effect */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Download Button Specific Styling */
+#downloadFirmware {
+  width: 100%;
+  text-align: center;
+}
+
+/* Download Firmware Popup */
+#downloadFirmwareDialog {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #ffffff;
-  border-radius: 16px;
-  color: black;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
   padding: 25px;
-  width: 420px;
-  text-align: center;
+  z-index: 1100; /* Ensure it stacks above all other elements */
+  width: 420px; /* Slightly wider for better readability */
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #ddd; /* Subtle border for structure */
+}
+
+/* Popup Header */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  color: #444; /* Dark gray text */
+  border-bottom: 1px solid #eee; /* Light border for separation */
+  padding-bottom: 10px;
+}
+
+.popup-title {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.popup-close {
+  cursor: pointer;
+  font-size: 20px;
+  color: #888; /* Neutral color for the close button */
+  transition: color 0.2s ease; /* Smooth color change */
+}
+
+.popup-close:hover {
+  color: #444; /* Darker on hover */
+}
+
+/* Popup Message */
+.popup-message {
+  font-size: 16px;
+  color: #333; /* Neutral text color */
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Browser Support Message */
+#unsupportedText {
+  font-size: 14px;
+  color: red;
+  text-align: center;
+  margin-top: 10px;
 }
