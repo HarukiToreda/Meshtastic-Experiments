@@ -2,29 +2,34 @@
 .flasher-container {
   width: 320px;
   padding: 20px;
-  background: #2A2A2A;
+  background: linear-gradient(135deg, #2A2A2A, #1E1E1E); /* Subtle gradient background */
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+  border: 1px solid #444; /* Slight border for structure */
 }
 
 /* Button Styling */
 #installButton, #downloadButton {
-  background: #FFD700;
+  background: linear-gradient(90deg, #FFD700, #FFC000); /* Shiny gradient */
   color: #000;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
+  padding: 12px 16px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
   width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Add shadow for buttons */
+  transition: transform 0.2s ease, opacity 0.2s ease; /* Smooth hover effect */
 }
 
 #installButton:hover, #downloadButton:hover {
-  opacity: 0.8;
+  transform: translateY(-2px); /* Lift effect */
+  opacity: 0.9;
 }
 
 /* Download Firmware Popup */
@@ -34,14 +39,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+  padding: 25px;
   z-index: 1100;
-  width: 400px;
+  width: 420px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  border: 1px solid #ddd; /* Subtle border */
 }
 
 /* Popup Header */
@@ -50,26 +56,113 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  border-bottom: 1px solid #ddd;
-  padding: 0 0 10px;
+  color: #222; /* Slightly darker text */
+  border-bottom: 2px solid #eee; /* Bolder divider */
+  padding-bottom: 12px;
 }
 
 .popup-title {
   text-align: center;
   flex-grow: 1;
+  font-size: 22px; /* Larger title font */
+  color: #444; /* Dark gray title */
 }
 
 .popup-close {
   cursor: pointer;
-  font-size: 20px;
-  color: #333;
+  font-size: 22px;
+  color: #888; /* Neutral color */
+  transition: color 0.2s ease; /* Smooth color change */
 }
 
+.popup-close:hover {
+  color: #444; /* Darker on hover */
+}
+
+/* Popup Message */
 .popup-message {
+  font-size: 18px;
+  color: #555; /* Softer text color */
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Dropdown Styling */
+.dropdown-container {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #3A3A3A, #2E2E2E); /* Gradient dropdown background */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.dropdown-container select {
+  width: 100%;
+  background: transparent; /* Transparent background for gradient effect */
+  border: none;
+  color: #FFFFFF; /* White text */
+  padding: 10px;
+  border-radius: 8px;
   font-size: 16px;
-  color: #333;
-  padding-top: 10px;
-  line-height: 1.5;
+  outline: none;
+  font-weight: bold;
+  appearance: none; /* Remove native dropdown arrow */
+}
+
+.dropdown-container select:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+}
+
+/* Label Styling */
+.flasher-label {
+  font-size: 16px;
+  color: #CCCCCC; /* Light gray text */
+  margin-bottom: 8px;
+  text-align: left;
+  width: 100%;
+  display: block;
+  font-weight: bold;
+}
+
+/* Checkbox Styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.checkbox-container input {
+  accent-color: #00FFFF; /* Electric blue for checkbox */
+}
+
+/* Additional Styling for Unsupported Browser */
+#unsupportedText {
+  font-size: 14px;
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* esp-web-tools Dialog */
+ewt-install-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 16px;
+  color: black;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  padding: 25px;
+  width: 420px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #ddd;
 }
