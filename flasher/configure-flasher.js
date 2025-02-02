@@ -1,44 +1,40 @@
-// Run this any time the hardware selection or the checkbox changes
+// Function to update flasher configuration
 function updateFlasherConfig() {
-    var hardwareMenu = document.getElementById("hardwareMenu");
-    var eraseContainer = document.getElementById("eraseContainer");
-    var eraseCheckbox = document.getElementById("eraseCheckbox");
-    var espWebTools = document.getElementById("espWebTools");
-    var downloadLink = document.getElementById("downloadFirmware");
+    const hardwareMenu = document.getElementById("hardwareMenu");
+    const eraseCheckbox = document.getElementById("eraseCheckbox");
+    const espWebTools = document.getElementById("espWebTools");
+    const eraseContainer = document.getElementById("eraseContainer");
+    const downloadLink = document.getElementById("downloadFirmware");
 
-    // Get the selection from the hardware menu
-    var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
+    // Get the selected hardware value
+    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
-    if (nodeHW === "T-Echo") {
-        // Hide flashing button and erase option, show download button
+    if (selectedHardware === "T-Echo") {
+        // Handle T-Echo: show the download button and hide flashing options
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
     } else {
-        // Show flashing button and erase option, hide download button
+        // Handle other devices: show flashing options and hide the download button
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
 
-        // Set the appropriate manifest for flashing based on the checkbox
-        if (eraseCheckbox.checked) {
-            espWebTools.manifest = `./firmware/${nodeHW}/install.json`;
-        } else {
-            espWebTools.manifest = `./firmware/${nodeHW}/update.json`;
-        }
+        // Update the manifest dynamically based on the checkbox state
+        espWebTools.manifest = eraseCheckbox.checked
+            ? `./firmware/${selectedHardware}/install.json`
+            : `./firmware/${selectedHardware}/update.json`;
     }
 }
 
-// Function to display the Download Firmware popup
+// Function to show the download popup
 function showDownloadPopup() {
-    // Prevent creating duplicate popups
+    // Prevent duplicate popups
     if (document.getElementById("downloadFirmwareDialog")) return;
 
-    // Create a unique popup for Download Firmware
+    // Create the popup
     const downloadDialog = document.createElement("div");
     downloadDialog.id = "downloadFirmwareDialog";
-
-    // Add the content to the popup
     downloadDialog.innerHTML = `
         <div class="popup-header">
             <span class="popup-title">Meshtastic InkHUD</span>
@@ -52,15 +48,18 @@ function showDownloadPopup() {
     // Append the popup to the body
     document.body.appendChild(downloadDialog);
 
-    // Trigger the file download after a short delay
+    // Automatically trigger the file download after a short delay
     setTimeout(() => {
         const downloadLink = document.getElementById("downloadFirmware");
         if (downloadLink) {
             window.location.href = downloadLink.href;
         }
-    }, 500); // Short delay ensures the popup is visible
+    }, 500);
 }
 
-// Add onchange event listeners for hardware menu and checkbox
+// Add onchange event listeners for both dropdown and checkbox
 document.getElementById("hardwareMenu").addEventListener("change", updateFlasherConfig);
 document.getElementById("eraseCheckbox").addEventListener("change", updateFlasherConfig);
+
+// Run updateFlasherConfig on initial load to set default states
+updateFlasherConfig();
