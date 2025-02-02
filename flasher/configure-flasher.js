@@ -32,7 +32,7 @@ function updateDebugWindow(selectedHardware, isEraseChecked, manifest) {
     `;
 }
 
-// Function to update flasher configuration
+// Function to update the flasher configuration
 function updateFlasherConfig() {
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
@@ -68,22 +68,23 @@ function updateFlasherConfig() {
     updateDebugWindow(selectedHardware, eraseCheckbox.checked, manifest);
 }
 
-// Function to ensure the checkbox also updates the debug window immediately
+// Function to handle checkbox changes directly
 function handleEraseCheckboxChange() {
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
+    const espWebTools = document.getElementById("espWebTools");
 
-    // Re-trigger the updateFlasherConfig to reflect checkbox changes
-    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex].value || "None";
-    const isEraseChecked = eraseCheckbox.checked;
+    // Get the selected hardware value
+    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
-    // Update the debug window directly if no hardware is selected yet
-    updateDebugWindow(selectedHardware, isEraseChecked, "No manifest (awaiting hardware selection)");
+    // Update the manifest directly based on the checkbox state
+    const manifest = eraseCheckbox.checked
+        ? `./firmware/${selectedHardware}/install.json`
+        : `./firmware/${selectedHardware}/update.json`;
+    espWebTools.manifest = manifest;
 
-    // Trigger a full re-evaluation if hardware is already selected
-    if (selectedHardware !== "None") {
-        updateFlasherConfig();
-    }
+    // Update the debug window
+    updateDebugWindow(selectedHardware, eraseCheckbox.checked, manifest);
 }
 
 // Function to show the download popup
