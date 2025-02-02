@@ -2,9 +2,12 @@
 function updateDebugWindow(selectedHardware, isEraseChecked, manifest) {
     let debugWindow = document.getElementById("debugWindow");
 
+    // If the debug window doesn't exist, create it
     if (!debugWindow) {
         debugWindow = document.createElement("div");
         debugWindow.id = "debugWindow";
+
+        // Style the debug window
         debugWindow.style.position = "fixed";
         debugWindow.style.bottom = "20px";
         debugWindow.style.right = "20px";
@@ -20,6 +23,7 @@ function updateDebugWindow(selectedHardware, isEraseChecked, manifest) {
         document.body.appendChild(debugWindow);
     }
 
+    // Update the debug window content
     debugWindow.innerHTML = `
         <strong>Debug Window</strong>
         <div>Selected Hardware: <code>${selectedHardware}</code></div>
@@ -64,6 +68,24 @@ function updateFlasherConfig() {
     updateDebugWindow(selectedHardware, eraseCheckbox.checked, manifest);
 }
 
+// Function to ensure the checkbox also updates the debug window immediately
+function handleEraseCheckboxChange() {
+    const hardwareMenu = document.getElementById("hardwareMenu");
+    const eraseCheckbox = document.getElementById("eraseCheckbox");
+
+    // Re-trigger the updateFlasherConfig to reflect checkbox changes
+    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex].value || "None";
+    const isEraseChecked = eraseCheckbox.checked;
+
+    // Update the debug window directly if no hardware is selected yet
+    updateDebugWindow(selectedHardware, isEraseChecked, "No manifest (awaiting hardware selection)");
+
+    // Trigger a full re-evaluation if hardware is already selected
+    if (selectedHardware !== "None") {
+        updateFlasherConfig();
+    }
+}
+
 // Function to show the download popup
 function showDownloadPopup() {
     // Prevent duplicate popups
@@ -96,7 +118,7 @@ function showDownloadPopup() {
 
 // Add onchange event listeners for both dropdown and checkbox
 document.getElementById("hardwareMenu").addEventListener("change", updateFlasherConfig);
-document.getElementById("eraseCheckbox").addEventListener("change", updateFlasherConfig);
+document.getElementById("eraseCheckbox").addEventListener("change", handleEraseCheckboxChange);
 
 // Run updateFlasherConfig on initial load to set default states
 updateFlasherConfig();
