@@ -71,15 +71,19 @@ function updateFlasherConfig() {
 
 // Function to handle checkbox changes directly
 function handleEraseCheckboxChange() {
-    console.log("Checkbox change detected!"); // Verify event triggering
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
     const espWebTools = document.getElementById("espWebTools");
 
     // Get the selected hardware value
-    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex].value;
+    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex]?.value;
 
-    // Update the manifest directly based on the checkbox state
+    if (!selectedHardware) {
+        updateDebugWindow("No hardware selected, checkbox change ignored.");
+        return;
+    }
+
+    // Update the manifest dynamically based on the checkbox state
     const manifest = eraseCheckbox.checked
         ? `./firmware/${selectedHardware}/install.json`
         : `./firmware/${selectedHardware}/update.json`;
@@ -90,9 +94,6 @@ function handleEraseCheckboxChange() {
         Selected Hardware: ${selectedHardware}
         Erase Checkbox Checked: ${eraseCheckbox.checked}
         Manifest: ${manifest}`);
-
-    // Re-trigger the full configuration update to ensure all elements are in sync
-    updateFlasherConfig();
 }
 
 // Function to show the download popup
