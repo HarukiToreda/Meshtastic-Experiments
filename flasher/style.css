@@ -108,14 +108,17 @@ ewt-install-dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff;
+  background: #ffffff; /* White background */
   border-radius: 12px;
   color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1000;
-  width: 350px;
-  overflow: hidden;
+  padding: 20px;
+  min-width: 350px; /* Ensures a reasonable minimum width */
+  max-width: 90%; /* Allows dialog to expand based on content but within viewport */
+  width: auto; /* Automatically adjusts width based on content */
+  word-wrap: break-word; /* Ensures long text breaks to the next line if needed */
 }
 
 /* Pop-up Header */
@@ -123,20 +126,23 @@ ewt-install-dialog {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
   padding: 12px 16px;
   font-size: 20px;
   font-weight: bold;
   color: black;
   border-bottom: 1px solid #ddd;
+  word-wrap: break-word; /* Ensures header text doesn't overflow */
 }
 
-/* Pop-up Title */
-.popup-title {
-  flex-grow: 1;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
+/* Supporting Text */
+ewt-install-dialog ew-list-item {
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+  font-weight: normal;
+  text-align: left; /* Align message text to the left */
+  line-height: 1.5; /* Adds spacing between lines */
+  word-wrap: break-word; /* Ensures text breaks if it exceeds the container width */
 }
 
 /* Close Button */
@@ -149,7 +155,6 @@ ewt-install-dialog {
 }
 
 .popup-close:hover {
-  color: black;
   opacity: 0.7;
 }
 
