@@ -8,17 +8,17 @@ function updateFlasherConfig() {
     var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
     if (nodeHW === "T-Echo") {
-        // Show the Download button for T-Echo
+        // Show Download button for T-Echo and hide Flashing UI
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
     } else {
-        // Ensure Connect and Flash logic is intact for all other hardware
+        // Show Flashing UI and hide Download button
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
 
-        // Use the manifest files as per the erase checkbox
+        // Configure espWebTools for flashing
         if (eraseCheckbox.checked) {
             espWebTools.manifest = "./firmware/" + nodeHW + "/install.json";
         } else {
@@ -28,10 +28,11 @@ function updateFlasherConfig() {
 }
 
 function showDownloadPopup() {
-    // Create the download-specific pop-up dialog
-    const downloadDialog = document.createElement("ewt-install-dialog");
+    // Create a dialog specifically for Download Firmware
+    const downloadDialog = document.createElement("div");
+    downloadDialog.id = "downloadFirmwareDialog";
 
-    // Add the header for the download pop-up
+    // Add the header for the pop-up
     const header = document.createElement("div");
     header.className = "popup-header";
     header.innerHTML = `
@@ -39,24 +40,20 @@ function showDownloadPopup() {
         <span class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</span>
     `;
 
-    // Add the message for the download pop-up
-    const list = document.createElement("ew-list");
-    const messageItem = document.createElement("ew-list-item");
-    messageItem.innerHTML = `
-        <div slot="supporting-text">
-            Download and copy the UF2 file to the DFU drive.
-        </div>
-    `;
-    list.appendChild(messageItem);
+    // Add the message for the pop-up
+    const message = document.createElement("div");
+    message.className = "popup-message";
+    message.innerHTML = "Download and copy the UF2 file to the DFU drive.";
 
-    // Build the pop-up for download
+    // Assemble the dialog
     downloadDialog.appendChild(header);
-    downloadDialog.appendChild(list);
+    downloadDialog.appendChild(message);
 
-    // Append the pop-up to the body
+    // Style and add the dialog to the body
+    downloadDialog.style.display = "flex";
     document.body.appendChild(downloadDialog);
 
-    // Trigger file download after a brief delay
+    // Automatically trigger the download after a short delay
     setTimeout(() => {
         const downloadLink = document.getElementById("downloadFirmware");
         if (downloadLink) {
