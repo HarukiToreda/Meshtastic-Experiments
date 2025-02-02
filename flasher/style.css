@@ -62,39 +62,20 @@
   accent-color: #00FFFF; /* Electric blue for checkbox */
 }
 
-/* Flash Button */
-#installButton {
+/* Flash and Download Buttons */
+#installButton, #downloadButton {
   background: #FFD700; /* Bright yellow */
-  color: #000;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: opacity 0.2s;
-  font-size: 14px;
-}
-
-#installButton:hover {
-  opacity: 0.8;
-}
-
-/* Download Button */
-#downloadButton {
-  background: #FFD700; /* Same as install button */
-  color: #000;
+  color: #000; /* Black text */
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  display: block;
-  text-align: center;
   width: 100%;
-  margin-top: 10px;
 }
 
-#downloadButton:hover {
-  opacity: 0.8;
+#installButton:hover, #downloadButton:hover {
+  opacity: 0.8; /* Slightly dim on hover */
 }
 
 #downloadFirmware {
@@ -115,9 +96,9 @@ ewt-install-dialog {
   text-align: center;
   z-index: 1000;
   padding: 20px;
-  min-width: 350px; /* Ensures a reasonable minimum width */
-  max-width: 600px; /* Prevents the dialog from growing too wide */
-  width: auto; /* Adjusts width dynamically based on content */
+  min-width: 350px; /* Minimum width for the dialog */
+  max-width: 600px; /* Prevent the dialog from growing too wide */
+  width: auto; /* Dynamically adjusts width based on content */
   word-wrap: break-word; /* Ensures long text wraps */
   display: flex;
   flex-direction: column;
