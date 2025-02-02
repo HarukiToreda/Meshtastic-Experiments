@@ -8,17 +8,17 @@ function updateFlasherConfig() {
     var nodeHW = hardwareMenu.options[hardwareMenu.selectedIndex].value;
 
     if (nodeHW === "T-Echo") {
-        // Hide Connect and Flash, show Download button
+        // Show the Download button for T-Echo
         espWebTools.style.display = "none";
         eraseContainer.style.display = "none";
         downloadLink.style.display = "block";
     } else {
-        // Show Connect and Flash, hide Download button
+        // Ensure Connect and Flash logic is intact for all other hardware
         espWebTools.style.display = "block";
         eraseContainer.style.display = "flex";
         downloadLink.style.display = "none";
 
-        // Maintain existing functionality for Connect and Flash
+        // Use the manifest files as per the erase checkbox
         if (eraseCheckbox.checked) {
             espWebTools.manifest = "./firmware/" + nodeHW + "/install.json";
         } else {
@@ -28,10 +28,10 @@ function updateFlasherConfig() {
 }
 
 function showDownloadPopup() {
-    // Create the custom download pop-up
+    // Create the download-specific pop-up dialog
     const downloadDialog = document.createElement("ewt-install-dialog");
 
-    // Add a header
+    // Add the header for the download pop-up
     const header = document.createElement("div");
     header.className = "popup-header";
     header.innerHTML = `
@@ -39,7 +39,7 @@ function showDownloadPopup() {
         <span class="popup-close" onclick="document.body.removeChild(this.parentElement.parentElement)">×</span>
     `;
 
-    // Add the message
+    // Add the message for the download pop-up
     const list = document.createElement("ew-list");
     const messageItem = document.createElement("ew-list-item");
     messageItem.innerHTML = `
@@ -49,15 +49,18 @@ function showDownloadPopup() {
     `;
     list.appendChild(messageItem);
 
-    // Build the dialog
+    // Build the pop-up for download
     downloadDialog.appendChild(header);
     downloadDialog.appendChild(list);
 
-    // Add dialog to the DOM
+    // Append the pop-up to the body
     document.body.appendChild(downloadDialog);
 
-    // Automatically trigger the file download after showing the dialog
+    // Trigger file download after a brief delay
     setTimeout(() => {
-        window.location.href = document.getElementById("downloadFirmware").href;
-    }, 500); // Short delay to ensure the pop-up is visible
+        const downloadLink = document.getElementById("downloadFirmware");
+        if (downloadLink) {
+            window.location.href = downloadLink.href;
+        }
+    }, 500);
 }
