@@ -22,7 +22,7 @@ title: Web-Flasher
       <option value="Vision_Master_E213">Heltec Vision Master E213</option>
       <option value="Vision_Master_E290">Heltec Vision Master E290</option>
       <option value="Wireless_Paper_V1_1">Heltec Wireless Paper V1.1</option>
-      <option value="T-Echo">T-Echo</option> <!-- New option -->
+      <option value="T-Echo">T-Echo</option>
     </select>
   </div>
 
@@ -31,17 +31,18 @@ title: Web-Flasher
     <label for="eraseCheckbox" class="flasher-label">Full Erase</label>
   </div>
 
-  <!-- Flash Button (Hidden when T-Echo is selected) -->
+  <!-- Connect and Flash Button -->
   <esp-web-install-button id="espWebTools" showLog="true">
     <button slot="activate" id="installButton">Connect and Flash</button>
     <span slot="unsupported" id="unsupportedText">Unsupported browser message goes here</span>
   </esp-web-install-button>
 
-  <!-- Download Button (Shown when T-Echo is selected) -->
-<a id="downloadFirmware" 
-   href="https://harukitoreda.github.io/Meshtastic-Experiments/flasher/firmware/T-Echo/InkHUD_2.5.20_firmware.uf2" 
-   download 
-   style="display: none;">
-  <button id="downloadButton">Download Firmware</button>
-</a>
+  <!-- Download Firmware Button -->
+  <a id="downloadFirmware" 
+     href="https://harukitoreda.github.io/Meshtastic-Experiments/flasher/firmware/T-Echo/InkHUD_2.5.20_firmware.uf2" 
+     download 
+     style="display: none;"
+     onclick="showDownloadPopup(); return false;">
+    <button id="downloadButton">Download Firmware</button>
+  </a>
 </div>
