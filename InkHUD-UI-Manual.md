@@ -18,29 +18,31 @@ Click on any menu item below to expand and view its options.
     <summary><strong>▶ Applet (Select Screen to Display)</strong></summary>
 
     <blockquote>
+
     - **All Messages**  
-      Displays the last heard message from DMs or channels.  
+      _Displays the last heard message from DMs or channels._  
 
     - **DMs**  
-      Shows the last received direct message.  
+      _Shows the last received direct message._  
 
     - **Channel 0**  
-      Displays all recent messages on Channel 0 in a threaded format.  
+      _Displays all recent messages on Channel 0 in a threaded format._  
 
     - **Channel 1**  
-      Displays all recent messages on Channel 1 in a threaded format.  
+      _Displays all recent messages on Channel 1 in a threaded format._  
 
     - **Positions**  
-      Shows the Node Map Position screen, with "X" markers for locations.  
+      _Shows the Node Map Position screen, with "X" markers for locations._  
 
     - **Recents List**  
-      Displays a list of last heard nodes within a specified time frame.  
+      _Displays a list of last heard nodes within a specified time frame._  
 
     - **Heard**  
-      Lists all nodes heard within a certain time period.  
+      _Lists all nodes heard within a certain time period._  
 
     - **Exit**  
-      Closes the menu screen.  
+      _Closes the menu screen._  
+
     </blockquote>
 
   </details>
@@ -49,6 +51,7 @@ Click on any menu item below to expand and view its options.
     <summary><strong>▶ Auto-Show (Auto-Switch to New Data)</strong></summary>
 
     <blockquote>
+
     - **All Messages**  
     - **DMs**  
     - **Channel 0**  
@@ -56,7 +59,8 @@ Click on any menu item below to expand and view its options.
     - **Positions**  
     - **Recents List**  
     - **Heard**  
-    - **Exit** – Closes the menu screen.  
+    - **Exit** – _Closes the menu screen._  
+
     </blockquote>
 
   </details>
@@ -65,12 +69,14 @@ Click on any menu item below to expand and view its options.
     <summary><strong>▶ Recent Duration (Filter Recents List by Time)</strong></summary>
 
     <blockquote>
+
     - **2 Minutes**  
     - **5 Minutes**  
     - **10 Minutes**  
     - **30 Minutes**  
     - **60 Minutes**  
     - **120 Minutes**  
+
     </blockquote>
 
   </details>
