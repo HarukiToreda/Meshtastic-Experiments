@@ -2,6 +2,7 @@
 layout: default
 title: Web-Flasher
 ---
+This flasher is for testing purposes only to get IRL feedback and it's manually updated when I can. For up to date firmware it is advised to compile your own version using the github repo [GitHub - InkHUD UI](https://github.com/todd-herbert/meshtastic-firmware/tree/InkHUD)  
 
 <!-- Load the esp-web-tools script -->
 <script type="module" src="./esp-web-tools/install-button.js?module"></script>
