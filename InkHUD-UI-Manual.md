@@ -15,6 +15,7 @@ Click on any menu item below to expand and view its options.
 
   <details>
     <summary><strong>▶ Applet (Select Screen to Display)</strong></summary>
+    
     - **All Messages** – Displays the last heard message from DMs or channels.  
     - **DMs** – Shows the last received direct message.  
     - **Channel 0** – Displays all recent messages on Channel 0 in a threaded format.  
@@ -23,10 +24,12 @@ Click on any menu item below to expand and view its options.
     - **Recents List** – Displays a list of last heard nodes within a specified time frame.  
     - **Heard** – Lists all nodes heard within a certain time period.  
     - **Exit** – Closes the menu screen.  
+
   </details>
 
   <details>
     <summary><strong>▶ Auto-Show (Auto-Switch to New Data)</strong></summary>
+
     - **All Messages**  
     - **DMs**  
     - **Channel 0**  
@@ -35,16 +38,19 @@ Click on any menu item below to expand and view its options.
     - **Recents List**  
     - **Heard**  
     - **Exit** – Closes the menu screen.  
+
   </details>
 
   <details>
     <summary><strong>▶ Recent Duration (Filter Recents List by Time)</strong></summary>
+
     - **2 Minutes**  
     - **5 Minutes**  
     - **10 Minutes**  
     - **30 Minutes**  
     - **60 Minutes**  
     - **120 Minutes**  
+
   </details>
 
   <details>
