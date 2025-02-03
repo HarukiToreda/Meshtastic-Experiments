@@ -76,46 +76,28 @@ Click on any menu item below to expand and view its options.
   </details>
 
   <details>
-    <summary><strong>▶ Layout</strong></summary>
-    <blockquote>
-    Splits the screen into different sections for improved data visualization.
-    </blockquote>
+    <summary><strong>▶ Layout</strong> – Splits the screen into different sections for improved data visualization.</summary>
   </details>
 
   <details>
-    <summary><strong>▶ Rotate</strong></summary>
-    <blockquote>
-    Rotates the screen clockwise for different orientations.
-    </blockquote>
+    <summary><strong>▶ Rotate</strong> – Rotates the screen clockwise for different orientations.</summary>
   </details>
 
   <details>
-    <summary><strong>▶ Notification</strong></summary>
-    <blockquote>
-    Enables a notification banner when a new message is received.
-    </blockquote>
+    <summary><strong>▶ Notification</strong> – Enables a notification banner when a new message is received.</summary>
   </details>
 
   <details>
-    <summary><strong>▶ Battery Icon</strong></summary>
-    <blockquote>
-    Displays the battery level on all screens.
-    </blockquote>
+    <summary><strong>▶ Battery Icon</strong> – Displays the battery level on all screens.</summary>
   </details>
   </blockquote>
 
 </details>
 
 <details>
-  <summary><strong>▶ Shutdown</strong></summary>
-  <blockquote>
-  Puts the device into **Deep Sleep** while saving all current settings and messages.
-  </blockquote>
+  <summary><strong>▶ Shutdown</strong> – Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</summary>
 </details>
 
 <details>
-  <summary><strong>▶ Exit</strong></summary>
-  <blockquote>
-  Closes the menu screen.
-  </blockquote>
+  <summary><strong>▶ Exit</strong> – Closes the menu screen.</summary>
 </details>
