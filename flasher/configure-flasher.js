@@ -94,9 +94,17 @@ function handleEraseCheckboxChange() {
         Selected Hardware: ${selectedHardware}
         Erase Checkbox Checked: ${eraseCheckbox.checked}
         Manifest: ${manifest}`);
+}
 
-    // Re-trigger the full configuration update to ensure all elements are in sync
-    updateFlasherConfig();
+// Function to ensure the checkbox is respected when Connect and Flash is pressed
+function handleConnectAndFlash() {
+    const eraseCheckbox = document.getElementById("eraseCheckbox");
+
+    // Explicitly trigger the checkbox handler to ensure the state is respected
+    handleEraseCheckboxChange();
+
+    // Proceed with connecting and flashing (or other desired actions)
+    updateDebugWindow("Connect and Flash button pressed. Manifest updated.");
 }
 
 // Function to show the download popup
@@ -133,6 +141,7 @@ function showDownloadPopup() {
 function setupListeners() {
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
+    const connectButton = document.getElementById("connectAndFlashButton");
 
     // Event listener for hardware dropdown
     hardwareMenu.addEventListener("change", () => {
@@ -144,10 +153,10 @@ function setupListeners() {
         handleEraseCheckboxChange();
     });
 
-    // Add onchange directly to checkbox
-    eraseCheckbox.onchange = () => {
-        handleEraseCheckboxChange();
-    };
+    // Event listener for Connect and Flash button
+    connectButton.addEventListener("click", () => {
+        handleConnectAndFlash();
+    });
 }
 
 // Initial setup
