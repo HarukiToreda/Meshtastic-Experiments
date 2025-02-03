@@ -34,7 +34,7 @@ title: Web-Flasher
   <!-- Connect and Flash Button -->
   <esp-web-install-button id="espWebTools" showLog="true">
     <button slot="activate" id="installButton">Connect and Flash</button>
-    <span slot="unsupported" id="unsupportedText">Unsupported browser message goes here</span>
+    <span slot="unsupported" id="unsupportedText">Your browser does not support the WebSerial API. Please switch to a compatible browser, such as Chrome or Edge, for full functionality.</span>
   </esp-web-install-button>
 
   <!-- Download Firmware Button -->
