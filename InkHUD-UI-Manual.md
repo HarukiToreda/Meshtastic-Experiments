@@ -140,30 +140,30 @@ Click on any menu item below to expand and view its options.
 
   <details>
     <summary><strong><span style="font-size: 18px;">Layout</span></strong></summary>
-    <blockquote>
+    
     Splits the screen into different sections for improved data visualization.
-    </blockquote>
+    
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Rotate</span></strong></summary>
-    <blockquote>
+    
     Rotates the screen clockwise for different orientations.
-    </blockquote>
+    
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Notification</span></strong></summary>
-    <blockquote>
+    
     Enables a notification banner when a new message is received.
-    </blockquote>
+    
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Battery Icon</span></strong></summary>
-    <blockquote>
+   
     Displays the battery level on all screens.
-    </blockquote>
+    
   </details>
 
   </blockquote>
