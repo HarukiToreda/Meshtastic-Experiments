@@ -13,14 +13,12 @@ Click on any menu item below to expand and view its options.
 <details>
   <summary><strong><span style="font-size: 18px;">Options</span></strong></summary>
 
-  <br>  
-  <span style="font-size: 14px;">InkHUD Settings</span>  
+  <span style="display: block; margin-top: 4px; font-size: 14px;">InkHUD Settings</span>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Applet</span></strong></summary>
 
-    <br>  
-    <span style="font-size: 14px;">Select Screen to Display</span>  
+    <span style="display: block; margin-top: 4px; font-size: 14px;">Select Screen to Display</span>
 
     <details>
       <summary><strong><span style="font-size: 18px;">All Messages</span></strong></summary>
@@ -42,33 +40,12 @@ Click on any menu item below to expand and view its options.
       Displays all recent messages on Channel 1 in a threaded format.
     </details>
 
-    <details>
-      <summary><strong><span style="font-size: 18px;">Positions</span></strong></summary>
-      Shows the Node Map Position screen, with "X" markers for locations.
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">Recents List</span></strong></summary>
-      Displays a list of last heard nodes within a specified time frame.
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">Heard</span></strong></summary>
-      Lists all nodes heard within a certain time period.
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
-      Closes the menu screen.
-    </details>
-
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Auto-Show</span></strong></summary>
 
-    <br>  
-    <span style="font-size: 14px;">Auto-Switch to New Data</span>  
+    <span style="display: block; margin-top: 4px; font-size: 14px;">Auto-Switch to New Data</span>
 
     <details>
       <summary><strong><span style="font-size: 18px;">All Messages</span></strong></summary>
@@ -78,38 +55,12 @@ Click on any menu item below to expand and view its options.
       <summary><strong><span style="font-size: 18px;">DMs</span></strong></summary>
     </details>
 
-    <details>
-      <summary><strong><span style="font-size: 18px;">Channel 0</span></strong></summary>
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">Channel 1</span></strong></summary>
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">Positions</span></strong></summary>
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">Recents List</span></strong></summary>
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">Heard</span></strong></summary>
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
-      Closes the menu screen.
-    </details>
-
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Recent Duration</span></strong></summary>
 
-    <br>  
-    <span style="font-size: 14px;">Filter Recents List by Time</span>  
+    <span style="display: block; margin-top: 4px; font-size: 14px;">Filter Recents List by Time</span>
 
     <details>
       <summary><strong><span style="font-size: 18px;">2 Minutes</span></strong></summary>
@@ -119,54 +70,6 @@ Click on any menu item below to expand and view its options.
       <summary><strong><span style="font-size: 18px;">5 Minutes</span></strong></summary>
     </details>
 
-    <details>
-      <summary><strong><span style="font-size: 18px;">10 Minutes</span></strong></summary>
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">30 Minutes</span></strong></summary>
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">60 Minutes</span></strong></summary>
-    </details>
-
-    <details>
-      <summary><strong><span style="font-size: 18px;">120 Minutes</span></strong></summary>
-    </details>
-
-  </details>
-
-  <details>
-    <summary><strong><span style="font-size: 18px;">Layout</span></strong></summary>
-
-    <br>  
-    Splits the screen into different sections for improved data visualization.
-
-  </details>
-
-  <details>
-    <summary><strong><span style="font-size: 18px;">Rotate</span></strong></summary>
-
-    <br>  
-    Rotates the screen clockwise for different orientations.
-
-  </details>
-
-  <details>
-    <summary><strong><span style="font-size: 18px;">Notification</span></strong></summary>
-
-    <br>  
-    Enables a notification banner when a new message is received.
-
-  </details>
-
-  <details>
-    <summary><strong><span style="font-size: 18px;">Battery Icon</span></strong></summary>
-
-    <br>  
-    Displays the battery level on all screens.
-
   </details>
 
 </details>
@@ -174,15 +77,13 @@ Click on any menu item below to expand and view its options.
 <details>
   <summary><strong><span style="font-size: 18px;">Shutdown</span></strong></summary>
 
-  <br>  
-  Puts the device into **Deep Sleep** while saving all current settings and messages.
+  <span style="display: block; margin-top: 4px;">Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</span>
 
 </details>
 
 <details>
   <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
 
-  <br>  
-  Closes the menu screen.
+  <span style="display: block; margin-top: 4px;">Closes the menu screen.</span>
 
 </details>
