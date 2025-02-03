@@ -30,8 +30,12 @@ navbar:
     url: "Gerber-PCB-Files"
   - title: Compatible Peripherals
     url: "Compatible-Peripherals"
-  - title: Web Flasher
-    url: "flasher/"
+  - title: InkHUD
+    sublinks:
+    - title: Intro
+      url: InkHUD/Intro
+    - title: Web Flasher
+      url: "flasher/"
   #- title: Heltec V3
   #  url: "/heltec-v3"    
   - title: Contact Me
