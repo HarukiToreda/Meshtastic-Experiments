@@ -70,6 +70,7 @@ Click on any menu item below to expand and view its options.
 
     <span style="display: block; margin-top: 6px; font-size: 14px;">Filter Recents List by Time</span>
 
+    <blockquote>
     <div style="margin-top: 6px;">
       <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">2 Minutes</div>
       <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">5 Minutes</div>
@@ -78,7 +79,8 @@ Click on any menu item below to expand and view its options.
       <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">60 Minutes</div>
       <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">120 Minutes</div>
     </div>
-
+    </blockquote>
+    
   </details>
 
   <details>
