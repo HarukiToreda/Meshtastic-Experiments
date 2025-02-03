@@ -101,18 +101,33 @@ function handleEraseCheckboxChange() {
 
 // Function to ensure the checkbox is respected when Connect and Flash is pressed
 function handleConnectAndFlash() {
+    const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
 
-    // Check the state of the checkbox
-    const isEraseChecked = eraseCheckbox.checked;
-    updateDebugWindow(`Connect and Flash button pressed:
-        Erase Checkbox State: ${isEraseChecked}`);
+    // Get the selected hardware value
+    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex]?.value || "None";
 
-    // Explicitly trigger the checkbox handler to ensure the state is respected
+    // Log the current checkbox state and hardware selection
+    updateDebugWindow(`Connect and Flash button pressed:
+        Selected Hardware: ${selectedHardware}
+        Erase Checkbox Checked: ${eraseCheckbox.checked}`);
+
+    // If no hardware is selected, exit early
+    if (!selectedHardware || selectedHardware === "None") {
+        updateDebugWindow("No hardware selected, Connect and Flash aborted.");
+        return;
+    }
+
+    // Call the checkbox handler to update the manifest
     handleEraseCheckboxChange();
 
-    // Proceed with connecting and flashing (or other desired actions)
-    updateDebugWindow("Manifest updated and Connect and Flash initiated.");
+    // Log the current manifest state
+    const espWebTools = document.getElementById("espWebTools");
+    updateDebugWindow(`Manifest set for flashing:
+        ${espWebTools.manifest}`);
+
+    // Proceed with flashing (simulated here)
+    updateDebugWindow("Connect and Flash initiated.");
 }
 
 // Function to show the download popup
