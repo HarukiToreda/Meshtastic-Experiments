@@ -33,42 +33,42 @@ Click on any menu item below to expand and view its options.
     <blockquote>
     <details>
       <summary><strong><span style="font-size: 18px;">All Messages</span></strong></summary>
-      Displays the last heard message from DMs or channels.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays the last heard message from DMs or channels.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">DMs</span></strong></summary>
-      Shows the last received direct message.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Shows the last received direct message.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Channel 0</span></strong></summary>
-      Displays all recent messages on Channel 0 in a threaded format.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays all recent messages on Channel 0 in a threaded format.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Channel 1</span></strong></summary>
-      Displays all recent messages on Channel 1 in a threaded format.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays all recent messages on Channel 1 in a threaded format.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Positions</span></strong></summary>
-      Shows the Node Map Position screen, with "X" markers for locations.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Shows the Node Map Position screen, with "X" markers for locations.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Recents List</span></strong></summary>
-      Displays a list of last heard nodes within a specified time frame.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays a list of last heard nodes within a specified time frame.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Heard</span></strong></summary>
-      Lists all nodes heard within a certain time period.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Lists all nodes heard within a certain time period.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
-      Closes the menu screen.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Closes the menu screen.</span>
     </details>
     </blockquote>
 
