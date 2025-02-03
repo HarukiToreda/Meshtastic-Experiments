@@ -68,12 +68,12 @@ Click on any menu item below to expand and view its options.
     <span style="display: block; margin-top: 6px; font-size: 14px;">Filter Recents List by Time</span>
 
     <div style="margin-top: 6px;">
-      <span style="display: inline-block; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #444; color: white; border-radius: 6px; margin-right: 5px;">2 Minutes</span>
-      <span style="display: inline-block; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #444; color: white; border-radius: 6px; margin-right: 5px;">5 Minutes</span>
-      <span style="display: inline-block; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #444; color: white; border-radius: 6px; margin-right: 5px;">10 Minutes</span>
-      <span style="display: inline-block; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #444; color: white; border-radius: 6px; margin-right: 5px;">30 Minutes</span>
-      <span style="display: inline-block; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #444; color: white; border-radius: 6px; margin-right: 5px;">60 Minutes</span>
-      <span style="display: inline-block; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #444; color: white; border-radius: 6px;">120 Minutes</span>
+      <div style="margin: 5px 0; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #333; color: white; border-radius: 6px; cursor: pointer; display: inline-block; width: 160px; text-align: center;">2 Minutes</div>
+      <div style="margin: 5px 0; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #333; color: white; border-radius: 6px; cursor: pointer; display: inline-block; width: 160px; text-align: center;">5 Minutes</div>
+      <div style="margin: 5px 0; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #333; color: white; border-radius: 6px; cursor: pointer; display: inline-block; width: 160px; text-align: center;">10 Minutes</div>
+      <div style="margin: 5px 0; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #333; color: white; border-radius: 6px; cursor: pointer; display: inline-block; width: 160px; text-align: center;">30 Minutes</div>
+      <div style="margin: 5px 0; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #333; color: white; border-radius: 6px; cursor: pointer; display: inline-block; width: 160px; text-align: center;">60 Minutes</div>
+      <div style="margin: 5px 0; padding: 8px 12px; font-size: 16px; font-weight: bold; background: #333; color: white; border-radius: 6px; cursor: pointer; display: inline-block; width: 160px; text-align: center;">120 Minutes</div>
     </div>
 
   </details>
