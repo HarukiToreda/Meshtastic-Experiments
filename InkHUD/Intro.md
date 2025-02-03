@@ -80,16 +80,14 @@ Click on any menu item below to expand and view its options.
     <span style="display: block; margin-top: 6px; font-size: 14px;">Automatically switch to a screen when new data is received</span>
 
     <blockquote>
-      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">All Messages</span></strong></summary></div>
+      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">All Messages</div>
       <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">DMs</div>
       <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">Channel 0</div>
       <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">Channel 1</div>
       <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">Positions</div>
       <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">Recents List</div>
       <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">Heard</div>
-    <details>
-      <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
-    </details>
+      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">Exit</div>
     </blockquote>
 
   </details>
