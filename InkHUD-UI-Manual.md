@@ -6,126 +6,106 @@ permalink: /InkHUD-UI-Manual/
 
 <h1>InkHUD UI Manual</h1>
 
-<h2>Main Menu Structure</h2>
-<p>The <strong>InkHUD UI</strong> features a menu system that allows users to configure display settings, manage notifications, and access messages efficiently. Below is a breakdown of its functions.</p>
+<p>Click on any menu item below to expand and view its options.</p>
 
-<hr>
+<style>
+  .menu-section {
+    border: 1px solid #FFD700;
+    background: #222;
+    color: #FFD700;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
 
-<h2>Menu</h2>
-<p>The <strong>Menu</strong> provides access to different settings and options to configure the display and message preferences.</p>
+  .menu-content {
+    display: none;
+    padding: 10px;
+    border-left: 3px solid #FFD700;
+    background: #111;
+    color: white;
+  }
 
-<h3>Options (InkHUD Settings)</h3>
-<p>Customize the InkHUD display behavior.</p>
+  .menu-section.active {
+    background: #FFD700;
+    color: #111;
+  }
+</style>
 
-<h4>Applet (Select Screen to Display)</h4>
-<p>Choose what type of data appears on the screen.</p>
-<ul>
-    <li><strong>All Messages</strong> – Displays the last heard message from DMs or channels.</li>
-    <li><strong>DMs</strong> – Shows the last received direct message.</li>
-    <li><strong>Channel 0</strong> – Displays all recent messages on Channel 0 in a threaded format.</li>
-    <li><strong>Channel 1</strong> – Displays all recent messages on Channel 1 in a threaded format.</li>
-    <li><strong>Positions</strong> – Shows the Node Map Position screen, with "X" markers for locations.</li>
-    <li><strong>Recents List</strong> – Displays a list of last heard nodes within a specified time frame.</li>
-    <li><strong>Heard</strong> – Lists all nodes heard within a certain time period.</li>
-    <li><strong>Exit</strong> – Closes the menu screen.</li>
-</ul>
+<script>
+  function toggleMenu(id) {
+    var sections = document.getElementsByClassName('menu-content');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    document.getElementById(id).style.display = 'block';
+  }
+</script>
 
-<h4>Auto-Show (Auto-Switch to New Data)</h4>
-<p>Automatically displays the selected screen when new data is received.</p>
-<ul>
-    <li>All Messages</li>
-    <li>DMs</li>
-    <li>Channel 0</li>
-    <li>Channel 1</li>
-    <li>Positions</li>
-    <li>Recents List</li>
-    <li>Heard</li>
-    <li>Exit – Closes the menu screen.</li>
-</ul>
+<!-- MAIN MENU -->
+<div class="menu-section" onclick="toggleMenu('menu-options')">▶ Menu</div>
+<div id="menu-options" class="menu-content">
 
-<h4>Recent Duration (Filter Recents List by Time)</h4>
-<p>Set the duration for filtering recently heard nodes when <strong>Recents List</strong> is selected.</p>
-<ul>
-    <li>2 Minutes</li>
-    <li>5 Minutes</li>
-    <li>10 Minutes</li>
-    <li>30 Minutes</li>
-    <li>60 Minutes</li>
-    <li>120 Minutes</li>
-</ul>
+  <!-- OPTIONS (InkHUD Settings) -->
+  <div class="menu-section" onclick="toggleMenu('options-settings')">▶ Options (InkHUD Settings)</div>
+  <div id="options-settings" class="menu-content">
+    <div class="menu-section" onclick="toggleMenu('applet')">▶ Applet (Select Screen to Display)</div>
+    <div id="applet" class="menu-content">
+      <ul>
+        <li>All Messages</li>
+        <li>DMs</li>
+        <li>Channel 0</li>
+        <li>Channel 1</li>
+        <li>Positions</li>
+        <li>Recents List</li>
+        <li>Heard</li>
+        <li>Exit</li>
+      </ul>
+    </div>
+    <div class="menu-section" onclick="toggleMenu('auto-show')">▶ Auto-Show (Auto-Switch to New Data)</div>
+    <div id="auto-show" class="menu-content">
+      <ul>
+        <li>All Messages</li>
+        <li>DMs</li>
+        <li>Channel 0</li>
+        <li>Channel 1</li>
+        <li>Positions</li>
+        <li>Recents List</li>
+        <li>Heard</li>
+        <li>Exit</li>
+      </ul>
+    </div>
+    <div class="menu-section" onclick="toggleMenu('recent-duration')">▶ Recent Duration (Filter Recents List by Time)</div>
+    <div id="recent-duration" class="menu-content">
+      <ul>
+        <li>2 Minutes</li>
+        <li>5 Minutes</li>
+        <li>10 Minutes</li>
+        <li>30 Minutes</li>
+        <li>60 Minutes</li>
+        <li>120 Minutes</li>
+      </ul>
+    </div>
+    <div class="menu-section" onclick="toggleMenu('layout')">▶ Layout</div>
+    <div id="layout" class="menu-content"><p>Splits the screen into different sections for improved data visualization.</p></div>
+    <div class="menu-section" onclick="toggleMenu('rotate')">▶ Rotate</div>
+    <div id="rotate" class="menu-content"><p>Rotates the screen clockwise for different orientations.</p></div>
+    <div class="menu-section" onclick="toggleMenu('notification')">▶ Notification</div>
+    <div id="notification" class="menu-content"><p>Enables a notification banner when a new message is received.</p></div>
+    <div class="menu-section" onclick="toggleMenu('battery-icon')">▶ Battery Icon</div>
+    <div id="battery-icon" class="menu-content"><p>Displays the battery level on all screens.</p></div>
+    <div class="menu-section" onclick="toggleMenu('options-exit')">▶ Exit</div>
+    <div id="options-exit" class="menu-content"><p>Closes the <strong>Options</strong> menu.</p></div>
+  </div> <!-- END OPTIONS -->
 
-<h4>Layout</h4>
-<p>Splits the screen into different sections for improved data visualization.</p>
+</div> <!-- END MENU -->
 
-<h4>Rotate</h4>
-<p>Rotates the screen clockwise for different orientations.</p>
+<!-- SHUTDOWN -->
+<div class="menu-section" onclick="toggleMenu('shutdown')">▶ Shutdown</div>
+<div id="shutdown" class="menu-content"><p>Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</p></div>
 
-<h4>Notification</h4>
-<p>Enables a notification banner when a new message is received.</p>
-
-<h4>Battery Icon</h4>
-<p>Displays the battery level on all screens.</p>
-
-<h4>Exit</h4>
-<p>Closes the <strong>Options</strong> menu.</p>
-
-<hr>
-
-<h2>Shutdown</h2>
-<p>Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</p>
-
-<hr>
-
-<h2>Exit</h2>
-<p>Closes the menu screen.</p>
-
-<hr>
-
-<h2>InkHUD UI Menu Structure (Tree View)</h2>
-
-<pre>
-Menu  
- ├── Options (InkHUD Settings)  
- │   ├── Applet (Type of screens data to display)  
- │   │   ├── All Messages  
- │   │   ├── DMs  
- │   │   ├── Channel 0  
- │   │   ├── Channel 1  
- │   │   ├── Positions  
- │   │   ├── Recents List  
- │   │   ├── Heard  
- │   │   ├── Exit  
- │   ├── Auto-Show (Automatically switch to new data screen)  
- │   │   ├── All Messages  
- │   │   ├── DMs  
- │   │   ├── Channel 0  
- │   │   ├── Channel 1  
- │   │   ├── Positions  
- │   │   ├── Recents List  
- │   │   ├── Heard  
- │   │   ├── Exit  
- │   ├── Recent Duration (Filter Recents List by time)  
- │   │   ├── 2 Mins  
- │   │   ├── 5 Mins  
- │   │   ├── 10 Mins  
- │   │   ├── 30 Mins  
- │   │   ├── 60 Mins  
- │   │   ├── 120 Mins  
- │   ├── Layout  
- │   ├── Rotate  
- │   ├── Notification  
- │   ├── Battery Icon  
- │   ├── Exit  
- ├── Shutdown (Deep sleep mode, saves settings/messages)  
- ├── Exit (Close menu screen)  
-</pre>
-
-<hr>
-
-<h2>Add the Page to Navigation</h2>
-<p>To make this new page accessible from your site’s navigation menu, edit <strong>_config.yml</strong> and add this under <code>navbar:</code>.</p>
-
-<pre>
-  - title: InkHUD UI Manual
-    url: "InkHUD-UI-Manual"
-</pre>
+<!-- EXIT -->
+<div class="menu-section" onclick="toggleMenu('exit')">▶ Exit</div>
+<div id="exit" class="menu-content"><p>Closes the menu screen.</p></div>
