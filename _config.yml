@@ -33,7 +33,7 @@ navbar:
   - title: InkHUD
     sublinks:
     - title: Intro
-      url: InkHUD/Intro
+      url: "InkHUD/Intro"
     - title: Web Flasher
       url: "flasher/"
   #- title: Heltec V3
