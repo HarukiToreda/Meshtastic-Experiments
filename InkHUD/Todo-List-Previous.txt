@@ -17,6 +17,7 @@ title: Todo List
 - [ ]      GPS stats in menu
 - [ ]      GPS & Bluetooth toggle in menu
 - 🛠 **(WIP)**   add extended ascii / foreign language chars - Fonts for Windows-1250, Windows-1251 (Windows-1252?)
+- [ ]      Test
 
 ## Critical Tasks
 ====================
