@@ -19,11 +19,26 @@ Click on any menu item below to expand and view its options.
     max-width: 800px;
   }
   details {
-    flex: 0 0 250px; /* Set a fixed width for the expandable section */
+    flex: 0 0 250px; /* Fixed width for collapsible buttons */
+    display: inline-block;
   }
   .description {
-    flex: 1; /* Allows text to occupy remaining space */
+    flex: 1; /* Ensures text remains aligned and does not move */
     margin-left: 20px; /* Space between button and text */
+    white-space: nowrap; /* Prevents text from wrapping */
+  }
+  details summary {
+    display: inline-block;
+    cursor: pointer;
+  }
+  details[open] {
+    position: absolute;
+    left: 0;
+    background: #1a1a1a;
+    padding: 10px;
+    width: auto;
+    z-index: 10;
+    border-radius: 5px;
   }
 </style>
 
