@@ -1,7 +1,7 @@
 ---
 layout: default
-title: InkHUD UI Manual
-permalink: /InkHUD-UI-Manual/
+title: InkHUD Intro
+permalink: /InkHUD/intro/
 ---
 # InkHUD UI  
 
