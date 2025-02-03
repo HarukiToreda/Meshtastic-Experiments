@@ -39,7 +39,7 @@ function updateFlasherConfig() {
     const downloadLink = document.getElementById("downloadFirmware");
 
     // Get the selected hardware value
-    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex].value;
+    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex]?.value || "None";
 
     let manifest;
 
@@ -76,12 +76,12 @@ function handleEraseCheckboxChange() {
     const espWebTools = document.getElementById("espWebTools");
 
     // Get the selected hardware value
-    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex]?.value;
+    const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex]?.value || "None";
 
     // Log the checkbox state change
     updateDebugWindow(`Erase Checkbox Toggled: ${eraseCheckbox.checked}`);
 
-    if (!selectedHardware) {
+    if (!selectedHardware || selectedHardware === "None") {
         updateDebugWindow("No hardware selected, checkbox change ignored.");
         return;
     }
@@ -170,6 +170,6 @@ function setupListeners() {
     updateDebugWindow(`Initial Checkbox State: ${eraseCheckbox.checked}`);
 }
 
-// Ensure the configuration is initialized correctly
+// Initial setup
 setupListeners();
 updateFlasherConfig();
