@@ -45,67 +45,65 @@ permalink: /InkHUD-UI-Manual/
 </script>
 
 <!-- MAIN MENU -->
-<div class="menu-section" onclick="toggleMenu('menu-options')">▶ Menu</div>
-<div id="menu-options" class="menu-content">
+<div class="menu-section" onclick="toggleMenu('options-settings')">▶ Options (InkHUD Settings)</div>
+<div id="options-settings" class="menu-content">
 
-  <!-- OPTIONS (InkHUD Settings) -->
-  <div class="menu-section" onclick="toggleMenu('options-settings')">▶ Options (InkHUD Settings)</div>
-  <div id="options-settings" class="menu-content">
-    <div class="menu-section" onclick="toggleMenu('applet')">▶ Applet (Select Screen to Display)</div>
-    <div id="applet" class="menu-content">
-      <ul>
-        <li>All Messages</li>
-        <li>DMs</li>
-        <li>Channel 0</li>
-        <li>Channel 1</li>
-        <li>Positions</li>
-        <li>Recents List</li>
-        <li>Heard</li>
-        <li>Exit</li>
-      </ul>
-    </div>
-    <div class="menu-section" onclick="toggleMenu('auto-show')">▶ Auto-Show (Auto-Switch to New Data)</div>
-    <div id="auto-show" class="menu-content">
-      <ul>
-        <li>All Messages</li>
-        <li>DMs</li>
-        <li>Channel 0</li>
-        <li>Channel 1</li>
-        <li>Positions</li>
-        <li>Recents List</li>
-        <li>Heard</li>
-        <li>Exit</li>
-      </ul>
-    </div>
-    <div class="menu-section" onclick="toggleMenu('recent-duration')">▶ Recent Duration (Filter Recents List by Time)</div>
-    <div id="recent-duration" class="menu-content">
-      <ul>
-        <li>2 Minutes</li>
-        <li>5 Minutes</li>
-        <li>10 Minutes</li>
-        <li>30 Minutes</li>
-        <li>60 Minutes</li>
-        <li>120 Minutes</li>
-      </ul>
-    </div>
-    <div class="menu-section" onclick="toggleMenu('layout')">▶ Layout</div>
-    <div id="layout" class="menu-content"><p>Splits the screen into different sections for improved data visualization.</p></div>
-    <div class="menu-section" onclick="toggleMenu('rotate')">▶ Rotate</div>
-    <div id="rotate" class="menu-content"><p>Rotates the screen clockwise for different orientations.</p></div>
-    <div class="menu-section" onclick="toggleMenu('notification')">▶ Notification</div>
-    <div id="notification" class="menu-content"><p>Enables a notification banner when a new message is received.</p></div>
-    <div class="menu-section" onclick="toggleMenu('battery-icon')">▶ Battery Icon</div>
-    <div id="battery-icon" class="menu-content"><p>Displays the battery level on all screens.</p></div>
-    <div class="menu-section" onclick="toggleMenu('options-exit')">▶ Exit</div>
-    <div id="options-exit" class="menu-content"><p>Closes the <strong>Options</strong> menu.</p></div>
-  </div> <!-- END OPTIONS -->
+  <div class="menu-section" onclick="toggleMenu('applet')">▶ Applet (Select Screen to Display)</div>
+  <div id="applet" class="menu-content">
+    <ul>
+      <li>All Messages</li>
+      <li>DMs</li>
+      <li>Channel 0</li>
+      <li>Channel 1</li>
+      <li>Positions</li>
+      <li>Recents List</li>
+      <li>Heard</li>
+      <li>Exit</li>
+    </ul>
+  </div>
 
-</div> <!-- END MENU -->
+  <div class="menu-section" onclick="toggleMenu('auto-show')">▶ Auto-Show (Auto-Switch to New Data)</div>
+  <div id="auto-show" class="menu-content">
+    <ul>
+      <li>All Messages</li>
+      <li>DMs</li>
+      <li>Channel 0</li>
+      <li>Channel 1</li>
+      <li>Positions</li>
+      <li>Recents List</li>
+      <li>Heard</li>
+      <li>Exit</li>
+    </ul>
+  </div>
 
-<!-- SHUTDOWN -->
-<div class="menu-section" onclick="toggleMenu('shutdown')">▶ Shutdown</div>
-<div id="shutdown" class="menu-content"><p>Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</p></div>
+  <div class="menu-section" onclick="toggleMenu('recent-duration')">▶ Recent Duration (Filter Recents List by Time)</div>
+  <div id="recent-duration" class="menu-content">
+    <ul>
+      <li>2 Minutes</li>
+      <li>5 Minutes</li>
+      <li>10 Minutes</li>
+      <li>30 Minutes</li>
+      <li>60 Minutes</li>
+      <li>120 Minutes</li>
+    </ul>
+  </div>
 
-<!-- EXIT -->
-<div class="menu-section" onclick="toggleMenu('exit')">▶ Exit</div>
-<div id="exit" class="menu-content"><p>Closes the menu screen.</p></div>
+  <div class="menu-section" onclick="toggleMenu('layout')">▶ Layout</div>
+  <div id="layout" class="menu-content"><p>Splits the screen into different sections for improved data visualization.</p></div>
+
+  <div class="menu-section" onclick="toggleMenu('rotate')">▶ Rotate</div>
+  <div id="rotate" class="menu-content"><p>Rotates the screen clockwise for different orientations.</p></div>
+
+  <div class="menu-section" onclick="toggleMenu('notification')">▶ Notification</div>
+  <div id="notification" class="menu-content"><p>Enables a notification banner when a new message is received.</p></div>
+
+  <div class="menu-section" onclick="toggleMenu('battery-icon')">▶ Battery Icon</div>
+  <div id="battery-icon" class="menu-content"><p>Displays the battery level on all screens.</p></div>
+
+  <div class="menu-section" onclick="toggleMenu('shutdown')">▶ Shutdown</div>
+  <div id="shutdown" class="menu-content"><p>Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</p></div>
+
+  <div class="menu-section" onclick="toggleMenu('exit')">▶ Exit</div>
+  <div id="exit" class="menu-content"><p>Closes the menu screen.</p></div>
+
+</div> <!-- END OPTIONS -->
