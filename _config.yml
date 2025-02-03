@@ -34,7 +34,7 @@ navbar:
     sublinks:
     - title: Intro
       url: "InkHUD/Intro"
-    - title: Intro
+    - title: To-Do List
       url: "InkHUD/Todo-List"
     - title: Web Flasher
       url: "flasher/"
