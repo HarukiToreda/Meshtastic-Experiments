@@ -79,40 +79,40 @@ Closes the menu screen.
 
 ### **InkHUD UI Menu Structure (Tree View)**
 
-Menu
-├── Options (InkHUD Settings)
-│ ├── Applet (Type of screens data to display)
-│ │ ├── All Messages
-│ │ ├── DMs
-│ │ ├── Channel 0
-│ │ ├── Channel 1
-│ │ ├── Positions
-│ │ ├── Recents List
-│ │ ├── Heard
-│ │ ├── Exit
-│ ├── Auto-Show (Automatically switch to new data screen)
-│ │ ├── All Messages
-│ │ ├── DMs
-│ │ ├── Channel 0
-│ │ ├── Channel 1
-│ │ ├── Positions
-│ │ ├── Recents List
-│ │ ├── Heard
-│ │ ├── Exit
-│ ├── Recent Duration (Filter Recents List by time)
-│ │ ├── 2 Mins
-│ │ ├── 5 Mins
-│ │ ├── 10 Mins
-│ │ ├── 30 Mins
-│ │ ├── 60 Mins
-│ │ ├── 120 Mins
-│ ├── Layout
-│ ├── Rotate
-│ ├── Notification
-│ ├── Battery Icon
-│ ├── Exit
-├── Shutdown (Deep sleep mode, saves settings/messages)
-├── Exit (Close menu screen)
+Menu  
+ ├── Options (InkHUD Settings)  
+ │   ├── Applet (Type of screens data to display)  
+ │   │   ├── All Messages  
+ │   │   ├── DMs  
+ │   │   ├── Channel 0  
+ │   │   ├── Channel 1  
+ │   │   ├── Positions  
+ │   │   ├── Recents List  
+ │   │   ├── Heard  
+ │   │   ├── Exit  
+ │   ├── Auto-Show (Automatically switch to new data screen)  
+ │   │   ├── All Messages  
+ │   │   ├── DMs  
+ │   │   ├── Channel 0  
+ │   │   ├── Channel 1  
+ │   │   ├── Positions  
+ │   │   ├── Recents List  
+ │   │   ├── Heard  
+ │   │   ├── Exit  
+ │   ├── Recent Duration (Filter Recents List by time)  
+ │   │   ├── 2 Mins  
+ │   │   ├── 5 Mins  
+ │   │   ├── 10 Mins  
+ │   │   ├── 30 Mins  
+ │   │   ├── 60 Mins  
+ │   │   ├── 120 Mins  
+ │   ├── Layout  
+ │   ├── Rotate  
+ │   ├── Notification  
+ │   ├── Battery Icon  
+ │   ├── Exit  
+ ├── Shutdown (Deep sleep mode, saves settings/messages)  
+ ├── Exit (Close menu screen)  
 
 ---
 
