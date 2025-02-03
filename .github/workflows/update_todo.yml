@@ -16,31 +16,60 @@ jobs:
         run: |
           curl -o todo.txt https://raw.githubusercontent.com/todd-herbert/meshtastic-firmware/InkHUD/todo.txt
 
-      - name: Format into Markdown
+      - name: Ensure Directories Exist
         run: |
-          echo "---" > Todo-List.md
-          echo "layout: default" >> Todo-List.md
-          echo "title: Todo List" >> Todo-List.md
-          echo "---" >> Todo-List.md
-          echo "# Todo List" >> Todo-List.md
-          echo "" >> Todo-List.md
-          echo "**Last updated: $(date -u)**" >> Todo-List.md
-          echo "" >> Todo-List.md
-          echo "## Features" >> Todo-List.md
-          awk '/Features/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
-          echo "" >> Todo-List.md
-          echo "## Critical Tasks" >> Todo-List.md
-          awk '/Critical Tasks/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
-          echo "" >> Todo-List.md
-          echo "## Improvements" >> Todo-List.md
-          awk '/Improvements/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
-          echo "" >> Todo-List.md
-          echo "## Known Bugs" >> Todo-List.md
-          awk '/Known Bugs/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
-          echo "" >> Todo-List.md
-          echo "## Chores" >> Todo-List.md
-          awk '/Chores/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
-          echo "" >> Todo-List.md
+          mkdir -p InkHUD
+
+      - name: Create Todo List File
+        run: |
+          echo "---" > InkHUD/Todo-List.md
+          echo "layout: default" >> InkHUD/Todo-List.md
+          echo "title: Todo List" >> InkHUD/Todo-List.md
+          echo "---" >> InkHUD/Todo-List.md
+          echo "# Todo List" >> InkHUD/Todo-List.md
+          echo "" >> InkHUD/Todo-List.md
+          echo "**Last updated: $(date -u)**" >> InkHUD/Todo-List.md
+          echo "" >> InkHUD/Todo-List.md
+          echo "## Features" >> InkHUD/Todo-List.md
+          awk '/Features/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> InkHUD/Todo-List.md
+          echo "" >> InkHUD/Todo-List.md
+          echo "## Critical Tasks" >> InkHUD/Todo-List.md
+          awk '/Critical Tasks/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> InkHUD/Todo-List.md
+          echo "" >> InkHUD/Todo-List.md
+          echo "## Improvements" >> InkHUD/Todo-List.md
+          awk '/Improvements/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> InkHUD/Todo-List.md
+          echo "" >> InkHUD/Todo-List.md
+          echo "## Known Bugs" >> InkHUD/Todo-List.md
+          awk '/Known Bugs/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> InkHUD/Todo-List.md
+          echo "" >> InkHUD/Todo-List.md
+          echo "## Chores" >> InkHUD/Todo-List.md
+          awk '/Chores/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> InkHUD/Todo-List.md
+          echo "" >> InkHUD/Todo-List.md
+
+      - name: Track Completed Items
+        run: |
+          # Store previous version if it exists
+          if [ -f "InkHUD/Todo-List-Previous.md" ]; then
+            grep -E "^- \[ \]" InkHUD/Todo-List-Previous.md | sort > previous.txt
+          else
+            touch previous.txt
+          fi
+
+          # Extract current tasks
+          grep -E "^- \[ \]" InkHUD/Todo-List.md | sort > current.txt
+
+          # Find removed tasks (completed items)
+          comm -23 previous.txt current.txt > removed.txt
+
+          # Add removed tasks to the "Completed" section
+          if [ -s removed.txt ]; then
+            echo "## Completed" >> InkHUD/Todo-List.md
+            cat removed.txt >> InkHUD/Todo-List.md
+            echo "" >> InkHUD/Todo-List.md
+          fi
+
+          # Store new version as previous
+          cp InkHUD/Todo-List.md InkHUD/Todo-List-Previous.md
 
       - name: Commit and Push Changes
         env:
@@ -48,6 +77,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add Todo-List.md
-          git commit -m "Automated update of Todo List" || echo "No changes to commit"
+          git add InkHUD/Todo-List.md InkHUD/Todo-List-Previous.md
+          git commit -m "Automated update of Todo List with completed tasks" || echo "No changes to commit"
           git push origin main
