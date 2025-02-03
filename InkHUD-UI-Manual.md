@@ -3,6 +3,7 @@ layout: default
 title: InkHUD UI Manual
 permalink: /InkHUD-UI-Manual/
 ---
+
 # InkHUD UI Manual
 
 ## Main Menu Structure
@@ -10,13 +11,13 @@ The **InkHUD UI** features a menu system that allows users to configure display 
 
 ---
 
-## **1. Menu**
+## **Menu**
 The **Menu** provides access to different settings and options to configure the display and message preferences.
 
-### **1.1 Options (InkHUD Settings)**
+### **Options (InkHUD Settings)**
 Customize the InkHUD display behavior.
 
-#### **1.1.1 Applet (Select Screen to Display)**
+#### **Applet (Select Screen to Display)**
 Choose what type of data appears on the screen.
 
 - **All Messages** – Displays the last heard message from DMs or channels.  
@@ -28,7 +29,7 @@ Choose what type of data appears on the screen.
 - **Heard** – Lists all nodes heard within a certain time period.  
 - **Exit** – Closes the menu screen.
 
-#### **1.1.2 Auto-Show (Auto-Switch to New Data)**
+#### **Auto-Show (Auto-Switch to New Data)**
 Automatically displays the selected screen when new data is received.
 
 - **All Messages**  
@@ -40,7 +41,7 @@ Automatically displays the selected screen when new data is received.
 - **Heard**  
 - **Exit** – Closes the menu screen.
 
-#### **1.1.3 Recent Duration (Filter Recents List by Time)**
+#### **Recent Duration (Filter Recents List by Time)**
 Set the duration for filtering recently heard nodes when **Recents List** is selected.
 
 - **2 Minutes**  
@@ -50,29 +51,29 @@ Set the duration for filtering recently heard nodes when **Recents List** is sel
 - **60 Minutes**  
 - **120 Minutes**  
 
-#### **1.1.4 Layout**
+#### **Layout**
 Splits the screen into different sections for improved data visualization.
 
-#### **1.1.5 Rotate**
+#### **Rotate**
 Rotates the screen clockwise for different orientations.
 
-#### **1.1.6 Notification**
+#### **Notification**
 Enables a notification banner when a new message is received.
 
-#### **1.1.7 Battery Icon**
+#### **Battery Icon**
 Displays the battery level on all screens.
 
-#### **1.1.8 Exit**
+#### **Exit**
 Closes the **Options** menu.
 
 ---
 
-## **2. Shutdown**
+## **Shutdown**
 Puts the device into **Deep Sleep** while saving all current settings and messages.
 
 ---
 
-## **3. Exit**
+## **Exit**
 Closes the menu screen.
 
 ---
@@ -116,6 +117,5 @@ Menu
 
 ---
 
-### **Step 4: Add the Page to Navigation**
-To make this new page accessible from your site’s navigation menu, edit **_config.yml** and add this under `navbar:`.
+
 
