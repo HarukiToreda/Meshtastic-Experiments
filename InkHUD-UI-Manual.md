@@ -10,127 +10,71 @@ Click on any menu item below to expand and view its options.
 
 ---
 
-<style>
-  .menu-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 800px;
-  }
-  details {
-    flex: 0 0 250px; /* Fixed width for collapsible buttons */
-    display: inline-block;
-  }
-  .description {
-    flex: 1; /* Ensures text remains aligned and does not move */
-    margin-left: 20px; /* Space between button and text */
-    white-space: nowrap; /* Prevents text from wrapping */
-  }
-  details summary {
-    display: inline-block;
-    cursor: pointer;
-  }
-  details[open] {
-    position: absolute;
-    left: 0;
-    background: #1a1a1a;
-    padding: 10px;
-    width: auto;
-    z-index: 10;
-    border-radius: 5px;
-  }
-</style>
+<details>
+  <summary><strong>▶ Options (InkHUD Settings)</strong></summary>
 
-<div class="menu-container">
   <details>
-    <summary><strong>Applet (Select Screen to Display)</strong></summary>
-    <ul>
-      <li><strong>All Messages</strong> – Displays the last heard message from DMs or channels.</li>
-      <li><strong>DMs</strong> – Shows the last received direct message.</li>
-      <li><strong>Channel 0</strong> – Displays all recent messages on Channel 0 in a threaded format.</li>
-      <li><strong>Channel 1</strong> – Displays all recent messages on Channel 1 in a threaded format.</li>
-      <li><strong>Positions</strong> – Shows the Node Map Position screen, with "X" markers for locations.</li>
-      <li><strong>Recents List</strong> – Displays a list of last heard nodes within a specified time frame.</li>
-      <li><strong>Heard</strong> – Lists all nodes heard within a certain time period.</li>
-      <li><strong>Exit</strong> – Closes the menu screen.</li>
-    </ul>
+    <summary><strong>▶ Applet (Select Screen to Display)</strong></summary>
+    - **All Messages** – Displays the last heard message from DMs or channels.  
+    - **DMs** – Shows the last received direct message.  
+    - **Channel 0** – Displays all recent messages on Channel 0 in a threaded format.  
+    - **Channel 1** – Displays all recent messages on Channel 1 in a threaded format.  
+    - **Positions** – Shows the Node Map Position screen, with "X" markers for locations.  
+    - **Recents List** – Displays a list of last heard nodes within a specified time frame.  
+    - **Heard** – Lists all nodes heard within a certain time period.  
+    - **Exit** – Closes the menu screen.  
   </details>
-  <span class="description">Select what type of screen data to display.</span>
-</div>
 
-<div class="menu-container">
   <details>
-    <summary><strong>Auto-Show (Auto-Switch to New Data)</strong></summary>
-    <ul>
-      <li>All Messages</li>
-      <li>DMs</li>
-      <li>Channel 0</li>
-      <li>Channel 1</li>
-      <li>Positions</li>
-      <li>Recents List</li>
-      <li>Heard</li>
-      <li>Exit – Closes the menu screen.</li>
-    </ul>
+    <summary><strong>▶ Auto-Show (Auto-Switch to New Data)</strong></summary>
+    - **All Messages**  
+    - **DMs**  
+    - **Channel 0**  
+    - **Channel 1**  
+    - **Positions**  
+    - **Recents List**  
+    - **Heard**  
+    - **Exit** – Closes the menu screen.  
   </details>
-  <span class="description">Automatically switches to the selected screen when new data is received.</span>
-</div>
 
-<div class="menu-container">
   <details>
-    <summary><strong>Recent Duration (Filter Recents List by Time)</strong></summary>
-    <ul>
-      <li>2 Minutes</li>
-      <li>5 Minutes</li>
-      <li>10 Minutes</li>
-      <li>30 Minutes</li>
-      <li>60 Minutes</li>
-      <li>120 Minutes</li>
-    </ul>
+    <summary><strong>▶ Recent Duration (Filter Recents List by Time)</strong></summary>
+    - **2 Minutes**  
+    - **5 Minutes**  
+    - **10 Minutes**  
+    - **30 Minutes**  
+    - **60 Minutes**  
+    - **120 Minutes**  
   </details>
-  <span class="description">Filters recently heard nodes based on the selected time range.</span>
-</div>
 
-<div class="menu-container">
   <details>
-    <summary><strong>Layout</strong></summary>
+    <summary><strong>▶ Layout</strong></summary>
+    Splits the screen into different sections for improved data visualization.
   </details>
-  <span class="description">Splits the screen into different sections for better data organization.</span>
-</div>
 
-<div class="menu-container">
   <details>
-    <summary><strong>Rotate</strong></summary>
+    <summary><strong>▶ Rotate</strong></summary>
+    Rotates the screen clockwise for different orientations.
   </details>
-  <span class="description">Rotates the screen clockwise for better viewing angles.</span>
-</div>
 
-<div class="menu-container">
   <details>
-    <summary><strong>Notification</strong></summary>
+    <summary><strong>▶ Notification</strong></summary>
+    Enables a notification banner when a new message is received.
   </details>
-  <span class="description">Enables a notification banner when a new message is received.</span>
-</div>
 
-<div class="menu-container">
   <details>
-    <summary><strong>Battery Icon</strong></summary>
+    <summary><strong>▶ Battery Icon</strong></summary>
+    Displays the battery level on all screens.
   </details>
-  <span class="description">Displays the battery level on all screens.</span>
-</div>
 
----
+</details>
 
-<div class="menu-container">
-  <details>
-    <summary><strong>Shutdown</strong></summary>
-  </details>
-  <span class="description">Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</span>
-</div>
+<details>
+  <summary><strong>▶ Shutdown</strong></summary>
+  Puts the device into **Deep Sleep** while saving all current settings and messages.
+</details>
 
-<div class="menu-container">
-  <details>
-    <summary><strong>Exit</strong></summary>
-  </details>
-  <span class="description">Closes the menu screen.</span>
-</div>
+<details>
+  <summary><strong>▶ Exit</strong></summary>
+  Closes the menu screen.
+</details>
