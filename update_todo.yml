@@ -1,0 +1,48 @@
+name: Update Meshtastic Firmware Todo List
+
+on:
+  schedule:
+    - cron: "0 12 * * *"  # Runs daily at 12:00 UTC
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  update_todo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Fetch latest todo.txt
+        run: |
+          curl -o todo.txt https://raw.githubusercontent.com/todd-herbert/meshtastic-firmware/InkHUD/todo.txt
+
+      - name: Format into Markdown
+        run: |
+          echo "---" > Meshtastic-Firmware-Updates.md
+          echo "layout: default" >> Meshtastic-Firmware-Updates.md
+          echo "title: Meshtastic Firmware Updates" >> Meshtastic-Firmware-Updates.md
+          echo "---" >> Meshtastic-Firmware-Updates.md
+          echo "# Meshtastic Firmware Updates" >> Meshtastic-Firmware-Updates.md
+          echo "" >> Meshtastic-Firmware-Updates.md
+          echo "## Features" >> Meshtastic-Firmware-Updates.md
+          awk '/Features/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
+          echo "" >> Meshtastic-Firmware-Updates.md
+          echo "## Critical Tasks" >> Meshtastic-Firmware-Updates.md
+          awk '/Critical Tasks/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
+          echo "" >> Meshtastic-Firmware-Updates.md
+          echo "## Improvements" >> Meshtastic-Firmware-Updates.md
+          awk '/Improvements/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
+          echo "" >> Meshtastic-Firmware-Updates.md
+          echo "## Known Bugs" >> Meshtastic-Firmware-Updates.md
+          awk '/Known Bugs/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
+          echo "" >> Meshtastic-Firmware-Updates.md
+          echo "## Chores" >> Meshtastic-Firmware-Updates.md
+          awk '/Chores/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Meshtastic-Firmware-Updates.md
+          git commit -m "Automated update of Meshtastic Firmware Updates" || echo "No changes to commit"
+          git push
