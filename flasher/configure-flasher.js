@@ -143,6 +143,11 @@ function setupListeners() {
     eraseCheckbox.addEventListener("change", () => {
         handleEraseCheckboxChange();
     });
+
+    // Add onchange directly to checkbox
+    eraseCheckbox.onchange = () => {
+        handleEraseCheckboxChange();
+    };
 }
 
 // Initial setup
