@@ -1,4 +1,4 @@
-name: Update Meshtastic Firmware Todo List
+name: InkHUD Todo List
 
 on:
   schedule:
