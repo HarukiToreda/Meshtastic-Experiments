@@ -18,6 +18,8 @@ Click on any menu item below to expand and view its options.
   <blockquote>
   <details>
     <summary><strong><span style="font-size: 18px;">Applet</span></strong> <span style="font-size: 14px;">(Select Screen to Display)</span></summary>
+    
+    (Select Screen to Display)
 
     <blockquote>
     <details>
@@ -167,12 +169,14 @@ Click on any menu item below to expand and view its options.
 
 <details>
   <summary><strong><span style="font-size: 18px;">Shutdown</span></strong></summary>
-  <blockquote>
+
   Puts the device into **Deep Sleep** while saving all current settings and messages.
-  </blockquote>
+
 </details>
 
 <details>
   <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
+  
   Closes the menu screen.
+  
 </details>
