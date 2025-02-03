@@ -11,8 +11,10 @@ Click on any menu item below to expand and view its options.
 ---
 
 <details>
-  <summary><strong><span style="font-size: 18px;">Options</span></strong> <span style="font-size: 14px;">(InkHUD Settings)</span></summary>
-
+  <summary><strong><span style="font-size: 18px;">Options</span></strong> <span style="font-size: 14px;"></span></summary>
+  <blockquote>
+  InkHUD Settings
+  </blockquote>
   <blockquote>
   <details>
     <summary><strong><span style="font-size: 18px;">Applet</span></strong> <span style="font-size: 14px;">(Select Screen to Display)</span></summary>
