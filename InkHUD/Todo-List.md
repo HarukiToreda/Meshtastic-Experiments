@@ -4,7 +4,7 @@ title: Todo List
 ---
 # Todo List
 
-**Last updated: Mon Feb  3 17:02:13 UTC 2025**
+**Last updated: Mon Feb  3 17:06:26 UTC 2025**
 
 ## Features
 ====================
@@ -59,3 +59,6 @@ Currently, none 🎉
 - [ ]      Decouple the original Screen class from bluetooth code: observe "BluetoothStatus" instead
 - [ ]      Honor userprefs / config gpio overrides
 
+
+## Completed
+- [ ]      Test
