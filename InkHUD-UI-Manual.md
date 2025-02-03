@@ -56,4 +56,66 @@ Click on any menu item below to expand and view its options.
     - **Positions**  
     - **Recents List**  
     - **Heard**  
-    - **Exit** – Closes the
+    - **Exit** – Closes the menu screen.  
+    </blockquote>
+
+  </details>
+
+  <details>
+    <summary><strong>▶ Recent Duration (Filter Recents List by Time)</strong></summary>
+
+    <blockquote>
+    - **2 Minutes**  
+    - **5 Minutes**  
+    - **10 Minutes**  
+    - **30 Minutes**  
+    - **60 Minutes**  
+    - **120 Minutes**  
+    </blockquote>
+
+  </details>
+
+  <details>
+    <summary><strong>▶ Layout</strong></summary>
+    <blockquote>
+    Splits the screen into different sections for improved data visualization.
+    </blockquote>
+  </details>
+
+  <details>
+    <summary><strong>▶ Rotate</strong></summary>
+    <blockquote>
+    Rotates the screen clockwise for different orientations.
+    </blockquote>
+  </details>
+
+  <details>
+    <summary><strong>▶ Notification</strong></summary>
+    <blockquote>
+    Enables a notification banner when a new message is received.
+    </blockquote>
+  </details>
+
+  <details>
+    <summary><strong>▶ Battery Icon</strong></summary>
+    <blockquote>
+    Displays the battery level on all screens.
+    </blockquote>
+  </details>
+  </blockquote>
+
+</details>
+
+<details>
+  <summary><strong>▶ Shutdown</strong></summary>
+  <blockquote>
+  Puts the device into **Deep Sleep** while saving all current settings and messages.
+  </blockquote>
+</details>
+
+<details>
+  <summary><strong>▶ Exit</strong></summary>
+  <blockquote>
+  Closes the menu screen.
+  </blockquote>
+</details>
