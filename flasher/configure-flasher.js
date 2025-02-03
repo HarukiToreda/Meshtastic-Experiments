@@ -31,7 +31,7 @@ function updateDebugWindow(logMessage) {
 }
 
 // Function to update the flasher configuration
-function updateFlasherConfig(forceUpdate = false) {
+function updateFlasherConfig() {
     const hardwareMenu = document.getElementById("hardwareMenu");
     const eraseCheckbox = document.getElementById("eraseCheckbox");
     const espWebTools = document.getElementById("espWebTools");
@@ -62,19 +62,6 @@ function updateFlasherConfig(forceUpdate = false) {
         espWebTools.manifest = manifest;
     }
 
-    // Force the checkbox state to be checked or unchecked if needed
-    if (forceUpdate) {
-        const isChecked = eraseCheckbox.checked;
-        updateDebugWindow(`Force updating manifest due to Connect and Flash:
-            Selected Hardware: ${selectedHardware}
-            Erase Checkbox Checked: ${isChecked}`);
-
-        // Reapply the manifest
-        espWebTools.manifest = isChecked
-            ? `./firmware/${selectedHardware}/install.json`
-            : `./firmware/${selectedHardware}/update.json`;
-    }
-
     // Log the current state to the debug window
     updateDebugWindow(`updateFlasherConfig called:
         Selected Hardware: ${selectedHardware}
@@ -91,6 +78,9 @@ function handleEraseCheckboxChange() {
     // Get the selected hardware value
     const selectedHardware = hardwareMenu.options[hardwareMenu.selectedIndex]?.value;
 
+    // Log the checkbox state change
+    updateDebugWindow(`Erase Checkbox Toggled: ${eraseCheckbox.checked}`);
+
     if (!selectedHardware) {
         updateDebugWindow("No hardware selected, checkbox change ignored.");
         return;
@@ -102,7 +92,7 @@ function handleEraseCheckboxChange() {
         : `./firmware/${selectedHardware}/update.json`;
     espWebTools.manifest = manifest;
 
-    // Log the checkbox change to the debug window
+    // Log the checkbox change and manifest update
     updateDebugWindow(`handleEraseCheckboxChange called:
         Selected Hardware: ${selectedHardware}
         Erase Checkbox Checked: ${eraseCheckbox.checked}
@@ -118,8 +108,8 @@ function handleConnectAndFlash() {
     updateDebugWindow(`Connect and Flash button pressed:
         Erase Checkbox State: ${isEraseChecked}`);
 
-    // Force the configuration update to apply the current checkbox state
-    updateFlasherConfig(true);
+    // Explicitly trigger the checkbox handler to ensure the state is respected
+    handleEraseCheckboxChange();
 
     // Proceed with connecting and flashing (or other desired actions)
     updateDebugWindow("Manifest updated and Connect and Flash initiated.");
@@ -166,7 +156,7 @@ function setupListeners() {
         updateFlasherConfig();
     });
 
-    // Event listener for checkbox
+    // Event listener for checkbox with immediate logging
     eraseCheckbox.addEventListener("change", () => {
         handleEraseCheckboxChange();
     });
@@ -175,8 +165,11 @@ function setupListeners() {
     connectButton.addEventListener("click", () => {
         handleConnectAndFlash();
     });
+
+    // Log the initial state of the checkbox for debugging
+    updateDebugWindow(`Initial Checkbox State: ${eraseCheckbox.checked}`);
 }
 
-// Initial setup
+// Ensure the configuration is initialized correctly
 setupListeners();
 updateFlasherConfig();
