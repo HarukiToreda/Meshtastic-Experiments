@@ -77,7 +77,7 @@ Click on any menu item below to expand and view its options.
   <details>
     <summary><strong><span style="font-size: 18px;">Auto-Show</span></strong></summary>
 
-    <span style="display: block; margin-top: 6px; font-size: 14px;">Automatically switch to a screen when new data is received</span>
+    <span style="display: block; margin-top: 6px; font-size: 14px;">Automatically shows the screen when new data is received for any selected below</span>
 
     <blockquote>
       <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">All Messages</div>
