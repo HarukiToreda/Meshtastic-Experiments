@@ -30,6 +30,28 @@ function updateDebugWindow(logMessage) {
     console.log(`[Debug] ${logMessage}`); // Fallback for browser console
 }
 
+// Add version information to the interface
+function addVersionInfo() {
+    let versionInfo = document.getElementById("versionInfo");
+
+    // If the version info doesn't exist, create it
+    if (!versionInfo) {
+        versionInfo = document.createElement("div");
+        versionInfo.id = "versionInfo";
+
+        // Style the version info
+        versionInfo.style.position = "fixed";
+        versionInfo.style.bottom = "5px";
+        versionInfo.style.right = "5px";
+        versionInfo.style.color = "#FFFFFF";
+        versionInfo.style.fontSize = "10px";
+        versionInfo.style.zIndex = "1000";
+        versionInfo.innerText = "v2";
+
+        document.body.appendChild(versionInfo);
+    }
+}
+
 // Function to update the flasher configuration
 function updateFlasherConfig() {
     const hardwareMenu = document.getElementById("hardwareMenu");
@@ -100,11 +122,16 @@ function handleEraseCheckboxChange() {
 function handleConnectAndFlash() {
     const eraseCheckbox = document.getElementById("eraseCheckbox");
 
+    // Check the state of the checkbox
+    const isEraseChecked = eraseCheckbox.checked;
+    updateDebugWindow(`Connect and Flash button pressed:
+        Erase Checkbox State: ${isEraseChecked}`);
+
     // Explicitly trigger the checkbox handler to ensure the state is respected
     handleEraseCheckboxChange();
 
     // Proceed with connecting and flashing (or other desired actions)
-    updateDebugWindow("Connect and Flash button pressed. Manifest updated.");
+    updateDebugWindow("Manifest updated and Connect and Flash initiated.");
 }
 
 // Function to show the download popup
@@ -162,3 +189,4 @@ function setupListeners() {
 // Initial setup
 setupListeners();
 updateFlasherConfig();
+addVersionInfo();
