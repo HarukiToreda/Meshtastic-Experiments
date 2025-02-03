@@ -16,118 +16,143 @@ Click on any menu item below to expand and view its options.
   <details>
     <summary><strong>▶ Applet (Select Screen to Display)</strong></summary>
 
-    - **All Messages**  
+    <details>
+      <summary><strong>▶ All Messages</strong></summary>
+      Displays the last heard message from DMs or channels.
+    </details>
 
-      Displays the last heard message from DMs or channels.  
+    <details>
+      <summary><strong>▶ DMs</strong></summary>
+      Shows the last received direct message.
+    </details>
 
-    - **DMs**  
+    <details>
+      <summary><strong>▶ Channel 0</strong></summary>
+      Displays all recent messages on Channel 0 in a threaded format.
+    </details>
 
-      Shows the last received direct message.  
+    <details>
+      <summary><strong>▶ Channel 1</strong></summary>
+      Displays all recent messages on Channel 1 in a threaded format.
+    </details>
 
-    - **Channel 0**  
+    <details>
+      <summary><strong>▶ Positions</strong></summary>
+      Shows the Node Map Position screen, with "X" markers for locations.
+    </details>
 
-      Displays all recent messages on Channel 0 in a threaded format.  
+    <details>
+      <summary><strong>▶ Recents List</strong></summary>
+      Displays a list of last heard nodes within a specified time frame.
+    </details>
 
-    - **Channel 1**  
+    <details>
+      <summary><strong>▶ Heard</strong></summary>
+      Lists all nodes heard within a certain time period.
+    </details>
 
-      Displays all recent messages on Channel 1 in a threaded format.  
-
-    - **Positions**  
-
-      Shows the Node Map Position screen, with "X" markers for locations.  
-
-    - **Recents List**  
-
-      Displays a list of last heard nodes within a specified time frame.  
-
-    - **Heard**  
-
-      Lists all nodes heard within a certain time period.  
-
-    - **Exit**  
-
-      Closes the menu screen.  
+    <details>
+      <summary><strong>▶ Exit</strong></summary>
+      Closes the menu screen.
+    </details>
 
   </details>
 
   <details>
     <summary><strong>▶ Auto-Show (Auto-Switch to New Data)</strong></summary>
 
-    - **All Messages**  
+    <details>
+      <summary><strong>▶ All Messages</strong></summary>
+    </details>
 
-    - **DMs**  
+    <details>
+      <summary><strong>▶ DMs</strong></summary>
+    </details>
 
-    - **Channel 0**  
+    <details>
+      <summary><strong>▶ Channel 0</strong></summary>
+    </details>
 
-    - **Channel 1**  
+    <details>
+      <summary><strong>▶ Channel 1</strong></summary>
+    </details>
 
-    - **Positions**  
+    <details>
+      <summary><strong>▶ Positions</strong></summary>
+    </details>
 
-    - **Recents List**  
+    <details>
+      <summary><strong>▶ Recents List</strong></summary>
+    </details>
 
-    - **Heard**  
+    <details>
+      <summary><strong>▶ Heard</strong></summary>
+    </details>
 
-    - **Exit** – Closes the menu screen.  
+    <details>
+      <summary><strong>▶ Exit</strong></summary>
+      Closes the menu screen.
+    </details>
 
   </details>
 
   <details>
     <summary><strong>▶ Recent Duration (Filter Recents List by Time)</strong></summary>
 
-    - **2 Minutes**  
+    <details>
+      <summary><strong>▶ 2 Minutes</strong></summary>
+    </details>
 
-    - **5 Minutes**  
+    <details>
+      <summary><strong>▶ 5 Minutes</strong></summary>
+    </details>
 
-    - **10 Minutes**  
+    <details>
+      <summary><strong>▶ 10 Minutes</strong></summary>
+    </details>
 
-    - **30 Minutes**  
+    <details>
+      <summary><strong>▶ 30 Minutes</strong></summary>
+    </details>
 
-    - **60 Minutes**  
+    <details>
+      <summary><strong>▶ 60 Minutes</strong></summary>
+    </details>
 
-    - **120 Minutes**  
+    <details>
+      <summary><strong>▶ 120 Minutes</strong></summary>
+    </details>
 
   </details>
 
   <details>
     <summary><strong>▶ Layout</strong></summary>
-
-    Splits the screen into different sections for improved data visualization.  
-
+    Splits the screen into different sections for improved data visualization.
   </details>
 
   <details>
     <summary><strong>▶ Rotate</strong></summary>
-
-    Rotates the screen clockwise for different orientations.  
-
+    Rotates the screen clockwise for different orientations.
   </details>
 
   <details>
     <summary><strong>▶ Notification</strong></summary>
-
-    Enables a notification banner when a new message is received.  
-
+    Enables a notification banner when a new message is received.
   </details>
 
   <details>
     <summary><strong>▶ Battery Icon</strong></summary>
-
-    Displays the battery level on all screens.  
-
+    Displays the battery level on all screens.
   </details>
 
 </details>
 
 <details>
   <summary><strong>▶ Shutdown</strong></summary>
-
-  Puts the device into **Deep Sleep** while saving all current settings and messages.  
-
+  Puts the device into **Deep Sleep** while saving all current settings and messages.
 </details>
 
 <details>
   <summary><strong>▶ Exit</strong></summary>
-
-  Closes the menu screen.  
-
+  Closes the menu screen.
 </details>
