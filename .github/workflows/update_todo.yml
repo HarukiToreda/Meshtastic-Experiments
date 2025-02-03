@@ -56,5 +56,25 @@ jobs:
 
       - name: Identify Removed Tasks & Append to Completed
         run: |
-          # Extract current tasks
-          grep -E "^- \[ \]" InkHUD/Todo-List.md |
+          # Extract current tasks from the latest Todo List
+          grep -E "^- \[ \]" InkHUD/Todo-List.md | sort > current.txt || touch current.txt
+
+          # Extract previous tasks from the stored previous version
+          if [ -f "InkHUD/Todo-List-Previous.txt" ]; then
+            grep -E "^- \[ \]" InkHUD/Todo-List-Previous.txt | sort > previous.txt || touch previous.txt
+          else
+            touch previous.txt
+          fi
+
+          # Identify removed tasks (completed tasks)
+          comm -23 previous.txt current.txt > removed.txt || touch removed.txt
+
+          # Append removed tasks to the "Completed" section if any exist
+          if [ -s removed.txt ]; then
+            echo "" >> InkHUD/Todo-List.md
+            echo "## Completed" >> InkHUD/Todo-List.md
+            cat removed.txt >> InkHUD/Todo-List.md
+          elif [ -s completed.txt ]; then
+            echo "" >> InkHUD/Todo-List.md
+            echo "## Completed" >> InkHUD/Todo-List.md
+            cat completed
