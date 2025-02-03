@@ -24,22 +24,22 @@ Click on any menu item below to expand and view its options.
     <blockquote>
     <details>
       <summary><strong><span style="font-size: 18px;">All Messages</span></strong></summary>
-      Displays the last heard message from DMs or channels.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays the last heard message from DMs or channels.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">DMs</span></strong></summary>
-      Shows the last received direct message.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Shows the last received direct message.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Channel 0</span></strong></summary>
-      Displays all recent messages on Channel 0 in a threaded format.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays all recent messages on Channel 0 in a threaded format.</span>
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Channel 1</span></strong></summary>
-      Displays all recent messages on Channel 1 in a threaded format.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays all recent messages on Channel 1 in a threaded format.</span>
     </details>
     </blockquote>
 
