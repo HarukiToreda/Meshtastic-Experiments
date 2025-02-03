@@ -20,7 +20,15 @@ jobs:
         run: |
           mkdir -p InkHUD
 
-      - name: Create Todo List File
+      - name: Extract Previous Completed Section
+        run: |
+          if [ -f "InkHUD/Todo-List.md" ]; then
+            awk '/## Completed/{flag=1; next} flag' InkHUD/Todo-List.md > completed.txt
+          else
+            touch completed.txt
+          fi
+
+      - name: Create Updated Todo List
         run: |
           echo "---" > InkHUD/Todo-List.md
           echo "layout: default" >> InkHUD/Todo-List.md
@@ -46,37 +54,7 @@ jobs:
           awk '/Chores/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> InkHUD/Todo-List.md
           echo "" >> InkHUD/Todo-List.md
 
-      - name: Track Completed Items
+      - name: Identify Removed Tasks & Append to Completed
         run: |
-          # Store previous version if it exists
-          if [ -f "InkHUD/Todo-List-Previous.md" ]; then
-            grep -E "^- \[ \]" InkHUD/Todo-List-Previous.md | sort > previous.txt
-          else
-            touch previous.txt
-          fi
-
           # Extract current tasks
-          grep -E "^- \[ \]" InkHUD/Todo-List.md | sort > current.txt
-
-          # Find removed tasks (completed items)
-          comm -23 previous.txt current.txt > removed.txt
-
-          # Add removed tasks to the "Completed" section
-          if [ -s removed.txt ]; then
-            echo "## Completed" >> InkHUD/Todo-List.md
-            cat removed.txt >> InkHUD/Todo-List.md
-            echo "" >> InkHUD/Todo-List.md
-          fi
-
-          # Store new version as previous
-          cp InkHUD/Todo-List.md InkHUD/Todo-List-Previous.md
-
-      - name: Commit and Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add InkHUD/Todo-List.md InkHUD/Todo-List-Previous.md
-          git commit -m "Automated update of Todo List with completed tasks" || echo "No changes to commit"
-          git push origin main
+          grep -E "^- \[ \]" InkHUD/Todo-List.md |
