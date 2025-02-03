@@ -58,6 +58,27 @@ Click on any menu item below to expand and view its options.
 
   </details>
 
+  <details>
+    <summary><strong><span style="font-size: 18px;">Rotate</span></strong></summary>
+
+    <span style="display: block; margin-top: 6px;">Rotates the screen clockwise for different orientations.</span>
+
+  </details>
+
+  <details>
+    <summary><strong><span style="font-size: 18px;">Notification</span></strong></summary>
+
+    <span style="display: block; margin-top: 6px;">Enables a notification banner when a new message is received.</span>
+
+  </details>
+
+  <details>
+    <summary><strong><span style="font-size: 18px;">Battery Icon</span></strong></summary>
+
+    <span style="display: block; margin-top: 6px;">Displays the battery level on all screens.</span>
+
+  </details>
+
   </blockquote>
 </details>
 
