@@ -75,6 +75,22 @@ Click on any menu item below to expand and view its options.
     <details>
       <summary><strong><span style="font-size: 18px;">5 Minutes</span></strong></summary>
     </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">10 Minutes</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">30 Minutes</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">60 Minutes</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">120 Minutes</span></strong></summary>
+    </details>
     </blockquote>
 
   </details>
