@@ -113,28 +113,28 @@ Click on any menu item below to expand and view its options.
   <details>
     <summary><strong><span style="font-size: 18px;">Layout</span></strong></summary>
 
-    Splits the screen into different sections for improved data visualization.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Splits the screen into different sections for improved data visualization.</span>
 
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Rotate</span></strong></summary>
 
-    Rotates the screen clockwise for different orientations.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Rotates the screen clockwise for different orientations.</span>
 
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Notification</span></strong></summary>
 
-    Enables a notification banner when a new message is received.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Enables a notification banner when a new message is received.</span>
 
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Battery Icon</span></strong></summary>
 
-    Displays the battery level on all screens.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays the battery level on all screens.</span>
 
   </details>
 
@@ -144,13 +144,13 @@ Click on any menu item below to expand and view its options.
 <details>
   <summary><strong><span style="font-size: 18px;">Shutdown</span></strong></summary>
 
-  Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</span>
 
 </details>
 
 <details>
   <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
 
-  Closes the menu screen.
+      <span style="display: block; margin-top: 6px; font-size: 14px;">Closes the menu screen.</span>
 
 </details>
