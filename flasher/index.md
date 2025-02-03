@@ -27,7 +27,7 @@ title: Web-Flasher
   </div>
 
   <div id="eraseContainer" class="checkbox-container">
-    <input id="eraseCheckbox" type="checkbox" checked="true" />
+    <input id="eraseCheckbox" type="checkbox" checked="true" onchange="updateFlasherConfig()" />
     <label for="eraseCheckbox" class="flasher-label">Full Erase</label>
   </div>
 
