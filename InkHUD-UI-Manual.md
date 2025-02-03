@@ -11,18 +11,17 @@ Click on any menu item below to expand and view its options.
 ---
 
 <details>
-  <summary><strong><span style="font-size: 18px;">Options</span></strong> <span style="font-size: 14px;"></span></summary>
+  <summary><strong><span style="font-size: 18px;">Options</span></strong></summary>
 
+  <br>  
+  <span style="font-size: 14px;">InkHUD Settings</span>  
 
-  InkHUD Settings
-
-  <blockquote>
   <details>
-    <summary><strong><span style="font-size: 18px;">Applet</span></strong> <span style="font-size: 14px;">(Select Screen to Display)</span></summary>
-    
-    (Select Screen to Display)
+    <summary><strong><span style="font-size: 18px;">Applet</span></strong></summary>
 
-    <blockquote>
+    <br>  
+    <span style="font-size: 14px;">Select Screen to Display</span>  
+
     <details>
       <summary><strong><span style="font-size: 18px;">All Messages</span></strong></summary>
       Displays the last heard message from DMs or channels.
@@ -62,15 +61,15 @@ Click on any menu item below to expand and view its options.
       <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
       Closes the menu screen.
     </details>
-    </blockquote>
 
   </details>
 
   <details>
-    <summary><strong><span style="font-size: 18px;">Auto-Show</span></strong> <span style="font-size: 14px;"></span></summary>
-    (Auto-Switch to New Data)
+    <summary><strong><span style="font-size: 18px;">Auto-Show</span></strong></summary>
 
-    <blockquote>
+    <br>  
+    <span style="font-size: 14px;">Auto-Switch to New Data</span>  
+
     <details>
       <summary><strong><span style="font-size: 18px;">All Messages</span></strong></summary>
     </details>
@@ -103,14 +102,15 @@ Click on any menu item below to expand and view its options.
       <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
       Closes the menu screen.
     </details>
-    </blockquote>
 
   </details>
 
   <details>
-    <summary><strong><span style="font-size: 18px;">Recent Duration</span></strong> <span style="font-size: 14px;">(Filter Recents List by Time)</span></summary>
+    <summary><strong><span style="font-size: 18px;">Recent Duration</span></strong></summary>
 
-    <blockquote>
+    <br>  
+    <span style="font-size: 14px;">Filter Recents List by Time</span>  
+
     <details>
       <summary><strong><span style="font-size: 18px;">2 Minutes</span></strong></summary>
     </details>
@@ -134,45 +134,47 @@ Click on any menu item below to expand and view its options.
     <details>
       <summary><strong><span style="font-size: 18px;">120 Minutes</span></strong></summary>
     </details>
-    </blockquote>
 
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Layout</span></strong></summary>
-    
+
+    <br>  
     Splits the screen into different sections for improved data visualization.
-    
+
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Rotate</span></strong></summary>
-    
+
+    <br>  
     Rotates the screen clockwise for different orientations.
-    
+
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Notification</span></strong></summary>
-    
+
+    <br>  
     Enables a notification banner when a new message is received.
-    
+
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Battery Icon</span></strong></summary>
-   
+
+    <br>  
     Displays the battery level on all screens.
-    
+
   </details>
 
-  </blockquote>
 </details>
 
 <details>
   <summary><strong><span style="font-size: 18px;">Shutdown</span></strong></summary>
 
-
+  <br>  
   Puts the device into **Deep Sleep** while saving all current settings and messages.
 
 </details>
@@ -180,7 +182,7 @@ Click on any menu item below to expand and view its options.
 <details>
   <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
 
-
+  <br>  
   Closes the menu screen.
-  
+
 </details>
