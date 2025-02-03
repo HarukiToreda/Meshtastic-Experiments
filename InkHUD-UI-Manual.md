@@ -24,42 +24,83 @@ Click on any menu item below to expand and view its options.
     <blockquote>
     <details>
       <summary><strong><span style="font-size: 18px;">All Messages</span></strong></summary>
-      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays the last heard message from DMs or channels.</span>
+      Displays the last heard message from DMs or channels.
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">DMs</span></strong></summary>
-      <span style="display: block; margin-top: 6px; font-size: 14px;">Shows the last received direct message.</span>
+      Shows the last received direct message.
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Channel 0</span></strong></summary>
-      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays all recent messages on Channel 0 in a threaded format.</span>
+      Displays all recent messages on Channel 0 in a threaded format.
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Channel 1</span></strong></summary>
-      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays all recent messages on Channel 1 in a threaded format.</span>
+      Displays all recent messages on Channel 1 in a threaded format.
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Positions</span></strong></summary>
-      <span style="display: block; margin-top: 6px; font-size: 14px;">Shows the Node Map Position screen, with "X" markers for locations.</span>
+      Shows the Node Map Position screen, with "X" markers for locations.
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Recents List</span></strong></summary>
-      <span style="display: block; margin-top: 6px; font-size: 14px;">Displays a list of last heard nodes within a specified time frame.</span>
+      Displays a list of last heard nodes within a specified time frame.
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Heard</span></strong></summary>
-      <span style="display: block; margin-top: 6px; font-size: 14px;">Lists all nodes heard within a certain time period.</span>
+      Lists all nodes heard within a certain time period.
     </details>
 
     <details>
       <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
-      <span style="display: block; margin-top: 6px;">Closes the menu screen.</span>
+      Closes the menu screen.
+    </details>
+    </blockquote>
+
+  </details>
+
+  <details>
+    <summary><strong><span style="font-size: 18px;">Auto-Show</span></strong></summary>
+
+    <span style="display: block; margin-top: 6px; font-size: 14px;">Automatically switch to a screen when new data is received</span>
+
+    <blockquote>
+    <details>
+      <summary><strong><span style="font-size: 18px;">All Messages</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">DMs</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">Channel 0</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">Channel 1</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">Positions</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">Recents List</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">Heard</span></strong></summary>
+    </details>
+
+    <details>
+      <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
     </details>
     </blockquote>
 
@@ -72,42 +113,42 @@ Click on any menu item below to expand and view its options.
 
     <blockquote>
     <div style="margin-top: 6px;">
-      <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">2 Minutes</div>
-      <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">5 Minutes</div>
-      <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">10 Minutes</div>
-      <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">30 Minutes</div>
-      <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">60 Minutes</div>
-      <div style="margin: 8px 0; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">120 Minutes</div>
+      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">2 Minutes</div>
+      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">5 Minutes</div>
+      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">10 Minutes</div>
+      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">30 Minutes</div>
+      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">60 Minutes</div>
+      <div style="margin: 8px 20px; padding: 10px 15px; font-size: 16px; font-weight: bold; background: #FFD700; color: black; border-radius: 6px; cursor: pointer; display: block; text-align: center; width: 180px;">120 Minutes</div>
     </div>
     </blockquote>
-    
+
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Layout</span></strong></summary>
 
-    <span style="display: block; margin-top: 6px;">Splits the screen into different sections for improved data visualization.</span>
+    Splits the screen into different sections for improved data visualization.
 
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Rotate</span></strong></summary>
 
-    <span style="display: block; margin-top: 6px;">Rotates the screen clockwise for different orientations.</span>
+    Rotates the screen clockwise for different orientations.
 
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Notification</span></strong></summary>
 
-    <span style="display: block; margin-top: 6px;">Enables a notification banner when a new message is received.</span>
+    Enables a notification banner when a new message is received.
 
   </details>
 
   <details>
     <summary><strong><span style="font-size: 18px;">Battery Icon</span></strong></summary>
 
-    <span style="display: block; margin-top: 6px;">Displays the battery level on all screens.</span>
+    Displays the battery level on all screens.
 
   </details>
 
@@ -117,13 +158,13 @@ Click on any menu item below to expand and view its options.
 <details>
   <summary><strong><span style="font-size: 18px;">Shutdown</span></strong></summary>
 
-  <span style="display: block; margin-top: 6px;">Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.</span>
+  Puts the device into <strong>Deep Sleep</strong> while saving all current settings and messages.
 
 </details>
 
 <details>
   <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
 
-  <span style="display: block; margin-top: 6px;">Closes the menu screen.</span>
+  Closes the menu screen.
 
 </details>
