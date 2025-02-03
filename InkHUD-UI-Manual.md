@@ -15,15 +15,30 @@ Click on any menu item below to expand and view its options.
 
   <details>
     <summary><strong>▶ Applet (Select Screen to Display)</strong></summary>
-    
-    - **All Messages** – Displays the last heard message from DMs or channels.  
-    - **DMs** – Shows the last received direct message.  
-    - **Channel 0** – Displays all recent messages on Channel 0 in a threaded format.  
-    - **Channel 1** – Displays all recent messages on Channel 1 in a threaded format.  
-    - **Positions** – Shows the Node Map Position screen, with "X" markers for locations.  
-    - **Recents List** – Displays a list of last heard nodes within a specified time frame.  
-    - **Heard** – Lists all nodes heard within a certain time period.  
-    - **Exit** – Closes the menu screen.  
+
+    - **All Messages**  
+      Displays the last heard message from DMs or channels.  
+
+    - **DMs**  
+      Shows the last received direct message.  
+
+    - **Channel 0**  
+      Displays all recent messages on Channel 0 in a threaded format.  
+
+    - **Channel 1**  
+      Displays all recent messages on Channel 1 in a threaded format.  
+
+    - **Positions**  
+      Shows the Node Map Position screen, with "X" markers for locations.  
+
+    - **Recents List**  
+      Displays a list of last heard nodes within a specified time frame.  
+
+    - **Heard**  
+      Lists all nodes heard within a certain time period.  
+
+    - **Exit**  
+      Closes the menu screen.  
 
   </details>
 
