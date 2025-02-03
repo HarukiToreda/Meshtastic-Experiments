@@ -18,31 +18,36 @@ jobs:
 
       - name: Format into Markdown
         run: |
-          echo "---" > Meshtastic-Firmware-Updates.md
-          echo "layout: default" >> Meshtastic-Firmware-Updates.md
-          echo "title: Meshtastic Firmware Updates" >> Meshtastic-Firmware-Updates.md
-          echo "---" >> Meshtastic-Firmware-Updates.md
-          echo "# Meshtastic Firmware Updates" >> Meshtastic-Firmware-Updates.md
-          echo "" >> Meshtastic-Firmware-Updates.md
-          echo "## Features" >> Meshtastic-Firmware-Updates.md
-          awk '/Features/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
-          echo "" >> Meshtastic-Firmware-Updates.md
-          echo "## Critical Tasks" >> Meshtastic-Firmware-Updates.md
-          awk '/Critical Tasks/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
-          echo "" >> Meshtastic-Firmware-Updates.md
-          echo "## Improvements" >> Meshtastic-Firmware-Updates.md
-          awk '/Improvements/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
-          echo "" >> Meshtastic-Firmware-Updates.md
-          echo "## Known Bugs" >> Meshtastic-Firmware-Updates.md
-          awk '/Known Bugs/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
-          echo "" >> Meshtastic-Firmware-Updates.md
-          echo "## Chores" >> Meshtastic-Firmware-Updates.md
-          awk '/Chores/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed 's/\[\]/- [ ]/g' >> Meshtastic-Firmware-Updates.md
+          echo "---" > Todo-List.md
+          echo "layout: default" >> Todo-List.md
+          echo "title: Todo List" >> Todo-List.md
+          echo "---" >> Todo-List.md
+          echo "# Todo List" >> Todo-List.md
+          echo "" >> Todo-List.md
+          echo "**Last updated: $(date -u)**" >> Todo-List.md
+          echo "" >> Todo-List.md
+          echo "## Features" >> Todo-List.md
+          awk '/Features/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
+          echo "" >> Todo-List.md
+          echo "## Critical Tasks" >> Todo-List.md
+          awk '/Critical Tasks/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
+          echo "" >> Todo-List.md
+          echo "## Improvements" >> Todo-List.md
+          awk '/Improvements/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
+          echo "" >> Todo-List.md
+          echo "## Known Bugs" >> Todo-List.md
+          awk '/Known Bugs/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
+          echo "" >> Todo-List.md
+          echo "## Chores" >> Todo-List.md
+          awk '/Chores/{flag=1;next}/^$/{flag=0}flag' todo.txt | sed -E 's/\[\]/- [ ]/g; s/\[wip\]/- 🛠 **(WIP)**/g' >> Todo-List.md
+          echo "" >> Todo-List.md
 
       - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add Meshtastic-Firmware-Updates.md
-          git commit -m "Automated update of Meshtastic Firmware Updates" || echo "No changes to commit"
-          git push
+          git add Todo-List.md
+          git commit -m "Automated update of Todo List" || echo "No changes to commit"
+          git push origin main
