@@ -5,8 +5,6 @@ permalink: /InkHUD/Intro/
 ---
 # InkHUD UI  
 
-The **InkHUD UI** is an alternate user interface designed for e-ink display nodes running the Meshtastic firmware. It enhances usability with a structured menu system, allowing users to toggle features, customize display options, manage notifications, and efficiently access messages without the use of the phone app.  
-
 This UI is currently under development, so users are advised to proceed with caution. 
 
 ## Repository  
