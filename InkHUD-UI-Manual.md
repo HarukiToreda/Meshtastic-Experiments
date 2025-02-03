@@ -174,7 +174,5 @@ Click on any menu item below to expand and view its options.
 
 <details>
   <summary><strong><span style="font-size: 18px;">Exit</span></strong></summary>
-  <blockquote>
   Closes the menu screen.
-  </blockquote>
 </details>
