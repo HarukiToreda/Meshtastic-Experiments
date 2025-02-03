@@ -13,9 +13,11 @@ Click on any menu item below to expand and view its options.
 <details>
   <summary><strong>▶ Options (InkHUD Settings)</strong></summary>
 
+  <blockquote>
   <details>
     <summary><strong>▶ Applet (Select Screen to Display)</strong></summary>
 
+    <blockquote>
     <details>
       <summary><strong>▶ All Messages</strong></summary>
       Displays the last heard message from DMs or channels.
@@ -55,12 +57,14 @@ Click on any menu item below to expand and view its options.
       <summary><strong>▶ Exit</strong></summary>
       Closes the menu screen.
     </details>
+    </blockquote>
 
   </details>
 
   <details>
     <summary><strong>▶ Auto-Show (Auto-Switch to New Data)</strong></summary>
 
+    <blockquote>
     <details>
       <summary><strong>▶ All Messages</strong></summary>
     </details>
@@ -93,12 +97,14 @@ Click on any menu item below to expand and view its options.
       <summary><strong>▶ Exit</strong></summary>
       Closes the menu screen.
     </details>
+    </blockquote>
 
   </details>
 
   <details>
     <summary><strong>▶ Recent Duration (Filter Recents List by Time)</strong></summary>
 
+    <blockquote>
     <details>
       <summary><strong>▶ 2 Minutes</strong></summary>
     </details>
@@ -122,37 +128,51 @@ Click on any menu item below to expand and view its options.
     <details>
       <summary><strong>▶ 120 Minutes</strong></summary>
     </details>
+    </blockquote>
 
   </details>
 
   <details>
     <summary><strong>▶ Layout</strong></summary>
+    <blockquote>
     Splits the screen into different sections for improved data visualization.
+    </blockquote>
   </details>
 
   <details>
     <summary><strong>▶ Rotate</strong></summary>
+    <blockquote>
     Rotates the screen clockwise for different orientations.
+    </blockquote>
   </details>
 
   <details>
     <summary><strong>▶ Notification</strong></summary>
+    <blockquote>
     Enables a notification banner when a new message is received.
+    </blockquote>
   </details>
 
   <details>
     <summary><strong>▶ Battery Icon</strong></summary>
+    <blockquote>
     Displays the battery level on all screens.
+    </blockquote>
   </details>
 
+  </blockquote>
 </details>
 
 <details>
   <summary><strong>▶ Shutdown</strong></summary>
+  <blockquote>
   Puts the device into **Deep Sleep** while saving all current settings and messages.
+  </blockquote>
 </details>
 
 <details>
   <summary><strong>▶ Exit</strong></summary>
+  <blockquote>
   Closes the menu screen.
+  </blockquote>
 </details>
