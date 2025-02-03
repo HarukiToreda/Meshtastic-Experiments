@@ -67,7 +67,8 @@ Click on any menu item below to expand and view its options.
   </details>
 
   <details>
-    <summary><strong><span style="font-size: 18px;">Auto-Show</span></strong> <span style="font-size: 14px;">(Auto-Switch to New Data)</span></summary>
+    <summary><strong><span style="font-size: 18px;">Auto-Show</span></strong> <span style="font-size: 14px;"></span></summary>
+    (Auto-Switch to New Data)
 
     <blockquote>
     <details>
