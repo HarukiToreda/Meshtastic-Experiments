@@ -3,10 +3,19 @@ layout: default
 title: InkHUD UI Manual
 permalink: /InkHUD-UI-Manual/
 ---
+# InkHUD UI  
 
-# InkHUD UI Manual
+The **InkHUD UI** is an unofficial user interface designed for e-ink display nodes running the Meshtastic firmware. It enhances usability with a structured menu system, allowing users to toggle features, customize display options, manage notifications, and efficiently access messages.  
 
-Click on any menu item below to expand and view its options.
+This UI is currently under development, so users are advised to proceed with caution. InkHUD was created by **ToddHerbert** and is fully open-source, adhering to Meshtastic’s open-access principles.  
+
+## Repository  
+[GitHub - InkHUD UI](https://github.com/todd-herbert/meshtastic-firmware/tree/InkHUD)  
+
+## Unofficial Flasher  
+
+## Menu Guide  
+Click on any menu item below to expand and view its options.  
 
 ---
 
