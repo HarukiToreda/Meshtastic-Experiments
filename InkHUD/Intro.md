@@ -5,7 +5,7 @@ permalink: /InkHUD/Intro/
 ---
 # InkHUD UI  
 
-This UI is currently under development, so users are advised to proceed with caution. 
+This UI is currently under development, so users are advised to proceed with caution. I am not the developer, just someone very interested in seeing it's future development.
 
 ## Repository  
 [GitHub - InkHUD UI](https://github.com/todd-herbert/meshtastic-firmware/tree/InkHUD)  
