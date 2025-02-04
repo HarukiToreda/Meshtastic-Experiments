@@ -10,7 +10,7 @@ This UI is currently under development, so users are advised to proceed with cau
 ## Repository  
 [GitHub - InkHUD UI](https://github.com/todd-herbert/meshtastic-firmware/tree/InkHUD)  
 
-## Supported Devices
+## Supported Devices (Currently)
 - Heltec Wireless Paper
 - Heltec Vision Master E213
 - Heltec Vision Master E290
