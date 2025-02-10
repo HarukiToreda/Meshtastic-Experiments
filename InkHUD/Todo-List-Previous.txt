@@ -4,7 +4,7 @@ title: Todo List
 ---
 # Todo List
 
-**Last updated: Sun Feb  9 12:30:46 UTC 2025**
+**Last updated: Mon Feb 10 12:35:05 UTC 2025**
 
 ## Features
 ====================
@@ -20,33 +20,27 @@ title: Todo List
 
 ## Critical Tasks
 ====================
-Currently, none 🎉
+- [ ]      Make setting-persistence more intuitive
 
 ## Improvements
 ====================
-- [ ]      Nodelist applet should fill new space from NodeDB when layout changes and applet size increases, or when recents duration increases
 - [ ]      Better detection of position changes in PositionsApplet
-- [ ]      Don't show signal strength in ChronoListApplets if hops unknown
-- [ ]      Refactor ChronoList applets
-- [ ]      ChronoListApplet should only requestUpdate for changed signal strength if node 0-hops (showing signal bars)
+- [ ]      NodeListApplets should only requestUpdate for changed signal strength if node 0-hops (showing signal bars)
 - [ ]      Descriptive headers for some settings in menu
 - [ ]      Re-render applets when RTC is set. Some UI elements change (e.g. "Recents" applet counts)
-- [ ]      SNR from NodeDB, maybe? Not sure if RSSI is stored; not sure if we can determinal signal strength without RSSI.
 - [ ]      Don't save on shutdown / reboot within N seconds of boot. Protect flash against weird boot loops.
 - [ ]      Applet to display critical faults
 - [ ]      OEM Bootscreen
-- [ ]      Aux button: exit menu without switching tile focus
+- [ ]      Aux button: exit menu without switching tile focus,
+- [ ]      Tips at first boot (set region, how to use menu, etc). Could also catch common mistakes (not shutting down correctly, attempt to rotate via app, etc)
 
 ## Known Bugs
 =====================
-- [ ]      ChronoList applets: no event raised on nodeinfo rx
 - [ ]      Timestamps don't update. Needs to happen once a day. "6PM -> Yesterday". Make the WindowManager do it.
 - [ ]      Root menu: header breaks spacing if rtc set while menu open
 - [ ]      Applets don't re-render when node is removed via admin command
-- [ ]      (Rare) Recents List: count in header label may not match number of items shown
-- [ ]      (Rare) Menu stuck after changing tile using aux button
 - [ ]      Tile highlight rendered below header for threaded message applets
-- [ ]      ChronoList applets: *very* large distances spill over the divider
+- [ ]      NodeListApplets: *very* large distances spill over the divider
 - [ ]      Menu cursor does not always return to top when exited
 - [ ]      ThreadedMessageApplet: text wrapping issues with very long words (i.e. URLs)
 
@@ -61,4 +55,14 @@ Currently, none 🎉
 
 
 ## Completed
+- [ ]      (Rare) Menu stuck after changing tile using aux button
+- [ ]      (Rare) Recents List: count in header label may not match number of items shown
+- [ ]      Aux button: exit menu without switching tile focus
+- [ ]      ChronoList applets: *very* large distances spill over the divider
+- [ ]      ChronoList applets: no event raised on nodeinfo rx
+- [ ]      ChronoListApplet should only requestUpdate for changed signal strength if node 0-hops (showing signal bars)
+- [ ]      Don't show signal strength in ChronoListApplets if hops unknown
+- [ ]      Nodelist applet should fill new space from NodeDB when layout changes and applet size increases, or when recents duration increases
+- [ ]      Refactor ChronoList applets
+- [ ]      SNR from NodeDB, maybe? Not sure if RSSI is stored; not sure if we can determinal signal strength without RSSI.
 - [ ]      Test
