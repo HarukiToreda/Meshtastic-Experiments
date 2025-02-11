@@ -4,7 +4,7 @@ title: Todo List
 ---
 # Todo List
 
-**Last updated: Mon Feb 10 12:35:05 UTC 2025**
+**Last updated: Tue Feb 11 12:35:04 UTC 2025**
 
 ## Features
 ====================
@@ -19,8 +19,6 @@ title: Todo List
 - 🛠 **(WIP)**   add extended ascii / foreign language chars - Fonts for Windows-1250, Windows-1251 (Windows-1252?)
 
 ## Critical Tasks
-====================
-- [ ]      Make setting-persistence more intuitive
 
 ## Improvements
 ====================
@@ -32,7 +30,6 @@ title: Todo List
 - [ ]      Applet to display critical faults
 - [ ]      OEM Bootscreen
 - [ ]      Aux button: exit menu without switching tile focus,
-- [ ]      Tips at first boot (set region, how to use menu, etc). Could also catch common mistakes (not shutting down correctly, attempt to rotate via app, etc)
 
 ## Known Bugs
 =====================
@@ -42,7 +39,6 @@ title: Todo List
 - [ ]      Tile highlight rendered below header for threaded message applets
 - [ ]      NodeListApplets: *very* large distances spill over the divider
 - [ ]      Menu cursor does not always return to top when exited
-- [ ]      ThreadedMessageApplet: text wrapping issues with very long words (i.e. URLs)
 
 ## Chores
 ==========
@@ -62,7 +58,10 @@ title: Todo List
 - [ ]      ChronoList applets: no event raised on nodeinfo rx
 - [ ]      ChronoListApplet should only requestUpdate for changed signal strength if node 0-hops (showing signal bars)
 - [ ]      Don't show signal strength in ChronoListApplets if hops unknown
+- [ ]      Make setting-persistence more intuitive
 - [ ]      Nodelist applet should fill new space from NodeDB when layout changes and applet size increases, or when recents duration increases
 - [ ]      Refactor ChronoList applets
 - [ ]      SNR from NodeDB, maybe? Not sure if RSSI is stored; not sure if we can determinal signal strength without RSSI.
 - [ ]      Test
+- [ ]      ThreadedMessageApplet: text wrapping issues with very long words (i.e. URLs)
+- [ ]      Tips at first boot (set region, how to use menu, etc). Could also catch common mistakes (not shutting down correctly, attempt to rotate via app, etc)
