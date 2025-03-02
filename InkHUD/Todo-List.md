@@ -4,7 +4,7 @@ title: Todo List
 ---
 # Todo List
 
-**Last updated: Sat Mar  1 12:32:48 UTC 2025**
+**Last updated: Sun Mar  2 12:31:48 UTC 2025**
 
 ## Features
 ====================
@@ -44,7 +44,6 @@ title: Todo List
 ==========
 - [ ]      Make runOnce methods private
 - [ ]      Helper method in InkHUD::Drivers::EInk to simplify framebuffer arithmetic, for anyone else using NicheGraphics
-- [ ]      Don't repeat logs from Applet::getTimeString
 - [ ]      Remove parentheses from methods mentioned in comments, to make code search easier
 - [ ]      Decouple the original Screen class from bluetooth code: observe "BluetoothStatus" instead
 - [ ]      Honor userprefs / config gpio overrides
@@ -57,6 +56,7 @@ title: Todo List
 - [ ]      ChronoList applets: *very* large distances spill over the divider
 - [ ]      ChronoList applets: no event raised on nodeinfo rx
 - [ ]      ChronoListApplet should only requestUpdate for changed signal strength if node 0-hops (showing signal bars)
+- [ ]      Don't repeat logs from Applet::getTimeString
 - [ ]      Don't show signal strength in ChronoListApplets if hops unknown
 - [ ]      Make setting-persistence more intuitive
 - [ ]      Nodelist applet should fill new space from NodeDB when layout changes and applet size increases, or when recents duration increases
