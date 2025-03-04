@@ -4,7 +4,7 @@ title: Todo List
 ---
 # Todo List
 
-**Last updated: Mon Mar  3 12:36:33 UTC 2025**
+**Last updated: Tue Mar  4 12:36:32 UTC 2025**
 
 ## Features
 ====================
@@ -30,6 +30,7 @@ title: Todo List
 - [ ]      Applet to display critical faults
 - [ ]      OEM Bootscreen
 - [ ]      Aux button: exit menu without switching tile focus,
+- [ ]      InkHUD::Inputs::TwoButton should support INPUT_PULLUP
 
 ## Known Bugs
 =====================
@@ -47,6 +48,8 @@ title: Todo List
 - [ ]      Remove parentheses from methods mentioned in comments, to make code search easier
 - [ ]      Decouple the original Screen class from bluetooth code: observe "BluetoothStatus" instead
 - [ ]      Honor userprefs / config gpio overrides
+- [ ]      Make rotation default to 0 instead of 1, if not specified
+- [ ]      Use class enums?
 
 
 ## Completed
