@@ -4,7 +4,7 @@ title: Todo List
 ---
 # Todo List
 
-**Last updated: Wed Mar 26 12:08:25 UTC 2025**
+**Last updated: Thu Mar 27 12:08:32 UTC 2025**
 
 ## Features
 ====================
@@ -46,8 +46,6 @@ title: Todo List
 - [ ]      Helper method in InkHUD::Drivers::EInk to simplify framebuffer arithmetic, for anyone else using NicheGraphics
 - [ ]      Remove parentheses from methods mentioned in comments, to make code search easier
 - [ ]      Decouple the original Screen class from bluetooth code: observe "BluetoothStatus" instead
-- [ ]      Honor userprefs / config gpio overrides
-- [ ]      Make rotation default to 0 instead of 1, if not specified
 - [ ]      Use class enums?
 
 
@@ -60,7 +58,9 @@ title: Todo List
 - [ ]      ChronoListApplet should only requestUpdate for changed signal strength if node 0-hops (showing signal bars)
 - [ ]      Don't repeat logs from Applet::getTimeString
 - [ ]      Don't show signal strength in ChronoListApplets if hops unknown
+- [ ]      Honor userprefs / config gpio overrides
 - [ ]      InkHUD::Inputs::TwoButton should support INPUT_PULLUP
+- [ ]      Make rotation default to 0 instead of 1, if not specified
 - [ ]      Make setting-persistence more intuitive
 - [ ]      Nodelist applet should fill new space from NodeDB when layout changes and applet size increases, or when recents duration increases
 - [ ]      Refactor ChronoList applets
