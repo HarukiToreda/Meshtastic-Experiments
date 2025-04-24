@@ -333,9 +333,24 @@ Red = Avoid
       <td style="background-color: red; color: white;">GPS/No switch</td><!--GPS-->
       <td>None</td>
       <td style="background-color: green;">Yes</td>
-      <td>8Hrs</td>
+      <td style="background-color: red; color: white;">8Hrs</td>
       <td>$179.99</td>
       <td><a href="https://www.etsy.com/listing/1727452694/spec5-ranger-from-spec5-meshtastic-lora">Link</a></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;">HelTXT - Standalone Meshtastic Communicator</td>
+      <td style="background-color: green;">Cardkb</td>
+      <td>ESP32</td>
+      <td style="background-color: green;">4000mAh</td>
+      <td style="background-color: green;">3dBi</td>
+      <td style="background-color: yellow; color: black;">PLA+</td>
+      <td style="background-color: green;">Yes</td>
+      <td style="background-color: green;">GPS/Super Low Power</td>
+      <td style="background-color: green;">None</td>
+      <td style="background-color: green;">Yes</td>
+      <td>276Hrs</td>
+      <td>$120.00</td>
+      <td><a href="https://www.etsy.com/listing/1873027341/nrf-txt-stand-alone-meshtastic-node">Link</a></td>
     </tr>
     <tr>
       <td style="white-space: nowrap;">HelTXT - Standalone Meshtastic Communicator</td>
@@ -348,7 +363,7 @@ Red = Avoid
       <td style="background-color: green;">GPS/with mosfet</td>
       <td style="background-color: green;">BME680</td>
       <td style="background-color: green;">Yes</td>
-      <td>146Hrs</td>
+      <td>264Hrs</td>
       <td>$85.00</td>
       <td><a href="https://harukitoreda.etsy.com/listing/1729282449/heltxt-standalone-running-meshtastic">Link</a></td>
     </tr>
