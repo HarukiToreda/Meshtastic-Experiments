@@ -340,7 +340,7 @@ Red = Avoid
     <tr>
       <td style="white-space: nowrap;">HelTXT - Standalone Meshtastic Communicator</td>
       <td style="background-color: green;">Cardkb</td>
-      <td>ESP32</td>
+      <td>nRF</td>
       <td style="background-color: green;">4000mAh</td>
       <td style="background-color: green;">3dBi</td>
       <td style="background-color: yellow; color: black;">PLA+</td>
