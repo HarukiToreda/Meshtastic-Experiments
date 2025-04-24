@@ -227,7 +227,7 @@ Red = Avoid
       <td style="background-color: green;">GPS/Switch</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td style="background-color: green;">Yes</td><!--Buzzer-->
-      <td style="background-color: green;">Yes</td><!--Canned Module-->
+      <td style="background-color: green;">Rotary Encoder</td><!--Canned Module-->
       <td>No</td><!--Weatherproof-->
       <td>48Hrs+</td><!--Approximate Runtime-->
       <td>$40.00</td><!--Price-->
