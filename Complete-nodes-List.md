@@ -96,7 +96,7 @@ Red = Avoid
       <td>OLED 0.96"</td><!--Display--> 
       <td style="background-color: green;">3200 mAh</td><!--Battery-->
       <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
-      <td style="background-color: green; color: black;">ASA</td><!--Case Material-->
+      <td style="background-color: green;">ASA</td><!--Case Material-->
       <td style="background-color: green;">Yes</td><!--Power Switch-->
       <td style="background-color: yellow; color: black;">GPS/Low Power</td><!--GPS-->
       <td>None</td><!--Sensors-->
@@ -113,10 +113,10 @@ Red = Avoid
       <td>nRF</td><!--MCU-->
       <td>OLED 1.3"</td><!--Display--> 
       <td style="background-color: green;">1200 mAh</td><!--Battery-->
-      <td style="background-color: green; color: black;">2.0 dBi</td><!--Antenna-->
-      <td style="background-color: green; color: black;">FiverGlass</td><!--Case Material-->
+      <td style="background-color: green;">2.0 dBi</td><!--Antenna-->
+      <td style="background-color: green;">FiverGlass</td><!--Case Material-->
       <td style="background-color: green;">Yes</td><!--Power Switch-->
-      <td style="background-color: green; color: black;">GPS/Power Switch</td><!--GPS-->
+      <td style="background-color: green;">GPS/Power Switch</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td>None</td><!--Buzzer-->
       <td>None</td><!--Canned Module-->
@@ -224,7 +224,7 @@ Red = Avoid
       <td style="background-color: yellow; color: black;">Stock</td><!--Antenna-->
       <td style="background-color: green;">Injection Mold</td><!--Case Material-->
       <td>None</td><!--Power Switch-->
-      <td style="background-color: green; color: black;">GPS/Switch</td><!--GPS-->
+      <td style="background-color: green;">GPS/Switch</td><!--GPS-->
       <td>None</td><!--Sensors-->
       <td style="background-color: green;">Yes</td><!--Buzzer-->
       <td style="background-color: green;">Yes</td><!--Canned Module-->
