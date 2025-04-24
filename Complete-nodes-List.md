@@ -108,6 +108,24 @@ Red = Avoid
       <td><a href="https://store.rokland.com/products/wismesh-pocket">Link</a></td><!--Link-->
     </tr>
     <tr>
+      <td style="white-space: nowrap;">Meshtastic Mesh Device Nano G2 Ultra</td>
+      <td>Yes</td><!--Fits in Pocket-->
+      <td>nRF</td><!--MCU-->
+      <td>OLED 1.3"</td><!--Display--> 
+      <td style="background-color: green;">1200 mAh</td><!--Battery-->
+      <td style="background-color: green; color: black;">2.0 dBi</td><!--Antenna-->
+      <td style="background-color: green; color: black;">FiverGlass</td><!--Case Material-->
+      <td style="background-color: green;">Yes</td><!--Power Switch-->
+      <td style="background-color: green; color: black;">GPS/Power Switch</td><!--GPS-->
+      <td>None</td><!--Sensors-->
+      <td>None</td><!--Buzzer-->
+      <td>None</td><!--Canned Module-->
+      <td>No</td><!--Weatherproof-->
+      <td>120Hrs</td><!--Weatherproof-->
+      <td>$86.00</td><!--Price-->
+      <td><a href="https://www.tindie.com/products/neilhao/meshtastic-mesh-device-nano-g2-ultra/">Link</a></td><!--Link-->
+    </tr>
+    <tr>
       <td style="white-space: nowrap;">Alley Chat Heltec V3 Slim Pro 3000Ah</td>
       <td>Yes</td><!--Fits in Pocket-->
       <td>ESP32</td><!--MCU-->
@@ -285,8 +303,8 @@ Red = Avoid
       <td style="background-color: yellow; color: black;">GPS/Low Power</td><!--GPS-->
       <td>None</td>
       <td style="background-color: green;">Yes</td>
-      <td>312 Hrs</td>
-      <td>$250.00</td>
+      <td>175 Hrs</td>
+      <td>$225.00</td>
       <td><a href="https://www.etsy.com/listing/1390142667/meshenger-standalone-device-for">Link</a></td>
     </tr>
     <tr>
@@ -303,36 +321,6 @@ Red = Avoid
       <td>76Hrs</td>
       <td>$205.00</td>
       <td><a href="https://www.etsy.com/listing/1740148840/t-deck-complete-with-8000-mah-battery">Link</a></td>
-    </tr>
-    <tr>
-      <td style="white-space: nowrap;">Meshtastic - Lilygo T-Deck 433MHz with GPS Case Battery</td>
-      <td style="background-color: yellow; color: black;">Blackberry</td>
-      <td>ESP32</td>
-      <td style="background-color: green;">6000mAh</td>
-      <td style="background-color: green;">3dBi</td>
-      <td style="background-color: yellow; color: black;">PLA+</td>
-      <td style="background-color: green;">Yes</td>
-      <td>GPS/No switch</td>
-      <td>None</td>
-      <td style="background-color: green;">Yes</td>
-      <td>14Hrs</td>
-      <td>$216.82</td>
-      <td><a href="https://www.etsy.com/listing/1768715019/meshtastic-lilygo-t-deck-with-gps-case">Link</a></td>
-    </tr>
-    <tr>
-      <td style="white-space: nowrap;">Limited Run Carbon Fiber Reinforced Lilygo T Deck Complete W/GPS</td>
-      <td style="background-color: yellow; color: black;">Blackberry</td>
-      <td>ESP32</td>
-      <td style="background-color: green;">8000mAh</td>
-      <td style="background-color: green;">3dBi</td>
-      <td style="background-color: green;">PETG</td>
-      <td style="background-color: green;">Yes</td>
-      <td style="background-color: red; color: white;">GPS/No switch</td><!--GPS-->
-      <td>None</td>
-      <td style="background-color: green;">Yes</td>
-      <td>19Hrs</td>
-      <td>$185.40</td>
-      <td><a href="https://www.etsy.com/listing/1801509135/limited-run-carbon-fiber-rienforced">Link</a></td>
     </tr>
     <tr>
       <td style="white-space: nowrap;">Spec5 Ranger from Spec5 Meshtastic LoRa Radio Keyboard</td>
