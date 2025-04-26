@@ -1,6 +1,6 @@
-# E290 Shield
+# E290 Shield V2
 
-The E290 Shield is an add-on board designed for the Heltec Vision Master E290. This shield provides a convenient and modular solution for integrating additional functionalities such as GPS, a buzzer, and a vibration motor. It also exposes pins for easy soldering of additional components, making it highly versatile for various projects.
+The E290 Shield V2 is an add-on board designed for the Heltec Vision Master E290. This shield provides a convenient and modular solution for integrating additional functionalities such as GPS, a buzzer, and a vibration motor. It also exposes pins for easy soldering of additional components, making it highly versatile for various projects.
 
 ## Key Features
 
@@ -18,7 +18,7 @@ For a detailed list of components required to assemble the E290 Shield, please r
 
 <details><summary>Click to view images</summary>
 
-![E290 Shield](https://github.com/HarukiToreda/Meshtastic-Experiments/blob/main/assets/images/PCB/E290_Shield2.jpg)
+![E290 Shield](????)
 
 </details>
 
@@ -112,7 +112,7 @@ For a detailed list of components required to assemble the E290 Shield, please r
       </tr>
       <tr>
         <td>GPS</td>
-        <td>GT-U7</td>
+        <td>ATGN336H</td>
         <td>1</td>
         <td>SMD</td>
         <td>GPS</td>
