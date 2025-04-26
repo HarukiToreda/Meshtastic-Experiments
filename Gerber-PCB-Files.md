@@ -6,9 +6,9 @@ pcbs:
     image_url: "/Meshtastic-Experiments/assets/images/PCB/E290_Shield.jpg"
     github_url: "https://github.com/HarukiToreda/Meshtastic-Experiments/tree/main/PCB-Projects/E290-Shield"
 
-  - name: "PCB Design 2"
-    image_url: "/assets/images/pcb2.jpg"
-    github_url: "https://github.com/your-username/your-repo/blob/main/path/to/pcb2/files"
+  - name: "E290 Shield V2"
+    image_url: "/Meshtastic-Experiments/assets/images/PCB/E290_ShieldV2.JPG"
+    github_url: "https://github.com/HarukiToreda/Meshtastic-Experiments/tree/main/PCB-Projects/E290-Shield_V2"
 
   - name: "PCB Design 3"
     image_url: "/assets/images/pcb3.jpg"
