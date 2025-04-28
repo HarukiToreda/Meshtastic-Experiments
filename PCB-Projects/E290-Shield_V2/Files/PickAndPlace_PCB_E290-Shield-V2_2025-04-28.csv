@@ -1,0 +1,12 @@
+﻿Designator	Footprint	Mid X	Mid Y	Ref X	Ref Y	Pad X	Pad Y	Layer	Rotation	Comment
+"H1"	"HDR-TH_40P-P2.54-V-M-R2-C20-S2.54"	"58.04mm"	"76.84mm"	"58.04mm"	"76.84mm"	"33.91mm"	"78.11mm"	"B"	"0"	"Header-Male-2.54_2x20"
+"H2"	"HDR-TH_4P-P2.54-V-M"	"11.68mm"	"47.37mm"	"11.68mm"	"47.37mm"	"7.87mm"	"47.37mm"	"T"	"0"	"KH-2.54PH180-1X4P-L11.5"
+"Q1"	"TO-92-3_L4.9-W3.7-P1.27-L"	"14.22mm"	"67.44mm"	"14.22mm"	"67.44mm"	"15.49mm"	"67.44mm"	"B"	"180"	"2N7000"
+"Q2"	"TO-92-3_L4.9-W3.7-P1.27-L"	"23.75mm"	"77.47mm"	"23.75mm"	"77.47mm"	"25.02mm"	"77.47mm"	"B"	"180"	"2N2222"
+"Q3"	"TO-92-3_L4.9-W3.7-P1.27-L"	"29.21mm"	"77.47mm"	"29.21mm"	"77.47mm"	"30.48mm"	"77.47mm"	"B"	"180"	"2N2222"
+"Q4"	"SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR"	"7.37mm"	"68.07mm"	"7.37mm"	"68.07mm"	"6.42mm"	"67.07mm"	"T"	"270"	"AO3400A"
+"Q5"	"SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR"	"23.75mm"	"74.68mm"	"23.75mm"	"74.68mm"	"22.65mm"	"75.63mm"	"T"	"180"	"MMBT2222A-1P"
+"Q6"	"SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR"	"29.08mm"	"74.55mm"	"29.08mm"	"74.55mm"	"27.98mm"	"75.5mm"	"T"	"180"	"MMBT2222A-1P"
+"U1"	"BUZ-SMD_MLT-9032"	"10.79mm"	"73.91mm"	"10.8mm"	"73.91mm"	"14.94mm"	"73.91mm"	"B"	"0"	"MTL9032"
+"U3"	"VIBRATIONMOTOR-TH_LCM0827A3038F"	"18.29mm"	"76.58mm"	"18.29mm"	"76.58mm"	"17.02mm"	"76.58mm"	"T"	"0"	"LCM0827A3038F"
+"U5"	"ATGM336H NEO-6M"	"11.56mm"	"63.88mm"	"11.56mm"	"57.28mm"	"6.48mm"	"63.88mm"	"B"	"270"	"ATGM336H NEO-6M Module"
