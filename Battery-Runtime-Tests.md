@@ -95,6 +95,8 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
+          <td>64 Hrs</td><!--T1000-E GPS Off-->
+          <td>51 Hrs</td><!--T1000-E GPS On-->
           <td></td><!--Thinknode M1 (GPS Off)-->
           <td></td><!--Thinknode M1 (GPS On)-->
         </tr>
