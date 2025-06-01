@@ -75,6 +75,8 @@ title: Battery Runtime Tests
           <th>RAK19003 (RAK4631)</th>
           <th>T1000E (GPS Off)</th>
           <th>T1000E (GPS On)</th>
+          <th>Thinknode M1 (GPS Off)</th>
+          <th>Thinknode M1 (GPS On)</th>
         </tr>
       </thead>
       <tbody>
@@ -93,8 +95,8 @@ title: Battery Runtime Tests
           <td></td><!--T-Deck-->
           <td></td><!--RAKRAK19007-->
           <td></td><!--RAKRAK19003-->
-          <td>64 Hrs</td><!--T1000-E GPS Off-->
-          <td>51 Hrs</td><!--T1000-E GPS On-->
+          <td></td><!--Thinknode M1 (GPS Off)-->
+          <td></td><!--Thinknode M1 (GPS On)-->
         </tr>
         <tr>
           <td>1100mAh Battery</td>
@@ -113,6 +115,28 @@ title: Battery Runtime Tests
           <td>156 Hrs</td><!--RAKRAK19003-->
           <td>-</td><!--T1000-E GPS Off-->
           <td>-</td><!--T1000-E GPS On-->
+          <td></td><!--Thinknode M1 (GPS Off)-->
+          <td></td><!--Thinknode M1 (GPS On)-->
+        </tr>
+        <tr>
+          <td>1200mAh Battery</td>
+          <td>-</td><!--Heltec V2-->
+          <td>-</td><!--Heltec V3-->
+          <td>-</td><!--Heltec V3.2-->
+          <td>-</td><!--Wireless Paper-->
+          <td>-</td><!--Wireless Stick Lite-->
+          <td>-</td><!--Wireless Tracker-->
+          <td></td><!--VME213-->
+          <td></td><!--VME290-->
+          <td>-</td><!--Heltec T114 GPS OFF-->
+          <td>-</td><!--Heltec T114 GPS ON-->
+          <td>-</td><!--T-Deck-->
+          <td>-</td><!--RAKRAK19007-->
+          <td>-</td><!--RAKRAK19003-->
+          <td>-</td><!--T1000-E GPS Off-->
+          <td>-</td><!--T1000-E GPS On-->
+          <td>62 Hrs</td><!--Thinknode M1 (GPS Off)-->
+          <td></td><!--Thinknode M1 (GPS On)-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
@@ -131,6 +155,8 @@ title: Battery Runtime Tests
           <td></td><!--RAKRAK19003-->
           <td>-</td><!--T1000-E GPS Off-->
           <td>-</td><!--T1000-E GPS On-->
+          <td></td><!--Thinknode M1 (GPS Off)-->
+          <td></td><!--Thinknode M1 (GPS On)-->
         </tr>
         <tr>
           <td>3000mAh Battery</td>
@@ -149,6 +175,8 @@ title: Battery Runtime Tests
           <td>453 Hrs</td><!--RAKRAK19003-->   
           <td>-</td><!--T1000-E GPS Off-->
           <td>-</td><!--T1000-E GPS On-->
+          <td></td><!--Thinknode M1 (GPS Off)-->
+          <td></td><!--Thinknode M1 (GPS On)-->
         </tr>
         <tr>
           <td>4000mAh Battery</td>
@@ -167,6 +195,8 @@ title: Battery Runtime Tests
           <td></td><!--RAKRAK19003-->   
           <td>-</td><!--T1000-E GPS Off-->
           <td>-</td><!--T1000-E GPS On-->
+          <td></td><!--Thinknode M1 (GPS Off)-->
+          <td></td><!--Thinknode M1 (GPS On)-->
         </tr>        
         <tr>
           <td>5000mAh Battery</td>
@@ -185,6 +215,8 @@ title: Battery Runtime Tests
           <td></td><!--RAKRAK19003-->   
           <td>-</td><!--T1000-E GPS Off-->
           <td>-</td><!--T1000-E GPS On-->
+          <td></td><!--Thinknode M1 (GPS Off)-->
+          <td></td><!--Thinknode M1 (GPS On)-->
         </tr>               
       </tbody>
     </table>
