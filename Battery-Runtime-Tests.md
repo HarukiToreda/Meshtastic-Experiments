@@ -138,7 +138,7 @@ title: Battery Runtime Tests
           <td>-</td><!--T1000-E GPS Off-->
           <td>-</td><!--T1000-E GPS On-->
           <td>62 Hrs</td><!--Thinknode M1 (GPS Off)-->
-          <td></td><!--Thinknode M1 (GPS On)-->
+          <td>52 Hrs</td><!--Thinknode M1 (GPS On)-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
