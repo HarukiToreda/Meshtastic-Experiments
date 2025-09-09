@@ -168,7 +168,7 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
             <option value="heltec_wsl_v3" data-multiplier="5.1205">heltec_wsl_v3</option>
             <option value="heltec_wireless_paper" data-multiplier="2.0">heltec_wireless_paper</option>
             <option value="heltec_wireless_tracker" data-multiplier="4.9">heltec_wireless_tracker</option>
-            <option value="heltec_T114" data-multiplier="4.9">heltec_T114</option>
+            <option value="heltec_T114" data-multiplier="4.916">heltec_T114</option>
             <option value="lora_isp4520" data-multiplier="1.436">lora_isp4520</option>
             <option value="m5stack_coreink" data-multiplier="5.0">m5stack_coreink</option>
             <option value="nano-g1-explorer" data-multiplier="2.0">nano-g1-explorer</option>
