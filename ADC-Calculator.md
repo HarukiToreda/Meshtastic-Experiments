@@ -164,7 +164,7 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
             <option value="diy" data-multiplier="1.85">diy</option>
             <option value="esp32-s3-pico" data-multiplier="3.1">esp32-s3-pico</option>
             <option value="heltec_v1/v2" data-multiplier="3.2">heltec_v1/v2</option>
-            <option value="heltec_v3" Measured Voltage="4.15" data-multiplier="5.035">heltec_v3</option>
+            <option value="heltec_v3" data-multiplier="5.035" data-measured="4.15">heltec_v3</option>
             <option value="heltec_wsl_v3" data-multiplier="5.1205">heltec_wsl_v3</option>
             <option value="heltec_wireless_paper" data-multiplier="2.0">heltec_wireless_paper</option>
             <option value="heltec_wireless_tracker" data-multiplier="4.9">heltec_wireless_tracker</option>
@@ -198,12 +198,17 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
 
 <script>
   function updateManualMultiplier(dropdown) {
-    const multiplier = dropdown.options[dropdown.selectedIndex].getAttribute('data-multiplier');
-    const manualMultiplierField = dropdown.closest('tr').querySelector('.manualMultiplier');
-    if (multiplier) {
-      manualMultiplierField.value = multiplier;
-    }
-  }
+     const option = dropdown.options[dropdown.selectedIndex];
+     const multiplier = option.getAttribute('data-multiplier');
+     const measured = option.getAttribute('data-measured');
+   
+     const row = dropdown.closest('tr');
+     const manualMultiplierField = row.querySelector('.manualMultiplier');
+     const measuredField = row.querySelector('.measuredVoltage');
+   
+     if (multiplier) manualMultiplierField.value = multiplier;
+     if (measured) measuredField.value = measured;
+   }
 
   function calculateTableMultipliers() {
     const rows = document.querySelectorAll('#measurementTable tbody tr');
