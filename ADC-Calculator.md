@@ -164,7 +164,7 @@ The calibration process uses a simple formula to adjust the ADC multiplier based
             <option value="diy" data-multiplier="1.85">diy</option>
             <option value="esp32-s3-pico" data-multiplier="3.1">esp32-s3-pico</option>
             <option value="heltec_v1/v2" data-multiplier="3.2">heltec_v1/v2</option>
-            <option value="heltec_v3" data-multiplier="5.035">heltec_v3</option>
+            <option value="heltec_v3" Measured Voltage="4.15" data-multiplier="5.035">heltec_v3</option>
             <option value="heltec_wsl_v3" data-multiplier="5.1205">heltec_wsl_v3</option>
             <option value="heltec_wireless_paper" data-multiplier="2.0">heltec_wireless_paper</option>
             <option value="heltec_wireless_tracker" data-multiplier="4.9">heltec_wireless_tracker</option>
