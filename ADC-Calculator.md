@@ -24,20 +24,21 @@ Use this if your priority is having the percentage display reflect a full charge
 
 ## Calculator 2: Calibrate to show the true voltage
 
-This calculator corrects the displayed voltage so it matches the value measured with a multimeter. It uses the true measured voltage, the displayed voltage, and the current ADC multiplier to compute a more accurate multiplier.
+This calculator is used to correct the voltage shown by the device.  
+Measure the battery voltage with a multimeter, compare it to the voltage displayed on the screen, and enter both values along with the current multiplier. The calculator will generate an adjusted ADC multiplier that produces an accurate voltage reading.
 
 Use this if your priority is accurate voltage readings.  
-Note: Boards that charge below 4.20 volts may show less than 100 percent even after calibration.
+Boards that charge below 4.20 volts may still show less than 100 percent after calibration. This is normal.
 
 ---
 
 ## Calibration Process
 
-The calibration process uses a simple formula to adjust the ADC multiplier based on the battery voltage. Here’s a detailed breakdown of how the calculation is done:
+The calibration process uses a simple formula to adjust the ADC multiplier based on the battery voltage. Here’s a detailed breakdown:
 
-1. Determine the target ADC value. The target ADC value for a full battery (100 percent charge) is known, which is 4.19 volts.
-2. Adjust the ADC multiplier. The formula adjusts the current ADC multiplier to make sure the device reads 100 percent when the battery voltage is 4.19 volts.
-3. Calculate the new ADC multiplier:
+1. Determine the target ADC value. The target value for a full battery (100 percent charge) is 4.19 volts.  
+2. Adjust the ADC multiplier so Meshtastic treats the actual battery voltage as full.  
+3. Apply the formula:
 
 <pre>
 New ADC Multiplier = Current ADC Multiplier × (4.19 / Battery Voltage)
@@ -56,15 +57,15 @@ New ADC Multiplier = Current ADC Multiplier × (4.19 / Battery Voltage)
       <td>New ADC Multiplier = 2 × (4.19 / 3.82)</td>
     </tr>
     <tr>
-      <td>Calculate the Ratio:</td>
+      <td>Ratio:</td>
       <td>4.19 / 3.82 ≈ 1.097</td>
     </tr>
     <tr>
-      <td>Multiply:</td>
+      <td>Result:</td>
       <td>2 × 1.097 = 2.194</td>
     </tr>
     <tr>
-      <td>Update the Device:</td>
+      <td>Update:</td>
       <td>Set the new ADC multiplier (2.194) in your device configuration.</td>
     </tr>
   </table>
@@ -104,7 +105,7 @@ New ADC Multiplier = Current ADC Multiplier × (4.19 / Battery Voltage)
 ---
 
 <script>
-// Shared device list
+// Shared device list (single source of truth)
 const DEVICE_DATA = {
   chatter2: { multiplier: 5.0 },
   diy: { multiplier: 1.85 },
@@ -139,9 +140,11 @@ function populateDropdown(selectElement, includeMeasured = false) {
     const opt = document.createElement("option");
     opt.value = device;
     opt.textContent = device;
+
     if (includeMeasured && DEVICE_DATA[device].measured !== undefined) {
       opt.setAttribute("data-measured", DEVICE_DATA[device].measured);
     }
+
     selectElement.appendChild(opt);
   });
 }
@@ -153,11 +156,11 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
+// Calculator 1
 function updateAdcMultiplier() {
   const device = document.getElementById('deviceSelect').value;
   if (DEVICE_DATA[device]) {
-    document.getElementById('operativeAdcMultiplier').value =
-      DEVICE_DATA[device].multiplier;
+    document.getElementById('operativeAdcMultiplier').value = DEVICE_DATA[device].multiplier;
   }
 }
 
@@ -172,6 +175,7 @@ function calculateNewMultiplier() {
 
   const targetVoltage = 4.19;
   const newAdcMultiplier = currentAdcMultiplier * (targetVoltage / batteryVoltage);
+
   document.getElementById('newOperativeAdcMultiplier').value = newAdcMultiplier.toFixed(3);
 }
 </script>
@@ -180,15 +184,17 @@ function calculateNewMultiplier() {
 
 ### Voltage Measurement Calculator
 
-## If you want the displayed voltage to match a multimeter, use this calculator.
+## This calculator is used to correct the voltage shown by the device.
+
+Measure the battery voltage with a multimeter, compare it to the voltage displayed on the screen, and enter both values along with the current multiplier. The calculator will generate an adjusted ADC multiplier that produces an accurate voltage reading.
 
 <div>
   <table id="measurementTable">
     <thead>
       <tr>
         <th>Device</th>
-        <th>Max Charge Voltage(Multimeter)</th>
-        <th>Displayed Voltage (Screen) [V]</th>
+        <th>Max Charge Voltage (Multimeter)</th>
+        <th>Displayed Voltage (Screen)</th>
         <th>Manual ADC Multiplier</th>
         <th>Adjusted ADC Multiplier</th>
       </tr>
@@ -208,6 +214,7 @@ function calculateNewMultiplier() {
 </div>
 
 <script>
+// Calculator 2
 function updateManualMultiplier(dropdown) {
   const device = dropdown.value;
   const row = dropdown.closest('tr');
@@ -217,6 +224,7 @@ function updateManualMultiplier(dropdown) {
 
   if (DEVICE_DATA[device]) {
     manualMultiplierField.value = DEVICE_DATA[device].multiplier;
+
     if (DEVICE_DATA[device].measured !== undefined) {
       measuredField.value = DEVICE_DATA[device].measured;
     }
@@ -242,6 +250,7 @@ function calculateTableMultipliers() {
 
     const adjustedMultiplier =
       manualMultiplier * (measuredVoltage / displayedVoltage);
+
     row.querySelector('.adjustedMultiplier').value = adjustedMultiplier.toFixed(3);
   });
 }
