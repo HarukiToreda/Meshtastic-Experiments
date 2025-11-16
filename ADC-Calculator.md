@@ -3,81 +3,32 @@ layout: default
 title: ADC Calculator
 ---
 
-<style>
-/* --- General Page Styling --- */
-.calculator-card {
-  border: 1px solid #d0d0d0;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 25px 0;
-  background: #fafafa;
-}
-
-.calculator-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #ccc;
-}
-
-.subtitle {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 18px;
-}
-
-table {
-  width: 100%;
-}
-
-td {
-  padding: 6px 0;
-}
-
-input, select {
-  width: 100%;
-  padding: 7px;
-  border-radius: 6px;
-  border: 1px solid #c7c7c7;
-}
-
-.button {
-  margin-top: 10px;
-  width: 100%;
-}
-
-/* Mobile spacing */
-@media (max-width: 600px) {
-  .calculator-card {
-    padding: 15px;
-  }
-}
-</style>
-
 # ADC Calculator
 
 ## Understanding the Two Calculators
-Different Meshtastic boards reach different maximum charge voltages. Some stop at **4.15V**, others reach **4.20V**, which affects the displayed battery percentage or voltage accuracy.
 
-Choose the calculator that matches what you want to correct:
+Meshtastic devices often do not charge batteries to the true chemistry maximum of 4.20V. Some boards reach a lower maximum (for example 4.15V), which causes the displayed battery percentage or voltage to appear incorrect.
 
-- **100% Battery Display Calculator** — Makes Meshtastic show 100% at your device’s true full-charge voltage.
-- **Accurate Voltage Calibration Calculator** — Adjusts the ADC multiplier so the displayed voltage matches your multimeter.
+This page provides two ways to correct this behavior:
 
-Each calculator serves a different purpose.
+- **100% Battery Display Calculator** — Adjusts the ADC multiplier so the device shows **100% when your battery reaches its actual full voltage**, even if that voltage is below 4.20V.
+- **Accurate Voltage Calibration Calculator** — Adjusts the ADC multiplier so the **displayed voltage matches a multimeter**, giving true electrical accuracy.
+
+Choose the calculator that matches your goal.
 
 ---
 
 # **100% Battery Display Calculator**
-<div class="calculator-card">
-  <div class="calculator-title">100% Battery Display Calculator</div>
-  <div class="subtitle">Use this when your board charges below 4.20V and you want Meshtastic to show 100% at its real full voltage (e.g., 4.15V).</div>
+### Makes Meshtastic show 100% at your board’s actual max charge voltage  
+Use this calculator if your device never reaches 4.20V but you want the battery indicator to show 100% at the voltage your board actually charges to.
 
+<div>
   <table>
     <tr>
       <td>Device:</td>
-      <td><select id="deviceSelect" onchange="updateAdcMultiplier()"></select></td>
+      <td>
+        <select id="deviceSelect" onchange="updateAdcMultiplier()"></select>
+      </td>
     </tr>
     <tr>
       <td>Battery Voltage (V):</td>
@@ -91,9 +42,14 @@ Each calculator serves a different purpose.
       <td>Calculated New Operative ADC Multiplier:</td>
       <td><input type="text" id="newOperativeAdcMultiplier" disabled /></td>
     </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button class="button button--outline button--lg cta--button"
+                onclick="calculateNewMultiplier()">Calculate</button>
+      </td>
+    </tr>
   </table>
-
-  <button class="button button--outline button--lg cta--button" onclick="calculateNewMultiplier()">Calculate</button>
 </div>
 
 ---
@@ -151,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-// Calculator 1 – 100% display
+// Calculator 1
 function updateAdcMultiplier() {
   const device = document.getElementById('deviceSelect').value;
   if (DEVICE_DATA[device]) {
@@ -180,46 +136,56 @@ function calculateNewMultiplier() {
 ---
 
 # **Accurate Voltage Calibration Calculator**
-<div class="calculator-card">
-  <div class="calculator-title">Accurate Voltage Calibration Calculator</div>
-  <div class="subtitle">
-    Use this if you want the displayed voltage to match your multimeter reading.  
-    This ensures *true voltage accuracy*, even if the percentage ends up below 100%.
-  </div>
+### Makes the displayed voltage match your multimeter  
+Use this calculator if you want accurate voltage readings, even if the battery percentage ends up lower than 100%.
 
-  <table id="measurementTable">
-    <thead>
-      <tr>
-        <th>Device</th>
-        <th>Max Charge Voltage (Multimeter)</th>
-        <th>Displayed Voltage (Screen)</th>
-        <th>Manual ADC Multiplier</th>
-        <th>Adjusted ADC Multiplier</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><select class="deviceSelect" onchange="updateManualMultiplier(this)"></select></td>
-        <td><input type="text" class="measuredVoltage" placeholder="Measured Voltage"></td>
-        <td><input type="text" class="displayedVoltage" placeholder="Displayed Voltage"></td>
-        <td><input type="text" class="manualMultiplier" placeholder="Manual Multiplier"></td>
-        <td><input type="text" class="adjustedMultiplier" disabled></td>
-      </tr>
-    </tbody>
+<div>
+  <table>
+    <tr>
+      <td>Device:</td>
+      <td>
+        <select class="deviceSelect" onchange="updateManualMultiplier(this)"></select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Max Charge Voltage (Multimeter):</td>
+      <td><input type="text" class="measuredVoltage" /></td>
+    </tr>
+
+    <tr>
+      <td>Displayed Voltage (Device):</td>
+      <td><input type="text" class="displayedVoltage" /></td>
+    </tr>
+
+    <tr>
+      <td>Current ADC Multiplier:</td>
+      <td><input type="text" class="manualMultiplier" /></td>
+    </tr>
+
+    <tr>
+      <td>Adjusted ADC Multiplier:</td>
+      <td><input type="text" class="adjustedMultiplier" disabled /></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>
+        <button class="button button--outline button--lg cta--button"
+                onclick="calculateTableMultipliers()">Calculate</button>
+      </td>
+    </tr>
   </table>
-
-  <button class="button button--outline button--lg cta--button"
-          onclick="calculateTableMultipliers()">Calculate</button>
 </div>
 
 <script>
-// Calculator 2 – Accurate voltage
+// Calculator 2
 function updateManualMultiplier(dropdown) {
   const device = dropdown.value;
-  const row = dropdown.closest('tr');
+  const container = dropdown.closest('table');
 
-  const manualMultiplierField = row.querySelector('.manualMultiplier');
-  const measuredField = row.querySelector('.measuredVoltage');
+  const manualMultiplierField = container.querySelector('.manualMultiplier');
+  const measuredField = container.querySelector('.measuredVoltage');
 
   if (DEVICE_DATA[device]) {
     manualMultiplierField.value = DEVICE_DATA[device].multiplier;
@@ -231,27 +197,25 @@ function updateManualMultiplier(dropdown) {
 }
 
 function calculateTableMultipliers() {
-  const rows = document.querySelectorAll('#measurementTable tbody tr');
+  const container = document.querySelector('#measurementTable') || document;
 
-  rows.forEach(row => {
-    const measuredVoltage = parseFloat(row.querySelector('.measuredVoltage').value);
-    const displayedVoltage = parseFloat(row.querySelector('.displayedVoltage').value);
-    const manualMultiplier = parseFloat(row.querySelector('.manualMultiplier').value);
+  const measuredVoltage = parseFloat(container.querySelector('.measuredVoltage').value);
+  const displayedVoltage = parseFloat(container.querySelector('.displayedVoltage').value);
+  const manualMultiplier = parseFloat(container.querySelector('.manualMultiplier').value);
 
-    if (
-      isNaN(measuredVoltage) || measuredVoltage <= 0 ||
-      isNaN(displayedVoltage) || displayedVoltage <= 0 ||
-      isNaN(manualMultiplier) || manualMultiplier <= 0
-    ) {
-      row.querySelector('.adjustedMultiplier').value = 'Invalid Input';
-      return;
-    }
+  if (
+    isNaN(measuredVoltage) || measuredVoltage <= 0 ||
+    isNaN(displayedVoltage) || displayedVoltage <= 0 ||
+    isNaN(manualMultiplier) || manualMultiplier <= 0
+  ) {
+    container.querySelector('.adjustedMultiplier').value = 'Invalid Input';
+    return;
+  }
 
-    const adjustedMultiplier =
-      manualMultiplier * (measuredVoltage / displayedVoltage);
+  const adjustedMultiplier =
+    manualMultiplier * (measuredVoltage / displayedVoltage);
 
-    row.querySelector('.adjustedMultiplier').value =
-      adjustedMultiplier.toFixed(3);
-  });
+  container.querySelector('.adjustedMultiplier').value =
+    adjustedMultiplier.toFixed(3);
 }
 </script>
