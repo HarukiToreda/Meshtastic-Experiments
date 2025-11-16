@@ -3,32 +3,81 @@ layout: default
 title: ADC Calculator
 ---
 
+<style>
+/* --- General Page Styling --- */
+.calculator-card {
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 25px 0;
+  background: #fafafa;
+}
+
+.calculator-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ccc;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 6px 0;
+}
+
+input, select {
+  width: 100%;
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid #c7c7c7;
+}
+
+.button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+  .calculator-card {
+    padding: 15px;
+  }
+}
+</style>
+
 # ADC Calculator
 
 ## Understanding the Two Calculators
+Different Meshtastic boards reach different maximum charge voltages. Some stop at **4.15V**, others reach **4.20V**, which affects the displayed battery percentage or voltage accuracy.
 
-Meshtastic devices often do not charge batteries to the true chemistry maximum (4.20V). Some boards fully charge at lower voltages such as 4.15V, which can cause the displayed battery percentage or voltage to appear incorrect.
+Choose the calculator that matches what you want to correct:
 
-You may correct the behavior in two different ways:
+- **100% Battery Display Calculator** — Makes Meshtastic show 100% at your device’s true full-charge voltage.
+- **Accurate Voltage Calibration Calculator** — Adjusts the ADC multiplier so the displayed voltage matches your multimeter.
 
-- **100% Battery Display Calculator** — Adjusts the ADC multiplier so the device shows **100% when your battery reaches its actual full voltage**, even if that voltage is below 4.20V.
-- **Accurate Voltage Calibration Calculator** — Adjusts the ADC multiplier so the **displayed voltage matches a multimeter reading**, providing true electrical accuracy.
-
-These calculators solve different problems—choose the one that fits your needs.
+Each calculator serves a different purpose.
 
 ---
 
 # **100% Battery Display Calculator**
-### Makes Meshtastic show 100% at your board’s actual max charge voltage  
-Use this calculator if your device **never charges to 4.20V**, but you want the battery indicator to show **100% when it reaches its real maximum (e.g., 4.15V)**.
+<div class="calculator-card">
+  <div class="calculator-title">100% Battery Display Calculator</div>
+  <div class="subtitle">Use this when your board charges below 4.20V and you want Meshtastic to show 100% at its real full voltage (e.g., 4.15V).</div>
 
-<div>
   <table>
     <tr>
       <td>Device:</td>
-      <td>
-        <select id="deviceSelect" onchange="updateAdcMultiplier()"></select>
-      </td>
+      <td><select id="deviceSelect" onchange="updateAdcMultiplier()"></select></td>
     </tr>
     <tr>
       <td>Battery Voltage (V):</td>
@@ -42,14 +91,9 @@ Use this calculator if your device **never charges to 4.20V**, but you want the 
       <td>Calculated New Operative ADC Multiplier:</td>
       <td><input type="text" id="newOperativeAdcMultiplier" disabled /></td>
     </tr>
-    <tr>
-      <td></td>
-      <td>
-        <button class="button button--outline button--lg cta--button"
-                onclick="calculateNewMultiplier()">Calculate</button>
-      </td>
-    </tr>
   </table>
+
+  <button class="button button--outline button--lg cta--button" onclick="calculateNewMultiplier()">Calculate</button>
 </div>
 
 ---
@@ -107,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-// Calculator 1
+// Calculator 1 – 100% display
 function updateAdcMultiplier() {
   const device = document.getElementById('deviceSelect').value;
   if (DEVICE_DATA[device]) {
@@ -136,13 +180,13 @@ function calculateNewMultiplier() {
 ---
 
 # **Accurate Voltage Calibration Calculator**
-### Makes the displayed voltage match your multimeter  
-Use this calculator if you want **true electrical voltage accuracy**, even if the Meshtastic percentage ends up below 100%.  
-(Example: A board that only charges to 4.15V may show ~97%.)
+<div class="calculator-card">
+  <div class="calculator-title">Accurate Voltage Calibration Calculator</div>
+  <div class="subtitle">
+    Use this if you want the displayed voltage to match your multimeter reading.  
+    This ensures *true voltage accuracy*, even if the percentage ends up below 100%.
+  </div>
 
-Measure the battery with a multimeter, enter what the device reports, and the calculator produces a corrected ADC multiplier.
-
-<div>
   <table id="measurementTable">
     <thead>
       <tr>
@@ -155,9 +199,7 @@ Measure the battery with a multimeter, enter what the device reports, and the ca
     </thead>
     <tbody>
       <tr>
-        <td>
-          <select class="deviceSelect" onchange="updateManualMultiplier(this)"></select>
-        </td>
+        <td><select class="deviceSelect" onchange="updateManualMultiplier(this)"></select></td>
         <td><input type="text" class="measuredVoltage" placeholder="Measured Voltage"></td>
         <td><input type="text" class="displayedVoltage" placeholder="Displayed Voltage"></td>
         <td><input type="text" class="manualMultiplier" placeholder="Manual Multiplier"></td>
@@ -171,7 +213,7 @@ Measure the battery with a multimeter, enter what the device reports, and the ca
 </div>
 
 <script>
-// Calculator 2
+// Calculator 2 – Accurate voltage
 function updateManualMultiplier(dropdown) {
   const device = dropdown.value;
   const row = dropdown.closest('tr');
