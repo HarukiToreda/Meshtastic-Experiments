@@ -1,4 +1,4 @@
----
+ ---
 layout: default
 title: LoRa Boards Power Measurements
 ---
@@ -59,7 +59,7 @@ title: LoRa Boards Power Measurements
         <td>106mA</td><!--VME213-->
         <td>110mA</td><!--VME290-->
         <td>128mA</td><!--VMET190-->
-        <td>20.4mA</td><!--T114-->
+        <td>19mA</td><!--T114-->
         <td>16mA</td><!--Seeed L1 Pro OLED-->
         <td>11mA</td><!--Faketec-->
         <td>140mA</td><!--T-Deck-->
@@ -77,7 +77,7 @@ title: LoRa Boards Power Measurements
         <td>106mA</td><!--VME213-->
         <td>110mA</td><!--VME290-->
         <td>114mA</td><!--VMET190-->
-        <td>9.3mA</td><!--T114-->
+        <td>7mA</td><!--T114-->
         <td>7mA</td><!--Seeed L1 Pro OLED-->
         <td>5mA</td><!--Faketec-->
         <td>113mA</td><!--T-Deck-->
@@ -95,7 +95,7 @@ title: LoRa Boards Power Measurements
         <td>39mA</td><!--VME213-->
         <td>62mA</td><!--VME290-->
         <td>66.9mA</td><!--VMET190-->
-        <td>9.2</td><!--T114-->
+        <td>7mA</td><!--T114-->
         <td>7mA</td><!--Seeed L1 Pro OLED-->
         <td>5mA</td><!--Faketec-->
         <td>70mA</td><!--T-Deck-->
@@ -149,8 +149,8 @@ title: LoRa Boards Power Measurements
         <td></td><!--VME213-->
         <td>2.63V</td><!--VME290-->
         <td></td><!--VMET190-->
-        <td></td><!--T114-->
-        <td>1.66V</td><!--Seeed L1 Pro OLED-->
+        <td>1.9V</td><!--T114-->
+        <td>1.76V</td><!--Seeed L1 Pro OLED-->
         <td></td><!--Faketec-->
         <td>2.71V</td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
