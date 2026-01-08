@@ -22,6 +22,7 @@ title: LoRa Boards Power Measurements
         <th>Heltec Vision Master E290</th>
         <th>Heltec Vision Master T190</th>
         <th>Heltec Mesh Node T114</th>
+        <th>Seeed L1 Pro OLED</th>
         <th>Faketec</th>
         <th>T-Deck</th>
         <th>RAK nRF52840</th>
@@ -41,6 +42,7 @@ title: LoRa Boards Power Measurements
         <td>176mA</td><!--VME290-->
         <td>?</td><!--VMET190-->
         <td>?</td><!--T114-->
+        <td>?</td><!--Seeed L1 Pro OLED-->
         <td>64mA</td><!--Faketec-->
         <td>?</td><!--T-Deck-->
         <td>?</td><!--RAKRAK19007-->
@@ -58,6 +60,7 @@ title: LoRa Boards Power Measurements
         <td>110mA</td><!--VME290-->
         <td>128mA</td><!--VMET190-->
         <td>20.4mA</td><!--T114-->
+        <td>16mA</td><!--Seeed L1 Pro OLED-->
         <td>11mA</td><!--Faketec-->
         <td>140mA</td><!--T-Deck-->
         <td>-</td><!--RAKRAK19007-->
@@ -75,6 +78,7 @@ title: LoRa Boards Power Measurements
         <td>110mA</td><!--VME290-->
         <td>114mA</td><!--VMET190-->
         <td>9.3mA</td><!--T114-->
+        <td>7mA</td><!--Seeed L1 Pro OLED-->
         <td>5mA</td><!--Faketec-->
         <td>113mA</td><!--T-Deck-->
         <td>7mA</td><!--RAKRAK19007-->
@@ -92,6 +96,7 @@ title: LoRa Boards Power Measurements
         <td>62mA</td><!--VME290-->
         <td>66.9mA</td><!--VMET190-->
         <td>9.2</td><!--T114-->
+        <td>7mA</td><!--Seeed L1 Pro OLED-->
         <td>5mA</td><!--Faketec-->
         <td>70mA</td><!--T-Deck-->
         <td>6.9mA</td><!--RAKRAK19007-->
@@ -108,10 +113,11 @@ title: LoRa Boards Power Measurements
         <td>9mA</td><!--VME213-->
         <td>11.2mA</td><!--VME290-->
         <td>16.7mA</td><!--VMET190-->
-        <td>?</td><!--T114-->
-        <td>5mA</td><!--Faketec-->
+        <td>x</td><!--T114-->
+        <td>x</td><!--Seeed L1 Pro OLED-->
+        <td>x</td><!--Faketec-->
         <td>27.3mA</td><!--T-Deck-->
-        <td>7mA</td><!--RAKRAK19007-->
+        <td>x</td><!--RAKRAK19007-->
       </tr>
       <tr>
         <td>Deep Sleep (Soft Shutdown)</td>
@@ -126,6 +132,7 @@ title: LoRa Boards Power Measurements
         <td>16μA</td><!--VME290-->
         <td>163μA</td><!--VMET190-->
         <td>1mA</td><!--T114-->
+        <td>5μA</td><!--Seeed L1 Pro OLED-->
         <td>0.3μA</td><!--Faketec-->
         <td>39.8mA</td><!--T-Deck-->
         <td>5μA</td><!--RAKRAK19007-->
@@ -143,10 +150,11 @@ title: LoRa Boards Power Measurements
         <td>2.63V</td><!--VME290-->
         <td></td><!--VMET190-->
         <td></td><!--T114-->
+        <td>1.66V</td><!--Seeed L1 Pro OLED-->
         <td></td><!--Faketec-->
         <td>2.71V</td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
-      </tr>
+      </tr>  
     </tbody>
   </table>
 </div>
