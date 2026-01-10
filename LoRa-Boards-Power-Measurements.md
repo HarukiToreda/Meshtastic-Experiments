@@ -156,7 +156,7 @@ title: LoRa Boards Power Measurements
         <td></td><!--RAKRAK19007-->
       </tr>
       <tr>
-        <td>Overcharge Protection cut off</td>
+        <td>Battery Overcharge Protection cut off</td>
         <td></td><!--Heltec V2-->
         <td></td><!--Heltec V3-->
         <td></td><!--Heltec V3.2-->
