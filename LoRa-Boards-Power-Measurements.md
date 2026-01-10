@@ -48,7 +48,7 @@ title: LoRa Boards Power Measurements
         <td>?</td><!--RAKRAK19007-->
       </tr>
       <tr>
-        <td>Normal (Screen On)</td>
+        <td>Screen On</td>
         <td>55.7mA</td><!--Heltec V2-->
         <td>110mA</td><!--Heltec V3-->
         <td>109mA</td><!--Heltec V3.2-->
@@ -66,7 +66,7 @@ title: LoRa Boards Power Measurements
         <td>-</td><!--RAKRAK19007-->
       </tr>
       <tr>
-        <td>Normal (Screen Off)</td>
+        <td>Screen Off</td>
         <td>53.2mA</td><!--Heltec V2-->
         <td>103.6mA</td><!--Heltec V3-->
         <td>101mA</td><!--Heltec V3.2-->
@@ -84,7 +84,7 @@ title: LoRa Boards Power Measurements
         <td>7mA</td><!--RAKRAK19007-->
       </tr>
       <tr>
-        <td>Normal (Bluetooth & Screen Dissabled)</td>
+        <td>Bluetooth & Screen Dissabled</td>
         <td>41.5mAmA</td><!--Heltec V2-->
         <td>55.5mA</td><!--Heltec V3-->
         <td>33mA</td><!--Heltec V3.2-->
@@ -102,7 +102,7 @@ title: LoRa Boards Power Measurements
         <td>6.9mA</td><!--RAKRAK19007-->
       </tr>
       <tr>
-        <td>Lite Sleep (Power Save Mode)</td>
+        <td>Power Save Mode(Lite Sleep)</td>
         <td>13.8mA</td><!--Heltec V2-->
         <td>11.4mA</td><!--Heltec V3-->
         <td>8mA</td><!--Heltec V3.2-->
@@ -120,7 +120,7 @@ title: LoRa Boards Power Measurements
         <td>x</td><!--RAKRAK19007-->
       </tr>
       <tr>
-        <td>Deep Sleep (Soft Shutdown)</td>
+        <td>Shut Off</td>
         <td>2.77mA</td><!--Heltec V2-->
         <td>45μA</td><!--Heltec V3-->
         <td></td><!--Heltec V3.2-->
@@ -153,6 +153,24 @@ title: LoRa Boards Power Measurements
         <td>1.76V</td><!--Seeed L1 Pro OLED-->
         <td></td><!--Faketec-->
         <td>2.71V</td><!--T-Deck-->
+        <td></td><!--RAKRAK19007-->
+      </tr>
+      <tr>
+        <td>Overcharge Protection cut off</td>
+        <td></td><!--Heltec V2-->
+        <td></td><!--Heltec V3-->
+        <td></td><!--Heltec V3.2-->
+        <td>4.20V</td><!--Heltec V4-->
+        <td></td><!--Wireless Paper-->
+        <td></td><!--Wireless Stick Lite-->
+        <td></td><!--Wireless Tracker-->
+        <td></td><!--VME213-->
+        <td></td><!--VME290-->
+        <td></td><!--VMET190-->
+        <td></td><!--T114-->
+        <td></td><!--Seeed L1 Pro OLED-->
+        <td></td><!--Faketec-->
+        <td></td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
       </tr>  
     </tbody>
