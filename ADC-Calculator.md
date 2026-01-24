@@ -71,6 +71,7 @@ const DEVICE_DATA = {
   "nano-g1-explorer": { multiplier: 2.0 },
   "nano-g2-ultra": { multiplier: 2.0 },
   "picomputer-s3": { multiplier: 3.1 },
+  "Promicro(Faketec)": { multiplier: 1.73 },
   rak4631: { multiplier: 1.73 },
   rpipico: { multiplier: 3.1 },
   rpipicow: { multiplier: 3.1 },
