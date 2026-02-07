@@ -77,6 +77,8 @@ title: Battery Runtime Tests
           <th>T1000E (GPS On)</th>
           <th>Thinknode M1 (GPS Off)</th>
           <th>Thinknode M1 (GPS On)</th>
+          <th>WIO Tracker L1 Eink (GPS Off)</th>
+          <th>WIO Tracker L1 Eink (GPS On)</th>
         </tr>
       </thead>
       <tbody>
@@ -99,6 +101,8 @@ title: Battery Runtime Tests
           <td>51 Hrs</td><!--T1000-E GPS On-->
           <td></td><!--Thinknode M1 (GPS Off)-->
           <td></td><!--Thinknode M1 (GPS On)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS On)-->
         </tr>
         <tr>
           <td>1100mAh Battery</td>
@@ -119,6 +123,8 @@ title: Battery Runtime Tests
           <td>-</td><!--T1000-E GPS On-->
           <td></td><!--Thinknode M1 (GPS Off)-->
           <td></td><!--Thinknode M1 (GPS On)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS On)-->
         </tr>
         <tr>
           <td>1200mAh Battery</td>
@@ -139,6 +145,8 @@ title: Battery Runtime Tests
           <td>-</td><!--T1000-E GPS On-->
           <td>62 Hrs</td><!--Thinknode M1 (GPS Off)-->
           <td>52 Hrs</td><!--Thinknode M1 (GPS On)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS On)-->
         </tr>
         <tr>
           <td>2000mAh Battery</td>
@@ -159,6 +167,8 @@ title: Battery Runtime Tests
           <td>-</td><!--T1000-E GPS On-->
           <td></td><!--Thinknode M1 (GPS Off)-->
           <td></td><!--Thinknode M1 (GPS On)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS On)-->
         </tr>
         <tr>
           <td>3000mAh Battery</td>
@@ -179,6 +189,8 @@ title: Battery Runtime Tests
           <td>-</td><!--T1000-E GPS On-->
           <td></td><!--Thinknode M1 (GPS Off)-->
           <td></td><!--Thinknode M1 (GPS On)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
+          <td>183 Hrs</td><!--WIO Tracker L1 Eink (GPS On)-->
         </tr>
         <tr>
           <td>4000mAh Battery</td>
@@ -199,6 +211,8 @@ title: Battery Runtime Tests
           <td>-</td><!--T1000-E GPS On-->
           <td></td><!--Thinknode M1 (GPS Off)-->
           <td></td><!--Thinknode M1 (GPS On)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS On)-->
         </tr>        
         <tr>
           <td>5000mAh Battery</td>
@@ -219,6 +233,8 @@ title: Battery Runtime Tests
           <td>-</td><!--T1000-E GPS On-->
           <td></td><!--Thinknode M1 (GPS Off)-->
           <td></td><!--Thinknode M1 (GPS On)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
+          <td></td><!--WIO Tracker L1 Eink (GPS On)-->
         </tr>               
       </tbody>
     </table>
