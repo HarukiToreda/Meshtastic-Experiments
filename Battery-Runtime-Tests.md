@@ -82,7 +82,6 @@ title: Battery Runtime Tests
         //{ id: 'progress9', start: new Date('2024-07-07T21:51:00') }  //
       ];
 
-
       const currentDate = new Date();
 
       startTimes.forEach(item => {
@@ -105,51 +104,18 @@ title: Battery Runtime Tests
     }
 
     // Set column visibility without changing layout (keeps column widths)
-    function initPerPairGpsToggles() {
-      // Group inputs by data-gps-toggle so we can keep mirrors in sync
-      const groups = new Map();
-      document.querySelectorAll('input[data-gps-toggle]').forEach(input => {
-        const group = input.getAttribute("data-gps-toggle");
-        if (!groups.has(group)) groups.set(group, []);
-        groups.get(group).push(input);
-      });
-    
-      groups.forEach((inputs, group) => {
-        // For each table that contains this group's toggles, initialize separately
-        const tables = new Set(inputs.map(i => i.closest("table")).filter(Boolean));
-    
-        tables.forEach(table => {
-          const tableInputs = inputs.filter(i => i.closest("table") === table);
-          if (tableInputs.length === 0) return;
-    
-          const { offIndex, onIndex } = findGroupColumnIndexes(table, group);
-          if (offIndex === -1 || onIndex === -1) return;
-    
-          const labels = table.querySelectorAll('[data-gps-label="' + group + '"]');
-    
-          function apply(checked) {
-            // Sync all mirror toggles in this table
-            tableInputs.forEach(i => { i.checked = checked; });
-    
-            // Show only one column in the pair
-            const showOn = !!checked;
-            setColVisibility(table, offIndex, !showOn);
-            setColVisibility(table, onIndex, showOn);
-    
-            // Update any labels (both header cells have one)
-            labels.forEach(l => { l.textContent = showOn ? "GPS On" : "GPS Off"; });
-          }
-    
-          // Default: GPS Off
-          apply(false);
-    
-          // Any toggle click updates the whole group for this table
-          tableInputs.forEach(i => {
-            i.addEventListener("change", () => apply(i.checked));
-          });
-        });
+    function setColVisibility(table, colIndex, show) {
+      const rows = table.querySelectorAll("thead tr, tbody tr");
+      rows.forEach(row => {
+        const cell = getCellAtColumn(row, colIndex);
+        if (!cell) return;
+
+        // Keep column count and width stable
+        cell.style.visibility = show ? "visible" : "hidden";
+        cell.style.pointerEvents = show ? "" : "none";
       });
     }
+
     // Find column indexes from the FIRST header row, respecting colSpans
     function findGroupColumnIndexes(table, group) {
       const firstHeaderRow = table.querySelector("thead tr");
@@ -175,31 +141,43 @@ title: Battery Runtime Tests
     }
 
     function initPerPairGpsToggles() {
-      document.querySelectorAll('input[data-gps-toggle]').forEach(toggle => {
-        const group = toggle.getAttribute("data-gps-toggle");
-        const table = toggle.closest("table");
-        if (!table) return;
+      // Group inputs by data-gps-toggle so we can keep mirrors in sync
+      const groups = new Map();
+      document.querySelectorAll('input[data-gps-toggle]').forEach(input => {
+        const group = input.getAttribute("data-gps-toggle");
+        if (!groups.has(group)) groups.set(group, []);
+        groups.get(group).push(input);
+      });
 
-        const { offIndex, onIndex } = findGroupColumnIndexes(table, group);
-        if (offIndex === -1 || onIndex === -1) return;
+      groups.forEach((inputs, group) => {
+        // For each table that contains this group's toggles, initialize separately
+        const tables = new Set(inputs.map(i => i.closest("table")).filter(Boolean));
 
-        const label = table.querySelector('[data-gps-label="' + group + '"]');
+        tables.forEach(table => {
+          const tableInputs = inputs.filter(i => i.closest("table") === table);
+          if (tableInputs.length === 0) return;
 
-        function apply() {
-          const showOn = !!toggle.checked;
+          const { offIndex, onIndex } = findGroupColumnIndexes(table, group);
+          if (offIndex === -1 || onIndex === -1) return;
 
-          // Hide title + data for the inactive column, but keep layout stable
-          setColVisibility(table, offIndex, !showOn);
-          setColVisibility(table, onIndex, showOn);
+          function apply(checked) {
+            // Sync all mirror toggles in this table
+            tableInputs.forEach(i => { i.checked = checked; });
 
-          if (label) label.textContent = showOn ? "GPS On" : "GPS Off";
-        }
+            // Show only one column in the pair
+            const showOn = !!checked;
+            setColVisibility(table, offIndex, !showOn);
+            setColVisibility(table, onIndex, showOn);
+          }
 
-        // Default: GPS Off
-        toggle.checked = false;
-        apply();
+          // Default: GPS Off
+          apply(false);
 
-        toggle.addEventListener("change", apply);
+          // Any toggle click updates the whole group for this table
+          tableInputs.forEach(i => {
+            i.addEventListener("change", () => apply(i.checked));
+          });
+        });
       });
     }
 
@@ -272,67 +250,72 @@ title: Battery Runtime Tests
         <th></th> <!-- E290 -->
         <!-- Heltec T114 GPS toggle (OFF column only) -->
         <th class="gps-toggle-cell">
-          <span class="gps-mini-wrap">
-            <span data-gps-label="t114-exp1">GPS Off</span>
-            <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="t114-exp1"
-                     aria-label="Toggle Heltec T114 GPS columns">
-              <span class="gps-slider"></span>
-            </label>
-          </span>
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="t114-exp1" aria-label="Toggle Heltec T114 GPS columns">
+            <span class="gps-slider"></span>
+          </label>
         </th>
-        <th></th> <!-- Heltec T114 GPS ON -->
+        <th class="gps-toggle-cell">
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="t114-exp1" aria-label="Toggle Heltec T114 GPS columns">
+            <span class="gps-slider"></span>
+          </label>
+        </th>
         <th></th> <!-- T-Deck -->
         <th></th> <!-- RAK19007 -->
         <th></th> <!-- RAK19003 -->
         <!-- T1000E GPS toggle (OFF column only) -->
         <th class="gps-toggle-cell">
-          <span class="gps-mini-wrap">
-            <span data-gps-label="t1000e-exp1">GPS Off</span>
-            <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="t1000e-exp1"
-                     aria-label="Toggle T1000E GPS columns">
-              <span class="gps-slider"></span>
-            </label>
-          </span>
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="t1000e-exp1" aria-label="Toggle T1000E GPS columns">
+            <span class="gps-slider"></span>
+          </label>
         </th>
-        <th></th> <!-- T1000E GPS ON -->
+        <th class="gps-toggle-cell">
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="t1000e-exp1" aria-label="Toggle T1000E GPS columns">
+            <span class="gps-slider"></span>
+          </label>
+        </th>
         <!-- Thinknode GPS toggle (OFF column only) -->
         <th class="gps-toggle-cell">
-          <span class="gps-mini-wrap">
-            <span data-gps-label="thinknode-exp1">GPS Off</span>
-            <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="thinknode-exp1"
-                     aria-label="Toggle Thinknode M1 GPS columns">
-              <span class="gps-slider"></span>
-            </label>
-          </span>
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="thinknode-exp1" aria-label="Toggle Thinknode M1 GPS columns">
+            <span class="gps-slider"></span>
+          </label>
         </th>
-        <th></th> <!-- Thinknode GPS ON -->
+        <th class="gps-toggle-cell">
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="thinknode-exp1" aria-label="Toggle Thinknode M1 GPS columns">
+            <span class="gps-slider"></span>
+          </label>
+        </th>
         <!-- WIO OLED GPS toggle (OFF column only) -->
         <th class="gps-toggle-cell">
-          <span class="gps-mini-wrap">
-            <span data-gps-label="wio-oled-exp1">GPS Off</span>
-            <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="wio-oled-exp1"
-                     aria-label="Toggle WIO Tracker L1 OLED GPS columns">
-              <span class="gps-slider"></span>
-            </label>
-          </span>
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="wio-oled-exp1" aria-label="Toggle WIO Tracker L1 OLED GPS columns">
+            <span class="gps-slider"></span>
+          </label>
         </th>
-        <th></th> <!-- WIO OLED GPS ON -->
+        <th class="gps-toggle-cell">
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="wio-oled-exp1" aria-label="Toggle WIO Tracker L1 OLED GPS columns">
+            <span class="gps-slider"></span>
+          </label>
+        </th>
         <!-- WIO Eink GPS toggle (OFF column only) -->
         <th class="gps-toggle-cell">
-          <span class="gps-mini-wrap">
-            <span data-gps-label="wio-eink-exp1">GPS Off</span>
-            <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="wio-eink-exp1"
-                     aria-label="Toggle WIO Tracker L1 Eink GPS columns">
-              <span class="gps-slider"></span>
-            </label>
-          </span>
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="wio-eink-exp1" aria-label="Toggle WIO Tracker L1 Eink GPS columns">
+            <span class="gps-slider"></span>
+          </label>
         </th>
-        <th></th> <!-- WIO Eink GPS ON -->
+        <th class="gps-toggle-cell">
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="wio-eink-exp1" aria-label="Toggle WIO Tracker L1 Eink GPS columns">
+            <span class="gps-slider"></span>
+          </label>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -578,27 +561,31 @@ title: Battery Runtime Tests
         <th></th>
         <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
         <th class="gps-toggle-cell">
-          <span class="gps-mini-wrap">
-            <span data-gps-label="t114-exp2">GPS Off</span>
-            <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="t114-exp2" aria-label="Toggle Heltec T114 GPS columns">
-              <span class="gps-slider"></span>
-            </label>
-          </span>
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="t114-exp2" aria-label="Toggle Heltec T114 GPS columns">
+            <span class="gps-slider"></span>
+          </label>
         </th>
-        <th></th>
+        <th class="gps-toggle-cell">
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="t114-exp2" aria-label="Toggle Heltec T114 GPS columns">
+            <span class="gps-slider"></span>
+          </label>
+        </th>
         <th></th>
         <th></th><th></th>
         <th class="gps-toggle-cell">
-          <span class="gps-mini-wrap">
-            <span data-gps-label="t1000e-exp2">GPS Off</span>
-            <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="t1000e-exp2" aria-label="Toggle T1000E GPS columns">
-              <span class="gps-slider"></span>
-            </label>
-          </span>
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="t1000e-exp2" aria-label="Toggle T1000E GPS columns">
+            <span class="gps-slider"></span>
+          </label>
         </th>
-        <th></th>
+        <th class="gps-toggle-cell">
+          <label class="gps-switch">
+            <input type="checkbox" data-gps-toggle="t1000e-exp2" aria-label="Toggle T1000E GPS columns">
+            <span class="gps-slider"></span>
+          </label>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -770,35 +757,41 @@ title: Battery Runtime Tests
         <tr>
           <th></th>
           <th class="gps-toggle-cell">
-            <span class="gps-mini-wrap">
-              <span data-gps-label="heltxt-exp3">GPS Off</span>
-              <label class="gps-switch">
-                <input type="checkbox" data-gps-toggle="heltxt-exp3" aria-label="Toggle Hel-txt GPS columns">
-                <span class="gps-slider"></span>
-              </label>
-            </span>
+            <label class="gps-switch">
+              <input type="checkbox" data-gps-toggle="heltxt-exp3" aria-label="Toggle Hel-txt GPS columns">
+              <span class="gps-slider"></span>
+            </label>
           </th>
-          <th></th>
           <th class="gps-toggle-cell">
-            <span class="gps-mini-wrap">
-              <span data-gps-label="nrftxt-exp3">GPS Off</span>
-              <label class="gps-switch">
-                <input type="checkbox" data-gps-toggle="nrftxt-exp3" aria-label="Toggle Nrf-txt GPS columns">
-                <span class="gps-slider"></span>
-              </label>
-            </span>
+            <label class="gps-switch">
+              <input type="checkbox" data-gps-toggle="heltxt-exp3" aria-label="Toggle Hel-txt GPS columns">
+              <span class="gps-slider"></span>
+            </label>
           </th>
-          <th></th>
           <th class="gps-toggle-cell">
-            <span class="gps-mini-wrap">
-              <span data-gps-label="meshenger-exp3">GPS Off</span>
-              <label class="gps-switch">
-                <input type="checkbox" data-gps-toggle="meshenger-exp3" aria-label="Toggle Meshenger GPS columns">
-                <span class="gps-slider"></span>
-              </label>
-            </span>
+            <label class="gps-switch">
+              <input type="checkbox" data-gps-toggle="nrftxt-exp3" aria-label="Toggle Nrf-txt GPS columns">
+              <span class="gps-slider"></span>
+            </label>
           </th>
-          <th></th>
+          <th class="gps-toggle-cell">
+            <label class="gps-switch">
+              <input type="checkbox" data-gps-toggle="nrftxt-exp3" aria-label="Toggle Nrf-txt GPS columns">
+              <span class="gps-slider"></span>
+            </label>
+          </th>
+          <th class="gps-toggle-cell">
+            <label class="gps-switch">
+              <input type="checkbox" data-gps-toggle="meshenger-exp3" aria-label="Toggle Meshenger GPS columns">
+              <span class="gps-slider"></span>
+            </label>
+          </th>
+          <th class="gps-toggle-cell">
+            <label class="gps-switch">
+              <input type="checkbox" data-gps-toggle="meshenger-exp3" aria-label="Toggle Meshenger GPS columns">
+              <span class="gps-slider"></span>
+            </label>
+          </th>
           <th></th>
         </tr>
       </thead>
