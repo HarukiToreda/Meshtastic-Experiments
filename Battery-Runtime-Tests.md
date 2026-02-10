@@ -146,29 +146,43 @@ title: Battery Runtime Tests
         const rows = table.querySelectorAll("thead tr, tbody tr");
     
         rows.forEach(row => {
-          // IMPORTANT: get cells before we start hiding anything in this row
+          // IMPORTANT: grab cells before we change anything on this row
           const offCell = getCellAtColumn(row, offIndex);
           const onCell = getCellAtColumn(row, onIndex);
           if (!offCell || !onCell) return;
     
-          // Cache original HTML once (so we can swap reliably)
-          if (offCell.dataset.gpsOffHtml === undefined) offCell.dataset.gpsOffHtml = offCell.innerHTML;
-          if (onCell.dataset.gpsOnHtml === undefined) onCell.dataset.gpsOnHtml = onCell.innerHTML;
+          const inBody = !!row.closest("tbody");
+    
+          // Cache original body HTML once (never cache header HTML, that would include inputs)
+          if (inBody) {
+            if (offCell.dataset.gpsOffHtml === undefined) offCell.dataset.gpsOffHtml = offCell.innerHTML;
+            if (onCell.dataset.gpsOnHtml === undefined) onCell.dataset.gpsOnHtml = onCell.innerHTML;
+          }
+    
+          // Always expand back to original before applying the new state
+          offCell.style.display = "";
+          onCell.style.display = "";
+          offCell.colSpan = 1;
+          onCell.colSpan = 1;
+    
+          // Restore original body content so swap is always correct
+          if (inBody) {
+            offCell.innerHTML = offCell.dataset.gpsOffHtml;
+            onCell.innerHTML = onCell.dataset.gpsOnHtml;
+          }
     
           const keepCell = showOn ? onCell : offCell;
           const hideCell = showOn ? offCell : onCell;
     
-          // Show one cell, hide the other, and merge width
-          keepCell.style.display = "";
+          // Hide one cell and merge into the other
           hideCell.style.display = "none";
-    
           keepCell.colSpan = 2;
     
-          // Reset the hidden cell so future swaps remain clean
-          hideCell.colSpan = 1;
-    
-          // Swap content so the single visible column shows the correct data
-          keepCell.innerHTML = showOn ? onCell.dataset.gpsOnHtml : offCell.dataset.gpsOffHtml;
+          // Only swap content for tbody rows (data cells)
+          // Never swap header cells, or you will destroy the toggle inputs and their listeners
+          if (inBody) {
+            keepCell.innerHTML = showOn ? onCell.dataset.gpsOnHtml : offCell.dataset.gpsOffHtml;
+          }
         });
       }
     
@@ -195,9 +209,8 @@ title: Battery Runtime Tests
             // Sync all mirror toggles in this table
             tableInputs.forEach(i => { i.checked = checked; });
     
-            // Collapse into ONE visible column and swap content
-            const showOn = !!checked;
-            collapseGpsPair(table, offIndex, onIndex, showOn);
+            // Collapse into ONE visible column and swap body content
+            collapseGpsPair(table, offIndex, onIndex, !!checked);
           }
     
           // Default: GPS Off
@@ -210,6 +223,7 @@ title: Battery Runtime Tests
         });
       });
     }
+
 
 
     window.addEventListener("load", () => {
