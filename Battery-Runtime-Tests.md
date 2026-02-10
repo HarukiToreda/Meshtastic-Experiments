@@ -237,7 +237,7 @@ title: Battery Runtime Tests
         <th></th> <!-- Tracker -->
         <th></th> <!-- E213 -->
         <th></th> <!-- E290 -->
-        <!-- Heltec T114 GPS toggle (OFF column only) -->
+        <!-- Heltec T114 GPS toggle (OFF + ON columns) -->
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t114-exp1">GPS Off</span>
@@ -248,11 +248,10 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-        <th></th> <!-- T114 GPS ON -->
         <th></th> <!-- T-Deck -->
         <th></th> <!-- RAK19007 -->
         <th></th> <!-- RAK19003 -->
-        <!-- T1000E GPS toggle -->
+        <!-- T1000E GPS toggle (OFF + ON columns) -->
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t1000e-exp1">GPS Off</span>
@@ -263,8 +262,7 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-        <th></th> <!-- T1000E GPS ON -->
-        <!-- Thinknode GPS toggle -->
+        <!-- Thinknode GPS toggle (OFF + ON columns) -->
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="thinknode-exp1">GPS Off</span>
@@ -275,8 +273,7 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-        <th></th> <!-- Thinknode GPS ON -->
-        <!-- WIO OLED GPS toggle -->
+        <!-- WIO OLED GPS toggle (OFF + ON columns) -->
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-oled-exp1">GPS Off</span>
@@ -287,8 +284,7 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-        <th></th> <!-- WIO OLED GPS ON -->
-        <!-- WIO Eink GPS toggle -->
+        <!-- WIO Eink GPS toggle (OFF + ON columns) -->
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-eink-exp1">GPS Off</span>
@@ -299,7 +295,6 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-        <th></th> <!-- WIO Eink GPS ON -->
       </tr>
     </thead>
     <tbody>
