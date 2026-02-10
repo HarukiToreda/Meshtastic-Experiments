@@ -69,7 +69,21 @@ title: Battery Runtime Tests
   <script>
     function updateProgress() {
       const startTimes = [
+        //{ id: 'progress1', start: new Date('2025-01-07T22:57:00') }, // V3.2 1100mAh
+        //<td id="progress1">
         { id: 'progress2', start: new Date('2026-01-30T23:17:00') }, // V3.2 2000mAh
+        //<td id="progress2">
+        //{ id: 'progress3', start: new Date('2025-01-10T15:54:00') }, // V3.2 3000mAh
+        //<td id="progress3">
+        //{ id: 'progress4', start: new Date('2025-01-21T11:32:00') }, // Eink 1100mAh
+        //<td id="progress4">
+        //{ id: 'progress5', start: new Date('2025-01-21T11:11:00') }, // Heltxt
+        //<td id="progress5">
+        //{ id: 'progress6', start: new Date('2025-01-10T13:40:00') }, // Wireless Paper
+        //<td id="progress6">
+        //{ id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
+        //{ id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
+        //{ id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // 
       ];
 
       const currentDate = new Date();
