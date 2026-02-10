@@ -291,8 +291,8 @@ title: Battery Runtime Tests
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Vision Master E213</th>
         <th>Heltec Vision Master E290</th>
-        <th data-gps-group="t114-exp1" data-gps="off">Heltec T114</th>
-        <th data-gps-group="t114-exp1" data-gps="on">Heltec T114</th>
+        <th data-gps-group="t114-exp1" data-gps="off">Heltec Meshnode T114</th>
+        <th data-gps-group="t114-exp1" data-gps="on">Heltec Meshnode T114</th>
         <th>Lilygo T-Deck</th>
         <th>RAK19007 (RAK4631)</th>
         <th>RAK19003 (RAK4631)</th>
@@ -508,7 +508,7 @@ title: Battery Runtime Tests
         <td>-</td><!--T1000-E GPS On-->
         <td></td><!--Thinknode M1 (GPS Off)-->
         <td></td><!--Thinknode M1 (GPS On)-->
-        <td id="progress2"></td><!--WIO Tracker L1 OLED (GPS Off)-->
+        <td>159 Hrs</td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
         <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td></td><!--WIO Tracker L1 Eink (GPS On)-->
@@ -647,8 +647,8 @@ title: Battery Runtime Tests
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Vision Master E213</th>
         <th>Heltec Vision Master E290</th>
-        <th data-gps-group="t114-exp2" data-gps="off">Heltec T114</th>
-        <th data-gps-group="t114-exp2" data-gps="on">Heltec T114</th>
+        <th data-gps-group="t114-exp2" data-gps="off">Heltec Meshnode T114</th>
+        <th data-gps-group="t114-exp2" data-gps="on">Heltec Meshnode T114</th>
         <th>Lilygo T-Deck</th>
         <th>RAK19007 (RAK4631)</th>
         <th>RAK19003 (RAK4631)</th>
