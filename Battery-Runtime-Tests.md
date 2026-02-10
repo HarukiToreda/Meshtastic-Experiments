@@ -71,7 +71,7 @@ title: Battery Runtime Tests
       const startTimes = [
         //{ id: 'progress1', start: new Date('2025-01-07T22:57:00') }, // V3.2 1100mAh
         //<td id="progress1">
-        { id: 'progress2', start: new Date('2026-01-30T23:17:00') }, // V3.2 2000mAh
+        { id: 'progress2', start: new Date('2026-02-07T12:57:00') }, // V3.2 2000mAh
         //<td id="progress2">
         //{ id: 'progress3', start: new Date('2025-01-10T15:54:00') }, // V3.2 3000mAh
         //<td id="progress3">
@@ -511,7 +511,7 @@ title: Battery Runtime Tests
         <td></td><!--Thinknode M1 (GPS On)-->
         <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
+        <td id="progress2"></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td>183 Hrs</td><!--WIO Tracker L1 Eink (GPS On)-->
       </tr>
       <tr>
