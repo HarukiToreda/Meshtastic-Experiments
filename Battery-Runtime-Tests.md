@@ -93,7 +93,7 @@ title: Battery Runtime Tests
     }
 
     function setColDisplay(table, colIndex, show) {
-      Array.from(table.querySelectorAll("tr")).forEach(row => {
+      Array.from(table.querySelectorAll("tbody tr")).forEach(row => {
         const cell = row.children[colIndex];
         if (cell) cell.style.display = show ? "" : "none";
       });
@@ -169,11 +169,12 @@ title: Battery Runtime Tests
 <div style="overflow-x: auto;">
   <table>
     <thead>
+      <!-- HEADER ROW: column titles -->
       <tr>
         <th>Device</th>
         <th>Heltec ESP32 V2</th>
         <th>Heltec ESP32 V3.1</th>
-        <td>Heltec ESP32 V3.2</td>
+        <th>Heltec ESP32 V3.2</th>
         <th>Heltec Wireless Paper</th>
         <th>Wireless Stick Lite (V3)</th>
         <th>Heltec Wireless Tracker</th>
@@ -193,56 +194,80 @@ title: Battery Runtime Tests
         <th data-gps-group="wio-eink-exp1" data-gps="off">WIO Tracker L1 Eink (GPS Off)</th>
         <th data-gps-group="wio-eink-exp1" data-gps="on">WIO Tracker L1 Eink (GPS On)</th>
       </tr>
+      <!-- HEADER ROW: toggle placeholders (must match column count exactly) -->
       <tr>
-        <th></th>
-        <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+        <th></th> <!-- Device -->
+        <th></th> <!-- V2 -->
+        <th></th> <!-- V3.1 -->
+        <th></th> <!-- V3.2 -->
+        <th></th> <!-- Paper -->
+        <th></th> <!-- Stick Lite -->
+        <th></th> <!-- Tracker -->
+        <th></th> <!-- E213 -->
+        <th></th> <!-- E290 -->
+        <!-- Heltec T114 GPS toggle (OFF column only) -->
         <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="t114-exp1">GPS Off</span>
             <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="t114-exp1" aria-label="Toggle Heltec T114 GPS columns">
+              <input type="checkbox" data-gps-toggle="t114-exp1"
+                     aria-label="Toggle Heltec T114 GPS columns">
               <span class="gps-slider"></span>
             </label>
           </span>
         </th>
-        <th></th>
-        <th></th><th></th>
+        <th></th> <!-- T114 GPS ON -->
+        <th></th> <!-- T-Deck -->
+        <th></th> <!-- RAK19007 -->
+        <th></th> <!-- RAK19003 -->
+        <!-- T1000E GPS toggle -->
         <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="t1000e-exp1">GPS Off</span>
             <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="t1000e-exp1" aria-label="Toggle T1000E GPS columns">
+              <input type="checkbox" data-gps-toggle="t1000e-exp1"
+                     aria-label="Toggle T1000E GPS columns">
               <span class="gps-slider"></span>
             </label>
           </span>
         </th>
+        <th></th> <!-- T1000E GPS ON -->
+        <!-- Thinknode GPS toggle -->
         <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="thinknode-exp1">GPS Off</span>
             <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="thinknode-exp1" aria-label="Toggle Thinknode M1 GPS columns">
+              <input type="checkbox" data-gps-toggle="thinknode-exp1"
+                     aria-label="Toggle Thinknode M1 GPS columns">
               <span class="gps-slider"></span>
             </label>
           </span>
         </th>
+        <th></th> <!-- Thinknode GPS ON -->
+        <!-- WIO OLED GPS toggle -->
         <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-oled-exp1">GPS Off</span>
             <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="wio-oled-exp1" aria-label="Toggle WIO Tracker L1 OLED GPS columns">
+              <input type="checkbox" data-gps-toggle="wio-oled-exp1"
+                     aria-label="Toggle WIO Tracker L1 OLED GPS columns">
               <span class="gps-slider"></span>
             </label>
           </span>
         </th>
+        <th></th> <!-- WIO OLED GPS ON -->
+        <!-- WIO Eink GPS toggle -->
         <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-eink-exp1">GPS Off</span>
             <label class="gps-switch">
-              <input type="checkbox" data-gps-toggle="wio-eink-exp1" aria-label="Toggle WIO Tracker L1 Eink GPS columns">
+              <input type="checkbox" data-gps-toggle="wio-eink-exp1"
+                     aria-label="Toggle WIO Tracker L1 Eink GPS columns">
               <span class="gps-slider"></span>
             </label>
           </span>
         </th>
+        <th></th> <!-- WIO Eink GPS ON -->
       </tr>
     </thead>
     <tbody>
