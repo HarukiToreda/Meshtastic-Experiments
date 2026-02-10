@@ -237,8 +237,8 @@ title: Battery Runtime Tests
         <th></th> <!-- Tracker -->
         <th></th> <!-- E213 -->
         <th></th> <!-- E290 -->
-        <!-- Heltec T114 GPS toggle (OFF + ON columns) -->
-        <th class="gps-toggle-cell" colspan="2">
+        <!-- Heltec T114 GPS toggle (OFF column only) -->
+        <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="t114-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -248,11 +248,12 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
+        <th></th> <!-- Heltec T114 GPS ON -->
         <th></th> <!-- T-Deck -->
         <th></th> <!-- RAK19007 -->
         <th></th> <!-- RAK19003 -->
-        <!-- T1000E GPS toggle (OFF + ON columns) -->
-        <th class="gps-toggle-cell" colspan="2">
+        <!-- T1000E GPS toggle (OFF column only) -->
+        <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="t1000e-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -262,8 +263,9 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-        <!-- Thinknode GPS toggle (OFF + ON columns) -->
-        <th class="gps-toggle-cell" colspan="2">
+        <th></th> <!-- T1000E GPS ON -->
+        <!-- Thinknode GPS toggle (OFF column only) -->
+        <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="thinknode-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -273,8 +275,9 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-        <!-- WIO OLED GPS toggle (OFF + ON columns) -->
-        <th class="gps-toggle-cell" colspan="2">
+        <th></th> <!-- Thinknode GPS ON -->
+        <!-- WIO OLED GPS toggle (OFF column only) -->
+        <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-oled-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -284,8 +287,9 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-        <!-- WIO Eink GPS toggle (OFF + ON columns) -->
-        <th class="gps-toggle-cell" colspan="2">
+        <th></th> <!-- WIO OLED GPS ON -->
+        <!-- WIO Eink GPS toggle (OFF column only) -->
+        <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-eink-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -295,6 +299,7 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
+        <th></th> <!-- WIO Eink GPS ON -->
       </tr>
     </thead>
     <tbody>
@@ -539,7 +544,7 @@ title: Battery Runtime Tests
       <tr>
         <th></th>
         <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
-        <th class="gps-toggle-cell" colspan="2">
+        <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="t114-exp2">GPS Off</span>
             <label class="gps-switch">
@@ -549,8 +554,9 @@ title: Battery Runtime Tests
           </span>
         </th>
         <th></th>
+        <th></th>
         <th></th><th></th>
-        <th class="gps-toggle-cell" colspan="2">
+        <th class="gps-toggle-cell">
           <span class="gps-mini-wrap">
             <span data-gps-label="t1000e-exp2">GPS Off</span>
             <label class="gps-switch">
@@ -559,6 +565,7 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -729,7 +736,7 @@ title: Battery Runtime Tests
         </tr>
         <tr>
           <th></th>
-          <th class="gps-toggle-cell" colspan="2">
+          <th class="gps-toggle-cell">
             <span class="gps-mini-wrap">
               <span data-gps-label="heltxt-exp3">GPS Off</span>
               <label class="gps-switch">
@@ -738,7 +745,8 @@ title: Battery Runtime Tests
               </label>
             </span>
           </th>
-          <th class="gps-toggle-cell" colspan="2">
+          <th></th>
+          <th class="gps-toggle-cell">
             <span class="gps-mini-wrap">
               <span data-gps-label="nrftxt-exp3">GPS Off</span>
               <label class="gps-switch">
@@ -747,7 +755,8 @@ title: Battery Runtime Tests
               </label>
             </span>
           </th>
-          <th class="gps-toggle-cell" colspan="2">
+          <th></th>
+          <th class="gps-toggle-cell">
             <span class="gps-mini-wrap">
               <span data-gps-label="meshenger-exp3">GPS Off</span>
               <label class="gps-switch">
@@ -756,6 +765,7 @@ title: Battery Runtime Tests
               </label>
             </span>
           </th>
+          <th></th>
           <th></th>
         </tr>
       </thead>
