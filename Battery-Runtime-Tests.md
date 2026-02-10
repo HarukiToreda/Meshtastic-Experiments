@@ -141,6 +141,37 @@ title: Battery Runtime Tests
     }
 
     function initPerPairGpsToggles() {
+      // Collapse the OFF/ON pair into ONE visible column by using colSpan=2
+      function collapseGpsPair(table, offIndex, onIndex, showOn) {
+        const rows = table.querySelectorAll("thead tr, tbody tr");
+    
+        rows.forEach(row => {
+          // IMPORTANT: get cells before we start hiding anything in this row
+          const offCell = getCellAtColumn(row, offIndex);
+          const onCell = getCellAtColumn(row, onIndex);
+          if (!offCell || !onCell) return;
+    
+          // Cache original HTML once (so we can swap reliably)
+          if (offCell.dataset.gpsOffHtml === undefined) offCell.dataset.gpsOffHtml = offCell.innerHTML;
+          if (onCell.dataset.gpsOnHtml === undefined) onCell.dataset.gpsOnHtml = onCell.innerHTML;
+    
+          const keepCell = showOn ? onCell : offCell;
+          const hideCell = showOn ? offCell : onCell;
+    
+          // Show one cell, hide the other, and merge width
+          keepCell.style.display = "";
+          hideCell.style.display = "none";
+    
+          keepCell.colSpan = 2;
+    
+          // Reset the hidden cell so future swaps remain clean
+          hideCell.colSpan = 1;
+    
+          // Swap content so the single visible column shows the correct data
+          keepCell.innerHTML = showOn ? onCell.dataset.gpsOnHtml : offCell.dataset.gpsOffHtml;
+        });
+      }
+    
       // Group inputs by data-gps-toggle so we can keep mirrors in sync
       const groups = new Map();
       document.querySelectorAll('input[data-gps-toggle]').forEach(input => {
@@ -148,31 +179,30 @@ title: Battery Runtime Tests
         if (!groups.has(group)) groups.set(group, []);
         groups.get(group).push(input);
       });
-
+    
       groups.forEach((inputs, group) => {
         // For each table that contains this group's toggles, initialize separately
         const tables = new Set(inputs.map(i => i.closest("table")).filter(Boolean));
-
+    
         tables.forEach(table => {
           const tableInputs = inputs.filter(i => i.closest("table") === table);
           if (tableInputs.length === 0) return;
-
+    
           const { offIndex, onIndex } = findGroupColumnIndexes(table, group);
           if (offIndex === -1 || onIndex === -1) return;
-
+    
           function apply(checked) {
             // Sync all mirror toggles in this table
             tableInputs.forEach(i => { i.checked = checked; });
-
-            // Show only one column in the pair
+    
+            // Collapse into ONE visible column and swap content
             const showOn = !!checked;
-            setColVisibility(table, offIndex, !showOn);
-            setColVisibility(table, onIndex, showOn);
+            collapseGpsPair(table, offIndex, onIndex, showOn);
           }
-
+    
           // Default: GPS Off
           apply(false);
-
+    
           // Any toggle click updates the whole group for this table
           tableInputs.forEach(i => {
             i.addEventListener("change", () => apply(i.checked));
@@ -180,6 +210,7 @@ title: Battery Runtime Tests
         });
       });
     }
+
 
     window.addEventListener("load", () => {
       updateProgress();
