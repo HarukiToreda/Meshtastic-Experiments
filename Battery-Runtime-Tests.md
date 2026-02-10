@@ -8,16 +8,20 @@ title: Battery Runtime Tests
   <style>
     .gps-toggle-cell{
       text-align:center;
-      padding:6px 4px;
-      white-space:nowrap;
+      padding:4px 2px;
+      white-space:normal;
+      vertical-align:middle;
     }
     .gps-mini-wrap{
       display:inline-flex;
+      flex-direction:column;
       align-items:center;
-      gap:8px;
-      font-size:12px;
+      gap:4px;
+      font-size:11px;
       font-weight:700;
       user-select:none;
+      white-space:normal;
+      line-height:1.1;
     }
     .gps-switch{
       position:relative;
