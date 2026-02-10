@@ -105,18 +105,51 @@ title: Battery Runtime Tests
     }
 
     // Set column visibility without changing layout (keeps column widths)
-    function setColVisibility(table, colIndex, show) {
-      const rows = table.querySelectorAll("thead tr, tbody tr");
-      rows.forEach(row => {
-        const cell = getCellAtColumn(row, colIndex);
-        if (!cell) return;
-
-        // Keep column count and width stable
-        cell.style.visibility = show ? "visible" : "hidden";
-        cell.style.pointerEvents = show ? "" : "none";
+    function initPerPairGpsToggles() {
+      // Group inputs by data-gps-toggle so we can keep mirrors in sync
+      const groups = new Map();
+      document.querySelectorAll('input[data-gps-toggle]').forEach(input => {
+        const group = input.getAttribute("data-gps-toggle");
+        if (!groups.has(group)) groups.set(group, []);
+        groups.get(group).push(input);
+      });
+    
+      groups.forEach((inputs, group) => {
+        // For each table that contains this group's toggles, initialize separately
+        const tables = new Set(inputs.map(i => i.closest("table")).filter(Boolean));
+    
+        tables.forEach(table => {
+          const tableInputs = inputs.filter(i => i.closest("table") === table);
+          if (tableInputs.length === 0) return;
+    
+          const { offIndex, onIndex } = findGroupColumnIndexes(table, group);
+          if (offIndex === -1 || onIndex === -1) return;
+    
+          const labels = table.querySelectorAll('[data-gps-label="' + group + '"]');
+    
+          function apply(checked) {
+            // Sync all mirror toggles in this table
+            tableInputs.forEach(i => { i.checked = checked; });
+    
+            // Show only one column in the pair
+            const showOn = !!checked;
+            setColVisibility(table, offIndex, !showOn);
+            setColVisibility(table, onIndex, showOn);
+    
+            // Update any labels (both header cells have one)
+            labels.forEach(l => { l.textContent = showOn ? "GPS On" : "GPS Off"; });
+          }
+    
+          // Default: GPS Off
+          apply(false);
+    
+          // Any toggle click updates the whole group for this table
+          tableInputs.forEach(i => {
+            i.addEventListener("change", () => apply(i.checked));
+          });
+        });
       });
     }
-
     // Find column indexes from the FIRST header row, respecting colSpans
     function findGroupColumnIndexes(table, group) {
       const firstHeaderRow = table.querySelector("thead tr");
