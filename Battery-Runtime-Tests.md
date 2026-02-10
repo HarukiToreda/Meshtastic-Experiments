@@ -82,6 +82,7 @@ title: Battery Runtime Tests
         //{ id: 'progress9', start: new Date('2024-07-07T21:51:00') }  //
       ];
 
+
       const currentDate = new Date();
 
       startTimes.forEach(item => {
@@ -92,11 +93,52 @@ title: Battery Runtime Tests
       });
     }
 
-    function setColDisplay(table, colIndex, show) {
-      Array.from(table.querySelectorAll("tbody tr")).forEach(row => {
-        const cell = row.children[colIndex];
-        if (cell) cell.style.display = show ? "" : "none";
+    // Return the cell that occupies a given column index, respecting colSpan
+    function getCellAtColumn(row, colIndex) {
+      let colPos = 0;
+      for (const cell of row.children) {
+        const span = cell.colSpan || 1;
+        if (colIndex >= colPos && colIndex < colPos + span) return cell;
+        colPos += span;
+      }
+      return null;
+    }
+
+    // Set column visibility without changing layout (keeps column widths)
+    function setColVisibility(table, colIndex, show) {
+      const rows = table.querySelectorAll("thead tr, tbody tr");
+      rows.forEach(row => {
+        const cell = getCellAtColumn(row, colIndex);
+        if (!cell) return;
+
+        // Keep column count and width stable
+        cell.style.visibility = show ? "visible" : "hidden";
+        cell.style.pointerEvents = show ? "" : "none";
       });
+    }
+
+    // Find column indexes from the FIRST header row, respecting colSpans
+    function findGroupColumnIndexes(table, group) {
+      const firstHeaderRow = table.querySelector("thead tr");
+      if (!firstHeaderRow) return { offIndex: -1, onIndex: -1 };
+
+      let offIndex = -1;
+      let onIndex = -1;
+
+      let colPos = 0;
+      Array.from(firstHeaderRow.children).forEach(cell => {
+        const span = cell.colSpan || 1;
+
+        const g = cell.getAttribute("data-gps-group");
+        const mode = cell.getAttribute("data-gps");
+
+        if (g === group && mode === "off") offIndex = colPos;
+        if (g === group && mode === "on") onIndex = colPos;
+
+        colPos += span;
+      });
+
+      return { offIndex, onIndex };
     }
 
     function initPerPairGpsToggles() {
@@ -105,36 +147,26 @@ title: Battery Runtime Tests
         const table = toggle.closest("table");
         if (!table) return;
 
-        const headRow = table.querySelector("thead tr");
-        if (!headRow) return;
-
-        const headerCells = Array.from(headRow.children);
-        let offIndex = -1;
-        let onIndex = -1;
-
-        headerCells.forEach((cell, idx) => {
-          const g = cell.getAttribute("data-gps-group");
-          const mode = cell.getAttribute("data-gps");
-          if (g === group && mode === "off") offIndex = idx;
-          if (g === group && mode === "on") onIndex = idx;
-        });
-
+        const { offIndex, onIndex } = findGroupColumnIndexes(table, group);
         if (offIndex === -1 || onIndex === -1) return;
 
-        // Default: show GPS Off, hide GPS On
-        toggle.checked = false;
-        setColDisplay(table, offIndex, true);
-        setColDisplay(table, onIndex, false);
-
         const label = table.querySelector('[data-gps-label="' + group + '"]');
-        if (label) label.textContent = "GPS Off";
 
-        toggle.addEventListener("change", () => {
-          const showOn = toggle.checked;
-          setColDisplay(table, offIndex, !showOn);
-          setColDisplay(table, onIndex, showOn);
+        function apply() {
+          const showOn = !!toggle.checked;
+
+          // Hide title + data for the inactive column, but keep layout stable
+          setColVisibility(table, offIndex, !showOn);
+          setColVisibility(table, onIndex, showOn);
+
           if (label) label.textContent = showOn ? "GPS On" : "GPS Off";
-        });
+        }
+
+        // Default: GPS Off
+        toggle.checked = false;
+        apply();
+
+        toggle.addEventListener("change", apply);
       });
     }
 
@@ -143,7 +175,7 @@ title: Battery Runtime Tests
       initPerPairGpsToggles();
     });
 
-    setInterval(updateProgress, 3600000); // Update every hour
+    setInterval(updateProgress, 3600000);
   </script>
 </head>
 <body>
@@ -206,7 +238,7 @@ title: Battery Runtime Tests
         <th></th> <!-- E213 -->
         <th></th> <!-- E290 -->
         <!-- Heltec T114 GPS toggle (OFF column only) -->
-        <th class="gps-toggle-cell">
+        <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t114-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -221,7 +253,7 @@ title: Battery Runtime Tests
         <th></th> <!-- RAK19007 -->
         <th></th> <!-- RAK19003 -->
         <!-- T1000E GPS toggle -->
-        <th class="gps-toggle-cell">
+        <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t1000e-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -233,7 +265,7 @@ title: Battery Runtime Tests
         </th>
         <th></th> <!-- T1000E GPS ON -->
         <!-- Thinknode GPS toggle -->
-        <th class="gps-toggle-cell">
+        <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="thinknode-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -245,7 +277,7 @@ title: Battery Runtime Tests
         </th>
         <th></th> <!-- Thinknode GPS ON -->
         <!-- WIO OLED GPS toggle -->
-        <th class="gps-toggle-cell">
+        <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-oled-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -257,7 +289,7 @@ title: Battery Runtime Tests
         </th>
         <th></th> <!-- WIO OLED GPS ON -->
         <!-- WIO Eink GPS toggle -->
-        <th class="gps-toggle-cell">
+        <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-eink-exp1">GPS Off</span>
             <label class="gps-switch">
@@ -512,7 +544,7 @@ title: Battery Runtime Tests
       <tr>
         <th></th>
         <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
-        <th class="gps-toggle-cell">
+        <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t114-exp2">GPS Off</span>
             <label class="gps-switch">
@@ -523,7 +555,7 @@ title: Battery Runtime Tests
         </th>
         <th></th>
         <th></th><th></th>
-        <th class="gps-toggle-cell">
+        <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t1000e-exp2">GPS Off</span>
             <label class="gps-switch">
@@ -702,7 +734,7 @@ title: Battery Runtime Tests
         </tr>
         <tr>
           <th></th>
-          <th class="gps-toggle-cell">
+          <th class="gps-toggle-cell" colspan="2">
             <span class="gps-mini-wrap">
               <span data-gps-label="heltxt-exp3">GPS Off</span>
               <label class="gps-switch">
@@ -711,7 +743,7 @@ title: Battery Runtime Tests
               </label>
             </span>
           </th>
-          <th class="gps-toggle-cell">
+          <th class="gps-toggle-cell" colspan="2">
             <span class="gps-mini-wrap">
               <span data-gps-label="nrftxt-exp3">GPS Off</span>
               <label class="gps-switch">
@@ -720,7 +752,7 @@ title: Battery Runtime Tests
               </label>
             </span>
           </th>
-          <th class="gps-toggle-cell">
+          <th class="gps-toggle-cell" colspan="2">
             <span class="gps-mini-wrap">
               <span data-gps-label="meshenger-exp3">GPS Off</span>
               <label class="gps-switch">
