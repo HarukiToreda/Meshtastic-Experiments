@@ -81,9 +81,9 @@ title: Battery Runtime Tests
         //<td id="progress5">
         //{ id: 'progress6', start: new Date('2025-01-10T13:40:00') }, // Wireless Paper
         //<td id="progress6">
-        //{ id: 'progress7', start: new Date('2024-07-11T03:00:00') }, // 
-        //{ id: 'progress8', start: new Date('2024-07-09T22:25:00') }, // 
-        //{ id: 'progress9', start: new Date('2024-07-07T21:51:00') }  // 
+        //{ id: 'progress7', start: new Date('2024-07-11T03:00:00') }, //
+        //{ id: 'progress8', start: new Date('2024-07-09T22:25:00') }, //
+        //{ id: 'progress9', start: new Date('2024-07-07T21:51:00') }  //
       ];
 
       const currentDate = new Date();
@@ -113,7 +113,12 @@ title: Battery Runtime Tests
 
         toggleRow.innerHTML = "";
 
-        Array.from(titleRow.children).forEach(titleCell => {
+        // We need to emit EXACTLY the same number of visual columns as the title row
+        // so everything after a GPS pair does not shift.
+        const titleCells = Array.from(titleRow.children);
+
+        for (let cellIndex = 0; cellIndex < titleCells.length; cellIndex++) {
+          const titleCell = titleCells[cellIndex];
           const span = titleCell.colSpan || 1;
 
           const group = titleCell.getAttribute("data-gps-group");
@@ -122,42 +127,56 @@ title: Battery Runtime Tests
           // Normal header cell: create matching blank cells respecting colSpan
           if (!group || (mode !== "off" && mode !== "on")) {
             for (let i = 0; i < span; i++) toggleRow.appendChild(document.createElement("th"));
-            return;
+            continue;
           }
 
-          // Only create the toggle UI when we hit the OFF cell, and it will cover OFF+ON
-          if (mode !== "off") {
-            toggleRow.appendChild(document.createElement("th"));
-            return;
+          // GPS pair handling:
+          // - When we see the OFF header, we create TWO toggle cells (OFF + ON)
+          // - We also consume the next title cell if it is the matching ON header
+          if (mode === "off") {
+            const offTh = document.createElement("th");
+            offTh.className = "gps-toggle-cell";
+            offTh.innerHTML = `
+              <div class="gps-toggle-wrap">
+                <span class="gps-toggle-label">GPS OFF</span>
+                <label class="gps-switch">
+                  <input type="checkbox" data-gps-toggle="${group}" aria-label="Toggle ${group} GPS columns">
+                  <span class="gps-slider"></span>
+                </label>
+              </div>
+            `;
+
+            const onTh = document.createElement("th");
+            onTh.className = "gps-toggle-cell";
+            onTh.innerHTML = `
+              <div class="gps-toggle-wrap">
+                <span class="gps-toggle-label">GPS ON</span>
+                <label class="gps-switch">
+                  <input type="checkbox" data-gps-toggle="${group}" aria-label="Toggle ${group} GPS columns">
+                  <span class="gps-slider"></span>
+                </label>
+              </div>
+            `;
+
+            toggleRow.appendChild(offTh);
+            toggleRow.appendChild(onTh);
+
+            // If the very next header cell is the ON partner for the same group, skip it
+            const next = titleCells[cellIndex + 1];
+            if (next) {
+              const nextGroup = next.getAttribute("data-gps-group");
+              const nextMode = next.getAttribute("data-gps");
+              if (nextGroup === group && nextMode === "on") {
+                cellIndex++;
+              }
+            }
+
+            continue;
           }
 
-          const offTh = document.createElement("th");
-          offTh.className = "gps-toggle-cell";
-          offTh.innerHTML = `
-            <div class="gps-toggle-wrap">
-              <span class="gps-toggle-label">GPS OFF</span>
-              <label class="gps-switch">
-                <input type="checkbox" data-gps-toggle="${group}" aria-label="Toggle ${group} GPS columns">
-                <span class="gps-slider"></span>
-              </label>
-            </div>
-          `;
-
-          const onTh = document.createElement("th");
-          onTh.className = "gps-toggle-cell";
-          onTh.innerHTML = `
-            <div class="gps-toggle-wrap">
-              <span class="gps-toggle-label">GPS ON</span>
-              <label class="gps-switch">
-                <input type="checkbox" data-gps-toggle="${group}" aria-label="Toggle ${group} GPS columns">
-                <span class="gps-slider"></span>
-              </label>
-            </div>
-          `;
-
-          toggleRow.appendChild(offTh);
-          toggleRow.appendChild(onTh);
-        });
+          // If we ever hit a stray "on" without seeing "off" first, emit a blank
+          toggleRow.appendChild(document.createElement("th"));
+        }
       });
     }
 
