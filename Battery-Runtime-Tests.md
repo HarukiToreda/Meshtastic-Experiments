@@ -175,31 +175,23 @@ title: Battery Runtime Tests
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Vision Master E213</th>
         <th>Heltec Vision Master E290</th>
-
         <th data-gps-group="t114-exp1" data-gps="off">Heltec T114 (GPS Off)</th>
         <th data-gps-group="t114-exp1" data-gps="on">Heltec T114 (GPS On)</th>
-
         <th>Lilygo T-Deck</th>
         <th>RAK19007 (RAK4631)</th>
         <th>RAK19003 (RAK4631)</th>
-
         <th data-gps-group="t1000e-exp1" data-gps="off">T1000E (GPS Off)</th>
         <th data-gps-group="t1000e-exp1" data-gps="on">T1000E (GPS On)</th>
-
         <th data-gps-group="thinknode-exp1" data-gps="off">Thinknode M1 (GPS Off)</th>
         <th data-gps-group="thinknode-exp1" data-gps="on">Thinknode M1 (GPS On)</th>
-
         <th data-gps-group="wio-oled-exp1" data-gps="off">WIO Tracker L1 OLED (GPS Off)</th>
         <th data-gps-group="wio-oled-exp1" data-gps="on">WIO Tracker L1 OLED (GPS On)</th>
-
         <th data-gps-group="wio-eink-exp1" data-gps="off">WIO Tracker L1 Eink (GPS Off)</th>
         <th data-gps-group="wio-eink-exp1" data-gps="on">WIO Tracker L1 Eink (GPS On)</th>
       </tr>
-
       <tr>
         <th></th>
         <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
-
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t114-exp1">GPS Off</span>
@@ -209,10 +201,8 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-
         <th></th>
         <th></th><th></th>
-
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t1000e-exp1">GPS Off</span>
@@ -222,7 +212,6 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="thinknode-exp1">GPS Off</span>
@@ -232,7 +221,6 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-oled-exp1">GPS Off</span>
@@ -242,7 +230,6 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="wio-eink-exp1">GPS Off</span>
@@ -254,7 +241,6 @@ title: Battery Runtime Tests
         </th>
       </tr>
     </thead>
-
     <tbody>
       <tr>
         <td>700mAh Battery</td>
@@ -266,27 +252,20 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td></td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>64 Hrs</td><!--T1000-E GPS Off-->
         <td>51 Hrs</td><!--T1000-E GPS On-->
-
         <td></td><!--Thinknode M1 (GPS Off)-->
         <td></td><!--Thinknode M1 (GPS On)-->
-
         <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-
         <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td></td><!--WIO Tracker L1 Eink (GPS On)-->
       </tr>
-
       <tr>
         <td>1100mAh Battery</td>
         <td>21 Hrs</td><!--Heltec V2-->
@@ -297,27 +276,20 @@ title: Battery Runtime Tests
         <td>9 Hrs</td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td>104 Hrs</td><!--Heltec T114 GPS OFF-->
         <td>62 Hrs</td><!--Heltec T114 GPS ON-->
-
         <td>10 Hrs</td><!--T-Deck-->
         <td>154 Hrs</td><!--RAKRAK19007-->
         <td>156 Hrs</td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
-
         <td></td><!--Thinknode M1 (GPS Off)-->
         <td></td><!--Thinknode M1 (GPS On)-->
-
         <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-
         <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td></td><!--WIO Tracker L1 Eink (GPS On)-->
       </tr>
-
       <tr>
         <td>1200mAh Battery</td>
         <td>-</td><!--Heltec V2-->
@@ -328,27 +300,20 @@ title: Battery Runtime Tests
         <td>-</td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td>-</td><!--Heltec T114 GPS OFF-->
         <td>-</td><!--Heltec T114 GPS ON-->
-
         <td>-</td><!--T-Deck-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
-
         <td>62 Hrs</td><!--Thinknode M1 (GPS Off)-->
         <td>52 Hrs</td><!--Thinknode M1 (GPS On)-->
-
         <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-
         <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td></td><!--WIO Tracker L1 Eink (GPS On)-->
       </tr>
-
       <tr>
         <td>2000mAh Battery</td>
         <td>41 Hrs</td><!--Heltec V2-->
@@ -359,27 +324,20 @@ title: Battery Runtime Tests
         <td>13 Hrs</td><!--Wireless Tracker-->
         <td>19 Hrs</td><!--VME213-->
         <td></td><!--VME290-->
-
         <td>220 Hrs</td><!--Heltec T114 GPS OFF-->
         <td>119 Hrs</td><!--Heltec T114 GPS ON-->
-
         <td>18 Hrs</td><!--T-Deck-->
         <td>307 Hrs</td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
-
         <td></td><!--Thinknode M1 (GPS Off)-->
         <td></td><!--Thinknode M1 (GPS On)-->
-
         <td id="progress2"></td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-
         <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td></td><!--WIO Tracker L1 Eink (GPS On)-->
       </tr>
-
       <tr>
         <td>3000mAh Battery</td>
         <td>60 Hrs</td><!--Heltec V2-->
@@ -390,27 +348,20 @@ title: Battery Runtime Tests
         <td>19 Hrs</td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td>215 Hrs</td><!--Heltec T114 GPS ON-->
-
         <td>26 Hrs</td><!--T-Deck-->
         <td>442 Hrs</td><!--RAKRAK19007-->
         <td>453 Hrs</td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
-
         <td></td><!--Thinknode M1 (GPS Off)-->
         <td></td><!--Thinknode M1 (GPS On)-->
-
         <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-
         <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td>183 Hrs</td><!--WIO Tracker L1 Eink (GPS On)-->
       </tr>
-
       <tr>
         <td>4000mAh Battery</td>
         <td></td><!--Heltec V2-->
@@ -421,27 +372,20 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td></td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
-
         <td></td><!--Thinknode M1 (GPS Off)-->
         <td></td><!--Thinknode M1 (GPS On)-->
-
         <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-
         <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td></td><!--WIO Tracker L1 Eink (GPS On)-->
       </tr>
-
       <tr>
         <td>5000mAh Battery</td>
         <td></td><!--Heltec V2-->
@@ -452,23 +396,17 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td></td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
-
         <td></td><!--Thinknode M1 (GPS Off)-->
         <td></td><!--Thinknode M1 (GPS On)-->
-
         <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
         <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-
         <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
         <td></td><!--WIO Tracker L1 Eink (GPS On)-->
       </tr>
@@ -534,22 +472,17 @@ title: Battery Runtime Tests
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Vision Master E213</th>
         <th>Heltec Vision Master E290</th>
-
         <th data-gps-group="t114-exp2" data-gps="off">Heltec T114 (GPS Off)</th>
         <th data-gps-group="t114-exp2" data-gps="on">Heltec T114 (GPS On)</th>
-
         <th>Lilygo T-Deck</th>
         <th>RAK19007 (RAK4631)</th>
         <th>RAK19003 (RAK4631)</th>
-
         <th data-gps-group="t1000e-exp2" data-gps="off">T1000E (GPS Off)</th>
         <th data-gps-group="t1000e-exp2" data-gps="on">T1000E (GPS On)</th>
       </tr>
-
       <tr>
         <th></th>
         <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
-
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t114-exp2">GPS Off</span>
@@ -559,10 +492,8 @@ title: Battery Runtime Tests
             </label>
           </span>
         </th>
-
         <th></th>
         <th></th><th></th>
-
         <th class="gps-toggle-cell" colspan="2">
           <span class="gps-mini-wrap">
             <span data-gps-label="t1000e-exp2">GPS Off</span>
@@ -574,7 +505,6 @@ title: Battery Runtime Tests
         </th>
       </tr>
     </thead>
-
     <tbody>
       <tr>
         <td>700mAh Battery</td>
@@ -586,18 +516,14 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td></td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>66 Hrs</td><!--T1000-E GPS Off-->
         <td>53 Hr</td><!--T1000-E GPS On-->
       </tr>
-
       <tr>
         <td>1100mAh Battery</td>
         <td>30 Hrs</td><!--Heltec V2-->
@@ -608,18 +534,14 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td>21 Hrs</td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
       </tr>
-
       <tr>
         <td>2000mAh Battery</td>
         <td>74 Hrs</td><!--Heltec V2-->
@@ -630,18 +552,14 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td>35 Hrs</td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
       </tr>
-
       <tr>
         <td>3000mAh Battery</td>
         <td>119 Hrs</td><!--Heltec V2-->
@@ -652,18 +570,14 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td>156 Hrs</td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td>54 Hrs</td><!--T-Deck-->
         <td>442 Hrs</td><!--RAKRAK19007-->
         <td>453 Hrs</td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
       </tr>
-
       <tr>
         <td>4000mAh Battery</td>
         <td></td><!--Heltec V2-->
@@ -674,18 +588,14 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td>71 Hrs</td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
       </tr>
-
       <tr>
         <td>5000mAh Battery</td>
         <td></td><!--Heltec V2-->
@@ -696,14 +606,11 @@ title: Battery Runtime Tests
         <td></td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
-
         <td></td><!--T-Deck-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
-
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
       </tr>
@@ -756,22 +663,16 @@ title: Battery Runtime Tests
       <thead>
         <tr>
           <th>Device</th>
-
           <th data-gps-group="heltxt-exp3" data-gps="off">Hel-txt (GPS Off)</th>
           <th data-gps-group="heltxt-exp3" data-gps="on">Hel-txt (GPS On)</th>
-
           <th data-gps-group="nrftxt-exp3" data-gps="off">Nrf-txt (GPS Off)</th>
           <th data-gps-group="nrftxt-exp3" data-gps="on">Nrf-txt (GPS On)</th>
-
           <th data-gps-group="meshenger-exp3" data-gps="off">Meshenger (GPS Off)</th>
           <th data-gps-group="meshenger-exp3" data-gps="on">Meshenger (GPS On)</th>
-
           <th>Lilygo T-Deck</th>
         </tr>
-
         <tr>
           <th></th>
-
           <th class="gps-toggle-cell" colspan="2">
             <span class="gps-mini-wrap">
               <span data-gps-label="heltxt-exp3">GPS Off</span>
@@ -781,7 +682,6 @@ title: Battery Runtime Tests
               </label>
             </span>
           </th>
-
           <th class="gps-toggle-cell" colspan="2">
             <span class="gps-mini-wrap">
               <span data-gps-label="nrftxt-exp3">GPS Off</span>
@@ -791,7 +691,6 @@ title: Battery Runtime Tests
               </label>
             </span>
           </th>
-
           <th class="gps-toggle-cell" colspan="2">
             <span class="gps-mini-wrap">
               <span data-gps-label="meshenger-exp3">GPS Off</span>
@@ -801,11 +700,9 @@ title: Battery Runtime Tests
               </label>
             </span>
           </th>
-
           <th></th>
         </tr>
       </thead>
-
       <tbody>
         <tr>
           <td>4000mAh Battery</td>
