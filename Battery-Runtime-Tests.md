@@ -139,92 +139,145 @@ title: Battery Runtime Tests
 
       return { offIndex, onIndex };
     }
-
     function initPerPairGpsToggles() {
-      // Collapse the OFF/ON pair into ONE visible column by using colSpan=2
-      function collapseGpsPair(table, offIndex, onIndex, showOn) {
+      function collectRowPairs(table, offIndex, onIndex) {
         const rows = table.querySelectorAll("thead tr, tbody tr");
+        const pairs = [];
     
         rows.forEach(row => {
-          // IMPORTANT: grab cells before we change anything on this row
           const offCell = getCellAtColumn(row, offIndex);
           const onCell = getCellAtColumn(row, onIndex);
           if (!offCell || !onCell) return;
     
           const inBody = !!row.closest("tbody");
     
-          // Cache original body HTML once (never cache header HTML, that would include inputs)
+          // Identify special header rows
+          const isTitleRow =
+            !inBody &&
+            (offCell.getAttribute("data-gps") === "off" || onCell.getAttribute("data-gps") === "on");
+    
+          const offLabel = !inBody ? offCell.querySelector("label.gps-switch") : null;
+          const onLabel = !inBody ? onCell.querySelector("label.gps-switch") : null;
+          const isToggleRow = !inBody && (offLabel || onLabel);
+    
+          // Cache body HTML once
           if (inBody) {
             if (offCell.dataset.gpsOffHtml === undefined) offCell.dataset.gpsOffHtml = offCell.innerHTML;
             if (onCell.dataset.gpsOnHtml === undefined) onCell.dataset.gpsOnHtml = onCell.innerHTML;
           }
     
-          // Always expand back to original before applying the new state
+          // Cache title text once
+          if (isTitleRow) {
+            if (offCell.dataset.gpsOffTitle === undefined) offCell.dataset.gpsOffTitle = offCell.textContent;
+            if (onCell.dataset.gpsOnTitle === undefined) onCell.dataset.gpsOnTitle = onCell.textContent;
+          }
+    
+          pairs.push({
+            row,
+            offCell,
+            onCell,
+            inBody,
+            isTitleRow,
+            isToggleRow,
+            offLabel,
+            onLabel
+          });
+        });
+    
+        return pairs;
+      }
+    
+      function applyToPairs(pairs, showOn) {
+        pairs.forEach(p => {
+          const offCell = p.offCell;
+          const onCell = p.onCell;
+    
+          // Always expand back first
           offCell.style.display = "";
           onCell.style.display = "";
           offCell.colSpan = 1;
           onCell.colSpan = 1;
     
-          // Restore original body content so swap is always correct
-          if (inBody) {
-            offCell.innerHTML = offCell.dataset.gpsOffHtml;
-            onCell.innerHTML = onCell.dataset.gpsOnHtml;
+          // For toggle rows, put labels back where they belong before re-collapsing
+          if (p.isToggleRow) {
+            if (p.offLabel && !offCell.contains(p.offLabel)) offCell.appendChild(p.offLabel);
+            if (p.onLabel && !onCell.contains(p.onLabel)) onCell.appendChild(p.onLabel);
+          }
+    
+          // For body rows, restore original HTML before re-collapsing
+          if (p.inBody) {
+            offCell.innerHTML = offCell.dataset.gpsOffHtml || "";
+            onCell.innerHTML = onCell.dataset.gpsOnHtml || "";
           }
     
           const keepCell = showOn ? onCell : offCell;
           const hideCell = showOn ? offCell : onCell;
     
-          // Hide one cell and merge into the other
+          // Collapse
           hideCell.style.display = "none";
           keepCell.colSpan = 2;
     
-          // Only swap content for tbody rows (data cells)
-          // Never swap header cells, or you will destroy the toggle inputs and their listeners
-          if (inBody) {
-            keepCell.innerHTML = showOn ? onCell.dataset.gpsOnHtml : offCell.dataset.gpsOffHtml;
+          // Title row: swap just the text
+          if (p.isTitleRow) {
+            keepCell.textContent = showOn
+              ? (onCell.dataset.gpsOnTitle || keepCell.textContent)
+              : (offCell.dataset.gpsOffTitle || keepCell.textContent);
+          }
+    
+          // Toggle row: move the correct label into the visible cell (keeps the real input and its listener)
+          if (p.isToggleRow) {
+            const keepLabel = showOn ? p.onLabel : p.offLabel;
+            if (keepLabel && !keepCell.contains(keepLabel)) {
+              keepCell.appendChild(keepLabel);
+            }
+            keepCell.style.textAlign = "center";
+          }
+    
+          // Body row: swap the stored HTML into the visible cell
+          if (p.inBody) {
+            keepCell.innerHTML = showOn
+              ? (onCell.dataset.gpsOnHtml || "")
+              : (offCell.dataset.gpsOffHtml || "");
           }
         });
       }
     
-      // Group inputs by data-gps-toggle so we can keep mirrors in sync
+      // Group inputs by data-gps-toggle so mirrors stay in sync
       const groups = new Map();
-      document.querySelectorAll('input[data-gps-toggle]').forEach(input => {
+      document.querySelectorAll("input[data-gps-toggle]").forEach(input => {
         const group = input.getAttribute("data-gps-toggle");
         if (!groups.has(group)) groups.set(group, []);
         groups.get(group).push(input);
       });
     
       groups.forEach((inputs, group) => {
-        // For each table that contains this group's toggles, initialize separately
         const tables = new Set(inputs.map(i => i.closest("table")).filter(Boolean));
     
         tables.forEach(table => {
           const tableInputs = inputs.filter(i => i.closest("table") === table);
-          if (tableInputs.length === 0) return;
+          if (!tableInputs.length) return;
     
           const { offIndex, onIndex } = findGroupColumnIndexes(table, group);
           if (offIndex === -1 || onIndex === -1) return;
     
-          function apply(checked) {
-            // Sync all mirror toggles in this table
-            tableInputs.forEach(i => { i.checked = checked; });
+          // Cache real cell pairs ONCE, before we collapse anything
+          const pairs = collectRowPairs(table, offIndex, onIndex);
     
-            // Collapse into ONE visible column and swap body content
-            collapseGpsPair(table, offIndex, onIndex, !!checked);
+          function apply(checked) {
+            // Sync all toggles in this table
+            tableInputs.forEach(i => (i.checked = checked));
+            applyToPairs(pairs, !!checked);
           }
     
-          // Default: GPS Off
+          // Default state
           apply(false);
     
-          // Any toggle click updates the whole group for this table
           tableInputs.forEach(i => {
             i.addEventListener("change", () => apply(i.checked));
           });
         });
       });
     }
-
-
 
     window.addEventListener("load", () => {
       updateProgress();
