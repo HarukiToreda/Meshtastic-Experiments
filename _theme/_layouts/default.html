@@ -167,11 +167,13 @@
       width: 100%; /* Ensure the button fits within the sidebar */
       box-sizing: border-box; /* Include padding in the element's total width and height */
     }
-    table {
-      width: 800px; /* Fixed width for tables */
-      border-collapse: collapse;
-      margin: 20px 0;
-      overflow: visible; /* Prevents clipping of elements inside the table */
+    table{
+      width:max-content;     /* table can be as wide as it needs */
+      min-width:800px;       /* keeps your old baseline */
+      border-collapse:collapse;
+      margin:20px 0;
+      overflow:visible;
+      table-layout:auto;     /* keep normal layout but allow width growth */
     }
     th, td {
       border: 1px solid #00FFFF; /* Electric blue border */
