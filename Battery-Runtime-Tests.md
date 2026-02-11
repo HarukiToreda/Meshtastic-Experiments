@@ -73,7 +73,7 @@ title: Battery Runtime Tests
         //<td id="progress1">
         { id: 'progress2', start: new Date('2026-02-11T01:37:00') }, // L1 OLED 2000mAh gps
         //<td id="progress2">
-        //{ id: 'progress3', start: new Date('2025-01-10T15:54:00') }, // V3.2 3000mAh
+        { id: 'progress3', start: new Date('2026-02-11T03:38:00') }, // T114 No GPS 3000mAh
         //<td id="progress3">
         //{ id: 'progress4', start: new Date('2025-01-21T11:32:00') }, // Eink 1100mAh
         //<td id="progress4">
@@ -499,7 +499,7 @@ title: Battery Runtime Tests
         <td>19 Hrs</td><!--Wireless Tracker-->
         <td></td><!--VME213-->
         <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
+        <td id="progress3"></td><!--Heltec T114 GPS OFF-->
         <td>215 Hrs</td><!--Heltec T114 GPS ON-->
         <td>26 Hrs</td><!--T-Deck-->
         <td>442 Hrs</td><!--RAKRAK19007-->
