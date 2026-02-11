@@ -352,12 +352,11 @@ title: Battery Runtime Tests
 <details>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
-    <li>Firmware 2.5.7</li>
-    <li>Client Mode</li>
+    <li>Firmware 2.7.19</li>
+    <li>Role: Client</li>
     <li>Screen Timeout: 60 sec</li>
-    <li>Power Savemode Disabled.</li>
-    <li>Frequency 906</li>
-    <li>Connected to Android phone via Bluetooth.</li>
+    <li>Power Savemode: Disabled.</li>
+    <li>Frequency: 906</li>
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
 </details>
