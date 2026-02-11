@@ -71,7 +71,7 @@ title: Battery Runtime Tests
       const startTimes = [
         { id: 'progress1', start: new Date('2026-02-07T12:57:00') }, // L1 Eink 3000mAh NO GPS
         //<td id="progress1">
-        { id: 'progress2', start: new Date('2026-02-11T1:37:00') }, // L1 OLED 2000mAh gps
+        { id: 'progress2', start: new Date('2026-02-11T01:37:00') }, // L1 OLED 2000mAh gps
         //<td id="progress2">
         //{ id: 'progress3', start: new Date('2025-01-10T15:54:00') }, // V3.2 3000mAh
         //<td id="progress3">
