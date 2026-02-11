@@ -357,6 +357,8 @@ title: Battery Runtime Tests
     <li>Screen Timeout: 60 sec</li>
     <li>Power Savemode: Disabled.</li>
     <li>Frequency: 906</li>
+    <li>Mesh size: 20-30 active nodes</li>
+    <li>For GPS Only tests: Nodes were placed next to the window to allow continuous GPS satellite lock</li>
   </ul>
   <p>Use case: Mobile Node/ Remote Node.</p>
 </details>
