@@ -75,7 +75,7 @@ title: Battery Runtime Tests
         //<td id="progress2">
         { id: 'progress3', start: new Date('2026-02-11T03:38:00') }, // T114 No GPS 3000mAh
         //<td id="progress3">
-        //{ id: 'progress4', start: new Date('2025-01-21T11:32:00') }, // Eink 1100mAh
+        { id: 'progress4', start: new Date('2026-02-11T16:50:00') }, // NRF-TXT GPS On
         //<td id="progress4">
         //{ id: 'progress5', start: new Date('2025-01-21T11:11:00') }, // Heltxt
         //<td id="progress5">
@@ -809,7 +809,7 @@ title: Battery Runtime Tests
           <td><div class="image-hover">264 Hrs<img src="{{ "/assets/images/runtimes/HELTXT_4000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/19/25</span></div></td><!--HelTXT GPS off-->
           <td><div class="image-hover">108 Hrs<img src="{{ "/assets/images/runtimes/HELTXT_4000PS_GPS_2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/26/25</span></div></td><!--HelTXT GPS on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
-          <td>198 Hrs</td><!--NRFTXT Gps on-->
+          <td id="progress4">198 Hrs</td><!--NRFTXT Gps on-->
           <td>166 Hrs</td><!--Meshenger GPS off-->
           <td>175 hrs</td><!--Meshenger GPS On-->
           <td>71 Hrs</td><!--Tdeck-->
