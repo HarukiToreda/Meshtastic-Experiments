@@ -77,7 +77,7 @@ title: Battery Runtime Tests
         //<td id="progress3">
         { id: 'progress4', start: new Date('2026-02-11T16:50:00') }, // NRF-TXT GPS On
         //<td id="progress4">
-        //{ id: 'progress5', start: new Date('2025-01-21T11:11:00') }, // Heltxt
+        { id: 'progress5', start: new Date('2026-02-13T00:57:00') }, // Heltxt GPS OFF
         //<td id="progress5">
         //{ id: 'progress6', start: new Date('2025-01-10T13:40:00') }, // Wireless Paper
         //<td id="progress6">
@@ -806,7 +806,7 @@ title: Battery Runtime Tests
       <tbody>
         <tr>
           <td>4000mAh Battery</td>
-          <td><div class="image-hover">264 Hrs<img src="{{ "/assets/images/runtimes/HELTXT_4000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/19/25</span></div></td><!--HelTXT GPS off-->
+          <td id="progress5">264 Hrs</td><!--HelTXT GPS off-->
           <td><div class="image-hover">108 Hrs<img src="{{ "/assets/images/runtimes/HELTXT_4000PS_GPS_2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/26/25</span></div></td><!--HelTXT GPS on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
           <td id="progress4">198 Hrs</td><!--NRFTXT Gps on-->
