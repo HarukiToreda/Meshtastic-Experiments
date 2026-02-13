@@ -778,6 +778,7 @@ title: Battery Runtime Tests
           <li>This setting tells the node how long to maintain Lite Sleep for, this way you can time when you can reconnect to remote nodes with the app should you need to change settings.</li>
         </ul>
       </details>
+    <li>Wait For Bluetooth: 10 sec</li>
     </li>
     <li>Frequency 906</li>
     <li>Connected to Android phone via Bluetooth.</li>
