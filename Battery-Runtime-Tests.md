@@ -77,6 +77,35 @@ title: Battery Runtime Tests
       if (days === 1) return `1 day ${hours} hrs`;
       return `${days} days ${hours} hrs`;
     }
+    function convertHoursTextInCell(cell) {
+      if (!cell) return;
+    
+      // Only touch plain text cells (skip cells that contain <div>, <img>, etc)
+      if (cell.children && cell.children.length > 0) return;
+    
+      const txt = (cell.textContent || "").trim();
+    
+      // Match: "104 Hrs", "53 Hr", "110 hours", etc
+      const m = txt.match(/^(\d+)\s*(h|hr|hrs|hour|hours)$/i);
+      if (!m) return;
+    
+      const hours = parseInt(m[1], 10);
+      if (Number.isNaN(hours)) return;
+    
+      cell.textContent = formatDaysHours(hours);
+    }
+    
+    function updateStaticHourCells() {
+      document.querySelectorAll("td, th").forEach(cell => {
+        // Skip the dynamic progress cells (those become "Started ... ago")
+        if (cell.id && cell.id.startsWith("progress")) return;
+    
+        // Do not touch your "Started ..." strings if any exist elsewhere
+        if ((cell.textContent || "").includes("Started")) return;
+    
+        convertHoursTextInCell(cell);
+      });
+    }
     function updateProgress() {
       const startTimes = [
         { id: 'progress1', start: new Date('2026-02-07T12:57:00') }, // L1 Eink 3000mAh NO GPS
@@ -342,11 +371,12 @@ title: Battery Runtime Tests
         });
       });
     }
-
+    
     window.addEventListener("load", () => {
       buildGpsToggleHeaderRows();
       updateProgress();
-      initPerPairGpsToggles();
+      updateStaticHourCells();   // convert "104 Hrs" -> "4 days 8 hrs"
+      initPerPairGpsToggles();   // cache AFTER conversion so toggles keep it
     });
 
     setInterval(updateProgress, 3600000);
