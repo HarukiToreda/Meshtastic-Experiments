@@ -67,6 +67,16 @@ title: Battery Runtime Tests
   </style>
 
   <script>
+    function formatDaysHours(totalHours) {
+      const h = Math.max(0, Math.floor(totalHours));
+      const days = Math.floor(h / 24);
+      const hours = h % 24;
+    
+      if (days <= 0) return `${hours} hrs`;
+      if (hours === 0) return `${days} days`;
+      if (days === 1) return `1 day ${hours} hrs`;
+      return `${days} days ${hours} hrs`;
+    }
     function updateProgress() {
       const startTimes = [
         { id: 'progress1', start: new Date('2026-02-07T12:57:00') }, // L1 Eink 3000mAh NO GPS
@@ -91,8 +101,8 @@ title: Battery Runtime Tests
       startTimes.forEach(item => {
         const el = document.getElementById(item.id);
         if (!el) return;
-        const diffInHours = Math.floor((currentDate - item.start) / (1000 * 60 * 60));
-        el.innerText = `Started ${diffInHours} hrs ago`;
+        const diffInHours = (currentDate - item.start) / (1000 * 60 * 60);
+        el.innerText = `Started ${formatDaysHours(diffInHours)} ago`;
       });
     }
 
