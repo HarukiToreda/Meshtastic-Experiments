@@ -73,9 +73,10 @@ title: Battery Runtime Tests
       const hours = h % 24;
     
       if (days <= 0) return `${hours} hrs`;
-      if (hours === 0) return `${days} days`;
-      if (days === 1) return `1 day ${hours} hrs`;
-      return `${days} days ${hours} hrs`;
+      if (hours === 0) return (days === 1) ? `1 day` : `${days} days`;
+    
+      const dayText = (days === 1) ? `1 day` : `${days} days`;
+      return `${dayText}<br>${hours} hrs`;
     }
     function convertHoursTextInCell(cell) {
       if (!cell) return;
@@ -92,7 +93,7 @@ title: Battery Runtime Tests
       const hours = parseInt(m[1], 10);
       if (Number.isNaN(hours)) return;
     
-      cell.textContent = formatDaysHours(hours);
+      cell.innerHTML = formatDaysHours(hours);
     }
     
     function updateStaticHourCells() {
@@ -131,7 +132,7 @@ title: Battery Runtime Tests
         const el = document.getElementById(item.id);
         if (!el) return;
         const diffInHours = (currentDate - item.start) / (1000 * 60 * 60);
-        el.innerText = `Started ${formatDaysHours(diffInHours)} ago`;
+        el.innerHTML = `Started ${formatDaysHours(diffInHours)} ago`;
       });
     }
 
