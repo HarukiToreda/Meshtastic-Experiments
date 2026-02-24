@@ -271,6 +271,9 @@ title: Battery Runtime Tests
         const pairs = [];
 
         rows.forEach(row => {
+          // Keep BT control rows independent from GPS pair collapsing.
+          if (row.classList && row.classList.contains("bt-toggle-row")) return;
+
           const offCell = getCellAtColumn(row, offIndex);
           const onCell = getCellAtColumn(row, onIndex);
           if (!offCell || !onCell || offCell === onCell) return;
