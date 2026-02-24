@@ -404,6 +404,9 @@ title: Battery Runtime Tests
 
           const btCells = Array.from(table.querySelectorAll(`[data-bt-group="${group}"][data-bt-on][data-bt-off]`));
           if (!btCells.length) return;
+          const btControlCells = Array.from(
+            table.querySelectorAll(`.bt-toggle-row [data-bt-group="${group}"][data-bt]`)
+          );
 
           const syncGpsGroup = tableInputs[0].getAttribute("data-bt-sync-gps");
           const syncGpsInputs = syncGpsGroup
@@ -425,6 +428,25 @@ title: Battery Runtime Tests
               if (gpsMode === "off") cell.dataset.gpsOffHtml = cell.innerHTML;
               if (gpsMode === "on") cell.dataset.gpsOnHtml = cell.innerHTML;
             });
+
+            if (btControlCells.length >= 2) {
+              let offCell = null;
+              let onCell = null;
+
+              btControlCells.forEach(cell => {
+                cell.style.display = "";
+                cell.colSpan = 1;
+                const mode = cell.getAttribute("data-bt");
+                if (mode === "off") offCell = cell;
+                if (mode === "on") onCell = cell;
+              });
+
+              const keepCell = showOn ? onCell : offCell;
+              const hideCell = showOn ? offCell : onCell;
+
+              if (hideCell) hideCell.style.display = "none";
+              if (keepCell) keepCell.colSpan = 2;
+            }
 
             // Re-apply current GPS state so visible cell updates after BT value swap.
             if (syncGpsInputs.length) syncGpsInputs[0].dispatchEvent(new Event("change"));
@@ -913,7 +935,7 @@ title: Battery Runtime Tests
         </tr>
         <tr class="bt-toggle-row">
           <th></th>
-          <th class="gps-toggle-cell">
+          <th class="gps-toggle-cell" data-bt-group="heltxt-exp3" data-bt="off">
             <div class="gps-toggle-wrap">
               <span class="gps-toggle-label">BT OFF</span>
               <label class="gps-switch">
@@ -922,7 +944,7 @@ title: Battery Runtime Tests
               </label>
             </div>
           </th>
-          <th class="gps-toggle-cell">
+          <th class="gps-toggle-cell" data-bt-group="heltxt-exp3" data-bt="on">
             <div class="gps-toggle-wrap">
               <span class="gps-toggle-label">BT ON</span>
               <label class="gps-switch">
