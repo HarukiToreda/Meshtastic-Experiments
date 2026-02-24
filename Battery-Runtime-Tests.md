@@ -64,12 +64,6 @@ title: Battery Runtime Tests
     .gps-switch input:checked + .gps-slider:before{
       transform:translateX(20px);
     }
-    .bt-preview{
-      font-size:11px;
-      font-weight:600;
-      line-height:1.1;
-      user-select:none;
-    }
   </style>
 
   <script>
@@ -205,10 +199,13 @@ title: Battery Runtime Tests
               </div>
             `;
 
-            const heltxtBtMode = titleCell.getAttribute("data-heltxt-bt");
-            if (heltxtBtMode) {
-              offTh.setAttribute("data-heltxt-bt", heltxtBtMode);
-              onTh.setAttribute("data-heltxt-bt", heltxtBtMode);
+            const btGroup = titleCell.getAttribute("data-bt-group");
+            const btMode = titleCell.getAttribute("data-bt");
+            if (btGroup && (btMode === "off" || btMode === "on")) {
+              offTh.setAttribute("data-bt-group", btGroup);
+              offTh.setAttribute("data-bt", btMode);
+              onTh.setAttribute("data-bt-group", btGroup);
+              onTh.setAttribute("data-bt", btMode);
             }
 
             toggleRow.appendChild(offTh);
@@ -386,51 +383,41 @@ title: Battery Runtime Tests
       });
     }
 
-    function initHeltxtBluetoothToggle() {
-      const table = document.getElementById("exp3-results-table");
-      if (!table) return;
+    function initPerPairBtToggles() {
+      const groups = new Map();
+      document.querySelectorAll("input[data-bt-toggle]").forEach(input => {
+        const group = input.getAttribute("data-bt-toggle");
+        if (!group) return;
+        if (!groups.has(group)) groups.set(group, []);
+        groups.get(group).push(input);
+      });
 
-      const toggles = Array.from(table.querySelectorAll("input[data-heltxt-bt-toggle]"));
-      if (!toggles.length) return;
+      groups.forEach((inputs, group) => {
+        const tables = new Set(inputs.map(i => i.closest("table")).filter(Boolean));
 
-      const btOnCells = Array.from(table.querySelectorAll('[data-heltxt-bt="on"]'));
-      const btOffCells = Array.from(table.querySelectorAll('[data-heltxt-bt="off"]'));
-      const previews = Array.from(table.querySelectorAll("[data-heltxt-bt-preview]"));
-      const gpsOnInputs = Array.from(table.querySelectorAll('input[data-gps-toggle="heltxt-bt-on-exp3"]'));
-      const gpsOffInputs = Array.from(table.querySelectorAll('input[data-gps-toggle="heltxt-bt-off-exp3"]'));
-      let showingBtOff = false;
+        tables.forEach(table => {
+          const tableInputs = inputs.filter(i => i.closest("table") === table);
+          if (!tableInputs.length) return;
 
-      function setGpsMode(inputs, showOn) {
-        const first = inputs[0];
-        if (!first) return;
-        first.checked = showOn;
-        first.dispatchEvent(new Event("change"));
-      }
+          const btCells = Array.from(table.querySelectorAll(`[data-bt-group="${group}"][data-bt]`));
+          if (!btCells.length) return;
 
-      function apply(showBtOff) {
-        toggles.forEach(toggle => (toggle.checked = showBtOff));
-        const sourceInputs = showingBtOff ? gpsOffInputs : gpsOnInputs;
-        const showGpsOn = !!(sourceInputs[0] && sourceInputs[0].checked);
-        setGpsMode(showBtOff ? gpsOffInputs : gpsOnInputs, showGpsOn);
+          function apply(showOn) {
+            tableInputs.forEach(i => (i.checked = showOn));
 
-        btOnCells.forEach(cell => {
-          cell.style.display = showBtOff ? "none" : "";
+            btCells.forEach(cell => {
+              const mode = cell.getAttribute("data-bt");
+              cell.style.display = (showOn ? mode === "on" : mode === "off") ? "" : "none";
+            });
+          }
+
+          const defaultOn = tableInputs.some(i => i.getAttribute("data-bt-default") === "on");
+          apply(defaultOn);
+
+          tableInputs.forEach(i => {
+            i.addEventListener("change", () => apply(!!i.checked));
+          });
         });
-        btOffCells.forEach(cell => {
-          cell.style.display = showBtOff ? "" : "none";
-        });
-
-        previews.forEach(el => {
-          el.textContent = showBtOff ? "Preview: BT OFF" : "Preview: BT ON";
-        });
-
-        showingBtOff = showBtOff;
-      }
-
-      apply(false);
-
-      toggles.forEach(toggle => {
-        toggle.addEventListener("change", () => apply(!!toggle.checked));
       });
     }
     
@@ -439,7 +426,7 @@ title: Battery Runtime Tests
       updateProgress();
       updateStaticHourCells();   // convert "104 Hrs" -> "4 days 8 hrs"
       initPerPairGpsToggles();   // cache AFTER conversion so toggles keep it
-      initHeltxtBluetoothToggle();
+      initPerPairBtToggles();
     });
 
     setInterval(updateProgress, 3600000);
@@ -897,10 +884,10 @@ title: Battery Runtime Tests
       <thead>
         <tr>
           <th>Device</th>
-          <th data-heltxt-bt="on" data-gps-group="heltxt-bt-on-exp3" data-gps="off">Hel-txt</th>
-          <th data-heltxt-bt="on" data-gps-group="heltxt-bt-on-exp3" data-gps="on">Hel-txt</th>
-          <th data-heltxt-bt="off" data-gps-group="heltxt-bt-off-exp3" data-gps="off">Hel-txt</th>
-          <th data-heltxt-bt="off" data-gps-group="heltxt-bt-off-exp3" data-gps="on">Hel-txt</th>
+          <th data-bt-group="heltxt-exp3" data-bt="off" data-gps-group="heltxt-bt-off-exp3" data-gps="off">Hel-txt</th>
+          <th data-bt-group="heltxt-exp3" data-bt="off" data-gps-group="heltxt-bt-off-exp3" data-gps="on">Hel-txt</th>
+          <th data-bt-group="heltxt-exp3" data-bt="on" data-gps-group="heltxt-bt-on-exp3" data-gps="off">Hel-txt</th>
+          <th data-bt-group="heltxt-exp3" data-bt="on" data-gps-group="heltxt-bt-on-exp3" data-gps="on">Hel-txt</th>
           <th data-gps-group="nrftxt-exp3" data-gps="off">Nrf-txt</th>
           <th data-gps-group="nrftxt-exp3" data-gps="on">Nrf-txt</th>
           <th data-gps-group="meshenger-exp3" data-gps="off">Meshenger</th>
@@ -909,14 +896,22 @@ title: Battery Runtime Tests
         </tr>
         <tr class="bt-toggle-row">
           <th></th>
-          <th class="gps-toggle-cell" colspan="4">
+          <th class="gps-toggle-cell" colspan="2">
             <div class="gps-toggle-wrap">
-              <span class="gps-toggle-label">HEL-TXT BLUETOOTH OFF</span>
+              <span class="gps-toggle-label">BT OFF</span>
               <label class="gps-switch">
-                <input type="checkbox" data-heltxt-bt-toggle aria-label="Toggle Hel-txt Bluetooth preview">
+                <input type="checkbox" data-bt-toggle="heltxt-exp3" data-bt-default="on" aria-label="Toggle Hel-txt BT columns">
                 <span class="gps-slider"></span>
               </label>
-              <span class="bt-preview" data-heltxt-bt-preview>Preview: BT ON</span>
+            </div>
+          </th>
+          <th class="gps-toggle-cell" colspan="2">
+            <div class="gps-toggle-wrap">
+              <span class="gps-toggle-label">BT ON</span>
+              <label class="gps-switch">
+                <input type="checkbox" data-bt-toggle="heltxt-exp3" data-bt-default="on" aria-label="Toggle Hel-txt BT columns">
+                <span class="gps-slider"></span>
+              </label>
             </div>
           </th>
           <th colspan="5"></th>
@@ -926,10 +921,10 @@ title: Battery Runtime Tests
       <tbody>
         <tr>
           <td>4000mAh Battery</td>
-          <td data-heltxt-bt="on">126 Hrs</td><!--HelTXT GPS off/bt on-->
-          <td data-heltxt-bt="on">78 Hrs</td><!--HelTXT GPS on/bt on-->
-          <td data-heltxt-bt="off"></td><!--HelTXT GPS off/bt off-->
-          <td data-heltxt-bt="off"></td><!--HelTXT GPS on/bt off-->
+          <td data-bt-group="heltxt-exp3" data-bt="off"></td><!--HelTXT GPS off/bt off-->
+          <td data-bt-group="heltxt-exp3" data-bt="off"></td><!--HelTXT GPS on/bt off-->
+          <td data-bt-group="heltxt-exp3" data-bt="on">126 Hrs</td><!--HelTXT GPS off/bt on-->
+          <td data-bt-group="heltxt-exp3" data-bt="on">78 Hrs</td><!--HelTXT GPS on/bt on-->
           <td>276 Hrs</td><!--NRFTXT Gps Off-->
           <td>181 Hrs</td><!--NRFTXT Gps on-->
           <td>166 Hrs</td><!--Meshenger GPS off-->
