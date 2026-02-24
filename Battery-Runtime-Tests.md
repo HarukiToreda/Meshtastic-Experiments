@@ -590,7 +590,7 @@ title: Battery Runtime Tests
     <thead>
       <!-- HEADER ROW: column titles -->
       <tr>
-        <th>Device</th>
+        <th>Battery Size</th>
         <th>Heltec ESP32 V2</th>
         <th>Heltec ESP32 V3.1</th>
         <th>Heltec ESP32 V3.2</th>
@@ -803,8 +803,8 @@ title: Battery Runtime Tests
       <details>
         <summary style="cursor: pointer;">Details:</summary>
         <ul>
-          <li>Note that RAK devices cannot support this mode.</li>
-          <li>Power save mode is enabled to extend battery life, it does this by enabling Lite Sleep on ESP32 devices when there's no traffic on the mesh.</li>
+          <li>Note that RAK Battery Sizes cannot support this mode.</li>
+          <li>Power save mode is enabled to extend battery life, it does this by enabling Lite Sleep on ESP32 Battery Sizes when there's no traffic on the mesh.</li>
           <li>The node will still retransmit any packets while on Lite Sleep and go back to sleep after.</li>
           <li>The Node will wake from Lite Sleep when activity is detected on the mesh, when button is pressed or when sleep duration setting is reached.</li>
           <li>During Lite sleep, the Bluetooth will go on Sleep Mode, making the node draw very low currents. But you will not be able to change settings with the app in this mode.</li>
@@ -838,7 +838,7 @@ title: Battery Runtime Tests
   <table>
     <thead>
       <tr>
-        <th>Device</th>
+        <th>Battery Size</th>
         <th>Heltec ESP32 V2</th>
         <th>Heltec ESP32 V3.1</th>
         <th>Heltec ESP32 V3.2</th>
@@ -1015,7 +1015,7 @@ title: Battery Runtime Tests
     <table id="exp3-results-table">
       <thead>
         <tr>
-          <th>Device</th>
+          <th>Battery Size</th>
           <th data-bt-group="heltxt-exp3" data-bt-default="on" data-gps-group="heltxt-exp3" data-gps="off">Hel-txt</th>
           <th data-bt-group="heltxt-exp3" data-bt-default="on" data-gps-group="heltxt-exp3" data-gps="on">Hel-txt</th>
           <th data-gps-group="nrftxt-exp3" data-gps="off">Nrf-txt</th>
