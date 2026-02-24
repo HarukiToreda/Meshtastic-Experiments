@@ -230,6 +230,96 @@ title: Battery Runtime Tests
       });
     }
 
+    // Build the BT toggle header row from the FIRST header row.
+    // For non-BT GPS pairs, emit a single blank colspan=2 cell to avoid split placeholders.
+    function buildBtToggleHeaderRows() {
+      document.querySelectorAll("table").forEach(table => {
+        const thead = table.querySelector("thead");
+        if (!thead) return;
+
+        const titleRow = thead.querySelector("tr");
+        if (!titleRow) return;
+
+        const btRow = thead.querySelector("tr.bt-toggle-row");
+        if (!btRow) return;
+
+        btRow.innerHTML = "";
+
+        const titleCells = Array.from(titleRow.children);
+        for (let cellIndex = 0; cellIndex < titleCells.length; cellIndex++) {
+          const titleCell = titleCells[cellIndex];
+          const span = titleCell.colSpan || 1;
+
+          const btGroup = titleCell.getAttribute("data-bt-group");
+          const btDefault = titleCell.getAttribute("data-bt-default") || "on";
+          const gpsGroup = titleCell.getAttribute("data-gps-group");
+          const gpsMode = titleCell.getAttribute("data-gps");
+
+          // BT-enabled pair: render OFF + ON control cells.
+          if (btGroup && gpsMode === "off") {
+            const offTh = document.createElement("th");
+            offTh.className = "gps-toggle-cell";
+            offTh.setAttribute("data-bt-group", btGroup);
+            offTh.setAttribute("data-bt", "off");
+            offTh.innerHTML = `
+              <div class="gps-toggle-wrap">
+                <span class="gps-toggle-label">BT OFF</span>
+                <label class="gps-switch">
+                  <input type="checkbox" data-bt-toggle="${btGroup}" data-bt-default="${btDefault}" data-bt-sync-gps="${gpsGroup || ""}" aria-label="Toggle ${btGroup} BT columns">
+                  <span class="gps-slider"></span>
+                </label>
+              </div>
+            `;
+
+            const onTh = document.createElement("th");
+            onTh.className = "gps-toggle-cell";
+            onTh.setAttribute("data-bt-group", btGroup);
+            onTh.setAttribute("data-bt", "on");
+            onTh.innerHTML = `
+              <div class="gps-toggle-wrap">
+                <span class="gps-toggle-label">BT ON</span>
+                <label class="gps-switch">
+                  <input type="checkbox" data-bt-toggle="${btGroup}" data-bt-default="${btDefault}" data-bt-sync-gps="${gpsGroup || ""}" aria-label="Toggle ${btGroup} BT columns">
+                  <span class="gps-slider"></span>
+                </label>
+              </div>
+            `;
+
+            btRow.appendChild(offTh);
+            btRow.appendChild(onTh);
+
+            const next = titleCells[cellIndex + 1];
+            if (next) {
+              const nextBtGroup = next.getAttribute("data-bt-group");
+              const nextGpsMode = next.getAttribute("data-gps");
+              if (nextBtGroup === btGroup && nextGpsMode === "on") cellIndex++;
+            }
+            continue;
+          }
+
+          // Non-BT GPS pair: emit a single blank cell with colspan=2.
+          if (!btGroup && gpsGroup && gpsMode === "off") {
+            const next = titleCells[cellIndex + 1];
+            if (next) {
+              const nextGpsGroup = next.getAttribute("data-gps-group");
+              const nextGpsMode = next.getAttribute("data-gps");
+              if (nextGpsGroup === gpsGroup && nextGpsMode === "on") {
+                const blankPair = document.createElement("th");
+                blankPair.colSpan = 2;
+                btRow.appendChild(blankPair);
+                cellIndex++;
+                continue;
+              }
+            }
+          }
+
+          const blank = document.createElement("th");
+          blank.colSpan = span;
+          btRow.appendChild(blank);
+        }
+      });
+    }
+
     // Return the cell that occupies a given column index, respecting colSpan
     function getCellAtColumn(row, colIndex) {
       let colPos = 0;
@@ -464,6 +554,7 @@ title: Battery Runtime Tests
     
     window.addEventListener("load", () => {
       buildGpsToggleHeaderRows();
+      buildBtToggleHeaderRows();
       updateProgress();
       updateStaticHourCells();   // convert "104 Hrs" -> "4 days 8 hrs"
       initPerPairGpsToggles();   // cache AFTER conversion so toggles keep it
@@ -925,40 +1016,15 @@ title: Battery Runtime Tests
       <thead>
         <tr>
           <th>Device</th>
-          <th data-gps-group="heltxt-exp3" data-gps="off">Hel-txt</th>
-          <th data-gps-group="heltxt-exp3" data-gps="on">Hel-txt</th>
+          <th data-bt-group="heltxt-exp3" data-bt-default="on" data-gps-group="heltxt-exp3" data-gps="off">Hel-txt</th>
+          <th data-bt-group="heltxt-exp3" data-bt-default="on" data-gps-group="heltxt-exp3" data-gps="on">Hel-txt</th>
           <th data-gps-group="nrftxt-exp3" data-gps="off">Nrf-txt</th>
           <th data-gps-group="nrftxt-exp3" data-gps="on">Nrf-txt</th>
           <th data-gps-group="meshenger-exp3" data-gps="off">Meshenger</th>
           <th data-gps-group="meshenger-exp3" data-gps="on">Meshenger</th>
           <th>Lilygo T-Deck</th>
         </tr>
-        <tr class="bt-toggle-row">
-          <th></th>
-          <th class="gps-toggle-cell" data-bt-group="heltxt-exp3" data-bt="off">
-            <div class="gps-toggle-wrap">
-              <span class="gps-toggle-label">BT OFF</span>
-              <label class="gps-switch">
-                <input type="checkbox" data-bt-toggle="heltxt-exp3" data-bt-default="on" data-bt-sync-gps="heltxt-exp3" aria-label="Toggle Hel-txt BT columns">
-                <span class="gps-slider"></span>
-              </label>
-            </div>
-          </th>
-          <th class="gps-toggle-cell" data-bt-group="heltxt-exp3" data-bt="on">
-            <div class="gps-toggle-wrap">
-              <span class="gps-toggle-label">BT ON</span>
-              <label class="gps-switch">
-                <input type="checkbox" data-bt-toggle="heltxt-exp3" data-bt-default="on" data-bt-sync-gps="heltxt-exp3" aria-label="Toggle Hel-txt BT columns">
-                <span class="gps-slider"></span>
-              </label>
-            </div>
-          </th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
+        <tr class="bt-toggle-row"></tr>
         <tr class="gps-toggle-row"></tr>
       </thead>
       <tbody>
