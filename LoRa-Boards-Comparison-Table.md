@@ -32,6 +32,7 @@ Specifications and prices checked against manufacturer documentation: **August 1
     left: 240px;
     min-width: 150px;
     background: #1a1a1a;
+    box-shadow: -20px 0 0 #1a1a1a;
     transition: left 0.3s ease;
   }
 
@@ -46,6 +47,10 @@ Specifications and prices checked against manufacturer documentation: **August 1
 
   #comparisonTable thead th:first-child {
     z-index: 4;
+  }
+
+  .filter-option {
+    display: block;
   }
 </style>
 
@@ -68,7 +73,6 @@ Specifications and prices checked against manufacturer documentation: **August 1
       <input type="checkbox" class="loraFilter" value="SX1280"> SX1280<br>
       <input type="checkbox" class="loraFilter" value="LR1110"> LR1110<br>
       <input type="checkbox" class="loraFilter" value="LR1121"> LR1121<br>
-      <input type="checkbox" class="loraFilter" value="None"> No LoRa option<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -82,41 +86,39 @@ Specifications and prices checked against manufacturer documentation: **August 1
     </div>
   </div>
   <div style="margin-right: 20px;">
-    <label>GNSS Hardware:</label>
+    <label>GPS / GNSS:</label>
     <div>
-      <input type="checkbox" class="gpsFilter" value="Yes"> Yes<br>
-      <input type="checkbox" class="gpsFilter" value="No"> No<br>
+      <input type="checkbox" class="gpsFilter" value="GPS"> GPS<br>
+      <input type="checkbox" class="gpsFilter" value="GLONASS"> GLONASS<br>
+      <input type="checkbox" class="gpsFilter" value="BeiDou"> BeiDou<br>
+      <input type="checkbox" class="gpsFilter" value="Galileo"> Galileo<br>
+      <input type="checkbox" class="gpsFilter" value="QZSS"> QZSS<br>
+      <input type="checkbox" class="gpsFilter" value="NavIC"> NavIC<br>
       <input type="checkbox" class="gpsFilter" value="Optional"> Optional<br>
+      <input type="checkbox" class="gpsFilter" value="None"> No GNSS<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
     <label>Screen:</label>
     <div>
-      <input type="checkbox" class="screenFilter" value="Eink"> Eink<br>
+      <input type="checkbox" class="screenFilter" value="Eink"> E-Ink<br>
+      <input type="checkbox" class="screenFilter" value="BacklitEink"> E-Ink(Backlit)<br>
       <input type="checkbox" class="screenFilter" value="LCD"> LCD<br>      
       <input type="checkbox" class="screenFilter" value="OLED"> OLED<br>      
-      <input type="checkbox" class="screenFilter" value="TFT"> TFT<br>
       <input type="checkbox" class="screenFilter" value="None"> None<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
-    <label>WiFi:</label>
+    <label>Wi-Fi:</label>
     <div>
       <input type="checkbox" class="wifiFilter" value="Yes"> Yes<br>
-      <input type="checkbox" class="wifiFilter" value="No"> No<br>
-    </div>
-  </div>
-  <div style="margin-right: 20px;">
-    <label>Bluetooth:</label>
-    <div>
-      <input type="checkbox" class="bluetoothFilter" value="Yes"> Yes<br>
-      <input type="checkbox" class="bluetoothFilter" value="No"> No<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
     <label>Input Interface:</label>
     <div>
-      <input type="checkbox" class="inputFilter" value="Touch"> Touch<br>
+      <input type="checkbox" class="inputFilter" value="Touchscreen"> Touchscreen<br>
+      <input type="checkbox" class="inputFilter" value="TouchButton"> Touch button<br>
       <input type="checkbox" class="inputFilter" value="Keyboard"> Keyboard<br>
       <input type="checkbox" class="inputFilter" value="User"> User Button<br>
       <input type="checkbox" class="inputFilter" value="None"> None<br>
@@ -126,9 +128,12 @@ Specifications and prices checked against manufacturer documentation: **August 1
     <label>Power / Charging:</label>
     <div>
       <input type="checkbox" class="powerFilter" value="USB-C"> USB-C<br>
-      <input type="checkbox" class="powerFilter" value="Micro USB"> Micro USB<br>
-      <input type="checkbox" class="powerFilter" value="Magnetic"> Magnetic / pogo<br>
+      <input type="checkbox" class="powerFilter" value="Micro-USB"> Micro-USB<br>
+      <input type="checkbox" class="powerFilter" value="Magnetic"> Magnetic<br>
+      <input type="checkbox" class="powerFilter" value="Magnetic2Pin"> Magnetic 2-pin<br>
+      <input type="checkbox" class="powerFilter" value="Pogo"> Pogo pins<br>
       <input type="checkbox" class="powerFilter" value="Solar"> Solar<br>
+      <input type="checkbox" class="powerFilter" value="DC"> DC<br>
       <input type="checkbox" class="powerFilter" value="PoE"> PoE<br>
       <input type="checkbox" class="powerFilter" value="Wireless"> Wireless charging<br>
     </div>
@@ -142,11 +147,20 @@ Specifications and prices checked against manufacturer documentation: **August 1
     </div>
   </div>
   <div style="margin-right: 20px;">
-    <label>Expansion Port:</label>
+    <label>Motion / Compass:</label>
     <div>
-      <input type="checkbox" class="portFilter" value="UART"> UART<br>
-      <input type="checkbox" class="portFilter" value="I2C"> I²C / Qwiic / Grove<br>
-      <input type="checkbox" class="portFilter" value="None"> No listed expansion port<br>
+      <input type="checkbox" class="motionFilter" value="Accelerometer"> Accelerometer<br>
+      <input type="checkbox" class="motionFilter" value="Gyroscope"> Gyroscope<br>
+      <input type="checkbox" class="motionFilter" value="Magnetometer"> Magnetometer / compass<br>
+      <input type="checkbox" class="motionFilter" value="Optional"> Optional<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>Expansion Connector:</label>
+    <div>
+      <input type="checkbox" class="portFilter" value="Qwiic"> Qwiic<br>
+      <input type="checkbox" class="portFilter" value="Grove"> Grove<br>
+      <input type="checkbox" class="portFilter" value="QuickLink"> QuickLink<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -162,7 +176,6 @@ Specifications and prices checked against manufacturer documentation: **August 1
       <input type="checkbox" class="txPowerFilter" value="Under20"> Under 20 dBm<br>
       <input type="checkbox" class="txPowerFilter" value="20to22"> 20–22 dBm<br>
       <input type="checkbox" class="txPowerFilter" value="Over22"> Over 22 dBm<br>
-      <input type="checkbox" class="txPowerFilter" value="Unknown"> Not specified<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -183,7 +196,7 @@ Specifications and prices checked against manufacturer documentation: **August 1
       <input type="checkbox" class="brandFilter" value="B&Q"> B&Q Consulting<br>
       <input type="checkbox" class="brandFilter" value="Seeed"> Seeed Studio<br>
       <input type="checkbox" class="brandFilter" value="Elecrow"> Elecrow<br>
-      <input type="checkbox" class="brandFilter" value="Indie"> Indie<br>
+      <input type="checkbox" class="brandFilter" value="Haruki Toreda"> Haruki Toreda<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -195,10 +208,26 @@ Specifications and prices checked against manufacturer documentation: **August 1
     </div>
   </div>
   <div style="margin-right: 20px;">
-    <label>Battery Included:</label>
+    <label>Battery Capacity:</label>
     <div>
-      <input type="checkbox" class="batteryFilter" value="Yes"> Yes<br>
-      <input type="checkbox" class="batteryFilter" value="No"> No<br>
+      <input type="checkbox" class="batteryFilter" value="UpTo500"> Up to 500 mAh<br>
+      <input type="checkbox" class="batteryFilter" value="501to1000"> 501-1000 mAh<br>
+      <input type="checkbox" class="batteryFilter" value="1001to1500"> 1001-1500 mAh<br>
+      <input type="checkbox" class="batteryFilter" value="1501to2000"> 1501-2000 mAh<br>
+      <input type="checkbox" class="batteryFilter" value="2001to3000"> 2001-3000 mAh<br>
+      <input type="checkbox" class="batteryFilter" value="3001to5000"> 3001-5000 mAh<br>
+      <input type="checkbox" class="batteryFilter" value="5001to8000"> 5001-8000 mAh<br>
+      <input type="checkbox" class="batteryFilter" value="Over8000"> Over 8000 mAh<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
+    <label>External Notification:</label>
+    <div>
+      <input type="checkbox" class="notificationFilter" value="LED"> LED<br>
+      <input type="checkbox" class="notificationFilter" value="Buzzer"> Buzzer<br>
+      <input type="checkbox" class="notificationFilter" value="Speaker"> Speaker<br>
+      <input type="checkbox" class="notificationFilter" value="Vibration"> Vibration<br>
+      <input type="checkbox" class="notificationFilter" value="Emergency"> Emergency light<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -226,17 +255,17 @@ Specifications and prices checked against manufacturer documentation: **August 1
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="17.90" data-brand="Heltec" data-case="Optional" data-battery="No" data-meshtastic="No" data-ready="No">Heltec WiFi LoRa 32 V3.2</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="User" data-price="15.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Wireless Paper</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="Yes" data-input="User" data-price="14.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Wireless Stick Lite (V3)</th>
-        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="TFT None" data-wifi="Yes" data-input="User" data-price="22.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Wireless Tracker V1.1</th>
+        <th data-mcu="ESP32" data-lora="SX1262" data-gps="Yes" data-screen="LCD None" data-wifi="Yes" data-input="User" data-price="22.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Wireless Tracker V1.1</th>
         <th data-mcu="ESP32" data-lora="SX1262" data-gps="Optional" data-screen="None" data-wifi="Yes" data-input="User" data-price="25.90" data-brand="Heltec" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">Heltec Capsule Sensor V3</th>
         <th data-mcu="ESP32" data-lora="SX1262 None" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="User" data-price="18.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master E213</th>
         <th data-mcu="ESP32" data-lora="SX1262 None" data-gps="No" data-screen="Eink" data-wifi="Yes" data-input="User" data-price="19.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master E290</th>
-        <th data-mcu="ESP32" data-lora="SX1262 None" data-gps="No" data-screen="TFT" data-wifi="Yes" data-input="User" data-price="17.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master T190</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="TFT" data-wifi="No" data-input="User" data-price="27.90 29.90 38.80" data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="Yes" data-ready="No">Heltec Mesh Node T114</th>
+        <th data-mcu="ESP32" data-lora="SX1262 None" data-gps="No" data-screen="LCD" data-wifi="Yes" data-input="User" data-price="17.90" data-brand="Heltec" data-case="No" data-battery="No" data-meshtastic="No" data-ready="No">Heltec Vision Master T190</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="LCD" data-wifi="No" data-input="User" data-price="27.90 29.90 38.80" data-brand="Heltec" data-case="Yes" data-battery="No" data-meshtastic="Yes" data-ready="No">Heltec Mesh Node T114</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-input="None" data-price="27.99" data-brand="RAKwireless" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">WisBlock Starter Kit RAK4631 + RAK19003</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="No" data-screen="None" data-wifi="No" data-input="None" data-price="29.99" data-brand="RAKwireless" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">WisBlock Starter Kit RAK4631 + RAK19007</th>
         <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="OLED" data-wifi="No" data-input="User" data-price="89.97" data-brand="RAKwireless" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">WisMesh Pocket V2</th>
-        <th data-mcu="ESP32" data-lora="SX1262 None" data-gps="No" data-screen="LCD" data-wifi="Yes" data-input="Touch, Keyboard, User" data-price="46.52" data-brand="LILYGO" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">T-Deck</th>
-        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-input="Touch, User" data-price="48.49" data-brand="LILYGO" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">T-Echo</th>
+        <th data-mcu="ESP32" data-lora="SX1262 None" data-gps="No" data-screen="LCD" data-wifi="Yes" data-input="Touchscreen, Keyboard, User" data-price="46.52" data-brand="LILYGO" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">T-Deck</th>
+        <th data-mcu="nRF" data-lora="SX1262" data-gps="Yes" data-screen="Eink" data-wifi="No" data-input="TouchButton, User" data-price="48.49" data-brand="LILYGO" data-case="Yes" data-battery="Yes" data-meshtastic="Yes" data-ready="Yes">T-Echo</th>
         <th data-mcu="ESP32" data-lora="SX1276 SX1278" data-gps="Yes" data-screen="OLED None" data-wifi="Yes" data-input="User" data-price="30.77" data-brand="LILYGO" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">T-Beam</th>
         <th data-mcu="ESP32" data-lora="SX1262 LR1121" data-gps="Yes" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="40.35" data-brand="LILYGO" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">T-Beam Supreme</th>
         <th data-mcu="ESP32" data-lora="SX1262 SX1276 SX1278 SX1280" data-gps="No" data-screen="OLED" data-wifi="Yes" data-input="User" data-price="25.71" data-brand="LILYGO" data-case="No" data-battery="No" data-meshtastic="Yes" data-ready="No">T3-S3</th>
@@ -528,12 +557,12 @@ Specifications and prices checked against manufacturer documentation: **August 1
         <td>OLED</td><!--Heltec V3.2-->
         <td>E-ink</td><!--Wireless Paper-->
         <td>-</td><!--Wireless Stick Lite-->
-        <td>TFT</td><!--Wireless Tracker-->
+        <td>LCD</td><!--Wireless Tracker-->
         <td>-</td><!--Capsule Sensor V3-->
         <td>E-ink</td><!--Vision Master E213-->
         <td>E-ink</td><!--Vision Master E290-->
-        <td>TFT</td><!--Vision Master T190-->
-        <td>TFT</td><!--T114-->
+        <td>LCD</td><!--Vision Master T190-->
+        <td>LCD</td><!--T114-->
         <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--RAKRAK19007-->
         <td>OLED</td><!--WisMesh-->
@@ -571,31 +600,6 @@ Specifications and prices checked against manufacturer documentation: **August 1
         <td>1.3 Inch</td><!--Nano G2 Ultra-->
         <td>-</td><!--Wio Tracker 1110-->
         <td>-</td><!--WIO WM1110 Tracker-->
-      </tr>
-      <tr>
-        <td>Charging IC</td>
-        <td>TP4054</td><!--Heltec V2-->
-        <td>LP4056H</td><!--Heltec V3.2-->
-        <td>TP4054</td><!--Wireless Paper-->
-        <td>TP4054</td><!--Wireless Stick Lite-->
-        <td>TP4054</td><!--Wireless Tracker-->
-        <td>TP4054</td><!--Capsule Sensor V3-->
-        <td>TP4054</td><!--Vision Master E213-->
-        <td>TP4054</td><!--Vision Master E290-->
-        <td>TP4054</td><!--Vision Master T190-->
-        <td>LP4056H</td><!--T114-->
-        <td>TP4054</td><!--RAKRAK19003-->
-        <td>TP4054</td><!--RAKRAK19007-->
-        <td>TP4054</td><!--WisMesh-->
-        <td>TP4054</td><!--T-Deck-->
-        <td>TP4054</td><!--T-Echo-->
-        <td>AXP192</td><!--T-Beam-->            
-        <td>AXP2101</td><!--T-Beam-Supreme-->            
-        <td>TP4054</td><!--T3-S3-->
-        <td>?</td><!--Station G2-->
-        <td>?</td><!--Nano G2 Ultra-->
-        <td>ETA6003</td><!--Wio Tracker 1110-->
-        <td>ETA6003</td><!--WIO WM1110 Tracker-->
       </tr>
       <tr>
         <td>Diagram</td>
@@ -1064,14 +1068,14 @@ const additionalHeltecDevices = [
   },
   {
     name: 'Heltec WiFi LoRa 32 Expansion Kit',
-    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'Optional', screen: 'TFT None', wifi: 'Yes', input: 'Touch, User', price: '49.90', brand: 'Heltec', case: 'Yes', battery: 'No', meshtastic: 'No', ready: 'No' },
+    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'Optional', screen: 'LCD None', wifi: 'Yes', input: 'Touchscreen, User', price: '49.90', brand: 'Heltec', case: 'Yes', battery: 'No', meshtastic: 'No', ready: 'No' },
     productUrl: 'https://heltec.org/project/wifi-lora-32-v4-expansion-housing/',
     specs: {
       'MCU Chip': 'ESP32-S3R2', 'LoRa Chip': 'SX1262', 'GPS/GNSS': 'Optional Quectel L76K',
       'Charging Interface': 'USB-C; solar input', 'Frequency': '433 / 470–510 / 863–928 MHz (variant)',
       'Max. TX Power': '21 or 28 dBm (variant)', 'Max. Receiving Sensitivity': 'Not specified',
-      'Wi-Fi': '802.11 b/g/n', 'Bluetooth': 'BLE / Bluetooth 5', 'Display Type': 'Optional touch TFT front panel',
-      'Display Size': '320×240 touch TFT', 'Charging IC': 'Not specified', 'Input': 'Touch screen, User and Reset buttons',
+      'Wi-Fi': '802.11 b/g/n', 'Bluetooth': 'BLE / Bluetooth 5', 'Display Type': 'Optional touch LCD front panel',
+      'Display Size': '320×240 touch LCD', 'Charging IC': 'Not specified', 'Input': 'Touch screen, User and Reset buttons',
       'Temp/ Humidity Sensor': 'Optional expansion sensor', 'Air Pressure Sensor': 'Optional expansion sensor',
       'Air Quality Sensor': 'Optional expansion sensor', 'External Notification': 'Buzzer and display',
       'UART Port': '3× UART on main board', 'I2C Port': 'B2B expansion / 2× I2C',
@@ -1131,15 +1135,15 @@ const additionalHeltecDevices = [
   },
   {
     name: 'Heltec Mesh Node T1',
-    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'Yes', screen: 'TFT', wifi: 'No', input: 'User', price: '39.90', brand: 'Heltec', case: 'Yes', battery: 'Yes', meshtastic: 'No', ready: 'No' },
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'Yes', screen: 'LCD', wifi: 'No', input: 'User', price: '39.90', brand: 'Heltec', case: 'Yes', battery: 'Yes', meshtastic: 'No', ready: 'No' },
     productUrl: 'https://heltec.org/project/mesh-node-t1/',
     specs: {
       'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262', 'GPS/GNSS': 'Built-in UC6580: GPS, BeiDou, GLONASS, Galileo',
       'Charging Interface': 'Waterproof USB-C, 5V', 'Frequency': '433 / 470–510 / 863–870 / 902–928 MHz (variant)',
       'Max. TX Power': '21 ± 1 dBm', 'Max. Receiving Sensitivity': 'Not specified', 'Wi-Fi': 'NO',
-      'Bluetooth': 'BLE', 'Display Type': 'TFT LCD', 'Display Size': '0.96 in', 'Charging IC': 'Not specified',
+      'Bluetooth': 'BLE', 'Display Type': 'LCD', 'Display Size': '0.96 in', 'Charging IC': 'Not specified',
       'Input': 'Side buttons and rear power button', 'Temp/ Humidity Sensor': '-', 'Air Pressure Sensor': '-',
-      'Air Quality Sensor': '-', 'External Notification': 'Buzzer and TFT', 'UART Port': '-', 'I2C Port': '-',
+      'Air Quality Sensor': '-', 'External Notification': 'Buzzer', 'UART Port': '-', 'I2C Port': '-',
       'Battery': '1850mAh lithium, included', 'Enclosure': 'IP65 enclosure, included',
       'Memory ROM': '1MB', 'Memory SRAM': '256KB', 'Memory RTC SRAM': '-', 'Memory SiP Flash': '-',
       'Memory PSRAM': '-', 'Memory Flash': '1MB internal'
@@ -1196,14 +1200,14 @@ const additionalHeltecDevices = [
   },
   {
     name: 'Heltec WiFi LoRa 32 Expansion Kit V2',
-    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'Yes', screen: 'TFT', wifi: 'Yes', input: 'Touch, User', price: '56.90', brand: 'Heltec', case: 'Yes', battery: 'No', meshtastic: 'No', ready: 'No' },
+    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'Yes', screen: 'LCD', wifi: 'Yes', input: 'Touchscreen, User', price: '56.90', brand: 'Heltec', case: 'Yes', battery: 'No', meshtastic: 'No', ready: 'No' },
     productUrl: 'https://heltec.org/project/v4-r8-ex/',
     specs: {
       'MCU Chip': 'ESP32-S3R8', 'LoRa Chip': 'SX1262', 'GPS/GNSS': 'Built-in Quectel L76K',
       'Charging Interface': 'USB-C; solar input', 'Frequency': '433 / 470–510 / 863–928 MHz (variant)',
       'Max. TX Power': '21 or 28 dBm (variant)', 'Max. Receiving Sensitivity': 'Not specified',
       'Wi-Fi': '802.11 b/g/n', 'Bluetooth': 'BLE / Bluetooth 5 (mode-dependent with touch UI)',
-      'Display Type': 'Touch TFT', 'Display Size': '2.8 in', 'Charging IC': 'Not specified',
+      'Display Type': 'LCD', 'Display Size': '2.8 in', 'Charging IC': 'Not specified',
       'Input': 'Touch screen, User and Reset buttons', 'Temp/ Humidity Sensor': 'Optional expansion sensor',
       'Air Pressure Sensor': 'Optional expansion sensor', 'Air Quality Sensor': 'Optional expansion sensor',
       'External Notification': 'Buzzer and display', 'UART Port': '3× UART on main board',
@@ -1294,7 +1298,15 @@ function addAdditionalHeltecDevices() {
   const rows = Array.from(document.querySelectorAll('#comparisonTable tbody tr'));
   const referenceCells = new Map(rows.map(row => [row, row.children[referenceHeader.cellIndex]]));
 
-  additionalHeltecDevices.forEach(device => {
+  const excludedStampDevices = new Set([
+    'Heltec HT-CT62',
+    'Heltec Wireless Shell V3',
+    'Heltec HT-N5262M'
+  ]);
+
+  additionalHeltecDevices
+    .filter(device => !excludedStampDevices.has(device.name))
+    .forEach(device => {
     const header = document.createElement('th');
     header.textContent = device.name;
     Object.entries(device.meta).forEach(([key, value]) => header.dataset[key] = value);
@@ -1333,6 +1345,44 @@ addAdditionalHeltecDevices();
 
 const additionalLilygoDevices = [
   {
+    name: 'T5 E-Paper S3 Pro',
+    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'Optional', screen: 'Eink', wifi: 'Yes', input: 'Touchscreen, User', price: '81.36', brand: 'LILYGO', case: 'No', battery: 'Yes', meshtastic: 'No', ready: 'No' },
+    productUrl: 'https://lilygo.cc/products/t5-e-paper-s3-pro',
+    docsUrl: 'https://wiki.lilygo.cc/products/t5-series/t5-e-paper-s3-pro/',
+    specs: {
+      'MCU Chip': 'ESP32-S3-WROOM-1 @ 240 MHz', 'LoRa Chip': 'SX1262',
+      'GPS/GNSS': 'Optional', 'Charging Interface': 'USB-C, Magnetic',
+      'Frequency': '433 / 868 / 915 / 920 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Wi-Fi': '802.11 b/g/n',
+      'Bluetooth': 'Bluetooth 5.0 LE', 'Display Type': 'E-paper',
+      'Display Size': '4.7 in', 'Input': 'Touchscreen, User button, Power button, Boot button, Reset button',
+      'Temp/ Humidity Sensor': '-', 'Air Pressure Sensor': '-', 'Air Quality Sensor': '-',
+      'External Notification': '-', 'UART Port': '-', 'I2C Port': '2× Qwiic',
+      'Battery': '1500 mAh', 'Enclosure': '-', 'Memory ROM': '384 KB',
+      'Memory SRAM': '512 KB', 'Memory RTC SRAM': '16 KB',
+      'Memory SiP Flash': 'microSD / TF', 'Memory PSRAM': '8 MB', 'Memory Flash': '16 MB'
+    }
+  },
+  {
+    name: 'T3-S3 E-Paper',
+    meta: { mcu: 'ESP32', lora: 'SX1262 SX1276 SX1280', gps: 'No', screen: 'Eink', wifi: 'Yes', input: 'User', price: '23.61', brand: 'LILYGO', case: 'No', battery: 'No', meshtastic: 'No', ready: 'No' },
+    productUrl: 'https://lilygo.cc/products/ts-s3-epaper',
+    docsUrl: 'https://wiki.lilygo.cc/products/t3-series/t3-s3-e-paper/',
+    specs: {
+      'MCU Chip': 'ESP32-S3FH4R2 @ 240 MHz', 'LoRa Chip': 'SX1262 / SX1276 / SX1280',
+      'GPS/GNSS': '-', 'Charging Interface': 'USB-C',
+      'Frequency': '868 / 915 / 2400 MHz', 'Max. TX Power': '12.5 / 20 / 22 dBm',
+      'Max. Receiving Sensitivity': '-148 / -132 dBm', 'Wi-Fi': '802.11 b/g/n',
+      'Bluetooth': 'Bluetooth 5.0 LE', 'Display Type': 'E-paper',
+      'Display Size': '2.13 in', 'Input': 'Boot button, Reset button',
+      'Temp/ Humidity Sensor': '-', 'Air Pressure Sensor': '-', 'Air Quality Sensor': '-',
+      'External Notification': 'Status LED', 'UART Port': '-', 'I2C Port': '1× Qwiic',
+      'Battery': '-', 'Enclosure': '-', 'Memory ROM': '384 KB',
+      'Memory SRAM': '512 KB', 'Memory RTC SRAM': '16 KB',
+      'Memory SiP Flash': 'microSD / TF', 'Memory PSRAM': '2 MB', 'Memory Flash': '4 MB'
+    }
+  },
+  {
     name: 'T-LoRa Pager',
     meta: { mcu: 'ESP32', lora: 'SX1262 LR1121', gps: 'Yes', screen: 'LCD', wifi: 'Yes', input: 'Keyboard, User', price: '88.00', brand: 'LILYGO', case: 'Yes', battery: 'Yes', meshtastic: 'Yes', ready: 'Yes' },
     productUrl: 'https://lilygo.cc/products/t-lora-pager-meshtastic',
@@ -1356,7 +1406,7 @@ const additionalLilygoDevices = [
   },
   {
     name: 'T-Deck Pro',
-    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'Yes', screen: 'Eink', wifi: 'Yes', input: 'Touch, Keyboard, User', price: '102.91', brand: 'LILYGO', case: 'Yes', battery: 'Yes', meshtastic: 'Yes', ready: 'Yes' },
+    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'Yes', screen: 'Eink', wifi: 'Yes', input: 'Touchscreen, Keyboard, User', price: '102.91', brand: 'LILYGO', case: 'Yes', battery: 'Yes', meshtastic: 'Yes', ready: 'Yes' },
     productUrl: 'https://lilygo.cc/products/t-deck-pro-meshtastic',
     docsUrl: 'https://wiki.lilygo.cc/products/t-deck-series/t-deck-pro/',
     specs: {
@@ -1398,7 +1448,7 @@ const additionalLilygoDevices = [
   },
   {
     name: 'T-Watch S3',
-    meta: { mcu: 'ESP32', lora: 'SX1262 SX1280', gps: 'No', screen: 'LCD', wifi: 'Yes', input: 'Touch, User', price: '42.98', brand: 'LILYGO', case: 'Yes', battery: 'Yes', meshtastic: 'No', ready: 'No' },
+    meta: { mcu: 'ESP32', lora: 'SX1262 SX1280', gps: 'No', screen: 'LCD', wifi: 'Yes', input: 'Touchscreen, User', price: '42.98', brand: 'LILYGO', case: 'Yes', battery: 'Yes', meshtastic: 'No', ready: 'No' },
     productUrl: 'https://lilygo.cc/products/t-watch-s3',
     docsUrl: 'https://wiki.lilygo.cc/products/t-watch-series/t-watch-s3/',
     specs: {
@@ -1614,6 +1664,44 @@ const elecrowDevices = [
       'Memory ROM': '384KB', 'Memory SRAM': '512KB', 'Memory RTC SRAM': '-', 'Memory SiP Flash': '-',
       'Memory PSRAM': '8MB', 'Memory Flash': '4MB'
     }
+  },
+  {
+    name: 'HELTXT',
+    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'Yes', screen: 'OLED', wifi: 'Yes', input: 'Keyboard User', price: '79.99', brand: 'Haruki Toreda', case: 'Yes', battery: 'Yes', meshtastic: 'Yes', ready: 'Yes' },
+    productUrl: 'https://www.etsy.com/listing/1729282449/heltxt-standalone-running-meshtastic',
+    docsUrl: 'https://www.etsy.com/listing/1729282449/heltxt-standalone-running-meshtastic',
+    specs: {
+      'Brand': 'Haruki Toreda', 'MCU Chip': 'ESP32-S3FN8', 'LoRa Chip': 'SX1262',
+      'GPS/GNSS': 'ATGM336H: GPS, BeiDou', 'Charging Interface': 'USB-C', 'Frequency': '863–928 MHz',
+      'Max. TX Power': '21 ± 1 dBm', 'Max. Receiving Sensitivity': '-136 dBm',
+      'Wi-Fi': '802.11 b/g/n', 'Bluetooth': 'Bluetooth 5.0 LE', 'Display Type': 'OLED',
+      'Display Size': '0.96 in, 128×64', 'Charging IC': 'LP4056H',
+      'Input': 'Keyboard, User button, Reset button', 'Temp/ Humidity Sensor': 'Optional BME680',
+      'Air Pressure Sensor': 'Optional BME680', 'Air Quality Sensor': 'Optional BME680',
+      'External Notification': 'Buzzer, status LED', 'UART Port': '-', 'I2C Port': '-',
+      'Battery': '4000mAh Li-ion, included', 'Enclosure': 'PLA+, included',
+      'Meshtastic Preloaded': 'Yes', 'Memory ROM': '384KB', 'Memory SRAM': '512KB',
+      'Memory RTC SRAM': '16KB', 'Memory SiP Flash': '-', 'Memory PSRAM': '-', 'Memory Flash': '8MB'
+    }
+  },
+  {
+    name: 'nRF-TXT',
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'Yes', screen: 'LCD', wifi: 'No', input: 'Keyboard User', price: '114.99', brand: 'Haruki Toreda', case: 'Yes', battery: 'Yes', meshtastic: 'Yes', ready: 'Yes' },
+    productUrl: 'https://harutech.org/products/nrf-txt',
+    docsUrl: 'https://harutech.org/products/nrf-txt',
+    specs: {
+      'Brand': 'Haruki Toreda', 'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262',
+      'GPS/GNSS': 'L76K: GPS, BeiDou, GLONASS, QZSS', 'Charging Interface': 'USB-C',
+      'Frequency': '863–928 MHz', 'Max. TX Power': '21 ± 1 dBm',
+      'Max. Receiving Sensitivity': '-135 dBm', 'Wi-Fi': '-', 'Bluetooth': 'Bluetooth 5.0 LE',
+      'Display Type': 'LCD', 'Display Size': '1.14 in, 135×240', 'Charging IC': 'LP4056H',
+      'Input': 'Keyboard, User button, Reset button', 'Temp/ Humidity Sensor': 'Optional BME680',
+      'Air Pressure Sensor': 'Optional BME680', 'Air Quality Sensor': 'Optional BME680',
+      'External Notification': 'Buzzer, status LEDs', 'UART Port': '-', 'I2C Port': '-',
+      'Battery': '4000mAh Li-ion, included', 'Enclosure': '3D-printed',
+      'Meshtastic Preloaded': 'Yes', 'Memory ROM': '-', 'Memory SRAM': '256KB',
+      'Memory RTC SRAM': '-', 'Memory SiP Flash': '-', 'Memory PSRAM': '-', 'Memory Flash': '1MB'
+    }
   }
 ];
 
@@ -1655,6 +1743,26 @@ function addElecrowDevices() {
 
 addElecrowDevices();
 
+function addMotionSensorRows() {
+  const table = document.querySelector('#comparisonTable');
+  const body = table.tBodies[0];
+  const referenceRow = Array.from(body.rows).find(row =>
+    row.cells[0].textContent.trim() === 'External Notification'
+  );
+
+  ['IMU', 'Magnetometer / Digital Compass'].forEach(label => {
+    const row = document.createElement('tr');
+    Array.from(table.tHead.rows[0].cells).forEach((_, column) => {
+      const cell = document.createElement('td');
+      cell.textContent = column === 0 ? label : '-';
+      row.appendChild(cell);
+    });
+    body.insertBefore(row, referenceRow);
+  });
+}
+
+addMotionSensorRows();
+
 function normalizeMemoryStorage() {
   const table = document.querySelector('#comparisonTable');
   const headers = Array.from(table.querySelectorAll('thead th'));
@@ -1675,6 +1783,8 @@ function normalizeMemoryStorage() {
     ['T-Deck', 'microSD / TF'],
     ['T-Beam Supreme', 'microSD / TF'],
     ['T3-S3', 'microSD / TF'],
+    ['T5 E-Paper S3 Pro', 'microSD / TF'],
+    ['T3-S3 E-Paper', 'microSD / TF'],
     ['T-LoRa Pager', 'microSD / TF (up to 32 GB, FAT32)'],
     ['T-Deck Pro', 'microSD / TF'],
     ['T-Deck Plus', 'microSD / TF']
@@ -1753,11 +1863,12 @@ function normalizeComparisonValues() {
   const rows = Array.from(table.querySelectorAll('tbody tr'));
   const noneRows = new Set([
     'GPS/GNSS', 'Display Type', 'Display Size', 'Input', 'Temp/ Humidity Sensor',
-    'Air Pressure Sensor', 'Air Quality Sensor', 'External Notification', 'UART Port',
+    'Air Pressure Sensor', 'Air Quality Sensor', 'IMU', 'Magnetometer / Digital Compass',
+    'External Notification', 'UART Port',
     'I2C Port', 'Battery', 'Enclosure', 'MCU ROM', 'MCU SRAM',
     'RTC / Low-power SRAM', 'PSRAM', 'Onboard Flash', 'Storage Expansion'
   ]);
-  const notSpecifiedRows = new Set(['Max. Receiving Sensitivity', 'Charging IC']);
+  const notSpecifiedRows = new Set(['Max. Receiving Sensitivity']);
 
   const bluetoothValues = new Map([
     ['bt-5 (le)', 'Bluetooth 5.0 LE'],
@@ -1859,7 +1970,7 @@ function normalizeComparisonValues() {
         value = value
           .replace(/(\d+(?:\.\d+)?)\s*-?\s*inch\b/gi, '$1 in')
           .replace(/\s+OLED \(display variant\)$/i, ' (display variant)')
-          .replace(/^(\d+×\d+) touch TFT$/i, '$1');
+          .replace(/^(\d+×\d+) touch (?:TFT|LCD)$/i, '$1');
       } else if (label === 'Input') {
         value = value
           .replace(/^User Button, Reset Button$/i, 'User and Reset buttons')
@@ -1907,7 +2018,725 @@ function normalizeComparisonValues() {
 
 normalizeComparisonValues();
 
-document.querySelectorAll('.mcuFilter, .loraFilter, .frequencyFilter, .gpsFilter, .screenFilter, .wifiFilter, .bluetoothFilter, .inputFilter, .powerFilter, .sensorFilter, .portFilter, .storageFilter, .txPowerFilter, .priceFilter, .brandFilter, .caseFilter, .batteryFilter, .meshtasticFilter, .readyFilter').forEach(filter => {
+function normalizeDeviceDetails() {
+  const table = document.querySelector('#comparisonTable');
+  const headers = Array.from(table.querySelectorAll('thead th'));
+  const rows = new Map(
+    Array.from(table.querySelectorAll('tbody tr')).map(row => [row.cells[0].textContent.trim(), row])
+  );
+  const gpsRow = rows.get('GPS/GNSS');
+  const chargingInterfaceRow = rows.get('Charging Interface');
+  const batteryRow = rows.get('Battery');
+  const loraRow = rows.get('LoRa Chip');
+  const frequencyRow = rows.get('Frequency');
+  const txPowerRow = rows.get('Max. TX Power');
+  const rxSensitivityRow = rows.get('Max. Receiving Sensitivity');
+  const wifiRow = rows.get('Wi-Fi');
+  const displayTypeRow = rows.get('Display Type');
+  const displaySizeRow = rows.get('Display Size');
+  const tempHumidityRow = rows.get('Temp/ Humidity Sensor');
+  const airPressureRow = rows.get('Air Pressure Sensor');
+  const airQualityRow = rows.get('Air Quality Sensor');
+  const imuRow = rows.get('IMU');
+  const magnetometerRow = rows.get('Magnetometer / Digital Compass');
+  const notificationRow = rows.get('External Notification');
+  const inputRow = rows.get('Input');
+  const bluetoothRow = rows.get('Bluetooth');
+  const meshtasticRow = rows.get('Meshtastic Preloaded');
+  const uartRow = rows.get('UART Port');
+  const connectorRow = rows.get('I2C Port');
+
+  const verifiedEnvironmentalCapabilities = new Map([
+    ['Heltec Capsule Sensor V3', {
+      types: ['TempHumidity', 'Pressure'],
+      value: 'Temperature, humidity, pressure (optional)'
+    }],
+    ['WisBlock Starter Kit RAK4631 + RAK19003', {
+      types: ['TempHumidity'],
+      value: 'Temperature, humidity (optional)'
+    }],
+    ['WisBlock Starter Kit RAK4631 + RAK19007', {
+      types: ['TempHumidity'],
+      value: 'Temperature, humidity (optional)'
+    }],
+    ['T-Echo', {
+      types: ['TempHumidity', 'Pressure'],
+      value: 'Temperature, humidity, pressure (optional)'
+    }],
+    ['SenseCAP Card Tracker T1000-E', {
+      types: ['TempHumidity'],
+      value: 'Temperature'
+    }]
+  ]);
+
+  const gpsCapabilities = new Map([
+    ['Heltec Wireless Tracker V1.1', 'GPS, GLONASS, BeiDou, Galileo, QZSS, NavIC'],
+    ['Heltec Capsule Sensor V3', 'GPS, GLONASS, BeiDou, QZSS (optional)'],
+    ['Heltec Mesh Node T114', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['Heltec WiFi LoRa 32 V4.3.1', 'GPS, GLONASS, BeiDou, QZSS (optional)'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', 'GPS, GLONASS, BeiDou, QZSS (optional)'],
+    ['Heltec Mesh Node T096', 'GPS, GLONASS, BeiDou, Galileo, QZSS, NavIC'],
+    ['Heltec Mesh Node T1', 'GPS, GLONASS, BeiDou, Galileo, QZSS, NavIC'],
+    ['Heltec Wireless Tracker V2', 'GPS, GLONASS, BeiDou, Galileo, QZSS, NavIC'],
+    ['Heltec MeshTower V2', 'Optional'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['Heltec MeshSolar', 'Optional'],
+    ['WisMesh Pocket V2', 'GPS, GLONASS, BeiDou, Galileo, QZSS'],
+    ['T-Echo', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['T-Beam', 'GPS, GLONASS, BeiDou, Galileo, QZSS (variant)'],
+    ['T-Beam Supreme', 'GPS, GLONASS, BeiDou, Galileo, QZSS (variant)'],
+    ['T-LoRa Pager', 'GPS, GLONASS, BeiDou, Galileo, QZSS'],
+    ['T-Deck Pro', 'GPS, GLONASS, BeiDou, Galileo, QZSS'],
+    ['T-Deck Plus', 'GPS, GLONASS, BeiDou, Galileo, QZSS'],
+    ['T-Echo Plus', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['T5 E-Paper S3 Pro', 'GPS, GLONASS, BeiDou, Galileo, QZSS (optional)'],
+    ['Nano G2 Ultra', 'GPS, BeiDou'],
+    ['SenseCAP Card Tracker T1000-E', 'GPS, GLONASS, BeiDou, Galileo, QZSS'],
+    ['Wio Tracker 1110 Dev Board', 'GPS, BeiDou (cloud-assisted)'],
+    ['ThinkNode M1', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['ThinkNode M3', 'GPS, GLONASS, BeiDou, Galileo'],
+    ['ThinkNode M4', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['ThinkNode M5', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['ThinkNode M6', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['HELTXT', 'GPS, BeiDou'],
+    ['nRF-TXT', 'GPS, GLONASS, BeiDou, QZSS']
+  ]);
+
+  const imuCapabilities = new Map([
+    ['Heltec Capsule Sensor V3', '3-axis accelerometer (optional)'],
+    ['Heltec Mesh Node T1', '6-axis accelerometer, gyroscope'],
+    ['T-Beam Supreme', '6-axis accelerometer, gyroscope'],
+    ['T-LoRa Pager', '6-axis accelerometer, gyroscope'],
+    ['T-Deck Pro', '6-axis accelerometer, gyroscope'],
+    ['T-Watch S3', '3-axis accelerometer'],
+    ['T-Echo Plus', '6-axis accelerometer, gyroscope'],
+    ['SenseCAP Card Tracker T1000-E', '3-axis accelerometer'],
+    ['Wio Tracker 1110 Dev Board', '3-axis accelerometer'],
+    ['ThinkNode M4', '6-axis accelerometer, gyroscope'],
+    ['nRF-TXT', '6-axis accelerometer, gyroscope (optional)']
+  ]);
+
+  const magnetometerCapabilities = new Map([
+    ['Heltec Mesh Node T1', '3-axis'],
+    ['T-Beam Supreme', '3-axis'],
+    ['nRF-TXT', '3-axis (optional)']
+  ]);
+
+  const backlitEpaperDevices = new Set([
+    'T-Echo',
+    'T5 E-Paper S3 Pro',
+    'T-Echo Plus',
+    'ThinkNode M1',
+    'ThinkNode M5'
+  ]);
+
+  const batteries = new Map([
+    ['Heltec Capsule Sensor V3', '250 mAh'],
+    ['Heltec MeshPocket', '5000 / 10000 mAh'],
+    ['Heltec Mesh Node T1', '1850 mAh'],
+    ['Heltec MeshTower V2', '3 × 2800 mAh'],
+    ['Heltec SensorHub HRI-3621', '1100 mAh (18350)'],
+    ['WisMesh Pocket V2', '3200 mAh'],
+    ['T-Echo', '850 mAh'],
+    ['T5 E-Paper S3 Pro', '1500 mAh'],
+    ['T-Deck Pro', '1500 mAh'],
+    ['T-Deck Plus', '2000 mAh'],
+    ['T-Echo Plus', '2400 mAh'],
+    ['SenseCAP Card Tracker T1000-E', '700 mAh'],
+    ['ThinkNode M1', '1200 mAh'],
+    ['ThinkNode M2', '1000 mAh'],
+    ['ThinkNode M3', '760 mAh'],
+    ['ThinkNode M4', '7000 mAh (18650)'],
+    ['ThinkNode M5', '1200 mAh'],
+    ['ThinkNode M6', '7000 mAh (2 × 18650)'],
+    ['HELTXT', '4000 mAh'],
+    ['nRF-TXT', '4000 mAh']
+  ]);
+
+  const notifications = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', 'Status LED'],
+    ['Heltec WiFi LoRa 32 V3.2', 'Status LED'],
+    ['Heltec Wireless Paper', 'Status LED'],
+    ['Wireless Stick Lite (V3)', 'Status LED'],
+    ['Heltec Wireless Tracker V1.1', 'Status LED'],
+    ['Heltec Capsule Sensor V3', 'Status LEDs'],
+    ['Heltec Vision Master E213', 'Status LED (revision-dependent)'],
+    ['Heltec Vision Master E290', 'Status LED (revision-dependent)'],
+    ['Heltec Mesh Node T114', 'Status LEDs'],
+    ['Heltec WiFi LoRa 32 V4.3.1', 'Status LED'],
+    ['Heltec MeshPocket', 'Status LEDs'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', 'Buzzer, status LED'],
+    ['Heltec Mesh Node T096', 'Status LED'],
+    ['Heltec Wireless Stick V3', 'Status LED'],
+    ['Heltec Mesh Node T1', 'Buzzer, status LED'],
+    ['Heltec Wireless Tracker V2', 'Status LED'],
+    ['Heltec MeshTower V2', 'Status LED'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', 'Buzzer, status LED'],
+    ['Heltec MeshSolar', 'Status LED, battery level LEDs'],
+    ['Heltec SensorHub HRI-3621', 'RGB status LED'],
+    ['Heltec Wireless Bridge', 'Status LEDs'],
+    ['WisBlock Starter Kit RAK4631 + RAK19003', 'Status LEDs'],
+    ['WisBlock Starter Kit RAK4631 + RAK19007', 'Status LEDs'],
+    ['WisMesh Pocket V2', 'Status LEDs'],
+    ['T-Deck', 'Buzzer'],
+    ['T-Echo', 'Status LEDs'],
+    ['T-Beam', 'Status LED'],
+    ['T3-S3', 'Status LED'],
+    ['T3-S3 E-Paper', 'Status LED'],
+    ['T-LoRa Pager', 'Speaker, vibration motor, status LED'],
+    ['T-Deck Pro', 'Speaker, vibration motor'],
+    ['T-Watch S3', 'Speaker, vibration motor'],
+    ['T-Echo Plus', 'Buzzer, vibration motor'],
+    ['Nano G2 Ultra', 'Buzzer, status LEDs'],
+    ['SenseCAP Card Tracker T1000-E', 'Buzzer, status LED'],
+    ['Wio Tracker 1110 Dev Board', 'Status LED'],
+    ['ThinkNode M1', 'Buzzer, status LEDs'],
+    ['ThinkNode M2', 'Buzzer, status LED'],
+    ['ThinkNode M3', 'Buzzer, RGB status LED'],
+    ['ThinkNode M4', 'Emergency light, status LEDs, battery level LEDs'],
+    ['ThinkNode M5', 'Buzzer, status LEDs'],
+    ['ThinkNode M6', 'Status LEDs'],
+    ['ThinkNode M7', 'Status LEDs'],
+    ['HELTXT', 'Buzzer, status LED'],
+    ['nRF-TXT', 'Buzzer, status LEDs']
+  ]);
+
+  const inputs = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', 'User button, Reset button'],
+    ['Heltec WiFi LoRa 32 V3.2', 'User button, Reset button'],
+    ['Heltec Wireless Paper', 'User button, Reset button'],
+    ['Wireless Stick Lite (V3)', 'User button, Reset button'],
+    ['Heltec Wireless Tracker V1.1', 'User button, Reset button'],
+    ['Heltec Capsule Sensor V3', 'User button, Reset button'],
+    ['Heltec Vision Master E213', 'User button, Reset button, 3rd button'],
+    ['Heltec Vision Master E290', 'User button, Reset button, 3rd button'],
+    ['Heltec Vision Master T190', 'User button, Reset button'],
+    ['Heltec Mesh Node T114', 'User button, Reset button'],
+    ['Heltec WiFi LoRa 32 V4.3.1', 'User button, Reset button'],
+    ['Heltec MeshPocket', 'User controls'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', 'Touchscreen, User button, Reset button'],
+    ['Heltec HT-CT62', '-'],
+    ['Heltec Mesh Node T096', 'User button, Reset button'],
+    ['Heltec Wireless Stick V3', 'User button, Reset button'],
+    ['Heltec Mesh Node T1', 'Side buttons, Power button'],
+    ['Heltec Wireless Shell V3', '-'],
+    ['Heltec Wireless Tracker V2', 'User button, Reset button'],
+    ['Heltec MeshTower V2', 'Power button, Reset button'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', 'Touchscreen, User button, Reset button'],
+    ['Heltec MeshSolar', 'Power button, Output button, Reset button'],
+    ['Heltec HT-N5262M', '-'],
+    ['Heltec SensorHub HRI-3621', 'Power control, Configuration control'],
+    ['Heltec Wireless Bridge', 'User button, Reset button'],
+    ['WisBlock Starter Kit RAK4631 + RAK19003', 'Reset button'],
+    ['WisBlock Starter Kit RAK4631 + RAK19007', 'Reset button'],
+    ['WisMesh Pocket V2', 'User button, Reset button'],
+    ['T-Deck', 'Keyboard, Touchscreen, Trackball, Reset button'],
+    ['T-Echo', 'User button, Reset button, Touch button'],
+    ['T-Beam', 'User button, Reset button, Power button'],
+    ['T-Beam Supreme', 'User button, Reset button, Power button'],
+    ['T3-S3', 'User button, Reset button'],
+    ['T5 E-Paper S3 Pro', 'Touchscreen, User button, Power button, Boot button, Reset button'],
+    ['T3-S3 E-Paper', 'Boot button, Reset button'],
+    ['T-LoRa Pager', 'Keyboard, Encoder, Power button, Boot button'],
+    ['T-Deck Pro', 'Keyboard, Touchscreen, Boot button'],
+    ['T-Deck Plus', 'Keyboard, Trackball, Reset button'],
+    ['T-Watch S3', 'Touchscreen, Power button, Boot button'],
+    ['T-Echo Plus', 'User button, Touch button'],
+    ['Station G2', 'User button, Reset button, Boot button'],
+    ['Nano G2 Ultra', '4 buttons'],
+    ['SenseCAP Card Tracker T1000-E', 'User button'],
+    ['Wio Tracker 1110 Dev Board', 'User button, Reset button'],
+    ['ThinkNode M1', 'Knob, Function button, Page button, GPS button, Reset button'],
+    ['ThinkNode M2', 'Power button, Function button, Reset button, Boot button'],
+    ['ThinkNode M3', 'Power/SOS button'],
+    ['ThinkNode M4', 'Power button, LoRa button'],
+    ['ThinkNode M5', 'Knob, Function button, Page button, GPS button, Reset button'],
+    ['ThinkNode M6', 'Function button, Reset button'],
+    ['ThinkNode M7', 'Reload button, Boot button'],
+    ['HELTXT', 'Keyboard, User button, Reset button'],
+    ['nRF-TXT', 'Keyboard, User button, Reset button']
+  ]);
+
+  const connectors = new Map([
+    ['Heltec Vision Master E213', '1× QuickLink'],
+    ['Heltec Vision Master E290', '1× QuickLink'],
+    ['Heltec Vision Master T190', '1× QuickLink'],
+    ['T-Deck', '1× Grove'],
+    ['T-Beam Supreme', '1× Qwiic'],
+    ['T3-S3', '2× Qwiic'],
+    ['T5 E-Paper S3 Pro', '2× Qwiic'],
+    ['T3-S3 E-Paper', '1× Qwiic'],
+    ['Wio Tracker 1110 Dev Board', '6× Grove']
+  ]);
+
+  const loraChips = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', 'SX1276 / SX1278'],
+    ['Heltec WiFi LoRa 32 V3.2', 'SX1262'],
+    ['Heltec Wireless Paper', 'SX1262'],
+    ['Wireless Stick Lite (V3)', 'SX1262'],
+    ['Heltec Wireless Tracker V1.1', 'SX1262'],
+    ['Heltec Capsule Sensor V3', 'SX1262'],
+    ['Heltec Vision Master E213', 'SX1262'],
+    ['Heltec Vision Master E290', 'SX1262'],
+    ['Heltec Vision Master T190', 'SX1262'],
+    ['Heltec Mesh Node T114', 'SX1262'],
+    ['Heltec WiFi LoRa 32 V4.3.1', 'SX1262'],
+    ['Heltec MeshPocket', 'SX1262'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', 'SX1262'],
+    ['Heltec HT-CT62', 'SX1262'],
+    ['Heltec Mesh Node T096', 'SX1262'],
+    ['Heltec Wireless Stick V3', 'SX1262'],
+    ['Heltec Mesh Node T1', 'SX1262'],
+    ['Heltec Wireless Shell V3', 'SX1262'],
+    ['Heltec Wireless Tracker V2', 'SX1262'],
+    ['Heltec MeshTower V2', 'SX1262'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', 'SX1262'],
+    ['Heltec MeshSolar', 'SX1262'],
+    ['Heltec HT-N5262M', 'SX1262'],
+    ['Heltec SensorHub HRI-3621', 'SX1262'],
+    ['Heltec Wireless Bridge', 'SX1276'],
+    ['WisBlock Starter Kit RAK4631 + RAK19003', 'SX1262'],
+    ['WisBlock Starter Kit RAK4631 + RAK19007', 'SX1262'],
+    ['WisMesh Pocket V2', 'SX1262'],
+    ['T-Deck', 'SX1262'],
+    ['T-Echo', 'SX1262'],
+    ['T-Beam', 'SX1276 / SX1278'],
+    ['T-Beam Supreme', 'SX1262 / LR1121'],
+    ['T3-S3', 'SX1262 / SX1276 / SX1278 / SX1280'],
+    ['T5 E-Paper S3 Pro', 'SX1262'],
+    ['T3-S3 E-Paper', 'SX1262 / SX1276 / SX1280'],
+    ['T-LoRa Pager', 'SX1262 / SX1280 / LR1121'],
+    ['T-Deck Pro', 'SX1262'],
+    ['T-Deck Plus', 'SX1262'],
+    ['T-Watch S3', 'SX1262 / SX1280'],
+    ['T-Echo Plus', 'SX1262'],
+    ['Station G2', 'SX1262'],
+    ['Nano G2 Ultra', 'SX1262'],
+    ['SenseCAP Card Tracker T1000-E', 'LR1110'],
+    ['Wio Tracker 1110 Dev Board', 'LR1110'],
+    ['ThinkNode M1', 'SX1262'],
+    ['ThinkNode M2', 'SX1262'],
+    ['ThinkNode M3', 'LR1110'],
+    ['ThinkNode M4', 'LR1110'],
+    ['ThinkNode M5', 'SX1262'],
+    ['ThinkNode M6', 'SX1262'],
+    ['ThinkNode M7', 'LR1110'],
+    ['HELTXT', 'SX1262'],
+    ['nRF-TXT', 'SX1262']
+  ]);
+
+  const frequencies = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '433–510 / 863–928 MHz'],
+    ['Heltec WiFi LoRa 32 V3.2', '470–510 / 863–928 MHz'],
+    ['Heltec Wireless Paper', '470–510 / 863–928 MHz'],
+    ['Wireless Stick Lite (V3)', '470–510 / 863–928 MHz'],
+    ['Heltec Wireless Tracker V1.1', '470–510 / 863–928 MHz'],
+    ['Heltec Capsule Sensor V3', '470–510 / 863–928 MHz'],
+    ['Heltec Vision Master E213', '470–510 / 863–928 MHz'],
+    ['Heltec Vision Master E290', '470–510 / 863–928 MHz'],
+    ['Heltec Vision Master T190', '470–510 / 863–928 MHz'],
+    ['Heltec Mesh Node T114', '433 / 470–510 / 863–870 / 902–928 MHz'],
+    ['Heltec WiFi LoRa 32 V4.3.1', '433–510 / 863–928 MHz'],
+    ['Heltec MeshPocket', '863–870 / 902–928 MHz'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', '433 / 470–510 / 863–928 MHz'],
+    ['Heltec HT-CT62', '433 / 470–510 / 863–870 / 902–928 MHz'],
+    ['Heltec Mesh Node T096', '433 / 470–510 / 863–870 / 902–928 MHz'],
+    ['Heltec Wireless Stick V3', '470–510 / 863–928 MHz'],
+    ['Heltec Mesh Node T1', '433 / 470–510 / 863–870 / 902–928 MHz'],
+    ['Heltec Wireless Shell V3', '470–510 / 863–870 / 902–928 MHz'],
+    ['Heltec Wireless Tracker V2', '863–928 MHz'],
+    ['Heltec MeshTower V2', '863–870 / 902–928 MHz'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', '433 / 470–510 / 863–928 MHz'],
+    ['Heltec MeshSolar', '470–510 / 863–870 / 902–928 MHz'],
+    ['Heltec HT-N5262M', '470–510 / 863–870 / 902–928 MHz'],
+    ['Heltec SensorHub HRI-3621', '433 / 470 / 864 / 868 / 915 / 920 / 923 MHz'],
+    ['Heltec Wireless Bridge', '470–510 / 863–928 MHz'],
+    ['WisBlock Starter Kit RAK4631 + RAK19003', '433–470 / 779–923 MHz'],
+    ['WisBlock Starter Kit RAK4631 + RAK19007', '433–470 / 779–923 MHz'],
+    ['WisMesh Pocket V2', '860–870 / 900–930 MHz'],
+    ['T-Deck', '433–915 MHz'],
+    ['T-Echo', '433 / 868 / 915 MHz'],
+    ['T-Beam', '433 / 868 / 915 MHz'],
+    ['T-Beam Supreme', '433 / 868 / 915 / 923 / 2400 MHz'],
+    ['T3-S3', '433 / 868 / 915 / 2400 MHz'],
+    ['T5 E-Paper S3 Pro', '433 / 868 / 915 / 920 MHz'],
+    ['T3-S3 E-Paper', '868 / 915 / 2400 MHz'],
+    ['T-LoRa Pager', '433–920 / 2400 MHz'],
+    ['T-Deck Pro', '433–920 MHz'],
+    ['T-Deck Plus', '433–915 MHz'],
+    ['T-Watch S3', '433–923 / 2400 MHz'],
+    ['T-Echo Plus', '433 / 868 / 915 MHz'],
+    ['Station G2', '815–940 MHz'],
+    ['Nano G2 Ultra', '815–940 MHz'],
+    ['SenseCAP Card Tracker T1000-E', '863–928 MHz'],
+    ['Wio Tracker 1110 Dev Board', '863–928 MHz'],
+    ['ThinkNode M1', '868 / 915 MHz'],
+    ['ThinkNode M2', '868 / 915 MHz'],
+    ['ThinkNode M3', '868 / 915 MHz'],
+    ['ThinkNode M4', '868 / 915 MHz'],
+    ['ThinkNode M5', '868 / 915 MHz'],
+    ['ThinkNode M6', '868 / 915 MHz'],
+    ['ThinkNode M7', '868 / 915 MHz'],
+    ['HELTXT', '863–928 MHz'],
+    ['nRF-TXT', '863–928 MHz']
+  ]);
+
+  const wifiProtocols = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '802.11 b/g/n'],
+    ['Heltec WiFi LoRa 32 V3.2', '802.11 b/g/n'],
+    ['Heltec Wireless Paper', '802.11 b/g/n'],
+    ['Wireless Stick Lite (V3)', '802.11 b/g/n'],
+    ['Heltec Wireless Tracker V1.1', '802.11 b/g/n'],
+    ['Heltec Capsule Sensor V3', '802.11 b/g/n'],
+    ['Heltec Vision Master E213', '802.11 b/g/n'],
+    ['Heltec Vision Master E290', '802.11 b/g/n'],
+    ['Heltec Vision Master T190', '802.11 b/g/n'],
+    ['Heltec WiFi LoRa 32 V4.3.1', '802.11 b/g/n'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', '802.11 b/g/n'],
+    ['Heltec HT-CT62', '802.11 b/g/n'],
+    ['Heltec Wireless Stick V3', '802.11 b/g/n'],
+    ['Heltec Wireless Shell V3', '802.11 b/g/n'],
+    ['Heltec Wireless Tracker V2', '802.11 b/g/n'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', '802.11 b/g/n'],
+    ['Heltec SensorHub HRI-3621', '802.11 b/g/n'],
+    ['Heltec Wireless Bridge', '802.11 b/g/n'],
+    ['T-Deck', '802.11 b/g/n'],
+    ['T-Beam', '802.11 b/g/n'],
+    ['T-Beam Supreme', '802.11 b/g/n'],
+    ['T3-S3', '802.11 b/g/n'],
+    ['T5 E-Paper S3 Pro', '802.11 b/g/n'],
+    ['T3-S3 E-Paper', '802.11 b/g/n'],
+    ['T-LoRa Pager', '802.11 b/g/n'],
+    ['T-Deck Pro', '802.11 b/g/n'],
+    ['T-Deck Plus', '802.11 b/g/n'],
+    ['T-Watch S3', '802.11 b/g/n'],
+    ['Station G2', '802.11 b/g/n'],
+    ['ThinkNode M2', '802.11 b/g/n'],
+    ['ThinkNode M5', '802.11 b/g/n'],
+    ['ThinkNode M7', '802.11 b/g/n'],
+    ['HELTXT', '802.11 b/g/n']
+  ]);
+
+  const displaySizes = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '0.96 in, 128×64'],
+    ['Heltec WiFi LoRa 32 V3.2', '0.96 in, 128×64'],
+    ['Heltec Wireless Paper', '2.13 in, 250×122'],
+    ['Heltec Wireless Tracker V1.1', '0.96 in, 128×64'],
+    ['Heltec Vision Master E213', '2.13 in, 250×122'],
+    ['Heltec Vision Master E290', '2.9 in, 296×128'],
+    ['Heltec Vision Master T190', '1.9 in, 170×320'],
+    ['Heltec Mesh Node T114', '1.14 in, 135×240'],
+    ['Heltec WiFi LoRa 32 V4.3.1', '0.96 in, 128×64'],
+    ['Heltec MeshPocket', '2.13 in'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', '320×240'],
+    ['Heltec Wireless Stick V3', '0.49 in, 64×32'],
+    ['Heltec Mesh Node T1', '0.96 in'],
+    ['Heltec Wireless Tracker V2', '0.96 in, 160×80'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', '2.8 in, 320×240'],
+    ['WisMesh Pocket V2', '1.3 in, 128×64'],
+    ['T-Deck', '2.8 in, 320×240'],
+    ['T-Echo', '1.54 in, 200×200'],
+    ['T-Beam', '0.96 in, 128×64'],
+    ['T-Beam Supreme', '1.3 in, 128×64'],
+    ['T3-S3', '0.96 in, 128×64'],
+    ['T5 E-Paper S3 Pro', '4.7 in, 960×540'],
+    ['T3-S3 E-Paper', '2.13 in, 250×122'],
+    ['T-LoRa Pager', '2.33 in, 480×222'],
+    ['T-Deck Pro', '3.1 in, 320×240'],
+    ['T-Deck Plus', '2.8 in, 320×240'],
+    ['T-Watch S3', '1.54 in, 240×240'],
+    ['T-Echo Plus', '1.54 in, 200×200'],
+    ['Station G2', '1.3 in, 128×64'],
+    ['Nano G2 Ultra', '1.3 in, 128×64'],
+    ['ThinkNode M1', '1.54 in, 200×200'],
+    ['ThinkNode M2', '1.3 in, 128×64'],
+    ['ThinkNode M5', '1.54 in, 200×200'],
+    ['HELTXT', '0.96 in, 128×64'],
+    ['nRF-TXT', '1.14 in, 135×240']
+  ]);
+
+  const txPowers = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '19 ± 1 dBm'],
+    ['Heltec WiFi LoRa 32 V3.2', '21 ± 1 dBm'],
+    ['Heltec Wireless Paper', '21 ± 1 dBm'],
+    ['Wireless Stick Lite (V3)', '21 ± 1 dBm'],
+    ['Heltec Wireless Tracker V1.1', '21 ± 1 dBm'],
+    ['Heltec Capsule Sensor V3', '21 ± 1 dBm'],
+    ['Heltec Vision Master E213', '21 ± 1 dBm'],
+    ['Heltec Vision Master E290', '21 ± 1 dBm'],
+    ['Heltec Vision Master T190', '21 ± 1 dBm'],
+    ['Heltec Mesh Node T114', '21 ± 1 dBm'],
+    ['Heltec WiFi LoRa 32 V4.3.1', '22 / 28 dBm'],
+    ['Heltec MeshPocket', '22 dBm'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', '21 / 28 dBm'],
+    ['Heltec HT-CT62', '21 ± 1 dBm'],
+    ['Heltec Mesh Node T096', '28 ± 1 dBm'],
+    ['Heltec Wireless Stick V3', '21 ± 1 dBm'],
+    ['Heltec Mesh Node T1', '21 ± 1 dBm'],
+    ['Heltec Wireless Shell V3', '21 ± 1 dBm'],
+    ['Heltec Wireless Tracker V2', '28 ± 1 dBm'],
+    ['Heltec MeshTower V2', '22 / 30 dBm'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', '21 / 28 dBm'],
+    ['Heltec MeshSolar', '21 ± 1 dBm'],
+    ['Heltec HT-N5262M', '22 dBm'],
+    ['Heltec SensorHub HRI-3621', '20 ± 2 dBm'],
+    ['Heltec Wireless Bridge', '18 ± 1 dBm'],
+    ['WisBlock Starter Kit RAK4631 + RAK19003', '22 ± 1 dBm'],
+    ['WisBlock Starter Kit RAK4631 + RAK19007', '22 ± 1 dBm'],
+    ['WisMesh Pocket V2', '22 ± 1 dBm'],
+    ['T-Deck', '22 ± 1 dBm'],
+    ['T-Echo', '22 ± 1 dBm'],
+    ['T-Beam', '20 dBm'],
+    ['T-Beam Supreme', '11.5 / 22 dBm'],
+    ['T3-S3', '12.5 / 20 / 22 dBm'],
+    ['T5 E-Paper S3 Pro', '22 dBm'],
+    ['T3-S3 E-Paper', '12.5 / 20 / 22 dBm'],
+    ['T-LoRa Pager', '11.5 / 12.5 / 22 dBm'],
+    ['T-Deck Pro', '22 dBm'],
+    ['T-Deck Plus', '22 dBm'],
+    ['T-Watch S3', '12.5 / 22 dBm'],
+    ['T-Echo Plus', '22 dBm'],
+    ['Station G2', '36.5 / 37 dBm'],
+    ['Nano G2 Ultra', '22 ± 1 dBm'],
+    ['SenseCAP Card Tracker T1000-E', '20 ± 1 dBm'],
+    ['Wio Tracker 1110 Dev Board', '20 ± 1 dBm'],
+    ['ThinkNode M1', '22 dBm'],
+    ['ThinkNode M2', '22 dBm'],
+    ['ThinkNode M3', '20 dBm'],
+    ['ThinkNode M4', '22 dBm'],
+    ['ThinkNode M5', '22 dBm'],
+    ['ThinkNode M6', '22 dBm'],
+    ['ThinkNode M7', '22 dBm'],
+    ['HELTXT', '21 ± 1 dBm'],
+    ['nRF-TXT', '21 ± 1 dBm']
+  ]);
+
+  const rxSensitivities = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '-148 dBm'],
+    ['Heltec WiFi LoRa 32 V3.2', '-136 dBm'],
+    ['Heltec Wireless Paper', '-134 dBm'],
+    ['Wireless Stick Lite (V3)', '-134 dBm'],
+    ['Heltec Wireless Tracker V1.1', '-137 dBm'],
+    ['Heltec Capsule Sensor V3', '-135 dBm'],
+    ['Heltec Vision Master E213', '-136 dBm'],
+    ['Heltec Vision Master E290', '-136 dBm'],
+    ['Heltec Vision Master T190', '-136 dBm'],
+    ['Heltec Mesh Node T114', '-135 dBm'],
+    ['Heltec WiFi LoRa 32 V4.3.1', '-148 dBm'],
+    ['Heltec MeshPocket', '-148 dBm'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', '-148 dBm'],
+    ['Heltec HT-CT62', '-134 dBm'],
+    ['Heltec Mesh Node T096', '-148 dBm'],
+    ['Heltec Wireless Stick V3', '-134 dBm'],
+    ['Heltec Mesh Node T1', '-148 dBm'],
+    ['Heltec Wireless Shell V3', '-139 dBm'],
+    ['Heltec Wireless Tracker V2', '-134 dBm'],
+    ['Heltec MeshTower V2', '-148 dBm'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', '-148 dBm'],
+    ['Heltec MeshSolar', '-148 dBm'],
+    ['Heltec HT-N5262M', '-148 dBm'],
+    ['Heltec SensorHub HRI-3621', '-136 dBm'],
+    ['Heltec Wireless Bridge', '-135 dBm'],
+    ['WisBlock Starter Kit RAK4631 + RAK19003', '-136 dBm'],
+    ['WisBlock Starter Kit RAK4631 + RAK19007', '-136 dBm'],
+    ['WisMesh Pocket V2', '-136 dBm'],
+    ['T-Deck', '-136 dBm'],
+    ['T-Echo', '-136 dBm'],
+    ['T-Beam', '-148 dBm'],
+    ['T-Beam Supreme', '-148 / -144 dBm'],
+    ['T3-S3', '-148 / -132 dBm'],
+    ['T5 E-Paper S3 Pro', '-148 dBm'],
+    ['T3-S3 E-Paper', '-148 / -132 dBm'],
+    ['T-LoRa Pager', '-148 / -144 / -132 dBm'],
+    ['T-Deck Pro', '-148 dBm'],
+    ['T-Deck Plus', '-148 dBm'],
+    ['T-Watch S3', '-148 / -132 dBm'],
+    ['T-Echo Plus', '-139 dBm'],
+    ['Station G2', '-148 dBm'],
+    ['Nano G2 Ultra', '-148 dBm'],
+    ['SenseCAP Card Tracker T1000-E', '-141 dBm'],
+    ['Wio Tracker 1110 Dev Board', '-141 dBm'],
+    ['ThinkNode M1', '-148 dBm'],
+    ['ThinkNode M2', '-148 dBm'],
+    ['ThinkNode M3', '-140 dBm'],
+    ['ThinkNode M4', '-144 dBm'],
+    ['ThinkNode M5', '-148 dBm'],
+    ['ThinkNode M6', '-148 dBm'],
+    ['ThinkNode M7', '-144 dBm'],
+    ['HELTXT', '-136 dBm'],
+    ['nRF-TXT', '-135 dBm']
+  ]);
+
+  headers.slice(1).forEach((header, index) => {
+    const column = index + 1;
+    const device = header.textContent.trim();
+    const battery = batteries.get(device) || '-';
+    const gps = gpsCapabilities.get(device) || '-';
+    const notification = notifications.get(device) || '-';
+    const notificationTypes = [];
+    if (/LED/i.test(notification)) notificationTypes.push('LED');
+    if (/buzzer/i.test(notification)) notificationTypes.push('Buzzer');
+    if (/speaker/i.test(notification)) notificationTypes.push('Speaker');
+    if (/vibration/i.test(notification)) notificationTypes.push('Vibration');
+    if (/emergency light/i.test(notification)) notificationTypes.push('Emergency');
+    gpsRow.cells[column].textContent = gps;
+    header.dataset.gps = gps === '-' ? 'No' : /optional/i.test(gps) ? 'Optional' : 'Yes';
+    batteryRow.cells[column].textContent = battery;
+    const chargingInterface = chargingInterfaceRow.cells[column].textContent.trim();
+    const chargingInterfaces = [];
+    if (/USB-C|Type-C/i.test(chargingInterface)) chargingInterfaces.push('USB-C');
+    if (/Micro[\s-]?USB/i.test(chargingInterface)) chargingInterfaces.push('Micro-USB');
+    if (/Magnetic 2-pin/i.test(chargingInterface)) chargingInterfaces.push('Magnetic 2-pin');
+    else if (/Magnetic/i.test(chargingInterface)) chargingInterfaces.push('Magnetic');
+    if (/\bPogo pins?\b/i.test(chargingInterface)) chargingInterfaces.push('Pogo pins');
+    if (/Solar|MPPT/i.test(chargingInterface)) chargingInterfaces.push('Solar');
+    if (/\b\d+\s*[–-]\s*\d+\s*V DC\b/i.test(chargingInterface)) chargingInterfaces.push('DC');
+    if (/\bPoE\b|802\.3af/i.test(chargingInterface)) chargingInterfaces.push('PoE');
+    if (/Qi2|Wireless (?:charging|output)/i.test(chargingInterface)) chargingInterfaces.push('Wireless');
+    chargingInterfaceRow.cells[column].textContent = chargingInterfaces.join(', ') || '-';
+    loraRow.cells[column].textContent = loraChips.get(device);
+    frequencyRow.cells[column].textContent = frequencies.get(device);
+    txPowerRow.cells[column].textContent = txPowers.get(device);
+    rxSensitivityRow.cells[column].textContent = rxSensitivities.get(device);
+    wifiRow.cells[column].textContent = wifiProtocols.get(device) || '-';
+    displaySizeRow.cells[column].textContent = displaySizes.get(device)?.match(/^\d+(?:\.\d+)? in/)?.[0] || '-';
+    const originalDisplayType = device === 'Heltec Wireless Tracker V2'
+      ? 'LCD'
+      : displayTypeRow.cells[column].textContent.trim();
+    const optionalDisplay = /optional|no-display/i.test(originalDisplayType);
+    let displayType = '-';
+    if (/OLED/i.test(originalDisplayType)) displayType = 'OLED';
+    else if (/E-paper|E-?ink/i.test(originalDisplayType)) displayType = 'E-Ink';
+    else if (/TFT|LCD/i.test(originalDisplayType)) displayType = 'LCD';
+    const backlitEpaper = backlitEpaperDevices.has(device);
+    if (displayType === 'E-Ink' && backlitEpaper) displayType = 'E-Ink(Backlit)';
+    displayTypeRow.cells[column].textContent = displayType === '-' || !optionalDisplay
+      ? displayType
+      : `${displayType} (optional)`;
+    header.dataset.backlitEpaper = backlitEpaper ? 'Yes' : 'No';
+    imuRow.cells[column].textContent = imuCapabilities.get(device) || '-';
+    magnetometerRow.cells[column].textContent = magnetometerCapabilities.get(device) || '-';
+    notificationRow.cells[column].textContent = notification;
+    inputRow.cells[column].textContent = inputs.get(device) || '-';
+    connectorRow.cells[column].textContent = connectors.get(device) || '-';
+    if (device === 'Heltec SensorHub HRI-3621') {
+      bluetoothRow.cells[column].textContent = 'LE (version not specified)';
+    }
+    if (header.dataset.brand === 'Heltec') {
+      header.dataset.meshtastic = 'Yes';
+      meshtasticRow.cells[column].textContent = 'Yes';
+    }
+
+    const environmentValues = [
+      tempHumidityRow.cells[column].textContent.trim(),
+      airPressureRow.cells[column].textContent.trim(),
+      airQualityRow.cells[column].textContent.trim()
+    ];
+    const hasEnvironmentValue = value => !/^(?:-|No|None|N\/?A|Not specified|Unknown|Unavailable|\?|External sensor support)$/i.test(value);
+    const environmentTypes = [];
+    if (hasEnvironmentValue(environmentValues[0])) environmentTypes.push('TempHumidity');
+    if (hasEnvironmentValue(environmentValues[1])) environmentTypes.push('Pressure');
+    if (hasEnvironmentValue(environmentValues[2])) environmentTypes.push('AirQuality');
+    header.dataset.environment = environmentTypes.join(' ');
+
+    const environmentCapabilities = [];
+    if (environmentTypes.includes('TempHumidity')) environmentCapabilities.push('Temperature', 'humidity');
+    if (environmentTypes.includes('Pressure')) environmentCapabilities.push('pressure');
+    if (environmentTypes.includes('AirQuality')) environmentCapabilities.push('air quality');
+    const optionalEnvironment = environmentValues.filter(hasEnvironmentValue).some(value => /optional/i.test(value));
+    tempHumidityRow.cells[column].textContent = environmentCapabilities.length
+      ? `${environmentCapabilities.join(', ')}${optionalEnvironment ? ' (optional)' : ''}`
+      : '-';
+    const verifiedEnvironment = verifiedEnvironmentalCapabilities.get(device);
+    if (verifiedEnvironment) {
+      header.dataset.environment = verifiedEnvironment.types.join(' ');
+      tempHumidityRow.cells[column].textContent = verifiedEnvironment.value;
+    }
+    header.dataset.battery = battery === '-' ? 'No' : 'Yes';
+    header.dataset.notification = notificationTypes.join(' ');
+  });
+
+  connectorRow.cells[0].textContent = 'Expansion Connector';
+  tempHumidityRow.cells[0].textContent = 'Environmental Sensors';
+  airPressureRow.remove();
+  airQualityRow.remove();
+  uartRow.remove();
+
+  const verifiedValues = new Map([
+    ['Max. TX Power', new Map([
+      ['Heltec HT-CT62', '21 ± 1 dBm'],
+      ['Heltec Wireless Shell V3', '21 ± 1 dBm']
+    ])],
+    ['Max. Receiving Sensitivity', new Map([
+      ['Heltec HT-CT62', '-134 dBm'],
+      ['Heltec Wireless Shell V3', '-139 dBm']
+    ])],
+    ['Enclosure', new Map([
+      ['Heltec WiFi LoRa 32 V4.3.1', 'Screen cover only'],
+      ['WisMesh Pocket V2', 'Included']
+    ])]
+  ]);
+
+  verifiedValues.forEach((deviceValues, rowLabel) => {
+    const row = rows.get(rowLabel);
+    deviceValues.forEach((value, device) => {
+      const column = headers.findIndex(header => header.textContent.trim() === device);
+      if (row && column > 0) row.cells[column].textContent = value;
+    });
+  });
+
+  Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+    Array.from(row.cells).slice(1).forEach(cell => {
+      const originalValue = cell.textContent.trim();
+      let value = originalValue
+        .replace(/^LE \(version not specified\)$/i, 'LE')
+        .replace(/^OLED or no-display variant$/i, 'OLED (optional)')
+        .replace(/^OLED \(not supported by Meshtastic display mode\)$/i, 'OLED')
+        .replace(/^IPS LCD \(ST7789; no touchscreen\)$/i, 'IPS LCD (ST7789)')
+        .replace(/^Scan only \(positioning; no network connection\)$/i, 'Positioning scans only')
+        .replace(/^Screen cover only; otherwise not included$/i, 'Screen cover only');
+
+      const isEmptyValue = /^(?:No|None|N\/?A(?:\s*\(.*\))?|Not included|Not specified(?:\s*\(.*\))?|Unknown|Unavailable|\?|not public)$/i.test(value);
+      const hasUnspecifiedPart = /\b(?:part|version) not specified\b/i.test(value);
+      const isModuleSupplyNote = /^3\.3 V module supply; no onboard charger$/i.test(value);
+      const normalizedValue = isEmptyValue || hasUnspecifiedPart || isModuleSupplyNote ? '-' : value;
+      if (normalizedValue !== originalValue) cell.textContent = normalizedValue;
+    });
+  });
+}
+
+normalizeDeviceDetails();
+
+const filterSelector = '.mcuFilter, .loraFilter, .frequencyFilter, .gpsFilter, .screenFilter, .wifiFilter, .inputFilter, .powerFilter, .sensorFilter, .motionFilter, .portFilter, .storageFilter, .txPowerFilter, .priceFilter, .brandFilter, .caseFilter, .batteryFilter, .notificationFilter, .meshtasticFilter, .readyFilter';
+const filterGroupClasses = [
+  'mcuFilter', 'loraFilter', 'frequencyFilter', 'gpsFilter', 'screenFilter',
+  'wifiFilter', 'inputFilter', 'powerFilter', 'sensorFilter',
+  'motionFilter', 'portFilter', 'storageFilter', 'txPowerFilter', 'priceFilter',
+  'brandFilter', 'caseFilter', 'batteryFilter', 'notificationFilter',
+  'meshtasticFilter', 'readyFilter'
+];
+
+function prepareFilterOptions() {
+  document.querySelectorAll(filterSelector).forEach(filter => {
+    if (filter.closest('.filter-option')) return;
+    const parent = filter.parentNode;
+    const wrapper = document.createElement('span');
+    wrapper.className = 'filter-option';
+    parent.insertBefore(wrapper, filter);
+
+    let node = filter;
+    while (node && node.nodeName !== 'BR') {
+      const next = node.nextSibling;
+      wrapper.appendChild(node);
+      node = next;
+    }
+    if (node?.nodeName === 'BR') node.remove();
+  });
+}
+
+prepareFilterOptions();
+
+document.querySelectorAll(filterSelector).forEach(filter => {
   filter.addEventListener('change', filterTable);
 });
 
@@ -1918,10 +2747,10 @@ function filterTable() {
   const gpsFilters = Array.from(document.querySelectorAll('.gpsFilter:checked')).map(cb => cb.value);
   const screenFilters = Array.from(document.querySelectorAll('.screenFilter:checked')).map(cb => cb.value);
   const wifiFilters = Array.from(document.querySelectorAll('.wifiFilter:checked')).map(cb => cb.value);
-  const bluetoothFilters = Array.from(document.querySelectorAll('.bluetoothFilter:checked')).map(cb => cb.value);
   const inputFilters = Array.from(document.querySelectorAll('.inputFilter:checked')).map(cb => cb.value);
   const powerFilters = Array.from(document.querySelectorAll('.powerFilter:checked')).map(cb => cb.value);
   const sensorFilters = Array.from(document.querySelectorAll('.sensorFilter:checked')).map(cb => cb.value);
+  const motionFilters = Array.from(document.querySelectorAll('.motionFilter:checked')).map(cb => cb.value);
   const portFilters = Array.from(document.querySelectorAll('.portFilter:checked')).map(cb => cb.value);
   const storageFilters = Array.from(document.querySelectorAll('.storageFilter:checked')).map(cb => cb.value);
   const txPowerFilters = Array.from(document.querySelectorAll('.txPowerFilter:checked')).map(cb => cb.value);
@@ -1929,8 +2758,23 @@ function filterTable() {
   const brandFilters = Array.from(document.querySelectorAll('.brandFilter:checked')).map(cb => cb.value);
   const caseFilters = Array.from(document.querySelectorAll('.caseFilter:checked')).map(cb => cb.value);
   const batteryFilters = Array.from(document.querySelectorAll('.batteryFilter:checked')).map(cb => cb.value);
+  const notificationFilters = Array.from(document.querySelectorAll('.notificationFilter:checked')).map(cb => cb.value);
   const meshtasticFilters = Array.from(document.querySelectorAll('.meshtasticFilter:checked')).map(cb => cb.value);
   const readyFilters = Array.from(document.querySelectorAll('.readyFilter:checked')).map(cb => cb.value);
+
+  const filterGroups = new Map([
+    ['mcuFilter', mcuFilters], ['loraFilter', loraFilters],
+    ['frequencyFilter', frequencyFilters], ['gpsFilter', gpsFilters],
+    ['screenFilter', screenFilters], ['wifiFilter', wifiFilters],
+    ['inputFilter', inputFilters],
+    ['powerFilter', powerFilters], ['sensorFilter', sensorFilters],
+    ['motionFilter', motionFilters], ['portFilter', portFilters],
+    ['storageFilter', storageFilters], ['txPowerFilter', txPowerFilters],
+    ['priceFilter', priceFilters], ['brandFilter', brandFilters],
+    ['caseFilter', caseFilters], ['batteryFilter', batteryFilters],
+    ['notificationFilter', notificationFilters],
+    ['meshtasticFilter', meshtasticFilters], ['readyFilter', readyFilters]
+  ]);
 
   const columns = document.querySelectorAll('#comparisonTable thead th');
   const rows = document.querySelectorAll('#comparisonTable tbody tr');
@@ -1955,21 +2799,99 @@ function filterTable() {
   function getPowerFeatures(value) {
     const features = [];
     if (/USB-C|Type-C/i.test(value)) features.push('USB-C');
-    if (/Micro[\s-]?USB/i.test(value)) features.push('Micro USB');
-    if (/Magnetic|Pogo/i.test(value)) features.push('Magnetic');
+    if (/Micro[\s-]?USB/i.test(value)) features.push('Micro-USB');
+    if (/Magnetic 2-pin/i.test(value)) features.push('Magnetic2Pin');
+    else if (/Magnetic/i.test(value)) features.push('Magnetic');
+    if (/\bPogo pins?\b/i.test(value)) features.push('Pogo');
     if (/Solar|MPPT/i.test(value)) features.push('Solar');
+    if (/\bDC\b/i.test(value)) features.push('DC');
     if (/\bPoE\b|802\.3af/i.test(value)) features.push('PoE');
-    if (/Wireless charging|Wireless output/i.test(value)) features.push('Wireless');
+    if (/\bWireless\b/i.test(value)) features.push('Wireless');
     return features;
   }
 
-  function getTxPowerTier(value) {
-    const match = value.match(/(\d+(?:\.\d+)?)\s*(?:±\s*\d+(?:\.\d+)?)?\s*dB(?:m)?/i);
-    if (!match) return 'Unknown';
-    const txPower = Number(match[1]);
-    if (txPower < 20) return 'Under20';
-    if (txPower <= 22) return '20to22';
-    return 'Over22';
+  function getLoRaFeatures(value) {
+    const features = [];
+    ['SX1276', 'SX1278', 'SX1262', 'SX1280', 'LR1110', 'LR1121'].forEach(chip => {
+      if (value.includes(chip)) features.push(chip);
+    });
+    return features;
+  }
+
+  function getScreenFeatures(value, listedFeatures) {
+    const features = [...listedFeatures];
+    if (/E-paper|E-?Ink/i.test(value)) features.push('Eink');
+    if (/OLED/i.test(value)) features.push('OLED');
+    if (/TFT|LCD/i.test(value)) features.push('LCD');
+    if (/^(?:-|No)$/i.test(value) || /no-display|optional/i.test(value)) features.push('None');
+    return [...new Set(features)];
+  }
+
+  function getInputFeatures(value) {
+    const features = [];
+    if (/Touchscreen/i.test(value)) features.push('Touchscreen');
+    if (/Touch button/i.test(value)) features.push('TouchButton');
+    if (/Keyboard/i.test(value)) features.push('Keyboard');
+    if (/User button|User controls/i.test(value)) features.push('User');
+    if (value === '-') features.push('None');
+    return features;
+  }
+
+  function getMotionFeatures(imu, magnetometer) {
+    const features = [];
+    if (/accelerometer/i.test(imu)) features.push('Accelerometer');
+    if (/gyroscope/i.test(imu)) features.push('Gyroscope');
+    if (hasListedValue(magnetometer)) features.push('Magnetometer');
+    if (/optional/i.test(`${imu} ${magnetometer}`)) features.push('Optional');
+    return features;
+  }
+
+  function getGpsFeatures(value) {
+    if (/^(?:-|No)$/i.test(value)) return ['None'];
+    const features = [];
+    ['GPS', 'GLONASS', 'BeiDou', 'Galileo', 'QZSS', 'NavIC'].forEach(system => {
+      if (value.includes(system)) features.push(system);
+    });
+    if (/optional/i.test(value)) features.push('Optional');
+    return features;
+  }
+
+  function getWifiAvailability(value) {
+    return /^(?:-|No)$/i.test(value) ? 'No' : 'Yes';
+  }
+
+  function getTxPowerTiers(value) {
+    const cleaned = value.replace(/±\s*\d+(?:\.\d+)?/g, '');
+    const powers = Array.from(cleaned.matchAll(/(\d+(?:\.\d+)?)\s*(?=dBm|\/)/gi))
+      .map(match => Number(match[1]));
+    if (powers.length === 0) return ['Unknown'];
+    return [...new Set(powers.map(txPower => {
+      if (txPower < 20) return 'Under20';
+      if (txPower <= 22) return '20to22';
+      return 'Over22';
+    }))];
+  }
+
+  function getBatteryCapacities(value) {
+    if (!hasListedValue(value)) return [];
+    const capacityText = value.split(/mAh/i)[0];
+    const capacities = Array.from(capacityText.matchAll(/\d+(?:\.\d+)?/g))
+      .map(match => Number(match[0]));
+    if ((capacityText.includes('\u00D7') || /x/i.test(capacityText)) && capacities.length >= 2) {
+      return [capacities[0] * capacities[1]];
+    }
+    return capacities;
+  }
+
+  function getBatteryRange(capacity) {
+    if (capacity <= 500) return 'UpTo500';
+    if (capacity <= 1000) return '501to1000';
+    if (capacity <= 1500) return '1001to1500';
+    if (capacity <= 2000) return '1501to2000';
+    if (capacity <= 3000) return '2001to3000';
+    if (capacity <= 5000) return '3001to5000';
+    if (capacity <= 8000) return '5001to8000';
+    return 'Over8000';
   }
 
   function getPriceRange(price) {
@@ -1981,52 +2903,58 @@ function filterTable() {
 
   function shouldDisplayColumn(column) {
     const mcu = column.getAttribute('data-mcu');
-    const lora = column.getAttribute('data-lora').split(' '); // Split LoRa chips into an array
+    const lora = getLoRaFeatures(getCellText('LoRa Chip', column));
     const frequency = getCellText('Frequency', column);
-    const gps = column.getAttribute('data-gps');
-    const screen = column.getAttribute('data-screen').split(' ');
-    const wifi = column.getAttribute('data-wifi');
-    const bluetooth = hasListedValue(getCellText('Bluetooth', column)) ? 'Yes' : 'No';
-    const input = column.getAttribute('data-input').split(', ');
+    const gps = getGpsFeatures(getCellText('GPS/GNSS', column));
+    const screen = getScreenFeatures(getCellText('Display Type', column), column.getAttribute('data-screen').split(' '));
+    if (column.getAttribute('data-backlit-epaper') === 'Yes') screen.push('BacklitEink');
+    const wifi = getWifiAvailability(getCellText('Wi-Fi', column));
+    const input = getInputFeatures(getCellText('Input', column));
     const powerFeatures = getPowerFeatures(getCellText('Charging Interface', column));
-    const sensorFeatures = [];
-    if (hasListedValue(getCellText('Temp/ Humidity Sensor', column))) sensorFeatures.push('TempHumidity');
-    if (hasListedValue(getCellText('Air Pressure Sensor', column))) sensorFeatures.push('Pressure');
-    if (hasListedValue(getCellText('Air Quality Sensor', column))) sensorFeatures.push('AirQuality');
+    const sensorFeatures = (column.getAttribute('data-environment') || '').split(' ').filter(Boolean);
+    const motionFeatures = getMotionFeatures(
+      getCellText('IMU', column),
+      getCellText('Magnetometer / Digital Compass', column)
+    );
+    const connectorText = getCellText('Expansion Connector', column);
     const portFeatures = [];
-    if (hasListedValue(getCellText('UART Port', column))) portFeatures.push('UART');
-    if (hasListedValue(getCellText('I2C Port', column))) portFeatures.push('I2C');
-    if (portFeatures.length === 0) portFeatures.push('None');
+    if (/\bQwiic\b/i.test(connectorText)) portFeatures.push('Qwiic');
+    if (/\bGrove\b/i.test(connectorText)) portFeatures.push('Grove');
+    if (/\bQuickLink\b/i.test(connectorText)) portFeatures.push('QuickLink');
     const storage = hasListedValue(getCellText('Storage Expansion', column)) ? 'Card' : 'NoCard';
-    const txPowerTier = getTxPowerTier(getCellText('Max. TX Power', column));
+    const txPowerTiers = getTxPowerTiers(getCellText('Max. TX Power', column));
     const price = parseFloat(column.getAttribute('data-price'));
     const brand = column.getAttribute('data-brand');
     const caseIncluded = column.getAttribute('data-case');
-    const batteryIncluded = column.getAttribute('data-battery');
+    const batteryCapacities = getBatteryCapacities(getCellText('Battery', column));
+    const notificationTypes = (column.getAttribute('data-notification') || '').split(' ');
     const meshtastic = column.getAttribute('data-meshtastic');
     const ready = column.getAttribute('data-ready');
 
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcu);
     const loraMatch = loraFilters.length === 0 || loraFilters.some(loraType => lora.includes(loraType)); // Updated to handle multiple LoRa chips
     const frequencyMatch = frequencyFilters.length === 0 || frequencyFilters.some(band => supportsFrequency(frequency, band));
-    const gpsMatch = gpsFilters.length === 0 || gpsFilters.includes(gps);
+    const gpsMatch = gpsFilters.length === 0 || gpsFilters.some(feature => gps.includes(feature));
     const screenMatch = screenFilters.length === 0 || screenFilters.some(screenType => screen.includes(screenType));
     const wifiMatch = wifiFilters.length === 0 || wifiFilters.includes(wifi);
-    const bluetoothMatch = bluetoothFilters.length === 0 || bluetoothFilters.includes(bluetooth);
     const inputMatch = inputFilters.length === 0 || inputFilters.some(inputType => input.includes(inputType));
     const powerMatch = powerFilters.length === 0 || powerFilters.some(feature => powerFeatures.includes(feature));
     const sensorMatch = sensorFilters.length === 0 || sensorFilters.some(feature => sensorFeatures.includes(feature));
+    const motionMatch = motionFilters.length === 0 || motionFilters.some(feature => motionFeatures.includes(feature));
     const portMatch = portFilters.length === 0 || portFilters.some(feature => portFeatures.includes(feature));
     const storageMatch = storageFilters.length === 0 || storageFilters.includes(storage);
-    const txPowerMatch = txPowerFilters.length === 0 || txPowerFilters.includes(txPowerTier);
+    const txPowerMatch = txPowerFilters.length === 0 || txPowerFilters.some(tier => txPowerTiers.includes(tier));
     const priceMatch = priceFilters.length === 0 || priceFilters.includes(getPriceRange(price));
     const brandMatch = brandFilters.length === 0 || brandFilters.includes(brand);
     const caseMatch = caseFilters.length === 0 || caseFilters.includes(caseIncluded);
-    const batteryMatch = batteryFilters.length === 0 || batteryFilters.includes(batteryIncluded);
+    const batteryMatch = batteryFilters.length === 0 || batteryFilters.some(range =>
+      batteryCapacities.some(capacity => getBatteryRange(capacity) === range)
+    );
+    const notificationMatch = notificationFilters.length === 0 || notificationFilters.some(type => notificationTypes.includes(type));
     const meshtasticMatch = meshtasticFilters.length === 0 || meshtasticFilters.includes(meshtastic);
     const readyMatch = readyFilters.length === 0 || readyFilters.includes(ready);
 
-    return mcuMatch && loraMatch && frequencyMatch && gpsMatch && screenMatch && wifiMatch && bluetoothMatch && inputMatch && powerMatch && sensorMatch && portMatch && storageMatch && txPowerMatch && priceMatch && brandMatch && caseMatch && batteryMatch && meshtasticMatch && readyMatch;
+    return mcuMatch && loraMatch && frequencyMatch && gpsMatch && screenMatch && wifiMatch && inputMatch && powerMatch && sensorMatch && motionMatch && portMatch && storageMatch && txPowerMatch && priceMatch && brandMatch && caseMatch && batteryMatch && notificationMatch && meshtasticMatch && readyMatch;
   }
 
   columns.forEach(column => {
@@ -2037,5 +2965,35 @@ function filterTable() {
       row.children[column.cellIndex].style.display = display;
     });
   });
+
+  const deviceColumns = Array.from(columns).filter(column => column.cellIndex > 0);
+  document.querySelectorAll(filterSelector).forEach(filter => {
+    const wrapper = filter.closest('.filter-option');
+    if (filter.checked) {
+      wrapper.style.display = '';
+      return;
+    }
+
+    const groupClass = filterGroupClasses.find(className => filter.classList.contains(className));
+    const selectedValues = filterGroups.get(groupClass);
+    const originalValues = selectedValues.slice();
+    selectedValues.splice(0, selectedValues.length, filter.value);
+    const isAvailable = deviceColumns.some(shouldDisplayColumn);
+    selectedValues.splice(0, selectedValues.length, ...originalValues);
+    wrapper.style.display = isAvailable ? '' : 'none';
+  });
+
+  filterGroupClasses.forEach(groupClass => {
+    const filters = Array.from(document.querySelectorAll(`.${groupClass}`));
+    if (filters.length === 0) return;
+    const optionsContainer = filters[0].closest('.filter-option')?.parentElement;
+    const filterSection = optionsContainer?.parentElement;
+    const hasVisibleOption = filters.some(filter =>
+      filter.closest('.filter-option')?.style.display !== 'none'
+    );
+    if (filterSection) filterSection.style.display = hasVisibleOption ? '' : 'none';
+  });
 }
+
+filterTable();
 </script>
