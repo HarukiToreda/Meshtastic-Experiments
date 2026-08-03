@@ -89,6 +89,15 @@ Specifications and prices checked against manufacturer documentation: **August 1
     </div>
   </div>
   <div style="margin-right: 20px;">
+    <label>Node Type:</label>
+    <div>
+      <input type="checkbox" class="nodeTypeFilter" value="Companion"> Companion Node<br>
+      <input type="checkbox" class="nodeTypeFilter" value="CompactCard"> Compact Card<br>
+      <input type="checkbox" class="nodeTypeFilter" value="StandaloneKeyboard"> Standalone Keyboard<br>
+      <input type="checkbox" class="nodeTypeFilter" value="InfrastructureSolar"> Infrastructure Solar<br>
+    </div>
+  </div>
+  <div style="margin-right: 20px;">
     <label>LoRa Chip:</label>
     <div>
       <input type="checkbox" class="loraFilter" value="SX1276"> SX1276<br>
@@ -3088,9 +3097,44 @@ function normalizeDeviceDetails() {
 
 normalizeDeviceDetails();
 
-const filterSelector = '.mcuFilter, .loraFilter, .frequencyFilter, .gpsFilter, .screenFilter, .wifiFilter, .inputFilter, .powerFilter, .sensorFilter, .motionFilter, .portFilter, .storageFilter, .txPowerFilter, .priceFilter, .brandFilter, .caseFilter, .batteryFilter, .notificationFilter, .meshtasticFilter, .readyFilter';
+function assignNodeTypes() {
+  const infrastructureDevices = new Set([
+    'Heltec MeshTower V2',
+    'Heltec MeshSolar',
+    'Station G2',
+    'ThinkNode M6',
+    'SenseCAP Solar Node P1',
+    'SenseCAP Solar Node P1-Pro'
+  ]);
+  const compactCardDevices = new Set([
+    'Heltec MeshPocket',
+    'Heltec Mesh Node T1',
+    'SenseCAP Card Tracker T1000-E',
+    'ThinkNode M3'
+  ]);
+  const table = document.querySelector('#comparisonTable');
+  const headers = Array.from(table.tHead.rows[0].cells);
+  const inputRow = Array.from(table.tBodies[0].rows).find(row =>
+    row.cells[0].textContent.trim() === 'Input'
+  );
+
+  headers.slice(1).forEach((header, index) => {
+    const device = header.textContent.trim();
+    const column = index + 1;
+    const nodeTypes = [];
+    if (infrastructureDevices.has(device)) nodeTypes.push('InfrastructureSolar');
+    else if (device !== 'ThinkNode M7') nodeTypes.push('Companion');
+    if (compactCardDevices.has(device)) nodeTypes.push('CompactCard');
+    if (/\bKeyboard\b/i.test(inputRow.cells[column].textContent)) nodeTypes.push('StandaloneKeyboard');
+    header.dataset.nodeType = nodeTypes.join(' ');
+  });
+}
+
+assignNodeTypes();
+
+const filterSelector = '.mcuFilter, .nodeTypeFilter, .loraFilter, .frequencyFilter, .gpsFilter, .screenFilter, .wifiFilter, .inputFilter, .powerFilter, .sensorFilter, .motionFilter, .portFilter, .storageFilter, .txPowerFilter, .priceFilter, .brandFilter, .caseFilter, .batteryFilter, .notificationFilter, .meshtasticFilter, .readyFilter';
 const filterGroupClasses = [
-  'mcuFilter', 'loraFilter', 'frequencyFilter', 'gpsFilter', 'screenFilter',
+  'mcuFilter', 'nodeTypeFilter', 'loraFilter', 'frequencyFilter', 'gpsFilter', 'screenFilter',
   'wifiFilter', 'inputFilter', 'powerFilter', 'sensorFilter',
   'motionFilter', 'portFilter', 'storageFilter', 'txPowerFilter', 'priceFilter',
   'brandFilter', 'caseFilter', 'batteryFilter', 'notificationFilter',
@@ -3123,6 +3167,7 @@ document.querySelectorAll(filterSelector).forEach(filter => {
 
 function filterTable() {
   const mcuFilters = Array.from(document.querySelectorAll('.mcuFilter:checked')).map(cb => cb.value);
+  const nodeTypeFilters = Array.from(document.querySelectorAll('.nodeTypeFilter:checked')).map(cb => cb.value);
   const loraFilters = Array.from(document.querySelectorAll('.loraFilter:checked')).map(cb => cb.value);
   const frequencyFilters = Array.from(document.querySelectorAll('.frequencyFilter:checked')).map(cb => cb.value);
   const gpsFilters = Array.from(document.querySelectorAll('.gpsFilter:checked')).map(cb => cb.value);
@@ -3144,7 +3189,8 @@ function filterTable() {
   const readyFilters = Array.from(document.querySelectorAll('.readyFilter:checked')).map(cb => cb.value);
 
   const filterGroups = new Map([
-    ['mcuFilter', mcuFilters], ['loraFilter', loraFilters],
+    ['mcuFilter', mcuFilters], ['nodeTypeFilter', nodeTypeFilters],
+    ['loraFilter', loraFilters],
     ['frequencyFilter', frequencyFilters], ['gpsFilter', gpsFilters],
     ['screenFilter', screenFilters], ['wifiFilter', wifiFilters],
     ['inputFilter', inputFilters],
@@ -3292,6 +3338,7 @@ function filterTable() {
 
   function shouldDisplayColumn(column) {
     const mcu = column.getAttribute('data-mcu');
+    const nodeTypes = (column.getAttribute('data-node-type') || '').split(' ').filter(Boolean);
     const lora = getLoRaFeatures(getCellText('LoRa Chip', column));
     const frequency = getCellText('Frequency', column);
     const gps = getGpsFeatures(getCellText('GPS/GNSS', column));
@@ -3321,6 +3368,7 @@ function filterTable() {
     const ready = column.getAttribute('data-ready');
 
     const mcuMatch = mcuFilters.length === 0 || mcuFilters.includes(mcu);
+    const nodeTypeMatch = nodeTypeFilters.length === 0 || nodeTypeFilters.some(type => nodeTypes.includes(type));
     const loraMatch = loraFilters.length === 0 || loraFilters.some(loraType => lora.includes(loraType)); // Updated to handle multiple LoRa chips
     const frequencyMatch = frequencyFilters.length === 0 || frequencyFilters.some(band => supportsFrequency(frequency, band));
     const gpsMatch = gpsFilters.length === 0 || gpsFilters.some(feature => gps.includes(feature));
@@ -3343,7 +3391,7 @@ function filterTable() {
     const meshtasticMatch = meshtasticFilters.length === 0 || meshtasticFilters.includes(meshtastic);
     const readyMatch = readyFilters.length === 0 || readyFilters.includes(ready);
 
-    return mcuMatch && loraMatch && frequencyMatch && gpsMatch && screenMatch && wifiMatch && inputMatch && powerMatch && sensorMatch && motionMatch && portMatch && storageMatch && txPowerMatch && priceMatch && brandMatch && caseMatch && batteryMatch && notificationMatch && meshtasticMatch && readyMatch;
+    return mcuMatch && nodeTypeMatch && loraMatch && frequencyMatch && gpsMatch && screenMatch && wifiMatch && inputMatch && powerMatch && sensorMatch && motionMatch && portMatch && storageMatch && txPowerMatch && priceMatch && brandMatch && caseMatch && batteryMatch && notificationMatch && meshtasticMatch && readyMatch;
   }
 
   columns.forEach(column => {
