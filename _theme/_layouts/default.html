@@ -15,7 +15,7 @@
       color: #ffffff; /* White text */
       min-height: 100vh;
       margin: 0;
-      overflow-x: hidden;
+      overflow-x: auto; /* Allow wide pages to scroll horizontally */
     }
     .main-container {
       display: flex;
@@ -34,6 +34,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      z-index: 1000;
     }
     .sidebar.hidden {
       transform: translateX(-220px);
@@ -50,18 +51,14 @@
       justify-content: center;
       font-size: 18px;
       line-height: 1;
-      position: fixed;
-      left: 220px; /* Positioned at the right edge of the sidebar */
+      position: absolute;
+      left: 100%; /* Keep the toggle attached to the sidebar */
       top: 0;
-      transition: left 0.3s ease;
-    }
-    .sidebar.hidden ~ .toggle-button {
-      left: 0; /* Move the button to the edge of the page */
     }
     .toggle-button::after {
       content: '❮'; /* Left arrow */
     }
-    .sidebar.hidden ~ .toggle-button::after {
+    .sidebar.hidden .toggle-button::after {
       content: '❯'; /* Right arrow */
     }
     .sidebar h1 {
@@ -83,8 +80,6 @@
       transition: margin-left 0.3s ease;
       position: relative; /* Ensures child elements can use absolute positioning */
       overflow: visible; /* Prevents clipping of hover elements */
-      min-width: 0; /* Keep wide tables from stretching the full page */
-      overflow-wrap: anywhere;
     }
     .sidebar.hidden ~ .content {
       margin-left: 20px; /* Adjust content margin when sidebar is hidden */
@@ -329,8 +324,8 @@
       <a class="bmc-button" href="https://www.buymeacoffee.com/HarukiToreda">
         <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=HarukiToreda&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="width: 100%; box-sizing: border-box;" />
       </a>
+      <button class="toggle-button" onclick="toggleSidebar()"></button>
     </div>
-    <button class="toggle-button" onclick="toggleSidebar()"></button>
     <div class="content">
       <!-- Edit Button -->
       <div class="edit-button">
@@ -351,13 +346,10 @@
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
       const content = document.querySelector('.content');
-      const toggleButton = document.querySelector('.toggle-button');
       sidebar.classList.toggle('hidden');
       if (sidebar.classList.contains('hidden')) {
-        toggleButton.style.left = '0';
         content.style.marginLeft = '15px';
       } else {
-        toggleButton.style.left = '220px';
         content.style.marginLeft = '240px';
       }
     }
