@@ -8,6 +8,10 @@ title: LoRa Boards Comparison Table
 Specifications and prices checked against manufacturer documentation: **August 1–2, 2026**.
 
 <style>
+  .content {
+    min-width: 0;
+  }
+
   .comparison-table-scroll {
     overflow: visible;
     position: relative;
@@ -49,14 +53,34 @@ Specifications and prices checked against manufacturer documentation: **August 1
     z-index: 4;
   }
 
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(145px, 100%), 1fr));
+    gap: 16px 20px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .filter-grid > div {
+    min-width: 0;
+    margin-right: 0 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .filter-grid label,
   .filter-option {
     display: block;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 </style>
 
 ## Filter Boards
 
-<div style="display: flex; flex-wrap: wrap;">
+<div class="filter-grid">
   <div style="margin-right: 20px;">
     <label>MCU Chip:</label>
     <div>
