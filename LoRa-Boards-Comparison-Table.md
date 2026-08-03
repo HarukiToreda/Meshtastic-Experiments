@@ -73,6 +73,7 @@ Specifications and prices checked against manufacturer documentation: **August 1
       <input type="checkbox" class="loraFilter" value="SX1280"> SX1280<br>
       <input type="checkbox" class="loraFilter" value="LR1110"> LR1110<br>
       <input type="checkbox" class="loraFilter" value="LR1121"> LR1121<br>
+      <input type="checkbox" class="loraFilter" value="LR2021"> LR2021<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -121,7 +122,14 @@ Specifications and prices checked against manufacturer documentation: **August 1
       <input type="checkbox" class="inputFilter" value="TouchButton"> Touch button<br>
       <input type="checkbox" class="inputFilter" value="Keyboard"> Keyboard<br>
       <input type="checkbox" class="inputFilter" value="User"> User Button<br>
-      <input type="checkbox" class="inputFilter" value="None"> None<br>
+      <input type="checkbox" class="inputFilter" value="Reset"> Reset button<br>
+      <input type="checkbox" class="inputFilter" value="Power"> Power button<br>
+      <input type="checkbox" class="inputFilter" value="Boot"> Boot button<br>
+      <input type="checkbox" class="inputFilter" value="Third"> 3rd button<br>
+      <input type="checkbox" class="inputFilter" value="Joystick"> Joystick<br>
+      <input type="checkbox" class="inputFilter" value="Encoder"> Encoder<br>
+      <input type="checkbox" class="inputFilter" value="Knob"> Knob<br>
+      <input type="checkbox" class="inputFilter" value="Trackball"> Trackball<br>
     </div>
   </div>
   <div style="margin-right: 20px;">
@@ -1743,6 +1751,241 @@ function addElecrowDevices() {
 
 addElecrowDevices();
 
+function createSeeedSpecs(overrides) {
+  return {
+    'Brand': 'Seeed Studio', 'MCU Chip': '-', 'LoRa Chip': '-', 'GPS/GNSS': '-',
+    'Charging Interface': '-', 'Frequency': '-', 'Max. TX Power': '-',
+    'Max. Receiving Sensitivity': '-', 'Wi-Fi': '-', 'Bluetooth': 'Bluetooth 5.0 LE',
+    'Display Type': '-', 'Display Size': '-', 'Input': '-', 'Temp/ Humidity Sensor': '-',
+    'Air Pressure Sensor': '-', 'Air Quality Sensor': '-', 'External Notification': '-',
+    'UART Port': '-', 'I2C Port': '-', 'Battery': '-', 'Enclosure': '-',
+    'Meshtastic Preloaded': '-', 'Memory ROM': '-', 'Memory SRAM': '-',
+    'Memory RTC SRAM': '-', 'Memory SiP Flash': '-', 'Memory PSRAM': '-',
+    'Memory Flash': '-', ...overrides
+  };
+}
+
+const additionalSeeedDevices = [
+  {
+    name: 'SenseCAP Indicator D1L',
+    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'No', screen: 'LCD', wifi: 'Yes', input: 'Touchscreen Boot', price: '60.90', brand: 'Seeed', case: 'Yes', battery: 'No', meshtastic: 'Yes', ready: 'Yes' },
+    productUrl: 'https://www.seeedstudio.com/SenseCAP-Indicator-D1L-for-Meshtastic-p-6304.html',
+    docsUrl: 'https://wiki.seeedstudio.com/sensecap_indicator_meshtastic/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'ESP32-S3 + RP2040', 'LoRa Chip': 'SX1262',
+      'Charging Interface': 'USB-C', 'Frequency': '862–930 MHz',
+      'Max. TX Power': '22 dBm', 'Max. Receiving Sensitivity': '-148 dBm',
+      'Wi-Fi': '802.11 b/g/n', 'Display Type': 'LCD', 'Display Size': '3.95 in, 480×480',
+      'Input': 'Touchscreen, Boot button', 'External Notification': 'Buzzer',
+      'I2C Port': '1× Grove', 'Enclosure': 'Included', 'Meshtastic Preloaded': 'Yes',
+      'Memory ROM': '384 KB + 16 KB', 'Memory SRAM': '512 KB + 264 KB',
+      'Memory RTC SRAM': '16 KB', 'Memory SiP Flash': 'microSD / TF',
+      'Memory Flash': '8 MB + 2 MB'
+    })
+  },
+  {
+    name: 'XIAO nRF52840 & Wio-SX1262 Kit',
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'No', screen: 'None', wifi: 'No', input: 'Reset', price: '13.49', brand: 'Seeed', case: 'No', battery: 'No', meshtastic: 'Yes', ready: 'No' },
+    productUrl: 'https://www.seeedstudio.com/XIAO-nRF52840-Wio-SX1262-Kit-for-Meshtastic-p-6400.html',
+    docsUrl: 'https://wiki.seeedstudio.com/xiao_nrf52840%26_wio_SX1262_kit_for_meshtastic/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262', 'Charging Interface': 'USB-C',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Input': 'Reset button',
+      'External Notification': 'Status LED', 'Meshtastic Preloaded': 'Yes',
+      'Memory SRAM': '256 KB', 'Memory Flash': '1 MB'
+    })
+  },
+  {
+    name: 'SenseCAP Solar Node P1',
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'No', screen: 'None', wifi: 'No', input: 'Power', price: '77.99', brand: 'Seeed', case: 'Yes', battery: 'No', meshtastic: 'Yes', ready: 'Yes' },
+    productUrl: 'https://www.seeedstudio.com/SenseCAP-Solar-Node-P1-for-Meshtastic-LoRa-p-6425.html',
+    docsUrl: 'https://wiki.seeedstudio.com/meshtastic_solar_node/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262', 'Charging Interface': 'USB-C, Solar',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Input': 'Power button',
+      'External Notification': 'Status LED', 'I2C Port': '1× Grove',
+      'Enclosure': 'Included', 'Meshtastic Preloaded': 'Yes', 'Memory SRAM': '256 KB',
+      'Memory Flash': '1 MB + 2 MB external'
+    })
+  },
+  {
+    name: 'SenseCAP Solar Node P1-Pro',
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'Yes', screen: 'None', wifi: 'No', input: 'Power', price: '100.99', brand: 'Seeed', case: 'Yes', battery: 'Yes', meshtastic: 'Yes', ready: 'Yes' },
+    productUrl: 'https://www.seeedstudio.com/SenseCAP-Solar-Node-P1-Pro-for-Meshtastic-LoRa-p-6412.html',
+    docsUrl: 'https://wiki.seeedstudio.com/meshtastic_solar_node/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262',
+      'GPS/GNSS': 'GPS, GLONASS, BeiDou, Galileo', 'Charging Interface': 'USB-C, Solar',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Input': 'Power button',
+      'External Notification': 'Status LED', 'I2C Port': '1× Grove',
+      'Battery': '4 × 3350 mAh', 'Enclosure': 'Included', 'Meshtastic Preloaded': 'Yes',
+      'Memory SRAM': '256 KB', 'Memory Flash': '1 MB + 2 MB external'
+    })
+  },
+  {
+    name: 'Wio Tracker 1110 Dev Kit',
+    meta: { mcu: 'nRF', lora: 'LR1110', gps: 'Yes', screen: 'OLED', wifi: 'No', input: 'User Reset', price: '36.10', brand: 'Seeed', case: 'No', battery: 'No', meshtastic: 'No', ready: 'No' },
+    productUrl: 'https://www.seeedstudio.com/Wio-Tracker-1110-Dev-Kit-for-Meshtastic.html',
+    docsUrl: 'https://wiki.seeedstudio.com/meshtastic_kit_wio_tracker_1110/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'LR1110', 'GPS/GNSS': 'GPS, BeiDou',
+      'Charging Interface': 'USB-C', 'Frequency': '863–928 MHz',
+      'Max. TX Power': '20 dBm', 'Max. Receiving Sensitivity': '-141 dBm',
+      'Bluetooth': 'Bluetooth 5.3 LE', 'Display Type': 'OLED',
+      'Display Size': '0.96 in, 128×64', 'Input': 'User button, Reset button',
+      'Temp/ Humidity Sensor': 'Temperature, humidity', 'External Notification': 'Status LED',
+      'I2C Port': '6× Grove', 'Meshtastic Preloaded': 'No', 'Memory SRAM': '256 KB',
+      'Memory Flash': '1 MB + 4 MB external'
+    })
+  },
+  {
+    name: 'Wio Tracker L1 Lite',
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'Yes', screen: 'None', wifi: 'No', input: 'User Reset Power', price: '31.99', brand: 'Seeed', case: 'No', battery: 'No', meshtastic: 'Yes', ready: 'No' },
+    productUrl: 'https://www.seeedstudio.com/Wio-Tracker-L1-Lite-p-6455.html',
+    docsUrl: 'https://wiki.seeedstudio.com/wio_tracker_l1_node/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262',
+      'GPS/GNSS': 'GPS, GLONASS, BeiDou, QZSS', 'Charging Interface': 'USB-C, Solar',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Input': 'User button, Reset button, Power button',
+      'External Notification': 'Buzzer, status LED', 'I2C Port': '1× Grove',
+      'Meshtastic Preloaded': 'Yes', 'Memory SRAM': '256 KB', 'Memory Flash': '1 MB'
+    })
+  },
+  {
+    name: 'Wio Tracker L1',
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'Yes', screen: 'OLED', wifi: 'No', input: 'User Reset Power', price: '33.99', brand: 'Seeed', case: 'No', battery: 'No', meshtastic: 'Yes', ready: 'No' },
+    productUrl: 'https://www.seeedstudio.com/Wio-Tracker-L1-p-6453.html',
+    docsUrl: 'https://wiki.seeedstudio.com/wio_tracker_l1_node/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262',
+      'GPS/GNSS': 'GPS, GLONASS, BeiDou, QZSS', 'Charging Interface': 'USB-C, Solar',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Display Type': 'OLED',
+      'Display Size': '1.3 in, 128×64', 'Input': 'User button, Reset button, Power button',
+      'External Notification': 'Buzzer, status LED', 'I2C Port': '1× Grove',
+      'Meshtastic Preloaded': 'Yes', 'Memory SRAM': '256 KB', 'Memory Flash': '1 MB'
+    })
+  },
+  {
+    name: 'Wio Tracker L1 Pro',
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'Yes', screen: 'OLED', wifi: 'No', input: 'User Reset Power', price: '47.90', brand: 'Seeed', case: 'Yes', battery: 'Yes', meshtastic: 'Yes', ready: 'Yes' },
+    productUrl: 'https://www.seeedstudio.com/Violet-Wio-Tracker-L1-Pro-for-Meshtastic-p-6926.html',
+    docsUrl: 'https://wiki.seeedstudio.com/wio_tracker_l1_node/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262',
+      'GPS/GNSS': 'GPS, GLONASS, BeiDou, QZSS', 'Charging Interface': 'USB-C, Solar',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Display Type': 'OLED',
+      'Display Size': '1.3 in, 128×64', 'Input': 'User button, Reset button, Power button',
+      'External Notification': 'Buzzer, status LED', 'I2C Port': '1× Grove',
+      'Battery': '2000 mAh', 'Enclosure': 'PC+ABS', 'Meshtastic Preloaded': 'Yes',
+      'Memory SRAM': '256 KB', 'Memory Flash': '1 MB'
+    })
+  },
+  {
+    name: 'Wio Tracker L1 E-Ink',
+    meta: { mcu: 'nRF', lora: 'SX1262', gps: 'Yes', screen: 'Eink', wifi: 'No', input: 'Joystick Reset Power', price: '35.99', brand: 'Seeed', case: 'No', battery: 'No', meshtastic: 'Yes', ready: 'No' },
+    productUrl: 'https://www.seeedstudio.com/Wio-Tracker-L1-E-ink-p-6456.html',
+    docsUrl: 'https://wiki.seeedstudio.com/wio_tracker_l1_node/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'SX1262',
+      'GPS/GNSS': 'GPS, GLONASS, BeiDou, QZSS', 'Charging Interface': 'USB-C, Solar',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Display Type': 'E-Ink',
+      'Display Size': '2.13 in, 122×250', 'Input': 'Joystick, Reset button, Power button',
+      'External Notification': 'Buzzer, status LED', 'I2C Port': '1× Grove',
+      'Meshtastic Preloaded': 'Yes', 'Memory SRAM': '256 KB', 'Memory Flash': '1 MB'
+    })
+  },
+  {
+    name: 'SenseCAP MeshTracker X1',
+    meta: { mcu: 'nRF', lora: 'LR2021', gps: 'Yes', screen: 'None', wifi: 'No', input: 'User', price: '42.90', brand: 'Seeed', case: 'Yes', battery: 'Yes', meshtastic: 'Yes', ready: 'Yes' },
+    productUrl: 'https://www.seeedstudio.com/sensecap-meshtracker-x1-meshtastic-gps-tracker-p-6935.html',
+    docsUrl: 'https://wiki.seeedstudio.com/meshtracker_x1_intro/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'nRF52840', 'LoRa Chip': 'LR2021', 'GPS/GNSS': 'GPS',
+      'Charging Interface': 'USB-C', 'Frequency': '863–928 MHz',
+      'Max. TX Power': '22 dBm', 'Max. Receiving Sensitivity': '-141 dBm',
+      'Input': 'User button', 'Temp/ Humidity Sensor': 'Temperature',
+      'Air Pressure Sensor': 'Pressure', 'External Notification': 'Buzzer, vibration, RGB status LED',
+      'Battery': '1100 mAh', 'Enclosure': 'IP66', 'Meshtastic Preloaded': 'Yes',
+      'Memory SRAM': '256 KB', 'Memory Flash': '1 MB + 8 MB external'
+    })
+  },
+  {
+    name: 'XIAO ESP32S3 & Wio-SX1262 Kit',
+    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'No', screen: 'None', wifi: 'Yes', input: 'User Reset Boot', price: '10.90', brand: 'Seeed', case: 'No', battery: 'No', meshtastic: 'Yes', ready: 'No' },
+    productUrl: 'https://www.seeedstudio.com/Wio-SX1262-with-XIAO-ESP32S3-p-5982.html',
+    docsUrl: 'https://wiki.seeedstudio.com/xiao_esp32s3_%26_wio_SX1262_kit_for_meshtastic/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'ESP32-S3R8', 'LoRa Chip': 'SX1262', 'Charging Interface': 'USB-C',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Wi-Fi': '802.11 b/g/n',
+      'Input': 'User button, Reset button, Boot button', 'External Notification': 'Status LEDs',
+      'Meshtastic Preloaded': 'Yes', 'Memory ROM': '384 KB', 'Memory SRAM': '512 KB',
+      'Memory RTC SRAM': '16 KB', 'Memory PSRAM': '8 MB', 'Memory Flash': '8 MB'
+    })
+  },
+  {
+    name: 'XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case',
+    meta: { mcu: 'ESP32', lora: 'SX1262', gps: 'No', screen: 'None', wifi: 'Yes', input: 'User Reset Boot', price: '17.90', brand: 'Seeed', case: 'Yes', battery: 'No', meshtastic: 'No', ready: 'No' },
+    productUrl: 'https://www.seeedstudio.com/XIAO-ESP32S3-for-Meshtastic-LoRa-with-3D-Printed-Enclosure-p-6314.html',
+    docsUrl: 'https://wiki.seeedstudio.com/wio_sx1262_and_xiao_esp32s3_kit_with_3dprinted_enclosure_introduction_and_assembly_guide/',
+    specs: createSeeedSpecs({
+      'MCU Chip': 'ESP32-S3R8', 'LoRa Chip': 'SX1262', 'Charging Interface': 'USB-C',
+      'Frequency': '862–930 MHz', 'Max. TX Power': '22 dBm',
+      'Max. Receiving Sensitivity': '-148 dBm', 'Wi-Fi': '802.11 b/g/n',
+      'Input': 'User button, Reset button, Boot button', 'External Notification': 'Status LEDs',
+      'Enclosure': '3D-printed', 'Meshtastic Preloaded': 'No', 'Memory ROM': '384 KB',
+      'Memory SRAM': '512 KB', 'Memory RTC SRAM': '16 KB', 'Memory PSRAM': '8 MB',
+      'Memory Flash': '8 MB'
+    })
+  }
+];
+
+function addAdditionalSeeedDevices() {
+  const headerRow = document.querySelector('#comparisonTable thead tr');
+  const referenceHeader = Array.from(headerRow.cells).find(header => header.dataset.brand === 'Elecrow');
+  const rows = Array.from(document.querySelectorAll('#comparisonTable tbody tr'));
+  const rowsByLabel = new Map(rows.map(row => [row.cells[0].textContent.trim(), row]));
+  const referenceCells = new Map(rows.map(row => [row, row.children[referenceHeader.cellIndex]]));
+
+  additionalSeeedDevices.forEach(device => {
+    const header = document.createElement('th');
+    header.textContent = device.name;
+    Object.entries(device.meta).forEach(([key, value]) => header.dataset[key] = value);
+    headerRow.insertBefore(header, referenceHeader);
+
+    rowsByLabel.forEach((row, label) => {
+      const cell = document.createElement('td');
+      if (label.startsWith('Base Price USD')) {
+        const link = document.createElement('a');
+        link.href = device.productUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = `$${device.meta.price}`;
+        cell.appendChild(link);
+      } else if (label === 'Diagram') {
+        const link = document.createElement('a');
+        link.href = device.docsUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Official documentation';
+        cell.appendChild(link);
+      } else {
+        cell.textContent = device.specs[label] ?? '-';
+      }
+      row.insertBefore(cell, referenceCells.get(row));
+    });
+  });
+}
+
+addAdditionalSeeedDevices();
+
 function addMotionSensorRows() {
   const table = document.querySelector('#comparisonTable');
   const body = table.tBodies[0];
@@ -1779,6 +2022,7 @@ function normalizeMemoryStorage() {
   const mcuRow = rowsByLabel.get('MCU Chip');
 
   const storageExpansion = new Map([
+    ['SenseCAP Indicator D1L', 'microSD / TF'],
     ['Heltec WiFi LoRa 32 Expansion Kit V2', 'microSD / TF'],
     ['T-Deck', 'microSD / TF'],
     ['T-Beam Supreme', 'microSD / TF'],
@@ -1793,6 +2037,12 @@ function normalizeMemoryStorage() {
     ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '8 MB'],
     ['Heltec Mesh Node T114', '1 MB'],
     ['Nano G2 Ultra', '1 MB + 16 MB external']
+  ]);
+  const romOverrides = new Map([
+    ['SenseCAP Indicator D1L', '384 KB + 16 KB']
+  ]);
+  const sramOverrides = new Map([
+    ['SenseCAP Indicator D1L', '512 KB + 264 KB']
   ]);
 
   function architecture(mcu) {
@@ -1829,8 +2079,8 @@ function normalizeMemoryStorage() {
       unknown: { rom: '-', sram: '-', rtc: '-' }
     }[family];
 
-    romRow.cells[column].textContent = chipMemory.rom;
-    sramRow.cells[column].textContent = chipMemory.sram;
+    romRow.cells[column].textContent = romOverrides.get(name) || chipMemory.rom;
+    sramRow.cells[column].textContent = sramOverrides.get(name) || chipMemory.sram;
     rtcRow.cells[column].textContent = chipMemory.rtc;
 
     const existingFlash = flashRow.cells[column].textContent.trim();
@@ -2066,6 +2316,14 @@ function normalizeDeviceDetails() {
     ['SenseCAP Card Tracker T1000-E', {
       types: ['TempHumidity'],
       value: 'Temperature'
+    }],
+    ['Wio Tracker 1110 Dev Kit', {
+      types: ['TempHumidity'],
+      value: 'Temperature, humidity'
+    }],
+    ['SenseCAP MeshTracker X1', {
+      types: ['TempHumidity', 'Pressure'],
+      value: 'Temperature, pressure'
     }]
   ]);
 
@@ -2093,6 +2351,13 @@ function normalizeDeviceDetails() {
     ['Nano G2 Ultra', 'GPS, BeiDou'],
     ['SenseCAP Card Tracker T1000-E', 'GPS, GLONASS, BeiDou, Galileo, QZSS'],
     ['Wio Tracker 1110 Dev Board', 'GPS, BeiDou (cloud-assisted)'],
+    ['SenseCAP Solar Node P1-Pro', 'GPS, GLONASS, BeiDou, Galileo'],
+    ['Wio Tracker 1110 Dev Kit', 'GPS, BeiDou'],
+    ['Wio Tracker L1 Lite', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['Wio Tracker L1', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['Wio Tracker L1 Pro', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['Wio Tracker L1 E-Ink', 'GPS, GLONASS, BeiDou, QZSS'],
+    ['SenseCAP MeshTracker X1', 'GPS'],
     ['ThinkNode M1', 'GPS, GLONASS, BeiDou, QZSS'],
     ['ThinkNode M3', 'GPS, GLONASS, BeiDou, Galileo'],
     ['ThinkNode M4', 'GPS, GLONASS, BeiDou, QZSS'],
@@ -2112,6 +2377,7 @@ function normalizeDeviceDetails() {
     ['T-Echo Plus', '6-axis accelerometer, gyroscope'],
     ['SenseCAP Card Tracker T1000-E', '3-axis accelerometer'],
     ['Wio Tracker 1110 Dev Board', '3-axis accelerometer'],
+    ['Wio Tracker 1110 Dev Kit', '3-axis accelerometer'],
     ['ThinkNode M4', '6-axis accelerometer, gyroscope'],
     ['nRF-TXT', '6-axis accelerometer, gyroscope (optional)']
   ]);
@@ -2143,6 +2409,9 @@ function normalizeDeviceDetails() {
     ['T-Deck Plus', '2000 mAh'],
     ['T-Echo Plus', '2400 mAh'],
     ['SenseCAP Card Tracker T1000-E', '700 mAh'],
+    ['SenseCAP Solar Node P1-Pro', '4 × 3350 mAh'],
+    ['Wio Tracker L1 Pro', '2000 mAh'],
+    ['SenseCAP MeshTracker X1', '1100 mAh'],
     ['ThinkNode M1', '1200 mAh'],
     ['ThinkNode M2', '1000 mAh'],
     ['ThinkNode M3', '760 mAh'],
@@ -2190,6 +2459,18 @@ function normalizeDeviceDetails() {
     ['Nano G2 Ultra', 'Buzzer, status LEDs'],
     ['SenseCAP Card Tracker T1000-E', 'Buzzer, status LED'],
     ['Wio Tracker 1110 Dev Board', 'Status LED'],
+    ['SenseCAP Indicator D1L', 'Buzzer'],
+    ['XIAO nRF52840 & Wio-SX1262 Kit', 'Status LED'],
+    ['SenseCAP Solar Node P1', 'Status LED'],
+    ['SenseCAP Solar Node P1-Pro', 'Status LED'],
+    ['Wio Tracker 1110 Dev Kit', 'Status LED'],
+    ['Wio Tracker L1 Lite', 'Buzzer, status LED'],
+    ['Wio Tracker L1', 'Buzzer, status LED'],
+    ['Wio Tracker L1 Pro', 'Buzzer, status LED'],
+    ['Wio Tracker L1 E-Ink', 'Buzzer, status LED'],
+    ['SenseCAP MeshTracker X1', 'Buzzer, vibration motor, RGB status LED'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit', 'Status LEDs'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case', 'Status LEDs'],
     ['ThinkNode M1', 'Buzzer, status LEDs'],
     ['ThinkNode M2', 'Buzzer, status LED'],
     ['ThinkNode M3', 'Buzzer, RGB status LED'],
@@ -2246,6 +2527,18 @@ function normalizeDeviceDetails() {
     ['Nano G2 Ultra', '4 buttons'],
     ['SenseCAP Card Tracker T1000-E', 'User button'],
     ['Wio Tracker 1110 Dev Board', 'User button, Reset button'],
+    ['SenseCAP Indicator D1L', 'Touchscreen, Boot button'],
+    ['XIAO nRF52840 & Wio-SX1262 Kit', 'Reset button'],
+    ['SenseCAP Solar Node P1', 'Power button'],
+    ['SenseCAP Solar Node P1-Pro', 'Power button'],
+    ['Wio Tracker 1110 Dev Kit', 'User button, Reset button'],
+    ['Wio Tracker L1 Lite', 'User button, Reset button, Power button'],
+    ['Wio Tracker L1', 'User button, Reset button, Power button'],
+    ['Wio Tracker L1 Pro', 'User button, Reset button, Power button'],
+    ['Wio Tracker L1 E-Ink', 'Joystick, Reset button, Power button'],
+    ['SenseCAP MeshTracker X1', 'User button'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit', 'User button, Reset button, Boot button'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case', 'User button, Reset button, Boot button'],
     ['ThinkNode M1', 'Knob, Function button, Page button, GPS button, Reset button'],
     ['ThinkNode M2', 'Power button, Function button, Reset button, Boot button'],
     ['ThinkNode M3', 'Power/SOS button'],
@@ -2266,7 +2559,15 @@ function normalizeDeviceDetails() {
     ['T3-S3', '2× Qwiic'],
     ['T5 E-Paper S3 Pro', '2× Qwiic'],
     ['T3-S3 E-Paper', '1× Qwiic'],
-    ['Wio Tracker 1110 Dev Board', '6× Grove']
+    ['Wio Tracker 1110 Dev Board', '6× Grove'],
+    ['SenseCAP Indicator D1L', '1× Grove'],
+    ['SenseCAP Solar Node P1', '1× Grove'],
+    ['SenseCAP Solar Node P1-Pro', '1× Grove'],
+    ['Wio Tracker 1110 Dev Kit', '6× Grove'],
+    ['Wio Tracker L1 Lite', '1× Grove'],
+    ['Wio Tracker L1', '1× Grove'],
+    ['Wio Tracker L1 Pro', '1× Grove'],
+    ['Wio Tracker L1 E-Ink', '1× Grove']
   ]);
 
   const loraChips = new Map([
@@ -2314,6 +2615,18 @@ function normalizeDeviceDetails() {
     ['Nano G2 Ultra', 'SX1262'],
     ['SenseCAP Card Tracker T1000-E', 'LR1110'],
     ['Wio Tracker 1110 Dev Board', 'LR1110'],
+    ['SenseCAP Indicator D1L', 'SX1262'],
+    ['XIAO nRF52840 & Wio-SX1262 Kit', 'SX1262'],
+    ['SenseCAP Solar Node P1', 'SX1262'],
+    ['SenseCAP Solar Node P1-Pro', 'SX1262'],
+    ['Wio Tracker 1110 Dev Kit', 'LR1110'],
+    ['Wio Tracker L1 Lite', 'SX1262'],
+    ['Wio Tracker L1', 'SX1262'],
+    ['Wio Tracker L1 Pro', 'SX1262'],
+    ['Wio Tracker L1 E-Ink', 'SX1262'],
+    ['SenseCAP MeshTracker X1', 'LR2021'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit', 'SX1262'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case', 'SX1262'],
     ['ThinkNode M1', 'SX1262'],
     ['ThinkNode M2', 'SX1262'],
     ['ThinkNode M3', 'LR1110'],
@@ -2370,6 +2683,18 @@ function normalizeDeviceDetails() {
     ['Nano G2 Ultra', '815–940 MHz'],
     ['SenseCAP Card Tracker T1000-E', '863–928 MHz'],
     ['Wio Tracker 1110 Dev Board', '863–928 MHz'],
+    ['SenseCAP Indicator D1L', '862–930 MHz'],
+    ['XIAO nRF52840 & Wio-SX1262 Kit', '862–930 MHz'],
+    ['SenseCAP Solar Node P1', '862–930 MHz'],
+    ['SenseCAP Solar Node P1-Pro', '862–930 MHz'],
+    ['Wio Tracker 1110 Dev Kit', '863–928 MHz'],
+    ['Wio Tracker L1 Lite', '862–930 MHz'],
+    ['Wio Tracker L1', '862–930 MHz'],
+    ['Wio Tracker L1 Pro', '862–930 MHz'],
+    ['Wio Tracker L1 E-Ink', '862–930 MHz'],
+    ['SenseCAP MeshTracker X1', '863–928 MHz'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit', '862–930 MHz'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case', '862–930 MHz'],
     ['ThinkNode M1', '868 / 915 MHz'],
     ['ThinkNode M2', '868 / 915 MHz'],
     ['ThinkNode M3', '868 / 915 MHz'],
@@ -2411,6 +2736,9 @@ function normalizeDeviceDetails() {
     ['T-Deck Plus', '802.11 b/g/n'],
     ['T-Watch S3', '802.11 b/g/n'],
     ['Station G2', '802.11 b/g/n'],
+    ['SenseCAP Indicator D1L', '802.11 b/g/n'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit', '802.11 b/g/n'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case', '802.11 b/g/n'],
     ['ThinkNode M2', '802.11 b/g/n'],
     ['ThinkNode M5', '802.11 b/g/n'],
     ['ThinkNode M7', '802.11 b/g/n'],
@@ -2418,6 +2746,11 @@ function normalizeDeviceDetails() {
   ]);
 
   const displaySizes = new Map([
+    ['SenseCAP Indicator D1L', '3.95 in, 480×480'],
+    ['Wio Tracker 1110 Dev Kit', '0.96 in, 128×64'],
+    ['Wio Tracker L1', '1.3 in, 128×64'],
+    ['Wio Tracker L1 Pro', '1.3 in, 128×64'],
+    ['Wio Tracker L1 E-Ink', '2.13 in, 122×250'],
     ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '0.96 in, 128×64'],
     ['Heltec WiFi LoRa 32 V3.2', '0.96 in, 128×64'],
     ['Heltec Wireless Paper', '2.13 in, 250×122'],
@@ -2456,6 +2789,18 @@ function normalizeDeviceDetails() {
   ]);
 
   const txPowers = new Map([
+    ['SenseCAP Indicator D1L', '22 dBm'],
+    ['XIAO nRF52840 & Wio-SX1262 Kit', '22 dBm'],
+    ['SenseCAP Solar Node P1', '22 dBm'],
+    ['SenseCAP Solar Node P1-Pro', '22 dBm'],
+    ['Wio Tracker 1110 Dev Kit', '20 dBm'],
+    ['Wio Tracker L1 Lite', '22 dBm'],
+    ['Wio Tracker L1', '22 dBm'],
+    ['Wio Tracker L1 Pro', '22 dBm'],
+    ['Wio Tracker L1 E-Ink', '22 dBm'],
+    ['SenseCAP MeshTracker X1', '22 dBm'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit', '22 dBm'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case', '22 dBm'],
     ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '19 ± 1 dBm'],
     ['Heltec WiFi LoRa 32 V3.2', '21 ± 1 dBm'],
     ['Heltec Wireless Paper', '21 ± 1 dBm'],
@@ -2512,6 +2857,18 @@ function normalizeDeviceDetails() {
   ]);
 
   const rxSensitivities = new Map([
+    ['SenseCAP Indicator D1L', '-148 dBm'],
+    ['XIAO nRF52840 & Wio-SX1262 Kit', '-148 dBm'],
+    ['SenseCAP Solar Node P1', '-148 dBm'],
+    ['SenseCAP Solar Node P1-Pro', '-148 dBm'],
+    ['Wio Tracker 1110 Dev Kit', '-141 dBm'],
+    ['Wio Tracker L1 Lite', '-148 dBm'],
+    ['Wio Tracker L1', '-148 dBm'],
+    ['Wio Tracker L1 Pro', '-148 dBm'],
+    ['Wio Tracker L1 E-Ink', '-148 dBm'],
+    ['SenseCAP MeshTracker X1', '-141 dBm'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit', '-148 dBm'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case', '-148 dBm'],
     ['Heltec WiFi LoRa 32 V2.1 (phaseout)', '-148 dBm'],
     ['Heltec WiFi LoRa 32 V3.2', '-136 dBm'],
     ['Heltec Wireless Paper', '-134 dBm'],
@@ -2812,7 +3169,7 @@ function filterTable() {
 
   function getLoRaFeatures(value) {
     const features = [];
-    ['SX1276', 'SX1278', 'SX1262', 'SX1280', 'LR1110', 'LR1121'].forEach(chip => {
+    ['SX1276', 'SX1278', 'SX1262', 'SX1280', 'LR1110', 'LR1121', 'LR2021'].forEach(chip => {
       if (value.includes(chip)) features.push(chip);
     });
     return features;
@@ -2833,6 +3190,14 @@ function filterTable() {
     if (/Touch button/i.test(value)) features.push('TouchButton');
     if (/Keyboard/i.test(value)) features.push('Keyboard');
     if (/User button|User controls/i.test(value)) features.push('User');
+    if (/Reset button/i.test(value)) features.push('Reset');
+    if (/Power(?:\/SOS)? button/i.test(value)) features.push('Power');
+    if (/Boot button/i.test(value)) features.push('Boot');
+    if (/3rd button/i.test(value)) features.push('Third');
+    if (/Joystick/i.test(value)) features.push('Joystick');
+    if (/Encoder/i.test(value)) features.push('Encoder');
+    if (/Knob/i.test(value)) features.push('Knob');
+    if (/Trackball/i.test(value)) features.push('Trackball');
     if (value === '-') features.push('None');
     return features;
   }
