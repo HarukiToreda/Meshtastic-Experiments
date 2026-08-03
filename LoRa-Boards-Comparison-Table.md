@@ -7,6 +7,48 @@ title: LoRa Boards Comparison Table
 
 Specifications and prices checked against manufacturer documentation: **August 1–2, 2026**.
 
+<style>
+  .comparison-table-scroll {
+    overflow: visible;
+    position: relative;
+  }
+
+  #comparisonTable {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+  }
+
+  #comparisonTable thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: #1a1a1a;
+  }
+
+  #comparisonTable thead th:first-child,
+  #comparisonTable tbody td:first-child {
+    position: sticky;
+    left: 240px;
+    min-width: 150px;
+    background: #1a1a1a;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.hidden ~ .content #comparisonTable thead th:first-child,
+  .sidebar.hidden ~ .content #comparisonTable tbody td:first-child {
+    left: 15px;
+  }
+
+  #comparisonTable tbody td:first-child {
+    z-index: 2;
+  }
+
+  #comparisonTable thead th:first-child {
+    z-index: 4;
+  }
+</style>
+
 ## Filter Boards
 
 <div style="display: flex; flex-wrap: wrap;">
@@ -175,7 +217,7 @@ Specifications and prices checked against manufacturer documentation: **August 1
   </div>
 </div>
 
-<div style="overflow-x: auto;">
+<div class="comparison-table-scroll">
   <table id="comparisonTable">
     <thead>
       <tr>
