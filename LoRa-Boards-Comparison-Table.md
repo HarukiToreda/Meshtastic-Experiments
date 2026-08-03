@@ -63,6 +63,27 @@ Specifications and prices checked against manufacturer documentation: **August 1
     box-sizing: border-box;
   }
 
+  .filter-grid[hidden] {
+    display: none;
+  }
+
+  .filter-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .filter-toggle {
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 5px;
+    background: #FFD700;
+    color: #000000;
+    cursor: pointer;
+    font: inherit;
+  }
+
   .filter-grid > div {
     min-width: 0;
     margin-right: 0 !important;
@@ -78,9 +99,12 @@ Specifications and prices checked against manufacturer documentation: **August 1
   }
 </style>
 
-## Filter Boards
+<div class="filter-heading">
+  <h2>Filter Boards</h2>
+  <button type="button" id="filterToggle" class="filter-toggle" aria-controls="filterGrid" aria-expanded="true">Hide filters</button>
+</div>
 
-<div class="filter-grid">
+<div id="filterGrid" class="filter-grid">
   <div style="margin-right: 20px;">
     <label>MCU Chip:</label>
     <div>
@@ -3131,6 +3155,15 @@ function assignNodeTypes() {
 }
 
 assignNodeTypes();
+
+const filterToggle = document.querySelector('#filterToggle');
+const filterGrid = document.querySelector('#filterGrid');
+filterToggle.addEventListener('click', () => {
+  const shouldHide = !filterGrid.hidden;
+  filterGrid.hidden = shouldHide;
+  filterToggle.setAttribute('aria-expanded', String(!shouldHide));
+  filterToggle.textContent = shouldHide ? 'Show filters' : 'Hide filters';
+});
 
 const filterSelector = '.mcuFilter, .nodeTypeFilter, .loraFilter, .frequencyFilter, .gpsFilter, .screenFilter, .wifiFilter, .inputFilter, .powerFilter, .sensorFilter, .motionFilter, .portFilter, .storageFilter, .txPowerFilter, .priceFilter, .brandFilter, .caseFilter, .batteryFilter, .notificationFilter, .meshtasticFilter, .readyFilter';
 const filterGroupClasses = [
