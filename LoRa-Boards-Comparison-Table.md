@@ -5,7 +5,7 @@ title: LoRa Boards Comparison Table
 
 # LoRa Boards Comparison Table
 
-Specifications and prices checked against manufacturer documentation: **August 1–2, 2026**.
+Specifications and prices checked against manufacturer documentation: **August 1–5, 2026**.
 
 <style>
   .content {
@@ -367,7 +367,7 @@ Specifications and prices checked against manufacturer documentation: **August 1
         <td>Seeed Studio</td><!--WIO WM1110 Tracker-->
       </tr>
       <tr>
-        <td>Base Price USD (last checked 2026-08-01/02)</td>
+        <td>Base Price USD (last checked 2026-08-01/05)</td>
         <td><a href="https://heltec.org/project/wifi-lora-32v2/" target="_blank" rel="noopener noreferrer">$17.90</a></td><!--Heltec V2-->
         <td><a href="https://heltec.org/project/wifi-lora-32-v3/" target="_blank" rel="noopener noreferrer">$17.90</a></td><!--Heltec V3.2-->
         <td><a href="https://heltec.org/project/wireless-paper/" target="_blank" rel="noopener noreferrer">$15.90</a></td><!--Wireless Paper-->
@@ -3120,6 +3120,162 @@ function normalizeDeviceDetails() {
 }
 
 normalizeDeviceDetails();
+
+function addHpWirelessPaper() {
+  const table = document.querySelector('#comparisonTable');
+  const headerRow = table.tHead.rows[0];
+  const headers = Array.from(headerRow.cells);
+  const sourceHeader = headers.find(header => header.textContent.trim() === 'Heltec Wireless Paper');
+  const referenceHeader = headers.find(header => header.textContent.trim() === 'HELTXT');
+  const rows = Array.from(table.tBodies[0].rows);
+  const referenceCells = new Map(rows.map(row => [row, row.cells[referenceHeader.cellIndex]]));
+  const productUrl = 'https://www.etsy.com/listing/1773279937/hp-esp32-eink-node-with-meshtastic';
+
+  const header = sourceHeader.cloneNode(true);
+  header.textContent = 'HP Wireless Paper';
+  Object.assign(header.dataset, {
+    mcu: 'ESP32', lora: 'SX1262', gps: 'No', screen: 'Eink', wifi: 'Yes', input: 'User',
+    price: '50.00', brand: 'Haruki Toreda', case: 'Yes', battery: 'Yes',
+    meshtastic: 'Yes', ready: 'Yes'
+  });
+  headerRow.insertBefore(header, referenceHeader);
+
+  rows.forEach(row => {
+    const label = row.cells[0].textContent.trim();
+    const cell = row.cells[sourceHeader.cellIndex].cloneNode(true);
+    if (label === 'Brand') {
+      cell.textContent = 'Haruki Toreda';
+    } else if (label.startsWith('Base Price USD')) {
+      const link = document.createElement('a');
+      link.href = productUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = '$50.00';
+      cell.replaceChildren(link);
+    } else if (label === 'Diagram') {
+      const link = document.createElement('a');
+      link.href = productUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'Product listing';
+      cell.replaceChildren(link);
+    } else if (label === 'Battery') {
+      cell.textContent = '3000 mAh';
+    } else if (label === 'Enclosure') {
+      cell.textContent = 'Included';
+    } else if (label === 'Meshtastic Preloaded') {
+      cell.textContent = 'Yes';
+    }
+    row.insertBefore(cell, referenceCells.get(row));
+  });
+}
+
+addHpWirelessPaper();
+
+function addHp2() {
+  const table = document.querySelector('#comparisonTable');
+  const headerRow = table.tHead.rows[0];
+  const headers = Array.from(headerRow.cells);
+  const sourceHeader = headers.find(header => header.textContent.trim() === 'Wio Tracker L1 E-Ink');
+  const referenceHeader = headers.find(header => header.textContent.trim() === 'HELTXT');
+  const rows = Array.from(table.tBodies[0].rows);
+  const referenceCells = new Map(rows.map(row => [row, row.cells[referenceHeader.cellIndex]]));
+  const productUrl = 'https://www.etsy.com/listing/4539509953/wio-l1-pro-eink-meshtastic-inkhud-ui';
+
+  const header = sourceHeader.cloneNode(true);
+  header.textContent = 'HP2';
+  Object.assign(header.dataset, {
+    price: '85.00', brand: 'Haruki Toreda', case: 'Yes', battery: 'Yes',
+    meshtastic: 'Yes', ready: 'Yes'
+  });
+  headerRow.insertBefore(header, referenceHeader);
+
+  rows.forEach(row => {
+    const label = row.cells[0].textContent.trim();
+    const cell = row.cells[sourceHeader.cellIndex].cloneNode(true);
+    if (label === 'Brand') {
+      cell.textContent = 'Haruki Toreda';
+    } else if (label.startsWith('Base Price USD')) {
+      const link = document.createElement('a');
+      link.href = productUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = '$85.00';
+      cell.replaceChildren(link);
+    } else if (label === 'Diagram') {
+      const link = document.createElement('a');
+      link.href = productUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'Product listing';
+      cell.replaceChildren(link);
+    } else if (label === 'Battery') {
+      cell.textContent = '3000 mAh';
+    } else if (label === 'Enclosure') {
+      cell.textContent = 'Included';
+    } else if (label === 'Meshtastic Preloaded') {
+      cell.textContent = 'Yes';
+    }
+    row.insertBefore(cell, referenceCells.get(row));
+  });
+}
+
+addHp2();
+
+function standardizeEnclosures() {
+  const table = document.querySelector('#comparisonTable');
+  const headers = Array.from(table.tHead.rows[0].cells);
+  const enclosureRow = Array.from(table.tBodies[0].rows)
+    .find(row => row.cells[0].textContent.trim() === 'Enclosure');
+  const enclosures = new Map([
+    ['Heltec WiFi LoRa 32 V2.1 (phaseout)', 'Plastic (optional)'],
+    ['Heltec WiFi LoRa 32 V3.2', 'Plastic (optional)'],
+    ['Heltec Capsule Sensor V3', 'High-strength plastic; IP65'],
+    ['Heltec Mesh Node T114', 'Plastic (optional)'],
+    ['Heltec MeshPocket', 'ABS + tempered glass'],
+    ['Heltec WiFi LoRa 32 Expansion Kit', 'Tempered glass + aluminum + PC'],
+    ['Heltec Mesh Node T1', 'IP65'],
+    ['Heltec MeshTower V2', 'Aluminum; IP66'],
+    ['Heltec WiFi LoRa 32 Expansion Kit V2', 'Glass + aluminum'],
+    ['Heltec SensorHub HRI-3621', 'Plastic; IP65'],
+    ['Heltec Wireless Bridge', 'Aluminum'],
+    ['WisMesh Pocket V2', '3D-printed plastic'],
+    ['T-Echo', 'ABS'],
+    ['T-LoRa Pager', 'Plastic'],
+    ['T-Deck Pro', 'Plastic'],
+    ['T-Deck Plus', 'Plastic'],
+    ['T-Watch S3', 'Plastic'],
+    ['T-Echo Plus', 'ABS'],
+    ['Station G2', 'Resin'],
+    ['Nano G2 Ultra', 'Resin'],
+    ['SenseCAP Card Tracker T1000-E', 'IP65'],
+    ['SenseCAP Indicator D1L', 'Plastic'],
+    ['SenseCAP Solar Node P1', 'IPX6'],
+    ['SenseCAP Solar Node P1-Pro', 'IPX6'],
+    ['Wio Tracker L1 Pro', 'PC+ABS'],
+    ['SenseCAP MeshTracker X1', 'IP66'],
+    ['XIAO ESP32S3 & Wio-SX1262 Kit with 3D Case', 'ABS'],
+    ['ThinkNode M1', 'ABS'],
+    ['ThinkNode M2', 'ABS+PC'],
+    ['ThinkNode M3', 'PC+ABS; IP66'],
+    ['ThinkNode M4', 'Fireproof ABS + PC + TPE'],
+    ['ThinkNode M5', 'ABS'],
+    ['ThinkNode M6', 'Plastic; IP65'],
+    ['ThinkNode M7', 'Plastic'],
+    ['HP Wireless Paper', 'PLA'],
+    ['HP2', 'PLA'],
+    ['HELTXT', 'PLA+'],
+    ['nRF-TXT', '3D-printed plastic']
+  ]);
+
+  headers.slice(1).forEach(header => {
+    const value = enclosures.get(header.textContent.trim()) ?? '-';
+    enclosureRow.cells[header.cellIndex].textContent = value;
+    header.dataset.case = value === '-' ? 'No' : value.includes('(optional)') ? 'Optional' : 'Yes';
+  });
+}
+
+standardizeEnclosures();
 
 function assignNodeTypes() {
   const infrastructureDevices = new Set([
