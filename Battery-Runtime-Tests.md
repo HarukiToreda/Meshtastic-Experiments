@@ -6,6 +6,11 @@ title: Battery Runtime Tests
   <title>Battery Runtime Tests</title>
 
   <style>
+    [hidden] { display: none !important; }
+    .gps-switch input:focus-visible + .gps-slider {
+      outline: 2px solid #1769aa;
+      outline-offset: 3px;
+    }
     .gps-toggle-cell{
       text-align:center;
       padding:4px 2px;
@@ -324,7 +329,7 @@ title: Battery Runtime Tests
     function getCellAtColumn(row, colIndex) {
       let colPos = 0;
       for (const cell of row.children) {
-        const span = cell.colSpan || 1;
+        const span = Number(cell.dataset.originalColspan) || cell.colSpan || 1;
         if (colIndex >= colPos && colIndex < colPos + span) return cell;
         colPos += span;
       }
@@ -341,7 +346,7 @@ title: Battery Runtime Tests
 
       let colPos = 0;
       Array.from(firstHeaderRow.children).forEach(cell => {
-        const span = cell.colSpan || 1;
+        const span = Number(cell.dataset.originalColspan) || cell.colSpan || 1;
 
         const g = cell.getAttribute("data-gps-group");
         const mode = cell.getAttribute("data-gps");
@@ -552,13 +557,43 @@ title: Battery Runtime Tests
       });
     }
     
+    function initRuntimeModeToggle() {
+      const toggle = document.getElementById("runtime-power-save");
+      const table = document.getElementById("runtime-results-table");
+      if (!toggle || !table) return;
+
+      function apply() {
+        const mode = toggle.checked ? "power-save" : "normal";
+        document.getElementById("runtime-mode-label").textContent =
+          toggle.checked ? "Power save mode" : "Normal mode";
+        table.querySelectorAll("[data-runtime-mode]").forEach(value => {
+          value.hidden = value.dataset.runtimeMode !== mode;
+        });
+        document.querySelectorAll("[data-runtime-conditions]").forEach(details => {
+          details.hidden = details.dataset.runtimeConditions !== mode;
+        });
+        // GPS toggles restore cached cell contents; refresh those snapshots too.
+        table.querySelectorAll("td[data-runtime-cell]").forEach(cell => {
+          if (cell.dataset.gpsOffHtml !== undefined) cell.dataset.gpsOffHtml = cell.innerHTML;
+          if (cell.dataset.gpsOnHtml !== undefined) cell.dataset.gpsOnHtml = cell.innerHTML;
+        });
+      }
+      toggle.addEventListener("change", apply);
+      apply();
+    }
+
     window.addEventListener("load", () => {
       buildGpsToggleHeaderRows();
       buildBtToggleHeaderRows();
       updateProgress();
       updateStaticHourCells();   // convert "104 Hrs" -> "4 days 8 hrs"
+      document.querySelectorAll("table th, table td").forEach(cell => {
+        cell.dataset.originalColspan = cell.colSpan || 1;
+      });
+      document.querySelectorAll("[data-runtime-mode]").forEach(convertHoursTextInCell);
       initPerPairGpsToggles();   // cache AFTER conversion so toggles keep it
       initPerPairBtToggles();
+      initRuntimeModeToggle();
     });
 
     setInterval(updateProgress, 3600000);
@@ -569,9 +604,18 @@ title: Battery Runtime Tests
 <h1>Battery Runtime Tests</h1>
 <p>Runtime Comparison Under Different Conditions</p>
 
-<h2>Experiment #1 - Default Settings</h2>
-
-<details>
+<h2>Normal and Power Save Runtime Comparison</h2>
+<p>
+  <label class="gps-toggle-wrap" for="runtime-power-save">
+    <span id="runtime-mode-label">Normal mode</span>
+    <span class="gps-switch">
+      <input type="checkbox" id="runtime-power-save" aria-label="Power save mode" aria-controls="runtime-results-table">
+      <span class="gps-slider"></span>
+    </span>
+  </label>
+</p>
+<p>Switch power save mode and each device's GPS toggle to compare runtimes. An em dash (&mdash;) means no result is recorded for that combination.</p>
+<details data-runtime-conditions="normal">
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
     <li>Firmware 2.7.19</li>
@@ -585,223 +629,7 @@ title: Battery Runtime Tests
   <p>Use case: Mobile Node/ Remote Node.</p>
 </details>
 
-<div style="overflow-x: auto;">
-  <table>
-    <thead>
-      <!-- HEADER ROW: column titles -->
-      <tr>
-        <th>Battery Size</th>
-        <th>Heltec ESP32 V2</th>
-        <th>Heltec ESP32 V3.1</th>
-        <th>Heltec ESP32 V3.2</th>
-        <th>Heltec Wireless Paper</th>
-        <th>Wireless Stick Lite (V3)</th>
-        <th>Heltec Wireless Tracker</th>
-        <th>Heltec Vision Master E213</th>
-        <th>Heltec Vision Master E290</th>
-        <th data-gps-group="t114-exp1" data-gps="off">Heltec Meshnode T114</th>
-        <th data-gps-group="t114-exp1" data-gps="on">Heltec Meshnode T114</th>
-        <th>Lilygo T-Deck</th>
-        <th>Lilygo T-Deck Pro</th>
-        <th>RAK19007 (RAK4631)</th>
-        <th>RAK19003 (RAK4631)</th>
-        <th data-gps-group="t1000e-exp1" data-gps="off">T1000E</th>
-        <th data-gps-group="t1000e-exp1" data-gps="on">T1000E</th>
-        <th data-gps-group="thinknode-exp1" data-gps="off">Thinknode M1</th>
-        <th data-gps-group="thinknode-exp1" data-gps="on">Thinknode M1</th>
-        <th data-gps-group="wio-oled-exp1" data-gps="off">WIO Tracker L1 OLED</th>
-        <th data-gps-group="wio-oled-exp1" data-gps="on">WIO Tracker L1 OLED</th>
-        <th data-gps-group="wio-eink-exp1" data-gps="off">WIO Tracker L1 Eink</th>
-        <th data-gps-group="wio-eink-exp1" data-gps="on">WIO Tracker L1 Eink</th>
-      </tr>
-      <!-- HEADER ROW: toggle placeholders (auto-built by JS) -->
-      <tr class="gps-toggle-row"></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>700mAh Battery</td>
-        <td></td><!--Heltec V2-->
-        <td></td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td></td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>64 Hrs</td><!--T1000-E GPS Off-->
-        <td>51 Hrs</td><!--T1000-E GPS On-->
-        <td></td><!--Thinknode M1 (GPS Off)-->
-        <td></td><!--Thinknode M1 (GPS On)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS On)-->
-      </tr>
-      <tr>
-        <td>1100mAh Battery</td>
-        <td>21 Hrs</td><!--Heltec V2-->
-        <td>10 Hrs</td><!--Heltec V3-->
-        <td>10 Hrs</td><!--Heltec V3.2-->
-        <td>9 Hrs</td><!--Wireless Paper-->
-        <td>10 Hrs</td><!--Wireless Stick Lite-->
-        <td>9 Hrs</td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td>104 Hrs</td><!--Heltec T114 GPS OFF-->
-        <td>62 Hrs</td><!--Heltec T114 GPS ON-->
-        <td>10 Hrs</td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td>154 Hrs</td><!--RAKRAK19007-->
-        <td>156 Hrs</td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
-        <td></td><!--Thinknode M1 (GPS Off)-->
-        <td></td><!--Thinknode M1 (GPS On)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS On)-->
-      </tr>
-      <tr>
-        <td>1200mAh Battery</td>
-        <td>-</td><!--Heltec V2-->
-        <td>-</td><!--Heltec V3-->
-        <td>-</td><!--Heltec V3.2-->
-        <td>-</td><!--Wireless Paper-->
-        <td>-</td><!--Wireless Stick Lite-->
-        <td>-</td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td>-</td><!--Heltec T114 GPS OFF-->
-        <td>-</td><!--Heltec T114 GPS ON-->
-        <td>-</td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td>-</td><!--RAKRAK19007-->
-        <td>-</td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
-        <td>62 Hrs</td><!--Thinknode M1 (GPS Off)-->
-        <td>52 Hrs</td><!--Thinknode M1 (GPS On)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS On)-->
-      </tr>
-      <tr>
-        <td>2000mAh Battery</td>
-        <td>41 Hrs</td><!--Heltec V2-->
-        <td>21 Hrs</td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td>20 Hrs</td><!--Wireless Paper-->
-        <td>20 Hrs</td><!--Wireless Stick Lite-->
-        <td>13 Hrs</td><!--Wireless Tracker-->
-        <td>19 Hrs</td><!--VME213-->
-        <td></td><!--VME290-->
-        <td>220 Hrs</td><!--Heltec T114 GPS OFF-->
-        <td>119 Hrs</td><!--Heltec T114 GPS ON-->
-        <td>18 Hrs</td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td>307 Hrs</td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
-        <td></td><!--Thinknode M1 (GPS Off)-->
-        <td></td><!--Thinknode M1 (GPS On)-->
-        <td>159 Hrs</td><!--WIO Tracker L1 OLED (GPS Off)-->
-        <td>132 Hrs</td><!--WIO Tracker L1 OLED (GPS On)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS On)-->
-      </tr>
-      <tr>
-        <td>3000mAh Battery</td>
-        <td>60 Hrs</td><!--Heltec V2-->
-        <td>30 Hrs</td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td>30 Hrs</td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td>19 Hrs</td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td>320 Hrs</td><!--Heltec T114 GPS OFF-->
-        <td>215 Hrs</td><!--Heltec T114 GPS ON-->
-        <td>26 Hrs</td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td>442 Hrs</td><!--RAKRAK19007-->
-        <td>453 Hrs</td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
-        <td></td><!--Thinknode M1 (GPS Off)-->
-        <td></td><!--Thinknode M1 (GPS On)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-        <td>334 Hrs</td><!--WIO Tracker L1 Eink (GPS Off)-->
-        <td>183 Hrs</td><!--WIO Tracker L1 Eink (GPS On)-->
-      </tr>
-      <tr>
-        <td>4000mAh Battery</td>
-        <td></td><!--Heltec V2-->
-        <td></td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td></td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
-        <td></td><!--Thinknode M1 (GPS Off)-->
-        <td></td><!--Thinknode M1 (GPS On)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS On)-->
-      </tr>
-      <tr>
-        <td>5000mAh Battery</td>
-        <td></td><!--Heltec V2-->
-        <td></td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td></td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
-        <td></td><!--Thinknode M1 (GPS Off)-->
-        <td></td><!--Thinknode M1 (GPS On)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS Off)-->
-        <td></td><!--WIO Tracker L1 OLED (GPS On)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS Off)-->
-        <td></td><!--WIO Tracker L1 Eink (GPS On)-->
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<!--<hr>-->
-
-<h2>Experiment #2 - Best Power Saving Settings for Mobile Node/ Remote Node</h2>
-
-<details>
+<details data-runtime-conditions="power-save" hidden>
   <summary style="cursor: pointer;">Experiment conditions:</summary>
   <ul>
     <li>Firmware 2.3.17</li>
@@ -843,7 +671,7 @@ title: Battery Runtime Tests
 </details>
 
 <div style="overflow-x: auto;">
-  <table>
+  <table id="runtime-results-table">
     <thead>
       <tr>
         <th>Battery Size</th>
@@ -855,156 +683,788 @@ title: Battery Runtime Tests
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Vision Master E213</th>
         <th>Heltec Vision Master E290</th>
-        <th data-gps-group="t114-exp2" data-gps="off">Heltec Meshnode T114</th>
-        <th data-gps-group="t114-exp2" data-gps="on">Heltec Meshnode T114</th>
+        <th data-gps-group="t114-exp1" data-gps="off">Heltec Meshnode T114</th>
+        <th data-gps-group="t114-exp1" data-gps="on">Heltec Meshnode T114</th>
         <th>Lilygo T-Deck</th>
-        <th>Lilygo T-Deck Pro</th>
+        <th data-gps-group="tdeck-pro-runtime" data-gps="off">Lilygo T-Deck Pro</th>
+        <th data-gps-group="tdeck-pro-runtime" data-gps="on">Lilygo T-Deck Pro</th>
         <th>RAK19007 (RAK4631)</th>
         <th>RAK19003 (RAK4631)</th>
-        <th data-gps-group="t1000e-exp2" data-gps="off">T1000E</th>
-        <th data-gps-group="t1000e-exp2" data-gps="on">T1000E</th>
+        <th data-gps-group="t1000e-exp1" data-gps="off">T1000E</th>
+        <th data-gps-group="t1000e-exp1" data-gps="on">T1000E</th>
+        <th data-gps-group="thinknode-exp1" data-gps="off">Thinknode M1</th>
+        <th data-gps-group="thinknode-exp1" data-gps="on">Thinknode M1</th>
+        <th data-gps-group="wio-oled-exp1" data-gps="off">WIO Tracker L1 OLED</th>
+        <th data-gps-group="wio-oled-exp1" data-gps="on">WIO Tracker L1 OLED</th>
+        <th data-gps-group="wio-eink-exp1" data-gps="off">WIO Tracker L1 Eink</th>
+        <th data-gps-group="wio-eink-exp1" data-gps="on">WIO Tracker L1 Eink</th>
       </tr>
       <tr class="gps-toggle-row"></tr>
     </thead>
     <tbody>
       <tr>
         <td>700mAh Battery</td>
-        <td></td><!--Heltec V2-->
-        <td></td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td></td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>66 Hrs</td><!--T1000-E GPS Off-->
-        <td>53 Hr</td><!--T1000-E GPS On-->
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">64 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>66 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">51 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>53 Hr</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
       </tr>
       <tr>
         <td>1100mAh Battery</td>
-        <td>30 Hrs</td><!--Heltec V2-->
-        <td>19 Hrs</td><!--Heltec V3-->
-        <td><div class="image-hover">61 Hrs<img src="{{ "/assets/images/runtimes/V3_2_1100PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">5 Nodes on Mesh - Firmware 2.5.17 - 1/10/25</span></div></td><!--Heltec V3.2-->
-        <td>51 Hrs</td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td>21 Hrs</td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">21 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>30 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">10 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>19 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">10 Hrs</span>
+          <span data-runtime-mode="power-save" hidden><div class="image-hover">61 Hrs<img src="{{ "/assets/images/runtimes/V3_2_1100PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">5 Nodes on Mesh - Firmware 2.5.17 - 1/10/25</span></div></span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">9 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>51 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">10 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">9 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">104 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">62 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">10 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>21 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">154 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">156 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+      </tr>
+      <tr>
+        <td>1200mAh Battery</td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">62 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">52 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
       </tr>
       <tr>
         <td>1500mAh Battery</td>
-        <td></td><!--Heltec V2-->
-        <td></td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td></td><!--T-Deck-->
-        <td>31 Hrs</td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td></td><!--T1000-E GPS Off-->
-        <td></td><!--T1000-E GPS On-->
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>31 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
       </tr>
       <tr>
         <td>2000mAh Battery</td>
-        <td>74 Hrs</td><!--Heltec V2-->
-        <td>44 Hrs</td><!--Heltec V3-->
-        <td id="progress2"><div class="image-hover">110 Hrs<img src="{{ "/assets/images/runtimes/V3_2_2000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">5 Nodes on Mesh - Firmware 2.5.17 - 1/12/25</span></div></td><!--Heltec V3.2-->
-        <td></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td>35 Hrs</td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">41 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>74 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">21 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>44 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden><div class="image-hover">110 Hrs<img src="{{ "/assets/images/runtimes/V3_2_2000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">5 Nodes on Mesh - Firmware 2.5.17 - 1/12/25</span></div></span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">20 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">20 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">13 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">19 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">220 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">119 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">18 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>35 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">307 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">159 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">132 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
       </tr>
       <tr>
         <td>3000mAh Battery</td>
-        <td>119 Hrs</td><!--Heltec V2-->
-        <td>80 Hrs</td><!--Heltec V3-->
-        <td><div class="image-hover">156 Hrs<img src="{{ "/assets/images/runtimes/V3_2_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></td><!--Heltec V3.2-->
-        <td><div class="image-hover">173 Hrs<img src="{{ "/assets/images/runtimes/PAPER_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td>156 Hrs</td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td>54 Hrs</td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td>442 Hrs</td><!--RAKRAK19007-->
-        <td>453 Hrs</td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">60 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>119 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">30 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>80 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden><div class="image-hover">156 Hrs<img src="{{ "/assets/images/runtimes/V3_2_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">30 Hrs</span>
+          <span data-runtime-mode="power-save" hidden><div class="image-hover">173 Hrs<img src="{{ "/assets/images/runtimes/PAPER_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">19 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>156 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">320 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">215 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">26 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>54 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">442 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>442 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">453 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>453 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">334 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">183 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
       </tr>
       <tr>
         <td>4000mAh Battery</td>
-        <td></td><!--Heltec V2-->
-        <td></td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td>71 Hrs</td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>71 Hrs</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
       </tr>
       <tr>
         <td>5000mAh Battery</td>
-        <td></td><!--Heltec V2-->
-        <td></td><!--Heltec V3-->
-        <td></td><!--Heltec V3.2-->
-        <td></td><!--Wireless Paper-->
-        <td></td><!--Wireless Stick Lite-->
-        <td></td><!--Wireless Tracker-->
-        <td></td><!--VME213-->
-        <td></td><!--VME290-->
-        <td></td><!--Heltec T114 GPS OFF-->
-        <td></td><!--Heltec T114 GPS ON-->
-        <td></td><!--T-Deck-->
-        <td></td><!--T-Deck Pro-->
-        <td></td><!--RAKRAK19007-->
-        <td></td><!--RAKRAK19003-->
-        <td>-</td><!--T1000-E GPS Off-->
-        <td>-</td><!--T1000-E GPS On-->
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">-</span>
+          <span data-runtime-mode="power-save" hidden>-</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
+        <td data-runtime-cell>
+          <span data-runtime-mode="normal">&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
-
-<!--<hr>-->
 
 <h2>Experiment #3 - Best Power Saving Settings for Standalone Nodes</h2>
 
