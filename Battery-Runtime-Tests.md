@@ -578,6 +578,12 @@ title: Battery Runtime Tests
         const controlCell = document.createElement("th");
         controlCell.className = "gps-toggle-cell";
         controlCell.colSpan = span;
+        // nRF devices keep their normal runtimes and GPS controls without a power save switch.
+        if (header.dataset.mcu === "nrf") {
+          toggleRow.appendChild(controlCell);
+          if (paired) index++;
+          continue;
+        }
         const label = document.createElement("label");
         label.className = "gps-toggle-wrap";
         const status = document.createElement("span");
@@ -706,21 +712,21 @@ title: Battery Runtime Tests
         <th>Heltec Wireless Tracker</th>
         <th>Heltec Vision Master E213</th>
         <th>Heltec Vision Master E290</th>
-        <th data-gps-group="t114-exp1" data-gps="off">Heltec Meshnode T114</th>
-        <th data-gps-group="t114-exp1" data-gps="on">Heltec Meshnode T114</th>
+        <th data-mcu="nrf" data-gps-group="t114-exp1" data-gps="off">Heltec Meshnode T114</th>
+        <th data-mcu="nrf" data-gps-group="t114-exp1" data-gps="on">Heltec Meshnode T114</th>
         <th>Lilygo T-Deck</th>
         <th data-gps-group="tdeck-pro-runtime" data-gps="off">Lilygo T-Deck Pro</th>
         <th data-gps-group="tdeck-pro-runtime" data-gps="on">Lilygo T-Deck Pro</th>
-        <th>RAK19007 (RAK4631)</th>
-        <th>RAK19003 (RAK4631)</th>
-        <th data-gps-group="t1000e-exp1" data-gps="off">T1000E</th>
-        <th data-gps-group="t1000e-exp1" data-gps="on">T1000E</th>
-        <th data-gps-group="thinknode-exp1" data-gps="off">Thinknode M1</th>
-        <th data-gps-group="thinknode-exp1" data-gps="on">Thinknode M1</th>
-        <th data-gps-group="wio-oled-exp1" data-gps="off">WIO Tracker L1 OLED</th>
-        <th data-gps-group="wio-oled-exp1" data-gps="on">WIO Tracker L1 OLED</th>
-        <th data-gps-group="wio-eink-exp1" data-gps="off">WIO Tracker L1 Eink</th>
-        <th data-gps-group="wio-eink-exp1" data-gps="on">WIO Tracker L1 Eink</th>
+        <th data-mcu="nrf">RAK19007 (RAK4631)</th>
+        <th data-mcu="nrf">RAK19003 (RAK4631)</th>
+        <th data-mcu="nrf" data-gps-group="t1000e-exp1" data-gps="off">T1000E</th>
+        <th data-mcu="nrf" data-gps-group="t1000e-exp1" data-gps="on">T1000E</th>
+        <th data-mcu="nrf" data-gps-group="thinknode-exp1" data-gps="off">Thinknode M1</th>
+        <th data-mcu="nrf" data-gps-group="thinknode-exp1" data-gps="on">Thinknode M1</th>
+        <th data-mcu="nrf" data-gps-group="wio-oled-exp1" data-gps="off">WIO Tracker L1 OLED</th>
+        <th data-mcu="nrf" data-gps-group="wio-oled-exp1" data-gps="on">WIO Tracker L1 OLED</th>
+        <th data-mcu="nrf" data-gps-group="wio-eink-exp1" data-gps="off">WIO Tracker L1 Eink</th>
+        <th data-mcu="nrf" data-gps-group="wio-eink-exp1" data-gps="on">WIO Tracker L1 Eink</th>
       </tr>
       <tr class="gps-toggle-row"></tr>
     </thead>
