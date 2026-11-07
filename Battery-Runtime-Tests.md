@@ -730,97 +730,126 @@ title: Battery Runtime Tests
       </tr>
       <tr class="gps-toggle-row"></tr>
     </thead>
+    <!-- Runtime editing guide:
+         Each node comment identifies the device, GPS state (if available), and battery size.
+         data-runtime-mode="normal" is the normal runtime; "power-save" is the power save runtime.
+         Enter measured values as hours (for example, 31 Hrs); use &mdash; for unrecorded results.
+         nRF devices display only normal runtimes; their power-save fields are retained historical data.
+    -->
     <tbody>
       <tr>
         <td>700mAh Battery</td>
+        <!-- Heltec ESP32 V2 | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.1 | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.2 | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Paper | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Wireless Stick Lite (V3) | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Tracker | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E213 | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E290 | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS OFF | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS ON | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS OFF | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS ON | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19007 (RAK4631) | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19003 (RAK4631) | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS OFF | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">64 Hrs</span>
           <span data-runtime-mode="power-save" hidden>66 Hrs</span>
         </td>
+        <!-- T1000E - GPS ON | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">51 Hrs</span>
           <span data-runtime-mode="power-save" hidden>53 Hr</span>
         </td>
+        <!-- Thinknode M1 - GPS OFF | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS ON | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS OFF | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS ON | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS OFF | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS ON | 700mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
@@ -828,94 +857,117 @@ title: Battery Runtime Tests
       </tr>
       <tr>
         <td>1100mAh Battery</td>
+        <!-- Heltec ESP32 V2 | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">21 Hrs</span>
           <span data-runtime-mode="power-save" hidden>30 Hrs</span>
         </td>
+        <!-- Heltec ESP32 V3.1 | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">10 Hrs</span>
           <span data-runtime-mode="power-save" hidden>19 Hrs</span>
         </td>
+        <!-- Heltec ESP32 V3.2 | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">10 Hrs</span>
           <span data-runtime-mode="power-save" hidden><div class="image-hover">61 Hrs<img src="{{ "/assets/images/runtimes/V3_2_1100PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">5 Nodes on Mesh - Firmware 2.5.17 - 1/10/25</span></div></span>
         </td>
+        <!-- Heltec Wireless Paper | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">9 Hrs</span>
           <span data-runtime-mode="power-save" hidden>51 Hrs</span>
         </td>
+        <!-- Wireless Stick Lite (V3) | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">10 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Tracker | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">9 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E213 | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E290 | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS OFF | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">104 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS ON | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">62 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">10 Hrs</span>
           <span data-runtime-mode="power-save" hidden>21 Hrs</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS OFF | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS ON | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19007 (RAK4631) | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">154 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19003 (RAK4631) | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">156 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS OFF | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- T1000E - GPS ON | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- Thinknode M1 - GPS OFF | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS ON | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS OFF | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS ON | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS OFF | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS ON | 1100mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
@@ -923,94 +975,117 @@ title: Battery Runtime Tests
       </tr>
       <tr>
         <td>1200mAh Battery</td>
+        <!-- Heltec ESP32 V2 | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.1 | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.2 | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Paper | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Wireless Stick Lite (V3) | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Tracker | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E213 | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E290 | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS OFF | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS ON | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS OFF | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS ON | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19007 (RAK4631) | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19003 (RAK4631) | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS OFF | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS ON | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS OFF | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">62 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS ON | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">52 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS OFF | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS ON | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS OFF | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS ON | 1200mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
@@ -1018,94 +1093,117 @@ title: Battery Runtime Tests
       </tr>
       <tr>
         <td>1500mAh Battery</td>
+        <!-- Heltec ESP32 V2 | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.1 | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.2 | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Paper | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Wireless Stick Lite (V3) | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Tracker | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E213 | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E290 | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS OFF | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS ON | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS OFF | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>31 Hrs</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS ON | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19007 (RAK4631) | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19003 (RAK4631) | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS OFF | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS ON | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS OFF | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS ON | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS OFF | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS ON | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS OFF | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS ON | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
@@ -1113,94 +1211,117 @@ title: Battery Runtime Tests
       </tr>
       <tr>
         <td>2000mAh Battery</td>
+        <!-- Heltec ESP32 V2 | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">41 Hrs</span>
           <span data-runtime-mode="power-save" hidden>74 Hrs</span>
         </td>
+        <!-- Heltec ESP32 V3.1 | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">21 Hrs</span>
           <span data-runtime-mode="power-save" hidden>44 Hrs</span>
         </td>
+        <!-- Heltec ESP32 V3.2 | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden><div class="image-hover">110 Hrs<img src="{{ "/assets/images/runtimes/V3_2_2000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">5 Nodes on Mesh - Firmware 2.5.17 - 1/12/25</span></div></span>
         </td>
+        <!-- Heltec Wireless Paper | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">20 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Wireless Stick Lite (V3) | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">20 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Tracker | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">13 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E213 | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">19 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E290 | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS OFF | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">220 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS ON | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">119 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">18 Hrs</span>
           <span data-runtime-mode="power-save" hidden>35 Hrs</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS OFF | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS ON | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19007 (RAK4631) | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">307 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19003 (RAK4631) | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS OFF | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- T1000E - GPS ON | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- Thinknode M1 - GPS OFF | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS ON | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS OFF | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">159 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS ON | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">132 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS OFF | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS ON | 2000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
@@ -1208,94 +1329,117 @@ title: Battery Runtime Tests
       </tr>
       <tr>
         <td>3000mAh Battery</td>
+        <!-- Heltec ESP32 V2 | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">60 Hrs</span>
           <span data-runtime-mode="power-save" hidden>119 Hrs</span>
         </td>
+        <!-- Heltec ESP32 V3.1 | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">30 Hrs</span>
           <span data-runtime-mode="power-save" hidden>80 Hrs</span>
         </td>
+        <!-- Heltec ESP32 V3.2 | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden><div class="image-hover">156 Hrs<img src="{{ "/assets/images/runtimes/V3_2_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></span>
         </td>
+        <!-- Heltec Wireless Paper | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">30 Hrs</span>
           <span data-runtime-mode="power-save" hidden><div class="image-hover">173 Hrs<img src="{{ "/assets/images/runtimes/PAPER_3000PS-2.5.17.png" | relative_url }}"><span class="tooltip-text">4 Nodes on Mesh - Firmware 2.5.17 - 1/17/25</span></div></span>
         </td>
+        <!-- Wireless Stick Lite (V3) | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Tracker | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">19 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E213 | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E290 | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>156 Hrs</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS OFF | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">320 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS ON | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">215 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">26 Hrs</span>
           <span data-runtime-mode="power-save" hidden>54 Hrs</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS OFF | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS ON | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19007 (RAK4631) | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">442 Hrs</span>
           <span data-runtime-mode="power-save" hidden>442 Hrs</span>
         </td>
+        <!-- RAK19003 (RAK4631) | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">453 Hrs</span>
           <span data-runtime-mode="power-save" hidden>453 Hrs</span>
         </td>
+        <!-- T1000E - GPS OFF | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- T1000E - GPS ON | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- Thinknode M1 - GPS OFF | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS ON | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS OFF | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS ON | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS OFF | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">334 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS ON | 3000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">183 Hrs</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
@@ -1303,94 +1447,117 @@ title: Battery Runtime Tests
       </tr>
       <tr>
         <td>4000mAh Battery</td>
+        <!-- Heltec ESP32 V2 | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.1 | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.2 | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Paper | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Wireless Stick Lite (V3) | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Tracker | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E213 | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E290 | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS OFF | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS ON | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>71 Hrs</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS OFF | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS ON | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19007 (RAK4631) | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19003 (RAK4631) | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS OFF | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- T1000E - GPS ON | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- Thinknode M1 - GPS OFF | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS ON | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS OFF | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS ON | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS OFF | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS ON | 4000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
@@ -1398,94 +1565,117 @@ title: Battery Runtime Tests
       </tr>
       <tr>
         <td>5000mAh Battery</td>
+        <!-- Heltec ESP32 V2 | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.1 | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec ESP32 V3.2 | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Paper | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Wireless Stick Lite (V3) | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Wireless Tracker | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E213 | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Vision Master E290 | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS OFF | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Heltec Meshnode T114 - GPS ON | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS OFF | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Lilygo T-Deck Pro - GPS ON | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19007 (RAK4631) | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- RAK19003 (RAK4631) | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- T1000E - GPS OFF | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- T1000E - GPS ON | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">-</span>
           <span data-runtime-mode="power-save" hidden>-</span>
         </td>
+        <!-- Thinknode M1 - GPS OFF | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- Thinknode M1 - GPS ON | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS OFF | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 OLED - GPS ON | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS OFF | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
+        <!-- WIO Tracker L1 Eink - GPS ON | 5000mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
           <span data-runtime-mode="power-save" hidden>&mdash;</span>
