@@ -602,6 +602,7 @@ title: Battery Runtime Tests
         <th data-gps-group="t114-exp1" data-gps="off">Heltec Meshnode T114</th>
         <th data-gps-group="t114-exp1" data-gps="on">Heltec Meshnode T114</th>
         <th>Lilygo T-Deck</th>
+        <th>Lilygo T-Deck Pro</th>
         <th>RAK19007 (RAK4631)</th>
         <th>RAK19003 (RAK4631)</th>
         <th data-gps-group="t1000e-exp1" data-gps="off">T1000E</th>
@@ -630,6 +631,7 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td></td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>64 Hrs</td><!--T1000-E GPS Off-->
@@ -654,6 +656,7 @@ title: Battery Runtime Tests
         <td>104 Hrs</td><!--Heltec T114 GPS OFF-->
         <td>62 Hrs</td><!--Heltec T114 GPS ON-->
         <td>10 Hrs</td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td>154 Hrs</td><!--RAKRAK19007-->
         <td>156 Hrs</td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -678,6 +681,7 @@ title: Battery Runtime Tests
         <td>-</td><!--Heltec T114 GPS OFF-->
         <td>-</td><!--Heltec T114 GPS ON-->
         <td>-</td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td>-</td><!--RAKRAK19007-->
         <td>-</td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -702,6 +706,7 @@ title: Battery Runtime Tests
         <td>220 Hrs</td><!--Heltec T114 GPS OFF-->
         <td>119 Hrs</td><!--Heltec T114 GPS ON-->
         <td>18 Hrs</td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td>307 Hrs</td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -726,6 +731,7 @@ title: Battery Runtime Tests
         <td>320 Hrs</td><!--Heltec T114 GPS OFF-->
         <td>215 Hrs</td><!--Heltec T114 GPS ON-->
         <td>26 Hrs</td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td>442 Hrs</td><!--RAKRAK19007-->
         <td>453 Hrs</td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -750,6 +756,7 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td></td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -774,6 +781,7 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td></td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -850,6 +858,7 @@ title: Battery Runtime Tests
         <th data-gps-group="t114-exp2" data-gps="off">Heltec Meshnode T114</th>
         <th data-gps-group="t114-exp2" data-gps="on">Heltec Meshnode T114</th>
         <th>Lilygo T-Deck</th>
+        <th>Lilygo T-Deck Pro</th>
         <th>RAK19007 (RAK4631)</th>
         <th>RAK19003 (RAK4631)</th>
         <th data-gps-group="t1000e-exp2" data-gps="off">T1000E</th>
@@ -871,6 +880,7 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td></td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>66 Hrs</td><!--T1000-E GPS Off-->
@@ -889,10 +899,30 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td>21 Hrs</td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
         <td>-</td><!--T1000-E GPS On-->
+      </tr>
+      <tr>
+        <td>1500mAh Battery</td>
+        <td></td><!--Heltec V2-->
+        <td></td><!--Heltec V3-->
+        <td></td><!--Heltec V3.2-->
+        <td></td><!--Wireless Paper-->
+        <td></td><!--Wireless Stick Lite-->
+        <td></td><!--Wireless Tracker-->
+        <td></td><!--VME213-->
+        <td></td><!--VME290-->
+        <td></td><!--Heltec T114 GPS OFF-->
+        <td></td><!--Heltec T114 GPS ON-->
+        <td></td><!--T-Deck-->
+        <td>31 Hrs</td><!--T-Deck Pro-->
+        <td></td><!--RAKRAK19007-->
+        <td></td><!--RAKRAK19003-->
+        <td></td><!--T1000-E GPS Off-->
+        <td></td><!--T1000-E GPS On-->
       </tr>
       <tr>
         <td>2000mAh Battery</td>
@@ -907,6 +937,7 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td>35 Hrs</td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -925,6 +956,7 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td>54 Hrs</td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td>442 Hrs</td><!--RAKRAK19007-->
         <td>453 Hrs</td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -943,6 +975,7 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td>71 Hrs</td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -961,6 +994,7 @@ title: Battery Runtime Tests
         <td></td><!--Heltec T114 GPS OFF-->
         <td></td><!--Heltec T114 GPS ON-->
         <td></td><!--T-Deck-->
+        <td></td><!--T-Deck Pro-->
         <td></td><!--RAKRAK19007-->
         <td></td><!--RAKRAK19003-->
         <td>-</td><!--T1000-E GPS Off-->
@@ -1023,6 +1057,7 @@ title: Battery Runtime Tests
           <th data-gps-group="meshenger-exp3" data-gps="off">Meshenger</th>
           <th data-gps-group="meshenger-exp3" data-gps="on">Meshenger</th>
           <th>Lilygo T-Deck</th>
+          <th>Lilygo T-Deck Pro</th>
         </tr>
         <tr class="bt-toggle-row"></tr>
         <tr class="gps-toggle-row"></tr>
@@ -1037,6 +1072,7 @@ title: Battery Runtime Tests
           <td>166 Hrs</td><!--Meshenger GPS off-->
           <td>175 hrs</td><!--Meshenger GPS On-->
           <td>71 Hrs</td><!--Tdeck-->
+          <td></td><!--T-Deck Pro-->
         </tr>
       </tbody>
     </table>
