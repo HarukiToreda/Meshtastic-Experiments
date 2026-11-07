@@ -558,28 +558,60 @@ title: Battery Runtime Tests
     }
     
     function initRuntimeModeToggle() {
-      const toggle = document.getElementById("runtime-power-save");
       const table = document.getElementById("runtime-results-table");
-      if (!toggle || !table) return;
+      if (!table) return;
+      const headers = Array.from(table.querySelector("thead tr").children);
+      const toggleRow = document.createElement("tr");
+      toggleRow.className = "power-toggle-row";
+      const labelCell = document.createElement("th");
+      labelCell.textContent = "Power save";
+      toggleRow.appendChild(labelCell);
 
-      function apply() {
-        const mode = toggle.checked ? "power-save" : "normal";
-        document.getElementById("runtime-mode-label").textContent =
-          toggle.checked ? "Power save mode" : "Normal mode";
-        table.querySelectorAll("[data-runtime-mode]").forEach(value => {
-          value.hidden = value.dataset.runtimeMode !== mode;
-        });
-        document.querySelectorAll("[data-runtime-conditions]").forEach(details => {
-          details.hidden = details.dataset.runtimeConditions !== mode;
-        });
-        // GPS toggles restore cached cell contents; refresh those snapshots too.
-        table.querySelectorAll("td[data-runtime-cell]").forEach(cell => {
-          if (cell.dataset.gpsOffHtml !== undefined) cell.dataset.gpsOffHtml = cell.innerHTML;
-          if (cell.dataset.gpsOnHtml !== undefined) cell.dataset.gpsOnHtml = cell.innerHTML;
-        });
+      for (let index = 1; index < headers.length; index++) {
+        const header = headers[index];
+        const paired = header.dataset.gps === "off" &&
+          headers[index + 1]?.dataset.gpsGroup === header.dataset.gpsGroup &&
+          headers[index + 1]?.dataset.gps === "on";
+        const span = paired ? 2 : 1;
+        const cells = Array.from(table.querySelectorAll("tbody tr"))
+          .flatMap(row => Array.from(row.children).slice(index, index + span));
+        const controlCell = document.createElement("th");
+        controlCell.className = "gps-toggle-cell";
+        controlCell.colSpan = span;
+        const label = document.createElement("label");
+        label.className = "gps-toggle-wrap";
+        const status = document.createElement("span");
+        status.className = "gps-toggle-label";
+        const switchWrap = document.createElement("span");
+        switchWrap.className = "gps-switch";
+        const toggle = document.createElement("input");
+        toggle.type = "checkbox";
+        toggle.dataset.powerToggle = header.textContent.trim();
+        toggle.setAttribute("aria-label", `${header.textContent.trim()} power save mode`);
+        const slider = document.createElement("span");
+        slider.className = "gps-slider";
+        switchWrap.append(toggle, slider);
+        label.append(status, switchWrap);
+        controlCell.appendChild(label);
+        toggleRow.appendChild(controlCell);
+
+        function apply() {
+          const mode = toggle.checked ? "power-save" : "normal";
+          status.textContent = toggle.checked ? "POWER SAVE ON" : "POWER SAVE OFF";
+          cells.forEach(cell => {
+            cell.querySelectorAll("[data-runtime-mode]").forEach(value => {
+              value.hidden = value.dataset.runtimeMode !== mode;
+            });
+            // Preserve this device's mode when its GPS toggle restores cached HTML.
+            if (cell.dataset.gpsOffHtml !== undefined) cell.dataset.gpsOffHtml = cell.innerHTML;
+            if (cell.dataset.gpsOnHtml !== undefined) cell.dataset.gpsOnHtml = cell.innerHTML;
+          });
+        }
+        toggle.addEventListener("change", apply);
+        apply();
+        if (paired) index++;
       }
-      toggle.addEventListener("change", apply);
-      apply();
+      table.querySelector("thead").insertBefore(toggleRow, table.querySelector(".gps-toggle-row"));
     }
 
     window.addEventListener("load", () => {
@@ -605,18 +637,9 @@ title: Battery Runtime Tests
 <p>Runtime Comparison Under Different Conditions</p>
 
 <h2>Normal and Power Save Runtime Comparison</h2>
-<p>
-  <label class="gps-toggle-wrap" for="runtime-power-save">
-    <span id="runtime-mode-label">Normal mode</span>
-    <span class="gps-switch">
-      <input type="checkbox" id="runtime-power-save" aria-label="Power save mode" aria-controls="runtime-results-table">
-      <span class="gps-slider"></span>
-    </span>
-  </label>
-</p>
-<p>Switch power save mode and each device's GPS toggle to compare runtimes. An em dash (&mdash;) means no result is recorded for that combination.</p>
+<p>Use each device's power save and GPS toggles to compare runtimes independently. An em dash (&mdash;) means no result is recorded for that combination.</p>
 <details data-runtime-conditions="normal">
-  <summary style="cursor: pointer;">Experiment conditions:</summary>
+  <summary style="cursor: pointer;">Normal mode experiment conditions:</summary>
   <ul>
     <li>Firmware 2.7.19</li>
     <li>Role: Client</li>
@@ -629,8 +652,8 @@ title: Battery Runtime Tests
   <p>Use case: Mobile Node/ Remote Node.</p>
 </details>
 
-<details data-runtime-conditions="power-save" hidden>
-  <summary style="cursor: pointer;">Experiment conditions:</summary>
+<details data-runtime-conditions="power-save">
+  <summary style="cursor: pointer;">Power save experiment conditions:</summary>
   <ul>
     <li>Firmware 2.3.17</li>
     <li>Client Mode</li>
