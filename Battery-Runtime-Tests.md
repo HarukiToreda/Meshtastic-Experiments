@@ -1151,12 +1151,12 @@ title: Battery Runtime Tests
         <!-- Lilygo T-Deck Pro - GPS OFF | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
-          <span data-runtime-mode="power-save" hidden>31 Hrs</span>
+          <span data-runtime-mode="power-save" hidden>&mdash;</span>
         </td>
         <!-- Lilygo T-Deck Pro - GPS ON | 1500mAh Battery -->
         <td data-runtime-cell>
           <span data-runtime-mode="normal">&mdash;</span>
-          <span data-runtime-mode="power-save" hidden>&mdash;</span>
+          <span data-runtime-mode="power-save" hidden>31 Hrs</span>
         </td>
         <!-- RAK19007 (RAK4631) | 1500mAh Battery -->
         <td data-runtime-cell>
